@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 const { frontmatter } = Astro.props;
 ---
-<Base pageTitle={frontmatter.title}>
+<Base pageTitle={frontmatter.title} description={frontmatter.description}>
 <p>{frontmatter.description}</p>
 <p>Written by {frontmatter.author}</p>
 <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>

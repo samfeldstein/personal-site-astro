@@ -4,26 +4,31 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Skiplink from "../components/Skiplink.astro";
 
+const siteDescription =
+  "Sam Feldstein's personal website. Sam is a web developer from Bondurant, IA.";
+
 const { pageTitle } = Astro.props;
-const { frontmatter } = Astro.props;
+const { description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle || frontmatter.title}</title>
+    <title>{pageTitle}</title>
+    <meta name="description" content={description || siteDescription} />
   </head>
 
   <body>
     <Skiplink />
     <Header />
     <main id="main-content">
-    <h1>{pageTitle || frontmatter.title}</h1>
-    <slot />
-  </main>
+      <h1>{pageTitle}</h1>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
