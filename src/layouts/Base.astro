@@ -1,7 +1,7 @@
 ---
 import "/src/styles/global.css";
-import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Skiplink from "../components/Skiplink.astro";
 
 const siteDescription =
@@ -15,6 +15,14 @@ const { description } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Icons
+      - https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+      - Favicon generator: https://realfavicongenerator.net/
+      - SVG generator: https://formito.com/tools/favicon
+      - Image compressor: https://squoosh.app/
+      - SVG optimizer: https://jakearchibald.github.io/svgomg/
+      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
+    -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
