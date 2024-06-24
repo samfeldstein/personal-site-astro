@@ -4,7 +4,7 @@ import Base from "../../layouts/Base.astro";
 
 const pageTitle = "Tags";
 
-const posts = await getCollection("posts");
+const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
@@ -19,23 +19,3 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
     }
   </div>
 </Base>
-
-<style>
-    a {
-      color: #00539F;
-    }
-  
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-    }
-  
-    .tag {
-      margin: 0.25em;
-      border: dotted 1px #a1a1a1;
-      border-radius: .5em;
-      padding: .5em 1em;
-      font-size: 1.15em;
-      background-color: #F8FCFD;
-    }
-  </style>
