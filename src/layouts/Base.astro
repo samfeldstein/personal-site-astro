@@ -2,6 +2,7 @@
 import "/src/styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Skiplink from "../components/Skiplink.astro";
 
 const { pageTitle } = Astro.props;
 const { frontmatter } = Astro.props;
@@ -17,9 +18,12 @@ const { frontmatter } = Astro.props;
   </head>
 
   <body>
+    <Skiplink />
     <Header />
+    <main id="main-content">
     <h1>{pageTitle || frontmatter.title}</h1>
     <slot />
+  </main>
     <Footer />
   </body>
 </html>
