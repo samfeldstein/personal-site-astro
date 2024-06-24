@@ -1,0 +1,19 @@
+---
+// https://docs.astro.build/en/tutorials/add-content-collections/
+import { getCollection } from "astro:content";
+import Base from "./Base.astro";
+import Post from "../components/Post.astro";
+const pageTitle = "Blog";
+const posts = await getCollection("posts");
+---
+
+<Base pageTitle={pageTitle}>
+    <slot />
+  <ul>
+    {
+      posts.map((post) => (
+      <Post url={`/posts/${post.slug}/`} title={post.data.title} />
+      ))
+    }
+  </ul>
+</Base>
