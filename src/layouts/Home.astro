@@ -1,0 +1,10 @@
+---
+import Base from "./Base.astro";
+import Contents from '../components/Contents.astro';
+const { frontmatter, headings } = Astro.props;
+---
+
+<Base pageTitle={frontmatter.title} description={frontmatter.description}>
+    <Contents headings={headings} />
+    <slot />
+</Base>
