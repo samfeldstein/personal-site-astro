@@ -25,7 +25,7 @@ const { posts } = Astro.props;
   <ul>
     {
       posts.map((post) => (
-        <Post url={`/posts/${post.slug}/`} title={post.data.title} />
+        <Post url={`/blog/${post.slug}/`} title={post.data.title} />
       ))
     }
   </ul>
