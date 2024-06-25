@@ -15,8 +15,6 @@ I'm available for **hire** as a contract web developer. My skills are probably b
 - [RSS](/feed.xml)
 - [Mailing list](https://samfeldstein.substack.com/)
 
-The best way to keep up with my work is to subscribe to my [RSS feed](/feed.xml). If you don't use RSS, I also have a [mailing list](https://samfeldstein.substack.com/).
-
 ## Things I Use
 
 I don't write fiction so much anymore, but when I did I used [Scrivener](https://www.literatureandlatte.com/scrivener/overview). For distraction-free word-dumping, I use [Enso](https://enso.sonnet.io/). For writing everything else, taking notes, and managing files, I use [Obsidian](https://obsidian.md/) with the [Minimal](https://minimal.guide/home) theme and the following community plugins:
