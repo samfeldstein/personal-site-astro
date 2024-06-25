@@ -54,4 +54,13 @@ select {
   font: inherit;
 }
 
+a, h2 {
+  text-transform: capitalize;
+  font-variant: small-caps;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
 /*# sourceMappingURL=styles.css.map */

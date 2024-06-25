@@ -3,11 +3,12 @@
 import { getCollection } from "astro:content";
 import Base from "./Base.astro";
 import Post from "../components/Post.astro";
-const pageTitle = "Blog";
+
+const { frontmatter } = Astro.props;
 const posts = await getCollection("blog");
 ---
 
-<Base pageTitle={pageTitle}>
+<Base pageTitle={frontmatter.title}>
     <slot />
   <ul>
     {

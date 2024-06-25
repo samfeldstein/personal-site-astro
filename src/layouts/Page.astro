@@ -1,8 +1,29 @@
 ---
 import Base from "./Base.astro";
-const { frontmatter } = Astro.props;
+import Contents from "../components/Contents.astro";
+const { frontmatter, headings } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
-    <slot />
+  <p class="updated">
+    This page was updated on <time datetime=`${frontmatter.updated}`
+      >{frontmatter.updated.slice(0, 10)}</time
+    >.
+  </p>
+  <Contents headings={headings} />
+  <hr />
+  <slot />
 </Base>
+
+<style>
+  .updated {
+    font-style: italic;
+  }
+
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+</style>

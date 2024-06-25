@@ -9,6 +9,7 @@ const siteDescription =
 
 const { pageTitle } = Astro.props;
 const { description } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <html lang="en">
@@ -26,7 +27,7 @@ const { description } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
+    <title>{pageTitle || frontmatter.title }</title>
     <meta name="description" content={description || siteDescription} />
     <link
       rel="alternate"
@@ -40,7 +41,7 @@ const { description } = Astro.props;
     <Skiplink />
     <Header />
     <main id="main-content">
-      <h1>{pageTitle}</h1>
+      <h1>{pageTitle || frontmatter.title}</h1>
       <slot />
     </main>
     <Footer />
@@ -49,7 +50,12 @@ const { description } = Astro.props;
 
 <style>
   body {
-  max-width: 60rem;
-  font-size: 1.5rem;
-}
+    max-width: 60rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
 </style>

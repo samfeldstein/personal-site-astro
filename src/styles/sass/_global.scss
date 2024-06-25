@@ -1,0 +1,16 @@
+%small-caps {
+    text-transform: capitalize;
+    font-variant: small-caps;
+}
+
+h1 {
+    text-transform: uppercase;
+}
+
+h2 {
+    @extend %small-caps;
+}
+
+a {
+    @extend %small-caps;
+}
