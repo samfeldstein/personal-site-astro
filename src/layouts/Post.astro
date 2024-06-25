@@ -9,5 +9,5 @@ const { frontmatter } = Astro.props;
   <p>Written by {frontmatter.author}</p>
   <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <slot />
-  <Tags tags={frontmatter.tags}/>
+  <Tags tags={frontmatter.tags} />
 </Base>

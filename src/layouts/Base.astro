@@ -49,13 +49,14 @@ const { frontmatter } = Astro.props;
 </html>
 
 <style>
-  body {
-    max-width: 60rem;
-    padding: 1rem;
-    font-size: 1.5rem;
+html {
+  @media screen and (min-width: 800px) {
+    font-size: 150%;
   }
+}
 
-  h1 {
-    font-size: 5rem;
+  body {
+    max-width: 50rem;
+    padding: 0.5rem;
   }
 </style>
