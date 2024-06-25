@@ -28,6 +28,12 @@ const { description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description || siteDescription} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Sam Feldstein"
+      href={new URL("feed.xml", Astro.site)}
+    />
   </head>
 
   <body>

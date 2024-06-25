@@ -1,5 +1,5 @@
-// // https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
-// // https://github.com/mdn/dom-examples/blob/main/service-worker/simple-service-worker/sw.js
+// https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+// https://github.com/mdn/dom-examples/blob/main/service-worker/simple-service-worker/sw.js
 
 const CACHE_VERSION = "v1";
 const CORE_ASSETS = ["/", "/offline/"];
