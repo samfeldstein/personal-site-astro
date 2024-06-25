@@ -24,8 +24,24 @@ function buildToc(headings) {
 }
 ---
 
-<nav class="toc">
-  <ul>
-    {toc.map((heading) => <ContentsHeading heading={heading} />)}
-  </ul>
-</nav>
+<details aria-label="Table of Contents">
+  <summary>Contents</summary>
+  <nav>
+    <ul>
+      {toc.map((heading) => <ContentsHeading heading={heading} />)}
+    </ul>
+  </nav>
+</details>
+
+<style>
+  summary {
+    font-weight: bold;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

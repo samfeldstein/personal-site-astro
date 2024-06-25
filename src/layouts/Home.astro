@@ -6,5 +6,6 @@ const { frontmatter, headings } = Astro.props;
 
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
     <Contents headings={headings} />
+    <hr>
     <slot />
 </Base>
