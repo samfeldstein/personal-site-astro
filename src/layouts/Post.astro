@@ -1,5 +1,6 @@
 ---
 import Base from "./Base.astro";
+import Tags from "../components/Tags.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -8,13 +9,5 @@ const { frontmatter } = Astro.props;
   <p>Written by {frontmatter.author}</p>
   <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <slot />
-  <div class="tags">
-    {
-      frontmatter.tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
+  <Tags tags={frontmatter.tags}/>
 </Base>

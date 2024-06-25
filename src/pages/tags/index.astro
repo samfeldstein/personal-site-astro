@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import Tags from "../../components/Tags.astro";
 
 const pageTitle = "Tags";
 
@@ -9,13 +10,5 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
 <Base pageTitle={pageTitle}>
-  <div class="tags">
-    {
-      tags.map((tag) => (
-        <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
-        </p>
-      ))
-    }
-  </div>
+  <Tags tags={tags}/>
 </Base>
