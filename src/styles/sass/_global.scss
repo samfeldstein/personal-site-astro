@@ -9,6 +9,8 @@ h1 {
 
 h2 {
     @extend %small-caps;
+    text-align: right;
+    border-bottom: 1px solid;
 }
 
 a {

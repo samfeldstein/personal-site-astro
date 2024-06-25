@@ -63,6 +63,11 @@ h1 {
   margin-bottom: 0;
 }
 
+h2 {
+  text-align: right;
+  border-bottom: 1px solid;
+}
+
 a {
   font-family: monospace;
   color: #184dc9;
