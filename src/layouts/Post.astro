@@ -1,13 +1,13 @@
 ---
 import Base from "./Base.astro";
 import Tags from "../components/Tags.astro";
+import Date from "../components/Date.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
+  <Date date={frontmatter.pubDate} />
   <p>{frontmatter.description}</p>
-  <p>Written by {frontmatter.author}</p>
-  <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <slot />
   <Tags tags={frontmatter.tags} />
 </Base>

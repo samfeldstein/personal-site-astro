@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/Page.astro
 title: This is my website. There are many like it, but this one is mine.
-updated: 2024-06-25
+updated: June 25, 2024
 ---
 
 Hi, I’m **Sam Feldstein**. I used to want to be an [author](#published-writing), but lately I'm more interested in web design. I'm fond of [blogs](#blogroll), [movies](https://letterboxd.com/HoogoSteeglitz/), and [photography](https://www.instagram.com/seldstein/).

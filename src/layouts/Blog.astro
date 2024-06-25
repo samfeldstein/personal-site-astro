@@ -9,12 +9,22 @@ const posts = await getCollection("blog");
 ---
 
 <Base pageTitle={frontmatter.title}>
-    <slot />
+  <slot />
   <ul>
     {
       posts.map((post) => (
-      <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+        <Post url={`/blog/${post.slug}/`} title={post.data.title} />
       ))
     }
   </ul>
 </Base>
+
+<style>
+  ul {
+    list-style: none;
+    padding: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+</style>

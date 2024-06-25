@@ -6,9 +6,7 @@ const { frontmatter, headings } = Astro.props;
 
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
   <p class="updated">
-    This page was updated on <time datetime=`${frontmatter.updated}`
-      >{frontmatter.updated.slice(0, 10)}</time
-    >.
+    This page was updated on <span class="time">{frontmatter.updated}</span>.
   </p>
   <Contents headings={headings} />
   <hr />
@@ -20,7 +18,7 @@ const { frontmatter, headings } = Astro.props;
     font-style: italic;
   }
 
-  time {
+  .time {
     font-family: monospace;
     font-style: normal;
     font-weight: bold;
