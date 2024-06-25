@@ -1,5 +1,4 @@
 %small-caps {
-    text-transform: capitalize;
     font-variant: small-caps;
 }
 
@@ -14,4 +13,15 @@ h2 {
 
 a {
     @extend %small-caps;
+    font-family: monospace;
+    color: #184dc9;
+    
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        color: #adff2f;
+    }
 }

@@ -27,7 +27,7 @@ const { frontmatter } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle || frontmatter.title }</title>
+    <title>{pageTitle || frontmatter.title}</title>
     <meta name="description" content={description || siteDescription} />
     <link
       rel="alternate"
@@ -49,14 +49,28 @@ const { frontmatter } = Astro.props;
 </html>
 
 <style>
-html {
-  @media screen and (min-width: 800px) {
-    font-size: 150%;
+  html {
+    @media screen and (min-width: 800px) {
+      /* Base size is set in _reset.scss */
+      font-size: 150%;
+    }
   }
-}
 
   body {
-    max-width: 50rem;
+    max-width: 40rem;
     padding: 0.5rem;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: #000000;
+      color: #bebebe;
+    }
+  }
+
+  main {
+    a {
+      text-decoration-style: double;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.1em;
+    }
   }
 </style>

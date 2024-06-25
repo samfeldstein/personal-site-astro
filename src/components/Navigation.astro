@@ -1,7 +1,8 @@
+<a href="/">Sam Feldstein</a>
 <nav>
-  <a href="/">/home</a>
-  <a href="/blog/">/blog</a>
-  <a href="/feed.xml">/feed</a>
+  <a href="/">/Home</a>
+  <a href="/blog/">/Blog</a>
+  <a href="/feed.xml">/Feed</a>
 </nav>
 
 <style>
@@ -10,5 +11,16 @@
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+  }
+
+  a {
+    text-transform: lowercase;
+    font-variant: unset;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
   }
 </style>

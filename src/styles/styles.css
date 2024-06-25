@@ -55,13 +55,25 @@ select {
 }
 
 a, h2 {
-  text-transform: capitalize;
   font-variant: small-caps;
 }
 
 h1 {
   text-transform: uppercase;
   margin-bottom: 0;
+}
+
+a {
+  font-family: monospace;
+  color: #184dc9;
+}
+a:hover, a:focus {
+  text-decoration: none;
+}
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #adff2f;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
