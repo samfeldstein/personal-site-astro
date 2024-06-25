@@ -1,4 +1,5 @@
 ---
+// https://kld.dev/building-table-of-contents/
 import ContentsHeading from "./ContentsHeading.astro";
 
 const { headings } = Astro.props;
@@ -13,9 +14,11 @@ function buildToc(headings) {
     // Change 2 to 1 if your markdown includes your <h1>
     if (heading.depth === 2) {
       toc.push(heading);
-    } else {
-      parentHeadings.get(heading.depth - 1).subheadings.push(heading);
     }
+    // Uncomment to include level 3 headings
+    // else {
+    //   parentHeadings.get(heading.depth - 1).subheadings.push(heading);
+    // }
   });
   return toc;
 }
