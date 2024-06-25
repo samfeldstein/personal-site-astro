@@ -1,10 +1,19 @@
 ---
 layout: ../layouts/Home.astro
 title: This is my website. There are many like it, but this one is mine.
-lastmod: 2024-06-25
+updated: 2024-06-25
 ---
 
 Hi, I’m **Sam Feldstein**. I used to want to be an [author](#published-writing), but lately I'm more interested in web design. I'm fond of [blogs](#blogroll), [movies](https://letterboxd.com/HoogoSteeglitz/), and [photography](https://www.instagram.com/seldstein/).
+
+I'm available for **hire** as a contract web developer. My skills are probably best suited to small business and personal sites. I most recently built the site for [Prairie Rose Arena](https://prairierosearena.com/).
+
+## Contact & Social
+
+- [Email](mailto:sam@samfeldstein.xyz)
+- [GitHub](https://github.com/seldstein)
+- [RSS](/feed.xml)
+- [Mailing list](https://samfeldstein.substack.com/)
 
 The best way to keep up with my work is to subscribe to my [RSS feed](/feed.xml). If you don't use RSS, I also have a [mailing list](https://samfeldstein.substack.com/).
 
