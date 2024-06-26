@@ -1,14 +1,26 @@
 ---
-// https://docs.astro.build/en/tutorials/add-content-collections/
-import { getCollection } from "astro:content";
+// Components
 import Base from "./Base.astro";
 import Post from "../components/Post.astro";
 
+// Collections
+// https://docs.astro.build/en/tutorials/add-content-collections/
+import { getCollection } from "astro:content";
+import {siteConfig} from "../../siteConfig.mjs";
+
+// Utils
+import { sortPostsByDate } from "../scripts/utils";
+
 const { frontmatter } = Astro.props;
 const posts = await getCollection("blog");
+sortPostsByDate(posts);
 ---
 
-<Base pageTitle={frontmatter.title}>
+<Base pageTitle={`${frontmatter.tabTitle} | ${siteConfig.title}` || frontmatter.title}>
+  <header aria-label="Page Header">
+    <h1>{frontmatter.title}</h1>
+  </header>
+  <hr />
   <slot />
   <ul>
     {

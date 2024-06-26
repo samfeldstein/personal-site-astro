@@ -1,13 +1,14 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
+import { siteConfig } from "../../siteConfig.mjs";
 
 export async function GET() {
   const posts = await getCollection("blog");
   return rss({
-    title: "Sam Feldstein's Blog",
+    title: `${siteConfig.title}`,
     description:
-      "Sam Feldstein's personal website. Sam is a web developer from Bondurant, IA.",
-    site: "https://samfeldstein.xyz",
+      `${siteConfig.description}`,
+    site: `${siteConfig.url}`,
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,

@@ -1,14 +1,18 @@
 ---
 import Base from "./Base.astro";
+import {siteConfig} from "../../siteConfig.mjs";
 import Contents from "../components/Contents.astro";
 const { frontmatter, headings } = Astro.props;
 ---
 
-<Base pageTitle={frontmatter.title} description={frontmatter.description}>
-  <p class="updated">
-    This page was updated on <span class="time">{frontmatter.updated}</span>.
-  </p>
-  <Contents headings={headings} />
+<Base pageTitle={`${frontmatter.tabTitle} | ${siteConfig.title}` || frontmatter.title} description={frontmatter.description}>
+  <header aria-label="Page Header">
+    <h1>{frontmatter.title}</h1>
+    <p class="updated">
+      This page was updated on <span class="time">{frontmatter.updated}</span>.
+    </p>
+    <Contents headings={headings} />
+  </header>
   <hr />
   <slot />
 </Base>
@@ -16,6 +20,7 @@ const { frontmatter, headings } = Astro.props;
 <style>
   .updated {
     font-style: italic;
+    margin-top: 0;
   }
 
   .time {
