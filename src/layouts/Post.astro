@@ -12,12 +12,17 @@ const { frontmatter } = Astro.props;
     <p class="description">{frontmatter.description}</p>
     <Tags tags={frontmatter.tags} />
   </header>
+  <hr>
   <slot />
 </Base>
 
 <style>
   h1, .description {
     margin: 0;
+  }
+
+  .description {
+    font-style: italic;
   }
 
   .time {

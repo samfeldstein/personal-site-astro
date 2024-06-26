@@ -1,6 +1,6 @@
 ---
 title: Buffalo Sorting and My First Gambling Foray
-description: Notes from my the Badlands.
+description: Notes from the Badlands.
 pubDate: 2023-11-12T22:57:28-06:00
 tags: ["travel"]
 ---

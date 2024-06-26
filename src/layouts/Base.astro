@@ -43,6 +43,7 @@ const { frontmatter } = Astro.props;
     <main id="main-content">
       <slot />
     </main>
+    <hr>
     <Footer />
   </body>
 </html>
@@ -63,14 +64,6 @@ const { frontmatter } = Astro.props;
     @media (prefers-color-scheme: dark) {
       background-color: #000000;
       color: #bebebe;
-    }
-  }
-
-  main {
-    a {
-      text-decoration-style: double;
-      text-decoration-thickness: 0.08em;
-      text-underline-offset: 0.1em;
     }
   }
 </style>

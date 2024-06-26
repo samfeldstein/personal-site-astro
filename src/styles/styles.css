@@ -71,6 +71,9 @@ h2 {
 a {
   font-family: monospace;
   color: #184dc9;
+  text-decoration-style: double;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.1em;
 }
 a:hover, a:focus {
   text-decoration: none;
