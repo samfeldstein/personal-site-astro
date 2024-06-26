@@ -6,8 +6,21 @@ const { frontmatter } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
-  <Date date={frontmatter.pubDate} />
-  <p>{frontmatter.description}</p>
+  <header aria-label="Post Header">
+    <div class="time"><Date date={frontmatter.pubDate} /></div>
+    <h1>{frontmatter.title}</h1>
+    <p class="description">{frontmatter.description}</p>
+    <Tags tags={frontmatter.tags} />
+  </header>
   <slot />
-  <Tags tags={frontmatter.tags} />
 </Base>
+
+<style>
+  h1, .description {
+    margin: 0;
+  }
+
+  .time {
+    font-size: 0.7rem;
+  }
+</style>

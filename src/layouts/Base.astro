@@ -41,7 +41,6 @@ const { frontmatter } = Astro.props;
     <Skiplink />
     <Header />
     <main id="main-content">
-      <h1>{pageTitle || frontmatter.title}</h1>
       <slot />
     </main>
     <Footer />
