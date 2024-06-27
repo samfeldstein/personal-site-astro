@@ -9,6 +9,7 @@ import Skiplink from "../components/Skiplink.astro";
 
 // Config
 import { siteConfig } from "../../siteConfig.mjs";
+import Favicon from "../components/Favicon.astro";
 
 // Variables
 const { pageTitle, description, frontmatter } = Astro.props;
@@ -26,10 +27,10 @@ const { pageTitle, description, frontmatter } = Astro.props;
       - SVG optimizer: https://jakearchibald.github.io/svgomg/
       - Favicon checker: https://realfavicongenerator.net/favicon_checker  
     -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <Favicon />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle || frontmatter.title } | {siteConfig.title}</title>
+    <title>{pageTitle || frontmatter.title} | {siteConfig.title}</title>
     <meta name="description" content={description || siteConfig.description} />
     <link
       rel="alternate"
@@ -39,9 +40,9 @@ const { pageTitle, description, frontmatter } = Astro.props;
     />
     <script>
       if (navigator && navigator.serviceWorker) {
-          navigator.serviceWorker.register("/sw.js");
+        navigator.serviceWorker.register("/sw.js");
       }
-  </script>
+    </script>
   </head>
 
   <body>
@@ -50,28 +51,26 @@ const { pageTitle, description, frontmatter } = Astro.props;
     <main id="main-content">
       <slot />
     </main>
-    <hr>
+    <hr />
     <Footer />
-  </body>
+  </body><style>
+    html {
+      @media screen and (min-width: 800px) {
+        /* Base size is set in _reset.scss */
+        font-size: 125%;
+      }
+    }
+
+    body {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 0.5rem;
+      font-family: var(--font-monospace);
+
+      @media (prefers-color-scheme: dark) {
+        background-color: #000000;
+        color: #bebebe;
+      }
+    }
+  </style>
 </html>
-
-<style>
-  html {
-    @media screen and (min-width: 800px) {
-      /* Base size is set in _reset.scss */
-      font-size: 125%;
-    }
-  }
-
-  body {
-    max-width: 40rem;
-    margin: 0 auto;
-    padding: 0.5rem;
-    font-family: var(--font-monospace);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: #000000;
-      color: #bebebe;
-    }
-  }
-</style>
