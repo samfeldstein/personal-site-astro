@@ -23,10 +23,6 @@ body {
   font-weight: 400;
 }
 
-p {
-  line-height: 1.5;
-}
-
 pre,
 code,
 kbd,
@@ -54,12 +50,28 @@ select {
   font: inherit;
 }
 
+:root {
+  --font-monospace: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+  --color-2: #184dc9;
+  --color-3: #adff2f;
+}
+
 a, h2 {
   font-variant: small-caps;
 }
 
+article > p {
+  line-height: 1.25;
+}
+@media screen and (min-width: 800px) {
+  article > p {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
 h1 {
-  text-transform: uppercase;
+  font-size: 2rem;
   margin-bottom: 0;
 }
 
@@ -69,18 +81,15 @@ h2 {
 }
 
 a {
-  font-family: monospace;
-  color: #184dc9;
-  text-decoration-style: double;
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.1em;
+  color: var(--color-2);
+  text-underline-offset: 0.25em;
 }
 a:hover, a:focus {
   text-decoration: none;
 }
 @media (prefers-color-scheme: dark) {
   a {
-    color: #adff2f;
+    color: var(--color-3);
   }
 }
 

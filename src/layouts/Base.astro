@@ -1,15 +1,17 @@
 ---
+// Styles
 import "/src/styles/styles.css";
+
+// Components
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Skiplink from "../components/Skiplink.astro";
 
-const siteDescription =
-  "Sam Feldstein's personal website. Sam is a web developer from Bondurant, IA.";
+// Config
+import { siteConfig } from "../../siteConfig.mjs";
 
-const { pageTitle } = Astro.props;
-const { description } = Astro.props;
-const { frontmatter } = Astro.props;
+// Variables
+const { pageTitle, description, frontmatter } = Astro.props;
 ---
 
 <html lang="en">
@@ -27,8 +29,8 @@ const { frontmatter } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle || frontmatter.title}</title>
-    <meta name="description" content={description || siteDescription} />
+    <title>{pageTitle || frontmatter.title } | {siteConfig.title}</title>
+    <meta name="description" content={description || siteConfig.description} />
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -52,7 +54,7 @@ const { frontmatter } = Astro.props;
   html {
     @media screen and (min-width: 800px) {
       /* Base size is set in _reset.scss */
-      font-size: 150%;
+      font-size: 125%;
     }
   }
 
@@ -60,6 +62,7 @@ const { frontmatter } = Astro.props;
     max-width: 40rem;
     margin: 0 auto;
     padding: 0.5rem;
+    font-family: var(--font-monospace);
 
     @media (prefers-color-scheme: dark) {
       background-color: #000000;

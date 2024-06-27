@@ -5,8 +5,6 @@ pubDate: 2023-12-05T20:23:25-06:00
 tags: ["movies", "romance", "tv", "westerns"]
 ---
 
-## These aren't young soldiers
-
 *Lonesome Dove* is a story about the lust for adventure, a force so powerful it can rip you from the arms of comfort and chuck you into the jaws of death. Daredevils everywhere will relate to Gus and Woodrow. They are men who can't stand to sit still. Nobody makes them leave Lonesome Dove. They leave because they're bored. Thus, their subsequent wounds are self-inflicted. These guys aren't naive. They're not young soldiers harboring idealized notions of war. They know blood, and they know battle, and they know terror and they know anguish. They don't leave Lonesome Dove despite these things; they leave because of them. The danger is the point. Gus and Woodrow risk grief and pain so that when death does inevitably come for them, they can greet it feeling like they've lived.
 
 ## The vanity of grand romance

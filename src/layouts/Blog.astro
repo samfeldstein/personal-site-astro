@@ -6,17 +6,22 @@ import Post from "../components/Post.astro";
 // Collections
 // https://docs.astro.build/en/tutorials/add-content-collections/
 import { getCollection } from "astro:content";
+
+// Config
 import {siteConfig} from "../../siteConfig.mjs";
 
 // Utils
 import { sortPostsByDate } from "../scripts/utils";
 
+// Variables
 const { frontmatter } = Astro.props;
 const posts = await getCollection("blog");
+
+// Calls
 sortPostsByDate(posts);
 ---
 
-<Base pageTitle={`${frontmatter.tabTitle} | ${siteConfig.title}` || frontmatter.title}>
+<Base pageTitle={frontmatter.tabTitle} description = "Sam Feldstein's blog.">
   <header aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
   </header>
@@ -25,7 +30,7 @@ sortPostsByDate(posts);
   <ul>
     {
       posts.map((post) => (
-        <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+        <li><Post url={`/blog/${post.slug}/`} title={post.data.title} /></li>
       ))
     }
   </ul>
@@ -37,6 +42,6 @@ sortPostsByDate(posts);
     padding: unset;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 </style>

@@ -18,14 +18,28 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+const pageTitle = tag;
 ---
 
-<Base pageTitle=`#${tag}`>
+<Base pageTitle={pageTitle}>
+  <header aria-label="Page Header">
+    <h1>#{pageTitle}</h1>
+  </header>
   <ul>
     {
       posts.map((post) => (
-        <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+      <li><Post url={`/blog/${post.slug}/`} title={post.data.title} /></li>
       ))
     }
   </ul>
 </Base>
+
+<style>
+  ul {
+    list-style: none;
+    padding: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+</style>

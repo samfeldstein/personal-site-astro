@@ -5,7 +5,7 @@ import Contents from "../components/Contents.astro";
 const { frontmatter, headings } = Astro.props;
 ---
 
-<Base pageTitle={`${frontmatter.tabTitle} | ${siteConfig.title}` || frontmatter.title} description={frontmatter.description}>
+<Base pageTitle={frontmatter.tabTitle || frontmatter.title} description={frontmatter.description}>
   <header aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
     <p class="updated">

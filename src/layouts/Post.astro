@@ -6,26 +6,37 @@ const { frontmatter } = Astro.props;
 ---
 
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
-  <header aria-label="Post Header">
-    <div class="time"><Date date={frontmatter.pubDate} /></div>
-    <h1>{frontmatter.title}</h1>
-    <p class="description">{frontmatter.description}</p>
-    <Tags tags={frontmatter.tags} />
-  </header>
-  <hr>
-  <slot />
+  <article>
+    <header aria-label="Post Header">
+      <div class="time">
+        <Date date={frontmatter.pubDate} />
+      </div>
+      <h1>{frontmatter.title}</h1>
+      <p class="description">{frontmatter.description}</p>
+      <Tags tags={frontmatter.tags} />
+    </header>
+    <hr />
+    <slot />
+  </article>
+
+  <style>
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    h1,
+    .description {
+      margin: 0;
+    }
+
+    .description {
+      font-style: italic;
+    }
+
+    .time {
+      font-size: 0.7rem;
+    }
+  </style>
 </Base>
-
-<style>
-  h1, .description {
-    margin: 0;
-  }
-
-  .description {
-    font-style: italic;
-  }
-
-  .time {
-    font-size: 0.7rem;
-  }
-</style>
