@@ -39,9 +39,7 @@ const { pageTitle, description, frontmatter } = Astro.props;
       href={new URL("feed.xml", Astro.site)}
     />
     <script>
-      if (navigator && navigator.serviceWorker) {
-        navigator.serviceWorker.register("/sw.js");
-      }
+      import "../scripts/swRegister.js";
     </script>
   </head>
 
@@ -53,24 +51,25 @@ const { pageTitle, description, frontmatter } = Astro.props;
     </main>
     <hr />
     <Footer />
-  </body><style>
-    html {
-      @media screen and (min-width: 800px) {
-        /* Base size is set in _reset.scss */
-        font-size: 125%;
+    <style>
+      html {
+        @media screen and (min-width: 800px) {
+          /* Base size is set in _reset.scss */
+          font-size: 125%;
+        }
       }
-    }
 
-    body {
-      max-width: 40rem;
-      margin: 0 auto;
-      padding: 0.5rem;
-      font-family: var(--font-monospace);
+      body {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: 0.5rem;
+        font-family: var(--font-monospace);
 
-      @media (prefers-color-scheme: dark) {
-        background-color: #000000;
-        color: #bebebe;
+        @media (prefers-color-scheme: dark) {
+          background-color: #000000;
+          color: #bebebe;
+        }
       }
-    }
-  </style>
+    </style>
+  </body>
 </html>
