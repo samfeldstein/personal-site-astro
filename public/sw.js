@@ -104,13 +104,6 @@ self.addEventListener("fetch", (event) => {
   // Exclude files
   // https://stackoverflow.com/questions/45663796/setting-service-worker-to-exclude-certain-urls-only
   if (
-    url.pathname.includes("admin") ||
-    url.pathname.includes("netlify") ||
-    url.pathname.includes("api") ||
-    url.pathname.includes("decap")
-  ) {
-    return false;
-  } else if (
     event.request.mode === "navigate" ||
     (event.request.method === "GET" &&
       event.request.headers.get("accept").includes("text/html"))
