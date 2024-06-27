@@ -7,10 +7,10 @@ const { frontmatter, headings } = Astro.props;
 <Base pageTitle={frontmatter.tabTitle || frontmatter.title} description={frontmatter.description}>
   <header aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
-    <p class="updated">
+    {frontmatter.updated && <p class="updated">
       This page was updated on <span class="time">{frontmatter.updated}</span>.
-    </p>
-    <Contents headings={headings} />
+    </p>}
+    {frontmatter.toc && <Contents headings={headings} />}
   </header>
   <hr />
   <slot />
