@@ -18,12 +18,12 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const pageTitle = tag;
+const pageTitle = `#${tag}`;
 ---
 
 <Base pageTitle={pageTitle}>
   <header aria-label="Page Header">
-    <h1>#{pageTitle}</h1>
+    <h1>{pageTitle}</h1>
   </header>
   <ul>
     {

@@ -2,22 +2,13 @@
 const { tags } = Astro.props;
 ---
 
-<div class="tags" aria-label="Tags">
   {
     tags.map((tag) => (
         <a class="tag" href={`/tags/${tag}`}>#{tag}</a>
     ))
   }
-</div>
 
 <style>
-  .tags {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    font-size: 0.7rem;
-  }
-
   .tag {
     text-decoration: unset;
     font-variant: unset;
