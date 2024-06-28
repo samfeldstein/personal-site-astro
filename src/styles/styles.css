@@ -61,7 +61,7 @@ a, h2 {
 }
 
 article > p {
-  line-height: 1.25;
+  line-height: 1.4;
 }
 @media screen and (min-width: 800px) {
   article > p {
