@@ -5,13 +5,13 @@ pubDate: 2024-02-20T09:07:29-06:00
 tags: ["poetry"]
 ---
 
-Some reproving tongues wag
-sanctimonious
-about tales and canards
-only to return to their parlors
-and bedrooms
-and other shrouded places
-and lap up the scuttlebutt
+Some reproving tongues wag  
+sanctimonious  
+about tales and canards  
+only to return to their parlors  
+and bedrooms  
+and other shrouded places  
+and lap up the scuttlebutt  
 like so much sweet ambrosia.
 
 ## Notes

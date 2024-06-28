@@ -6,10 +6,10 @@ import "/src/styles/styles.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Skiplink from "../components/Skiplink.astro";
+import Favicon from "../components/Favicon.astro";
 
 // Config
 import { siteConfig } from "../../siteConfig.mjs";
-import Favicon from "../components/Favicon.astro";
 
 // Variables
 const { pageTitle, description, frontmatter } = Astro.props;
@@ -38,9 +38,9 @@ const { pageTitle, description, frontmatter } = Astro.props;
       title="Sam Feldstein"
       href={new URL("feed.xml", Astro.site)}
     />
-    <!-- <script>
+    <script>
       import "../scripts/swRegister.js";
-    </script> -->
+    </script>
   </head>
 
   <body>
