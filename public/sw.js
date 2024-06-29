@@ -3,42 +3,44 @@
 // https://gist.github.com/cferdinandi/6e4a73a69b0ee30c158c8dd37d314663
 
 // Variables
-const coreAssets = ["/", "/index.html", "/offline/", "/blog/", "/tags/"];
+let coreAssets = ["/", "/index.html", "/offline/", "/blog/", "/tags/"];
 
 // On install, cache core assets
-self.addEventListener("install", (event) => {
+self.addEventListener("install", function (event) {
   // Cache core assets
   event.waitUntil(
-    caches.open("app").then((cache) => {
-      return cache.addAll(coreAssets);
+    caches.open("app").then(function (cache) {
+      for (let asset of coreAssets) {
+        cache.add(new Request(asset));
+      }
+      return cache;
     })
   );
 });
 
 // Listen for request events
-self.addEventListener("fetch", (event) => {
+self.addEventListener("fetch", function (event) {
   // Get the request
-  const request = event.request;
+  let request = event.request;
 
   // Bug fix
   // https://stackoverflow.com/a/49719964
   if (
     event.request.cache === "only-if-cached" &&
     event.request.mode !== "same-origin"
-  ) {
+  )
     return;
-  }
 
   // HTML files
   // Network-first
   if (request.headers.get("Accept").includes("text/html")) {
     event.respondWith(
       fetch(request)
-        .then((response) => {
+        .then(function (response) {
           // Create a copy of the response and save it to the cache
-          const copy = response.clone();
+          let copy = response.clone();
           event.waitUntil(
-            caches.open("app").then((cache) => {
+            caches.open("app").then(function (cache) {
               return cache.put(request, copy);
             })
           );
@@ -46,9 +48,9 @@ self.addEventListener("fetch", (event) => {
           // Return the response
           return response;
         })
-        .catch((error) => {
+        .catch(function (error) {
           // If there's no item in cache, respond with a fallback
-          return caches.match(request).then(async (response) => {
+          return caches.match(request).then(async function (response) {
             return response || (await caches.match("/offline/"));
           });
         })
@@ -62,8 +64,14 @@ self.addEventListener("fetch", (event) => {
     request.headers.get("Accept").includes("text/javascript")
   ) {
     event.respondWith(
-      caches.match(request).then((response) => {
-        return response || fetch(request);
+      caches.match(request).then(function (response) {
+        return (
+          response ||
+          fetch(request).then(function (response) {
+            // Return the response
+            return response;
+          })
+        );
       })
     );
     return;
@@ -73,14 +81,14 @@ self.addEventListener("fetch", (event) => {
   // Offline-first
   if (request.headers.get("Accept").includes("image")) {
     event.respondWith(
-      caches.match(request).then((response) => {
+      caches.match(request).then(function (response) {
         return (
           response ||
-          fetch(request).then((response) => {
+          fetch(request).then(function (response) {
             // Save a copy of it in cache
-            const copy = response.clone();
+            let copy = response.clone();
             event.waitUntil(
-              caches.open("app").then((cache) => {
+              caches.open("app").then(function (cache) {
                 return cache.put(request, copy);
               })
             );

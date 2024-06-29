@@ -23,7 +23,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# Other
+# VS Code
 .vscode/
-eslint.config.js
-package-lock.json
