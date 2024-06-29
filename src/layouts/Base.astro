@@ -28,7 +28,7 @@ const { pageTitle, description, frontmatter } = Astro.props;
       - Favicon checker: https://realfavicongenerator.net/favicon_checker  
     -->
     <Favicon />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle || frontmatter.title} | {siteConfig.title}</title>
     <meta name="description" content={description || siteConfig.description} />

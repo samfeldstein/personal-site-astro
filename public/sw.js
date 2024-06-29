@@ -3,7 +3,15 @@
 // https://gist.github.com/cferdinandi/6e4a73a69b0ee30c158c8dd37d314663
 
 // Variables
-const coreAssets = ["/", "/index.html", "/offline/", "/blog/", "/tags/", "/favicon.ico", "favicon.svg"];
+const coreAssets = [
+  "/",
+  "/index.html",
+  "/offline/",
+  "/blog/",
+  "/tags/",
+  "/favicon.ico",
+  "favicon.svg",
+];
 
 // On install, cache core assets
 self.addEventListener("install", (event) => {
