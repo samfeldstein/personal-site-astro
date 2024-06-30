@@ -3,6 +3,9 @@ import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import Post from "../../components/Post.astro";
 
+// Utils
+import { sortPostsByDate } from "../../scripts/utils";
+
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
@@ -19,6 +22,8 @@ export async function getStaticPaths() {
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 const pageTitle = `#${tag}`;
+
+sortPostsByDate(posts);
 ---
 
 <Base pageTitle={pageTitle}>
