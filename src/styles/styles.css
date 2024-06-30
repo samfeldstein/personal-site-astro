@@ -60,11 +60,8 @@ a, h2 {
   font-variant: small-caps;
 }
 
-article > p {
-  line-height: 1.4;
-}
 @media screen and (min-width: 800px) {
-  article > p {
+  main p {
     text-align: justify;
     hyphens: auto;
   }
@@ -82,7 +79,7 @@ h2 {
 
 a {
   color: var(--color-2);
-  text-underline-offset: 0.25em;
+  text-underline-offset: 0.2em;
 }
 a:hover, a:focus {
   text-decoration: none;

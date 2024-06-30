@@ -10,9 +10,7 @@
     font-variant: small-caps;
 }
 
-article>p {
-    line-height: 1.4;
-
+main p {
     @media screen and (min-width: 800px) {
         text-align: justify;
         hyphens: auto;
@@ -33,7 +31,7 @@ h2 {
 a {
     @extend %small-caps;
     color: var(--color-2);
-    text-underline-offset: 0.25em;
+    text-underline-offset: 0.2em;
 
     &:hover,
     &:focus {
