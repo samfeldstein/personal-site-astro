@@ -2,6 +2,7 @@
 title: It's Not the Story's Fault You Thought You Were Still on the Ranch
 description: Two short essays and one longish essay inspired by 'Lonesome Dove.'
 pubDate: 2023-12-05T20:23:25-06:00
+location: Alpine, TX
 tags: ["movies", "romance", "tv", "westerns"]
 ---
 

@@ -2,6 +2,7 @@
 title: "Cinderella in Reverse: 'Roman Holiday'"
 description: Instead of putting the glass slipper on, Ann kicks it off.
 pubDate: 2023-01-24T00:46:44-06:00
+location: Marfa, TX
 tags: ["movies", "romance"]
 ---
 Perhaps it’s her eyes, or how her expression always bespeaks the shadow of a smile, even when she’s crying, but we warm to Princess Ann straightaway. Of course it helps that she’s young and Audrey Hepburn, but really it has to do with the way we meet her; in the midst of a lengthy and exhausting royal public relations tour of Europe. By the time she finally finishes shaking the hands of an endless entourage of aristocrats and (one presumes) eligible bachelors, she has us completely. Her humanity is subsequently cemented via her disarming mishap with a shoe.

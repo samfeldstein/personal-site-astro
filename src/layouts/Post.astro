@@ -8,44 +8,49 @@ const { frontmatter } = Astro.props;
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
   <article>
     <header aria-label="Post Header">
-      <div class="time">
-        <Date date={frontmatter.pubDate} />
-      </div>
-      <h1>{frontmatter.title}</h1>
-      <p class="description">{frontmatter.description}</p>
-      <div class="tags" aria-label="Tags">
-        <Tags tags={frontmatter.tags} />
-      </div>
     </header>
-    <hr />
-    <slot />
+    <h1>{frontmatter.title}</h1>
+    <p class="description">{frontmatter.description}</p>
+    <div class="tags" aria-label="Tags">
+      <Tags tags={frontmatter.tags} />
+    </div>
   </article>
-
-  <style>
-    header {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    h1,
-    .description {
-      margin: 0;
-    }
-
-    .description {
-      font-style: italic;
-    }
-
-    .time {
-      font-size: 0.7rem;
-    }
-
-    .tags {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      font-size: 0.7rem;
-    }
-  </style>
+  <hr />
+  <slot />
+  <div class="date-location">
+    <Date date={frontmatter.pubDate} />
+    <div class="location">{frontmatter.location}</div>
+  </div>
 </Base>
+
+<style>
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  h1,
+  .description {
+    margin: 0;
+  }
+
+  .description {
+    font-style: italic;
+  }
+
+  .tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.7rem;
+  }
+
+  .location {
+    font-size: 0.7rem;
+  }
+
+  .date-location {
+    text-align: right;
+  }
+</style>

@@ -2,6 +2,7 @@
 title: Building an Automatic File-Mover with ChatGPT
 description: Nothing special.
 pubDate: 2023-12-16T08:53:53-06:00
+location: Alpine, TX
 tags: ["ai", "programming", "python", "tools"]
 ---
 

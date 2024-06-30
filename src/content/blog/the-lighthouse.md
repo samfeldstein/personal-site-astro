@@ -2,6 +2,7 @@
 title: Absence of Meaning in 'The Lighthouse'
 description: A successful exercise in atmosphere, but it's probably about nothing.
 pubDate: 2022-04-05T00:28:19-06:00
+location: Alpine, TX
 tags: ["horror", "movies"]
 ---
 

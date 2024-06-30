@@ -2,6 +2,7 @@
 title: Old Heavy Voices
 description: Aging artists are in the process of succumbing.
 pubDate: 2024-06-22T10:45:38-05:00
+location: New Orleans, LA
 tags: ["art", "music"]
 ---
 

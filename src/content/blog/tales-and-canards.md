@@ -2,6 +2,7 @@
 title: Tales and Canards
 description: Rumors.
 pubDate: 2024-02-20T09:07:29-06:00
+location: Bondurant, IA
 tags: ["poetry"]
 ---
 

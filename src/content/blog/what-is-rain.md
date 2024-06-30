@@ -2,6 +2,7 @@
 title: What is Rain?
 description: Poetry as a way of thinking.
 pubDate: 2024-03-16T08:54:20-05:00
+location: Bondurant, IA
 tags: ["poetry", "writing"]
 ---
 
