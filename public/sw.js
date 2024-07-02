@@ -10,7 +10,7 @@ const coreAssets = [
   "/blog/",
   "/tags/",
   "/favicon.ico",
-  "favicon.svg",
+  "/favicon.svg",
 ];
 
 // On install, cache core assets
