@@ -1,11 +1,10 @@
 ---
-title: Things Make Sense
+title: Healthy Skepticism
 description: ""
 pubDate: 2024-07-02T07:00:00-00:00
 location: New Orleans, LA
 tags: ["poetry"]
 ---
 
-Things make sense\
-because if they didn't\
-they wouldn't.
+I'll see it\
+when I believe it.

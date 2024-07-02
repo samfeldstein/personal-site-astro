@@ -1,7 +1,7 @@
 ---
 title: Who Writes Your Thoughts?
 description: ""
-pubDate: 2024-07-02
+pubDate: 2024-07-02T07:00:00-00:00
 location: New Orleans, LA
 tags: ["cognitive-science", "poetry"]
 ---
