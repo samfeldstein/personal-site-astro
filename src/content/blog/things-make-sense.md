@@ -7,6 +7,6 @@ location: New Orleans, LA
 tags: ["poetry"]
 ---
 
-Things make sense  
-because if they didn't  
+Things make sense\
+because if they didn't\
 they wouldn't.
