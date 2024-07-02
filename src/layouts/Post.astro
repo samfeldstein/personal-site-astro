@@ -8,19 +8,19 @@ const { frontmatter } = Astro.props;
 <Base pageTitle={frontmatter.title} description={frontmatter.description}>
   <article>
     <header aria-label="Post Header">
+      <h1>{frontmatter.title}</h1>
+      <p class="description">{frontmatter.description}</p>
+      <div class="tags" aria-label="Tags">
+        <Tags tags={frontmatter.tags} />
+      </div>
     </header>
-    <h1>{frontmatter.title}</h1>
-    <p class="description">{frontmatter.description}</p>
-    <div class="tags" aria-label="Tags">
-      <Tags tags={frontmatter.tags} />
+    <hr />
+    <slot />
+    <div class="date-location">
+      <Date date={frontmatter.pubDate} />
+      <div class="location">{frontmatter.location}</div>
     </div>
   </article>
-  <hr />
-  <slot />
-  <div class="date-location">
-    <Date date={frontmatter.pubDate} />
-    <div class="location">{frontmatter.location}</div>
-  </div>
 </Base>
 
 <style>

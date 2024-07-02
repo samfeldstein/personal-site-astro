@@ -60,6 +60,7 @@ I built this website with [Astro](https://astro.build/).
 - [Paul Graham](https://www.paulgraham.com/)
 - Scott Aaronson at [Shtetl-Optimized](https://scottaaronson.blog/)
 - Scott Alexander at [Astral Codex Ten](https://www.astralcodexten.com/)
+- Shaun Usher at [Diaries of Note](https://diariesofnote.com/) and [Letters of Note](https://news.lettersofnote.com/)
 - Seth Simons at [Humorism](https://www.humorism.xyz/)
 - Tim Urban at [Wait But Why](https://waitbutwhy.com/)
 
