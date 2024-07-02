@@ -4,12 +4,20 @@ import Contents from "../components/Contents.astro";
 const { frontmatter, headings } = Astro.props;
 ---
 
-<Base pageTitle={frontmatter.tabTitle || frontmatter.title} description={frontmatter.description}>
+<Base
+  pageTitle={frontmatter.tabTitle || frontmatter.title}
+  description={frontmatter.description}
+>
   <header aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
-    {frontmatter.updated && <p class="updated">
-      This page was updated on <span class="time">{frontmatter.updated}</span>.
-    </p>}
+    {
+      frontmatter.updated && (
+        <p class="updated">
+          This page was updated on
+          <span class="time">{frontmatter.updated}</span>.
+        </p>
+      )
+    }
     {frontmatter.toc && <Contents headings={headings} />}
   </header>
   <hr />

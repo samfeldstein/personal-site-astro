@@ -9,7 +9,11 @@ const { frontmatter } = Astro.props;
   <article>
     <header aria-label="Post Header">
       <h1>{frontmatter.title}</h1>
-      <p class="description">{frontmatter.description}</p>
+      {
+        frontmatter.description && (
+          <p class="description">{frontmatter.description}</p>
+        )
+      }
       <div class="tags" aria-label="Tags">
         <Tags tags={frontmatter.tags} />
       </div>

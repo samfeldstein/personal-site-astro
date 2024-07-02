@@ -1,6 +1,6 @@
 ---
 title: Rational Goodness
-description: Every kindness tips the scales.
+description: ""
 pubDate: 2024-06-29
 location: New Orleans, LA
 tags: ["ethics", "poetry"]
