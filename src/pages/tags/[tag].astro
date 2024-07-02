@@ -21,19 +21,21 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const pageTitle = `#${tag}`;
+const title = `#${tag}`;
 
 sortPostsByDate(posts);
 ---
 
-<Base pageTitle={pageTitle}>
+<Base title={title}>
   <header aria-label="Page Header">
-    <h1>{pageTitle}</h1>
+    <h1>{title}</h1>
   </header>
   <ul>
     {
       posts.map((post) => (
-      <li><Post url={`/blog/${post.slug}/`} title={post.data.title} /></li>
+        <li>
+          <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+        </li>
       ))
     }
   </ul>

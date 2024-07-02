@@ -3,15 +3,13 @@ import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import Tags from "../../components/Tags.astro";
 
-const pageTitle = "tags";
-
 const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
-<Base pageTitle={pageTitle}>
+<Base title="tags">
   <header aria-label="Page Header">
-    <h1>#{pageTitle}</h1>
+    <h1>#Tags</h1>
   </header>
   <hr />
   <div class="tags">
@@ -20,6 +18,10 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 </Base>
 
 <style>
+  h1 {
+    text-transform: lowercase;
+  }
+  
   .tags {
       display: flex;
       gap: 2rem;

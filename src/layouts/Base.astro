@@ -3,74 +3,25 @@
 import "/src/styles/styles.css";
 
 // Components
+import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Skiplink from "../components/Skiplink.astro";
-import Favicon from "../components/Favicon.astro";
-
-// Config
-import { siteConfig } from "../../siteConfig.mjs";
 
 // Variables
-const { pageTitle, description, frontmatter } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Icons
-      - https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
-      - Favicon generator: https://realfavicongenerator.net/
-      - SVG generator: https://formito.com/tools/favicon
-      - Image compressor: https://squoosh.app/
-      - SVG optimizer: https://jakearchibald.github.io/svgomg/
-      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
-    -->
-    <Favicon />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle || frontmatter.title} | {siteConfig.title}</title>
-    <meta name="description" content={description || siteConfig.description} />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Sam Feldstein"
-      href={new URL("feed.xml", Astro.site)}
-    />
-    <script>
-      import "../scripts/swRegister.js";
-    </script>
-  </head>
-
+  <BaseHead title={title} description={description} />
   <body>
     <Skiplink />
     <Header />
     <main id="main-content">
       <slot />
     </main>
-    <hr />
+    <hr>
     <Footer />
-    <style>
-      html {
-        @media screen and (min-width: 800px) {
-          /* Base size is set in _reset.scss */
-          font-size: 125%;
-        }
-      }
-
-      body {
-        max-width: 40rem;
-        margin: 0 auto;
-        padding: 0.5rem;
-        font-family: var(--font-monospace);
-        line-height: 1.5;
-
-        @media (prefers-color-scheme: dark) {
-          background-color: #000000;
-          color: #bebebe;
-        }
-      }
-    </style>
   </body>
 </html>

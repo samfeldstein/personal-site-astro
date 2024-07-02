@@ -18,7 +18,7 @@ const posts = await getCollection("blog");
 sortPostsByDate(posts);
 ---
 
-<Base pageTitle={frontmatter.tabTitle} description = "Sam Feldstein's blog.">
+<Base title="Blog" description="Sam Feldstein's blog.">
   <header aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
   </header>
@@ -27,7 +27,9 @@ sortPostsByDate(posts);
   <ul>
     {
       posts.map((post) => (
-        <li><Post url={`/blog/${post.slug}/`} title={post.data.title} /></li>
+        <li>
+          <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+        </li>
       ))
     }
   </ul>

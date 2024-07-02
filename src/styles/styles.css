@@ -61,6 +61,27 @@ a, h2 {
 }
 
 @media screen and (min-width: 800px) {
+  html {
+    /* Base size is set in _reset.scss */
+    font-size: 125%;
+  }
+}
+
+body {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0.5rem;
+  font-family: var(--font-monospace);
+  line-height: 1.5;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000000;
+    color: #bebebe;
+  }
+}
+
+@media screen and (min-width: 800px) {
   main p {
     text-align: justify;
     hyphens: auto;
