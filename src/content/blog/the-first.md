@@ -1,7 +1,7 @@
 ---
 title: The First
 description: A different theory of strings.
-pubDate: 2024-02-27T08:06:56-06:00
+pubDate: 2024-02-27
 location: Bondurant, IA
 tags: ["fiction", "poetry", "short-stories"]
 ---

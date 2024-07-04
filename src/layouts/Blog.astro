@@ -18,7 +18,7 @@ const posts = await getCollection("blog");
 sortPostsByDate(posts);
 ---
 
-<Base title="Blog" description="Sam Feldstein's blog.">
+<Base title={frontmatter.title} description="Sam Feldstein's blog.">
   <header aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
   </header>

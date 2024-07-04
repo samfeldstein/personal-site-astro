@@ -1,7 +1,7 @@
 ---
 title: "Riddled with Words: 'The Maltese Falcon'"
 description: Every bastard gets what's coming to them.
-pubDate: 2023-01-31T00:37:34-06:00
+pubDate: 2023-01-31
 location: Marfa, TX
 tags: ["movies", "noir"]
 ---

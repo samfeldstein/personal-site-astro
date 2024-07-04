@@ -1,7 +1,7 @@
 ---
 title: "Cinderella in Reverse: 'Roman Holiday'"
 description: Instead of putting the glass slipper on, Ann kicks it off.
-pubDate: 2023-01-24T00:46:44-06:00
+pubDate: 2023-01-24
 location: Marfa, TX
 tags: ["movies", "romance"]
 ---

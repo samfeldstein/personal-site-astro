@@ -1,7 +1,7 @@
 ---
 title: And God Said, "Care, Dammit"
 description: Talmudic wisdom in 'The Exorcist.'
-pubDate: 2023-12-05T10:00:46-06:00
+pubDate: 2023-12-05
 location: Alpine, TX
 tags: ["books", "horror", "judaism"]
 ---

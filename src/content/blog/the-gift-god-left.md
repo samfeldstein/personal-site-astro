@@ -1,7 +1,7 @@
 ---
 title: The Gift God Left
 description: It's up to us.
-pubDate: 2024-03-05T08:25:16-06:00
+pubDate: 2024-03-05
 location: Bondurant, IA
 tags: ["fiction", "judaism", "poetry"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: Get Out of the Water
 description: On worry, intuition, and trying new things.
-pubDate: 2024-02-06T09:12:16-06:00
+pubDate: 2024-02-06
 location: Bondurant, IA
 tags: ["life", "work"]
 ---

@@ -1,7 +1,7 @@
 ---
 title: My Problem With Programming
 description: I like programming, but I don't know yet if it can tell me anything about how the world works.
-pubDate: 2024-06-09T16:32:52-05:00
+pubDate: 2024-06-09
 location: New Orleans, LA
 tags: ["programming"]
 ---

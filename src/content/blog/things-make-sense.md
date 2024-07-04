@@ -1,7 +1,7 @@
 ---
 title: Things Make Sense
 description: ""
-pubDate: 2024-07-02T07:00:00-00:00
+pubDate: 2024-07-02
 location: New Orleans, LA
 tags: ["poetry"]
 ---
