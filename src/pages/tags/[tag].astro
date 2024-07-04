@@ -4,7 +4,7 @@ import Base from "../../layouts/Base.astro";
 import Post from "../../components/Post.astro";
 
 // Utils
-import { sortPostsByDate } from "../../scripts/utils";
+import { sortCollectionByDate } from "../../scripts/utils";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
@@ -23,7 +23,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 const title = `#${tag}`;
 
-sortPostsByDate(posts);
+sortCollectionByDate(posts);
 ---
 
 <Base title={title}>

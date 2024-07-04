@@ -8,14 +8,14 @@ import Post from "../components/Post.astro";
 import { getCollection } from "astro:content";
 
 // Utils
-import { sortPostsByDate } from "../scripts/utils";
+import { sortCollectionByDate } from "../scripts/utils";
 
 // Variables
 const { frontmatter } = Astro.props;
 const posts = await getCollection("blog");
 
 // Calls
-sortPostsByDate(posts);
+sortCollectionByDate(posts);
 ---
 
 <Base title={frontmatter.title} description="Sam Feldstein's blog.">
