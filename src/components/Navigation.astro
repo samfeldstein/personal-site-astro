@@ -1,11 +1,16 @@
+---
+// https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component
+const { class: className, ...rest } = Astro.props;
+---
+
 <a href="/">Sam Feldstein</a>
-<nav>
+<nav class={className} {...rest}>
   <a href="/">/Home</a>
   <a href="/blog/">/Blog</a>
   <a href="/feed.xml">/Feed</a>
 </nav>
 
-<style>
+<style type="scss">
   nav {
     margin-top: 1rem;
     display: flex;
@@ -22,5 +27,9 @@
     &:focus {
       text-decoration: underline;
     }
+  }
+
+  .nav-blog a {
+    color: blue;
   }
 </style>
