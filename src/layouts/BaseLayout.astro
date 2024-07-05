@@ -23,7 +23,12 @@ const { title, description, navClass } = Astro.props;
     <main id="main-content">
       <slot />
     </main>
-    <hr>
+    <hr />
     <Footer />
+    <style>
+      header {
+        margin-bottom: 1rem;
+      }
+    </style>
   </body>
 </html>
