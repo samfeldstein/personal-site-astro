@@ -1,7 +1,13 @@
 ---
+// Styles
+import "/src/styles/styles.css";
+
 // Components
-import Base from "./Base.astro";
+import BaseHead from "../components/BaseHead.astro";
+import Skiplink from "../components/Skiplink.astro";
 import Post from "../components/Post.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 // Collections
 // https://docs.astro.build/en/tutorials/add-content-collections/
@@ -18,29 +24,46 @@ const posts = await getCollection("blog");
 sortCollectionByDate(posts);
 ---
 
-<Base title={frontmatter.title} description="Sam Feldstein's blog.">
-  <header aria-label="Page Header">
-    <h1>{frontmatter.title}</h1>
-  </header>
-  <hr />
-  <slot />
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <Post url={`/blog/${post.slug}/`} title={post.data.title} />
-        </li>
-      ))
+<!doctype html>
+<html lang="en">
+  <BaseHead title={frontmatter.title} description={frontmatter.description} />
+  <body>
+    <Skiplink />
+    <Header />
+    <main id="main-content">
+      <header aria-label="Page Header">
+        <h1>{frontmatter.title}</h1>
+      </header>
+      <hr />
+      <slot />
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+    <hr />
+    <Footer />
+  </body><style>
+    h1 {
+      font-family: "Fenwick Woodtype";
+      font-size: 3rem;
+      font-weight: normal;
+      letter-spacing: 0.05em;
+      text-align: center;
+      text-transform: uppercase;
     }
-  </ul>
-</Base>
 
-<style>
-  ul {
-    list-style: none;
-    padding: unset;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-</style>
+    ul {
+      list-style: none;
+      padding: unset;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+  </style>
+</html>

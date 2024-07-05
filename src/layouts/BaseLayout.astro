@@ -1,0 +1,20 @@
+---
+// Global Styles
+import "/src/styles/styles.css";
+
+// Components
+import BaseHead from "../components/BaseHead.astro";
+import Skiplink from "../components/Skiplink.astro";
+
+// Variables
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead title={title} description={description} />
+  <body>
+    <Skiplink />
+    <slot />
+  </body>
+</html>
