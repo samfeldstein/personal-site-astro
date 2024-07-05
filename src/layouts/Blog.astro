@@ -4,8 +4,6 @@ import "/src/styles/styles.css";
 
 // Components
 import BaseLayout from "./BaseLayout.astro";
-import BlogNav from "../components/blog/BlogNav.astro";
-import Navigation from "../components/Navigation.astro";
 import Post from "../components/Post.astro";
 
 // Collections
@@ -23,11 +21,7 @@ const posts = await getCollection("blog");
 sortCollectionByDate(posts);
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <header>
-    <Navigation class="nav-blog"/>
-  </header>
-  <main id="main-content">
+<BaseLayout title={frontmatter.title} description={frontmatter.description} navClass="nav-blog">
     
     <header aria-label="Page Header">
       <h1>{frontmatter.title}</h1>
@@ -43,7 +37,6 @@ sortCollectionByDate(posts);
         ))
       }
     </ul>
-  </main>
 </BaseLayout>
 
 <style>

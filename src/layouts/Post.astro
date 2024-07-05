@@ -1,15 +1,16 @@
 ---
 // A literary theme that looks like a book might be nice
 
-import Base from "./Base.astro";
+import BaseLayout from "./BaseLayout.astro";
 import Tags from "../components/Tags.astro";
 import Date from "../components/Date.astro";
+
 const { frontmatter } = Astro.props;
 ---
 
-<Base title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <article>
-    <header aria-label="Post Header">
+    <header aria-label="Page Header">
       <h1>{frontmatter.title}</h1>
       {
         frontmatter.description && (
@@ -27,7 +28,7 @@ const { frontmatter } = Astro.props;
       <div class="location">{frontmatter.location}</div>
     </div>
   </article>
-</Base>
+</BaseLayout>
 
 <style>
   header {

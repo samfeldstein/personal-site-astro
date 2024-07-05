@@ -5,9 +5,11 @@ import "/src/styles/styles.css";
 // Components
 import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
 
 // Variables
-const { title, description } = Astro.props;
+const { title, description, navClass } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,6 +17,13 @@ const { title, description } = Astro.props;
   <BaseHead title={title} description={description} />
   <body>
     <Skiplink />
-    <slot />
+    <header>
+      <Navigation class={navClass} />
+    </header>
+    <main id="main-content">
+      <slot />
+    </main>
+    <hr>
+    <Footer />
   </body>
 </html>
