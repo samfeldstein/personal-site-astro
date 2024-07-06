@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import Post from "../../components/Post.astro";
 
 // Styles
 import "/src/styles/default.scss";
@@ -37,7 +36,7 @@ sortCollectionByDate(posts);
     {
       posts.map((post) => (
         <li>
-          <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
         </li>
       ))
     }

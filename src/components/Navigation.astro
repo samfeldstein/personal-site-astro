@@ -1,31 +1,5 @@
----
-// https://docs.astro.build/en/guides/styling/#passing-a-class-to-a-child-component
-const { class: className, ...rest } = Astro.props;
----
-
-<a href="/">Sam Feldstein</a>
-<nav class={className} {...rest}>
+<nav class="menu-main">
   <a href="/">/Home</a>
   <a href="/blog/">/Blog</a>
   <a href="/feed.xml">/Feed</a>
 </nav>
-
-<style type="scss">
-  nav {
-    margin-top: 1rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  a {
-    text-transform: lowercase;
-    font-variant: unset;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-</style>

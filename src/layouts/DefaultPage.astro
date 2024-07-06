@@ -10,7 +10,7 @@ const { frontmatter, headings } = Astro.props;
   title={frontmatter.tabTitle || frontmatter.title}
   description={frontmatter.description}
 >
-    <header aria-label="Page Header">
+    <header class="header-page" aria-label="Page Header">
       <h1>{frontmatter.title}</h1>
       {
         frontmatter.updated && (
@@ -22,7 +22,6 @@ const { frontmatter, headings } = Astro.props;
       }
       {frontmatter.toc && <Contents headings={headings} />}
     </header>
-    <hr />
     <slot />
 </BaseLayout>
 

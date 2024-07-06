@@ -23,7 +23,6 @@ const { frontmatter } = Astro.props;
         <Tags tags={frontmatter.tags} />
       </div>
     </header>
-    <hr />
     <slot />
     <div class="date-location">
       <Date date={frontmatter.pubDate} />

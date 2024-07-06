@@ -30,9 +30,16 @@ body {
     }
 }
 
-header {
-    margin-bottom: 1rem;
-  }
+.header-page {
+    border-bottom: 1px solid;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.7rem;
+    margin-top: 1rem;
+    border-top: 1px solid;
+}
 
 main p {
     @media screen and (min-width: 800px) {
@@ -50,6 +57,24 @@ h2 {
     @extend %small-caps;
     text-align: right;
     border-bottom: 1px solid;
+}
+
+.menu-main {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    a {
+        text-transform: lowercase;
+        font-variant: unset;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
 }
 
 a {
@@ -72,11 +97,15 @@ a {
     font-variant: small-caps;
     font-weight: bold;
     cursor: pointer;
-  }
+}
 
-  .toc-list {
+.toc-list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-  }
+}
+
+time {
+    font-size: 0.7rem;
+}

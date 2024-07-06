@@ -4,7 +4,6 @@ import "/src/styles/blog.scss";
 
 // Components
 import BaseLayout from "./BaseLayout.astro";
-import Post from "../components/Post.astro";
 
 // Collections
 // https://docs.astro.build/en/tutorials/add-content-collections/
@@ -28,13 +27,12 @@ sortCollectionByDate(posts);
   <header aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
   </header>
-  <hr />
   <slot />
   <ul>
     {
       posts.map((post) => (
         <li>
-          <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
         </li>
       ))
     }
