@@ -1,6 +1,6 @@
 ---
 // Styles
-import "/src/styles/styles.css";
+import "/src/styles/blog.scss";
 
 // Components
 import BaseLayout from "./BaseLayout.astro";
@@ -21,25 +21,29 @@ const posts = await getCollection("blog");
 sortCollectionByDate(posts);
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} bodyClass="body-blog" navClass="nav-blog">
-    
-    <header aria-label="Page Header">
-      <h1>{frontmatter.title}</h1>
-    </header>
-    <hr />
-    <slot />
-    <ul>
-      {
-        posts.map((post) => (
-          <li>
-            <Post url={`/blog/${post.slug}/`} title={post.data.title} />
-          </li>
-        ))
-      }
-    </ul>
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  bodyClass="body-blog"
+  navClass="nav-blog"
+>
+  <header aria-label="Page Header">
+    <h1>{frontmatter.title}</h1>
+  </header>
+  <hr />
+  <slot />
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <Post url={`/blog/${post.slug}/`} title={post.data.title} />
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
 
-<style>
+<style type="scss">
   h1 {
     font-family: "Fenwick Woodtype";
     font-size: 3rem;

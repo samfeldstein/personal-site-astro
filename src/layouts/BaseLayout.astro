@@ -1,7 +1,4 @@
 ---
-// Global Styles
-import "/src/styles/styles.css";
-
 // Components
 import BaseHead from "../components/BaseHead.astro";
 import Body from "../components/Body.astro";
@@ -24,7 +21,6 @@ const { title, description, bodyClass, navClass } = Astro.props;
     <main id="main-content">
       <slot />
     </main>
-    <hr />
     <Footer />
   </Body>
 </html>
