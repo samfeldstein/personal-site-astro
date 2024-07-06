@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Home.astro
+layout: ../layouts/DefaultPage.astro
 title: This is my website. There are many like it, but this one is mine.
 tabTitle: Home
 updated: June 25, 2024

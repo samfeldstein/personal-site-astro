@@ -3,6 +3,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Tags from "../../components/Tags.astro";
 
+// Styles
+import "/src/styles/default.scss";
+
 const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
