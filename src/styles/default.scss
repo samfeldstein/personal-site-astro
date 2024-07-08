@@ -10,6 +10,10 @@
     font-variant: small-caps;
 }
 
+%margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+
 html {
     @media screen and (min-width: 800px) {
         font-size: 1.25rem;
@@ -29,7 +33,12 @@ body {
     }
 }
 
+.header-main {
+    @extend %margin-bottom-1;
+}
+
 .header-page {
+    @extend %margin-bottom-1;
     border-bottom: 1px solid;
 }
 
@@ -49,7 +58,7 @@ main p {
 
 h1 {
     font-size: 2rem;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 h2 {

@@ -1,17 +1,23 @@
 ---
-import { getCollection } from "astro:content";
+// Layout
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// Components
 import Tags from "../../components/Tags.astro";
+
+// Collections
+import { getCollection } from "astro:content";
 
 // Styles
 import "/src/styles/default.scss";
 
+// Variables
 const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout title="tags">
-  <header aria-label="Page Header">
+  <header class="header-page" aria-label="Page Header">
     <h1>#tags</h1>
   </header>
   <div class="tags">

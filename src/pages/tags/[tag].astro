@@ -1,13 +1,17 @@
 ---
-import { getCollection } from "astro:content";
+// Layout
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-// Styles
-import "/src/styles/default.scss";
+// Collections
+import { getCollection } from "astro:content";
 
 // Utils
 import { sortCollectionByDate } from "../../scripts/utils";
 
+// Styles
+import "/src/styles/default.scss";
+
+// Functions
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
@@ -21,15 +25,17 @@ export async function getStaticPaths() {
   });
 }
 
+// Variables
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 const title = `#${tag}`;
 
+// Calls
 sortCollectionByDate(posts);
 ---
 
 <BaseLayout title={title}>
-  <header aria-label="Page Header">
+  <header class="header-page" aria-label="Page Header">
     <h1>{title}</h1>
   </header>
   <ul>
@@ -42,13 +48,3 @@ sortCollectionByDate(posts);
     }
   </ul>
 </BaseLayout>
-
-<style>
-  ul {
-    list-style: none;
-    padding: unset;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-</style>

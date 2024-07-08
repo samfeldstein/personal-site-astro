@@ -1,8 +1,6 @@
 ---
-// Styles
-import "/src/styles/default.scss";
-
-// Components
+// Layout
+// Must be imported before stylesheet or base styles will take precedence
 import BaseLayout from "./BaseLayout.astro";
 
 // Collections
@@ -11,6 +9,9 @@ import { getCollection } from "astro:content";
 
 // Utils
 import { sortCollectionByDate } from "../scripts/utils";
+
+// Styles
+import "/src/styles/default.scss";
 
 // Variables
 const { frontmatter } = Astro.props;
@@ -24,7 +25,7 @@ sortCollectionByDate(posts);
   title={frontmatter.title}
   description={frontmatter.description}
 >
-  <header aria-label="Page Header">
+  <header class="header-page" aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
   </header>
   <slot />

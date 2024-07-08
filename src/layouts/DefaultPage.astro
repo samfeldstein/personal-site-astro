@@ -1,6 +1,12 @@
 ---
+// Layout
+// Must be imported before stylesheet or base styles will take precedence
 import BaseLayout from "./BaseLayout.astro";
+
+// Components
 import Contents from "../components/Contents.astro";
+
+// Styles
 import "/src/styles/default.scss";
 
 const { frontmatter, headings } = Astro.props;
@@ -10,19 +16,19 @@ const { frontmatter, headings } = Astro.props;
   title={frontmatter.tabTitle || frontmatter.title}
   description={frontmatter.description}
 >
-    <header class="header-page" aria-label="Page Header">
-      <h1>{frontmatter.title}</h1>
-      {
-        frontmatter.updated && (
-          <p class="updated">
-            This page was updated on
-            <span class="time">{frontmatter.updated}</span>.
-          </p>
-        )
-      }
-      {frontmatter.toc && <Contents headings={headings} />}
-    </header>
-    <slot />
+  <header class="header-page" aria-label="Page Header">
+    <h1>{frontmatter.title}</h1>
+    {
+      frontmatter.updated && (
+        <p class="updated">
+          This page was updated on
+          <span class="time">{frontmatter.updated}</span>.
+        </p>
+      )
+    }
+    {frontmatter.toc && <Contents headings={headings} />}
+  </header>
+  <slot />
 </BaseLayout>
 
 <style>

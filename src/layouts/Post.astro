@@ -1,5 +1,9 @@
 ---
+// Layout
+// Must be imported before stylesheet or base styles will take precedence
 import BaseLayout from "./BaseLayout.astro";
+
+// Components
 import Tags from "../components/Tags.astro";
 import Date from "../components/Date.astro";
 
@@ -12,7 +16,7 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <article>
-    <header aria-label="Page Header">
+    <header class="header-page" aria-label="Page Header">
       <h1>{frontmatter.title}</h1>
       {
         frontmatter.description && (
@@ -38,13 +42,9 @@ const { frontmatter } = Astro.props;
     gap: 0.25rem;
   }
 
-  h1,
-  .description {
-    margin: 0;
-  }
-
   .description {
     font-style: italic;
+    margin: 0;
   }
 
   .tags {

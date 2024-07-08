@@ -1,8 +1,13 @@
 ---
 // Configure individual posts
-import { getCollection } from "astro:content";
+
+// Styles
 import Post from "../../layouts/Post.astro";
 
+// Collections
+import { getCollection } from "astro:content";
+
+// Functions
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((entry) => ({
@@ -11,6 +16,7 @@ export async function getStaticPaths() {
   }));
 }
 
+// Variables
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---

@@ -1,4 +1,5 @@
 ---
+// Styles
 import "/src/styles/reset.scss";
 
 // Components
@@ -16,7 +17,7 @@ const { title, description } = Astro.props;
   <BaseHead title={title} description={description} />
   <body>
     <Skiplink />
-    <header>
+    <header class="header-main">
       <a href="/">Sam Feldstein</a>
       <Navigation />
     </header>
