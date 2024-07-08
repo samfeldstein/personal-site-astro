@@ -1,5 +1,7 @@
 @use "reset";
 
+// Should only include styles apply to *every* page.
+
 // Fonts
 :root {
     --font-monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
@@ -99,19 +101,6 @@ a {
 
     @media (prefers-color-scheme: dark) {
         color: var(--color-3);
-    }
-}
-
-.toc {
-    summary {
-        text-transform: capitalize;
-        font-variant: small-caps;
-        font-weight: bold;
-        cursor: pointer;
-    }
-
-    li {
-        margin: 0.5em 0;
     }
 }
 
