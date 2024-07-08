@@ -10,9 +10,6 @@ import { getCollection } from "astro:content";
 // Utils
 import { sortCollectionByDate } from "../scripts/utils";
 
-// Styles
-import "/src/styles/default.scss";
-
 // Variables
 const { frontmatter } = Astro.props;
 const posts = await getCollection("blog");

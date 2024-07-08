@@ -8,9 +8,6 @@ import { getCollection } from "astro:content";
 // Utils
 import { sortCollectionByDate } from "../../scripts/utils";
 
-// Styles
-import "/src/styles/default.scss";
-
 // Functions
 export async function getStaticPaths() {
   const posts = await getCollection("blog");

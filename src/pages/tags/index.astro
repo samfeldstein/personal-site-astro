@@ -8,9 +8,6 @@ import Tags from "../../components/Tags.astro";
 // Collections
 import { getCollection } from "astro:content";
 
-// Styles
-import "/src/styles/default.scss";
-
 // Variables
 const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];

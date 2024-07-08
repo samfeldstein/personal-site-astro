@@ -1,3 +1,5 @@
+@use "reset";
+
 // Fonts
 :root {
     --font-monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
@@ -33,7 +35,7 @@ body {
     }
 }
 
-.header-main {
+#header-main {
     @extend %margin-bottom-1;
 }
 
@@ -42,9 +44,9 @@ body {
     border-bottom: 1px solid;
 }
 
-footer {
+#footer-main {
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-top: 1rem;
     border-top: 1px solid;
 }

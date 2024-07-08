@@ -1,12 +1,11 @@
 ---
 // Styles
-import "/src/styles/reset.scss";
+import "/src/styles/base.scss";
 
 // Components
 import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Footer.astro";
 
 // Variables
 const { title, description } = Astro.props;
@@ -17,13 +16,16 @@ const { title, description } = Astro.props;
   <BaseHead title={title} description={description} />
   <body>
     <Skiplink />
-    <header class="header-main">
+    <header id="header-main">
       <a href="/">Sam Feldstein</a>
       <Navigation />
     </header>
     <main id="main-content">
       <slot />
     </main>
-    <Footer />
+
+    <footer id="footer-main">
+      <p>Built with <a href="https://astro.build/">Astro</a>.</p>
+    </footer>
   </body>
 </html>
