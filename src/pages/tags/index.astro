@@ -8,6 +8,9 @@ import Tags from "../../components/Tags.astro";
 // Collections
 import { getCollection } from "astro:content";
 
+// Styles
+import "/src/styles/tags-index.scss";
+
 // Variables
 const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
@@ -17,19 +20,5 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
   <header class="header-page" aria-label="Page Header">
     <h1>#tags</h1>
   </header>
-  <div class="tags">
-    <Tags tags={tags} />
-  </div>
+  <Tags tags={tags} />
 </BaseLayout>
-
-<style>
-  h1 {
-    text-transform: lowercase;
-  }
-
-  .tags {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-</style>
