@@ -1,6 +1,6 @@
 ---
 // Styles
-import "/src/styles/blog.scss";
+import "/src/styles/default.scss";
 
 // Components
 import BaseLayout from "./BaseLayout.astro";
@@ -38,22 +38,3 @@ sortCollectionByDate(posts);
     }
   </ul>
 </BaseLayout>
-
-<style type="scss">
-  h1 {
-    font-family: "Fenwick Woodtype";
-    font-size: 3rem;
-    font-weight: normal;
-    letter-spacing: 0.05em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  ul {
-    list-style: none;
-    padding: unset;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-</style>

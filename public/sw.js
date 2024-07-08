@@ -14,22 +14,29 @@ const coreAssets = [
 ];
 
 // On install, cache core assets
-self.addEventListener("install", (event) => {
+self.addEventListener("install", async (event) => {
   // Cache core assets
-  event.waitUntil(
-    caches.open("app").then((cache) => {
-      for (const asset of coreAssets) {
-        cache.add(new Request(asset));
-      }
-      return cache;
-    })
-  );
+  const cache = await caches.open("app");
+  for (const asset of coreAssets) {
+    await cache.add(new Request(asset));
+  }
 });
 
 // Listen for request events
 self.addEventListener("fetch", (event) => {
-  // Get the request
-  const request = event.request;
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // Exclude files
+  // https://stackoverflow.com/questions/45663796/setting-service-worker-to-exclude-certain-urls-only
+  // if (
+  //   url.pathname.includes("admin") ||
+  //   url.pathname.includes("netlify") ||
+  //   url.pathname.includes("api") ||
+  //   url.pathname.includes("decap")
+  // ) {
+  //   return false;
+  // }
 
   // Bug fix
   // https://stackoverflow.com/a/49719964
@@ -40,9 +47,8 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // HTML files
-  // Network-first
   if (
+    // Network-first
     request.headers.get("Accept").includes("text/html") ||
     request.headers.get("Accept").includes("application/xml") ||
     request.headers.get("Accept").includes("text/xml")
@@ -61,38 +67,14 @@ self.addEventListener("fetch", (event) => {
           // Return the response
           return response;
         })
-        .catch((error) => {
+        .catch(async (error) => {
           // If there's no item in cache, respond with a fallback
-          return caches.match(request).then(async (response) => {
-            return response || (await caches.match("/offline/"));
-          });
+          const response = await caches.match(request);
+          return response || (await caches.match("/offline/"));
         })
     );
-  }
-
-  // CSS & JavaScript
-  // Offline-first
-  if (
-    request.headers.get("Accept").includes("text/css") ||
-    request.headers.get("Accept").includes("text/javascript")
-  ) {
-    event.respondWith(
-      caches.match(request).then((response) => {
-        return (
-          response ||
-          fetch(request).then((response) => {
-            // Return the response
-            return response;
-          })
-        );
-      })
-    );
-    return;
-  }
-
-  // Images
-  // Offline-first
-  if (request.headers.get("Accept").includes("image")) {
+  } else {
+    // Get everything else from the cache
     event.respondWith(
       caches.match(request).then((response) => {
         return (

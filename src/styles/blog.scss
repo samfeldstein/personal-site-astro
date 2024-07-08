@@ -1,3 +1,20 @@
 nav {
     color: blue;
 }
+
+h1 {
+    font-family: "Fenwick Woodtype";
+    font-size: 3rem;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+ul {
+    list-style: none;
+    padding: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
