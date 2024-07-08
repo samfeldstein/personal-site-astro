@@ -4,6 +4,7 @@ import "/src/styles/base.scss";
 
 // Components
 import BaseHead from "../components/BaseHead.astro";
+import Skiplink from "../components/Skiplink.astro";
 
 // Variables
 const { title, description } = Astro.props;
@@ -13,7 +14,7 @@ const { title, description } = Astro.props;
 <html lang="en">
   <BaseHead title={title} description={description} />
   <body>
-    <a href="#main-content" id="skiplink">Skip to Content</a>
+    <Skiplink/>
     <header id="header-main">
       <a href="/">Sam Feldstein</a>
       <nav class="menu-main">

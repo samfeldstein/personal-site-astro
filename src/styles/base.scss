@@ -24,25 +24,6 @@ html {
     }
 }
 
-#skiplink {
-    position: absolute;
-    top: -100%;
-    border: 0.1rem solid;
-    padding: 0.25rem 1rem;
-    background-color: white;
-
-    @media (prefers-color-scheme: dark) {
-        background-color: black;
-    }
-
-    &:active,
-    &:focus {
-        top: unset;
-    }
-}
-
-
-
 body {
     max-width: 50rem;
     margin: 0 auto;
