@@ -22,7 +22,7 @@ const { frontmatter, headings } = Astro.props;
       frontmatter.updated && (
         <p class="updated">
           This page was updated on
-          <span class="time">{frontmatter.updated}</span>.
+          <span class="date">{frontmatter.updated}</span>.
         </p>
       )
     }
@@ -30,16 +30,3 @@ const { frontmatter, headings } = Astro.props;
   </header>
   <slot />
 </BaseLayout>
-
-<style>
-  .updated {
-    font-style: italic;
-    margin-top: 0;
-  }
-
-  .time {
-    font-style: normal;
-    font-weight: bold;
-    font-size: inherit;
-  }
-</style>

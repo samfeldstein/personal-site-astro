@@ -1,19 +1,36 @@
+.header-page {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
 .tags {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    font-size: 0.8rem;
-    display: flex;
-    gap: 1em;
-    flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
 
-    a {
-      text-decoration: unset;
-      font-variant: unset;
+  a {
+    text-decoration: unset;
+    font-variant: unset;
 
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
+    &:hover,
+    &:focus {
+      text-decoration: underline;
     }
   }
+}
+
+.description {
+  font-style: italic;
+  margin: 0;
+}
+
+.dateline {
+  font-size: 0.8rem;
+  text-align: right;
+  margin-top: 2rem;
+}
