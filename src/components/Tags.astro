@@ -2,20 +2,14 @@
 const { tags } = Astro.props;
 ---
 
+<ul class="tags" aria-label="Tags">
   {
     tags.map((tag) => (
-        <a class="tag" href={`/tags/${tag}/`}>#{tag}</a>
+      <li>
+        <a class="tag" href={`/tags/${tag}/`}>
+          #{tag}
+        </a>
+      </li>
     ))
   }
-
-<style type="scss">
-  .tag {
-    text-decoration: unset;
-    font-variant: unset;
-
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-</style>
+</ul>

@@ -10,6 +10,7 @@ import Date from "../components/Date.astro";
 // Styles
 // A literary theme that looks like a book might be nice
 import "/src/styles/default.scss";
+import "/src/styles/post.scss";
 
 const { frontmatter } = Astro.props;
 ---
@@ -23,12 +24,10 @@ const { frontmatter } = Astro.props;
           <p class="description">{frontmatter.description}</p>
         )
       }
-      <div class="tags" aria-label="Tags">
-        <Tags tags={frontmatter.tags} />
-      </div>
+      <Tags tags={frontmatter.tags} />
     </header>
     <slot />
-    <div class="date-location">
+    <div class="dateline">
       <Date date={frontmatter.pubDate} />
       <div class="location">{frontmatter.location}</div>
     </div>
@@ -47,18 +46,12 @@ const { frontmatter } = Astro.props;
     margin: 0;
   }
 
-  .tags {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    font-size: 0.8rem;
-  }
-
   .location {
     font-size: 0.7rem;
   }
 
-  .date-location {
+  .dateline {
+    font-size: 0.7rem;
     text-align: right;
   }
 </style>
