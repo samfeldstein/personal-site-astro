@@ -22,8 +22,6 @@ html {
 
 body {
     max-width: 50rem;
-    margin: 0 auto;
-    padding: 0.5rem;
     font-family: var(--font-monospace);
     line-height: 1.5;
 
@@ -34,7 +32,7 @@ body {
 }
 
 #header-main {
-    @extend %margin-bottom-1;
+    margin-bottom: 1rem;
 }
 
 .header-page {

@@ -22,30 +22,36 @@ const posts = await getCollection("blog");
 sortCollectionByDate(posts);
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} underConstruction>
-  <header>
-    <div class="name">Sam Feldstein's</div>
-    <h1>{frontmatter.title}</h1>
-    <div class="tagline">
-      This is my blog. There are many like it, but this one is mine.
-    </div>
-    <div class="container-menu-main">
-      <hr class="first" />
-      <MenuMain />
-      <hr class="second" />
-    </div>
-  </header>
-  <MainContent>
-    <ul class="list-posts">
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </MainContent>
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  underConstruction
+>
+  <div id="container-page">
+    <header>
+      <div class="name">Sam Feldstein's</div>
+      <h1>{frontmatter.title}</h1>
+      <div class="tagline">
+        This is my blog. There are many like it, but this one is mine.
+      </div>
+      <div class="container-menu-main">
+        <hr class="first" />
+        <MenuMain />
+        <hr class="second" />
+      </div>
+    </header>
+    <MainContent>
+      <ul class="list-posts">
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </MainContent>
+  </div>
 </BaseLayout>
 
 <style type="scss">
@@ -94,20 +100,20 @@ sortCollectionByDate(posts);
 
   .name {
     font-family: Copperplate;
-    font-size: calc(.5rem + 2vw);
+    font-size: calc(0.5rem + 2vw);
     font-weight: 100;
+  }
+
+  #container-page {
+    margin: 0 1rem;
   }
 </style>
 
 <style type="scss" is:global>
-  #under-construction {
-    text-align: center;
+  body {
+    margin: 0 auto;
   }
 
-  .construction-icon {
-    width: 1rem;
-  }
-  
   .menu-main {
     display: flex;
     flex-wrap: wrap;
