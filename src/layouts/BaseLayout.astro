@@ -15,13 +15,7 @@ const { title, description } = Astro.props;
   <BaseHead title={title} description={description} />
   <body>
     <Skiplink />
-    <header id="header-main">
-      <slot name="in-main-header"/>
-    </header>
-    <main id="main-content">
-      <slot />
-    </main>
-
+    <slot />
     <footer id="footer-main">
       <p>Built with <a href="https://astro.build/">Astro</a>.</p>
     </footer>

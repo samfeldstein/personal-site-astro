@@ -3,6 +3,11 @@
 // Must be imported before stylesheet or base styles will take precedence
 import BaseLayout from "./BaseLayout.astro";
 
+// Components
+import HeaderMain from "../components/HeaderMain.astro";
+import MenuMain from "../components/MenuMain.astro";
+import MainContent from "../components/MainContent.astro";
+
 // Collections
 // https://docs.astro.build/en/tutorials/add-content-collections/
 import { getCollection } from "astro:content";
@@ -19,22 +24,25 @@ sortCollectionByDate(posts);
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <header class="header-page" aria-label="Page Header">
+  <HeaderMain>
     <div class="name">Sam Feldstein's</div>
     <h1>{frontmatter.title}</h1>
     <div class="tagline">
       This is my blog. There are many like it, but this one is mine.
     </div>
-  </header>
-  <ul class="list-posts">
-    {
-      posts.map((post) => (
-        <li>
-          <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+    <MenuMain />
+  </HeaderMain>
+  <MainContent>
+    <ul class="list-posts">
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </MainContent>
 </BaseLayout>
 
 <style type="scss" is:global>
@@ -55,7 +63,7 @@ sortCollectionByDate(posts);
     gap: 1rem;
   }
 
-  .header-page {
+  #header-main {
     text-align: center;
   }
 

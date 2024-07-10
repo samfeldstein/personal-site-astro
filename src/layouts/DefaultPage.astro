@@ -5,9 +5,11 @@ import BaseLayout from "./BaseLayout.astro";
 
 // Components
 import MenuMain from "../components/MenuMain.astro";
+import SiteLogo from "../components/SiteLogo.astro";
 import Contents from "../components/Contents.astro";
 
 // Styles
+import "/src/styles/default.scss";
 import "/src/styles/default-page.scss";
 
 const { frontmatter, headings } = Astro.props;
@@ -17,8 +19,8 @@ const { frontmatter, headings } = Astro.props;
   title={frontmatter.tabTitle || frontmatter.title}
   description={frontmatter.description}
 >
-  <a href="/" slot="in-main-header">Sam Feldstein</a>
-  <MenuMain slot="in-main-header" />
+  <SiteLogo slot="header-main" />
+  <MenuMain slot="header-main" />
   <header class="header-page" aria-label="Page Header">
     <h1>{frontmatter.title}</h1>
     {
