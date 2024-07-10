@@ -22,6 +22,7 @@ sortCollectionByDate(posts);
   <header class="header-page" aria-label="Page Header">
     <div class="name">Sam Feldstein's</div>
     <h1>{frontmatter.title}</h1>
+    <p class="tagline">This is my blog. There are many like it, but this one is mine.</p>
   </header>
   <slot />
   <ul>
@@ -36,13 +37,9 @@ sortCollectionByDate(posts);
 </BaseLayout>
 
 <style type="scss" is:global>
-  nav {
-    color: blue;
-  }
-
   h1 {
     font-family: "Fenwick Woodtype";
-    font-size: 3rem;
+    font-size: calc(1rem + 10vw);
     font-weight: 400;
     letter-spacing: 0.05em;
     text-align: center;
