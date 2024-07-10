@@ -2,6 +2,14 @@
 // Layout
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
+// Components
+import SiteLogo from "../../components/SiteLogo.astro";
+import MenuMain from "../../components/MenuMain.astro";
+import MainContent from "../../components/MainContent.astro";
+
+// Styles
+import "/src/styles/default.scss";
+
 // Collections
 import { getCollection } from "astro:content";
 
@@ -32,6 +40,11 @@ sortCollectionByDate(posts);
 ---
 
 <BaseLayout title={title}>
+  <header id="header-main">
+    <SiteLogo />
+    <MenuMain />
+  </header>
+  <MainContent>
   <header class="header-page" aria-label="Page Header">
     <h1>{title}</h1>
   </header>
@@ -44,4 +57,5 @@ sortCollectionByDate(posts);
       ))
     }
   </ul>
+</MainContent>
 </BaseLayout>

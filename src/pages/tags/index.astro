@@ -3,13 +3,16 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // Components
+import SiteLogo from "../../components/SiteLogo.astro";
+import MenuMain from "../../components/MenuMain.astro";
+import MainContent from "../../components/MainContent.astro";
 import Tags from "../../components/Tags.astro";
 
 // Collections
 import { getCollection } from "astro:content";
 
 // Styles
-import "/src/styles/tags-index.scss";
+import "/src/styles/default.scss";
 
 // Variables
 const posts = await getCollection("blog");
@@ -17,8 +20,30 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 ---
 
 <BaseLayout title="tags">
-  <header class="header-page" aria-label="Page Header">
-    <h1>#tags</h1>
+  <header id="header-main">
+    <SiteLogo />
+    <MenuMain />
   </header>
-  <Tags tags={tags} />
+  <MainContent>
+    <header class="header-page" aria-label="Page Header">
+      <h1>#tags</h1>
+    </header>
+    <Tags tags={tags} />
+  </MainContent>
 </BaseLayout>
+
+<style is:global type="scss">
+  .tags {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    a {
+      font-variant: unset;
+      text-transform: lowercase;
+    }
+  }
+</style>

@@ -4,7 +4,6 @@
 import BaseLayout from "./BaseLayout.astro";
 
 // Components
-import HeaderMain from "../components/HeaderMain.astro";
 import MenuMain from "../components/MenuMain.astro";
 import MainContent from "../components/MainContent.astro";
 
@@ -24,14 +23,14 @@ sortCollectionByDate(posts);
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <HeaderMain>
+  <header>
     <div class="name">Sam Feldstein's</div>
     <h1>{frontmatter.title}</h1>
     <div class="tagline">
       This is my blog. There are many like it, but this one is mine.
     </div>
     <MenuMain />
-  </HeaderMain>
+  </header>
   <MainContent>
     <ul class="list-posts">
       {
@@ -63,7 +62,7 @@ sortCollectionByDate(posts);
     gap: 1rem;
   }
 
-  #header-main {
+  header {
     text-align: center;
   }
 

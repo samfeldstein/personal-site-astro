@@ -4,31 +4,80 @@
 import BaseLayout from "./BaseLayout.astro";
 
 // Components
+import SiteLogo from "../components/SiteLogo.astro";
+import MenuMain from "../components/MenuMain.astro";
+import MainContent from "../components/MainContent.astro";
 import Tags from "../components/Tags.astro";
 import Date from "../components/Date.astro";
 
 // Styles
-// A literary theme that looks like a book might be nice
-import "/src/styles/post.scss";
+import "/src/styles/default.scss";
 
 const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
-  <article>
-    <header class="header-page" aria-label="Page Header">
-      <h1>{frontmatter.title}</h1>
-      {
-        frontmatter.description && (
-          <p class="description">{frontmatter.description}</p>
-        )
-      }
-      <Tags tags={frontmatter.tags} />
-    </header>
-    <slot />
-    <div class="dateline">
-      <Date date={frontmatter.pubDate} />
-      <div class="location">{frontmatter.location}</div>
-    </div>
-  </article>
+  <header id="header-main">
+    <SiteLogo />
+    <MenuMain />
+  </header>
+
+  <MainContent>
+    <article>
+      <header class="header-page" aria-label="Page Header">
+        <h1>{frontmatter.title}</h1>
+        {
+          frontmatter.description && (
+            <p class="description">{frontmatter.description}</p>
+          )
+        }
+        <Tags tags={frontmatter.tags} />
+      </header>
+      <slot />
+      <div class="dateline">
+        <Date date={frontmatter.pubDate} />
+        <div class="location">{frontmatter.location}</div>
+      </div>
+    </article>
+  </MainContent>
 </BaseLayout>
+
+<!-- A literary or notebook theme might be nice -->
+<style is:global type="scss">
+  .header-page {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .tags {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+
+    a {
+      text-decoration: unset;
+      font-variant: unset;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .description {
+    font-style: italic;
+    margin: 0;
+  }
+
+  .dateline {
+    font-size: 0.8rem;
+    text-align: right;
+    margin-top: 2rem;
+  }
+</style>
