@@ -14,14 +14,9 @@ const { title, description } = Astro.props;
 <html lang="en">
   <BaseHead title={title} description={description} />
   <body>
-    <Skiplink/>
+    <Skiplink />
     <header id="header-main">
-      <a href="/">Sam Feldstein</a>
-      <nav class="menu-main">
-        <a href="/">/Home</a>
-        <a href="/blog/">/Blog</a>
-        <a href="/feed.xml">/Feed</a>
-      </nav>
+      <slot name="in-main-header"/>
     </header>
     <main id="main-content">
       <slot />

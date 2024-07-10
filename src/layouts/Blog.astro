@@ -22,10 +22,11 @@ sortCollectionByDate(posts);
   <header class="header-page" aria-label="Page Header">
     <div class="name">Sam Feldstein's</div>
     <h1>{frontmatter.title}</h1>
-    <p class="tagline">This is my blog. There are many like it, but this one is mine.</p>
+    <div class="tagline">
+      This is my blog. There are many like it, but this one is mine.
+    </div>
   </header>
-  <slot />
-  <ul>
+  <ul class="list-posts">
     {
       posts.map((post) => (
         <li>
@@ -46,11 +47,21 @@ sortCollectionByDate(posts);
     text-transform: uppercase;
   }
 
-  ul {
+  .list-posts {
     list-style: none;
     padding: unset;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  }
+
+  .header-page {
+    text-align: center;
+  }
+
+  .name {
+    font-family: Copperplate;
+    font-size: calc(1rem + 2vw);
+    font-weight: 100;
   }
 </style>
