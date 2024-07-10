@@ -7,7 +7,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
 
 // Variables
-const { title, description } = Astro.props;
+const { title, description, underConstruction } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,6 +15,7 @@ const { title, description } = Astro.props;
   <BaseHead title={title} description={description} />
   <body>
     <Skiplink />
+    {underConstruction && <p id="under-construction">This page is under construction.</p>}
     <slot />
     <footer id="footer-main">
       <p>Built with <a href="https://astro.build/">Astro</a>.</p>

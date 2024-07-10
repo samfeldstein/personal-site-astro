@@ -22,7 +22,7 @@ const posts = await getCollection("blog");
 sortCollectionByDate(posts);
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} underConstruction>
   <header>
     <div class="name">Sam Feldstein's</div>
     <h1>{frontmatter.title}</h1>
