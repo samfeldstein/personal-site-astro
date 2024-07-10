@@ -29,7 +29,11 @@ sortCollectionByDate(posts);
     <div class="tagline">
       This is my blog. There are many like it, but this one is mine.
     </div>
-    <MenuMain />
+    <div class="container-menu-main">
+      <hr class="first" />
+      <MenuMain />
+      <hr class="second" />
+    </div>
   </header>
   <MainContent>
     <ul class="list-posts">
@@ -44,14 +48,40 @@ sortCollectionByDate(posts);
   </MainContent>
 </BaseLayout>
 
-<style type="scss" is:global>
+<style type="scss">
+  header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
   h1 {
+    margin: 0;
     font-family: "Fenwick Woodtype";
     font-size: calc(1rem + 10vw);
     font-weight: 400;
     letter-spacing: 0.05em;
     text-align: center;
     text-transform: uppercase;
+  }
+
+  .container-menu-main {
+    hr {
+      border-left: none;
+      border-right: none;
+    }
+
+    hr.first {
+      border-top: 2px solid;
+      border-bottom: 1px solid;
+      padding: 0.03rem;
+    }
+
+    hr.second {
+      height: 0.15em;
+      background-color: black;
+    }
   }
 
   .list-posts {
@@ -62,13 +92,18 @@ sortCollectionByDate(posts);
     gap: 1rem;
   }
 
-  header {
-    text-align: center;
-  }
-
   .name {
     font-family: Copperplate;
     font-size: calc(1rem + 2vw);
     font-weight: 100;
+  }
+</style>
+
+<style type="scss" is:global>
+  .menu-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
   }
 </style>
