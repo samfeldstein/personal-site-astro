@@ -1,0 +1,61 @@
+@import "../../node_modules/rfs/scss";
+
+.menu-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+#footer-main {
+    margin: 0 1rem;
+    border-top: 1px solid;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+
+h1 {
+    @include font-size(10rem);
+    margin: 0;
+    font-family: "Fenwick Woodtype";
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.container-menu-main {
+    hr {
+        border-left: none;
+        border-right: none;
+    }
+
+    hr.first {
+        border-top: 2px solid;
+        border-bottom: 1px solid;
+        padding: 0.03rem;
+    }
+
+    hr.second {
+        height: 0.15em;
+        background-color: black;
+    }
+}
+
+.list-posts {
+    list-style: none;
+    padding: unset;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.name {
+    font-family: Copperplate;
+    font-weight: 100;
+}

@@ -7,6 +7,9 @@ import BaseLayout from "./BaseLayout.astro";
 import MenuMain from "../components/MenuMain.astro";
 import MainContent from "../components/MainContent.astro";
 
+// Styles
+import "/src/styles/blog.scss";
+
 // Collections
 // https://docs.astro.build/en/tutorials/add-content-collections/
 import { getCollection } from "astro:content";
@@ -27,9 +30,8 @@ sortCollectionByDate(posts);
   description={frontmatter.description}
   underConstruction
 >
-  <div id="container-page">
     <header>
-      <div class="name">Sam Feldstein's</div>
+      <div class="name">Sam Feldstein Presents</div>
       <h1>{frontmatter.title}</h1>
       <div class="tagline">
         This is my blog. There are many like it, but this one is mine.
@@ -51,78 +53,4 @@ sortCollectionByDate(posts);
         }
       </ul>
     </MainContent>
-  </div>
 </BaseLayout>
-
-<style type="scss">
-  header {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  h1 {
-    margin: 0;
-    font-family: "Fenwick Woodtype";
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .container-menu-main {
-    hr {
-      border-left: none;
-      border-right: none;
-    }
-
-    hr.first {
-      border-top: 2px solid;
-      border-bottom: 1px solid;
-      padding: 0.03rem;
-    }
-
-    hr.second {
-      height: 0.15em;
-      background-color: black;
-    }
-  }
-
-  .list-posts {
-    list-style: none;
-    padding: unset;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .name {
-    font-family: Copperplate;
-    font-size: calc(0.5rem + 2vw);
-    font-weight: 100;
-  }
-
-  #container-page {
-    margin: 0 1rem;
-  }
-</style>
-
-<style type="scss" is:global>
-  body {
-    margin: 0 auto;
-  }
-
-  .menu-main {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-  }
-
-  #footer-main {
-    margin: 0 1rem;
-    border-top: 1px solid;
-    text-align: center;
-  }
-</style>

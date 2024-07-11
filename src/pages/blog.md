@@ -1,5 +1,5 @@
 ---
 layout: ../layouts/Blog.astro
-title: Selbstgespräch
+title: The Blog
 description: Sam Feldstein's blog.
 ---
