@@ -1,3 +1,5 @@
+@import "../node_modules/rfs/scss";
+
 // Fonts
 :root {
     --font-monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
@@ -12,12 +14,6 @@
 
 %margin-bottom-1 {
     margin-bottom: 1rem;
-}
-
-html {
-    @media screen and (min-width: 800px) {
-        font-size: 1.25rem;
-    }
 }
 
 body {
@@ -55,7 +51,7 @@ main p {
 }
 
 h1 {
-    font-size: 2rem;
+    @include font-size(3rem);
     margin: 0;
 }
 
