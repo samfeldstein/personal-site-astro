@@ -1,5 +1,5 @@
 ---
 layout: ../layouts/Blog.astro
-title: The Blog
+title: The Blog Page
 description: Sam Feldstein's blog.
 ---
