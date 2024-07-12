@@ -18,6 +18,8 @@
 
 body {
     max-width: 50rem;
+    margin: 0 auto;
+    padding: 1rem;
     font-family: var(--font-monospace);
 
     @media (prefers-color-scheme: dark) {

@@ -1,5 +1,9 @@
 @import "../../node_modules/rfs/scss";
 
+html {
+    background-color: #FCFBF6;
+}
+
 .menu-main {
     display: flex;
     flex-wrap: wrap;
