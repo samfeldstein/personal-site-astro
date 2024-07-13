@@ -17,7 +17,7 @@ html {
     text-align: center;
 }
 
-header {
+.page-header {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -77,6 +77,6 @@ h1 {
     font-style: italic;
 }
 
-.location {
+.date.location {
     font-variant: small-caps;
 }
