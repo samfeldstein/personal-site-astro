@@ -57,7 +57,7 @@ const { Content } = await entry.render();
   <MainContent>
     <div class="latest-entry">
       <h2>Latest Entry</h2>
-      <h3>{posts[0].data.title}</h3>
+      <h3><a href={`/blog/${posts[0].slug}`}>{posts[0].data.title}</a></h3>
       <Content />
     </div>
     <section>
