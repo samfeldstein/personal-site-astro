@@ -24,9 +24,13 @@ import { sortCollectionByDate } from "../scripts/utils";
 // Variables
 const { frontmatter } = Astro.props;
 const posts = await getCollection("blog");
-
-// Calls
 sortCollectionByDate(posts);
+const latestEntrySlug = posts[0].slug;
+
+import { getEntry } from "astro:content";
+// Latest entry title has to be the file name, not the post title
+const entry = await getEntry("blog", latestEntrySlug);
+const { Content, headings } = await entry.render();
 ---
 
 <BaseLayout
@@ -34,30 +38,34 @@ sortCollectionByDate(posts);
   description={frontmatter.description}
   underConstruction
 >
-    <header class="page-header">
-      <div class="container-menu-main">
-        <hr class="first" />
-        <MenuMain />
-        <hr class="second" />
-      </div>
-      <div class="name">Est. 2022</div>
-      <h1>{frontmatter.title}</h1>
-      <div class="date location"><Date date={posts[0].data.pubDate}/> || {siteConfig.location.city}, {siteConfig.location.state}</div>
-      
-      <div class="tagline">
-        This is my blog. There are many like it, but this one is mine.
-      </div>
-      
-    </header>
-    <MainContent>
-      <ul class="list-posts">
-        {
-          posts.map((post) => (
-            <li>
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </MainContent>
+  <header class="page-header">
+    <div class="container-menu-main">
+      <hr class="first" />
+      <MenuMain />
+      <hr class="second" />
+    </div>
+    <div class="name">Est. 2022</div>
+    <h1>{frontmatter.title}</h1>
+    <div class="date location">
+      <Date date={posts[0].data.pubDate} /> || {siteConfig.location.city}, {
+        siteConfig.location.state
+      }
+    </div>
+
+    <div class="tagline">
+      This is my blog. There are many like it, but this one is mine.
+    </div>
+  </header>
+  <MainContent>
+    <ul class="list-posts">
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+    <Content />
+  </MainContent>
 </BaseLayout>
