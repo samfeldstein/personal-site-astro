@@ -46,9 +46,8 @@ const { Content } = await entry.render();
     <div class="name">Est. 2022</div>
     <h1>{frontmatter.title}</h1>
     <div class="date location">
-      <Date date={posts[0].data.pubDate} /> || {siteConfig.location.city}, {
-        siteConfig.location.state
-      }
+      <Date date={posts[0].data.pubDate} />
+      {siteConfig.location.city}, {siteConfig.location.state}
     </div>
     <div class="tagline">
       This is my blog. There are many like it, but this one is mine.
@@ -62,15 +61,15 @@ const { Content } = await entry.render();
     </div>
     <section>
       <h2>Archive</h2>
-    <ul class="list-posts">
-      {
-        posts.map((post) => (
-          <li>
-            <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </section>
+      <ul class="list-posts">
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </MainContent>
 </BaseLayout>
