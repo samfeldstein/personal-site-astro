@@ -11,26 +11,25 @@ import Date from "../components/Date.astro";
 // Styles
 import "/src/styles/blog.scss";
 
-// Collections
+// Utils
 // https://docs.astro.build/en/tutorials/add-content-collections/
 import { getCollection } from "astro:content";
+import { sortCollectionByDate } from "../scripts/utils";
+import { getEntry } from "astro:content";
 
 // Data
 import { siteConfig } from "../../siteConfig.mjs";
 
-// Utils
-import { sortCollectionByDate } from "../scripts/utils";
-
-// Variables
+// Frontmatter
 const { frontmatter } = Astro.props;
+
+// Blog Collection
 const posts = await getCollection("blog");
 sortCollectionByDate(posts);
-const latestEntrySlug = posts[0].slug;
 
-import { getEntry } from "astro:content";
-// Latest entry title has to be the file name, not the post title
-const entry = await getEntry("blog", latestEntrySlug);
-const { Content, headings } = await entry.render();
+// Render lastest post
+const entry = await getEntry("blog", posts[0].slug);
+const { Content } = await entry.render();
 ---
 
 <BaseLayout
@@ -51,12 +50,18 @@ const { Content, headings } = await entry.render();
         siteConfig.location.state
       }
     </div>
-
     <div class="tagline">
       This is my blog. There are many like it, but this one is mine.
     </div>
   </header>
   <MainContent>
+    <div class="latest-entry">
+      <h2>Latest Entry</h2>
+      <h3>{posts[0].data.title}</h3>
+      <Content />
+    </div>
+    <section>
+      <h2>Archive</h2>
     <ul class="list-posts">
       {
         posts.map((post) => (
@@ -66,6 +71,6 @@ const { Content, headings } = await entry.render();
         ))
       }
     </ul>
-    <Content />
+  </section>
   </MainContent>
 </BaseLayout>

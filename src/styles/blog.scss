@@ -24,6 +24,7 @@ html {
     text-align: center;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
+
     border: {
         bottom: {
             width: 0.2em;
@@ -40,6 +41,18 @@ h1 {
     font-weight: 400;
     text-align: center;
     text-transform: uppercase;
+}
+
+h2 {
+    @include font-size(5rem);
+
+    font: {
+        family: "Jacques Francois Shadow";
+        variant: small-caps;
+        weight: lighter;
+    }
+
+    text-align: center;
 }
 
 .container-menu-main {
@@ -79,4 +92,13 @@ h1 {
 
 .date.location {
     font-variant: small-caps;
+}
+
+.latest-entry {
+    border: {
+        bottom: {
+            style: solid;
+            width: 0.1rem;
+        }
+    }
 }
