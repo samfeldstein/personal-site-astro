@@ -42,9 +42,8 @@ sortCollectionByDate(posts);
       </div>
       <div class="name">Est. 2022</div>
       <h1>{frontmatter.title}</h1>
-      <div class="location">{siteConfig.location.city}, {siteConfig.location.state}</div>
-      <!-- Ideally, this would dynamically grab the date of the latest post -->
-      <Date date={posts[0].data.pubDate}/>
+      <div class="date location"><Date date={posts[0].data.pubDate}/> || {siteConfig.location.city}, {siteConfig.location.state}</div>
+      
       <div class="tagline">
         This is my blog. There are many like it, but this one is mine.
       </div>
