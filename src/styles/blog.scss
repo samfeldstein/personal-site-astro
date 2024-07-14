@@ -81,21 +81,26 @@ h2 {
     gap: 1rem;
 }
 
-.name {
-    font-family: Copperplate;
-    font-weight: 100;
-}
-
 .tagline {
     font-style: italic;
 }
 
-.date.location {
-    font-variant: small-caps;
+.container-date-loc-est {
+    font-family: Copperplate;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     gap: 1em;
+
+    time,
+    .location {
+        font-weight: lighter;
+    }
+}
+
+.est {
+    font-size: 1.5rem;
 }
 
 .latest-entry {

@@ -1,4 +1,4 @@
-export const siteConfig = {
+export const site = {
   title: "Sam Feldstein",
   description:
     "Sam Feldstein's personal website. Sam is a writer and web developer from Bondurant, IA.",

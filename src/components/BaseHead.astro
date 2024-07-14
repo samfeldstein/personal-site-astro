@@ -1,6 +1,6 @@
 ---
 import Favicon from "./Favicon.astro";
-import { siteConfig } from "../../siteConfig.mjs";
+import { site } from "../../config.mjs";
 
 const { title, description } = Astro.props;
 ---
@@ -19,8 +19,8 @@ const { title, description } = Astro.props;
   <Favicon />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="generator" content={Astro.generator} />
-  <title>{title} | {siteConfig.title}</title>
-  <meta name="description" content={description || siteConfig.description} />
+  <title>{title} | {site.title}</title>
+  <meta name="description" content={description || site.description} />
   <link
     rel="alternate"
     type="application/rss+xml"

@@ -18,7 +18,7 @@ import { sortCollectionByDate } from "../scripts/utils";
 import { getEntry } from "astro:content";
 
 // Data
-import { siteConfig } from "../../siteConfig.mjs";
+import { site } from "../../config.mjs";
 
 // Frontmatter
 const { frontmatter } = Astro.props;
@@ -38,19 +38,19 @@ const { Content } = await entry.render();
   underConstruction
 >
   <header class="page-header">
+    <div class="container-date-loc-est">
+      <Date date={posts[0].data.pubDate} />
+      <span class="est">Est. 2022</span>
+      <span class="location">{site.location.city}, {site.location.state}</span>
+    </div>
+    <h1>{frontmatter.title}</h1>
+    <div class="tagline">
+      This is my blog. There are many like it, but this one is mine.
+    </div>
     <div class="container-menu-main">
       <hr class="first" />
       <MenuMain />
       <hr class="second" />
-    </div>
-    <div class="name">Est. 2022</div>
-    <h1>{frontmatter.title}</h1>
-    <div class="date location">
-      <Date date={posts[0].data.pubDate} />
-      {siteConfig.location.city}, {siteConfig.location.state}
-    </div>
-    <div class="tagline">
-      This is my blog. There are many like it, but this one is mine.
     </div>
   </header>
   <MainContent>

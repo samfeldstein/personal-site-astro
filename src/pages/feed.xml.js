@@ -1,16 +1,16 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { siteConfig } from "../../siteConfig.mjs";
+import { site } from "../../config.mjs";
 import { sortCollectionByDate } from "../scripts/utils";
 
 export async function GET() {
   const posts = await getCollection("blog");
   sortCollectionByDate(posts);
   return rss({
-    title: `${siteConfig.title}`,
+    title: `${site.title}`,
     description:
-      `${siteConfig.description}`,
-    site: `${siteConfig.url}`,
+      `${site.description}`,
+    site: `${site.url}`,
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,
