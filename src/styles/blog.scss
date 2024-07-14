@@ -35,12 +35,13 @@ html {
 }
 
 h1 {
-    @include font-size(10rem);
+    @include font-size(8rem);
     margin: 0;
     font-family: "Fenwick Woodtype";
     font-weight: 400;
     text-align: center;
     text-transform: uppercase;
+    text-wrap: nowrap;
 }
 
 h2 {
@@ -88,19 +89,19 @@ h2 {
 .container-date-loc-est {
     font-family: Copperplate;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 1em;
+    gap: .75rem;
 
     time,
     .location {
+        font-size: calc(.5rem + .5vw);
         font-weight: lighter;
     }
 }
 
 .est {
-    font-size: 1.5rem;
+    font-size: calc(.75rem + .75vw);
 }
 
 .latest-entry {
