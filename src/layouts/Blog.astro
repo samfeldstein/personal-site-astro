@@ -29,7 +29,7 @@ sortCollectionByDate(posts);
 
 // Render lastest post
 const entry = await getEntry("blog", posts[0].slug);
-const { Content } = await entry.render();
+// const { Content } = await entry.render();
 ---
 
 <BaseLayout
@@ -60,23 +60,11 @@ const { Content } = await entry.render();
   <MainContent>
     <section id="latest">
       <h2>Latest</h2>
-      <a href={`/blog/${posts[0].slug}`}>{posts[0].data.title}</a>
+      <a class="post-title" href={`/blog/${posts[0].slug}`}>{posts[0].data.title}</a>
       <Tags tags={posts[0].data.tags.sort()} />
-      <Content />
+      <!-- Render latest post content -->
+      <!-- <Content /> -->
     </section>
-    <section id="popular">
-      <h2>Popular</h2>
-      <ul>
-        <li>
-          <a href="/blog/mining-and-refining/"
-            >Mining and Refining: The Two Modes of Writing</a
-          >
-        </li>
-        <li><a href="/blog/cinderella-in-reverse">Cinderella in Reverse</a></li>
-        <li><a href="/blog/care-dammit">And God said, "Care, dammit"</a></li>
-      </ul>
-    </section>
-    <!-- Add categories section -->
     <section>
       <h2>Archive</h2>
       <ul class="postlist">

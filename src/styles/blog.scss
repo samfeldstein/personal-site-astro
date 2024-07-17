@@ -18,7 +18,7 @@ h1 {
     margin: 0;
 
     font: {
-        size: calc(1rem + 15vw);
+        size: calc(1rem + 20vw);
         family: "Fenwick Woodtype", 'Palatino Linotype', 'URW Palladio L', P052, serif;
         weight: lighter;
     }
@@ -43,7 +43,6 @@ h2 {
 a {
     font-variant: small-caps;
     text-decoration: none;
-    font-weight: bold;
     color: unset;
 
     &:hover {
@@ -52,7 +51,7 @@ a {
 }
 
 section {
-    margin-top: 3rem;
+    padding: 2rem 0;
 }
 
 .menu-main {
@@ -101,6 +100,7 @@ section {
 
 .tagline {
     font-style: italic;
+    text-wrap: balance;
 }
 
 .container-date-loc-est {
@@ -112,22 +112,40 @@ section {
 
     time,
     .location {
-        font-size: calc(.5rem + .5vw);
+        font-size: calc(.75rem + .5vw);
         font-weight: lighter;
     }
 }
 
 .est {
-    font-size: calc(.75rem + .75vw);
+    font-size: calc(1rem + .75vw);
 }
 
-#latest,
-#popular {
+#latest {
+    text-align: center;
+
     border: {
         bottom: {
             style: solid;
             width: 0.1rem;
         }
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    .post-title {
+        font-size: 1.5rem;
+        padding: 1rem;
+        display: inline-block;
+    }
+
+    .tags {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0.75rem;
     }
 }
 
