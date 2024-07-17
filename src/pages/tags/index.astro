@@ -28,7 +28,7 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
     <header class="header-page" aria-label="Page Header">
       <h1>#tags</h1>
     </header>
-    <Tags tags={tags} />
+    <Tags tags={tags.sort()} />
   </MainContent>
 </BaseLayout>
 
