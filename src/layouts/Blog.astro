@@ -4,7 +4,6 @@
 import BaseLayout from "./BaseLayout.astro";
 
 // Components
-import MenuMain from "../components/MenuMain.astro";
 import MainContent from "../components/MainContent.astro";
 import Date from "../components/Date.astro";
 import Tags from "../components/Tags.astro";
@@ -50,7 +49,12 @@ const { Content } = await entry.render();
     </div>
     <div class="container-menu-main">
       <hr class="first" />
-      <MenuMain />
+      <nav class="menu-main">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="/tags/">Tags</a>
+        <a href="/feed.xml">Feed</a>
+      </nav>
       <hr class="second" />
     </div>
   </header>
@@ -64,7 +68,11 @@ const { Content } = await entry.render();
     <section id="popular">
       <h2>Popular</h2>
       <ul>
-        <li><a href="/blog/mining-and-refining/">Mining and Refining: The Two Modes of Writing</a></li>
+        <li>
+          <a href="/blog/mining-and-refining/"
+            >Mining and Refining: The Two Modes of Writing</a
+          >
+        </li>
         <li><a href="/blog/cinderella-in-reverse">Cinderella in Reverse</a></li>
         <li><a href="/blog/care-dammit">And God said, "Care, dammit"</a></li>
       </ul>
