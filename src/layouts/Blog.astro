@@ -54,14 +54,23 @@ const { Content } = await entry.render();
     </div>
   </header>
   <MainContent>
-    <div class="latest-entry">
-      <h2>Latest Entry</h2>
-      <h3><a href={`/blog/${posts[0].slug}`}>{posts[0].data.title}</a></h3>
+    <section id="latest">
+      <h2>Latest</h2>
+      <a href={`/blog/${posts[0].slug}`}>{posts[0].data.title}</a>
       <Content />
-    </div>
+    </section>
+    <section id="popular">
+      <h2>Popular</h2>
+      <ul>
+        <li><a href="/blog/mining-and-refining/">Mining and Refining: The Two Modes of Writing</a></li>
+        <li><a href="/blog/cinderella-in-reverse">Cinderella in Reverse</a></li>
+        <li><a href="/blog/care-dammit">And God said, "Care, dammit"</a></li>
+      </ul>
+    </section>
+    <!-- Add categories section -->
     <section>
       <h2>Archive</h2>
-      <ul class="list-posts">
+      <ul class="postlist">
         {
           posts.map((post) => (
             <li>
