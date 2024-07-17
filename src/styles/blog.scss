@@ -8,7 +8,8 @@ body {
     padding: 0.5rem;
 
     font: {
-        family: "Iowan Old Style", serif;
+        // https://modernfontstacks.com
+        family: "Iowan Old Style", 'Palatino Linotype', 'URW Palladio L', P052, serif;
         size: calc(1rem + .5vw);
     }
 }
@@ -17,14 +18,13 @@ h1 {
     margin: 0;
 
     font: {
-        size: calc(1rem + 20vw);
-        family: "Fenwick Woodtype";
+        size: calc(1rem + 15vw);
+        family: "Fenwick Woodtype", 'Palatino Linotype', 'URW Palladio L', P052, serif;
         weight: lighter;
     }
 
     text: {
         align: center;
-        transform: uppercase;
     }
 }
 
