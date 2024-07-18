@@ -59,17 +59,18 @@ const entry = await getEntry("blog", posts[0].slug);
       <a class="post-title" href={`/blog/${posts[0].slug}`}
         >{posts[0].data.title}</a
       >
-      <Tags tags={posts[0].data.tags.sort()} />
+      <Tags tags={posts[0].data.tags} />
       <!-- Render latest post content -->
       <!-- <Content /> -->
     </section>
-    <section>
+    <section id="archive">
       <h2>Archive</h2>
       <ul class="postlist">
         {
           posts.map((post) => (
-            <li>
-              <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+            <li class="postlist-item">
+              <a class="post-title" href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              <Tags tags={post.data.tags} />
             </li>
           ))
         }
