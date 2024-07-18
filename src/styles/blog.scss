@@ -25,6 +25,7 @@ h1 {
 
     text: {
         align: center;
+        transform: uppercase;
     }
 }
 
@@ -103,22 +104,14 @@ section {
     text-wrap: balance;
 }
 
-.container-date-loc-est {
-    font-family: Copperplate;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: .75rem;
-
-    time,
-    .location {
-        font-size: calc(.75rem + .5vw);
-        font-weight: lighter;
-    }
-}
-
 .est {
-    font-size: calc(1rem + .75vw);
+    font: {
+        family: Copperplate;
+        size: inherit;
+        weight: 300;
+    }
+
+    color: #666;
 }
 
 #latest {
@@ -145,7 +138,7 @@ section {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 }
 

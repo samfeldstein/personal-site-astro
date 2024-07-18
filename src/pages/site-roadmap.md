@@ -8,3 +8,4 @@ tabTitle: Roadmap
 
 - Add projects page
 - Add notebook
+- Add favicons

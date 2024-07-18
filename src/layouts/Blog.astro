@@ -38,11 +38,7 @@ const entry = await getEntry("blog", posts[0].slug);
   underConstruction
 >
   <header class="page-header">
-    <div class="container-date-loc-est">
-      <Date date={posts[0].data.pubDate} />
-      <span class="est">Est. 2022</span>
-      <span class="location">{site.location.city}, {site.location.state}</span>
-    </div>
+    <div class="est">Est. 2022</div>
     <h1>{frontmatter.title}</h1>
     <div class="tagline">
       This is my blog. There are many like it, but this one is mine.
@@ -60,7 +56,9 @@ const entry = await getEntry("blog", posts[0].slug);
   <MainContent>
     <section id="latest">
       <h2>Latest</h2>
-      <a class="post-title" href={`/blog/${posts[0].slug}`}>{posts[0].data.title}</a>
+      <a class="post-title" href={`/blog/${posts[0].slug}`}
+        >{posts[0].data.title}</a
+      >
       <Tags tags={posts[0].data.tags.sort()} />
       <!-- Render latest post content -->
       <!-- <Content /> -->
