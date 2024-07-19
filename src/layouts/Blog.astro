@@ -46,9 +46,11 @@ const entry = await getEntry("blog", posts[0].slug);
     <div class="container-menu-main">
       <hr class="first" />
       <nav class="menu-main">
-        <a href="/">Home</a>
-        <a href="/tags/">Tags</a>
-        <a href="/feed.xml">Feed</a>
+        <ul class="main-menu-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/tags/">Tags</a></li>
+          <li><a href="/feed.xml">Feed</a></li>
+        </ul>
       </nav>
       <hr class="second" />
     </div>
@@ -69,7 +71,9 @@ const entry = await getEntry("blog", posts[0].slug);
         {
           posts.map((post) => (
             <li class="postlist-item">
-              <a class="post-title" href={`/blog/${post.slug}/`}>{post.data.title}</a>
+              <a class="post-title" href={`/blog/${post.slug}/`}>
+                {post.data.title}
+              </a>
               <Tags tags={post.data.tags} />
             </li>
           ))

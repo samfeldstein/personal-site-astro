@@ -1,3 +1,4 @@
+@use "utilities";
 @import "../node_modules/rfs/scss";
 
 // Fonts
@@ -5,15 +6,6 @@
     --font-monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
     --color-2: #184dc9;
     --color-3: #adff2f;
-}
-
-// Utilities
-%small-caps {
-    font-variant: small-caps;
-}
-
-%margin-bottom-1 {
-    margin-bottom: 1rem;
 }
 
 body {
@@ -67,11 +59,12 @@ h2 {
     border-bottom: 1px solid;
 }
 
-.menu-main {
-    margin-top: 1rem;
-    display: flex;
+.main-menu-links {
+    @extend %flex;
+    @extend %flex-wrap;
+    @extend %list-style-none;
     gap: 1rem;
-    flex-wrap: wrap;
+    padding: 0;
 
     a {
         text-transform: lowercase;

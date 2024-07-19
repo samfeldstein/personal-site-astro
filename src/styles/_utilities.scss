@@ -1,7 +1,19 @@
+%margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+
+%list-style-none {
+    list-style-type: none;
+}
+
 %flex {
     display: flex;
 }
 
 %flex-wrap {
     flex-wrap: wrap;
+}
+
+%small-caps {
+    font-variant: small-caps;
 }

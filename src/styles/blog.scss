@@ -1,7 +1,22 @@
 @use "utilities";
 
+// https://everythingfonts.com/subsetter
+// https://transfonter.org/
+
+@font-face {
+    font-family: 'Fenwick Woodtype';
+    src:
+        local('Quentin Caps'),
+        url('/fonts/FenwickWoodtype.woff2') format('woff2'),
+        url('/fonts/FenwickWoodtype.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     --color-2: #595959;
+    --color-3: #999;
 }
 
 html {
@@ -9,14 +24,12 @@ html {
 }
 
 body {
-    max-width: 80rem;
+    max-width: 50rem;
     margin: 0 auto;
     padding: 0.5rem;
 
-    font: {
-        // https://modernfontstacks.com
-        family: "Iowan Old Style", 'Palatino Linotype', 'URW Palladio L', P052, serif;
-    }
+    // https://modernfontstacks.com
+    font-family: "Iowan Old Style", 'Palatino Linotype', 'URW Palladio L', P052, serif;
 }
 
 h1 {
@@ -58,23 +71,26 @@ a {
     text: {
         decoration: {
             line: underline;
-            style: dotted;
-            thickness: 1px;
-            color: #999;
+            thickness: 0.04em;
+            color: var(--color-3);
         }
 
         underline-offset: 0.2em;
     }
 
     &:hover {
-        text-decoration-style: solid;
+        text-decoration-style: dotted;
         color: var(--color-2);
     }
 }
 
-.tag {
+a.tag {
+    text-decoration-style: dotted;
+    text-decoration-color: inherit;
+
     &:hover {
         color: black;
+        text-decoration-style: solid;
     }
 }
 
@@ -83,11 +99,15 @@ section {
     text-align: center;
 }
 
-.menu-main {
+.main-menu-links {
     @extend %flex;
     @extend %flex-wrap;
+    @extend %list-style-none;
+    padding: 0;
+    margin: 0;
     gap: 1rem;
     justify-content: space-evenly;
+    font-size: 1rem;
 }
 
 .page-header {
@@ -119,11 +139,11 @@ section {
 }
 
 .postlist {
-    list-style: none;
+    @extend %list-style-none;
     padding: unset;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     text-wrap: balance;
 }
 
@@ -148,14 +168,23 @@ section {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--color-2);
     gap: 1em;
     justify-content: center;
 }
 
+.postlist-item {
+    border: {
+        style: solid;
+        width: 0.01rem;
+        color: black;
+    }
+
+    padding: 1rem;
+}
+
 .post-title {
-    padding: 0.5em 0;
     display: inline-block;
 }
 
@@ -175,17 +204,15 @@ section {
 
     .post-title {
         font-size: 1.75rem;
+        padding: 1em 0;
     }
 }
 
 #archive {
 
-    .postlist-item {
-        justify-content: space-between;
-    }
-
     .post-title {
         font-size: 1.25rem;
+        padding: 0.5em 0;
     }
 }
 

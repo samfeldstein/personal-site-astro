@@ -11,6 +11,8 @@ const coreAssets = [
   "/tags/",
   "/favicon.ico",
   "/favicon.svg",
+  "/fonts/FenwickWoodtype.woff",
+  "/fonts/FenwickWoodtype.woff2",
 ];
 
 // On install, cache core assets
