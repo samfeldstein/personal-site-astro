@@ -4,7 +4,7 @@
 import BaseLayout from "./BaseLayout.astro";
 
 // Components
-import MenuMain from "../components/MenuMain.astro";
+import MenuMain from "../components/MainMenu.astro";
 import SiteLogo from "../components/SiteLogo.astro";
 import Contents from "../components/Contents.astro";
 import MainContent from "../components/MainContent.astro";
@@ -19,10 +19,6 @@ const { frontmatter, headings } = Astro.props;
   title={frontmatter.tabTitle || frontmatter.title}
   description={frontmatter.description}
 >
-  <header id="header-main">
-    <SiteLogo />
-    <MenuMain />
-  </header>
   <MainContent>
     <header class="header-page" aria-label="Page Header">
       <h1>{frontmatter.title}</h1>
