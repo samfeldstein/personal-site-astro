@@ -1,15 +1,15 @@
 ---
 // Layout
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
 
 // Components
-import PageHeader from "../../components/PageHeader.astro";
+import PageHeader from "../../../components/PageHeader.astro";
 
 // Collections
 import { getCollection } from "astro:content";
 
 // Utils
-import { sortCollectionByDate } from "../../scripts/utils";
+import { sortCollectionByDate } from "../../../scripts/utils";
 
 // Functions
 export async function getStaticPaths() {
@@ -35,7 +35,7 @@ sortCollectionByDate(posts);
 ---
 
 <BaseLayout title={title}>
-  <PageHeader title={title}/>
+  <PageHeader title={title} />
   <ul>
     {
       posts.map((post) => (

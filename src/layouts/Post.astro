@@ -5,15 +5,16 @@ import BaseLayout from "./BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
 import Date from "../components/Date.astro";
 
-const { frontmatter } = Astro.props;
+const { frontmatter, collection } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <article>
     <PageHeader
       title={frontmatter.title}
-      tags={frontmatter.tags}
       description={frontmatter.description}
+      collection={collection}
+      tags={frontmatter.tags}
     />
     <slot />
     <div class="dateline">

@@ -1,12 +1,12 @@
 ---
-const { tags } = Astro.props;
+const { tags, path } = Astro.props;
 ---
 
-<ul class="tags" aria-label="Tags">
+<ul aria-label="Tags">
   {
     tags.map((tag) => (
       <li>
-        <a class="tag" href={`/tags/${tag}/`}>
+        <a href={`/${path}/tags/${tag}`}>
           #{tag}
         </a>
       </li>
