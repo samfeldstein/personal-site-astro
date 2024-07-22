@@ -1,6 +1,7 @@
 ---
-layout: ../layouts/Blog.astro
+layout: ../layouts/ListPage.astro
 title: Blog
-key: The Blog
 description: Sam Feldstein's blog.
+collection: blog
+sort: date
 ---

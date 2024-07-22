@@ -1,0 +1,26 @@
+---
+// Layout
+// Must be imported before stylesheet or base styles will take precedence
+import BaseLayout from "./BaseLayout.astro";
+
+// Components
+import CollectionList from "../components/CollectionList.astro";
+import Tags from "../components/Tags.astro";
+
+// Utils
+// https://docs.astro.build/en/tutorials/add-content-collections/
+import { getCollection } from "astro:content";
+import { sortCollectionByDate } from "../scripts/utils";
+import { getEntry } from "astro:content";
+
+// Frontmatter
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  underConstruction
+>
+  <CollectionList collectionName={frontmatter.collection} sort={frontmatter.sort}/>
+</BaseLayout>
