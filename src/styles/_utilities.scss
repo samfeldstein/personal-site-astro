@@ -10,10 +10,28 @@
     display: flex;
 }
 
+%flex-column {
+    @extend %flex;
+    flex-direction: column;
+}
+
 %flex-wrap {
     flex-wrap: wrap;
 }
 
+%justify-center {
+    justify-content: center;
+}
+
 %small-caps {
     font-variant: small-caps;
+}
+
+%float-and-center {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }

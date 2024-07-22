@@ -15,21 +15,28 @@
 }
 
 :root {
+    --color-1: #e8e8e8;
     --color-2: #595959;
     --color-3: #999;
 }
 
 html {
-    background-color: #FCFBF6;
+    background-color: var(--color-1);
 }
 
 body {
+    background-color: #f5f5f5;
     max-width: 50rem;
     margin: 0 auto;
     padding: 0.5rem;
 
     // https://modernfontstacks.com
     font-family: "Iowan Old Style", 'Palatino Linotype', 'URW Palladio L', P052, serif;
+
+    @media screen and (min-width: 800px) {
+        margin: 1rem auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
 }
 
 h1 {
@@ -111,8 +118,7 @@ section {
 }
 
 .page-header {
-    display: flex;
-    flex-direction: column;
+    @extend %flex-column;
     gap: 1rem;
     text-align: center;
 }
@@ -152,26 +158,36 @@ section {
     text-wrap: balance;
 }
 
-.est {
-    font: {
-        family: Copperplate;
-        size: inherit;
-        weight: 300;
-    }
-
+.date-banner {
+    @extend %flex;
+    font-family: Copperplate;
+    font-weight: 300;
     color: var(--color-2);
+
+    time,
+    .location {
+        font-size: 0.75rem;
+
+        @media screen and (max-width: 500px) {
+            display: none;
+        }
+    }
+}
+
+.est {
+    margin: 0 auto;
 }
 
 .tags {
+    @extend %list-style-none;
     @extend %flex;
     @extend %flex-wrap;
-    list-style-type: none;
+    @extend %justify-center;
     margin: 0;
     padding: 0;
     font-size: 0.9rem;
     color: var(--color-2);
     gap: 1em;
-    justify-content: center;
 }
 
 .postlist-item {
@@ -217,11 +233,6 @@ section {
 }
 
 #footer-main {
-    border-top: {
-        width: 1px;
-        style: solid;
-    }
-
     text-align: center;
 
     font: {

@@ -38,7 +38,12 @@ const entry = await getEntry("blog", posts[0].slug);
   underConstruction
 >
   <header class="page-header">
-    <div class="est">Est. 2022</div>
+    <div class="date-banner">
+      <Date date={posts[0].data.pubDate} />
+      <span class="est">Est. 2022</span>
+      <span class="location">{posts[0].data.location}</span>
+    </div>
+
     <h1>{frontmatter.title}</h1>
     <div class="tagline">
       This is my blog. There are many like it, but this one is mine.
