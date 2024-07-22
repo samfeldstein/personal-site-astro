@@ -3,12 +3,7 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 // Components
-import SiteLogo from "../../components/SiteLogo.astro";
-import MenuMain from "../../components/MainMenu.astro";
-import MainContent from "../../components/MainContent.astro";
-
-// Styles
-import "/src/styles/default-page.scss";
+import PageHeader from "../../components/PageHeader.astro";
 
 // Collections
 import { getCollection } from "astro:content";
@@ -40,14 +35,7 @@ sortCollectionByDate(posts);
 ---
 
 <BaseLayout title={title}>
-  <header id="header-main">
-    <SiteLogo />
-    <MenuMain />
-  </header>
-  <MainContent>
-  <header class="header-page" aria-label="Page Header">
-    <h1>{title}</h1>
-  </header>
+  <PageHeader title={title}/>
   <ul>
     {
       posts.map((post) => (
@@ -57,5 +45,4 @@ sortCollectionByDate(posts);
       ))
     }
   </ul>
-</MainContent>
 </BaseLayout>

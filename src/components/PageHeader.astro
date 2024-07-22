@@ -15,12 +15,8 @@ const { title, description, updated, toc, headings, tags } = Astro.props;
       </p>
     )
   }
-  {
-    description && (
-      <p class="description">{description}</p>
-    )
-  }
-  {tags && <Tags tags={tags}/>}
+  {description && <p class="description">{description}</p>}
+  {tags && <Tags tags={tags} />}
   {toc && <Contents headings={headings} />}
   <slot />
 </header>
