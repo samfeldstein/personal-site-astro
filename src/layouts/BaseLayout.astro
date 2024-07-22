@@ -1,11 +1,8 @@
 ---
-// Styles
-import "/src/styles/base.scss";
-
 // Components
 import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
-import ConstructionIcon from "../components/ConstructionIcon.astro";
+import ConstructionBanner from "../components/ConstructionBanner.astro";
 
 // Variables
 const { title, description, underConstruction } = Astro.props;
@@ -16,24 +13,10 @@ const { title, description, underConstruction } = Astro.props;
   <BaseHead title={title} description={description} />
   <body>
     <Skiplink />
-    {
-      underConstruction && (
-        <p id="under-construction">
-          <ConstructionIcon /> This page is under construction.
-        </p>
-      )
-    }
+    {underConstruction && <ConstructionBanner />}
     <slot />
     <footer id="footer-main">
       <p>Built with <a href="https://astro.build/">Astro</a>.</p>
     </footer>
-    <style>
-      #under-construction {
-        background-color: yellow;
-        margin-top: 0;
-        padding: 0.5rem;
-        text-align: center;
-      }
-    </style>
   </body>
 </html>
