@@ -1,12 +1,22 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 
+import PageHeader from "../components/PageHeader.astro";
+
 const { frontmatter, headings } = Astro.props;
 ---
 
 <BaseLayout
-  title={frontmatter.key || frontmatter.title}
-  description={frontmatter.description} updated={frontmatter.updated} toc={frontmatter.toc} headings={headings}
+  title={frontmatter.title}
+  key={frontmatter.key}
+  description={frontmatter.description}
+  construction={frontmatter.construction}
 >
-    <slot />
+  <PageHeader
+    title={frontmatter.title}
+    updated={frontmatter.updated}
+    toc={frontmatter.toc}
+    headings={headings}
+  />
+  <slot />
 </BaseLayout>

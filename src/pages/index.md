@@ -4,6 +4,7 @@ title: This is my website. There are many like it, but this one is mine.
 key: Home
 updated: June 25, 2024
 toc: true
+construction: true
 ---
 
 Hi, I’m **Sam Feldstein**. I used to want to be an [author](#published-writing), but lately I'm more interested in web design. I'm fond of [blogs](#blogroll), [movies](https://letterboxd.com/HoogoSteeglitz/), and [photography](https://www.instagram.com/seldstein/).

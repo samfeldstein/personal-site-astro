@@ -4,4 +4,5 @@ title: Blog
 description: Sam Feldstein's blog.
 collection: blog
 sort: date
+construction: true
 ---
