@@ -8,18 +8,24 @@ import PageHeader from "../components/PageHeader.astro";
 import MainFooter from "../components/MainFooter.astro";
 
 // Variables
-const { title, description, updated, toc, headings, underConstruction } = Astro.props;
+const { title, key, description, updated, toc, headings, underConstruction } =
+  Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <BaseHead title={title} description={description} />
+  <BaseHead title={key || title} description={description} />
   <body>
     <Skiplink />
     {underConstruction && <ConstructionBanner />}
     <MainHeader />
     <main>
-      <PageHeader title={title} updated={updated} toc={toc} headings={headings}/>
+      <PageHeader
+        title={title}
+        updated={updated}
+        toc={toc}
+        headings={headings}
+      />
       <slot />
     </main>
     <MainFooter />

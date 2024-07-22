@@ -1,14 +1,14 @@
 ---
 layout: ../layouts/DefaultPage.astro
 title: This is my website. There are many like it, but this one is mine.
-tabTitle: Home
+key: Home
 updated: June 25, 2024
 toc: true
 ---
 
 Hi, I’m **Sam Feldstein**. I used to want to be an [author](#published-writing), but lately I'm more interested in web design. I'm fond of [blogs](#blogroll), [movies](https://letterboxd.com/HoogoSteeglitz/), and [photography](https://www.instagram.com/seldstein/).
 
-I'm available for **hire** as a contract web developer. My skills are probably best suited to small business and personal sites. I most recently built the site for [Prairie Rose Arena](https://prairierosearena.com/).
+I'm **available for hire** as a contract web developer. My skills are probably best suited to small business and personal sites. I most recently built the site for [Prairie Rose Arena](https://prairierosearena.com/).
 
 ## Contact & Social
 

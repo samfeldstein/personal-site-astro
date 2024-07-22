@@ -1,24 +1,16 @@
 ---
 // Layout
 // Must be imported before stylesheet or base styles will take precedence
-import BaseLayout from "./BaseLayout.astro";
+import DefaultPage from "./BaseLayout.astro";
 
 // Components
-import MainContent from "../components/MainContent.astro";
-import Date from "../components/Date.astro";
 import Tags from "../components/Tags.astro";
-
-// Styles
-import "/src/styles/blog.scss";
 
 // Utils
 // https://docs.astro.build/en/tutorials/add-content-collections/
 import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils";
 import { getEntry } from "astro:content";
-
-// Data
-import { site } from "../../config.mjs";
 
 // Frontmatter
 const { frontmatter } = Astro.props;
@@ -32,58 +24,33 @@ const entry = await getEntry("blog", posts[0].slug);
 // const { Content } = await entry.render();
 ---
 
-<BaseLayout
+<DefaultPage
   title={frontmatter.title}
   description={frontmatter.description}
   underConstruction
 >
-  <header class="page-header">
-    <div class="date-banner">
-      <Date date={posts[0].data.pubDate} />
-      <span class="est">Est. 2022</span>
-      <span class="location">{posts[0].data.location}</span>
-    </div>
-
-    <h1>{frontmatter.title}</h1>
-    <div class="tagline">
-      This is my blog. There are many like it, but this one is mine.
-    </div>
-    <div class="container-menu-main">
-      <hr class="first" />
-      <nav class="menu-main">
-        <ul class="main-menu-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/tags/">Tags</a></li>
-          <li><a href="/feed.xml">Feed</a></li>
-        </ul>
-      </nav>
-      <hr class="second" />
-    </div>
-  </header>
-  <MainContent>
-    <section id="latest">
-      <h2>Latest</h2>
-      <a class="post-title" href={`/blog/${posts[0].slug}`}
-        >{posts[0].data.title}</a
-      >
-      <Tags tags={posts[0].data.tags} />
-      <!-- Render latest post content -->
-      <!-- <Content /> -->
-    </section>
-    <section id="archive">
-      <h2>Archive</h2>
-      <ul class="postlist">
-        {
-          posts.map((post) => (
-            <li class="postlist-item">
-              <a class="post-title" href={`/blog/${post.slug}/`}>
-                {post.data.title}
-              </a>
-              <Tags tags={post.data.tags} />
-            </li>
-          ))
-        }
-      </ul>
-    </section>
-  </MainContent>
-</BaseLayout>
+  <section id="latest">
+    <h2>Latest</h2>
+    <a class="post-title" href={`/blog/${posts[0].slug}`}
+      >{posts[0].data.title}</a
+    >
+    <Tags tags={posts[0].data.tags} />
+    <!-- Render latest post content -->
+    <!-- <Content /> -->
+  </section>
+  <section id="archive">
+    <h2>Archive</h2>
+    <ul class="postlist">
+      {
+        posts.map((post) => (
+          <li class="postlist-item">
+            <a class="post-title" href={`/blog/${post.slug}/`}>
+              {post.data.title}
+            </a>
+            <Tags tags={post.data.tags} />
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</DefaultPage>

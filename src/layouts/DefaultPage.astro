@@ -1,29 +1,12 @@
 ---
-// Layout
-// Must be imported before stylesheet or base styles will take precedence
 import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter, headings } = Astro.props;
 ---
 
 <BaseLayout
-  title={frontmatter.tabTitle || frontmatter.title}
+  title={frontmatter.key || frontmatter.title}
   description={frontmatter.description} updated={frontmatter.updated} toc={frontmatter.toc} headings={headings}
 >
     <slot />
 </BaseLayout>
-
-<style is:global type="scss">
-  .updated {
-    font-style: italic;
-    margin: 0;
-  }
-
-  .date {
-    font-style: normal;
-    font-weight: bold;
-    font-size: inherit;
-  }
-
-  
-</style>
