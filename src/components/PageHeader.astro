@@ -1,3 +1,18 @@
-<header aria-label="Page Header">
+---
+import Contents from "./Contents.astro";
 
+const { title, updated, toc, headings } = Astro.props;
+---
+
+<header aria-label="Page Header">
+  <h1>{title}</h1>
+  {
+    updated && (
+      <p class="updated">
+        This page was updated on
+        <span class="date">{updated}</span>.
+      </p>
+    )
+  }
+  {toc && <Contents headings={headings} />}
 </header>

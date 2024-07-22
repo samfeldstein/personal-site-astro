@@ -24,9 +24,18 @@ function buildToc(headings) {
 }
 ---
 
-<details class="toc" aria-label="Table of Contents">
+<details aria-label="Table of Contents">
   <summary>Contents</summary>
-    <ul>
-      {toc.map((heading) => <ContentsHeading heading={heading} />)}
-    </ul>
+  <ul>
+    {toc.map((heading) => <ContentsHeading heading={heading} />)}
+  </ul>
 </details>
+
+<style type="scss">
+  summary {
+    text-transform: capitalize;
+    font-variant: small-caps;
+    font-weight: bold;
+    cursor: pointer;
+  }
+</style>
