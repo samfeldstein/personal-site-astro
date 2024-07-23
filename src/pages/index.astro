@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+import { Image } from "astro:assets";
+import talesToTerrifyCover from "../images/tales-to-terrify-cover.jpeg";
+
+const title =
+  "This is my website. There are many like it, but this one is mine.";
+---
+
+<BaseLayout title="Home" construction>
+  <PageHeader title={title}>
+    <Image
+      src={talesToTerrifyCover}
+      alt="Spooky green letters that read 'Tales to Terrify'"
+    />
+  </PageHeader>
+</BaseLayout>

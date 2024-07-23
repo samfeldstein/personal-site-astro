@@ -1,8 +1,7 @@
 ---
 layout: ../layouts/DefaultPage.astro
-title: This is my website. There are many like it, but this one is mine.
-key: Home
-updated: June 25, 2024
+title: About
+updated: July 22, 2024
 toc: true
 construction: true
 ---
