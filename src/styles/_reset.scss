@@ -23,6 +23,10 @@ body {
   scroll-behavior: smooth;
 }
 
+img {
+  max-width: 100%;
+}
+
 // Correct the inheritance and scaling of font size in all browsers
 pre,
 code,
