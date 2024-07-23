@@ -3,6 +3,15 @@
 
 // Should only include styles that apply to *every* page.
 
+.main-menu-links {
+    @extend %flex-list;
+    @extend %space-around;
+}
+
+#site-header {
+    text-align: center;
+}
+
 #skiplink {
     @extend %visually-hidden;
     border: 0.1rem solid;
