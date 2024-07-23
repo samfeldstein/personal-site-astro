@@ -10,10 +10,11 @@ const title =
 ---
 
 <BaseLayout title="Home" construction>
-  <PageHeader title={title}>
-    <Image
-      src={talesToTerrifyCover}
-      alt="Spooky green letters that read 'Tales to Terrify'"
-    />
-  </PageHeader>
+  <PageHeader title={title} />
+  <Image
+    src={talesToTerrifyCover}
+    alt="Spooky green letters that read 'Tales to Terrify'"
+    widths={[240, 540, 720, talesToTerrifyCover.width]}
+    sizes={`(max-width: 360px) 240px, (max-width: 720px) 540px, (max-width: 1600px) 720px, ${talesToTerrifyCover.width}px`}
+  />
 </BaseLayout>
