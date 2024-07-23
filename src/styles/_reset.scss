@@ -24,8 +24,8 @@ body {
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+  max-width: 100%; // Prevents images from blowing up the layout
+  height: auto; // Locks aspect ratio
 }
 
 // Correct the inheritance and scaling of font size in all browsers
