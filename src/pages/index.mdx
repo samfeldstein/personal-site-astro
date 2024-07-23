@@ -5,12 +5,20 @@ key: Home
 construction: true
 ---
 
+import "/src/styles/home.scss";
+
 import { Picture } from "astro:assets";
 import talesToTerrifyCover from "../images/tales-to-terrify-cover.jpeg";
 
-<Picture
-  src={talesToTerrifyCover}
-  formats={["avif", "webp", "jpg"]}
-  alt="Spooky green letters that read 'Tales to Terrify'"
-  loading="eager"
-/>
+<section>
+  ## Just Published
+  <a href="https://talestoterrify.com/episodes/619-z-j-garcia-samuel-feldstein/">
+    The Man Who Was a Boy Made of Memories
+    <Picture
+      src={talesToTerrifyCover}
+      formats={["avif", "webp", "jpg"]}
+      alt="Spooky green letters that read 'Tales to Terrify'"
+      loading="eager"
+    />
+  </a>
+</section>

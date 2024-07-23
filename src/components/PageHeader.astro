@@ -5,7 +5,7 @@ import Tags from "./Tags.astro";
 const { title, description, updated, toc, headings, collection, tags } = Astro.props;
 ---
 
-<header aria-label="Page Header">
+<header aria-label="Page Header" id="page-header">
   <h1>{title}</h1>
   {
     updated && (

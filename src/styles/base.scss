@@ -1,9 +1,23 @@
 @use "reset";
+@use "utilities";
 
 // Should only include styles that apply to *every* page.
 
-body {
-    font-family: system-ui, serif;
-    max-width: 800px;
-    margin: 0 auto;
+#skiplink {
+    @extend %visually-hidden;
+    border: 0.1rem solid;
+    padding: 0.25rem 1rem;
+    background-color: white;
+    color: black;
+    transition-duration: 0.5s;
+
+    @media (prefers-color-scheme: dark) {
+        background-color: black;
+        color: white;
+    }
+
+    &:focus {
+        left: 0;
+        transition-duration: 0.5s;
+    }
 }

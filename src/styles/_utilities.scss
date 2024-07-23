@@ -1,3 +1,4 @@
+// Layout
 %margin-bottom-1 {
     margin-bottom: 1rem;
 }
@@ -19,15 +20,36 @@
     flex-wrap: wrap;
 }
 
+%flex-list {
+    @extend %flex;
+    @extend %list-style-none;
+    @extend %flex-wrap;
+    padding: 0;
+}
+
 %justify-center {
     justify-content: center;
+}
+
+%space-around {
+    justify-content: space-around;
+}
+
+%visually-hidden {
+    position: absolute;
+    left: -1000%;
+}
+
+// Typography
+%center-text {
+    text-align: center;
 }
 
 %small-caps {
     font-variant: small-caps;
 }
 
-%float-and-center {
+%front-and-center {
     position: fixed;
     top: 0;
     bottom: 0;
