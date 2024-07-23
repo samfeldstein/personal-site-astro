@@ -2,6 +2,7 @@
 layout: ../layouts/DefaultPage.astro
 title: This is my website. There are many like it, but this one is mine.
 key: Home
+construction: true
 ---
 
 import { Picture } from "astro:assets";
@@ -9,7 +10,6 @@ import talesToTerrifyCover from "../images/tales-to-terrify-cover.jpeg";
 
 <Picture
   src={talesToTerrifyCover}
-  formats={["avif", "webp"]}
+  formats={["avif", "webp", "jpg"]}
   alt="Spooky green letters that read 'Tales to Terrify'"
-  densities={[.5, 1.5, 2]}
 />
