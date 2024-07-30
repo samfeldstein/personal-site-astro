@@ -57,6 +57,34 @@
     font-variant: small-caps;
 }
 
+%lowercase {
+    text-transform: lowercase;
+}
+
+%prepend-slash {
+    &::before {
+        content: "/";
+    }
+}
+
+%no-decor {
+    text-decoration: none;
+}
+
+%hover-no-decor {
+    &:hover {
+        @extend %no-decor;
+    }
+}
+
+%underline-hover {
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+// Make an element float on top of everything else
 %front-and-center {
     position: fixed;
     top: 0;

@@ -5,6 +5,12 @@
 
 :root {
     --monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    --text-color: white;
+    --background-color: black;
+    // https://gogh-co.github.io/Gogh/
+    --color-1: #FDED02;
+    --color-2: #01A252;
+    --color-3: #01A0E4;
 }
 
 html {
@@ -13,40 +19,47 @@ html {
 
 body {
     font-family: var(--monospace);
-    // font-size: calc(1rem + 0.2vw);
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
-.main-menu {
-    @extend %flex;
-    @extend %flex-wrap;
+a {
+    @extend %hover-no-decor;
+    color: var(--color-3);
+    text-underline-offset: 0.2em;
+}
+
+.logo {
+    margin: 1em auto;
+
+    a {
+        @extend %no-decor;
+        @extend %underline-hover;
+    }
+}
+
+.links {
+    @extend %flex-list;
     @extend %space-between;
-    @extend %align-center;
-    gap: 1.5rem;
+    @extend %lowercase;
+
+    a {
+        @extend %prepend-slash;
+        @extend %no-decor;
+        @extend %underline-hover;
+    }
 }
 
-.main-menu-links a {
-    border: 1px solid black;
-    text-decoration: none;
-    padding: .25em;
+.path {
+    color: var(--color-1);
 }
 
-.social-links {
-    @extend %flex;
-    gap: 1rem;
+.command {
+    color: var(--color-2);
 }
 
-#site-header {
-    @extend %flex;
-    @extend %space-between;
-    @extend %flex-wrap;
-    @extend %align-center;
-    gap: 1rem;
-}
-
-#site-logo {
-    font-size: 2rem;
-    text-decoration: none;
-    color: black;
+.argument {
+    color: var(--color-3);
 }
 
 #skiplink {
