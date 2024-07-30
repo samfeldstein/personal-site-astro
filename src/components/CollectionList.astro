@@ -4,14 +4,16 @@ import Tags from "./Tags.astro";
 import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils";
 
-const { collectionName, sort } = Astro.props;
+const { collectionName, sort, count } = Astro.props;
 const collection = await getCollection(collectionName);
 ---
 
 {sort === "date" && sortCollectionByDate(collection)}
+
 <ul>
   {
-    collection.map((item) => (
+    // If no count, renders whole collection
+    collection.slice(0, count).map((item) => (
       <li>
         <a href={`/${collectionName}/${item.slug}/`}>{item.data.title}</a>
         <Tags tags={item.data.tags} path={collectionName} />

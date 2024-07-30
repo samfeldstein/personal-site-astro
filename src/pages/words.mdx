@@ -3,11 +3,11 @@ layout: ../layouts/DefaultPage.astro
 title: Words
 ---
 
-import LatestPost from "../components/LatestCollectionItem.astro";
+import RecentPosts from "../components/CollectionList.astro";
 
 ## From the Blog
 
-<LatestPost collectionName="blog" />
+<RecentPosts collectionName="blog" sort="date" count="3" />
 
 ## Published Writing
 
