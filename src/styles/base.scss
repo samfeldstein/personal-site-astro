@@ -7,30 +7,46 @@
     --font-monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
+html {
+    font-size: calc(1rem + 0.4vw);
+}
+
 body {
     font-family: var(--font-monospace);
-    font-size: calc(1.25rem + 0.2vw);
+    // font-size: calc(1rem + 0.2vw);
 }
 
 .main-menu {
     @extend %flex;
+    @extend %flex-wrap;
     @extend %space-between;
+    @extend %align-center;
+    gap: 1.5rem;
 }
 
-.social-links-list {
-    @extend %flex-list;
-    @extend %space-around;
+.main-menu-links a {
+    border: 1px solid black;
+    text-decoration: none;
+    padding: .25em;
+}
+
+.social-links {
+    @extend %flex;
+    gap: 1rem;
 }
 
 #site-header {
-    text-align: center;
+    @extend %flex;
+    @extend %space-between;
+    @extend %flex-wrap;
+    @extend %align-center;
+    gap: 1rem;
 }
 
 #site-logo {
-    font-size: calc(1rem + 4vw);
+    font-size: 2rem;
     text-decoration: none;
     color: black;
-    margin: 1em;
 }
 
 #skiplink {
