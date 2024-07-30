@@ -9,6 +9,7 @@ title: Site Design
 
 ## Inspiration
 
+- [Chris Kirk Nielson](https://chriskirknielsen.com)
 - [Brutal](https://brutal.elian.codes)
 - [Terminal CSS](https://terminalcss.xyz)
 - [Gwern.net](https://gwern.net)

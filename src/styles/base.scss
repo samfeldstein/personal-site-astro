@@ -4,7 +4,7 @@
 // Should only include styles that apply to *every* page.
 
 :root {
-    --font-monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+    --monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
 html {
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    font-family: var(--font-monospace);
+    font-family: var(--monospace);
     // font-size: calc(1rem + 0.2vw);
 }
 

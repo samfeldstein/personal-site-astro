@@ -12,3 +12,4 @@ key: Roadmap
 - Projects page
 - Notebook
 - Photos page
+  - [Image Optimum](https://imageoptim.com/mac)
