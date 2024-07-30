@@ -1,17 +1,15 @@
 ---
 layout: ../layouts/DefaultPage.astro
-title: This is my website. There are many like it, but this one is mine.
+title: This is my website. There are many like it, but this one is mine...
 key: Home
 ---
 
-import "/src/styles/home.scss";
-
-{/* Business card. */}
-
-## Hi, I’m **Sam Feldstein** and I [build websites](/code/).
-
 import RecentPosts from "../components/CollectionList.astro";
 
-## From the Blog
+Hi, I’m **Sam Feldstein**. I used to want to be an [author](#published-writing), but lately I'm more interested in web design. I'm fond of [blogs](#blogroll), [movies](https://letterboxd.com/HoogoSteeglitz/), and [photography](https://www.instagram.com/seldstein/).
+
+I'm **available for hire** as a contract web developer. I most recently built the site for [Prairie Rose Arena](https://prairierosearena.com/).
+
+## Recent Posts
 
 <RecentPosts collectionName="blog" sort="date" count="3" />

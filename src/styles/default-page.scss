@@ -48,11 +48,6 @@ main p {
     }
 }
 
-h1 {
-    @include font-size(3rem);
-    margin: 0;
-}
-
 h2 {
     @extend %small-caps;
     text-align: right;

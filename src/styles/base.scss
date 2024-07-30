@@ -11,6 +11,13 @@
     --color-1: #FDED02;
     --color-2: #01A252;
     --color-3: #01A0E4;
+    --color-4: #B5E4F4;
+    --color-5: #DB2D20;
+}
+
+%path {
+    color: var(--color-1);
+    font-weight: 600;
 }
 
 html {
@@ -21,6 +28,21 @@ body {
     font-family: var(--monospace);
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-size: unset;
+}
+
+h1 {
+    color: var(--color-2);
+}
+
+h2 {
+    color: var(--color-4);
 }
 
 a {
@@ -38,7 +60,7 @@ a {
     }
 }
 
-.links {
+nav ul {
     @extend %flex-list;
     @extend %space-between;
     @extend %lowercase;
@@ -51,7 +73,7 @@ a {
 }
 
 .path {
-    color: var(--color-1);
+    @extend %path;
 }
 
 .command {
@@ -80,3 +102,8 @@ a {
         transition-duration: 0.5s;
     }
 }
+
+#site-header {
+    border-bottom: dashed;
+    margin-bottom: 2rem;
+  }

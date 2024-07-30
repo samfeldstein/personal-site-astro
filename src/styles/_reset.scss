@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-h1,
-h2 {
-  text-wrap: balance;
-}
-
 body {
   min-height: 100vh;
   margin: 0 auto;
@@ -22,6 +17,7 @@ body {
   // Force scrollbar
   overflow-y: auto;
   scroll-behavior: smooth;
+  line-height: 1.5;
 }
 
 img {
