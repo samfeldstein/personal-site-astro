@@ -3,14 +3,3 @@
 #page-header {
     @extend %visually-hidden;
 }
-
-#site-logo {
-    font-family: "Grafik Text";
-    font-size: calc(1rem + 10vw);
-    text-decoration: none;
-    color: black;
-}
-
-p::first-line {
-    font-variant: small-caps;
-}

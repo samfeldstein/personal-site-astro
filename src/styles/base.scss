@@ -3,13 +3,34 @@
 
 // Should only include styles that apply to *every* page.
 
-.main-menu-links {
+:root {
+    --font-monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+}
+
+body {
+    font-family: var(--font-monospace);
+    font-size: calc(1.25rem + 0.2vw);
+}
+
+.main-menu {
+    @extend %flex;
+    @extend %space-between;
+}
+
+.social-links-list {
     @extend %flex-list;
     @extend %space-around;
 }
 
 #site-header {
     text-align: center;
+}
+
+#site-logo {
+    font-size: calc(1rem + 4vw);
+    text-decoration: none;
+    color: black;
+    margin: 1em;
 }
 
 #skiplink {

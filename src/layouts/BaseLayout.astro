@@ -13,7 +13,7 @@ const { title, key, description, construction } = Astro.props;
 <html lang="en">
   <BaseHead title={key || title} description={description} />
   <body>
-    <a href="#main-content" id="skiplink">Skip to Content</a>
+    <a href="#main-content" id="skiplink" aria-label="Skip Link">Skip to Content</a>
     {construction && <ConstructionBanner />}
     <MainHeader />
     <main>
