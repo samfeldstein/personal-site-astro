@@ -21,26 +21,25 @@
 }
 
 %border-bottom-dashed {
-    border-bottom: dashed;
+    border-bottom-style: dashed;
+    border-color: var(--text-color);
+    border-width: 1px;
     margin-bottom: 2rem;
 }
 
 html {
-    font-size: calc(1rem + 0.4vw);
-    background-color: white;
-    width: 100%;
+    background-color: grey;
     height: 100%;
-    overflow: auto;
-    margin: 0;
-    padding: 5rem;
+    padding: 5vmin;
     overflow: hidden;
 }
 
 body {
     font-family: var(--monospace);
+    font-size: calc(1rem + 0.2vw);
     background-color: var(--background-color);
     color: var(--text-color);
-    max-width: 40rem;
+    max-width: 60rem;
     height: 100%;
     overflow: auto;
     scroll-behavior: smooth;
