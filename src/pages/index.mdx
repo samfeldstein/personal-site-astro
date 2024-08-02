@@ -4,6 +4,8 @@ title: This is my website. There are many like it, but this one is mine...
 key: Home
 ---
 
+import "/src/styles/home.scss";
+
 import RecentPosts from "../components/CollectionList.astro";
 
 <section id="intro">
@@ -15,8 +17,12 @@ I'm **available for hire** as a contract web developer. I most recently built th
 
 <section id="recent-posts-section">
 
-## Recent Posts
+## Latest Posts
 
 <RecentPosts collectionName="blog" sort="date" count="3" />
+
+<br />
+
+[See all posts >>>](/blog/)
 
 </section>

@@ -4,9 +4,8 @@
   font-family: "Fira Code", ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
-%border-bottom-dashed {
-  @extend %border-thin;
-  border-bottom-style: dashed;
+%border-bottom-dotted {
+  border-width: 2px;
+  border-bottom-style: dotted;
   border-color: var(--text-color);
-  margin-bottom: 2rem;
 }

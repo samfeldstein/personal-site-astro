@@ -6,7 +6,7 @@
 
 :root {
     // https://gogh-co.github.io/Gogh/
-    --html-color: grey;
+    --html-color: #A5A2A2;
     --body-color: #1C1C1C;
     --text-color: #D6D5D4;
     --color-1: #FDED02;
@@ -41,6 +41,7 @@ body {
     color: var(--text-color);
 
     // Layout
+    @extend %flex-column;
     max-width: 60rem;
     height: 100%;
     overflow: scroll;
@@ -52,11 +53,16 @@ body {
     }
 }
 
+main {
+    flex: 1;
+}
+
 h1,
 h2,
 h3,
 h4 {
     font-size: unset;
+    margin: 2rem 0;
 }
 
 h1 {
@@ -65,7 +71,7 @@ h1 {
 
 h2 {
     @extend %text-right;
-    @extend %border-bottom-dashed;
+    @extend %border-bottom-dotted;
     color: var(--color-2);
 }
 
@@ -86,7 +92,6 @@ a {
 
 nav ul {
     @extend %flex-list;
-    @extend %space-between;
     @extend %lowercase;
 
     a {
@@ -96,8 +101,16 @@ nav ul {
     }
 }
 
-.social a {
-    color: var(--color-6);
+.nav {
+    @extend %space-between;
+}
+
+.social {
+    @extend %space-around;
+
+    a {
+        color: var(--color-6);
+    }
 }
 
 .path {
@@ -114,21 +127,25 @@ nav ul {
 }
 
 .collection-list {
-    @extend %flex-list;
-    @extend %justify-center;
-    gap: 2rem 4rem;
-  }
+    &>li {
+        margin-bottom: 0.5em;
+
+        &::marker {
+            content: "> ";
+        }
+    }
+}
 
 .tags {
     @extend %flex-list;
-    @extend %justify-center;
     gap: 1rem;
 }
 
 .tag {
     @extend %no-decor;
     @extend %underline-hover;
-    color: var(--color-6);
+    color: var(--html-color);
+    font-style: italic;
 }
 
 .date {
@@ -156,12 +173,13 @@ nav ul {
 }
 
 #site-header {
-    @extend %border-bottom-dashed;
+    @extend %border-bottom-dotted;
 }
 
 #site-footer {
-    border-top-style: dashed;
+    @extend %text-center;
+    border-top-style: dotted;
     border-color: var(--text-color);
-    border-width: 1px;
+    border-width: 2px;
     margin-top: 2rem;
 }

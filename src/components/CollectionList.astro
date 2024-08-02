@@ -15,7 +15,7 @@ const collection = await getCollection(collectionName);
     // If no count, renders whole collection
     collection.slice(0, count).map((item) => (
       <li>
-        <a href={`/${collectionName}/${item.slug}/`}>{item.data.title}</a>
+        <a class="post-title" href={`/${collectionName}/${item.slug}/`}>{item.data.title}</a>
         <Tags tags={item.data.tags} path={collectionName} />
       </li>
     ))
