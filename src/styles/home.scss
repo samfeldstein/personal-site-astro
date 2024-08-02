@@ -1,1 +1,5 @@
 @use "utilities";
+
+.collection-list {
+  @extend %flex-list;
+}

@@ -1,49 +1,55 @@
 @use "reset";
 @use "utilities";
+@use "extends";
 
 // Should only include styles that apply to *every* page.
 
 :root {
-    --monospace: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-    --text-color: white;
-    --background-color: black;
     // https://gogh-co.github.io/Gogh/
+    --html-color: grey;
+    --body-color: #1C1C1C;
+    --text-color: #D6D5D4;
     --color-1: #FDED02;
     --color-2: #01A252;
     --color-3: #01A0E4;
-    --color-4: #B5E4F4;
+    --color-4: #A16A94;
     --color-5: #DB2D20;
-}
-
-%path {
-    color: var(--color-1);
-    font-weight: 600;
-}
-
-%border-bottom-dashed {
-    border-bottom-style: dashed;
-    border-color: var(--text-color);
-    border-width: 1px;
-    margin-bottom: 2rem;
+    --color-6: #FF8308;
 }
 
 html {
-    background-color: grey;
+    background-color: var(--html-color);
     height: 100%;
-    padding: 5vmin;
+    // The only thing I understand about these units is that I don't need media queries when I use them
+
     overflow: hidden;
+
+    @media screen and (min-width: 450px) {
+        padding: 5vmin;
+    }
 }
 
 body {
-    font-family: var(--monospace);
+    // Text
+    @extend %monospace;
     font-size: calc(1rem + 0.2vw);
-    background-color: var(--background-color);
+    text-align: justify;
+    hyphens: auto;
+
+    // Colors
+    background-color: var(--body-color);
     color: var(--text-color);
+
+    // Layout
     max-width: 60rem;
     height: 100%;
-    overflow: auto;
-    scroll-behavior: smooth;
-    padding: 15px;
+    overflow: scroll;
+    padding: 0 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 32px 64px rgba(0, 0, 0, 0.1);
+
+    @media screen and (min-width: 450px) {
+        border-radius: 0.25rem;
+    }
 }
 
 h1,
@@ -54,11 +60,13 @@ h4 {
 }
 
 h1 {
-    color: var(--color-2);
+    color: var(--color-1);
 }
 
 h2 {
-    color: var(--color-4);
+    @extend %text-right;
+    @extend %border-bottom-dashed;
+    color: var(--color-2);
 }
 
 a {
@@ -88,12 +96,13 @@ nav ul {
     }
 }
 
-section {
-    @extend %border-bottom-dashed;
+.social a {
+    color: var(--color-6);
 }
 
 .path {
-    @extend %path;
+    color: var(--color-1);
+    font-weight: 600;
 }
 
 .command {
@@ -102,6 +111,24 @@ section {
 
 .argument {
     color: var(--color-3);
+}
+
+.collection-list {
+    @extend %flex-list;
+    @extend %justify-center;
+    gap: 2rem 4rem;
+  }
+
+.tags {
+    @extend %flex-list;
+    @extend %justify-center;
+    gap: 1rem;
+}
+
+.tag {
+    @extend %no-decor;
+    @extend %underline-hover;
+    color: var(--color-6);
 }
 
 .date {
@@ -130,4 +157,11 @@ section {
 
 #site-header {
     @extend %border-bottom-dashed;
+}
+
+#site-footer {
+    border-top-style: dashed;
+    border-color: var(--text-color);
+    border-width: 1px;
+    margin-top: 2rem;
 }

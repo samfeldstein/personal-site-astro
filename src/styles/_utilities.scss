@@ -3,6 +3,10 @@
     margin-bottom: 1rem;
 }
 
+%border-thin {
+    border-width: 1px;
+}
+
 %list-style-none {
     list-style-type: none;
 }
@@ -49,6 +53,10 @@
 }
 
 // Typography
+%text-right {
+    text-align: right;
+}
+
 %center-text {
     text-align: center;
 }
