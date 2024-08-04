@@ -9,7 +9,6 @@ title: Site Design
 
 ## Inspiration
 
-- [CSS CLI](https://stylestage.dev/styles/css-cli/)
 - [Chris Kirk Nielson](https://chriskirknielsen.com)
 - [Brutal](https://brutal.elian.codes)
 - [Terminal CSS](https://terminalcss.xyz)

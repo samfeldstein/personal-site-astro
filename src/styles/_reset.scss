@@ -10,6 +10,7 @@
 
 body {
   margin: 0 auto;
+  padding: 15px;
   font-weight: 400;
   scroll-behavior: smooth;
   line-height: 1.5;
@@ -25,7 +26,7 @@ pre,
 code,
 kbd,
 samp {
-  font-family: monospace;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;;
 }
 
 // Add the correct font weight in Chrome, Edge, and Safari

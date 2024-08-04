@@ -1,185 +1,70 @@
 @use "reset";
 @use "utilities";
-@use "extends";
-
-// Should only include styles that apply to *every* page.
-
-:root {
-    // https://gogh-co.github.io/Gogh/
-    --html-color: #A5A2A2;
-    --body-color: #1C1C1C;
-    --text-color: #D6D5D4;
-    --color-1: #FDED02;
-    --color-2: #01A252;
-    --color-3: #01A0E4;
-    --color-4: #A16A94;
-    --color-5: #DB2D20;
-    --color-6: #FF8308;
-}
-
-html {
-    background-color: var(--html-color);
-    height: 100%;
-    // The only thing I understand about these units is that I don't need media queries when I use them
-
-    overflow: hidden;
-
-    @media screen and (min-width: 450px) {
-        padding: 5vmin;
-    }
-}
 
 body {
-    // Text
-    @extend %monospace;
-    font-size: calc(1rem + 0.2vw);
-    text-align: justify;
-    hyphens: auto;
-
-    // Colors
-    background-color: var(--body-color);
-    color: var(--text-color);
-
-    // Layout
-    @extend %flex-column;
-    max-width: 60rem;
-    height: 100%;
-    overflow: scroll;
-    padding: 0 15px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1), 0 32px 64px rgba(0, 0, 0, 0.1);
-
-    @media screen and (min-width: 450px) {
-        border-radius: 0.25rem;
-    }
+  margin: 0 auto;
+  max-width: 50rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: calc(1rem + 0.3vw);
 }
 
-main {
-    flex: 1;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-size: unset;
-    margin: 2rem 0;
-}
-
-h1 {
-    color: var(--color-1);
+nav {
+  @extend %text-center;
+  border: 1px solid;
 }
 
 h2 {
-    @extend %text-right;
-    @extend %border-bottom-dotted;
-    color: var(--color-2);
+  @extend %text-center;
 }
 
-a {
-    @extend %hover-no-decor;
-    color: var(--color-3);
-    text-underline-offset: 0.2em;
+section {
+  border: 1px solid;
 }
 
 .logo {
-    margin: 1em auto;
-
-    a {
-        @extend %no-decor;
-        @extend %underline-hover;
-    }
+  @extend %no-decor;
+  font-size: calc(2rem + 2vw);
+  color: unset;
+  border: 1px solid;
+  display: block;
 }
 
-nav ul {
+.main-menu {
     @extend %flex-list;
-    @extend %lowercase;
-
-    a {
-        @extend %prepend-slash;
-        @extend %no-decor;
-        @extend %underline-hover;
-    }
-}
-
-.nav {
-    @extend %space-between;
+    @extend %justify-center;
+    gap: 1em;
 }
 
 .social {
-    @extend %space-around;
-
-    a {
-        color: var(--color-6);
-    }
-}
-
-.path {
-    color: var(--color-1);
-    font-weight: 600;
-}
-
-.command {
-    color: var(--color-2);
-}
-
-.argument {
-    color: var(--color-3);
+  @extend %flex-list;
+  @extend %justify-center;
+  gap: 1em;
 }
 
 .collection-list {
-    &>li {
-        margin-bottom: 0.5em;
+  @extend %flex-list;
+  @extend %justify-center;
+  gap: 2rem;
+}
 
-        &::marker {
-            content: "> ";
-        }
-    }
+.post-title {
+  font-size: 1.5rem;
 }
 
 .tags {
-    @extend %flex-list;
-    gap: 1rem;
-}
-
-.tag {
-    @extend %no-decor;
-    @extend %underline-hover;
-    color: var(--html-color);
-    font-style: italic;
-}
-
-.date {
-    color: #DB2D20;
-    font-weight: 600;
-}
-
-#skiplink {
-    @extend %visually-hidden;
-    border: 0.1rem solid;
-    padding: 0.25rem 1rem;
-    background-color: white;
-    color: black;
-    transition-duration: 0.5s;
-
-    @media (prefers-color-scheme: dark) {
-        background-color: black;
-        color: white;
-    }
-
-    &:focus {
-        left: 0;
-        transition-duration: 0.5s;
-    }
+  @extend %flex-list;
+  @extend %justify-center;
+  gap: 1em;
 }
 
 #site-header {
-    @extend %border-bottom-dotted;
+  @extend %text-center;
+}
+
+#latest-posts-section {
+  text-align: center;
 }
 
 #site-footer {
-    @extend %text-center;
-    border-top-style: dotted;
-    border-color: var(--text-color);
-    border-width: 2px;
-    margin-top: 2rem;
+  @extend %text-center;
 }

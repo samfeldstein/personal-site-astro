@@ -1,2 +1,5 @@
 @use "utilities";
 
+h1 {
+  @extend %visually-hidden;
+}
