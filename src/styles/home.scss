@@ -1,4 +1,5 @@
 @use "utilities";
+@use "base"; // Use here so that all extends compile properly
 
 h1 {
   @extend %visually-hidden;

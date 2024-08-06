@@ -38,5 +38,6 @@ section {
 
 #site-footer {
   @extend %text-center;
+  @extend %page-effect;
   padding: 1rem;
 }

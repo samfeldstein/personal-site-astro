@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/DefaultPage.astro
 title: About
+toc: true
 updated: July 30, 2024
 ---
 
