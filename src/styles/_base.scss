@@ -7,14 +7,11 @@ html {
 }
 
 body {
+  @extend %flex-column;
   background-color: var(--body-color);
   max-width: 60rem;
   font-family: system-ui, serif;
   font-size: calc(1rem + 0.3vw);
-}
-
-section {
-  @extend %page-effect;
 }
 
 .logo {

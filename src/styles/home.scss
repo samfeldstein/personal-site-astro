@@ -10,7 +10,9 @@ h2, h3 {
 }
 
 section {
+  @extend %page-effect;
   padding: 1rem;
+  flex: 1;
 }
 
 .cover {
