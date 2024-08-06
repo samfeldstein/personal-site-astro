@@ -3,15 +3,16 @@ layout: ../layouts/DefaultPage.astro
 title: Site Design
 ---
 
-## Wishlist
+The general idea, to be implemented over time, is that I'll have a few different themes for people to cycle through.
 
-- Buttons generate random colors on hover a la [Brutal](https://brutal.elian.codes).
+- Fantasy
+- Wild West
+- Pirate (?)
 
 ## Inspiration
 
 - [Chris Kirk Nielson](https://chriskirknielsen.com)
 - [Brutal](https://brutal.elian.codes)
-- [Terminal CSS](https://terminalcss.xyz)
 - [Gwern.net](https://gwern.net)
 - [The Marginalian](https://www.themarginalian.org)
 - [Style Stage](https://stylestage.dev/styles/manual/)

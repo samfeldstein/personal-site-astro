@@ -1,0 +1,27 @@
+---
+import "/src/styles/base.scss";
+import "/src/styles/home.scss";
+
+// Components
+import BaseHead from "../components/BaseHead.astro";
+import SiteLogo from "../components/SiteLogo.astro";
+import MainMenu from "../components/MainMenu.astro";
+import MainFooter from "../components/SiteFooter.astro";
+
+import { site } from "../../config.mjs";
+---
+
+<!doctype html>
+<html lang="en">
+  <BaseHead title="Home" description={site.description} />
+  <body>
+    <SiteLogo />
+    <h1>Home</h1>
+    <section id="contents">
+      <h2>Contents</h2>
+      <MainMenu />
+    </section>
+
+    <MainFooter />
+  </body>
+</html>

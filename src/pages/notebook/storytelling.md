@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/DefaultPage.astro
 title: Notes on Storytelling
+tags: ["story"]
 ---
 
 ## Process

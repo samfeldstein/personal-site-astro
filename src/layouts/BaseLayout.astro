@@ -13,7 +13,6 @@ const { title, key, description, construction } = Astro.props;
 <html lang="en">
   <BaseHead title={key || title} description={description} />
   <body>
-    <a id="skiplink" class="visually-hidden" href="#main-content" aria-label="Skip Link">Skip to Content</a>
     {construction && <ConstructionBanner />}
     <MainHeader />
     <main>
@@ -22,10 +21,3 @@ const { title, key, description, construction } = Astro.props;
     <MainFooter />
   </body>
 </html>
-
-<style>
-  #skiplink {
-    position: absolute;
-    left: -1000%;
-  }
-</style>

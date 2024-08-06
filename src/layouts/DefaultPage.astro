@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Skiplink from "../components/Skiplink.astro";
 import PageHeader from "../components/PageHeader.astro";
 
 const { frontmatter, headings } = Astro.props;
@@ -11,6 +12,7 @@ const { frontmatter, headings } = Astro.props;
   description={frontmatter.description}
   construction={frontmatter.construction}
 >
+  <Skiplink />
   <PageHeader
     title={frontmatter.title}
     updated={frontmatter.updated}

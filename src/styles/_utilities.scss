@@ -55,7 +55,7 @@
 // Typography
 %monospace {
     font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-  }
+}
 
 %text-right {
     text-align: right;
@@ -90,6 +90,7 @@
 }
 
 %underline-hover {
+
     &:hover,
     &:focus {
         text-decoration: underline;
@@ -104,4 +105,10 @@
     left: 0;
     right: 0;
     margin: auto;
+}
+
+// Site-specific
+%page-effect {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, .2) 50%, rgba(0, 0, 0, .05) 60%), linear-gradient(-5deg, rgba(0, 0, 0, .1), transparent 3.5em);
+    background-size: 100% 0, 100%;
 }
