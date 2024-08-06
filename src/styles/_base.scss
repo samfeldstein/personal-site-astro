@@ -3,15 +3,16 @@
 @use "utilities";
 
 // For styles used on *every* page 
-
 html {
-  background-color: var(--html-color);
+  background-color: var(--dark)
 }
 
 body {
   @extend %body-font;
   @extend %flex-column;
-  background-color: var(--body-color);
+  background-color: var(--light);
+  color: var(--dark);
+  margin: 0 auto;
   max-width: 60rem;
   font-size: calc(1rem + 0.3vw);
 }
@@ -28,7 +29,7 @@ main {
 
 #skiplink {
   @extend %visually-hidden;
-  background-color: var(--body-color);
+  background-color: var(--body-light);
   border: 1px solid;
   padding: 1em;
   transition-duration: 0.5s;
@@ -44,3 +45,4 @@ main {
   @extend %page-effect;
   padding: 1rem;
 }
+
