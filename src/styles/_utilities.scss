@@ -57,6 +57,10 @@
     font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
+%body-font {
+    font-family: system-ui, serif;
+}
+
 %text-right {
     text-align: right;
 }
@@ -90,6 +94,7 @@
 }
 
 %underline-hover {
+
     &:hover,
     &:focus {
         text-decoration: underline;

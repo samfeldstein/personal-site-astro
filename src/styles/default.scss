@@ -1,5 +1,14 @@
+@use "utilities";
 @use "base";
 
 body {
+  @extend %page-effect;
+}
+
+main {
+  padding: 1rem;
+}
+
+#site-header {
   padding: 1rem;
 }

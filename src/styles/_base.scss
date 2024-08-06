@@ -2,16 +2,22 @@
 @use "config";
 @use "utilities";
 
+// For styles used on *every* page 
+
 html {
   background-color: var(--html-color);
 }
 
 body {
+  @extend %body-font;
   @extend %flex-column;
   background-color: var(--body-color);
   max-width: 60rem;
-  font-family: system-ui, serif;
   font-size: calc(1rem + 0.3vw);
+}
+
+main {
+  flex: 1;
 }
 
 .logo {

@@ -1,0 +1,11 @@
+---
+title: Blog
+layout: ../layouts/DefaultPage.astro
+description: Sam Feldstein's blog.
+---
+
+import Blog from "../components/CollectionList.astro";
+
+[Browse by category](/blog/tags/).
+
+<Blog collectionName="blog" sort="date" />
