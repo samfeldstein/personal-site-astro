@@ -4,12 +4,8 @@ h1 {
   @extend %visually-hidden;
 }
 
-h2 {
+h2, h3 {
   @extend %text-center;
-}
-
-nav {
-  padding: 1rem;
 }
 
 section {
@@ -24,4 +20,12 @@ section {
 
 .name {
   font-size: calc(4rem + 2vw);
+}
+
+.main-menu {
+  @extend %list-style-none;
+}
+
+.social-links {
+  @extend %list-style-none;
 }

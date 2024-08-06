@@ -8,6 +8,7 @@ html {
 
 body {
   background-color: var(--body-color);
+  max-width: 60rem;
   font-family: system-ui, serif;
   font-size: calc(1rem + 0.3vw);
 }
@@ -20,16 +21,6 @@ section {
   @extend %no-decor;
   font-size: calc(2rem + 2vw);
   color: unset;
-}
-
-.main-menu {
-  @extend %list-style-none;
-  gap: 1em;
-}
-
-.social {
-  @extend %list-style-none;
-  gap: 1em;
 }
 
 #skiplink {

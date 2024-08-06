@@ -1,26 +1,16 @@
 ---
 layout: ../layouts/DefaultPage.astro
-title: Words
+title: Stories
 ---
 
-import RecentPosts from "../components/CollectionList.astro";
-
-## From the Blog
-
-<RecentPosts collectionName="blog" sort="date" count="3" />
-
-[See all posts >>>](/blog/)
-
-## Published Writing
-
-### Fiction
+## Fiction
 
 - [The Man Who Was a Boy Made of Memories](https://talestoterrify.com/episodes/619-z-j-garcia-samuel-feldstein/) on _Tales to Terrify_ (short story, audio, reprint, Dec. 2023)
 - [_Queen of the Thunderbeasts_](https://www.dmsguild.com/product/426630/Queen-of-the-Thunderbeasts?affiliate_id=1701028) on the DMsGuild (roleplaying adventure, Jan. 2023)
 - [The First](https://thecollidescope.com/2022/10/16/the-first/) in _The Collidescope_ (flash fiction, Oct. 2022)
 - [The Man Who Was a Boy Made of Memories](https://thechambermagazine.com/2021/11/12/the-man-who-was-a-boy-made-of-memories-science-fiction-horror-by-samuel-feldstein/) in _The Chamber_ (short story, Nov. 2021)
 
-### Not Fiction
+## Not Fiction
 
 - [Big Bend Reproductive Coalition launches community needs assessment](https://bigbendsentinel.com/2023/08/09/big-bend-reproductive-coalition-launches-community-needs-assessment-with-inaugural-town-hal/?mc_cid=b24b0bb606) in _The Big Bend Sentinel_ (article, Aug. 2023)
 - [Trans-Pecos Festival of Music + Love doubles as platform for advocacy and outreach](https://bigbendsentinel.com/2022/10/05/trans-pecos-festival-of-music-love-doubles-as-platform-for-advocacy-and-outreach/) in _The Big Bend Sentinel_ (article, Oct. 2022)
