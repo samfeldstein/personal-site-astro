@@ -8,13 +8,11 @@ html {
 
 body {
   background-color: var(--body-color);
-  max-width: 50rem;
   font-family: system-ui, serif;
   font-size: calc(1rem + 0.3vw);
 }
 
-nav {
-  @extend %text-center;
+section {
   @extend %page-effect;
 }
 
@@ -35,10 +33,19 @@ nav {
 }
 
 #skiplink {
-  position: absolute;
-  left: -1000%;
+  @extend %visually-hidden;
+  background-color: var(--body-color);
+  border: 1px solid;
+  padding: 1em;
+  transition-duration: 0.5s;
+
+  &:focus {
+    left: -1%;
+    transition-duration: 0.5s;
+  }
 }
 
 #site-footer {
   @extend %text-center;
+  padding: 1rem;
 }

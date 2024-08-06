@@ -4,8 +4,8 @@ import "/src/styles/home.scss";
 
 // Components
 import BaseHead from "../components/BaseHead.astro";
-import SiteLogo from "../components/SiteLogo.astro";
 import MainMenu from "../components/MainMenu.astro";
+import SocialLinks from "../components/SocialLinks.astro";
 import MainFooter from "../components/SiteFooter.astro";
 
 import { site } from "../../config.mjs";
@@ -15,11 +15,19 @@ import { site } from "../../config.mjs";
 <html lang="en">
   <BaseHead title="Home" description={site.description} />
   <body>
-    <SiteLogo />
+    <div class="cover">
+      <div>Hi, I'm</div>
+      <div class="name">Sam<br>Feldstein</div>
+      <div>and I write stories</div>
+    </div>
     <h1>Home</h1>
     <section id="contents">
       <h2>Contents</h2>
       <MainMenu />
+      <div class="social">
+        <h3>Social</h3>
+        <SocialLinks />
+      </div>
     </section>
 
     <MainFooter />

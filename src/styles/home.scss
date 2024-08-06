@@ -3,3 +3,25 @@
 h1 {
   @extend %visually-hidden;
 }
+
+h2 {
+  @extend %text-center;
+}
+
+nav {
+  padding: 1rem;
+}
+
+section {
+  padding: 1rem;
+}
+
+.cover {
+  @extend %text-center;
+  @extend %page-effect;
+  padding: 1rem;
+}
+
+.name {
+  font-size: calc(4rem + 2vw);
+}
