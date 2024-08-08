@@ -4,7 +4,7 @@
 
 // For styles used on *every* page 
 html {
-  background-color: var(--dark)
+  background-color: var(--dark);
 }
 
 body {
@@ -45,4 +45,3 @@ main {
   @extend %page-effect;
   padding: 1rem;
 }
-

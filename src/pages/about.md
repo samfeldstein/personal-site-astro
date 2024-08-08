@@ -2,7 +2,7 @@
 layout: ../layouts/DefaultPage.astro
 title: About
 toc: true
-updated: July 30, 2024
+updated: Aug. 8, 2024
 ---
 
 ## Contact & Social
@@ -11,36 +11,68 @@ updated: July 30, 2024
 - [GitHub](https://github.com/seldstein)
 - [Feed](/feed.xml)
 
+## Personality and Interests
+
+- Story
+- Writing
+- Web Design
+- Programming
+- Design
+- Efficiency
+
 ## Things I Use
 
-I don't write fiction so much anymore, but when I did I used [Scrivener](https://www.literatureandlatte.com/scrivener/overview). For distraction-free word-dumping, I use [Enso](https://enso.sonnet.io/). For writing everything else, taking notes, and managing files, I use [Obsidian](https://obsidian.md/) with the [Minimal](https://minimal.guide/home) theme and the following community plugins:
+### Writing
 
-- Hider
-- LanguageTool Integration
-- Minimal Theme Settings
-- Omnivore
-- Readwise Official
-- Typewriter Mode
+I like playing with new tools, so I cycle through quite a few of them. At the moment, I'm writing everything in [VS Code](https://code.visualstudio.com). There are some advantages to doing so which maybe I'll write about someday.
 
-My go-to dictionaries are:
+[Enso](https://enso.sonnet.io/) comes in handy for distraction-free word-dumping. I'd use [beat](https://www.beat-app.fi) if I still wrote screenplays, except maybe not, because VS Code also has a very good [fountain plugin](https://marketplace.visualstudio.com/items?itemName=piersdeseilligny.betterfountain).
 
-- [The Free Dictionary](https://www.thefreedictionary.com/)
-- [*Merriam-Webster*](https://www.merriam-webster.com/)
+#### Dictionaries
+
+In order of consultation.
+
 - *The New Oxford American Dictionary* (macOS)
-- [Dictionary.com](https://www.dictionary.com/)
+- [*Merriam-Webster*](https://www.merriam-webster.com/)
+- [The Free Dictionary](https://www.thefreedictionary.com/)
 - *The Oxford Dictionary of English* (British English, macOS)
-- [*Webster's 1913 Dictionary*](https://github.com/cmod/websters-1913) (macOS)
-- *Roget’s Thesaurus*
-- [Thesaurus.com](https://www.thesaurus.com/)
-- [Online Etymology Dictionary](https://www.etymonline.com/)
 
-I read and annotate articles with [Readwise](https://readwise.io/). I also use Readwise to track feeds. I store my notes and highlights in Obsidian using the plugins mentioned above.
+#### Thesauruses
+
+- [Thesaurus.com](https://www.thesaurus.com/)
+- *Roget’s Thesaurus*
+
+#### Use less, but still handy
+
+- [Online Etymology Dictionary](https://www.etymonline.com/)
+- [*Webster's 1913 Dictionary*](https://github.com/cmod/websters-1913) (macOS)
+
+### Reading
+
+I track feeds and read articles with [Readwise](https://readwise.io/).
+
+For books, I have a Kindle and library card. The [Internet Archive](https://archive.org) often comes in handy. I recently switched from [Goodreads](https://www.goodreads.com) to [LibraryThing](https://www.librarything.com/home) because Goodreads is sluggish and I hate it. LibraryThing, by contrast, is faster, might be open source (I'm not sure, but it has the feel of it), and overall is kind of cool.
+
+### Notetaking
+
+Readwise has excellent annotation features. It stores your notes in a database, which can also connect to your Kindle, among other things. When you highlight a passage on your Kindle, it shows up in Readwise.
+
+I used to export my Readwise notes to Obsidian. Now I don't use Obsidian, so I'm exporting them to Google Docs.
+
+I manage notes and files with VS Code. I used to use [Obsidian](https://obsidian.md/), which is excellent software, but there wasn't anything I was doing with it that I couldn't do as well or better with VS Code.
 
 For memorizing facts, quotes, and other information, I use [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) via [Anki](https://apps.ankiweb.net/).
 
-For coding, I use [VS Code](https://code.visualstudio.com/).
+### Web design
 
-I built this website with [Astro](https://astro.build/).
+I code in [VS Code](https://code.visualstudio.com/). I use [GitHub](https://github.com/seldstein/) for version control. I use [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) for development. I built this website with [Astro](https://astro.build/).
+
+I design in [Figma](https://www.figma.com).
+
+### Other
+
+- Browser: [Vivaldi](https://vivaldi.com)
+- Terminal: [iTerm2](https://iterm2.com/)
 
 ## Blogroll
 
