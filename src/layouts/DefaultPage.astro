@@ -6,8 +6,7 @@ const { frontmatter, headings } = Astro.props;
 ---
 
 <BaseLayout
-  title={frontmatter.title}
-  key={frontmatter.key}
+  title={frontmatter.key || frontmatter.title}
   description={frontmatter.description}
   construction={frontmatter.construction}
 >

@@ -4,15 +4,15 @@ import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
 import ConstructionBanner from "../components/ConstructionBanner.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import MainFooter from "../components/SiteFooter.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 
 // Variables
-const { title, key, description, construction } = Astro.props;
+const { title, description, construction } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-  <BaseHead title={key || title} description={description} />
+  <BaseHead title={title} description={description} />
   <body>
     <Skiplink/>
     {construction && <ConstructionBanner />}
@@ -20,5 +20,6 @@ const { title, key, description, construction } = Astro.props;
     <main>
       <slot />
     </main>
+    <SiteFooter/>
   </body>
 </html>
