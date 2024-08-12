@@ -1,16 +1,36 @@
 ---
 import SiteLogo from "./SiteLogo.astro";
-import MainMenu from "./SiteNav.astro";
+import SiteNav from "./SiteNav.astro";
 import SocialLinks from "./SocialLinks.astro";
+import Blogroll from "./Blogroll.astro";
 ---
 
 <header>
   <SiteLogo />
-  <details>
-    <summary>Menu</summary>
-    <h3>Navigation</h3>
-    <MainMenu />
-    <h3>Contact & Social</h3>
-    <SocialLinks />
-  </details>
+    <details>
+      <summary>Menu</summary>
+      <div>Navigation</div>
+      <SiteNav />
+      <div>Contact & Social</div>
+      <SocialLinks />
+      <div>Blogroll</div>
+      <Blogroll />
+    </details>
 </header>
+
+<style>
+  details {
+    border: 1px solid;
+    padding: 0 1rem;
+  }
+
+  details div {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  summary {
+    padding: 1rem 0;
+    cursor: pointer;
+  }
+</style>

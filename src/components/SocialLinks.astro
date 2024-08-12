@@ -5,7 +5,7 @@
 import { author } from "../../config.mjs";
 ---
 
-<ul class="social-links">
+<ul class="list-style-none">
   <li>
     <span>Email</span>
     <a href=`mailto:${author.email}` rel="me">{author.email}</a>
@@ -31,3 +31,10 @@ import { author } from "../../config.mjs";
     <a href="/feed.xml" rel="me">/feed.xml</a>
   </li>
 </ul>
+
+<style>
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+</style>

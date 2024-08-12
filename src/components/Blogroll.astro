@@ -1,0 +1,19 @@
+---
+const blogs = [
+  {
+    author: "Alan Jacobs",
+    title: "The Homebound Symphony",
+    url: "https://blog.ayjay.org/",
+  },
+];
+---
+
+<ul>
+  {
+    blogs.map((blog) => (
+      <li>
+        {blog.author} at <a href={blog.url}>{blog.title}</a>
+      </li>
+    ))
+  }
+</ul>
