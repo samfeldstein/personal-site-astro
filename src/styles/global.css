@@ -1,8 +1,9 @@
 :root {
   --light: white;
   --dark: black;
-  --dm-light: black;
+  --dm-light: #032b00;
   --dm-dark: white;
+  --accent: #ffd301;
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
@@ -22,4 +23,8 @@ body {
 
 main {
   flex: 1;
+}
+
+a {
+  color: var(--accent);
 }
