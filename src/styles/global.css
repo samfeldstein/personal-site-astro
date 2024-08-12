@@ -11,10 +11,6 @@
   }
 }
 
-html {
-  background-color: var(--dark);
-}
-
 body {
   background-color: var(--light);
   color: var(--dark);
