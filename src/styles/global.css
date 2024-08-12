@@ -18,6 +18,7 @@ body {
   margin: 0 auto;
   padding: 1rem;
   max-width: 60rem;
+  font-family: "Fira Code";
   font-size: calc(1rem + 0.3vw);
 }
 

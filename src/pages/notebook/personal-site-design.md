@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/DefaultPage.astro
+layout: ../../layouts/DefaultPage.astro
 title: Personal Site Design
 tags: ["webdev", "web-design"]
 ---
