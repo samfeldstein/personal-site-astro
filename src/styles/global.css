@@ -1,0 +1,29 @@
+:root {
+  --light: white;
+  --dark: black;
+  --dm-light: black;
+  --dm-dark: white;
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    --light: var(--dm-light);
+    --dark: var(--dm-dark);
+  }
+}
+
+html {
+  background-color: var(--dark);
+}
+
+body {
+  background-color: var(--light);
+  color: var(--dark);
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 60rem;
+  font-size: calc(1rem + 0.3vw);
+}
+
+main {
+  flex: 1;
+}

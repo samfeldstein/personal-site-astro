@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/DefaultPage.astro
-title: Code
+title: Projects
 ---
 
 ## Websites

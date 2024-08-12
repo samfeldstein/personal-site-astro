@@ -1,1 +1,15 @@
-<a id="skiplink" href="#main-content" aria-label="Skip Link">Skip to Content</a>
+<a id="skiplink" class="visually-hidden" href="#main-content" aria-label="Skip Link">Skip to Content</a>
+
+<style>
+  a {
+    background-color: var(--body-light);
+    border: 1px solid;
+    padding: 1em;
+    transition-duration: 0.5s;
+
+    &:focus {
+      left: -1%;
+      transition-duration: 0.5s;
+    }
+  }
+</style>

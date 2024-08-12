@@ -1,8 +1,16 @@
 ---
-import MainMenu from "./MainMenu.astro";
+import SiteLogo from "./SiteLogo.astro";
+import MainMenu from "./SiteNav.astro";
+import SocialLinks from "./SocialLinks.astro";
 ---
 
-<header id="site-header">  
-  <a class="logo" href="/">Sam Feldstein</a>
-  <MainMenu />
+<header>
+  <SiteLogo />
+  <details>
+    <summary>Menu</summary>
+    <h3>Navigation</h3>
+    <MainMenu />
+    <h3>Contact & Social</h3>
+    <SocialLinks />
+  </details>
 </header>

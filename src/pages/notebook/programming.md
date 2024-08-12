@@ -17,6 +17,8 @@ title: Programming
 - A little finance app for yourself.
 - VS Code manuscript format (fountain syntax)
 - VS code Readwise integration
+- VS Code focus mode
+  - All inactive paragraphs or lines disappear
 
 ### Writing software
 

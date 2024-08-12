@@ -1,17 +1,12 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://samfeldstein.xyz',
+  site: "https://samfeldstein.xyz",
   prefetch: {
-    prefetchAll: true
+    prefetchAll: true,
   },
-  vite: {
-    css: {
-      transformer: "sass"
-    }
-  },
-  integrations: [mdx()]
+  integrations: [mdx()],
 });

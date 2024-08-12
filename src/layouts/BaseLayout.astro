@@ -3,7 +3,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
 import ConstructionBanner from "../components/ConstructionBanner.astro";
-import MainHeader from "../components/SiteHeader.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 import MainFooter from "../components/SiteFooter.astro";
 
 // Variables
@@ -16,10 +16,9 @@ const { title, key, description, construction } = Astro.props;
   <body>
     <Skiplink/>
     {construction && <ConstructionBanner />}
-    <MainHeader />
+    <SiteHeader />
     <main>
       <slot />
     </main>
-    <MainFooter />
   </body>
 </html>

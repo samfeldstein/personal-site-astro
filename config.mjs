@@ -9,3 +9,8 @@ export const site = {
     city: "New Orleans",
   },
 };
+
+export const author = {
+  name: "Sam Feldstein",
+  email: "sam@samfeldstein.xyz"
+}

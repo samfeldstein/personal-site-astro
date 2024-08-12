@@ -9,7 +9,12 @@ key: Roadmap
 - Content and layout
 - Social Icons
 - Favicons
+- [POSSE](https://indieweb.org/POSSE)
 - Projects page
 - Notebook
 - Photos page
   - [Image Optimum](https://imageoptim.com/mac)
+
+## Wishlist
+
+- Guestbook

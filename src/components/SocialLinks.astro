@@ -1,5 +1,33 @@
+---
+// https://indieweb.org/How_to_set_up_web_sign-in_on_your_own_domain
+// https://indiewebify.me/validate-rel-me/
+
+import { author } from "../../config.mjs";
+---
+
 <ul class="social-links">
-  <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
-  <li><a href="https://github.com/seldstein">GitHub</a></li>
-  <li><a href="/feed.xml">Feed</a></li>
+  <li>
+    <span>Email</span>
+    <a href=`mailto:${author.email}` rel="me">{author.email}</a>
+  </li>
+  <li>
+    <span>Substack</span>
+    <a href="https://samfeldstein.substack.com">@samfeldstein</a>
+  </li>
+  <li>
+    <span>Mastodon</span>
+    <a href="https://mastodon.social/@samfeldstein" rel="me">@samfeldstein</a>
+  </li>
+  <li>
+    <span>Reddit</span>
+    <a href="https://www.reddit.com/user/seldstein/" rel="me">u/seldstein</a>
+  </li>
+  <li>
+    <span>GitHub</span>
+    <a href="https://github.com/seldstein" rel="me">@seldstein</a>
+  </li>
+  <li>
+    <span>Feed</span>
+    <a href="/feed.xml" rel="me">/feed.xml</a>
+  </li>
 </ul>
