@@ -17,13 +17,13 @@ body {
 
   /* https://css-tricks.com/old-timey-terminal-styling/ */
   /* Terminal lines */
-  background: repeating-linear-gradient(
+  /* background: repeating-linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.15),
     rgba(0, 0, 0, 0.15) 1px,
     transparent 1px,
     transparent 2px
-  );
+  ); */
   text-shadow: 0 0 5px #c8c8c8;
 
   /* https://modernfontstacks.com/ */
@@ -35,6 +35,10 @@ body {
 
 main {
   flex: 1;
+
+  border: 1px solid;
+  border-radius: 20px;
+  padding: 1rem;
 }
 
 main p {
