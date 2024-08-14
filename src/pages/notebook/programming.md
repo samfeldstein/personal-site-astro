@@ -5,8 +5,11 @@ title: Programming
 
 ## Ideas
 
+- A portfolio/resume website for Hugo Stiglitz
+  - Killcount
+  - Testimonials
 - An app that searches various websites of your choice. Eg, search all your favorite blogs simultaneously.
-- An app that computes the numberic value of your Hebrew name and shows words with the same value.
+- An app that computes the numeric value of your Hebrew name and shows words with the same value.
 - Earnings tracker. You press start and the numbers whiz by, showing how much you've made per second.
 - An app that automatically pairs your film festival choices. Each user enters picks and the app displays matching choices.
 - An app that sends you essays already published by writers as though they are blogging.
@@ -19,6 +22,7 @@ title: Programming
 - VS code Readwise integration
 - VS Code focus mode
   - All inactive paragraphs or lines disappear
+- Story idea sorter and randomizer
 
 ### Writing software
 
@@ -35,11 +39,6 @@ Then again, I'd like to be able to us VS Code to write. So this might be a plugi
 So you can see your changes, open a terminal, and push everything all in one place.
 
 A point in favor of making this a VS Code plugin.
-
-
-### Story idea sorter
-
-Stores and sorts story ideas.
 
 ## Favorite Software
 

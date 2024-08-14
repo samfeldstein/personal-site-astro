@@ -13,6 +13,3 @@ So the **intersection between digital and literary** is what I'm going for. Now 
 ## Inspiration
 
 [Personal Sites](https://personalsit.es)
-
-- [Stage OS](https://stylestage.dev/styles/stageos/)
-- [Fresh](https://stylestage.dev/styles/fresh/)

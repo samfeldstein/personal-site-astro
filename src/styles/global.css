@@ -1,3 +1,12 @@
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/ebgaramond.woff2") format("woff2"),
+    url("/fonts/ebgaramond.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --light: white;
   --dark: black;
@@ -18,12 +27,8 @@ body {
   margin: 0 auto;
   padding: 1rem;
   max-width: 60rem;
-  font-family: "Fira Code";
+  font-family: "EB Garamond";
   font-size: calc(1rem + 0.3vw);
-}
-
-main {
-  flex: 1;
 }
 
 a {
