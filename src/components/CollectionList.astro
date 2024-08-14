@@ -5,17 +5,18 @@ import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils";
 
 const { collectionName, sort, count } = Astro.props;
+
 const collection = await getCollection(collectionName);
 ---
 
 {sort === "date" && sortCollectionByDate(collection)}
 
-<ul class="unstyled-list">
+<ul class="collection-list unstyled-list">
   {
     // If no count, renders whole collection
     collection.slice(0, count).map((item) => (
       <li>
-        <a class="post-title" href={`/${collectionName}/${item.slug}/`}>
+        <a class="collection-item-title" href={`/${collectionName}/${item.slug}/`}>
           {item.data.title}
         </a>
         <Tags tags={item.data.tags} path={collectionName} />
@@ -23,6 +24,7 @@ const collection = await getCollection(collectionName);
     ))
   }
 </ul>
+<slot />
 
 <style>
   ul {
@@ -36,6 +38,16 @@ const collection = await getCollection(collectionName);
   }
 
   a {
-    font-size: 2em;
+    font-size: 2rem;
+  }
+</style>
+
+<style is:global>
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1em;
+    justify-content: center;
+    margin-top: 1rem;
   }
 </style>

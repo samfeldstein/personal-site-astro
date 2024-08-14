@@ -17,9 +17,24 @@ const { frontmatter, collection } = Astro.props;
       tags={frontmatter.tags}
     />
     <slot />
-    <div class="dateline">
+    <div class="dateline text-right">
       <Date date={frontmatter.pubDate} />
       <div class="location">{frontmatter.location}</div>
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  .dateline {
+    font-size: 0.75em;
+  }
+</style>
+
+<style is:global>
+  .tags {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+</style>

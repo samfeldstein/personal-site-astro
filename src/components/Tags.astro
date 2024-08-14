@@ -1,9 +1,8 @@
 ---
-import type { GetStaticPaths } from "astro";
 const { tags, path } = Astro.props;
 ---
 
-<ul class="flex-list">
+<ul class="tags unstyled-list">
   {
     tags.map((tag) => (
       <li>
@@ -16,12 +15,13 @@ const { tags, path } = Astro.props;
 </ul>
 
 <style>
-  ul {
-    gap: 1em;
-    justify-content: center;
-  }
-  
   a {
+    text-decoration: none;
     font-style: italic;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
   }
 </style>

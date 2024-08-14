@@ -36,7 +36,7 @@ sortCollectionByDate(posts);
 
 <BaseLayout title={title}>
   <PageHeader title={title} />
-  <ul>
+  <ul class="unstyled-list">
     {
       posts.map((post) => (
         <li>
@@ -46,3 +46,9 @@ sortCollectionByDate(posts);
     }
   </ul>
 </BaseLayout>
+
+<style>
+  li {
+    margin-bottom: 1rem;
+  }
+</style>

@@ -1,3 +1,7 @@
+.text-right {
+    text-align: right;
+}
+
 .unstyled-list {
     list-style-type: none;
     padding: 0;

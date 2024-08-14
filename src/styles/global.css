@@ -1,4 +1,5 @@
-/* https://www.fontsquirrel.com/tools/webfont-generator */
+@import url("/src/styles/_reset.css");
+@import url("/src/styles/_utilities.css");
 
 :root {
   --text-color: #f8e9d8;
@@ -32,6 +33,15 @@ body {
   color: var(--text-color);
 }
 
+main {
+  flex: 1;
+}
+
+main p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 ::selection {
   background: #0080ff;
   text-shadow: none;
@@ -41,6 +51,11 @@ h1,
 h2,
 h3 {
   font-variant: small-caps;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 0;
 }
 
 h2 {
@@ -53,14 +68,14 @@ a {
   text-underline-offset: 0.2em;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: none;
 }
 
 .page-container {
-  margin: 0 auto;
   max-width: 80rem;
-  flex: 1;
+  margin: 0 auto;
 
   @media screen and (min-width: 601px) {
     border: 1px solid;
