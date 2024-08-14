@@ -11,6 +11,8 @@ html {
 }
 
 body {
+  /* https://css-tricks.com/old-timey-terminal-styling/ */
+  /* Terminal lines */
   background: repeating-linear-gradient(
     0deg,
     rgba(0, 0, 0, 0.15),
@@ -18,8 +20,6 @@ body {
     transparent 1px,
     transparent 2px
   );
-
-  /* https://css-tricks.com/old-timey-terminal-styling/ */
   text-shadow: 0 0 5px #c8c8c8;
 
   /* https://modernfontstacks.com/ */
@@ -28,7 +28,6 @@ body {
   color: var(--text-color);
   margin: 0 auto;
   padding: 2rem 1rem;
-  max-width: 70rem;
   font-size: calc(1rem + 0.6vw);
 
   @media screen and (min-width: 601px) {
@@ -44,11 +43,16 @@ body {
 
 main {
   flex: 1;
+  max-width: 50rem;
+}
+
+h1, h2, h3 {
+  font-variant: small-caps;
 }
 
 h2 {
   text-align: right;
-  border-bottom: 1px solid;
+  border-bottom: 1px dashed;
 }
 
 a {
