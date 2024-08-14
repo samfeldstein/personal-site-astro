@@ -6,16 +6,17 @@
 const coreAssets = [
   "/",
   "/index.html",
-  "/offline/",
-  "/stories/",
-  "/code/",
+  "/work/",
+  "/uses/",
   "/blog/",
-  "/about/",
-  "/tags/",
+  "/blog/tags/",
+  "/blogroll/",
+  "/notebook/",
+  "/offline/",
   "/favicon.ico",
   "/favicon.svg",
-  "/fonts/FenwickWoodtype.woff",
-  "/fonts/FenwickWoodtype.woff2",
+  "/fonts/ebgaramond.woff",
+  "/fonts/ebgaramond.woff2",
 ];
 
 // On install, cache core assets
