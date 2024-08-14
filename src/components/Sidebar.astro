@@ -18,11 +18,16 @@ import SocialLinks from "./SocialLinks.astro";
 
   aside div {
     font-weight: bold;
-    margin-top: 1rem;
   }
 
   summary {
     padding: 1rem 0;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 600px) {
+    aside {
+      display: none;
+    }
   }
 </style>

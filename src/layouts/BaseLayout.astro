@@ -3,7 +3,8 @@
 import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
 import ConstructionBanner from "../components/ConstructionBanner.astro";
-import SiteHeader from "../components/SiteHeader.astro";
+import Sidebar from "../components/Sidebar.astro";
+import MobileMenu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 // Variables
@@ -16,12 +17,13 @@ const { title, description, construction } = Astro.props;
   <body>
     <Skiplink />
     {construction && <ConstructionBanner />}
-    <SiteHeader />
+    <Sidebar />
+    <MobileMenu />
     <div class="flex-column">
-    <main>
-      <slot />
-    </main>
-    <SiteFooter />
-  </div>
+      <main>
+        <slot />
+      </main>
+      <SiteFooter />
+    </div>
   </body>
 </html>

@@ -29,8 +29,15 @@ body {
   max-width: 70rem;
   font-family: "EB Garamond";
   font-size: calc(1rem + 0.6vw);
-  display: flex;
-  gap: 4rem;
+
+  @media screen and (min-width: 601px) {
+    display: flex;
+    gap: 4rem;
+  }
+}
+
+main {
+  flex: 1;
 }
 
 a {

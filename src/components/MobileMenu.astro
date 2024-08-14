@@ -1,0 +1,37 @@
+---
+import SiteNav from "./SiteNav.astro";
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<details>
+  <summary>Menu</summary>
+  <div>
+    <div>Navigation</div>
+    <SiteNav />
+    <div>Contact & Social</div>
+    <SocialLinks />
+  </div>
+</details>
+
+<style>
+  details {
+    margin-bottom: 1rem;
+    border: 1px solid;
+  }
+
+  details > div {
+    padding: 1rem;
+  }
+
+  summary {
+    border-bottom: 1px solid;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width: 601px) {
+    details {
+      display: none;
+    }
+  }
+</style>
