@@ -1,11 +1,12 @@
 ---
-layout: ../layouts/DefaultPage.astro
+layout: ../../layouts/DefaultPage.astro
 title: Site Roadmap
-key: Roadmap
 ---
 
 ## Site
 
+- Light colors
+  - Selection colors
 - Content and layout
 - Social Icons
 - Favicons
@@ -13,7 +14,6 @@ key: Roadmap
 - Projects page
 - Notebook
 - Photos page
-  - [Image Optimum](https://imageoptim.com/mac)
 
 ## Wishlist
 

@@ -10,14 +10,16 @@
 :root {
   --light: white;
   --dark: black;
+  --accent: blue;
   --dm-light: #032b00;
   --dm-dark: white;
-  --accent: #ffd301;
+  --dm-accent: #ffd301;
 
   /* Dark mode */
   @media (prefers-color-scheme: dark) {
     --light: var(--dm-light);
     --dark: var(--dm-dark);
+    --accent: var(--dm-accent);
   }
 }
 
