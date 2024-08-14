@@ -10,14 +10,32 @@ const collection = await getCollection(collectionName);
 
 {sort === "date" && sortCollectionByDate(collection)}
 
-<ul class="collection-list">
+<ul class="unstyled-list">
   {
     // If no count, renders whole collection
     collection.slice(0, count).map((item) => (
       <li>
-        <a class="post-title" href={`/${collectionName}/${item.slug}/`}>{item.data.title}</a>
+        <a class="post-title" href={`/${collectionName}/${item.slug}/`}>
+          {item.data.title}
+        </a>
         <Tags tags={item.data.tags} path={collectionName} />
       </li>
     ))
   }
 </ul>
+
+<style>
+  ul {
+    text-align: center;
+  }
+
+  li {
+    border: 1px solid;
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+  a {
+    font-size: 2em;
+  }
+</style>

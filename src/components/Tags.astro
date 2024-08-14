@@ -1,8 +1,9 @@
 ---
+import type { GetStaticPaths } from "astro";
 const { tags, path } = Astro.props;
 ---
 
-<ul class="tags">
+<ul class="flex-list">
   {
     tags.map((tag) => (
       <li>
@@ -13,3 +14,14 @@ const { tags, path } = Astro.props;
     ))
   }
 </ul>
+
+<style>
+  ul {
+    gap: 1em;
+    justify-content: center;
+  }
+  
+  a {
+    font-style: italic;
+  }
+</style>

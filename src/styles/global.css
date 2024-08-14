@@ -40,6 +40,11 @@ main {
   flex: 1;
 }
 
+h2 {
+  text-align: right;
+  border-bottom: 1px solid;
+}
+
 a {
   color: var(--accent);
 }
