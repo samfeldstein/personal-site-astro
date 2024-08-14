@@ -5,8 +5,6 @@ title: Work
 
 ## Web Development
 
-I'm interested in lean, durable web architecture.
-
 - [Personal Site](/) (this website)
 - [Prairie Rose Arena](https://prairierosearena.com/)
 

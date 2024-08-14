@@ -25,13 +25,11 @@ body {
   background-color: var(--light);
   color: var(--dark);
   margin: 0 auto;
-  padding: 1rem;
-  max-width: 60rem;
+  padding: 2rem 1rem;
+  max-width: 70rem;
   font-family: "EB Garamond";
-  font-size: calc(1rem + 0.3vw);
-
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  font-size: calc(1rem + 0.6vw);
+  display: flex;
   gap: 4rem;
 }
 

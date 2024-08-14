@@ -5,36 +5,30 @@
 import { author } from "../../config.mjs";
 ---
 
-<ul class="list-style-none">
+<ul>
   <li>
-    <span>Email</span>
-    <a href=`mailto:${author.email}` rel="me">{author.email}</a>
+    <a href=`mailto:${author.email}` rel="me">Email</a>
   </li>
   <li>
-    <span>Substack</span>
-    <a href="https://samfeldstein.substack.com">@samfeldstein</a>
+    <a href="https://samfeldstein.substack.com">Substack</a>
   </li>
   <li>
-    <span>Mastodon</span>
-    <a href="https://mastodon.social/@samfeldstein" rel="me">@samfeldstein</a>
+    <a href="https://mastodon.social/@samfeldstein" rel="me">Mastodon</a>
   </li>
   <li>
-    <span>Reddit</span>
-    <a href="https://www.reddit.com/user/seldstein/" rel="me">u/seldstein</a>
+    <a href="https://www.reddit.com/user/seldstein/" rel="me">Reddit</a>
   </li>
   <li>
-    <span>GitHub</span>
-    <a href="https://github.com/seldstein" rel="me">@seldstein</a>
+    <a href="https://github.com/seldstein" rel="me">GitHub</a>
   </li>
   <li>
-    <span>Feed</span>
-    <a href="/feed.xml" rel="me">/feed.xml</a>
+    <a href="/feed.xml" rel="me">Feed</a>
   </li>
 </ul>
 
 <style>
-  li {
-    display: flex;
-    justify-content: space-between;
+  ul {
+    list-style-type: none;
+    padding-left: 10px;
   }
 </style>

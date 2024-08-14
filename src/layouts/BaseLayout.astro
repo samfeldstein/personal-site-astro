@@ -17,9 +17,11 @@ const { title, description, construction } = Astro.props;
     <Skiplink />
     {construction && <ConstructionBanner />}
     <SiteHeader />
+    <div class="flex-column">
     <main>
       <slot />
     </main>
     <SiteFooter />
+  </div>
   </body>
 </html>
