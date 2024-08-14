@@ -2,13 +2,12 @@
 // Components
 import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
-import ConstructionBanner from "../components/ConstructionBanner.astro";
 import Sidebar from "../components/Sidebar.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 // Variables
-const { title, description, construction } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +16,6 @@ const { title, description, construction } = Astro.props;
   <body>
     <div class="page-container">
     <Skiplink />
-    {construction && <ConstructionBanner />}
     <Sidebar />
     <MobileMenu />
       <main id="main-content">

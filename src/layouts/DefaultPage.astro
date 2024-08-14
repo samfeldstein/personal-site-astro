@@ -8,7 +8,6 @@ const { frontmatter, headings } = Astro.props;
 <BaseLayout
   title={frontmatter.key || frontmatter.title}
   description={frontmatter.description}
-  construction={frontmatter.construction}
 >
   <PageHeader
     title={frontmatter.title}
