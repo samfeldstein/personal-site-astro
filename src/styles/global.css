@@ -11,6 +11,11 @@ html {
 }
 
 body {
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+
   /* https://css-tricks.com/old-timey-terminal-styling/ */
   /* Terminal lines */
   background: repeating-linear-gradient(
@@ -26,14 +31,8 @@ body {
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
   color: var(--text-color);
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  font-size: calc(1rem + 0.6vw);
 
-  @media screen and (min-width: 601px) {
-    display: flex;
-    gap: 4rem;
-  }
+  font-size: calc(1rem + 0.6vw);
 }
 
 ::selection {
@@ -43,10 +42,11 @@ body {
 
 main {
   flex: 1;
-  max-width: 50rem;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-variant: small-caps;
 }
 
@@ -62,4 +62,18 @@ a {
 
 a:hover {
   text-decoration: none;
+}
+
+.page-container {
+  margin: 0 auto;
+  
+  max-width: 80rem;
+
+  @media screen and (min-width: 601px) {
+    border: 1px solid;
+    border-radius: 50px;
+    padding: 2rem 1rem;
+    display: flex;
+    gap: 4rem;
+  }
 }

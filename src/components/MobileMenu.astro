@@ -5,10 +5,11 @@ import SocialLinks from "./SocialLinks.astro";
 
 <details>
   <summary>Menu</summary>
+  <hr>
   <div>
-    <div>Navigation</div>
+    <div class="title">Navigation</div>
     <SiteNav />
-    <div>Contact & Social</div>
+    <div class="title">Contact & Social</div>
     <SocialLinks />
   </div>
 </details>
@@ -17,6 +18,7 @@ import SocialLinks from "./SocialLinks.astro";
   details {
     margin-bottom: 1rem;
     border: 1px solid;
+    border-radius: 20px;
   }
 
   details > div {
@@ -24,10 +26,18 @@ import SocialLinks from "./SocialLinks.astro";
   }
 
   summary {
-    border-bottom: 1px solid;
     padding: 1rem;
     font-variant: small-caps;
     cursor: pointer;
+  }
+
+  hr {
+    color: inherit;
+    height: 1px;
+  }
+
+  .title {
+    font-variant: small-caps;
   }
 
   @media screen and (min-width: 601px) {
