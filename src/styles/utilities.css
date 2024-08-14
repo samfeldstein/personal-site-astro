@@ -3,17 +3,9 @@
     padding: 0;
 }
 
-.flex {
-    display: flex;
-}
-
 .flex-column {
     display: flex;
     flex-direction: column;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
 }
 
 .flex-list {
@@ -24,27 +16,7 @@
     
 }
 
-.justify-center {
-    justify-content: center;
-}
-
-.align-center {
-    align-items: center;
-}
-
 .visually-hidden {
     position: absolute;
     left: -1000%;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.no-decor {
-    text-decoration: none;
 }

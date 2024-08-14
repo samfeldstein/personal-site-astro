@@ -14,6 +14,7 @@ title: Site Roadmap
 - Projects page
 - Notebook
 - Photos page
+- Make mobile menu accessible
 
 ## Wishlist
 
