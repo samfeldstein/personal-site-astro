@@ -14,7 +14,7 @@ const { title, description, construction } = Astro.props;
 <!doctype html>
 <html lang="en">
   <BaseHead title={title} description={description} />
-  <body>
+  <body class="flex-column">
     <div class="page-container">
     <Skiplink />
     {construction && <ConstructionBanner />}
@@ -24,8 +24,9 @@ const { title, description, construction } = Astro.props;
       <main>
         <slot />
       </main>
-      <SiteFooter />
+      
     </div>
   </div>
+  <SiteFooter />
   </body>
 </html>

@@ -13,8 +13,6 @@ html {
 body {
   margin: 0 auto;
   padding: 1rem;
-  display: flex;
-  align-items: center;
 
   /* https://css-tricks.com/old-timey-terminal-styling/ */
   /* Terminal lines */
@@ -30,18 +28,13 @@ body {
   /* https://modernfontstacks.com/ */
   font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
+  font-size: calc(1rem + 0.4vw);
   color: var(--text-color);
-
-  font-size: calc(1rem + 0.6vw);
 }
 
 ::selection {
   background: #0080ff;
   text-shadow: none;
-}
-
-main {
-  flex: 1;
 }
 
 h1,
@@ -66,13 +59,13 @@ a:hover {
 
 .page-container {
   margin: 0 auto;
-  
   max-width: 80rem;
+  flex: 1;
 
   @media screen and (min-width: 601px) {
     border: 1px solid;
     border-radius: 50px;
-    padding: 2rem 1rem;
+    padding: 2rem;
     display: flex;
     gap: 4rem;
   }
