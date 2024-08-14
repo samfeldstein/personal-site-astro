@@ -29,6 +29,10 @@ body {
   max-width: 60rem;
   font-family: "EB Garamond";
   font-size: calc(1rem + 0.3vw);
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
 }
 
 a {

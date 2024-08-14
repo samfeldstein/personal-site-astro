@@ -1,27 +1,22 @@
 ---
-import SiteLogo from "./SiteLogo.astro";
 import SiteNav from "./SiteNav.astro";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<header>
-  <SiteLogo />
-    <details>
-      <summary>Menu</summary>
-      <div>Navigation</div>
-      <SiteNav />
-      <div>Contact & Social</div>
-      <SocialLinks />
-    </details>
-</header>
+<aside>
+  <div>Navigation</div>
+  <SiteNav />
+  <div>Contact & Social</div>
+  <SocialLinks />
+</aside>
 
 <style>
-  details {
+  aside {
     border: 1px solid;
     padding: 0 1rem;
   }
 
-  details div {
+  aside div {
     font-weight: bold;
     margin-top: 1rem;
   }

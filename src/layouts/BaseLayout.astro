@@ -14,12 +14,12 @@ const { title, description, construction } = Astro.props;
 <html lang="en">
   <BaseHead title={title} description={description} />
   <body>
-    <Skiplink/>
+    <Skiplink />
     {construction && <ConstructionBanner />}
     <SiteHeader />
     <main>
       <slot />
     </main>
-    <SiteFooter/>
+    <SiteFooter />
   </body>
 </html>
