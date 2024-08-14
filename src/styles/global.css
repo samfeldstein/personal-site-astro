@@ -1,42 +1,45 @@
 /* https://www.fontsquirrel.com/tools/webfont-generator */
-@font-face {
-  font-family: "EB Garamond";
-  src: url("/fonts/ebgaramond.woff2") format("woff2"),
-    url("/fonts/ebgaramond.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
-  --light: white;
-  --dark: black;
-  --accent: blue;
-  --dm-light: #032b00;
-  --dm-dark: white;
-  --dm-accent: #ffd301;
+  --text-color: #f8e9d8;
+  --link-color: #ffd301;
+}
 
-  /* Dark mode */
-  @media (prefers-color-scheme: dark) {
-    --light: var(--dm-light);
-    --dark: var(--dm-dark);
-    --accent: var(--dm-accent);
-  }
+html {
+  /* https://gradient.page/css/ui-gradients/terminal */
+  background: linear-gradient(to right, #000000, #0c790c);
 }
 
 body {
-  background-color: var(--light);
-  color: var(--dark);
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+
+  /* https://css-tricks.com/old-timey-terminal-styling/ */
+  text-shadow: 0 0 5px #c8c8c8;
+
+  /* https://modernfontstacks.com/ */
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  color: var(--text-color);
   margin: 0 auto;
   padding: 2rem 1rem;
   max-width: 70rem;
-  font-family: "EB Garamond";
   font-size: calc(1rem + 0.6vw);
 
   @media screen and (min-width: 601px) {
     display: flex;
     gap: 4rem;
   }
+}
+
+::selection {
+  background: #0080ff;
+  text-shadow: none;
 }
 
 main {
@@ -49,7 +52,7 @@ h2 {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link-color);
   text-underline-offset: 0.2em;
 }
 

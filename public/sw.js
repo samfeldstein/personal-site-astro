@@ -15,8 +15,6 @@ const coreAssets = [
   "/offline/",
   "/favicon.ico",
   "/favicon.svg",
-  "/fonts/ebgaramond.woff",
-  "/fonts/ebgaramond.woff2",
 ];
 
 // On install, cache core assets
