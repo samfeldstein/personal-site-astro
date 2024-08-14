@@ -3,9 +3,11 @@ layout: ../layouts/DefaultPage.astro
 title: Things I Use
 ---
 
+I love tools, and I wish everyone would include a page like this on their website. Futzing with tools is often a waste of time, but once in a while you find one that's legitimately game-changing ([Anki](https://apps.ankiweb.net/), for instance). I pretty much live for that.
+
 ## Writing
 
-I like playing with new tools, so I cycle through quite a few of them. At the moment, I'm writing everything in [VS Code](https://code.visualstudio.com). There are some advantages to doing so which maybe I'll write about someday.
+At the moment, I'm writing everything in [VS Code](https://code.visualstudio.com). There are some advantages to doing so which maybe I'll write about someday.
 
 [Enso](https://enso.sonnet.io/) comes in handy for distraction-free word-dumping. I'd use [beat](https://www.beat-app.fi) if I still wrote screenplays, except maybe not, because VS Code also has a very good [fountain plugin](https://marketplace.visualstudio.com/items?itemName=piersdeseilligny.betterfountain).
 
@@ -38,15 +40,13 @@ For books, I have a Kindle and library card. The [Internet Archive](https://arch
 
 I manage notes and files with VS Code. I used to use [Obsidian](https://obsidian.md/), which is excellent software, but there wasn't anything I was doing with it that I couldn't do as well or better with VS Code.
 
-I annotate articles and ebooks with Readwise. All notes I take in Readwise, on my Kindle, or in iBooks show up the Readwise database. I used to export that database to Obsidian but now I send them to Google Drive.
+I annotate articles and ebooks with Readwise. All notes I take in Readwise, on my Kindle, or in iBooks show up in my Readwise database. I used to export that database to Obsidian but now I send them to Google Drive.
 
 For memorizing facts, quotes, and other information, I use [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) via [Anki](https://apps.ankiweb.net/).
 
-## Web design
+## Webdev
 
-I code in [VS Code](https://code.visualstudio.com/). I use [GitHub](https://github.com/seldstein/) for version control. I use [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) for development. I built this website with [Astro](https://astro.build/).
-
-I design in [Figma](https://www.figma.com).
+I code in [VS Code](https://code.visualstudio.com/). I use [GitHub](https://github.com/seldstein/) for version control. I use [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) for development. I design in [Figma](https://www.figma.com). I built this website with [Astro](https://astro.build/).
 
 ## Other
 

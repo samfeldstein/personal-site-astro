@@ -19,8 +19,3 @@
     flex-wrap: wrap;
     
 }
-
-.visually-hidden {
-    position: absolute;
-    left: -1000%;
-}

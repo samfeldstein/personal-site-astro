@@ -3,16 +3,18 @@ import SiteNav from "./SiteNav.astro";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<details>
-  <summary>Menu</summary>
-  <hr>
-  <div>
-    <div class="title">Navigation</div>
-    <SiteNav />
-    <div class="title">Social</div>
-    <SocialLinks />
-  </div>
-</details>
+<nav aria-label="Site Navigation">
+  <details>
+    <summary>Menu</summary>
+    <hr />
+    <div>
+      <div class="title">Navigation</div>
+      <SiteNav />
+      <div class="title">Social</div>
+      <SocialLinks />
+    </div>
+  </details>
+</nav>
 
 <style>
   details {
@@ -41,7 +43,7 @@ import SocialLinks from "./SocialLinks.astro";
   }
 
   @media screen and (min-width: 601px) {
-    details {
+    nav {
       display: none;
     }
   }

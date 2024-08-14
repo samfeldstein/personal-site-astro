@@ -3,6 +3,10 @@ layout: ../layouts/DefaultPage.astro
 title: Work
 ---
 
+This is not a résumé. Just a list projects. As you can see, the list is modest. That's because I spent years and years trying to write screenplays, novels, and short stories only to discover that didn't really like writing fiction that much. I began building websites professionally in 2024.
+
+This lame explanation is mostly here because without it the lines under the first and second headings are too close together and it looks weird.
+
 ## Web Development
 
 - [Personal Site](/) (this website)

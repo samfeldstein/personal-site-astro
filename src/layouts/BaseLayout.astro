@@ -20,7 +20,7 @@ const { title, description, construction } = Astro.props;
     {construction && <ConstructionBanner />}
     <Sidebar />
     <MobileMenu />
-      <main>
+      <main id="main-content">
         <slot />
       </main>
   </div>
