@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Collection from "../components/CollectionList.astro";
+---
+
+<BaseLayout title="Blog" description="Sam Feldstein's blog.">
+  <h1>Blog</h1>
+  <p>
+    <a href="/blog/tags/">Browse by category.</a> Subscribe via <a
+      href="/feed.xml">rss</a
+    > or <a href="https://samfeldstein.substack.com">email</a>.
+  </p>
+  <Collection collectionName="blog" sort="date" />
+</BaseLayout>
