@@ -1,5 +1,6 @@
 ---
 import Tags from "./Tags.astro";
+import Date from "./Date.astro";
 
 import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils";
@@ -16,10 +17,14 @@ const collection = await getCollection(collectionName);
     // If no count, renders whole collection
     collection.slice(0, count).map((item) => (
       <li>
-        <a class="collection-item-title" href={`/${collectionName}/${item.slug}/`}>
+        <a
+          class="collection-item-title"
+          href={`/${collectionName}/${item.slug}/`}
+        >
           {item.data.title}
         </a>
         <Tags tags={item.data.tags} path={collectionName} />
+        <Date date={item.data.pubDate} />
       </li>
     ))
   }
@@ -29,12 +34,16 @@ const collection = await getCollection(collectionName);
 <style>
   ul {
     text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1rem;
   }
 
   li {
     border: 1px solid;
-    margin: 1rem 0;
     padding: 1rem;
+    align-content: center;
   }
 
   a {

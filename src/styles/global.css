@@ -72,3 +72,7 @@ a:hover,
 a:focus {
   text-decoration: none;
 }
+
+.content-container {
+  flex: 1;
+}
