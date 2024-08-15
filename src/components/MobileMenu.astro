@@ -17,10 +17,14 @@ import SocialLinks from "./SocialLinks.astro";
 </nav>
 
 <style>
+  nav {
+    position: sticky;
+    top: 0px;
+    background: var(--background-color);
+  }
+  
   details {
-    margin-bottom: 1rem;
     border: 1px solid;
-    border-radius: 20px;
   }
 
   details > div {
@@ -40,12 +44,6 @@ import SocialLinks from "./SocialLinks.astro";
 
   .title {
     font-variant: small-caps;
-  }
-
-  @media screen and (min-width: 601px) {
-    nav {
-      display: none;
-    }
   }
 </style>
 
