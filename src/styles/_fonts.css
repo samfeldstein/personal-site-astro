@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "EB Garamond";
+  src: url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2"),
+    url("/fonts/subset-EBGaramond-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond Bold";
+  src: url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2"),
+    url("/fonts/subset-EBGaramond-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond Italic";
+  src: url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2"),
+    url("/fonts/subset-EBGaramond-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+i,
+em {
+  font-family: "EB Garamond Italic", var(--body-font);
+  font-weight: normal;
+  font-style: normal;
+}
+
+strong {
+  font-family: "EB Garamond Bold", var(--body-font);
+  font-weight: normal;
+  font-style: normal;
+}

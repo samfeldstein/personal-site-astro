@@ -6,12 +6,11 @@ import Blog from "../components/CollectionList.astro";
 <BaseLayout title="Home">
   <h1 class="visually-hidden">Home</h1>
   <p>
-    Hi, I'm <strong>Sam Feldstein</strong>. I used to want to be an <a
-      href="/work/#published-writing">author</a
-    >, but lately I'm more interested in <a href="/work/#web-development"
-      >web development</a
-    >. I most recently built the site for <a
-      href="https://prairierosearena.com/">Prairie Rose Arena</a
+    <span>Hi, I'm <strong>Sam Feldstein</strong>.</span> I used to want to be an
+    <a href="/work/#published-writing">author</a>, but lately I'm more
+    interested in <a href="/work/#web-development">web development</a>. I most
+    recently built the site for <a href="https://prairierosearena.com/"
+      >Prairie Rose Arena</a
     >. I enjoy <a href="/blogroll/">blogs</a> too much to not have <a
       href="/blog/">one of my own</a
     >.
@@ -28,5 +27,9 @@ import Blog from "../components/CollectionList.astro";
 <style>
   p:first-of-type {
     margin-top: 0;
+  }
+
+  span {
+    font-variant: small-caps;
   }
 </style>

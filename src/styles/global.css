@@ -1,14 +1,6 @@
+@import url("/src/styles/_fonts.css");
 @import url("/src/styles/_reset.css");
 @import url("/src/styles/_utilities.css");
-
-@font-face {
-  font-family: "EB Garamond";
-  src: url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2"),
-    url("/fonts/subset-EBGaramond-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --text-color: #1a1a1a;
@@ -41,7 +33,7 @@ body {
 
   /* https://modernfontstacks.com/ */
   font-family: var(--body-font);
-  font-size: calc(1.25rem + .2vw);
+  font-size: calc(1.25rem + 0.2vw);
   color: var(--text-color);
 }
 
