@@ -1,7 +1,6 @@
 ---
 import "/src/styles/global.css";
 
-import { ViewTransitions } from "astro:transitions";
 import { site } from "../../config.mjs";
 
 const { title, description } = Astro.props;
@@ -35,7 +34,6 @@ const { title, description } = Astro.props;
     title="Sam Feldstein"
     href={new URL("feed.xml", Astro.site)}
   />
-  <ViewTransitions />
   <script>
     // Try to bypass service worker residue
     if ("serviceWorker" in navigator) {
