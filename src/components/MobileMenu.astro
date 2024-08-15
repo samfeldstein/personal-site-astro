@@ -3,28 +3,27 @@ import SiteNav from "./SiteNav.astro";
 import SocialLinks from "./SocialLinks.astro";
 ---
 
-<nav aria-label="Site Navigation">
-  <details>
-    <summary>Menu</summary>
-    <hr />
-    <div>
-      <div class="title">Navigation</div>
-      <SiteNav />
-      <div class="title">Social</div>
-      <SocialLinks />
-    </div>
-  </details>
-</nav>
+<details>
+  <summary>Menu</summary>
+  <hr />
+  <div>
+    <div class="title">Navigation</div>
+    <SiteNav />
+    <div class="title">Social</div>
+    <SocialLinks />
+  </div>
+</details>
 
 <style>
-  nav {
+  details {
     position: sticky;
     top: 0px;
     background: var(--background-color);
-  }
-  
-  details {
     border: 1px solid;
+
+    @media screen and (min-width: 601px) {
+      display: none;
+    }
   }
 
   details > div {
