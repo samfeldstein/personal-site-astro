@@ -2,6 +2,11 @@
     text-align: right;
 }
 
+.visually-hidden {
+    position: absolute;
+    translate: -1000%;
+}
+
 .unstyled-list {
     list-style-type: none;
     padding: 0;
