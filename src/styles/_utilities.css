@@ -1,26 +1,34 @@
 .text-right {
-    text-align: right;
+  text-align: right;
+}
+
+.no-decor {
+  text-decoration: none;
+}
+
+.no-decor:hover,
+.no-decor:focus {
+  text-decoration: underline;
 }
 
 .visually-hidden {
-    position: absolute;
-    translate: -1000%;
+  position: absolute;
+  translate: -1000%;
 }
 
 .unstyled-list {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .flex-list {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
 }

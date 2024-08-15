@@ -81,16 +81,27 @@ const blogs = [
 <style>
   ul {
     text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 1rem;
   }
 
   li {
     border: 1px solid;
-    margin: 1rem 0;
     padding: 1rem;
+    align-content: center;
+    transition: transform 0.3s ease;
+  }
+
+  li:hover {
+    transform: translate(5px, -5px);
   }
 
   a {
+    font-size: 2rem;
+    text-wrap: balance;
     display: block;
-    font-size: 1.5em;
   }
 </style>

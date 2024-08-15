@@ -16,15 +16,15 @@ const collection = await getCollection(collectionName);
   {
     // If no count, renders whole collection
     collection.slice(0, count).map((item) => (
-      <li>
+      <li class="flex-column">
+        <Date date={item.data.pubDate} />
         <a
-          class="collection-item-title"
           href={`/${collectionName}/${item.slug}/`}
+          class="collection-item-title no-decor"
         >
           {item.data.title}
         </a>
         <Tags tags={item.data.tags} path={collectionName} />
-        <Date date={item.data.pubDate} />
       </li>
     ))
   }
@@ -35,20 +35,29 @@ const collection = await getCollection(collectionName);
   ul {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
     gap: 1rem;
   }
 
-  li {
-    border: 1px solid;
-    padding: 1rem;
-    align-content: center;
+  a {
+    font-size: 2rem;
+    text-wrap: balance;
   }
 
-  a {
-    font-size: 1.5em;
-  }
+  /* Components */
+li {
+  border: 1px solid;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-around;
+  transition: transform 0.3s ease;
+}
+
+li:hover {
+  transform: translate(5px, -5px);
+}
 </style>
 
 <style is:global>
@@ -57,6 +66,5 @@ const collection = await getCollection(collectionName);
     flex-wrap: wrap;
     gap: 0.5em 1em;
     justify-content: center;
-    margin-top: 1rem;
   }
 </style>
