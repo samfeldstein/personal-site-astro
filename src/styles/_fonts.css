@@ -1,6 +1,9 @@
+/* https://web.dev/articles/optimize-webfont-loading */
+
 @font-face {
   font-family: "EB Garamond";
-  src: url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2"),
+  src: local("EB Garamond"),
+    url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2"),
     url("/fonts/subset-EBGaramond-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -9,7 +12,8 @@
 
 @font-face {
   font-family: "EB Garamond Bold";
-  src: url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2"),
+  src: local("EB Garamond Bold"),
+    url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2"),
     url("/fonts/subset-EBGaramond-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
@@ -18,7 +22,8 @@
 
 @font-face {
   font-family: "EB Garamond Italic";
-  src: url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2"),
+  src: local("EB Garamond Italic"),
+    url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2"),
     url("/fonts/subset-EBGaramond-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
