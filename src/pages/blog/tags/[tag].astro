@@ -2,9 +2,6 @@
 // Layout
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
-// Components
-import PageHeader from "../../../components/PageHeader.astro";
-
 // Collections
 import { getCollection } from "astro:content";
 
@@ -28,14 +25,13 @@ export async function getStaticPaths() {
 // Variables
 const { tag } = Astro.params;
 const { posts } = Astro.props;
-const title = `#${tag}`;
 
 // Calls
 sortCollectionByDate(posts);
 ---
 
-<BaseLayout title={title}>
-  <PageHeader title={title} />
+<BaseLayout title={tag}>
+  <h1>{tag}</h1>
   <ul class="unstyled-list">
     {
       posts.map((post) => (
@@ -48,6 +44,10 @@ sortCollectionByDate(posts);
 </BaseLayout>
 
 <style>
+  h1::before {
+    content: "#";
+  }
+
   li {
     margin-bottom: 1rem;
   }

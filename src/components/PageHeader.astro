@@ -6,7 +6,7 @@ const { title, description, updated, toc, headings, collection, tags } =
   Astro.props;
 ---
 
-<header aria-label="Page Header" id="page-header">
+<header class="page-header" aria-label="Page Header">
   <h1>{title}</h1>
   {
     updated && (
@@ -23,11 +23,6 @@ const { title, description, updated, toc, headings, collection, tags } =
 </header>
 
 <style>
-  header {
-    border-bottom: 1px dotted;
-    padding-bottom: 1rem;
-  }
-
   .description {
     font-style: italic;
     margin-top: 0;
