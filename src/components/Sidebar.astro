@@ -15,10 +15,6 @@ import SocialLinks from "./SocialLinks.astro";
     border-right: 1px solid;
     margin-right: 4rem;
     padding-right: 4rem;
-
-    @media screen and (max-width: 600px) {
-      display: none;
-    }
   }
 
   aside div {
@@ -28,5 +24,11 @@ import SocialLinks from "./SocialLinks.astro";
   summary {
     padding: 1rem 0;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 768px) {
+    aside {
+      display: none;
+    }
   }
 </style>
