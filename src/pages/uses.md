@@ -3,7 +3,7 @@ layout: ../layouts/DefaultPage.astro
 title: Things I Use
 ---
 
-I love tools, and I wish everyone would include a page like this on their website. Futzing with tools is often a waste of time, but once in a while you find one that's legitimately game-changing ([Anki](https://apps.ankiweb.net/), for instance). I pretty much live for that.
+I wish everyone would include a page like this on their website. Futzing with tools is often a waste of time, but once in a while you find one that's legitimately game-changing ([Anki](https://apps.ankiweb.net/), for instance). I pretty much live for that.
 
 ## Writing
 

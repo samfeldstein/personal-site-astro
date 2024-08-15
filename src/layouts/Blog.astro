@@ -1,0 +1,12 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Collection from "../components/CollectionList.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout title={frontmatter.title}>
+  <h1>{frontmatter.title}</h1>
+  <slot />
+  <Collection collectionName="blog" sort="date" />
+</BaseLayout>
