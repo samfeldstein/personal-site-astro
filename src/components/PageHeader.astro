@@ -2,7 +2,8 @@
 import Contents from "./Contents.astro";
 import Tags from "./Tags.astro";
 
-const { title, description, updated, toc, headings, collection, tags } = Astro.props;
+const { title, description, updated, toc, headings, collection, tags } =
+  Astro.props;
 ---
 
 <header aria-label="Page Header" id="page-header">
@@ -16,7 +17,7 @@ const { title, description, updated, toc, headings, collection, tags } = Astro.p
     )
   }
   {description && <p class="description">{description}</p>}
-  {tags && <Tags tags={tags} path={collection}/>}
+  {tags && <Tags tags={tags} path={collection} />}
   {toc && <Contents headings={headings} />}
   <slot />
 </header>
@@ -26,7 +27,7 @@ const { title, description, updated, toc, headings, collection, tags } = Astro.p
     border-bottom: 1px dotted;
     padding-bottom: 1rem;
   }
-  
+
   h1 {
     margin-top: 0;
     text-wrap: balance;
@@ -35,6 +36,5 @@ const { title, description, updated, toc, headings, collection, tags } = Astro.p
   .description {
     font-style: italic;
     margin-top: 0;
-    text-align: center;
   }
 </style>

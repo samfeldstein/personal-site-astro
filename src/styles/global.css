@@ -40,7 +40,7 @@ body {
 
   /* https://modernfontstacks.com/ */
   font-family: var(--body-font);
-  font-size: calc(1rem + 0.4vw);
+  font-size: calc(1.25rem + .2vw);
   color: var(--text-color);
 }
 
