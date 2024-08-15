@@ -54,11 +54,6 @@ main p {
   hyphens: auto;
 }
 
-::selection {
-  background: #0080ff;
-  text-shadow: none;
-}
-
 h1,
 h2,
 h3 {

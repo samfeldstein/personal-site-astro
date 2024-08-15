@@ -34,4 +34,19 @@ const { title, description } = Astro.props;
     href={new URL("feed.xml", Astro.site)}
   />
   <ViewTransitions />
+  <script>
+    // Try to bypass service worker residue
+    if ("serviceWorker" in navigator) {
+      caches
+        .keys()
+        .then((names) => {
+          for (let name of names) {
+            caches.delete(name);
+          }
+        })
+        .then(() => {
+          window.location.reload(); // Force a hard reload
+        });
+    }
+  </script>
 </head>
