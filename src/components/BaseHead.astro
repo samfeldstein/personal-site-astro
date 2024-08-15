@@ -37,16 +37,11 @@ const { title, description } = Astro.props;
   <script>
     // Try to bypass service worker residue
     if ("serviceWorker" in navigator) {
-      caches
-        .keys()
-        .then((names) => {
-          for (let name of names) {
-            caches.delete(name);
-          }
-        })
-        .then(() => {
-          window.location.reload(); // Force a hard reload
-        });
+      caches.keys().then((names) => {
+        for (let name of names) {
+          caches.delete(name);
+        }
+      });
     }
   </script>
 </head>
