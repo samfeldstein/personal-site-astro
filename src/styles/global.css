@@ -20,9 +20,6 @@
     "URW Palladio L", P052, serif;
   --monospace: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
-
-  /* Breakpoints */
-  --breakpoint: 700px;
 }
 
 html {
@@ -31,13 +28,13 @@ html {
 
 body {
   margin: 0 auto;
-  padding: 0.5rem;
+  padding: 1rem;
   max-width: 75rem;
   display: flex;
 
   /* https://modernfontstacks.com/ */
   font-family: var(--body-font);
-  font-size: calc(1.25rem + 0.2vw);
+  font-size: 1.25rem;
   color: var(--text-color);
 }
 
