@@ -71,8 +71,11 @@ const blogs = [
 <ul class="unstyled-list">
   {
     blogs.map((blog) => (
-      <li>
-        {blog.author} at <a href={blog.url}>{blog.title}</a>
+      <li class="flex-column">
+        {blog.author} at{" "}
+        <a class="collection-item-title no-decor" href={blog.url}>
+          {blog.title}
+        </a>
       </li>
     ))
   }
@@ -82,8 +85,6 @@ const blogs = [
   ul {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
     gap: 1rem;
   }
@@ -91,12 +92,12 @@ const blogs = [
   li {
     border: 1px solid;
     padding: 1rem;
-    align-content: center;
+    align-items: center;
+    justify-content: space-around;
   }
 
   a {
     font-size: 2rem;
     text-wrap: balance;
-    display: block;
   }
 </style>
