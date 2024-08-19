@@ -35,8 +35,6 @@ const collection = await getCollection(collectionName);
   ul {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 1fr;
     gap: 1rem;
   }
@@ -44,6 +42,7 @@ const collection = await getCollection(collectionName);
   a {
     font-size: 2rem;
     text-wrap: balance;
+    margin: 1em 0;
   }
 
   /* Components */
@@ -52,11 +51,6 @@ const collection = await getCollection(collectionName);
     padding: 1rem;
     align-items: center;
     justify-content: space-around;
-    transition: transform 0.3s ease;
-  }
-
-  li:hover {
-    transform: translate(5px, -5px);
   }
 </style>
 
