@@ -3,27 +3,42 @@
 // https://indiewebify.me/validate-rel-me/
 
 import { author } from "../../config.mjs";
+
+const socials = [
+  { name: "Email", url: `mailto:${author.email}` },
+  {
+    name: "Newsletter",
+    url: "https://samfeldstein.substack.com",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/seldstein/",
+  },
+  {
+    name: "Reddit",
+    url: "https://www.reddit.com/user/seldstein/",
+  },
+  {
+    name: "GitHub",
+    url: "https://github.com/seldstein",
+  },
+  {
+    name: "Feed",
+    url: "/feed.xml",
+  },
+];
 ---
 
 <ul>
-  <li>
-    <a href=`mailto:${author.email}` rel="me">Email</a>
-  </li>
-  <li>
-    <a href="https://samfeldstein.substack.com">Substack</a>
-  </li>
-  <li>
-    <a href="https://mastodon.social/@samfeldstein" rel="me">Mastodon</a>
-  </li>
-  <li>
-    <a href="https://www.reddit.com/user/seldstein/" rel="me">Reddit</a>
-  </li>
-  <li>
-    <a href="https://github.com/seldstein" rel="me">GitHub</a>
-  </li>
-  <li>
-    <a href="/feed.xml" rel="me">Feed</a>
-  </li>
+  {
+    socials.map((social) => (
+      <li>
+        <a href={social.url} rel="me">
+          {social.name}
+        </a>
+      </li>
+    ))
+  }
 </ul>
 
 <style>

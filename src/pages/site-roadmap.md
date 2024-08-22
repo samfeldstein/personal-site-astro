@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/DefaultPage.astro
+layout: ../layouts/DefaultPage.astro
 title: Site Roadmap
 ---
 
@@ -7,9 +7,7 @@ title: Site Roadmap
 
 - [POSSE](https://indieweb.org/POSSE)
 - Projects page
-- Notebook
 - Photos page
-- Make mobile menu accessible
 
 ## Wishlist
 

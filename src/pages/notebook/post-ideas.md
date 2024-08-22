@@ -1,1 +1,0 @@
-- State Fair strategy
