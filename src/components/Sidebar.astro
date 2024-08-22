@@ -4,10 +4,12 @@ import SocialLinks from "./SocialLinks.astro";
 ---
 
 <aside>
-  <div>Navigation</div>
-  <SiteNav />
-  <div>Social</div>
-  <SocialLinks />
+  <div class="container">
+    <div>Navigation</div>
+    <SiteNav />
+    <div>Social</div>
+    <SocialLinks />
+  </div>
 </aside>
 
 <style>
@@ -24,6 +26,11 @@ import SocialLinks from "./SocialLinks.astro";
   summary {
     padding: 1rem 0;
     cursor: pointer;
+  }
+
+  .container {
+    position: sticky;
+    top: 0px;
   }
 
   @media screen and (max-width: 767px) {
