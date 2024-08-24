@@ -14,7 +14,7 @@ export async function GET() {
   sortCollectionByDate(posts);
 
   return rss({
-    title: site.title,
+    title: sanitizeHtml(site.title),
     description: site.description,
     site: site.url,
     items: posts.map((post) => {
