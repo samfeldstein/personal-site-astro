@@ -14,7 +14,7 @@ export async function GET() {
   sortCollectionByDate(posts);
 
   return rss({
-    title: sanitizeHtml(site.title),
+    title: site.title, // May fix micro.blog title rendering issue
     description: site.description,
     site: site.url,
     items: posts.map((post) => {
