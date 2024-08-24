@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "@divriots/jampack": "^0.24.4",
-    "cssnano": "^7.0.4"
+    "cssnano": "^7.0.4",
+    "markdown-it": "^14.1.0",
+    "sanitize-html": "^2.13.0"
   }
 }
