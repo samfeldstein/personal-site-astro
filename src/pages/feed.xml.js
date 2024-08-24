@@ -18,6 +18,7 @@ export async function GET() {
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,
+      categories: post.data.tags,
       customData: post.data.customData,
       link: `/blog/${post.slug}/`,
       // Note: this will not process components or JSX expressions in MDX files.
