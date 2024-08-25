@@ -1,9 +1,9 @@
 ---
-title: An Informal Guide to the Iowa State Fair
-description: An informal guide to the Iowa State Fair.
+title: Iowa State Fair (2024)
+description: An informal guide.
 pubDate: 2024-08-24
 location: Bondurant, IA
-tags: ["iowa-state-fair"]
+tags: ["fun"]
 ---
 
 This month I officially broke my one-year streak of not going to the Iowa State Fair, which is a streak I hate to maintain for any length of time. I don’t really have happy places but if I did the Fair would be one of them. We went to the Fair every year when I was a kid, though my earliest memories of it don’t go back very far. I think that’s because my brain can’t distinguish any of the twenty-five-ish Fairs I’ve attended and so instead of cataloging a highlight reel of memories it merged them all into one giant meta-Fair, a mental representation of what I think the Fair is and how I feel about it. And since that meta-Fair pretty much feels like joy, I’ve concluded that I must like it.
