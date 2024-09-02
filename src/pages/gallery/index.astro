@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Picture } from "astro:assets";
+import possum from "./possum.jpg";
+---
+
+<BaseLayout
+  title="Gallery"
+  description="A gallery of photographs taken by Sam Feldstein."
+>
+<h1>Gallery</h1>
+  <Picture
+    src={possum}
+    formats={["avif", "webp", "jpeg"]}
+    alt="A baby possum sitting upright and surrounded by small, green leaves."
+  />
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 1em;
+  }
+</style>
