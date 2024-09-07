@@ -1,5 +1,5 @@
 /* https://web.dev/articles/optimize-webfont-loading */
-/* I've set caching to one year in Cloudflare. */
+/* I've set caching to one year in Cloudflare. Seems to make the site much faster. */
 
 @font-face {
   font-family: "EB Garamond";

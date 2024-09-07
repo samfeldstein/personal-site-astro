@@ -12,6 +12,7 @@ title: Site Roadmap
 - Projects page
 - Photos page
 - Add small caps to first line of posts.
+- Add sitemap
 
 ### Performance
 

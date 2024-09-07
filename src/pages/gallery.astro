@@ -1,14 +1,14 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import { Picture } from "astro:assets";
-import possum from "./possum.jpg";
+import possum from "/src/images/possum.jpg";
 ---
 
 <BaseLayout
   title="Gallery"
   description="A gallery of photographs taken by Sam Feldstein."
 >
-<h1>Gallery</h1>
+  <h1>Gallery</h1>
   <Picture
     src={possum}
     formats={["avif", "webp", "jpeg"]}
@@ -19,5 +19,14 @@ import possum from "./possum.jpg";
 <style>
   h1 {
     margin-bottom: 1em;
+  }
+</style>
+
+<style is:global>
+  img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-color: white;
+    border-width: 0.5rem;
+    border-style: solid;
   }
 </style>
