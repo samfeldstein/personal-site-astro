@@ -1,9 +1,8 @@
 ---
 layout: ../layouts/DefaultPage.astro
 title: Things I Use
+key: Uses
 ---
-
-I wish everyone would include a page like this on their website. Futzing with tools is often a waste of time, but once in a while you find one that's legitimately game-changing ([Anki](https://apps.ankiweb.net/), for instance). I pretty much live for that.
 
 ## Writing
 
@@ -38,9 +37,9 @@ For books, I have a Kindle and library card. The [Internet Archive](https://arch
 
 ## Notetaking
 
-I manage notes and files with VS Code. I used to use [Obsidian](https://obsidian.md/), which is excellent software, but there wasn't anything I was doing with it that I couldn't do as well or better with VS Code.
+I manage notes and files with VS Code and [Foam](https://foambubble.github.io/foam/), but I use [Obsidian](https://obsidian.md/) to publish them. That's the one thing Obsidian does better than Foam. Foam has a way to do it with GitHub Pages that seems fairly straightforward, but backlinks don't render. I'd love to figure out a way to integrate Foam with Astro, but I'm just not skilled enough at the moment.
 
-I annotate articles and ebooks with Readwise. All notes I take in Readwise, on my Kindle, or in iBooks show up in my Readwise database. I used to export that database to Obsidian but now I send them to Google Drive.
+I annotate articles and ebooks with Readwise. All notes I take in Readwise, on my Kindle, or in iBooks show up in my Readwise database. I export that database to Obsidian and Google Drive.
 
 For memorizing facts, quotes, and other information, I use [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) via [Anki](https://apps.ankiweb.net/).
 
