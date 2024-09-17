@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Picture } from "astro:assets";
+import pairings from "/src/images/pairings-screenshot.jpg";
+---
+
+<BaseLayout title="Web Development Projects">
+  <h1>Web Development Projects</h1>
+  <li><a href="/">Personal Site</a> (this website)</li>
+  <li><a href="https://prairierosearena.com/">Prairie Rose Arena</a></li>
+
+  <h2>Pairings</h2>
+  <p>
+    An app that generates random pairings from any two lists. This was my first
+    web application.
+  </p>
+  <a href="https://pairingapp.netlify.app" target="_blank">
+    <Picture
+      src={pairings}
+      formats={["avif", "webp", "jpeg"]}
+      alt="A screenshot of the 'Pairings' homepage."
+    />
+  </a>
+  <div class="notes source">
+    <a href="https://notebook.samfeldstein.xyz/pairings-notes">Notes</a>
+    <a href="https://github.com/seldstein/pairings">Source</a>
+  </div>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  .notes.source {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1rem;
+  }
+</style>
+
+<style is:global>
+  img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-color: white;
+    border-width: 0.5rem;
+    border-style: solid;
+    border-radius: 2px;
+  }
+</style>
