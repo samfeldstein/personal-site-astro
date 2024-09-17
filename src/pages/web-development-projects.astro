@@ -2,13 +2,12 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Picture } from "astro:assets";
 import pairings from "/src/images/pairings-screenshot.jpg";
+import prairieRose from "/src/images/prairie-rose-arena-screenshot.jpg";
+import personalSite from "/src/images/personal-site-screenshot.jpg";
 ---
 
 <BaseLayout title="Web Development Projects">
   <h1>Web Development Projects</h1>
-  <li><a href="/">Personal Site</a> (this website)</li>
-  <li><a href="https://prairierosearena.com/">Prairie Rose Arena</a></li>
-
   <h2>Pairings</h2>
   <p>
     An app that generates random pairings from any two lists. This was my first
@@ -25,6 +24,35 @@ import pairings from "/src/images/pairings-screenshot.jpg";
     <a href="https://notebook.samfeldstein.xyz/pairings-notes">Notes</a>
     <a href="https://github.com/seldstein/pairings">Source</a>
   </div>
+
+  <h2>Prairie Rose Arena</h2>
+  <p>A website for an equestrian event center. Built with Eleventy.</p>
+  <a href="https://prairierosearena.com/" target="_blank">
+    <Picture
+      src={prairieRose}
+      formats={["avif", "webp", "jpeg"]}
+      alt="A screenshot of the Prairie Rose Arena website homepage."
+    />
+  </a>
+  <div class="notes source">
+    <a href="https://notebook.samfeldstein.xyz/prairie-rose-arena-notes"
+      >Notes</a
+    >
+  </div>
+
+  <h2>Personal Site</h2>
+  <p>My personal website. Built with Astro.</p>
+  <a href="/">
+    <Picture
+      src={personalSite}
+      formats={["avif", "webp", "jpeg"]}
+      alt="A screenshot of the homepage of Sam Feldstein's personal website."
+    />
+  </a>
+  <div class="notes source">
+    <a href="https://notebook.samfeldstein.xyz/personal-site-notes">Notes</a>
+    <a href="https://github.com/seldstein/personal-site-astro">Source</a>
+  </div>
 </BaseLayout>
 
 <style>
@@ -34,7 +62,7 @@ import pairings from "/src/images/pairings-screenshot.jpg";
 
   .notes.source {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 1rem;
   }
 </style>
@@ -42,9 +70,6 @@ import pairings from "/src/images/pairings-screenshot.jpg";
 <style is:global>
   img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-color: white;
-    border-width: 0.5rem;
-    border-style: solid;
     border-radius: 2px;
   }
 </style>
