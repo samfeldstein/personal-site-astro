@@ -20,11 +20,11 @@ I write in [VS Code](https://code.visualstudio.com/). If I need to manage a lot 
 
 [Enso](https://enso.sonnet.io/) comes in handy for distraction-free word-dumping. I'd use [beat](https://www.beat-app.fi) if I still wrote screenplays, except maybe not, because VS Code has a great [fountain plugin](https://marketplace.visualstudio.com/items?itemName=piersdeseilligny.betterfountain).
 
-I track feeds and read articles with [Readwise](https://readwise.io/). For books, I have a Kindle and a library card. The [Internet Archive](https://archive.org) often comes in handy. I recently switched from [Goodreads](https://www.goodreads.com) to [LibraryThing](https://www.librarything.com/home) because Goodreads is sluggish and I hate it. LibraryThing, is faster and might be open source (I'm not sure, but it has the feel of it).
+I track feeds and read articles with [Readwise](https://readwise.io/). For books, I have a Kindle and a library card. The [Internet Archive](https://archive.org) often comes in handy. I recently switched from [Goodreads](https://www.goodreads.com) to [LibraryThing](https://www.librarything.com/home) because Goodreads is sluggish and I hate it. LibraryThing is faster and might be open source (I'm not sure, but it has the feel of it).
 
 Readwise is also where I keep all my annotations. All notes I take in [Readwise Reader](https://read.readwise.io), on my Kindle, or in iBooks show up in my Readwise database, which I export to Google Drive.
 
-[Anki](https://apps.ankiweb.net/) helps me memorize information through the power of [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition).
+[Anki](https://apps.ankiweb.net/) and [spaced repetition](https://en.wikipedia.org/wiki/Spaced_repetition) help me memorize information.
 
 **Reference materials:**
 
@@ -44,4 +44,4 @@ I built this website with [Astro](https://astro.build/), and I built my [noteboo
 
 ### Other
 
-I browse the web [Vivaldi](https://vivaldi.com).
+I browse the Web with [Vivaldi](https://vivaldi.com).
