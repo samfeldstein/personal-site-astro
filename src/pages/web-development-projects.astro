@@ -6,6 +6,7 @@ import pairings from "/src/images/pairings-screenshot.jpg";
 import prairieRose from "/src/images/prairie-rose-arena-screenshot.jpg";
 import personalSite from "/src/images/personal-site-screenshot.jpg";
 import notebook from "/src/images/notebook-homepage-screenshot.jpg";
+import personalSiteHugo from "/src/images/personal-website-hugo-screenshot.jpg";
 ---
 
 <BaseLayout title="Web Development Projects">
@@ -63,7 +64,7 @@ import notebook from "/src/images/notebook-homepage-screenshot.jpg";
     >
   </div>
 
-  <h2>Personal Site</h2>
+  <h2>Personal Site (Astro)</h2>
   <p>My personal website. Built with Astro.</p>
   <a class="image" href="/">
     <Picture
@@ -76,6 +77,19 @@ import notebook from "/src/images/notebook-homepage-screenshot.jpg";
     <a href="https://notebook.samfeldstein.xyz/notes/personal-site-notes"
       >Notes</a
     >
+    <a href="https://github.com/seldstein/personal-site-astro">Source</a>
+  </div>
+
+  <h2>Personal Site (Hugo, archived)</h2>
+  <p>An archived version of my personal site. Built with Hugo.</p>
+  <a class="image" href="https://seldstein.github.io/personal-site-hugo/">
+    <Picture
+      src={personalSiteHugo}
+      formats={["avif", "webp", "jpeg"]}
+      alt="A screenshot of the homepage of an archived version of Sam Feldstein's personal website."
+    />
+  </a>
+  <div class="notes source">
     <a href="https://github.com/seldstein/personal-site-astro">Source</a>
   </div>
 </BaseLayout>
