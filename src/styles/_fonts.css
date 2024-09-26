@@ -31,6 +31,16 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "EB Garamond Bold-Italic";
+  src: local("EB Garamond Bold-Italic"),
+    url("/fonts/subset-EBGaramondBoldItalic.woff2") format("woff2"),
+    url("/fonts/subset-EBGaramondBoldItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 i,
 em {
   font-family: "EB Garamond Italic", var(--body-font);
@@ -38,6 +48,7 @@ em {
   font-style: normal;
 }
 
+b,
 strong {
   font-family: "EB Garamond Bold", var(--body-font);
   font-weight: normal;
