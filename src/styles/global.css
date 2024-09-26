@@ -61,16 +61,33 @@ h1 {
 h2 {
   text-align: right;
   border-bottom: 1px dotted;
+  margin-top: 2em;
 }
 
 a {
   color: var(--link-color);
+  text-decoration-thickness: 1px;
+  text-decoration-style: solid;
   text-underline-offset: 0.2em;
 }
 
-a:hover,
-a:focus {
+main a {
+  font-weight: bold;
+}
+
+a:not(.skiplink):hover,
+a:not(.skiplink):focus,
+a:not(.skiplink):active {
   text-decoration: none;
+  opacity: 70%;
+}
+
+a[href^="https"] {
+  text-decoration-style: dotted;
+}
+
+a[href^="https"]::after {
+  content: "➚";
 }
 
 .content-container {

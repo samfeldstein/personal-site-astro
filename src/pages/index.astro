@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Blog from "../components/CollectionList.astro";
+import { Picture } from "astro:assets";
+import notebook from "/src/images/notebook-homepage-screenshot.jpg";
 ---
 
 <BaseLayout title="Home">
@@ -15,9 +17,30 @@ import Blog from "../components/CollectionList.astro";
       href="/blog/">one of my own</a
     >.
   </p>
+
+  <h2>Latest Project: My Digital Notebook</h2>
+  <p>
+    My digital notebook. Built with <a href="https://foambubble.github.io"
+      >Foam</a
+    > and <a href="https://www.11ty.dev/">Eleventy</a>.
+  </p>
+  <a href="https://notebook.samfeldstein.xyz/">
+    <Picture
+      src={notebook}
+      formats={["avif", "webp", "jpeg"]}
+      alt="A screenshot of the homepage of my digital notebook."
+    />
+  </a>
+  <div class="notes source">
+    <a
+      href="https://notebook.samfeldstein.xyz/notes/digital-notebook-project-notes/"
+      >Notes</a
+    >
+    <a href="https://github.com/seldstein/notebook">Source</a>
+  </div>
   <h2>Recent Posts</h2>
 
-  <Blog collectionName="blog" sort="date" count="6" />
+  <Blog collectionName="blog" sort="date" count="3" />
 
   <p class="text-right">
     <a href="/blog/">See all posts >>></a>
@@ -32,5 +55,18 @@ import Blog from "../components/CollectionList.astro";
   span {
     font-variant: small-caps;
     letter-spacing: 0.1em;
+  }
+
+  .notes.source {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+  }
+</style>
+
+<style is:global>
+  img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 2px;
   }
 </style>

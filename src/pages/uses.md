@@ -16,7 +16,7 @@ I have a Toyota Corolla that I've taken all the over the country. If it had crui
 
 ### Writing and Reading
 
-I write in [VS Code](https://code.visualstudio.com/). If I need to manage a lot of text files, as with my [notebook](https://notebook.samfeldstein.xyz), I use [Foam](foambubble.github.io/).
+I write in [VS Code](https://code.visualstudio.com/). If I need to manage a lot of text files, as with my [notebook](https://notebook.samfeldstein.xyz), I use [Foam](https://foambubble.github.io).
 
 [Enso](https://enso.sonnet.io/) comes in handy for distraction-free word-dumping. I'd use [beat](https://www.beat-app.fi) if I still wrote screenplays, except maybe not, because VS Code has a great [fountain plugin](https://marketplace.visualstudio.com/items?itemName=piersdeseilligny.betterfountain).
 
