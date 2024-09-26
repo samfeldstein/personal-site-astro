@@ -34,8 +34,8 @@
 @font-face {
   font-family: "EB Garamond Bold-Italic";
   src: local("EB Garamond Bold-Italic"),
-    url("/fonts/subset-EBGaramondBoldItalic.woff2") format("woff2"),
-    url("/fonts/subset-EBGaramondBoldItalic.woff") format("woff");
+    url("/fonts/subset-EBGaramond-BoldItalic.woff2") format("woff2"),
+    url("/fonts/subset-EBGaramond-BoldItalic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
