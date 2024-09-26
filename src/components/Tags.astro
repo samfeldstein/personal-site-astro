@@ -6,7 +6,7 @@ const { tags, path } = Astro.props;
   {
     tags.map((tag) => (
       <li>
-        <a class="tag no-decor" href={`/${path}/tags/${tag}`}>
+        <a class="tag" href={`/${path}/tags/${tag}`}>
           #{tag}
         </a>
       </li>
@@ -16,6 +16,14 @@ const { tags, path } = Astro.props;
 
 <style>
   a {
-    font-style: italic;
+    font-family: var(--italic);
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.1em;
   }
 </style>
