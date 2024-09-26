@@ -16,8 +16,8 @@
   }
 
   /* Fonts */
-  --body-font: "EB Garamond", "Iowan Old Style", "Palatino Linotype",
-    "URW Palladio L", P052, serif;
+  --body-font: "EB Garamond", serif;
+  --bold: "EB Garamond Bold";
   --monospace: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
 }
@@ -60,7 +60,8 @@ h1 {
 
 h2 {
   text-align: right;
-  border-bottom: 1px dotted;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
   margin-top: 2em;
 }
 
@@ -71,8 +72,8 @@ a {
   text-underline-offset: 0.2em;
 }
 
-main a {
-  font-weight: bold;
+main a:not(.title) {
+  font-family: var(--bold);
 }
 
 a:not(.skiplink):hover,
@@ -82,11 +83,7 @@ a:not(.skiplink):active {
   opacity: 70%;
 }
 
-a[href^="https"] {
-  text-decoration-style: dotted;
-}
-
-a[href^="https"]::after {
+a[href^="https"]:not(.image)::after {
   content: "➚";
 }
 
