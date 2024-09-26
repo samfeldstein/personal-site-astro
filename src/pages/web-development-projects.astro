@@ -7,6 +7,7 @@ import prairieRose from "/src/images/prairie-rose-arena-screenshot.jpg";
 import personalSite from "/src/images/personal-site-screenshot.jpg";
 import notebook from "/src/images/notebook-homepage-screenshot.jpg";
 import personalSiteHugo from "/src/images/personal-website-hugo-screenshot.jpg";
+import firstWebsite from "/src/images/first-website-screenshot.jpg";
 ---
 
 <BaseLayout title="Web Development Projects">
@@ -34,8 +35,8 @@ import personalSiteHugo from "/src/images/personal-website-hugo-screenshot.jpg";
 
   <h2>Pairings</h2>
   <p>
-    An app that generates random pairings from any two lists. This was my first
-    web application.
+    An app that generates pairings from any two lists. My first JavaScript-driven
+    project.
   </p>
   <a class="image" href="https://pairingapp.netlify.app">
     <Picture
@@ -90,7 +91,23 @@ import personalSiteHugo from "/src/images/personal-website-hugo-screenshot.jpg";
     />
   </a>
   <div class="notes source">
-    <a href="https://github.com/seldstein/personal-site-astro">Source</a>
+    <a href="https://github.com/seldstein/personal-site-hugo">Source</a>
+  </div>
+
+  <h2>My First Website</h2>
+  <p>
+    The first version of my personal site. Built by hand. No generators, no
+    nothin.
+  </p>
+  <a class="image" href="https://seldstein.github.io/first-website/">
+    <Picture
+      src={firstWebsite}
+      formats={["avif", "webp", "jpeg"]}
+      alt="A screenshot of the homepage of the first website I ever built."
+    />
+  </a>
+  <div class="notes source">
+    <a href="https://github.com/seldstein/first-website">Source</a>
   </div>
 </BaseLayout>
 
