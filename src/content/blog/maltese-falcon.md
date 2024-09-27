@@ -3,7 +3,7 @@ title: "Riddled with Words: 'The Maltese Falcon'"
 description: Every bastard gets what's coming to them.
 pubDate: 2023-01-31
 location: Marfa, TX
-tags: ["movies", "noir"]
+tags: ["movies"]
 ---
 
 Sam Spade exhibits a degree of unhinged lunacy on par with Hamlet, and there’s something to that, isn’t there, because you know what they have in common? They’re both damaged goods. Hamlet’s uncle killed his father and then had shameless carnal relations with his mother. It’s enough to drive anyone to San Francisco, and Sam, well we don’t know what he’s been through but part of the art of filmmaking as John Huston so deftly demonstrates is knowing what to say and when to say it, yes, but also knowing what not to say. No, it wouldn’t do if we knew too much about Sam Spade, if we knew what abuses he’s endured. If we knew that we’d pity him, and worse, he wouldn’t be so damn cool.

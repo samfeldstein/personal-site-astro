@@ -48,6 +48,12 @@ main p {
   hyphens: auto;
 }
 
+p,
+ul,
+ol {
+  line-height: 1.5;
+}
+
 h1,
 h2,
 h3 {
@@ -68,7 +74,7 @@ h2 {
 
 a {
   color: var(--link-color);
-  text-decoration-thickness: 1px;
+  text-decoration-thickness: 0.05em;
   text-underline-offset: 0.2em;
 }
 
@@ -77,10 +83,6 @@ a:not(.skiplink):focus,
 a:not(.skiplink):active {
   text-decoration: none;
   opacity: 70%;
-}
-
-a[href^="https"]:not(.image)::after {
-  content: "➚";
 }
 
 .content-container {

@@ -3,7 +3,7 @@ title: And God Said, "Care, Dammit"
 description: Talmudic wisdom in 'The Exorcist.'
 pubDate: 2023-12-05
 location: Alpine, TX
-tags: ["books", "horror", "judaism"]
+tags: ["books"]
 ---
 
 I was working on a short story about an exorcist (which I've since abandoned) so I decided to read *The Exorcist.* I've seen the movie but can't say I'm a fan. The book is excellent. One passage stood out. It's said by Merrin, the senior exorcist, to Damien, the amateur who's been having a crisis of faith:
