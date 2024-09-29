@@ -16,7 +16,7 @@ const { title, description, updated, toc, headings, collection, tags } =
       </p>
     )
   }
-  {description && <p class="description">{description}</p>}
+  {description && <p class="description"><i>{description}</i></p>}
   {tags && <Tags tags={tags} path={collection} />}
   {toc && <Contents headings={headings} />}
   <slot />
@@ -24,7 +24,6 @@ const { title, description, updated, toc, headings, collection, tags } =
 
 <style>
   .description {
-    font-family: var(--italic);
     margin-top: 0;
   }
 </style>

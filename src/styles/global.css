@@ -17,8 +17,9 @@
 
   /* Fonts */
   --body-font: "EB Garamond", serif;
-  --bold: "EB Garamond Bold";
-  --italic: "EB Garamond Italic";
+  --bold: "EB Garamond Bold", serif;
+  --italic: "EB Garamond Italic", serif;
+  --bold-italic: "EB Garamond Bold-Italic", serif;
   --monospace: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
     "DejaVu Sans Mono", monospace;
 }

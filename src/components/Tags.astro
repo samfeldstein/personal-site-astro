@@ -7,7 +7,7 @@ const { tags, path } = Astro.props;
     tags.map((tag) => (
       <li>
         <a class="tag" href={`/${path}/tags/${tag}`}>
-          #{tag}
+          <i>#{tag}</i>
         </a>
       </li>
     ))
@@ -16,7 +16,6 @@ const { tags, path } = Astro.props;
 
 <style>
   a {
-    font-family: var(--italic);
     text-decoration: none;
   }
 

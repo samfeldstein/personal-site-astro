@@ -18,8 +18,10 @@ const { frontmatter, collection } = Astro.props;
     />
     <slot />
     <div class="dateline text-right">
-      <Date date={frontmatter.pubDate} />
-      <div class="location">{frontmatter.location}</div>
+      <i>
+        <Date date={frontmatter.pubDate} />
+        <div class="location">{frontmatter.location}</div>
+      </i>
     </div>
   </article>
 </BaseLayout>
@@ -27,7 +29,6 @@ const { frontmatter, collection } = Astro.props;
 <style>
   .dateline {
     font-size: 0.75em;
-    font-style: italic;
     margin-top: 4rem;
   }
 </style>
@@ -37,7 +38,7 @@ const { frontmatter, collection } = Astro.props;
     border-bottom: 1px dotted;
     padding-bottom: 1rem;
   }
-  
+
   .tags {
     margin: 0;
     display: flex;
