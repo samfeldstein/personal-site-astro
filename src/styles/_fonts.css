@@ -44,13 +44,24 @@
 i,
 em {
   font-family: "EB Garamond Italic", var(--body-font);
-  font-weight: normal;
-  font-style: normal;
+  /* font-weight: normal;
+  font-style: normal; */
 }
 
 b,
 strong {
   font-family: "EB Garamond Bold", var(--body-font);
-  font-weight: normal;
-  font-style: normal;
+  /* font-weight: normal;
+  font-style: normal; */
+}
+
+i b,
+i strong,
+em b,
+em strong,
+b i,
+strong i,
+b em,
+strong em {
+  font-family: "EB Garamond Bold-Italic", var(--body-font);
 }
