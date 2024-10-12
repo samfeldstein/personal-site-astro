@@ -44,4 +44,4 @@ I built this website with [Astro](https://astro.build/), and I built my [noteboo
 
 ### Other
 
-I browse the Web with [Vivaldi](https://vivaldi.com).
+I browse the Web with [Vivaldi](https://vivaldi.com). I use [Google Programmable Search](https://programmablesearchengine.google.com/about/) to curate results.
