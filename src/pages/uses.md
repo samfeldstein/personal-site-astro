@@ -40,7 +40,7 @@ Readwise is also where I keep all my annotations. All notes I take in [Readwise 
 
 I code in VS Code. I use [GitHub](https://github.com/seldstein/) for version control. I use [Google Chrome](https://www.google.com/chrome/) and [Firefox Developer Edition](https://www.mozilla.org/en-US/firefox/developer/) for development. I design in [Figma](https://www.figma.com).
 
-I built this website with [Astro](https://astro.build/), and I built my [notebook](https://notebook.samfeldstein.xyz/index) with [Eleventy](https://www.11ty.dev).
+I built this website with [Astro](https://astro.build/), and I built my [notebook](https://notebook.samfeldstein.xyz/) with [Eleventy](https://www.11ty.dev).
 
 ### Other
 

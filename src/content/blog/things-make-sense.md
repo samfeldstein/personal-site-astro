@@ -9,3 +9,9 @@ tags: ["poetry"]
 Things make sense\
 because if they didn't\
 they wouldn't.
+
+## Notes
+
+> *Everything is the way it is because it got that way.*
+> 
+> D’arcy Thompson
