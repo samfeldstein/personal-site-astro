@@ -16,12 +16,21 @@
   }
 
   /* Fonts */
-  --body-font: "EB Garamond", serif;
-  --bold: "EB Garamond Bold", serif;
-  --italic: "EB Garamond Italic", serif;
-  --bold-italic: "EB Garamond Bold-Italic", serif;
-  --monospace: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
-    "DejaVu Sans Mono", monospace;
+  --body-font: "EB Garamond",
+  serif;
+  --bold: "EB Garamond Bold",
+  serif;
+  --italic: "EB Garamond Italic",
+  serif;
+  --bold-italic: "EB Garamond Bold-Italic",
+  serif;
+  --monospace: ui-monospace,
+  "Cascadia Code",
+  "Source Code Pro",
+  Menlo,
+  Consolas,
+  "DejaVu Sans Mono",
+  monospace;
 }
 
 html {
@@ -66,10 +75,15 @@ h1 {
   margin: 0;
 }
 
-h2 {
+h2,
+h4 {
   text-align: right;
   border-bottom-style: dotted;
   border-bottom-width: 1px;
+  margin-top: 2em;
+}
+
+h3 {
   margin-top: 2em;
 }
 
