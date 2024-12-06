@@ -3,6 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Blog from "../components/CollectionList.astro";
 import { Picture } from "astro:assets";
 import notebook from "/src/images/notebook-homepage-screenshot.jpg";
+import danceophile from "/src/images/danceophile-screenshot.jpg";
 ---
 
 <BaseLayout title="Home">
@@ -15,26 +16,19 @@ import notebook from "/src/images/notebook-homepage-screenshot.jpg";
     active in <a href="https://notebook.samfeldstein.xyz/">my notebook</a>.
   </p>
 
-  <h2>Latest Project: My Digital Notebook</h2>
+  <h2>Latest Project: Danceophile Studio (in progress)</h2>
   <p>
-    My online workspace. Built with <a href="https://foambubble.github.io"
-      >Foam</a
-    > and <a href="https://www.11ty.dev/">Eleventy</a>.
+    A website for an independent folk dance studio. Built with <a
+      href="https://astro.build">Astro</a
+    >.
   </p>
-  <a class="image" href="https://notebook.samfeldstein.xyz/">
+  <a class="image" href="https://danceophile.netlify.app/danceophile/">
     <Picture
-      src={notebook}
+      src={danceophile}
       formats={["avif", "webp", "jpeg"]}
-      alt="A screenshot of the homepage of my digital notebook."
+      alt="A screenshot of the Danceophile Studio homepage."
     />
   </a>
-  <div class="notes source">
-    <a
-      href="https://notebook.samfeldstein.xyz/notes/digital-notebook-project-notes/"
-      >Notes</a
-    >
-    <a href="https://github.com/seldstein/notebook">Source</a>
-  </div>
 
   <h2>Latest Posts</h2>
 
