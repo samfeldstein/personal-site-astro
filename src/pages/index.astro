@@ -2,19 +2,33 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Blog from "../components/CollectionList.astro";
 import { Picture } from "astro:assets";
-import notebook from "/src/images/notebook-homepage-screenshot.jpg";
 import danceophile from "/src/images/danceophile-screenshot.jpg";
 ---
 
 <BaseLayout title="Home">
   <h1 class="visually-hidden">Home</h1>
-  <p>
-    <span>Hi, I'm <strong>Sam Feldstein</strong>.</span> I used to want to be an
-    author, but lately I'm more interested in <a
-      href="/web-development-projects/">web development</a
-    >. I write the occasional <a href="/blog/">blog post</a>, but I'm much more
-    active in <a href="https://notebook.samfeldstein.xyz/">my notebook</a>.
-  </p>
+
+  <section id="intro">
+    <h2 class="visually-hidden">About Me</h2>
+    <p>
+      <span>Hi, I'm <strong>Sam Feldstein</strong>.</span> I'm a human, raised by
+      humans. I like building websites and making movie references.
+    </p>
+
+    <p>
+      I've been building websites since 2023. You can see my work on the <a
+        href="/projects/">projects page</a
+      >. I'm pretty happy with the progress I've made in a fairly short time,
+      and I'm officially trying to establish a clientele.
+    </p>
+
+    <p>
+      I'm most interested in building sites for individuals, small businesses,
+      and nonprofits. If you need a developer in your life and that sounds like
+      a good fit, send me an <a href="mailto:samuelfeldstein@proton.me">email</a
+      >.
+    </p>
+  </section>
 
   <h2>Latest Project: Danceophile Studio (in progress)</h2>
   <p>
