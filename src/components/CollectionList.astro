@@ -3,7 +3,7 @@ import Tags from "./Tags.astro";
 import Date from "./Date.astro";
 
 import { getCollection } from "astro:content";
-import { sortCollectionByDate } from "../scripts/utils";
+import { sortCollectionByDate } from "../scripts/utils.ts";
 
 const { collectionName, sort, count } = Astro.props;
 

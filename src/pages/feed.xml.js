@@ -3,7 +3,7 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { site } from "../../config.mjs";
-import { sortCollectionByDate } from "../scripts/utils";
+import { sortCollectionByDate } from "../scripts/utils.ts";
 import sanitizeHtml from "sanitize-html";
 import MarkdownIt from "markdown-it";
 
