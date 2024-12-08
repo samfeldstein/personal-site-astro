@@ -17,17 +17,12 @@ const photos = getGalleryImages();
             src={photo.src}
             format={["avif", "webp", "jpeg", "jpg"]}
             alt="Gallery image."
+            loading="lazy"
           />
-          {/* <img src={photo.src} alt="Gallery photo" /> */}
         </div>
       ))
     }
   </div>
-  <!-- <Picture
-    src={possum}
-    formats={["avif", "webp", "jpeg"]}
-    alt="A baby possum sitting upright and surrounded by small, green leaves."
-  /> -->
 </BaseLayout>
 
 <style>
