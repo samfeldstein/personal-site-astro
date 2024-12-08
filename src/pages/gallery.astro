@@ -4,7 +4,7 @@ import { Picture } from "astro:assets";
 
 import { getGalleryImages } from "../scripts/utils";
 
-const photos = await getGalleryImages();
+const photos = getGalleryImages();
 ---
 
 <BaseLayout title="Gallery">
@@ -13,7 +13,12 @@ const photos = await getGalleryImages();
     {
       photos.map((photo) => (
         <div class="gallery-item">
-          <img src={photo.src} alt="Gallery photo" />
+          <Picture
+            src={photo.src}
+            format={["avif", "webp", "jpeg", "jpg"]}
+            alt="Gallery image."
+          />
+          {/* <img src={photo.src} alt="Gallery photo" /> */}
         </div>
       ))
     }
