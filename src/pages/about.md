@@ -12,7 +12,7 @@ What else? We could start with where I'm from, but I'm not going to tell you tha
 
 I used to want to be a [writer](https://notebook.samfeldstein.xyz/notes/published-writing/), but I've mostly given that up. I still write the occasional [blog post](/blog/), and I'm pretty active in [my notebook](https://notebook.samfeldstein.xyz/).
 
-I've been an amateur photographer for years. Someday I'll put a gallery page up here.
+I've been an amateur [photographer](/gallery/) for years.
 
 I began taking dance lessons in 2024 after getting fed up with being jealous of how much fun people who knew how to dance were having. I've focussed on West Coast Swing thus far, but I've also taken a handful of Two Step and Country Swing classes.
 
