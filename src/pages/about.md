@@ -4,7 +4,7 @@ title: About Me
 key: Uses
 ---
 
-If you arrived here from the home page, you probably already know that I'm a web developer. If this is news to you, check out the [projects page](/projects/), then kindly [hire me](mailto:samuelfeldstein@proton.me).
+If you arrived here from the home page, you probably already know that I'm a web developer. If this is news to you, check out the [websites page](/websites/), then kindly [hire me](mailto:samuelfeldstein@proton.me).
 
 What else? We could start with where I'm from, but I'm not going to tell you that. Instead I'll give you a hint: It's not Idaho or Ohio. I'm currently in Boulder, but I've also lived in Iowa City, Southern California, and Far West Texas.
 
@@ -12,7 +12,7 @@ What else? We could start with where I'm from, but I'm not going to tell you tha
 
 I used to want to be a [writer](https://notebook.samfeldstein.xyz/notes/published-writing/), but I've mostly given that up. I still write the occasional [blog post](/blog/), and I'm pretty active in [my notebook](https://notebook.samfeldstein.xyz/).
 
-I've been an amateur [photographer](/gallery/) for years.
+I've been an amateur [photographer](/photos/) for years.
 
 I began taking dance lessons in 2024 after getting fed up with being jealous of how much fun people who knew how to dance were having. I've focussed on West Coast Swing thus far, but I've also taken a handful of Two Step and Country Swing classes.
 
