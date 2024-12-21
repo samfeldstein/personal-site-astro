@@ -1,12 +1,12 @@
 export const site = {
   title: "Sam Feldstein",
   description:
-    "Sam Feldstein's personal website. Sam is a photographer, writer, and web developer from Bondurant, IA.",
+    "Sam Feldstein's personal website. Sam is a web developer and photographer in Boulder, CO.",
   url: "https://samfeldstein.xyz",
   location: {
     country: "USA",
-    state: "LA",
-    city: "New Orleans",
+    state: "CO",
+    city: "Boulder",
   },
 };
 
