@@ -34,7 +34,7 @@ self.addEventListener('fetch', (event) => {
   const cachedRequest = coreAssets.includes(url.pathname);
 
   if (cachedRequest) {
-    // Grab the precached asset from the cache
+    // Grab the pre-cached asset from the cache
     event.respondWith(caches.open(cacheVersion).then((cache) => {
       return cache.match(event.request.url);
     }));
