@@ -56,10 +56,14 @@ I memorize information with [Anki](https://apps.ankiweb.net/).
 - [Online Etymology Dictionary](https://www.etymonline.com/)
 - [*Webster's 1913 Dictionary*](https://github.com/cmod/websters-1913) (macOS)
 
+### Photography
+
+I have a [Sony a6000](https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6000l-b?srsltid=AfmBOoq-RLburCCFwOBMuWQ0q0_7j6nLw0aMH20v7ioOyqPar6GfYiqW) that I mostly pair with a [7Artisans 35mm f/1.2 lens](https://7artisans.store/products/7artisans-35mm-f1-2-ii). The lens was only $150 but it feels far from cheap. It has some vignetting around the edges if you open the aperture too wide, but I think it gives the photos texture, and I love the way it captures colors.
+
+I edit in Lightroom Classic, and I share photos on [Instagram](https://www.instagram.com/sam.feldstein/).
+
 ### Other
 
 I browse the Web with [Vivaldi](https://vivaldi.com). I use [Google Programmable Search](https://programmablesearchengine.google.com/about/) to curate results.
 
-I take photos with a [Sony a6000](https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6000l-b?srsltid=AfmBOoq-RLburCCFwOBMuWQ0q0_7j6nLw0aMH20v7ioOyqPar6GfYiqW) and a [7Artisans 35mm lens](https://7artisans.store/products/7artisans-35mm-f1-2-ii). The lens has some vignetting around the edges if you open the aperture too wide, but I think it gives the photos texture.
-
-I have a Toyota Corolla that I've taken all the over the country. If it had cruise control and all-wheel drive, it'd be the perfect vehicle. 80,000 miles and all I've ever done to it is change the oil, swap the battery, and replace the tires.
+I have a Toyota Corolla that I've taken all the over the country. If it had cruise control and all-wheel drive it'd be the perfect vehicle. 100,000 miles and all I've ever done to it is change the oil, swap the battery, and replace the tires.
