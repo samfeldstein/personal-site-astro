@@ -1,6 +1,9 @@
 ---
+// Layout
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Picture } from "astro:assets";
+
+// Components
+import { Image } from "astro:assets";
 
 import { getGalleryImages } from "../scripts/utils";
 
@@ -10,20 +13,27 @@ const photos = getGalleryImages();
 <BaseLayout title="Photos">
   <h1>Photos</h1>
   <p>
-    I'm working on getting an online store set up. In the meantime, <a href="mailto:samuelfeldstein@proton.me"
-      >shoot me an email</a
+    I'm working on getting an online store set up. In the meantime, <a
+      href="mailto:samuelfeldstein@proton.me">shoot me an email</a
     > if you'd like to order a print.
   </p>
   <div class="gallery">
     {
       photos.map((photo) => (
         <div class="gallery-item">
-          <Picture
+          <Image
+            src={photo.src}
+            widths={[240, 540, 720]}
+            sizes="(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)"
+            alt="Gallery image."
+          />
+
+          {/* <Picture
             src={photo.src}
             format={["avif", "webp", "jpeg", "jpg"]}
             alt="Gallery image."
             loading="lazy"
-          />
+          /> */}
         </div>
       ))
     }

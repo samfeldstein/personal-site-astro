@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Picture } from "astro:assets";
+import { Image } from "astro:assets";
 
 import pairings from "/src/images/pairings-screenshot.jpg";
 import prairieRose from "/src/images/prairie-rose-arena-screenshot.jpg";
@@ -29,19 +29,21 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
   <h2>Danceophile Studio (in progress)</h2>
   <p>A website for an independent dance studio. Built with Astro.</p>
   <a class="image" href="https://danceophile.netlify.app/">
-    <Picture
+    <Image
       src={danceophile}
-      formats={["avif", "webp", "jpeg"]}
-      alt="A screenshot of the Danceophile Studio homepage."
+      widths={[240, 540, 720]}
+      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      alt="A screenshot of the homepage of the Danceophile Studio website."
     />
   </a>
   <h2>Notebook</h2>
   <p>My digital notebook. Built with Eleventy.</p>
   <a class="image" href="https://notebook.samfeldstein.xyz/">
-    <Picture
+    <Image
       src={notebook}
-      formats={["avif", "webp", "jpeg"]}
-      alt="A screenshot of the homepage of my digital notebook."
+      widths={[240, 540, 720]}
+      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      alt="A screenshot of the homepage of my personal notebook."
     />
   </a>
   <div class="notes source">
@@ -58,10 +60,11 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
     JavaScript-driven project.
   </p>
   <a class="image" href="https://pairingapp.netlify.app">
-    <Picture
+    <Image
       src={pairings}
-      formats={["avif", "webp", "jpeg"]}
-      alt="A screenshot of the 'Pairings' homepage."
+      widths={[240, 540, 720]}
+      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      alt="A screenshot of the Pairings webapp homepage."
     />
   </a>
   <div class="notes source">
@@ -72,9 +75,10 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
   <h2>Prairie Rose Arena</h2>
   <p>A website for an equestrian event center. Built with Eleventy.</p>
   <a class="image" href="https://prairierosearena.com/">
-    <Picture
+    <Image
       src={prairieRose}
-      formats={["avif", "webp", "jpeg"]}
+      widths={[240, 540, 720]}
+      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
       alt="A screenshot of the Prairie Rose Arena website homepage."
     />
   </a>
@@ -87,9 +91,10 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
   <h2>Personal Site (current version)</h2>
   <p>The website you are currently on. Built with Astro.</p>
   <a class="image" href="/">
-    <Picture
+    <Image
       src={personalSite}
-      formats={["avif", "webp", "jpeg"]}
+      widths={[240, 540, 720]}
+      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of Sam Feldstein's personal website."
     />
   </a>
@@ -103,9 +108,10 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
   <h2>Personal Site (Hugo, archived)</h2>
   <p>An archived version of my personal site. Built with Hugo.</p>
   <a class="image" href="https://seldstein.github.io/personal-site-hugo/">
-    <Picture
+    <Image
       src={personalSiteHugo}
-      formats={["avif", "webp", "jpeg"]}
+      widths={[240, 540, 720]}
+      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of an archived version of Sam Feldstein's personal website."
     />
   </a>
@@ -119,9 +125,10 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
     nothin.
   </p>
   <a class="image" href="https://seldstein.github.io/first-website/">
-    <Picture
+    <Image
       src={firstWebsite}
-      formats={["avif", "webp", "jpeg"]}
+      widths={[240, 540, 720]}
+      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of the first website I ever built."
     />
   </a>
