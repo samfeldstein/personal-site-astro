@@ -49,16 +49,6 @@ self.addEventListener("fetch", (event) => {
   const request = event.request;
   const url = new URL(request.url);
 
-  // Early return for excluded paths
-  if (
-    url.pathname.includes("admin") ||
-    url.pathname.includes("netlify") ||
-    url.pathname.includes("api") ||
-    url.pathname.includes("decap")
-  ) {
-    return;
-  }
-
   // Handle "only-if-cached" bug fix
   if (
     event.request.cache === "only-if-cached" &&
