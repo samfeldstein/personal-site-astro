@@ -8,29 +8,29 @@
   --background-color: #f5f5f5;
   --link-color: #2754d8;
 
+  /* Fonts */
+  --body-font: "EB Garamond",
+    serif;
+  --bold: "EB Garamond Bold",
+    serif;
+  --italic: "EB Garamond Italic",
+    serif;
+  --bold-italic: "EB Garamond Bold-Italic",
+    serif;
+  --monospace: ui-monospace,
+    "Cascadia Code",
+    "Source Code Pro",
+    Menlo,
+    Consolas,
+    "DejaVu Sans Mono",
+    monospace;
+
   @media (prefers-color-scheme: dark) {
     /* Dark mode styles */
     --text-color: #ffffff;
     --background-color: #1a1a1a;
     --link-color: #6699ff;
   }
-
-  /* Fonts */
-  --body-font: "EB Garamond",
-  serif;
-  --bold: "EB Garamond Bold",
-  serif;
-  --italic: "EB Garamond Italic",
-  serif;
-  --bold-italic: "EB Garamond Bold-Italic",
-  serif;
-  --monospace: ui-monospace,
-  "Cascadia Code",
-  "Source Code Pro",
-  Menlo,
-  Consolas,
-  "DejaVu Sans Mono",
-  monospace;
 }
 
 html {
@@ -102,4 +102,9 @@ a:not(.skiplink):active {
 
 .content-container {
   flex: 1;
+}
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--background-color);
 }
