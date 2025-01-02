@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "open -a 'Google Chrome' http://localhost:4321/ && astro dev",
-    "build": "astro build && jampack ./dist",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -16,7 +16,6 @@
     "autoprefixer": "^10.4.20"
   },
   "devDependencies": {
-    "@divriots/jampack": "^0.24.4",
     "cssnano": "^7.0.4",
     "markdown-it": "^14.1.0",
     "sanitize-html": "^2.13.0"
