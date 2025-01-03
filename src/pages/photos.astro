@@ -23,17 +23,10 @@ const photos = getGalleryImages();
         <div class="gallery-item">
           <Image
             src={photo.src}
-            widths={[240, 540, 720]}
+            widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
             sizes="(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)"
             alt="Gallery image."
           />
-
-          {/* <Picture
-            src={photo.src}
-            format={["avif", "webp", "jpeg", "jpg"]}
-            alt="Gallery image."
-            loading="lazy"
-          /> */}
         </div>
       ))
     }
