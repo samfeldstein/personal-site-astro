@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [mdx(), sitemap()],
   vite: {
     build: {
-      assetsInlineLimit: 5000,
+      assetsInlineLimit: 14000,
     }
   }
 });
