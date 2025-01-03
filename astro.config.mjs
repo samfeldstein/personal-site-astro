@@ -11,4 +11,9 @@ export default defineConfig({
     prefetchAll: true,
   },
   integrations: [mdx(), sitemap()],
+  vite: {
+    build: {
+      assetsInlineLimit: 5000,
+    }
+  }
 });
