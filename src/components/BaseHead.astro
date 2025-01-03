@@ -47,6 +47,7 @@ const { title, description, ogTitle, ogDescription, ogType, ogImage } =
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
   <title>{title} | {site.title}</title>
+  <meta name="author" content="Sam Feldstein" />
   <meta name="description" content={description || site.description} />
   <meta property="og:title" content={ogTitle || title || site.title} />
   <meta
@@ -60,7 +61,7 @@ const { title, description, ogTitle, ogDescription, ogType, ogImage } =
   <meta
     property="og:image"
     content={ogImage ||
-      "https://samfeldstein.xyz/images/sam-feldstein-homepage.jpg"}
+      "https://samfeldstein.xyz/images/sam-feldstein-open-graph-logo.svg"}
   />
   <link rel="sitemap" href="/sitemap-index.xml" />
   <link
