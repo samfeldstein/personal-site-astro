@@ -6,7 +6,7 @@ import "/src/styles/global.css";
 import { site } from "../../config.mjs";
 
 // Variables and properties
-const { title, description, ogTitle, ogDescription, ogType, ogURL, ogImage } =
+const { title, description, ogTitle, ogDescription, ogType, ogImage } =
   Astro.props;
 ---
 
@@ -48,14 +48,15 @@ const { title, description, ogTitle, ogDescription, ogType, ogURL, ogImage } =
   <meta name="generator" content={Astro.generator} />
   <title>{title} | {site.title}</title>
   <meta name="description" content={description || site.description} />
-  <meta property="og:title" content={ogTitle || site.title} />
+  <meta property="og:title" content={ogTitle || title || site.title} />
   <meta
     property="og:description"
     content={ogDescription ||
-      `Sam Feldstein's personal website. Sam is a web developer and photographer in ${site.location.city}, ${site.location.state}`}
+      description ||
+      `Sam Feldstein's personal website. Sam is a web developer and photographer in ${site.location.city}, ${site.location.state}.`}
   />
-  <meta property="og:type" content={ogType} />
-  <meta property="og:url" content={ogURL || site.url} />
+  <meta property="og:type" content={ogType || "website"} />
+  <meta property="og:url" content={Astro.url} />
   <meta
     property="og:image"
     content={ogImage ||

@@ -8,7 +8,7 @@ import Date from "../components/Date.astro";
 const { frontmatter, collection } = Astro.props;
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout title={frontmatter.title} description={frontmatter.description} ogType="article">
   <article>
     <PageHeader
       title={frontmatter.title}
