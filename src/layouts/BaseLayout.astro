@@ -7,12 +7,17 @@ import MobileMenu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 // Variables
-const { title, description } = Astro.props;
+const { title, description, ogTitle, ogType } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-  <BaseHead title={title} description={description} />
+<html lang="en" prefix="og: https://ogp.me/ns#">
+  <BaseHead
+    title={title}
+    description={description}
+    ogTitle={ogTitle}
+    ogType={ogType}
+  />
   <body>
     <Skiplink />
     <Sidebar />
