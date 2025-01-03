@@ -1,14 +1,75 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Collection from "../components/CollectionList.astro";
+import Date from "../components/Date.astro";
+import Tags from "../components/Tags.astro";
+
+import { getCollection } from "astro:content";
+import { sortCollectionByDate } from "../scripts/utils.ts";
+
+const posts = await getCollection("blog", ({ data }) => {
+  return data.draft !== true;
+});
+sortCollectionByDate(posts);
 ---
 
-<BaseLayout title="Blog" description="Sam Feldstein's blog.">
+<BaseLayout title="Blog">
   <h1>Blog</h1>
   <p>
     <a href="/blog/tags/">Browse by category.</a> Subscribe via <a
       href="/feed.xml">rss</a
     >.
   </p>
-  <Collection collectionName="blog" sort="date" />
+
+  <ul class="collection-list unstyled-list">
+    {
+      posts.map((post) => (
+        <li class="flex-column">
+          <Date date={post.data.pubDate} />
+          <a
+            href={`/blog/${post.slug}/`}
+            class="title collection-item-title no-decor"
+          >
+            {post.data.title}
+          </a>
+          <Tags tags={post.data.tags} path="blog" />
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
+
+<style>
+  ul {
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+  }
+
+  a.title {
+    font-size: 2rem;
+    text-wrap: balance;
+    margin: 0.5em 0;
+  }
+
+  a.title:hover,
+  a.title:focus {
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+  }
+
+  li {
+    border: 1px solid;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-around;
+  }
+</style>
+
+<style is:global>
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1em;
+    justify-content: center;
+  }
+</style>

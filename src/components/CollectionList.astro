@@ -7,7 +7,9 @@ import { sortCollectionByDate } from "../scripts/utils.ts";
 
 const { collectionName, sort, count } = Astro.props;
 
-const collection = await getCollection(collectionName);
+const collection = await getCollection(collectionName, ({ data }) => {
+  return data.draft !== true;
+});
 ---
 
 {sort === "date" && sortCollectionByDate(collection)}
