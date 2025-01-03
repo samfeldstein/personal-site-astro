@@ -2,8 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Blog from "../components/CollectionList.astro";
 import { Image } from "astro:assets";
-import { Picture } from "astro:assets";
+
+// Images
 import danceophile from "/src/images/danceophile-screenshot.jpg";
+import latestPhoto from "/src/images/gallery/1-baby-possum.jpg";
 ---
 
 <BaseLayout title="Home">
@@ -40,6 +42,18 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
     />
   </a>
 
+  <h2>Latest Photo</h2>
+  <Image
+    class="latest-photo"
+    src={latestPhoto}
+    widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+    sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+    alt="A baby possum sticking its head out of a bed of green leaves."
+  />
+  <p class="text-right">
+    <a href="/photos/">See all photos >>></a>
+  </p>
+
   <h2>Latest Posts</h2>
 
   <Blog collectionName="blog" sort="date" count="3" />
@@ -64,11 +78,15 @@ import danceophile from "/src/images/danceophile-screenshot.jpg";
     justify-content: space-between;
     font-size: 1rem;
   }
-</style>
 
-<style is:global>
   img {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 2px;
+  }
+
+  .latest-photo {
+    border-color: white;
+    border-width: 0.5rem;
+    border-style: solid;
   }
 </style>
