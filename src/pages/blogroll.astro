@@ -1,9 +1,115 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Blogroll from "../components/Blogroll.astro";
+
+// Blogroll
+const blogs = [
+  {
+    author: "Alan Jacobs",
+    title: "The Homebound Symphony",
+    url: "https://blog.ayjay.org/",
+  },
+  {
+    author: "Freddie deBoer",
+    title: "Freddie deBoer's Blog",
+    url: "https://freddiedeboer.substack.com/",
+  },
+  {
+    author: "Gwern Branwen",
+    title: "gwern.net",
+    url: "https://gwern.net/",
+  },
+  {
+    author: "Henrik Karlsson",
+    title: "Escaping Flatland",
+    url: "https://www.henrikkarlsson.xyz/",
+  },
+  {
+    author: "Maria Popova",
+    title: "The Marginalian",
+    url: "https://www.themarginalian.org/",
+  },
+  {
+    author: "Paul Graham",
+    title: "paulgraham.com",
+    url: "https://www.paulgraham.com/",
+  },
+  {
+    author: "Scott Aaronson",
+    title: "Shtetl-Optimized",
+    url: "https://scottaaronson.blog/",
+  },
+  {
+    author: "Scott Alexander",
+    title: "Astral Codex Ten",
+    url: "https://www.astralcodexten.com/",
+  },
+  {
+    author: "Tim Urban",
+    title: "Wait But Why",
+    url: "https://waitbutwhy.com/",
+  },
+  {
+    author: "waferbaby",
+    title: "Uses This",
+    url: "https://usesthis.com",
+  },
+];
 ---
 
 <BaseLayout title="Blogroll">
   <h1>Blogroll</h1>
-  <Blogroll />
+  <ul>
+    {
+      blogs.map((blog) => (
+        <li>
+          <a href={blog.url}>
+            <div class="author">{blog.author}</div>
+            <div class="title">{blog.title}</div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+  }
+
+  a {
+    border-style: solid;
+    border-width: 1px;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+    text-underline-offset: 0.2em;
+  }
+
+  .title {
+    font-family: "EB Garamond Italic";
+    font-size: 2rem;
+    text-wrap: balance;
+  }
+
+  .author {
+    font-family: "EB Garamond Bold";
+    font-size: 1.5rem;
+    font-variant: small-caps;
+  }
+</style>
