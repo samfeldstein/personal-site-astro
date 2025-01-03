@@ -3,7 +3,7 @@ title: Dance
 description: What I've learned from and about West Coast Swing.
 pubDate: 2025-01-03
 location: Boulder, CO
-tags: ["dance", "west-coast-swing"]
+tags: ["dance"]
 draft: true
 ---
 

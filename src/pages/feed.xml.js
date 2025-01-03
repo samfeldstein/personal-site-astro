@@ -10,7 +10,10 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 export async function GET() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("blog", ({ data }) => {
+    // Drafts appear on the local site but will be ignored at build
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
   sortCollectionByDate(posts);
 
   return rss({
