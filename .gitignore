@@ -25,3 +25,4 @@ pnpm-debug.log*
 .jampack/
 package-lock.json
 dist
+**/.obsidian/
