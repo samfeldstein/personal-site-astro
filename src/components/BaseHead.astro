@@ -6,7 +6,7 @@ import "/src/styles/global.css";
 import { site } from "../../config.mjs";
 
 // Variables and properties
-const { title, description, ogTitle, ogDescription, ogType, ogImage } =
+const { title, description, ogTitle, ogDescription, ogType, ogImage, schema } =
   Astro.props;
 ---
 
@@ -71,50 +71,56 @@ const { title, description, ogTitle, ogDescription, ogType, ogImage } =
     title="Sam Feldstein"
     href={new URL("feed.xml", Astro.site)}
   />
-</head>
 
-<script>
-  async function uninstallServiceWorkers() {
-    try {
-      // Get a list of all service worker registrations
-      const registrations = await navigator.serviceWorker.getRegistrations();
+  <!-- Clean up old service workers (I'm honestly not sure this works) -->
+  <script>
+    async function uninstallServiceWorkers() {
+      try {
+        // Get a list of all service worker registrations
+        const registrations = await navigator.serviceWorker.getRegistrations();
 
-      if (registrations.length === 0) {
-        console.log("No service workers found to uninstall");
-        return;
-      }
+        if (registrations.length === 0) {
+          console.log("No service workers found to uninstall");
+          return;
+        }
 
-      // Uninstall each service worker
-      const uninstallPromises = registrations.map(async (registration) => {
-        try {
-          const success = await registration.unregister();
-          if (success) {
-            console.log(
-              `Service worker at ${registration.scope} successfully uninstalled`,
-            );
-          } else {
-            console.warn(
-              `Failed to uninstall service worker at ${registration.scope}`,
+        // Uninstall each service worker
+        const uninstallPromises = registrations.map(async (registration) => {
+          try {
+            const success = await registration.unregister();
+            if (success) {
+              console.log(
+                `Service worker at ${registration.scope} successfully uninstalled`,
+              );
+            } else {
+              console.warn(
+                `Failed to uninstall service worker at ${registration.scope}`,
+              );
+            }
+          } catch (error) {
+            console.error(
+              `Error uninstalling service worker at ${registration.scope}:`,
+              error,
             );
           }
-        } catch (error) {
-          console.error(
-            `Error uninstalling service worker at ${registration.scope}:`,
-            error,
-          );
-        }
-      });
+        });
 
-      // Wait for all uninstallation attempts to complete
-      await Promise.all(uninstallPromises);
+        // Wait for all uninstallation attempts to complete
+        await Promise.all(uninstallPromises);
 
-      console.log("Service worker uninstallation process completed");
+        console.log("Service worker uninstallation process completed");
 
-      // Optional: Reload the page to ensure clean state
-      // window.location.reload();
-    } catch (error) {
-      console.error("Error during service worker uninstallation:", error);
-      throw error;
+        // Optional: Reload the page to ensure clean state
+        // window.location.reload();
+      } catch (error) {
+        console.error("Error during service worker uninstallation:", error);
+        throw error;
+      }
     }
-  }
-</script>
+  </script>
+
+  <!-- Structured data -->
+  <script type="application/ld+json" set:html={JSON.stringify(schema)}>
+  </script>
+  
+</head>

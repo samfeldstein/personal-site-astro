@@ -6,9 +6,27 @@ import PageHeader from "../components/PageHeader.astro";
 import Date from "../components/Date.astro";
 
 const { frontmatter, collection } = Astro.props;
+
+// Structured data
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: frontmatter.title,
+  description: frontmatter.description,
+  author: {
+    "@type": "Person",
+    name: "Sam Feldstein",
+  },
+  datePublished: frontmatter.pubDate,
+};
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description} ogType="article">
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  ogType="article"
+  schema={schema}
+>
   <article>
     <PageHeader
       title={frontmatter.title}

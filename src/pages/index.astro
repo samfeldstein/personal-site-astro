@@ -6,9 +6,21 @@ import { Image } from "astro:assets";
 // Images
 import danceophile from "/src/images/danceophile-screenshot.jpg";
 import latestPhoto from "/src/images/gallery/1-baby-possum.jpg";
+
+// Data
+import { site } from "../../config.mjs";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Sam Feldstein",
+  url: "https://samfeldstein.xyz/",
+  description: site.description,
+  image: "https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png",
+};
 ---
 
-<BaseLayout title="Home" ogTitle="Sam Feldstein">
+<BaseLayout title="Home" ogTitle="Sam Feldstein" schema={schema}>
   <h1 class="visually-hidden">Home</h1>
 
   <section id="intro">

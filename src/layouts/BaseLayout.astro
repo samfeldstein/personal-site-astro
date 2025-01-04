@@ -7,7 +7,7 @@ import MobileMenu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 // Variables
-const { title, description, ogTitle, ogType } = Astro.props;
+const { title, description, ogTitle, ogType, schema } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,6 +17,7 @@ const { title, description, ogTitle, ogType } = Astro.props;
     description={description}
     ogTitle={ogTitle}
     ogType={ogType}
+    schema={schema}
   />
   <body>
     <Skiplink />
