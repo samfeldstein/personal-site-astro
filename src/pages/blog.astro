@@ -11,9 +11,23 @@ const posts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
 });
 sortCollectionByDate(posts);
+
+// Data
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: "Blog | Sam Feldstein",
+  url: "https://samfeldstein.xyz/blog/",
+  image: "https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png",
+  author: {
+    "@type": "Person",
+    name: "Sam Feldstein",
+    url: "https://samfeldstein.xyz",
+  },
+};
 ---
 
-<BaseLayout title="Blog" ogTitle="Sam Feldstein: Blog">
+<BaseLayout title="Blog" schema={schema}>
   <h1>Blog</h1>
   <p>
     <a href="/blog/tags/">Browse by category</a>. Subscribe via <a

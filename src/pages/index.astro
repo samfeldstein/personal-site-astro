@@ -20,59 +20,69 @@ const schema = {
 };
 ---
 
-<BaseLayout title="Home" ogTitle="Sam Feldstein" schema={schema}>
-  <h1 class="visually-hidden">Home</h1>
+<BaseLayout ogTitle="Sam Feldstein's Personal Website" schema={schema}>
+  <h1 class="visually-hidden">Sam Feldstein's Personal Website</h1>
 
   <section id="intro">
-    <h2 class="visually-hidden">About Me</h2>
     <p>
-      <span>Hi, I'm <strong>Sam Feldstein</strong>.</span> I'm a human, raised by
-      humans. I like <a href="/websites/">building websites</a>, <a
-        href="/photos/">taking photos</a
-      >, and making movie references.
+      <span>Hi, I'm <strong>Sam Feldstein</strong>.</span> I'm a web developer, writer,
+      photographer currently based in Boulder, CO. I won't tell you where I'm from
+      originally, but I'll give you a hint: It&#39;s not Idaho or Ohio. I&#39;ve
+      also lived in Iowa City, Southern California, Far West Texas, and I spent a
+      summer in New Orleans once.
     </p>
 
     <p>
-      You can read more about me on the <a href="/about/">About page</a>.
+      I've been building websites since 2023, and I'm officially trying to
+      establish a clientele. I like building sites for individuals, small
+      businesses, and nonprofits. If you need a developer in your life and that
+      sounds like a good fit, have a look at my <a href="/websites/"
+        >portfolio</a
+      >, then kindly <a href="mailto:samuelfeldstein@proton.me">hire me</a>.
     </p>
   </section>
 
-  <h2>Latest Project: Danceophile Studio (in progress)</h2>
-  <p>
-    A website for an independent folk dance studio. Built with <a
-      href="https://astro.build">Astro</a
-    >.
-  </p>
-  <a class="image" href="https://danceophile.netlify.app/">
+  <section id="web-development">
+    <h2>Latest Website: Danceophile Studio (in progress)</h2>
+    <p>A website for an independent folk dance studio. Built with Astro.</p>
+    <a class="image" href="https://danceophile.netlify.app/">
+      <Image
+        src={danceophile}
+        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+        sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+        alt="A screenshot of the Danceophile Studio homepage."
+        fetchpriority="high"
+        loading="eager"
+      />
+    </a>
+    <p class="text-right">
+      <a href="/websites/">See all websites >>></a>
+    </p>
+  </section>
+
+  <section id="photography">
+    <h2>Latest Photo: A Baby Possum</h2>
     <Image
-      src={danceophile}
+      class="latest-photo"
+      src={latestPhoto}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
       sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-      alt="A screenshot of the Danceophile Studio homepage."
-      fetchpriority="high"
-      loading="eager"
+      alt="A baby possum sticking its head out of a bed of green leaves."
     />
-  </a>
+    <p class="text-right">
+      <a href="/photos/">See all photos >>></a>
+    </p>
+  </section>
 
-  <h2>Latest Photo</h2>
-  <Image
-    class="latest-photo"
-    src={latestPhoto}
-    widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-    sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-    alt="A baby possum sticking its head out of a bed of green leaves."
-  />
-  <p class="text-right">
-    <a href="/photos/">See all photos >>></a>
-  </p>
+  <section id="blog">
+    <h2>Latest Posts</h2>
 
-  <h2>Latest Posts</h2>
+    <Blog collectionName="blog" sort="date" count="3" />
 
-  <Blog collectionName="blog" sort="date" count="3" />
-
-  <p class="text-right">
-    <a href="/blog/">See all posts >>></a>
-  </p>
+    <p class="text-right">
+      <a href="/blog/">See all posts >>></a>
+    </p>
+  </section>
 </BaseLayout>
 
 <style>

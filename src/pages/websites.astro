@@ -9,23 +9,24 @@ import notebook from "/src/images/notebook-homepage-screenshot.jpg";
 import personalSiteHugo from "/src/images/personal-website-hugo-screenshot.jpg";
 import firstWebsite from "/src/images/first-website-screenshot.jpg";
 import danceophile from "/src/images/danceophile-screenshot.jpg";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Websites I've Built | Sam Feldstein",
+  url: "https://samfeldstein.xyz/websites/",
+  description:
+    "My portfolio of custom websites built for small businesses, creatives, and freelancers. I specialize in fast, accessible sites built with modern web technologies.",
+  image: "https://samfeldstein.xyz/images/prairie-rose-arena-screenshot.jpg",
+};
 ---
 
-<BaseLayout title="Websites" ogTitle="Sam Feldstein: Websites">
-  <h1>Websites</h1>
-
-  <p>
-    I've been building websites since 2023. I'm pretty happy with the progress
-    I've made in a fairly short time, and I'm officially trying to establish a
-    clientele.
-  </p>
-
-  <p>
-    I like building sites for individuals, small businesses, and nonprofits. If
-    you need a developer in your life and that sounds like a good fit, <a
-      href="mailto:samuelfeldstein@proton.me">send me an email</a
-    >.
-  </p>
+<BaseLayout
+  title="Websites I've Built"
+  description="My portfolio of custom websites built for small businesses, creatives, and freelancers. I specialize in fast, accessible sites built with modern web technologies."
+  schema={schema}
+>
+  <h1>Websites I've Built</h1>
   <h2>Danceophile Studio (in progress)</h2>
   <p>A website for an independent dance studio. Built with Astro.</p>
   <a class="image" href="https://danceophile.netlify.app/">

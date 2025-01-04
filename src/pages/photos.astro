@@ -8,10 +8,24 @@ import { Image } from "astro:assets";
 import { getGalleryImages } from "../scripts/utils";
 
 const photos = getGalleryImages();
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  name: "Photos I've Taken | Sam Feldstein",
+  url: "https://samfeldstein.xyz/photos/",
+  description:
+    "My photography portfolio of portraits, concert photography, and equestrian events.",
+  image: "https://samfeldstein.xyz/images/baby-possum.jpg",
+};
 ---
 
-<BaseLayout title="Photos" ogTitle="Sam Feldstein: Photos">
-  <h1>Photos</h1>
+<BaseLayout
+  title="Photos I've Taken"
+  description="My photography portfolio of portraits, concert photography, and equestrian events."
+  schema={schema}
+>
+  <h1>Photos I've Taken</h1>
   <p>
     I'm working on getting an online store set up. In the meantime, <a
       href="mailto:samuelfeldstein@proton.me">shoot me an email</a

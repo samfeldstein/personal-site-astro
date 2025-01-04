@@ -1,6 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Blogs I Read | Sam Feldstein",
+  url: "https://samfeldstein.xyz/blogroll/",
+  description: "Blogs I read + personal websites I enjoy and admire.",
+};
+
 // Blogroll
 const blogs = [
   {
@@ -56,8 +64,12 @@ const blogs = [
 ];
 ---
 
-<BaseLayout title="Blogroll" ogTitle="Sam Feldstein: Blogroll">
-  <h1>Blogroll</h1>
+<BaseLayout
+  title="Blogs I Read + Websites I Like"
+  description="Blogs I read + personal websites I enjoy and admire."
+  schema={schema}
+>
+  <h1>Blogs I Read + Websites I Like</h1>
   <ul>
     {
       blogs.map((blog) => (
