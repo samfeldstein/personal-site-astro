@@ -75,8 +75,12 @@ const blogs = [
       blogs.map((blog) => (
         <li>
           <a href={blog.url}>
-            <div class="author">{blog.author}</div>
-            <div class="title">{blog.title}</div>
+            <div class="author">
+              <strong>{blog.author}</strong>
+            </div>
+            <div class="title">
+              <em>{blog.title}</em>
+            </div>
           </a>
         </li>
       ))
@@ -114,13 +118,11 @@ const blogs = [
   }
 
   .title {
-    font-family: "EB Garamond Italic";
     font-size: 2rem;
     text-wrap: balance;
   }
 
   .author {
-    font-family: "EB Garamond Bold";
     font-size: 1.5rem;
     font-variant: small-caps;
   }

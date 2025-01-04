@@ -1,67 +1,44 @@
-/* https://web.dev/articles/optimize-webfont-loading */
-/* I've set caching to one year in Cloudflare. Seems to make the site much faster. */
-
 @font-face {
-  font-family: "EB Garamond";
+  font-family: "EB Garamond";  /* One consistent family name */
   src: local("EB Garamond"),
-    url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2"),
-    url("/fonts/subset-EBGaramond-Regular.woff") format("woff");
-  font-weight: normal;
+    url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2");
+  font-weight: 400;  /* Normal weight */
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "EB Garamond Bold";
+  font-family: "EB Garamond";  /* Same family name */
   src: local("EB Garamond Bold"),
-    url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2"),
-    url("/fonts/subset-EBGaramond-Bold.woff") format("woff");
-  font-weight: bold;
+    url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2");
+  font-weight: 700;  /* Bold weight */
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "EB Garamond Italic";
+  font-family: "EB Garamond";  /* Same family name */
   src: local("EB Garamond Italic"),
-    url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2"),
-    url("/fonts/subset-EBGaramond-Italic.woff") format("woff");
-  font-weight: normal;
+    url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2");
+  font-weight: 400;  /* Normal weight */
   font-style: italic;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "EB Garamond Bold-Italic";
-  src: local("EB Garamond Bold-Italic"),
-    url("/fonts/subset-EBGaramond-BoldItalic.woff2") format("woff2"),
-    url("/fonts/subset-EBGaramond-BoldItalic.woff") format("woff");
-  font-weight: normal;
+  font-family: "EB Garamond";  /* Same family name */
+  src: local("EB Garamond Bold Italic"),
+    url("/fonts/subset-EBGaramond-BoldItalic.woff2") format("woff2");
+  font-weight: 700;  /* Bold weight */
   font-style: italic;
-  font-display: swap;
 }
 
-i,
-em {
-  font-family: "EB Garamond Italic", var(--body-font);
-  /* font-weight: normal;
-  font-style: normal; */
+strong, b {
+  font-weight: 700;  /* Browser knows to use the bold variation */
 }
 
-b,
-strong {
-  font-family: "EB Garamond Bold", var(--body-font);
-  /* font-weight: normal;
-  font-style: normal; */
+em, i {
+  font-style: italic;  /* Browser knows to use the italic variation */
 }
 
-i b,
-i strong,
-em b,
-em strong,
-b i,
-strong i,
-b em,
-strong em {
-  font-family: "EB Garamond Bold-Italic", var(--body-font);
+strong em, b i {
+  font-weight: 700;
+  font-style: italic;  /* Browser combines bold + italic variation */
 }

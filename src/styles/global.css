@@ -9,14 +9,6 @@
   --link-color: #2754d8;
 
   /* Fonts */
-  --body-font: "EB Garamond",
-    serif;
-  --bold: "EB Garamond Bold",
-    serif;
-  --italic: "EB Garamond Italic",
-    serif;
-  --bold-italic: "EB Garamond Bold-Italic",
-    serif;
   --monospace: ui-monospace,
     "Cascadia Code",
     "Source Code Pro",
@@ -44,7 +36,7 @@ body {
   display: flex;
 
   /* https://modernfontstacks.com/ */
-  font-family: var(--body-font);
+  font-family: "EB Garamond", serif;
   font-size: 1.25rem;
   color: var(--text-color);
 }
@@ -85,7 +77,6 @@ h4 {
 
 h3 {
   margin-top: 2em;
-  font-family: "EB Garamond Bold";
 }
 
 a {
