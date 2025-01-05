@@ -33,8 +33,8 @@ export async function getImageMetadata(imagePath) {
     const { stdout } = await exec(`mdls "${escapedPath}"`);
 
     // Debug: see what we're getting
-    console.log('Raw mdls output for', path.basename(imagePath));
-    console.log(stdout);
+    // console.log('Raw mdls output for', path.basename(imagePath));
+    // console.log(stdout);
 
     // Parse the mdls output into an object
     const metadata = stdout.split('\n').reduce((acc, line) => {
@@ -81,14 +81,14 @@ export async function getGalleryImages() {
     })
   );
 
-  // Debug: look at first image's metadata
-  if (imagesWithMetadata[0]) {
-    console.log('First image metadata:', {
-      path: imagesWithMetadata[0].rawPath,
-      title: imagesWithMetadata[0].title,
-      alt: imagesWithMetadata[0].alt
-    });
-  }
+  // // Debug: look at first image's metadata
+  // if (imagesWithMetadata[0]) {
+  //   console.log('First image metadata:', {
+  //     path: imagesWithMetadata[0].rawPath,
+  //     title: imagesWithMetadata[0].title,
+  //     alt: imagesWithMetadata[0].alt
+  //   });
+  // }
 
   return imagesWithMetadata;
 }

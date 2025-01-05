@@ -1,44 +1,67 @@
 @font-face {
-  font-family: "EB Garamond";  /* One consistent family name */
+  font-family: "EB Garamond";
+  /* One consistent family name */
   src: local("EB Garamond"),
     url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2");
-  font-weight: 400;  /* Normal weight */
+  font-weight: 400;
+  /* Normal weight */
   font-style: normal;
 }
 
 @font-face {
-  font-family: "EB Garamond";  /* Same family name */
+  font-family: "EB Garamond";
+  /* Same family name */
   src: local("EB Garamond Bold"),
     url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2");
-  font-weight: 700;  /* Bold weight */
+  font-weight: 700;
+  /* Bold weight */
   font-style: normal;
 }
 
 @font-face {
-  font-family: "EB Garamond";  /* Same family name */
+  font-family: "EB Garamond";
+  /* Same family name */
   src: local("EB Garamond Italic"),
     url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2");
-  font-weight: 400;  /* Normal weight */
+  font-weight: 400;
+  /* Normal weight */
   font-style: italic;
 }
 
 @font-face {
-  font-family: "EB Garamond";  /* Same family name */
+  font-family: "EB Garamond";
+  /* Same family name */
   src: local("EB Garamond Bold Italic"),
     url("/fonts/subset-EBGaramond-BoldItalic.woff2") format("woff2");
-  font-weight: 700;  /* Bold weight */
+  font-weight: 700;
+  /* Bold weight */
   font-style: italic;
 }
 
-strong, b {
-  font-weight: 700;  /* Browser knows to use the bold variation */
+@font-face {
+  font-family: '5th Grade Cursive';
+  src: url('subset-5thGradeCursive.woff2') format('woff2'),
+    url('subset-5thGradeCursive.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-em, i {
-  font-style: italic;  /* Browser knows to use the italic variation */
-}
-
-strong em, b i {
+strong,
+b {
   font-weight: 700;
-  font-style: italic;  /* Browser combines bold + italic variation */
+  /* Browser knows to use the bold variation */
+}
+
+em,
+i {
+  font-style: italic;
+  /* Browser knows to use the italic variation */
+}
+
+strong em,
+b i {
+  font-weight: 700;
+  font-style: italic;
+  /* Browser combines bold + italic variation */
 }
