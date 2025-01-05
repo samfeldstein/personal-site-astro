@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samfeldstein.xyz/sitemap-index.xml
