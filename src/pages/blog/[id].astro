@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// Components
+import Date from "../../components/Date.astro";
+import Tags from "../../components/Tags.astro";
+
+import { getCollection, render } from "astro:content";
+// 1. Generate a new path for every collection entry
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  console.log(
+    "Found posts:",
+    posts.map((post) => ({
+      id: post.id,
+      title: post.data.title,
+    })),
+  );
+
+  return posts.map((post) => {
+    console.log("Creating route for:", post.id);
+    return {
+      params: { id: post.id },
+      props: { post },
+    };
+  });
+}
+// 2. For your template, you can get the entry directly from the prop
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+// Structured data
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: post.data.title,
+  description: post.data.description,
+  author: {
+    "@type": "Person",
+    name: "Sam Feldstein",
+  },
+  datePublished: post.data.pubDate,
+};
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogType="article"
+  schema={schema}
+>
+  <header class="page-header" aria-label="Page Header">
+    <h1>{post.data.title}</h1>
+    {
+      post.data.description && (
+        <p class="description">
+          <i>{post.data.description}</i>
+        </p>
+      )
+    }
+    {(<Tags tags={post.data.tags} path="blog" />)}
+    <slot />
+  </header>
+  <article>
+    <Content />
+    <div class="dateline text-right">
+      <i>
+        <Date date={post.data.pubDate} />
+        <div class="location">{post.data.location}</div>
+      </i>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .dateline {
+    font-size: 0.75em;
+    margin-top: 4rem;
+  }
+
+  .page-header {
+    border-bottom: 1px dotted;
+    padding-bottom: 1rem;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .description {
+    margin: 0;
+  }
+</style>
+
+<style is:global>
+  .tags {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    font-size: 1rem;
+  }
+</style>

@@ -7,10 +7,6 @@ import { sortCollectionByDate } from "../scripts/utils.ts";
 
 const { collectionName, sort, count } = Astro.props;
 
-// const collection = await getCollection(collectionName, ({ data }) => {
-//   return data.draft !== true;
-// });
-
 const collection = await getCollection(collectionName, ({ data }) => {
   // Drafts appear on the local site but will be ignored at build
   return import.meta.env.PROD ? data.draft !== true : true;
@@ -26,7 +22,7 @@ const collection = await getCollection(collectionName, ({ data }) => {
       <li class="flex-column">
         <Date date={item.data.pubDate} />
         <a
-          href={`/${collectionName}/${item.slug}/`}
+          href={`/${collectionName}/${item.id}/`}
           class="title collection-item-title no-decor"
         >
           {item.data.title}

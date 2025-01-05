@@ -2,6 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Blog from "../components/CollectionList.astro";
 import { Image } from "astro:assets";
+import Tags from "../components/Tags.astro";
+import Date from "../components/Date.astro";
+
+import { getCollection } from "astro:content";
+import { sortCollectionByDate } from "../scripts/utils.ts";
+const posts = await getCollection("blog");
+sortCollectionByDate(posts);
 
 // Images
 import danceophile from "/src/images/danceophile-screenshot.jpg";
@@ -74,19 +81,32 @@ const schema = {
     </p>
   </section>
 
-  <section id="blog">
+  <section id="latest-posts">
     <h2>Latest Posts</h2>
 
-    <Blog collectionName="blog" sort="date" count="3" />
+    <ul class="latest-posts">
+      {
+        // If no count, renders whole collection
+        posts.slice(0, 3).map((post) => (
+          <li class="latest-posts">
+            <Date date={post.data.pubDate} />
+            <a href={`/blog/${post.id}/`} class="latest-posts title">
+              {post.data.title}
+            </a>
+            <Tags tags={post.data.tags} path="blog" />
+          </li>
+        ))
+      }
+    </ul>
 
-    <p class="text-right">
+    <p class="more">
       <a href="/blog/">See all posts >>></a>
     </p>
   </section>
 </BaseLayout>
 
 <style>
-  p:first-of-type {
+  p:first-child {
     margin-top: 0;
   }
 
@@ -101,20 +121,43 @@ const schema = {
     font-size: 1rem;
   }
 
-  img {
+  .latest-photo {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 2px;
-  }
-
-  .latest-photo {
     border-color: white;
     border-width: 0.5rem;
     border-style: solid;
   }
-</style>
 
-<style is:global>
+  ul.latest-posts {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: grid;
+    gap: 1rem;
+  }
+
+  li.latest-posts {
+    border: 1px solid;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+  }
+
   a.title {
     font-variant: small-caps;
+    font-size: 2rem;
+    text-decoration: none;
+  }
+
+  a.title:hover,
+  a.title:focus {
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
+  }
+
+  p.more {
+    text-align: right;
   }
 </style>
