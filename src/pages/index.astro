@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 
 // Images
 import danceophile from "/src/images/danceophile-screenshot.jpg";
-import latestPhoto from "/src/images/gallery/1-baby-possum.jpg";
+// import latestPhoto from "/src/images/gallery/1-baby-possum.jpg";
 
 // Data
 import { site } from "../../config.mjs";
@@ -62,13 +62,13 @@ const schema = {
 
   <section id="photography">
     <h2>Latest Photo: A Baby Possum</h2>
-    <Image
+    <!-- <Image
       class="latest-photo"
       src={latestPhoto}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
       sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
       alt="A baby possum sticking its head out of a bed of green leaves."
-    />
+    /> -->
     <p class="text-right">
       <a href="/photos/">See all photos >>></a>
     </p>
