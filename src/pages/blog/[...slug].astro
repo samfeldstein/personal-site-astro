@@ -1,5 +1,7 @@
 ---
-// Configure individual posts
+// This page configures individual posts
+
+// Layouts
 import Post from "../../layouts/Post.astro";
 
 // Collections
@@ -17,6 +19,8 @@ export async function getStaticPaths() {
 // Variables
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const frontmatter = entry.data;
 ---
 
 <Post frontmatter={entry.data} collection="blog">

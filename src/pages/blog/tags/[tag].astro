@@ -33,18 +33,18 @@ sortCollectionByDate(posts);
 const schema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: `Posts About ${tag.charAt(0).toUpperCase() + tag.slice(1)} | Sam Feldstein's Blog`,
+  name: `Posts Tagged "${tag.charAt(0).toUpperCase() + tag.slice(1)}" | Sam Feldstein's Blog`,
   url: `https://samfeldstein.xyz/blog/tags/${tag}`,
-  description: `Posts about ${tag}`,
+  description: `Posts tagged "${tag}"`,
 };
 ---
 
 <BaseLayout
-  title=`Posts About ${tag.charAt(0).toUpperCase() + tag.slice(1)}`
-  description=`Posts about ${tag}.`
+  title=`Posts Tagged "${tag.charAt(0).toUpperCase() + tag.slice(1)}"`
+  description=`Posts tagged "${tag}".`
   schema={schema}
 >
-  <h1>Posts About {tag}</h1>
+  <h1>#{tag}</h1>
   <ul>
     {
       posts.map((post) => (
@@ -59,10 +59,6 @@ const schema = {
 </BaseLayout>
 
 <style>
-  h1 {
-    text-transform: capitalize;
-  }
-
   ul {
     display: grid;
     gap: 1rem;
