@@ -25,4 +25,3 @@ pnpm-debug.log*
 .jampack/
 package-lock.json
 **/.obsidian/
-src/images/
