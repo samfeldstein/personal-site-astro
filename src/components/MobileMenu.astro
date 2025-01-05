@@ -5,7 +5,6 @@ import SocialLinks from "./SocialLinks.astro";
 
 <details>
   <summary>Menu</summary>
-  <hr />
   <div>
     <div class="title">Navigation</div>
     <SiteNav />
@@ -17,10 +16,10 @@ import SocialLinks from "./SocialLinks.astro";
 <style>
   details {
     position: sticky;
+    z-index: 1;
     top: 0px;
     background: var(--background-color);
     margin-bottom: 1rem;
-    border: 1px solid;
     font-variant: small-caps;
 
     @media screen and (min-width: 768px) {
@@ -30,6 +29,13 @@ import SocialLinks from "./SocialLinks.astro";
 
   details > div {
     padding: 1rem;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    background-color: var(--background-color);
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
   }
 
   summary {
@@ -37,6 +43,8 @@ import SocialLinks from "./SocialLinks.astro";
     font-variant: small-caps;
     cursor: pointer;
     font-size: 0.75em;
+    border-style: solid;
+    border-width: 1px;
   }
 
   hr {
