@@ -5,9 +5,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 // Components
 import { Image } from "astro:assets";
 
+// Functions
 import { getGalleryImages } from "../scripts/utils";
 
-const photos = getGalleryImages();
+const photos = await getGalleryImages();
 
 const schema = {
   "@context": "https://schema.org",
@@ -34,13 +35,14 @@ const schema = {
   <div class="gallery">
     {
       photos.map((photo) => (
-        <div class="gallery-item">
+        <div class="photo">
           <Image
             src={photo.src}
             widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
             sizes="(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)"
-            alt="Gallery image."
+            alt={photo.alt || photo.title}
           />
+          <div class="title">{photo.title}</div>
         </div>
       ))
     }
@@ -51,13 +53,22 @@ const schema = {
   h1 {
     margin-bottom: 1em;
   }
-</style>
 
-<style is:global>
-  img {
+  div.gallery {
+    display: grid;
+    gap: 1rem;
+  }
+
+  div.photo {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-color: white;
-    border-width: 0.3rem;
-    border-style: solid;
+    background-color: white;
+    padding: 0.3rem;
+  }
+
+  div.title {
+    color: #1a1a1a;
+    text-align: center;
   }
 </style>
+
+<style is:global></style>
