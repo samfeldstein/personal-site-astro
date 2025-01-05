@@ -48,6 +48,7 @@ export async function getImageMetadata(imagePath) {
     return {
       title: metadata.kMDItemTitle || '',
       alt: metadata.kMDItemDescription || metadata.kMDItemTitle || '',
+      date: metadata.kMDItemContentCreationDate
     };
   } catch (error) {
     console.error(`Error reading metadata for ${imagePath}:`, error);
@@ -64,12 +65,10 @@ export async function getImageMetadata(imagePath) {
 
 export async function getGalleryImages() {
   const images = import.meta.glob('/src/images/gallery/**/*.{jpg,jpeg,png,webp}', { eager: true });
-
   const imageArray = Object.entries(images).map(([path, module]) => ({
     src: module.default,
     rawPath: path,
   }));
-
   const imagesWithMetadata = await Promise.all(
     imageArray.map(async (image) => {
       const metadata = await getImageMetadata(image.rawPath);
@@ -77,18 +76,49 @@ export async function getGalleryImages() {
         ...image,
         title: metadata.title,
         alt: metadata.alt,
+        pubDate: metadata.date
       };
     })
   );
 
-  // // Debug: look at first image's metadata
-  // if (imagesWithMetadata[0]) {
-  //   console.log('First image metadata:', {
-  //     path: imagesWithMetadata[0].rawPath,
-  //     title: imagesWithMetadata[0].title,
-  //     alt: imagesWithMetadata[0].alt
-  //   });
-  // }
+  // Sort images by date, most recent first
+  const sortedImages = imagesWithMetadata.sort((a, b) => {
+    const dateA = new Date(a.pubDate);
+    const dateB = new Date(b.pubDate);
+    return dateB - dateA;  // For oldest first, switch to: return dateA - dateB
+  });
 
-  return imagesWithMetadata;
+  return sortedImages;
 }
+
+// export async function getGalleryImages() {
+//   const images = import.meta.glob('/src/images/gallery/**/*.{jpg,jpeg,png,webp}', { eager: true });
+
+//   const imageArray = Object.entries(images).map(([path, module]) => ({
+//     src: module.default,
+//     rawPath: path,
+//   }));
+
+//   const imagesWithMetadata = await Promise.all(
+//     imageArray.map(async (image) => {
+//       const metadata = await getImageMetadata(image.rawPath);
+//       return {
+//         ...image,
+//         title: metadata.title,
+//         alt: metadata.alt,
+//         pubDate: metadata.date
+//       };
+//     })
+//   );
+
+//   // // Debug: look at first image's metadata
+//   // if (imagesWithMetadata[0]) {
+//   //   console.log('First image metadata:', {
+//   //     path: imagesWithMetadata[0].rawPath,
+//   //     title: imagesWithMetadata[0].title,
+//   //     alt: imagesWithMetadata[0].alt
+//   //   });
+//   // }
+
+//   return imagesWithMetadata;
+// }

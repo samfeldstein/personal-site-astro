@@ -60,6 +60,7 @@ h1,
 h2,
 h3 {
   font-variant: small-caps;
+  text-wrap: balance;
 }
 
 h1 {
