@@ -4,8 +4,16 @@ import { ExifTool } from "exiftool-vendored";
 
 // Transformations
 export function sortCollectionByDate(collection) {
-  collection.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
-  return collection;
+  if (!Array.isArray(collection)) {
+    console.error("Expected an array but got:", collection);
+    return [];
+  }
+
+  return [...collection].sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+}
+
+export function filterDrafts({ data }) {
+  return import.meta.env.PROD ? data.draft !== true : true;
 }
 
 export async function getGalleryImages() {
