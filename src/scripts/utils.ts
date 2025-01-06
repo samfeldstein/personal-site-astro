@@ -4,12 +4,8 @@ import { ExifTool } from "exiftool-vendored";
 
 // Transformations
 export function sortCollectionByDate(collection) {
-  if (!Array.isArray(collection)) {
-    console.error("Expected an array but got:", collection);
-    return [];
-  }
-
-  return [...collection].sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+  collection.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
+  return collection;
 }
 
 export function filterDrafts({ data }) {
