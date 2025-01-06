@@ -2,6 +2,7 @@
 
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
+import { filterDrafts } from "../scripts/utils.ts";
 import { site } from "../../config.mjs";
 import { sortCollectionByDate } from "../scripts/utils.ts";
 import sanitizeHtml from "sanitize-html";
@@ -10,10 +11,7 @@ import MarkdownIt from "markdown-it";
 const parser = new MarkdownIt();
 
 export async function GET() {
-  const posts = await getCollection("blog", ({ data }) => {
-    // Drafts appear on the local site but will be ignored at build
-    return import.meta.env.PROD ? data.draft !== true : true;
-  });
+  const posts = await getCollection("blog", filterDrafts);
   sortCollectionByDate(posts);
 
   return rss({
