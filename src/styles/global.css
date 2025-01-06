@@ -113,3 +113,9 @@ blockquote {
 blockquote p {
   margin: 0;
 }
+
+cite {
+  font-style: normal;
+  display: block;
+  margin-top: 1em;
+}

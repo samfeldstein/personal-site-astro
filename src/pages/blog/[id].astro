@@ -26,9 +26,10 @@ export async function getStaticPaths() {
     };
   });
 }
-// 2. For your template, you can get the entry directly from the prop
+
 const { post } = Astro.props;
 const { Content } = await render(post);
+const { reading, watching, listening } = post.data;
 
 // Structured data
 const schema = {
@@ -64,6 +65,49 @@ const schema = {
   </header>
   <article>
     <Content />
+    {
+      reading && (
+        <section>
+          <h2>Reading</h2>
+            {reading.map((article) => (
+                <p>
+                  <a href={article.url}rel="noopener noreferrer">
+                    <em>{article.title}</em></a>&nbsp;by&nbsp;{article.author}:</p>
+                <blockquote>{article.quote}</blockquote>
+            ))}
+        </section>
+      )
+    }
+    <!-- Render Watching Section -->
+    {
+      watching && (
+        <section>
+          <h2>Watching</h2>
+            
+            {watching.map((item) => (
+                <p><strong><em>{item.title}</em></strong>. {item.notes}</p> 
+                
+            ))}
+        </section>
+      )
+    }
+
+    <!-- Render Listening Section -->
+    {
+      listening && (
+        <section>
+          <h2>Listening</h2>
+            <ul>
+              {listening.map((item) => (
+                <li>
+                  <strong>{item.artist}</strong> – {item.notes }
+                </li>
+            ))}
+            </ul>
+            
+        </section>
+      )
+    }
     <div class="dateline text-right">
       <i>
         <Date date={post.data.pubDate} />
@@ -98,5 +142,11 @@ const schema = {
     flex-wrap: wrap;
     gap: 1em;
     font-size: 1rem;
+  }
+
+  .latest-photo {
+    border-style: solid;
+    border-width: 0.5rem;
+    border-radius: 2px;
   }
 </style>
