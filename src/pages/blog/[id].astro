@@ -68,7 +68,7 @@ const schema = {
     {
       reading && (
         <section>
-          <h2>Reading</h2>
+          <h2>Read</h2>
             {reading.map((article) => (
                 <p>
                   <a href={article.url}rel="noopener noreferrer">
@@ -82,7 +82,7 @@ const schema = {
     {
       watching && (
         <section>
-          <h2>Watching</h2>
+          <h2>Watched</h2>
             
             {watching.map((item) => (
                 <p><strong><em>{item.title}</em></strong>. {item.notes}</p> 
@@ -96,7 +96,7 @@ const schema = {
     {
       listening && (
         <section>
-          <h2>Listening</h2>
+          <h2>Listened</h2>
             <ul>
               {listening.map((item) => (
                 <li>
@@ -108,6 +108,9 @@ const schema = {
         </section>
       )
     }
+    {post.data.digest && (
+      <p>That's all, folks!</p>
+    )}
     <div class="dateline text-right">
       <i>
         <Date date={post.data.pubDate} />
@@ -144,9 +147,18 @@ const schema = {
     font-size: 1rem;
   }
 
-  .latest-photo {
-    border-style: solid;
-    border-width: 0.5rem;
+  div.photo {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    padding: 0.5rem;
     border-radius: 2px;
+  }
+
+  div.photo-caption {
+    color: #1a1a1a;
+    text-align: center;
+    font-family: "5th Grade Cursive";
+    font-size: 1rem;
+    padding-top: 0.5em;
   }
 </style>
