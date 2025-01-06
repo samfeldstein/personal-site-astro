@@ -6,6 +6,7 @@
   font-weight: 400;
   /* Normal weight */
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -16,6 +17,7 @@
   font-weight: 700;
   /* Bold weight */
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -26,6 +28,7 @@
   font-weight: 400;
   /* Normal weight */
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -36,6 +39,7 @@
   font-weight: 700;
   /* Bold weight */
   font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
