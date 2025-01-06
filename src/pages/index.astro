@@ -6,15 +6,9 @@ import Date from "../components/Date.astro";
 
 import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils.ts";
-import { filterDrafts } from "../scripts/utils";
-
-// const posts = await getCollection("blog");
+import { filterDrafts } from "../scripts/utils.ts";
 
 const posts = await getCollection("blog", filterDrafts);
-
-// const posts = await getCollection("blog", ({ data }) =>
-//   import.meta.env.PROD ? data.draft !== true : true,
-// );
 
 sortCollectionByDate(posts);
 
