@@ -9,23 +9,33 @@ draft: true
 
 I've been dancing West Coast Swing for about five months now. I started in I think June in New Orleans, but then I spent August at home and there's no WCS in Des Moines. So I didn't take it up again until October, when I rented a place in Boulder. And by that time, I was in dire need of a refresher.
 
-So I'm learning. And when I learn a thing, it helps me to try and figure out what the thing *actually is.*
+So I'm learning. And when I learn a thing, it helps me to try and **figure out what the thing *actually is.*** I've written about this before in a post called [What Is Rain](../what-is-rain/), though I'm not sure how well I articulated it there, but basically what you do is try to cut to the core of an idea and identify the fundamental structure or process underlying it.
 
-I've written about this before in a post called [What Is Rain](../what-is-rain/), though I'm not sure how well I articulated it there. But the idea is to try to cut to the core of an object or an entity or a process and identify the fundamental shape or phenomenon underlying it. In other words, **you try to see the forest for the trees**.
+In that other piece the example was, *What is a car?* And the answer (taken from my poetry professor) was, *A car is a chair with four wheels.*
 
-In storytelling, they call it subtext. There's what's happening, and there's what's *happening.* There's what a story's about, and there's what a story's *about.* *The Dark Knight* is about a crazy man dressed as a bat fighting a crazy man dressed as a clown. But *The Dark Knight* is *about* order versus chaos.[^3]
+Hopefully that example doesn't make this look like a reductive process; it should be just the opposite. It should be an enriching process in which you try capture the totality of an idea into a single definition.
+
+Although, now that I'm thinking about it, that's impossible. You can't "capture" So we're not capturing the idea. We're building the key. The definition is the key to the door to the room, and in the room is the idea.
+
+If we're doing it right, the definition will appear unconventional but ring true.
+
+In other words, **you try to see the forest for the trees**.
+
+In storytelling, these fundamental shapes are called *metanarratives*. There's what's happening, and there's what's *happening.* There's what a story's about, and there's what a story's *about.* *The Dark Knight* is about a crazy man dressed as a bat fighting a crazy man dressed as a clown. But *The Dark Knight* is *about* order versus chaos.[^3]
+
+In general, there are two types of knowledge: *declarative knowledge* and *procedural knowledge*. Declarative knowledge is anything you can learn from a book (example: *The sky is blue*). Procedural knowledge is anything you can't learn from a book.
+
+Taoism calls it *conventional knowledge* (knowledge that can be represented with symbols) and...something else.
 
 [*Oppenheimer*](https://youtu.be/qiuSBWVdgLI?si=02sJJod6FA9kdgK6) (the movie, not the human) articulates it beautifully: Niels Bohr (Kenneth Branagh) says to Oppenheimer (Cillian Murphy): *The important thing isn't can you read music, it's can you hear it?* ***Can you hear the music, Robert?***
 
-This post is me trying to "hear the music", as it pertains to dance, and it turns out the analogy is so apt it's not even an analogy. "Hearing the music" in dance really means *hearing the music.* Dancing is singing with the body. Without the music, there is no song to sing.
+So this is me trying to "hear the music", as it pertains to dance. It's possible the analogy is so apt it's not even an analogy. "Hearing the music" in dance really means *hearing the music.* There's a reason we don't dance to silence. **Dancing is singing with the body**. Without the music, there is no song to sing.
 
 ## What *is* Dance?
 
 Two fish swim past each other. One says, *Mornin' there! How's the water?* The other says, *What's water?*[^1]
 
-It's hard to see an object from inside the object. In dance, it's easy to get lost in the weeds of footwork, frame, and connection. These things matter, but they amount to nothing if you lose sight of the big picture.
-
-Dancing is singing with the body.
+It's hard to see an object from inside the object. In dance, it's easy to get lost in the weeds of footwork, frame, and connection. These things matter, but they amount to nothing if you lose sight of the big picture. You can't play with a form if you don't even know it exists.
  
 You aren't dancing *to* the music. You're dancing with the music. You're trying to *become* the music. If aliens came down, they should think that the music was coming *from* you. You are the music. You close your eyes and try to take the music inside you, and let it do the dancing.
 
