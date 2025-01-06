@@ -7,7 +7,10 @@ import Date from "../components/Date.astro";
 
 import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils.ts";
-const posts = await getCollection("blog");
+const posts = await getCollection("blog", ({ data }) => {
+  // Drafts appear on the local site but will be ignored at build
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
 sortCollectionByDate(posts);
 
 // Images
