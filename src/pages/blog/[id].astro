@@ -46,6 +46,9 @@ const schema = {
 >
   <header class="page-header" aria-label="Page Header">
     <h1>{post.data.title}</h1>
+    {post.data.draft && (
+      <p>Uh oh, I'm a draft who managed to escape! Please don't read me!</p>
+    )}
     {
       post.data.description && (
         <p class="description">
