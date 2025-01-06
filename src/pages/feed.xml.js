@@ -28,7 +28,7 @@ export async function GET() {
         pubDate: post.data.pubDate,
         description: post.data.description, // Ensure this is plain text or sanitized if it includes HTML
         categories: post.data.tags,
-        link: `/blog/${post.slug}/`,
+        link: `/blog/${post.id}/`,
         content: sanitizedContent, // Only content is sanitized
       };
     }),
