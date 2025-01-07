@@ -1,14 +1,10 @@
 ---
-import SiteNav from "./SiteNav.astro";
-import SocialLinks from "./SocialLinks.astro";
+import MenuContent from "./MenuContent.astro";
 ---
 
 <aside>
   <div class="container">
-    <div>Navigation</div>
-    <SiteNav />
-    <div>Social</div>
-    <SocialLinks />
+    <MenuContent />
   </div>
 </aside>
 
@@ -17,20 +13,16 @@ import SocialLinks from "./SocialLinks.astro";
     border-right: 1px solid;
     margin-right: 4rem;
     padding-right: 4rem;
+    font-size: 1rem;
   }
 
   aside {
     font-variant: small-caps;
   }
 
-  summary {
-    padding: 1rem 0;
-    cursor: pointer;
-  }
-
-  .container {
+  div.container {
     position: sticky;
-    top: 0px;
+    top: 16px;
   }
 
   @media screen and (max-width: 767px) {

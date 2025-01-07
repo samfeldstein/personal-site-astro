@@ -1,15 +1,11 @@
 ---
-import SiteNav from "./SiteNav.astro";
-import SocialLinks from "./SocialLinks.astro";
+import MenuContent from "./MenuContent.astro";
 ---
 
 <details>
   <summary>Menu</summary>
   <div>
-    <div class="title">Navigation</div>
-    <SiteNav />
-    <div class="title">Social</div>
-    <SocialLinks />
+    <MenuContent />
   </div>
 </details>
 
@@ -45,15 +41,6 @@ import SocialLinks from "./SocialLinks.astro";
     font-size: 0.75em;
     border-style: solid;
     border-width: 1px;
-  }
-
-  hr {
-    color: inherit;
-    height: 1px;
-  }
-
-  .title {
-    font-variant: small-caps;
   }
 </style>
 
