@@ -23,7 +23,13 @@ In other words, **you try to see the forest for the trees**.
 
 In storytelling, these fundamental shapes are called *metanarratives*. There's what's happening, and there's what's *happening.* There's what a story's about, and there's what a story's *about.* *The Dark Knight* is about a crazy man dressed as a bat fighting a crazy man dressed as a clown. But *The Dark Knight* is *about* order versus chaos.[^3]
 
+The metanarrative is what makes a story tangible.
+
 In general, there are two types of knowledge: *declarative knowledge* and *procedural knowledge*. Declarative knowledge is anything you can learn from a book (example: *The sky is blue*). Procedural knowledge is anything you can't learn from a book.
+
+> Our current conventional wisdom is thoroughly ambivalent on this, largely owing to popular acceptance of Nonaka and Takeuchi’s mid-1990s description of ‘tacit knowledge’ and ‘explicit knowledge’ and their SECI (Socialization, Externalization, Combination, Internalization) model of how one is transmuted into the other.
+
+The semnatics are a little confusing here: Knowledge, as distinct from understanding. Or information, as distinct from knowledge.
 
 Taoism calls it *conventional knowledge* (knowledge that can be represented with symbols) and...something else.
 
