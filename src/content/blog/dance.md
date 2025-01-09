@@ -7,17 +7,17 @@ tags: ["dance"]
 draft: true
 ---
 
-I've been dancing West Coast Swing for about five months now. I started in I think June in New Orleans, but then I spent August at home and there's no WCS in Des Moines, so I didn't take it up again until October, when I rented a place in Boulder. By that time I was in dire need of a refresher.
+I've been dancing West Coast Swing for about five months now. I started in I think June in New Orleans, but then I spent August at home and there's no WCS in Des Moines, so I didn't take it up again until October when I rented a place in Boulder. By that time I was in dire need of a refresher.
 
 So I'm learning. And when I learn a thing, it helps me to try and **figure out what the thing *actually is.*** I've written about this before in a post called [What Is Rain](../what-is-rain/), though I'm not sure how well I articulated it there. But basically what you do is try to cut to the core of an idea and identify the fundamental structure or process underlying it.
 
 In that other piece the example was, *What is a car?* And the answer (taken from my poetry professor) was, *A car is a chair with four wheels.*
 
-I hope that doesn't make this look like a reductive process; it should be just the opposite. It should be an enriching process in which you try capture the totality of an idea into a single definition.
+I hope that doesn't make this look like a reductive process; it should be just the opposite. What we're trying to do is capture the totality of an idea in a single definition. If we're doing it right, **the definition will appear unconventional but ring true**.
 
-Although, now that I'm thinking about it, that's impossible. You can't "capture" So we're not capturing the idea. We're building the key. The definition is the key to the door to the room, and in the room is the idea.
+Although, now that I'm thinking about it, that's impossible. You can't "capture" an idea any more than you can "capture" a cloud. So we're not capturing the idea. We're building the key. The definition is the key to the door to the room, and in the room is the idea.
 
-If we're doing it right, the definition will appear unconventional but ring true.
+
 
 In other words, **you try to see the forest for the trees**.
 

@@ -34,11 +34,11 @@ _Yes, but what else?_
 
 ## Qs & As
 
-**Q:** What is a circle?
+**Q:** What is a circle?\
 **A:** A circle is every point that is equally far from another point.
 
-**Q:** What is writing?
+**Q:** What is writing?\
 **A:** Writing is thinking on paper.
 
-**Q:** What is a person?
+**Q:** What is a person?\
 **A:** A person is a story that tells itself.
