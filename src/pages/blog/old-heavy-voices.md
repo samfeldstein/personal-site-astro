@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: Old Heavy Voices
 description: Aging artists are in the process of succumbing.
 pubDate: 2024-06-22

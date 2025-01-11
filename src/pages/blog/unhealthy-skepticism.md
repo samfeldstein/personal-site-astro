@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: Unhealthy Skepticism
 description: ""
 pubDate: 2024-07-02

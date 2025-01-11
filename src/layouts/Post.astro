@@ -1,63 +1,46 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseLayout from "./BaseLayout.astro";
 
 // Components
-import Date from "../../components/Date.astro";
-import Tags from "../../components/Tags.astro";
+// import Date from "../components/Date.astro";
+import Tags from "../components/Tags.astro";
 
-import { getCollection, render } from "astro:content";
+const { frontmatter } = Astro.props;
+const { reading, watching, listening } = frontmatter;
 
-// 1. Generate a new path for every collection entry
-export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-
-  return posts.map((post) => {
-    console.log("Creating route for:", post.id);
-    return {
-      params: { id: post.id },
-      props: { post },
-    };
-  });
-}
-
-const { post } = Astro.props;
-const { Content } = await render(post);
-const { reading, watching, listening } = post.data;
-
-// Structured data
+// Structured
 const schema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: post.data.title,
-  description: post.data.description,
+  headline: frontmatter.title,
+  description: frontmatter.description,
   author: {
     "@type": "Person",
     name: "Sam Feldstein",
   },
-  datePublished: post.data.pubDate,
+  datePublished: frontmatter.pubDate,
 };
 ---
 
 <BaseLayout
-  title={post.data.title}
-  description={post.data.description}
+  title={frontmatter.title}
+  description={frontmatter.description}
   ogType="article"
   schema={schema}
 >
   <header class="page-header" aria-label="Page Header">
-    <h1>{post.data.title}</h1>
+    <h1>{frontmatter.title}</h1>
     {
-      post.data.description && (
+      frontmatter.description && (
         <p class="description">
-          <i>{post.data.description}</i>
+          <i>{frontmatter.description}</i>
         </p>
       )
     }
-    {(<Tags tags={post.data.tags} path="blog" />)}
-    <slot />
+    {(<Tags tags={frontmatter.tags} path="blog" />)}
   </header>
   <article>
-    <!-- <Content /> -->
+    <slot/>
     {
       reading && (
         <section>
@@ -101,13 +84,13 @@ const schema = {
         </section>
       )
     }
-    {post.data.digest && (
+    {frontmatter.digest && (
       <p>That's all, folks!</p>
     )}
     <div class="dateline text-right">
       <i>
-        <Date date={post.data.pubDate} />
-        <div class="location">{post.data.location}</div>
+        <!-- <Date date={frontmatter.pubDate} /> -->
+        <div class="location">{frontmatter.location}</div>
       </i>
     </div>
   </article>

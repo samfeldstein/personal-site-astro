@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: Tales and Canards
 description: Rumors.
 pubDate: 2024-02-20

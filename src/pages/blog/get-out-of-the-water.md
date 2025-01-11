@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: Get Out of the Water
 description: On worry, intuition, and trying new things.
 pubDate: 2024-02-06

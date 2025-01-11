@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: What is Dance?
 description: "What I've learned from and about West Coast Swing."
 pubDate: 2025-01-03

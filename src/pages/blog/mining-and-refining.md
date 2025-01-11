@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: "Mining and Refining: The Two Modes of Writing"
 description: You're either digging for coal, or pressing it into diamonds.
 pubDate: 2024-03-07

@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Post.astro
 title: "Riddled with Words: 'The Maltese Falcon'"
 description: Every bastard gets what's coming to them.
 pubDate: 2023-01-31
