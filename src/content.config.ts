@@ -8,7 +8,7 @@ import { glob } from 'astro/loaders';
 
 // Collections
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx,yml}', base: './src/content/blog' }),
+  loader: glob({ pattern: '**/*.{md,mdx,yml}', base: './src/pages/blog' }),
   // schema: z.object({
   //   title: z.string(),
   //   pubDate: z.date(),

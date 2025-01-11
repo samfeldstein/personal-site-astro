@@ -9,9 +9,11 @@ draft: true
 
 I've been dancing West Coast Swing for about five months now. I started in I think June in New Orleans, but then I spent August at home and there's no WCS in Des Moines, so I didn't take it up again until October when I rented a place in Boulder. By that time I was in dire need of a refresher.
 
-So I'm learning. And when I learn a thing, **it helps me to try and figure out what the thing *actually is.*** I've written about this before in a post called [What Is Rain](../what-is-rain/). Basically what you do is try to cut to the core of an idea and identify the fundamental structure or process underlying it. In that other piece the example was, *What is a car?* And the answer (taken from my poetry professor) was, *A car is a chair with four wheels.*
+So I'm learning. And when I learn a thing, **it helps me to try and figure out what the thing *actually is.*** I've written about this before in a post called [*What is Rain?*](/blog/what-is-rain/). Basically what you do is try to cut to the core of an idea and identify the fundamental structure or process underlying it. **The goal is gain an intuitive understanding of the thing.**
 
-**The goal is to understand the thing intuitively.**
+In that other piece the example was, *What is a car?* And the answer (taken from my poetry professor) was, *A car is a chair with four wheels.*
+
+
 
 We're not capturing the idea. We're building the key. **The definition is the key** to the door to the room, and in the room is the idea.
 
@@ -19,13 +21,11 @@ In other words, **you try to see the forest for the trees**.
 
 In storytelling, these fundamental shapes are called *metanarratives*. There's what's happening, and there's what's *happening.* There's what a story's about, and there's what a story's *about.* *The Dark Knight* is about a crazy man dressed as a bat fighting a crazy man dressed as a clown. But *The Dark Knight* is *about* order versus chaos.[^3]
 
-The metanarrative is what makes a story tangible.
+Metanarratives make stories tangible.
 
 In general, there are two types of knowledge: *declarative knowledge* and *procedural knowledge*. Declarative knowledge is anything you can learn from a book (example: *The sky is blue*). Procedural knowledge is anything you can't learn from a book.
 
-> Our current conventional wisdom is thoroughly ambivalent on this, largely owing to popular acceptance of Nonaka and Takeuchi’s mid-1990s description of ‘tacit knowledge’ and ‘explicit knowledge’ and their SECI (Socialization, Externalization, Combination, Internalization) model of how one is transmuted into the other.
-
-The semnatics are a little confusing here: Knowledge, as distinct from understanding. Or information, as distinct from knowledge.
+The semantics are a little confusing here: Knowledge, as distinct from understanding. Or information, as distinct from knowledge.
 
 Taoism calls it *conventional knowledge* (knowledge that can be represented with symbols) and...something else.
 

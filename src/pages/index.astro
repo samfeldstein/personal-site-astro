@@ -88,7 +88,6 @@ const schema = {
 
     <ul class="latest-posts">
       {
-        // If no count, renders whole collection
         posts.slice(0, 3).map((post) => (
           <li class="latest-posts">
             <Date date={post.data.pubDate} />

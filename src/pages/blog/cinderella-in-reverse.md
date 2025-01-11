@@ -5,6 +5,7 @@ pubDate: 2023-01-24
 location: Marfa, TX
 tags: ["movies"]
 ---
+
 Perhaps it’s her eyes, or how her expression always bespeaks the shadow of a smile, even when she’s crying, but we warm to Princess Ann straightaway. Of course it helps that she’s young and Audrey Hepburn, but really it has to do with the way we meet her; in the midst of a lengthy and exhausting royal public relations tour of Europe. By the time she finally finishes shaking the hands of an endless entourage of aristocrats and (one presumes) eligible bachelors, she has us completely. Her humanity is subsequently cemented via her disarming mishap with a shoe.
 
 And there’s something about that shoe. It’s Cinderella in reverse: Rather than putting the glass slipper on, Ann kicks it off (the rest of her royal trappings will soon follow) the first symbolic step in her semiotic transformation from princess to just a regular old girl. It’s not that the royal shoe doesn’t fit. It’s just that it’s terribly uncomfortable, especially after such a long day and so much standing, and really, given the option, she in all likelihood wouldn’t wear it at all.
