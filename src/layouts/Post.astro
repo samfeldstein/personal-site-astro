@@ -2,7 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 
 // Components
-// import Date from "../components/Date.astro";
+import Date from "../components/Date.astro";
 import Tags from "../components/Tags.astro";
 
 const { frontmatter } = Astro.props;
@@ -89,7 +89,7 @@ const schema = {
     )}
     <div class="dateline text-right">
       <i>
-        <!-- <Date date={frontmatter.pubDate} /> -->
+        <Date date={frontmatter.pubDate} />
         <div class="location">{frontmatter.location}</div>
       </i>
     </div>
