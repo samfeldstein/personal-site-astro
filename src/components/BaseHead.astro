@@ -71,7 +71,7 @@ const { title, description, ogTitle, ogDescription, ogType, ogImage, schema } =
     href={new URL("feed.xml", Astro.site)}
   />
 
-  <!-- Clean up old service workers (I'm honestly not sure this works) -->
+  <!-- Clean up old service workers -->
   <script>
     async function uninstallServiceWorkers() {
       try {
