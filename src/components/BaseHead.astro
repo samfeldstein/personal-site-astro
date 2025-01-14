@@ -72,6 +72,12 @@ const { title, description, ogTitle, ogDescription, ogType, ogImage, schema } =
     title="Sam Feldstein"
     href={new URL("feed.xml", Astro.site)}
   />
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Sam Feldstein's Notebook"
+    href="https://notebook.samfeldstein.xyz/feed.xml"
+  />
 
   <!-- Clean up old service workers -->
   <script>
