@@ -1,7 +1,7 @@
 export const site = {
   title: "Sam Feldstein",
   description:
-    "Sam is a photographer and web developer based in Boulder, CO. His photography captures portraits, concerts, and equestrian events. As a web developer, Sam specializes in crafting custom websites for creatives, freelancers, and small businesses.",
+    "Sam is a photographer and web developer based in Boulder, CO. His photography captures portraits, concerts, and equestrian events. As a web developer, he specializes in crafting custom websites for creatives, freelancers, and small businesses.",
   url: "https://samfeldstein.xyz",
   location: {
     country: "USA",
