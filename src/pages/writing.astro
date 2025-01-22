@@ -1,0 +1,166 @@
+---
+import "/src/styles/_reset.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Icons
+      - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+      - Favicon generator: https://favicon.io
+      - Another favicon generator: https://realfavicongenerator.net/
+      - SVG generator: https://formito.com/tools/favicon
+      - Image compressor: https://squoosh.app/
+      - SVG optimizer: https://jakearchibald.github.io/svgomg/
+      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
+    -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=3" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3" />
+    <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Preload assets -->
+  <link
+    rel="preload"
+    href="/fonts/subset-EBGaramond-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/fonts/subset-EBGaramond-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Writing Portfolio | Sam Feldstein</title>
+  <meta name="author" content="Sam Feldstein" />
+  <meta name="description" content="My portfolio of fiction, short stories, poetry, essays, news articles, and informative video scripts." />
+  <meta property="og:title" content="Writing Portfolio | Sam Feldstein" />
+  <meta
+    property="og:description"
+    content="My portfolio of fiction, short stories, poetry, essays, news articles, and informative video scripts."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={Astro.url.href} />
+  <meta
+    property="og:image"
+    content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png"
+  />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+  <link
+    rel="alternate"
+    type="application/rss+xml"
+    title="Sam Feldstein"
+    href={new URL("feed.xml", Astro.site)}
+  />
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Sam Feldstein's Notebook"
+    href="https://notebook.samfeldstein.xyz/feed.xml"
+  />
+
+  <!-- Clean up old service workers -->
+  <script>
+    async function uninstallServiceWorkers() {
+      try {
+        // Get a list of all service worker registrations
+        const registrations = await navigator.serviceWorker.getRegistrations();
+
+        if (registrations.length === 0) {
+          console.log("No service workers found to uninstall");
+          return;
+        }
+
+        // Uninstall each service worker
+        const uninstallPromises = registrations.map(async (registration) => {
+          try {
+            const success = await registration.unregister();
+            if (success) {
+              console.log(
+                `Service worker at ${registration.scope} successfully uninstalled`,
+              );
+            } else {
+              console.warn(
+                `Failed to uninstall service worker at ${registration.scope}`,
+              );
+            }
+          } catch (error) {
+            console.error(
+              `Error uninstalling service worker at ${registration.scope}:`,
+              error,
+            );
+          }
+        });
+
+        // Wait for all uninstallation attempts to complete
+        await Promise.all(uninstallPromises);
+
+        console.log("Service worker uninstallation process completed");
+
+        // Optional: Reload the page to ensure clean state
+        // window.location.reload();
+      } catch (error) {
+        console.error("Error during service worker uninstallation:", error);
+        throw error;
+      }
+    }
+
+    uninstallServiceWorkers();
+  </script>
+
+  <!-- Turn structured data into JSON string -->
+  <script type="application/ld+json">
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Writing Portfolio | Sam Feldstein",
+  "url": "https://samfeldstein.xyz/writing/",
+  "description":
+    "My portfolio of fiction, short stories, poetry, essays, news articles, and informative video scripts.",
+  "image": "https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png",
+  </script>
+  
+</head>
+<body>
+  <h1>Writing I've Written</h1>
+  <section>
+    <h2>Fiction</h2>
+    <ul>
+      <li>
+        <a
+          href="https://talestoterrify.com/episodes/619-z-j-garcia-samuel-feldstein/"
+          >Made of Memories</a
+        >&nbsp;on&nbsp;<em>Tales to Terrify</em>&nbsp;(short story, audio,
+        reprint, December 2023)
+      </li><li>
+        <a
+          href="https://www.dmsguild.com/product/426630/Queen-of-the-Thunderbeasts?affiliate_id=1701028"
+          ><em>Queen of the Thunderbeasts</em></a
+        >&nbsp;on the DMsGuild (roleplaying adventure, January 2023)
+      </li><li>
+        <a href="https://thecollidescope.com/2022/10/16/the-first/">The First</a
+        >&nbsp;in&nbsp;<em>The Collidescope</em>&nbsp;(flash fiction, October
+        2022)
+      </li><li>
+        "Made of Memories"&nbsp;in&nbsp;<em>The Chamber</em>&nbsp;(defunct)
+        (short story, November 2021)
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Not Fiction</h2>
+  </section>
+</body>
+</html>
