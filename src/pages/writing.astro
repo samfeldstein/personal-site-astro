@@ -1,5 +1,63 @@
 ---
+import "/src/styles/_fonts.css";
 import "/src/styles/_reset.css";
+
+const writing = [
+  {
+    title: "Made of Memories",
+    type: "Short Story",
+    genre: "Horror",
+    medium: "Podcast",
+    date: "December 2023",
+    outlet: "Tales to Terrify",
+    url: "https://talestoterrify.com/episodes/619-z-j-garcia-samuel-feldstein/",
+    blurb: "We are living until we are dying. We are dying until we are dead, and live again."
+  },
+  {
+    title: "Queen of the Thunderbeasts",
+    type: "Roleplaying Adventure",
+    genre: "Fantasy",
+    medium: "eBook (PDF)",
+    date: "January 2023",
+    outlet: "The Dungeon Masters Guild",
+    url: "https://www.dmsguild.com/product/426630/Queen-of-the-Thunderbeasts?affiliate_id=1701028"
+  },
+  {
+    title: "The First",
+    type: "Short Story",
+    genre: "Fantasy",
+    medium: "Digital",
+    date: "October 2022",
+    outlet: "The Collidescope",
+    url: "https://thecollidescope.com/2022/10/16/the-first/",
+  },
+  {
+    title: "Big Bend Reproductive Coalition launches community needs assessment",
+    type: "News Article",
+    medium: "Print, Digital",
+    date: "August 2023",
+    outlet: "The Big Bend Sentinel",
+    url: "https://bigbendsentinel.com/2023/08/09/big-bend-reproductive-coalition-launches-community-needs-assessment-with-inaugural-town-hal/?mc_cid=b24b0bb606"
+  },
+  {
+    title: "Trans-Pecos Festival of Music + Love doubles as platform for advocacy and outreach",
+    type: "News Article",
+    medium: "Print, Digital",
+    date: "October 2022",
+    outlet: "The Big Bend Sentinel",
+    url: "https://bigbendsentinel.com/2022/10/05/trans-pecos-festival-of-music-love-doubles-as-platform-for-advocacy-and-outreach/"
+  },
+  {
+    title: "Absence of Meaning in 'The Lighthouse'",
+    type: "Criticism",
+    medium: "Digital",
+    date: "April 2022",
+    outlet: "The Frida Cinema Blog",
+    url: "https://thefridacinema.org/film-criticism/absence-of-meaning-the-lighthouse/"
+  }
+]
+
+writing.sort((a, b) => new Date(b.date) - new Date(a.date));
 ---
 
 <!DOCTYPE html>
@@ -133,34 +191,66 @@ import "/src/styles/_reset.css";
   
 </head>
 <body>
-  <h1>Writing I've Written</h1>
-  <section>
-    <h2>Fiction</h2>
-    <ul>
-      <li>
-        <a
-          href="https://talestoterrify.com/episodes/619-z-j-garcia-samuel-feldstein/"
-          >Made of Memories</a
-        >&nbsp;on&nbsp;<em>Tales to Terrify</em>&nbsp;(short story, audio,
-        reprint, December 2023)
-      </li><li>
-        <a
-          href="https://www.dmsguild.com/product/426630/Queen-of-the-Thunderbeasts?affiliate_id=1701028"
-          ><em>Queen of the Thunderbeasts</em></a
-        >&nbsp;on the DMsGuild (roleplaying adventure, January 2023)
-      </li><li>
-        <a href="https://thecollidescope.com/2022/10/16/the-first/">The First</a
-        >&nbsp;in&nbsp;<em>The Collidescope</em>&nbsp;(flash fiction, October
-        2022)
-      </li><li>
-        "Made of Memories"&nbsp;in&nbsp;<em>The Chamber</em>&nbsp;(defunct)
-        (short story, November 2021)
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Not Fiction</h2>
-  </section>
+  <header>
+    <span class="home">←</span><a class="home" href="/">Home</a>
+    <h1>Writing I've Written</h1>
+  </header>
+  {writing.map((item) => (
+    <div class="entry">
+<h2 set:html={item.title.replace(/'(.*?)'/, '<em>$1</em>')} />
+<p>{item.date}</p>
+<p>{item.blurb}</p>
+    </div>
+    
+  ))}
 </body>
 </html>
+
+<style>
+  body {
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    font-family: "Courier Prime";
+  }
+
+  span.home {
+    margin-right: 3px;
+  }
+
+  a.home {
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  a.home:hover, a.home:focus {
+    text-decoration: underline;
+  }
+  
+  div.entry {
+    margin: 0 auto;
+    max-width: 80rem;
+    width: 100%;
+    border-style: double;
+    border-width: 5px;
+    border-radius: 5px;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-family: "Cheveuxdange";
+    font-weight: 100;
+    font-size: 10rem;
+    text-align: center;
+    text-wrap: balance;
+  }
+  
+  h2 {
+    font-family: "Monument";
+    font-weight: 100;
+    font-size: 6rem;
+    text-align: center;
+    text-wrap: balance;
+  }
+</style>
