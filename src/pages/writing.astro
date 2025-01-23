@@ -223,9 +223,9 @@ const schema = {
       {
         writing.map((item) => (
           <a href={item.url} class="entry">
+            <div class="type">{item.type}</div>
             <h2 set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")} />
-            <p>{item.date}</p>
-            <p>{item.blurb}</p>
+            <div>{item.date}</div>
           </a>
         ))
       }
