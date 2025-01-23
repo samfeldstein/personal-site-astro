@@ -238,22 +238,30 @@ const schema = {
       <a class="home" href="/">Home</a>
       <h1>Words I've Written</h1>
     </header>
-    <section class="entries">
-      {
-        writing.map((item) => (
-          <a href={item.url} class="entry">
-            <div class="type date">
-              <span class="gray">{item.type}</span>
-              <span class="gray">{item.date}</span>
-            </div>
-            <h2 set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")} />
+    <main>
+      <p class="intro">
+        This portfolio contains my published writing. You can find my personal
+        writing on my <a href="/blog/">blog</a> and in my <a
+          href="https://notebook.samfeldstein.xyz/">notebook</a
+        >.
+      </p>
+      <section class="entries">
+        {
+          writing.map((item) => (
+            <a href={item.url} class="entry">
+              <div class="type date">
+                <span class="gray">{item.type}</span>
+                <span class="gray">{item.date}</span>
+              </div>
+              <h2 set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")} />
 
-            <div class="gray outlet">
-              <em>{item.outlet}</em>
-            </div>
-          </a>
-        ))
-      }
-    </section>
+              <div class="gray outlet">
+                <em>{item.outlet}</em>
+              </div>
+            </a>
+          ))
+        }
+      </section>
+    </main>
   </body>
 </html>
