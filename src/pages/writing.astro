@@ -1,7 +1,5 @@
 ---
 // Styles
-import "/src/styles/_fonts.css";
-import "/src/styles/_reset.css";
 import "/src/styles/_writing.css";
 
 const writing = [
@@ -18,7 +16,7 @@ const writing = [
   },
   {
     title: "Queen of the Thunderbeasts",
-    type: "Roleplaying Adventure",
+    type: "RPG",
     genre: "Fantasy",
     medium: "eBook (PDF)",
     date: "January 2023",
@@ -37,7 +35,7 @@ const writing = [
   {
     title:
       "Big Bend Reproductive Coalition launches community needs assessment",
-    type: "News Article",
+    type: "Article",
     medium: "Print, Digital",
     date: "August 2023",
     outlet: "The Big Bend Sentinel",
@@ -46,7 +44,7 @@ const writing = [
   {
     title:
       "Trans-Pecos Festival of Music + Love doubles as platform for advocacy and outreach",
-    type: "News Article",
+    type: "Article",
     medium: "Print, Digital",
     date: "October 2022",
     outlet: "The Big Bend Sentinel",
@@ -87,6 +85,43 @@ const schema = {
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
+    <!-- Preload assets -->
+    <link
+      rel="preload"
+      href="/fonts/subset-Cheveuxdange.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/subset-EBGaramond-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/subset-EBGaramond-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/subset-CourierPrime-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/subset-CourierPrime-Italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
     <!-- Icons
       - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
       - Favicon generator: https://favicon.io
@@ -112,22 +147,6 @@ const schema = {
     />
     <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
     <link rel="manifest" href="/site.webmanifest" />
-
-    <!-- Preload assets -->
-    <link
-      rel="preload"
-      href="/fonts/subset-EBGaramond-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/subset-EBGaramond-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
@@ -217,15 +236,21 @@ const schema = {
   <body>
     <header>
       <span class="home">←</span><a class="home" href="/">Home</a>
-      <h1>Writing I've Written</h1>
+      <h1>Words I've Written</h1>
     </header>
     <section class="entries">
       {
         writing.map((item) => (
           <a href={item.url} class="entry">
-            <div class="type">{item.type}</div>
+            <div class="type date">
+              <span class="gray">{item.type}</span>
+              <span class="gray">{item.date}</span>
+            </div>
             <h2 set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")} />
-            <div>{item.date}</div>
+
+            <div class="gray outlet">
+              <em>{item.outlet}</em>
+            </div>
           </a>
         ))
       }

@@ -1,10 +1,115 @@
 /* This is a separate file because of issues with ::selection. See below. */
+@import url("/src/styles/_reset.css");
+
+@font-face {
+  font-family: "Cheveuxdange";
+  /* One consistent family name */
+  src: local("Cheveuxdange"),
+    url("/fonts/subset-Cheveuxdange.woff2") format("woff2");
+  font-weight: 400;
+  /* Normal weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  /* One consistent family name */
+  src: local("EB Garamond"),
+    url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2");
+  font-weight: 400;
+  /* Normal weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  /* Same family name */
+  src: local("EB Garamond Bold"),
+    url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2");
+  font-weight: 700;
+  /* Bold weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  /* Same family name */
+  src: local("EB Garamond Italic"),
+    url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2");
+  font-weight: 400;
+  /* Normal weight */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  /* Same family name */
+  src: local("EB Garamond Bold Italic"),
+    url("/fonts/subset-EBGaramond-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  /* Bold weight */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: local("Courier Prime"),
+    url("/fonts/subset-CourierPrime-Regular.woff2") format("woff2");
+  font-weight: 400;
+  /* Normal weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: local("Courier Prime Bold"),
+    url("/fonts/subset-CourierPrime-Bold.woff2") format("woff2");
+  font-weight: 700;
+  /* Normal weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: local("Courier Prime Italic"),
+    url("/fonts/subset-CourierPrime-Italic.woff2") format("woff2");
+  font-weight: 400;
+  /* Normal weight */
+  font-style: italic;
+  font-display: swap;
+}
+
+strong,
+b {
+  font-weight: 700;
+  /* Browser knows to use the bold variation */
+}
+
+em,
+i {
+  font-style: italic;
+  /* Browser knows to use the italic variation */
+}
+
+strong em,
+b i {
+  font-weight: 700;
+  font-style: italic;
+  /* Browser combines bold + italic variation */
+}
 
 body {
   margin: 0 auto;
   padding: 1rem;
   gap: 1rem;
-  font-family: "Courier Prime";
+  font-family: "Courier Prime", "Courier New", Courier, monospace;
 }
 
 section.entries {
@@ -47,7 +152,7 @@ a.entry {
   border-style: double;
   border-width: 5px;
   border-radius: 5px;
-  padding: 2rem;
+  padding: 2rem 1rem;
   color: black;
   text-decoration: none;
   transition: 0.25s ease;
@@ -55,7 +160,7 @@ a.entry {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -65,7 +170,7 @@ a.entry:focus {
 }
 
 h1 {
-  font-family: "Cheveuxdange";
+  font-family: "Cheveuxdange", Arial, Helvetica, sans-serif;
   font-weight: 100;
   font-size: calc(1rem + 8vw);
   text-align: center;
@@ -73,14 +178,26 @@ h1 {
 }
 
 h2 {
-  font-family: "EB Garamond";
+  font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
   font-variant: small-caps;
   font-size: calc(1rem + 1vw);
   text-wrap: balance;
   line-height: 1;
 }
 
-div.type {
+.type.date {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: calc(0.75rem + 0.25vw);
+}
+
+.outlet {
+  font-size: calc(1rem + 0.25vw);
+}
+
+/* Utilities */
+.gray {
   color: #666;
 }
 
