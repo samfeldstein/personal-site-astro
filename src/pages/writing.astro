@@ -1,6 +1,8 @@
 ---
+// Styles
 import "/src/styles/_fonts.css";
 import "/src/styles/_reset.css";
+import "/src/styles/_writing.css";
 
 const writing = [
   {
@@ -220,88 +222,13 @@ const schema = {
     <section class="entries">
       {
         writing.map((item) => (
-          <div class="entry">
+          <a href={item.url} class="entry">
             <h2 set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")} />
             <p>{item.date}</p>
             <p>{item.blurb}</p>
-          </div>
+          </a>
         ))
       }
     </section>
   </body>
 </html>
-
-<style>
-  body {
-    margin: 0 auto;
-    padding: 1rem;
-    gap: 1rem;
-    font-family: "Courier Prime";
-  }
-
-  section.entries {
-    display: grid;
-    margin: 0 auto;
-    gap: 1rem;
-  }
-
-  span.home {
-    margin-right: 3px;
-  }
-
-  a.home {
-    text-transform: uppercase;
-    text-decoration: none;
-    position: relative;
-  }
-
-  a.home::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: currentColor; /* Use the same color as the text */
-    transition: width 0.2s ease; /* Animate the width */
-  }
-
-  a.home:hover::after,
-  a.home:focus::after {
-    width: 100%; /* Expand the underline to full width */
-  }
-
-  div.entry {
-    border-style: double;
-    border-width: 5px;
-    border-radius: 5px;
-    padding: 1rem 2rem;
-  }
-
-  h1 {
-    font-family: "Cheveuxdange";
-    font-weight: 100;
-    font-size: calc(1rem + 8vw);
-    text-align: center;
-    text-wrap: balance;
-  }
-
-  h2 {
-    font-family: "Monument";
-    font-weight: 100;
-    font-size: calc(1rem + 1vw);
-    text-wrap: balance;
-  }
-
-  @media screen and (min-width: 700px) {
-    section.entries {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  @media screen and (min-width: 1200px) {
-    section.entries {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
-</style>
