@@ -150,6 +150,7 @@ a.home:focus::after {
 
 a.entry {
   border-style: double;
+  border-color: #666;
   border-width: 5px;
   border-radius: 5px;
   padding: 2rem 1rem;
