@@ -118,8 +118,8 @@ section.entries {
   gap: 1rem;
 }
 
-span.home {
-  margin-right: 3px;
+a.home {
+  text-decoration: none;
 }
 
 a.home {
