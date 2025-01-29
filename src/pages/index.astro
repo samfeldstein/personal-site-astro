@@ -13,7 +13,6 @@ const posts = await getCollection("blog", filterDrafts);
 sortCollectionByDate(posts);
 
 // Images
-import danceophile from "/src/images/danceophile-screenshot.jpg";
 import latestPhoto from "/src/images/gallery/matt-heckler-9.jpg";
 
 // Data
@@ -51,24 +50,6 @@ const schema = {
       So come on in. Have a look around. Make yourself at home. And if you find
       anything useful, <a href="mailto:samuelfeldstein@proton.me">let me know</a
       >. I'd love to hear about it.
-    </p>
-  </section>
-
-  <section id="web-development">
-    <h2>Latest Website: Danceophile Studio (in progress)</h2>
-    <p>A website for an independent folk dance studio. Built with Astro.</p>
-    <a class="image" href="https://danceophile.netlify.app/">
-      <Image
-        src={danceophile}
-        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-        sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-        alt="A screenshot of the Danceophile Studio homepage."
-        fetchpriority="high"
-        loading="eager"
-      />
-    </a>
-    <p class="text-right">
-      <a href="/websites/">See all websites >>></a>
     </p>
   </section>
 
