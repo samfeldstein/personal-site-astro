@@ -112,7 +112,7 @@ body {
   font-family: "Courier Prime", "Courier New", Courier, monospace;
 }
 
-section.entries {
+section.published {
   display: grid;
   margin: 0 auto;
   gap: 1rem;
@@ -222,13 +222,13 @@ h2 {
 
 /* Responsive styles */
 @media screen and (min-width: 700px) {
-  section.entries {
+  section.published {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  section.entries {
+  section.published {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }

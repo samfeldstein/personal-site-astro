@@ -23,6 +23,10 @@ img {
   animation: fadeIn .5s ease-in forwards;
 }
 
+figure {
+  margin: 0;
+}
+
 /* Correct the inheritance and scaling of font size in all browsers */
 pre,
 code,

@@ -8,12 +8,16 @@ import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils.ts";
 import { filterDrafts } from "../scripts/utils.ts";
 
+// Styles
+import "/src/styles/_index.css";
+
 const posts = await getCollection("blog", filterDrafts);
 
 sortCollectionByDate(posts);
 
 // Images
 import latestPhoto from "/src/images/gallery/matt-heckler-9.jpg";
+import latestSite from "/src/images/danceophile-screenshot.jpg";
 
 // Data
 import { site } from "../../config.mjs";
@@ -34,10 +38,10 @@ const schema = {
   <section id="intro">
     <p>
       <span>Hi, I'm <strong>Sam Feldstein</strong>.</span> I like <a
-        href="https://notebook.samfeldstein.xyz/">taking notes</a
-      >, <a href="/photos/">making photos</a>, and <a href="/websites/"
-        >building websites</a
-      >. I also write the occasional <a href="/blog/">blog post</a>.
+        href="/writing/">writing</a
+      >, <a href="https://notebook.samfeldstein.xyz/">taking notes</a>, <a
+        href="/photos/">making photos</a
+      >, and <a href="/websites/">building websites</a>.
     </p>
 
     <p>
@@ -48,17 +52,34 @@ const schema = {
   </section>
 
   <section id="photography">
-    <h2>Latest Photo: Matt Heckler at the Skylark Lounge</h2>
-    <Image
-      class="latest-photo"
-      src={latestPhoto}
-      widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-      alt="Matt Heckler playing at the Skylark Lounge."
-    />
+    <h2>Latest Photo</h2>
+    <figure class="photo">
+      <Image
+        class="latest-photo"
+        src={latestPhoto}
+        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+        sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+        alt="Matt Heckler playing at the Skylark Lounge."
+      />
+      <figcaption>Matt Heckler at the Skylark Lounge.</figcaption>
+    </figure>
     <p class="text-right">
       <a href="/photos/">See all photos >>></a>
     </p>
+  </section>
+
+  <section id="latest-website">
+    <h2>Latest Website</h2>
+    <p>Built with Astro.</p>
+    <a class="image" href="https://danceophile.com">
+      <Image
+        src={latestSite}
+        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+        sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+        alt="A screenshot of the homepage of the Danceophile Studio website."
+      />
+    </a>
+    <p class="text-right"><a href="/websites/">See all websites >>></a></p>
   </section>
 
   <section id="latest-posts">
@@ -83,72 +104,3 @@ const schema = {
     </p>
   </section>
 </BaseLayout>
-
-<style>
-  p:first-child {
-    margin-top: 0;
-  }
-
-  span {
-    font-variant: small-caps;
-    letter-spacing: 0.1em;
-  }
-
-  .notes.source {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;
-  }
-
-  img {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  }
-
-  .latest-photo {
-    border-radius: 2px;
-    border-color: white;
-    border-width: 0.5rem;
-    border-style: solid;
-  }
-
-  ul.latest-posts {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: grid;
-    gap: 1rem;
-  }
-
-  li.latest-posts {
-    border: 1px solid;
-    padding: 1rem;
-    display: grid;
-    gap: 1rem;
-  }
-
-  a.title {
-    font-variant: small-caps;
-    font-size: 2rem;
-    text-decoration: none;
-  }
-
-  a.title:hover,
-  a.title:focus {
-    text-decoration: underline;
-    text-decoration-thickness: 0.05em;
-  }
-
-  p.more {
-    text-align: right;
-  }
-</style>
-
-<style is:global>
-  ul.tags {
-    display: flex;
-    gap: 0.5em 1em;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-</style>
