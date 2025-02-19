@@ -1,4 +1,6 @@
-# Astro Starter Kit: Minimal
+# My Personal Website
+
+![android-chrome-512x512](https://github.com/user-attachments/assets/17067d01-03ca-4efa-8caa-fad0b7082220)
 
 ```sh
 npm create astro@latest -- --template minimal
