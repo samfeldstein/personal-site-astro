@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://astro.build">
-    <img src="https://img.shields.io/badge/powered-by-astro" alt="Powered by Astro">
+    <img src="https://img.shields.io/badge/powered_by-astro" alt="Powered by Astro">
   </a>
 </p>
 
