@@ -1,6 +1,8 @@
 # My Personal Website
 
-![android-chrome-512x512](https://github.com/user-attachments/assets/17067d01-03ca-4efa-8caa-fad0b7082220)
+<p align="center">
+  <img src="[https://avatars1.githubusercontent.com/u/18350560?s=200&v=4](https://github.com/user-attachments/assets/17067d01-03ca-4efa-8caa-fad0b7082220)" alt="Sam Feldstein's personal website logo." />
+</p>
 
 ```sh
 npm create astro@latest -- --template minimal
