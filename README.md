@@ -1,6 +1,12 @@
 # My Personal Website
 
 <p align="center">
+  <a href="https://astro.build">
+    <img src="https://img.shields.io/badge/powered-by-astro" alt="Powered by Astro">
+  </a>
+</p>
+
+<p align="center">
   <img src="https://github.com/user-attachments/assets/17067d01-03ca-4efa-8caa-fad0b7082220" alt="Sam Feldstein's personal website logo." />
 </p>
 
