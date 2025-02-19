@@ -1,7 +1,7 @@
 # My Personal Website
 
 <p align="center">
-  <img src="[https://avatars1.githubusercontent.com/u/18350560?s=200&v=4](https://github.com/user-attachments/assets/17067d01-03ca-4efa-8caa-fad0b7082220)" alt="Sam Feldstein's personal website logo." />
+  <img src="https://github.com/user-attachments/assets/17067d01-03ca-4efa-8caa-fad0b7082220" alt="Sam Feldstein's personal website logo." />
 </p>
 
 ```sh
