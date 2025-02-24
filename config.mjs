@@ -12,5 +12,5 @@ export const site = {
 
 export const author = {
   name: "Sam Feldstein",
-  email: "samuelfeldstein@proton.me",
+  email: "sam@samfeldstein.xyz",
 };
