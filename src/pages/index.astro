@@ -17,7 +17,7 @@ sortCollectionByDate(posts);
 
 // Images
 import latestPhoto from "/src/images/gallery/matt-heckler-9.jpg";
-import latestSite from "/src/images/danceophile-screenshot.jpg";
+import latestSite from "/src/images/regreen-screenshot.png";
 
 // Data
 import { site } from "../../config.mjs";
@@ -70,13 +70,16 @@ const schema = {
 
   <section id="latest-website">
     <h2>Latest Website</h2>
-    <p>Danceophile Studio. Built with Astro.</p>
-    <a class="image" href="https://danceophile.com">
+    <p>
+      An environmental restoration project in Far West Texas. Built with
+      Wordpress.
+    </p>
+    <a class="image" href="https://regreenbigbend.com">
       <Image
         src={latestSite}
         widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
         sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-        alt="A screenshot of the homepage of the Danceophile Studio website."
+        alt="The ReGreen Studio website logo."
       />
     </a>
     <p class="text-right"><a href="/websites/">See all websites >>></a></p>
