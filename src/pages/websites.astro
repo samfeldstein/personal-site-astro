@@ -9,6 +9,7 @@ import notebook from "/src/images/notebook-homepage-screenshot.jpg";
 import personalSiteHugo from "/src/images/personal-website-hugo-screenshot.jpg";
 import firstWebsite from "/src/images/first-website-screenshot.jpg";
 import danceophile from "/src/images/danceophile-screenshot.jpg";
+import regreen from "/src/images/regreen-screenshot.png";
 
 const schema = {
   "@context": "https://schema.org",
@@ -16,24 +17,40 @@ const schema = {
   name: "Websites I've Built | Sam Feldstein",
   url: "https://samfeldstein.xyz/websites/",
   description:
-    "My portfolio of custom websites built for small businesses, creatives, and freelancers. I specialize in fast, accessible sites built with modern web technologies.",
+    "My portfolio of custom websites built for small businesses, creatives, and professionals. I specialize in fast, accessible sites built with modern web technologies.",
   image: "https://samfeldstein.xyz/images/prairie-rose-arena-screenshot.jpg",
 };
 ---
 
 <BaseLayout
   title="Webdev Portfolio"
-  description="My portfolio of custom websites built for small businesses, creatives, and freelancers. I specialize in fast, accessible sites built with modern web technologies."
+  description="My portfolio of custom websites built for small businesses, creatives, and professionals. I specialize in fast, accessible sites built with modern web technologies."
   schema={schema}
 >
   <h1>Websites I've Built</h1>
+  <div>
+    <h2>ReGreen Big Bend</h2>
+    <p>
+      An environmental restoration project in Far West Texas. Built with
+      WordPress.
+    </p>
+    <a class="image" href="https://regreenbigbend.com">
+      <Image
+        src={regreen}
+        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+        sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
+        alt="A screenshot of the homepage of the ReGreen Big Bend website."
+      />
+    </a>
+  </div>
+
   <h2>Danceophile Studio</h2>
   <p>Built with Astro.</p>
   <a class="image" href="https://danceophile.com">
     <Image
       src={danceophile}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of the Danceophile Studio website."
     />
   </a>
@@ -44,7 +61,7 @@ const schema = {
     <Image
       src={notebook}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of my personal notebook."
     />
   </a>
@@ -65,7 +82,7 @@ const schema = {
     <Image
       src={pairings}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
       alt="A screenshot of the Pairings webapp homepage."
     />
   </a>
@@ -80,7 +97,7 @@ const schema = {
     <Image
       src={prairieRose}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
       alt="A screenshot of the Prairie Rose Arena website homepage."
     />
   </a>
@@ -96,7 +113,7 @@ const schema = {
     <Image
       src={personalSite}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of Sam Feldstein's personal website."
     />
   </a>
@@ -113,7 +130,7 @@ const schema = {
     <Image
       src={personalSiteHugo}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of an archived version of Sam Feldstein's personal website."
     />
   </a>
@@ -130,7 +147,7 @@ const schema = {
     <Image
       src={firstWebsite}
       widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
       alt="A screenshot of the homepage of the first website I ever built."
     />
   </a>
