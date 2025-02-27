@@ -1,0 +1,15 @@
+a.skiplink {
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.5em;
+  font-variant: small-caps;
+  text-decoration: none;
+  position: absolute;
+  translate: -1000%;
+  transition-duration: 0.25s;
+}
+
+a.skiplink:focus {
+  translate: 0;
+}

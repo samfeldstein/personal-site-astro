@@ -1,5 +1,6 @@
 ---
 import "/src/styles/_reset.css";
+import "/src/styles/_resume.css";
 ---
 
 <!doctype html>
@@ -129,6 +130,7 @@ import "/src/styles/_reset.css";
             <li>Eleventy</li>
             <li>Hugo</li>
             <li>WordPress</li>
+            <li>Figma</li>
           </ul>
         </section>
 
@@ -205,7 +207,7 @@ import "/src/styles/_reset.css";
         </section>
       </section>
 
-      <section>
+      <section id="projects">
         <h2>Projects</h2>
 
         <section id="regreen">
@@ -219,7 +221,7 @@ import "/src/styles/_reset.css";
             95+ Lighthouse scores.
           </p>
         </section>
-        
+
         <section id="danceophile">
           <h3>Danceophile Studio/Postoley Dance Ensemble</h3>
           <time>November 2024 – February 2025</time>
@@ -230,30 +232,58 @@ import "/src/styles/_reset.css";
           </p>
         </section>
 
+        <section id="notebook">
+          <h3>Digital Notebook</h3>
+          <time>September 2024 – December 2024</time>
+          <p>
+            Built a digital knowledge base using Obsidian and Eleventy,
+            integrating bidirectional linking capabilities with static site
+            generation. Implemented automated build processes to transform
+            wiki-style notation into standard Markdown, ensuring maintainable
+            documentation. Developed custom privacy controls to automatically
+            exclude sensitive content from version control and public
+            deployment. Created efficient deployment pipeline using Digital
+            Ocean for seamless subdomain integration.
+          </p>
+        </section>
+
         <section id="prairie-rose">
           <h3>Prairie Rose Arena</h3>
           <time>April 2024 – May 2024</time>
           <p>
-            Built a custom static website for an equestrian event center in Elkhart, IA. Conceived and implement a complete site redesign
-
-Implemented mobile-first design and 100% responsive layouts across all devices.
-
-Wrote a service worker to enable offline access to the full website, and to improve user experience by reducing page load times.
-
-Integrated headless CMS, allowing client to independently manage events and content updates.
-
-Optimized performance through modern build processes, lazy loading, and asset optimization.
+            Built a custom static website for an equestrian event center in
+            Elkhart, IA. Conceived and implement a complete site redesign
+            Implemented mobile-first design and 100% responsive layouts across
+            all devices. Wrote a service worker to enable offline access to the
+            full website, and to improve user experience by reducing page load
+            times. Integrated headless CMS, allowing client to independently
+            manage events and content updates. Optimized performance through
+            modern build processes, lazy loading, and asset optimization.
           </p>
         </section>
-        
+
+        <section id="personal-site">
+          <h3>Personal Website</h3>
+          <time>May 2024 – June 2024</time>
+          <p>
+            Built a high-performance personal site using Astro and Cloudflare
+            Pages, achieving sub-second load times and 100/100 Core Web Vitals
+            scores. Used a component-based architecture with scoped CSS modules,
+            reducing CSS payload while maintaining design consistency.
+            Implemented advanced performance optimizations including prefetching
+            and automated image optimization pipeline for WebP/AVIF delivery.
+          </p>
+        </section>
       </section>
 
       <section>
         <h2>Volunteer</h2>
-      </section>
 
-      <section>
-        <h2>Publications</h2>
+        <section id="equine">
+          <h3>Wix Developer and Horseback Riding Instructor</h3>
+          <div>Community Health and Equine Coalition</div>
+          <time>April 2024 – May 2024</time>
+        </section>
       </section>
     </main>
     <footer></footer>
