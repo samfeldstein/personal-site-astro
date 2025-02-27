@@ -1,15 +1,261 @@
 ---
-// Layout
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-// Structured data
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Resume | Sam Feldstein",
-  url: "https://samfeldstein.xyz/resume/",
-  description:
-    "Sam Feldstein's resume. Sam is a Frontend Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals.",
-  image: "https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png",
-};
+import "/src/styles/_reset.css";
 ---
+
+<!doctype html>
+<html lang="en" prefix="og:https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Icons
+      - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+      - Favicon generator: https://favicon.io
+      - Another favicon generator: https://realfavicongenerator.net/
+      - SVG generator: https://formito.com/tools/favicon
+      - Image compressor: https://squoosh.app/
+      - SVG optimizer: https://jakearchibald.github.io/svgomg/
+      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
+    -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon-96x96.png?v=3"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=3"
+    />
+    <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Resume | Sam Feldstein</title>
+    <meta name="author" content="Sam Feldstein" />
+    <meta
+      name="description"
+      content="Sam Feldstein's resume. Sam is a Frontend Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals."
+    />
+    <meta property="og:title" content="Resume | Sam Feldstein" />
+    <meta name="twitter:title" content="Resume | Sam Feldstein" />
+    <meta
+      property="og:description"
+      content="description"
+      content="Sam Feldstein's resume. Sam is a Frontend Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals."
+    />
+    <meta
+      name="twitter:description"
+      content="description"
+      content="Sam Feldstein's resume. Sam is a Frontend Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals."
+    />
+    <meta property="og:type" content={"website"} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta
+      property="og:image"
+      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png"
+    />
+    <meta
+      name="twitter:image"
+      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Sam Feldstein's Blog"
+      href={new URL("feed.xml", Astro.site)}
+    />
+    <link
+      rel="alternate"
+      type="application/atom+xml"
+      title="Sam Feldstein's Notebook"
+      href="https://notebook.samfeldstein.xyz/feed.xml"
+    />
+
+    <!-- Turn structured data into JSON string -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Resume | Sam Feldstein",
+        "url": "https://samfeldstein.xyz/resume/",
+        "description": "Sam Feldstein's resume. Sam is a Frontend Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals.",
+        "image": "https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skiplink" href="#main-content">Skip to Content</a>
+    <header>
+      <p>Download PDF</p>
+      <h1>
+        <div class="name">Sam Feldstein</div>
+        <div class="role">Frontend Developer</div>
+      </h1>
+      <address class="contact">
+        <span>Boulder, CO</span>
+        <a href="https://github.com/samfeldstein">GitHub</a>
+        <a href="https://www.linkedin.com/in/samfeldstein">LinkedIn</a>
+        <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+      </address>
+      <p class="summary">
+        I’m a Frontend Developer building sites that load fast, work for
+        everyone, and live forever.
+      </p>
+    </header>
+    <main id="main-content">
+      <section>
+        <h2>Skills</h2>
+        <section id="languages">
+          <h3>Languages</h3>
+          <ul>
+            <li>Semantic HTML</li>
+            <li>Modern CSS</li>
+            <li>JavaScript</li>
+          </ul>
+        </section>
+
+        <section id="tools">
+          <h3>Tools and Frameworks</h3>
+          <ul>
+            <li>Static site generation</li>
+            <li>Astro</li>
+            <li>Eleventy</li>
+            <li>Hugo</li>
+            <li>WordPress</li>
+          </ul>
+        </section>
+
+        <section id="performance">
+          <h3>Web Performance</h3>
+          <ul>
+            <li>Static site generation</li>
+            <li>Modern image formats</li>
+            <li>Font-loading strategies</li>
+            <li>Preloading/prefetching/pre-rendering documents and assets</li>
+            <li>CDN caching strategies</li>
+          </ul>
+        </section>
+
+        <section id="soft-skills">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Communication</li>
+            <li>Writing</li>
+            <li>Problem-solving</li>
+            <li>Collaboration</li>
+            <li>Public speaking</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <h2>Work Experience</h2>
+
+        <section id="freelance-developer">
+          <h3>Freelance Web Developer</h3>
+          <div>Self-Employed</div>
+          <time>April 2024 – Present</time>
+          <div>Boulder, CO</div>
+          <p>
+            Build bespoke, high-performance websites using modern static site
+            generators (Astro, Eleventy) and Content Management Systems
+            (WordPress). Optimize site performance using strategies like image
+            optimization and lazy-loading, CDN caching, and lean codebases to
+            achieve sub-second load times and 95+ Lighthouse scores. Where
+            needed, create content management workflows with headless CMS
+            integrations, enabling non-technical clients to update site content
+            independently.
+          </p>
+        </section>
+
+        <section id="sugar23">
+          <h3>Development Assistant</h3>
+          <div>Sugar23</div>
+          <time>November 2022 – December 2023</time>
+          <div>Hollywood, CA (remote)</div>
+          <p>
+            Evaluated manuscripts and scripts for potential TV/film adaptation
+            at the production company behind Netflix hits <cite>Maniac</cite> and
+            <cite>The OA</cite>. Wrote comprehensive script coverage including
+            detailed story analysis, market potential assessment, and adaptation
+            recommendations that informed executive decision-making. Delivered
+            high-quality 10-page coverage reports for two ~300-page manuscripts
+            weekly, maintaining consistent output while meeting tight deadlines.
+          </p>
+        </section>
+
+        <section id="sentinel-developer">
+          <h3>WordPress Developer</h3>
+          <div>The Sentinel</div>
+          <time>November 2020 – November 2022</time>
+          <div>Marfa, TX</div>
+          <p>
+            Designed, built, and deployed an online store using WordPress and
+            WooCommerce. Optimized site architecture and UX design to achieve an
+            optimal conversion rate. Implemented SEO best practices and crafted
+            compelling product descriptions to drive organic search traffic.
+          </p>
+        </section>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+
+        <section id="regreen">
+          <h3>ReGreen Big Bend</h3>
+          <time>January 2025 – February 2025</time>
+          <p>
+            Developed a custom WordPress theme for an environmental restoration
+            project in Far West Texas. Designed high-fidelity mock-ups in Figma
+            with a focus on regional aesthetics and responsive design. Optimized
+            performance through strategic asset loading and caching to achieve
+            95+ Lighthouse scores.
+          </p>
+        </section>
+        
+        <section id="danceophile">
+          <h3>Danceophile Studio/Postoley Dance Ensemble</h3>
+          <time>November 2024 – February 2025</time>
+          <p>
+            Built a website for an independent folk dance studio in Boulder, CO.
+            Transformed the legacy site into a modern, component-based static
+            website using Astro, achieving 95+ Lighthouse performance scores.
+          </p>
+        </section>
+
+        <section id="prairie-rose">
+          <h3>Prairie Rose Arena</h3>
+          <time>April 2024 – May 2024</time>
+          <p>
+            Built a custom static website for an equestrian event center in Elkhart, IA. Conceived and implement a complete site redesign
+
+Implemented mobile-first design and 100% responsive layouts across all devices.
+
+Wrote a service worker to enable offline access to the full website, and to improve user experience by reducing page load times.
+
+Integrated headless CMS, allowing client to independently manage events and content updates.
+
+Optimized performance through modern build processes, lazy loading, and asset optimization.
+          </p>
+        </section>
+        
+      </section>
+
+      <section>
+        <h2>Volunteer</h2>
+      </section>
+
+      <section>
+        <h2>Publications</h2>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
