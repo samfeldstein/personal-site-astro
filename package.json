@@ -21,7 +21,8 @@
     "exifreader": "^4.26.0",
     "exiftool-vendored": "^29.0.0",
     "fs": "^0.0.1-security",
-    "node-iptc": "^1.0.5"
+    "node-iptc": "^1.0.5",
+    "sass": "^1.85.1"
   },
   "devDependencies": {
     "cssnano": "^7.0.4",

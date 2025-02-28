@@ -18,12 +18,11 @@ div.download {
   text-align: center;
 }
 
-
 div.name {
   font-weight: 400;
 }
 
-div.role {
+h1 div.role {
   font-weight: 100;
   color: #555;
 }
@@ -53,14 +52,23 @@ main>section {
   padding-top: 3rem;
 }
 
+div.skills,
+div.experience,
+div.projects,
+div.volunteer {
+  display: grid;
+  gap: 2rem;
+}
+
 /* Elements */
 body {
+  margin: 0 auto;
+  padding: 1rem;
   font-family: Lato, Arial, Helvetica, sans-serif;
 }
 
 h1,
-h2,
-h3 {
+h2 {
   font-family: "American Typewriter", "Courier New", Courier, monospace;
   font-weight: 400;
 }
@@ -86,8 +94,7 @@ h2 {
 h3 {
   margin: 0;
   color: #555;
-  font-weight: 600;
-  
+
   /* Aligns top with h2 */
   line-height: 1.6;
 }
@@ -107,4 +114,10 @@ a {
 a:hover,
 a:focus {
   text-decoration-style: dotted;
+}
+
+main>section ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1em;
 }

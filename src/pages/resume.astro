@@ -1,6 +1,6 @@
 ---
 import "/src/styles/_reset.css";
-import "/src/styles/_resume.css";
+import "/src/styles/_resume.scss";
 ---
 
 <!doctype html>
@@ -120,16 +120,17 @@ import "/src/styles/_resume.css";
         <h2>Skills</h2>
         <div class="skills">
           <section id="languages">
-            <h3>Languages</h3>
+            <h3>Languages & Supersets</h3>
             <ul>
               <li>Semantic HTML</li>
               <li>Modern CSS</li>
+              <li>Sass</li>
               <li>JavaScript</li>
             </ul>
           </section>
 
           <section id="tools">
-            <h3>Tools and Frameworks</h3>
+            <h3>Tools & Frameworks</h3>
             <ul>
               <li>Astro</li>
               <li>Eleventy</li>
@@ -146,7 +147,7 @@ import "/src/styles/_resume.css";
               <li>Static site generation</li>
               <li>Modern image formats</li>
               <li>Font-loading strategies</li>
-              <li>Preloading/prefetching/pre-rendering documents and assets</li>
+              <li>Preloading/-fetching/-rendering resources</li>
               <li>CDN caching strategies</li>
             </ul>
           </section>
@@ -168,8 +169,13 @@ import "/src/styles/_resume.css";
         <h2>Work Experience</h2>
         <div class="experience">
           <section id="freelance-developer">
-            <h3>Freelance Web Developer</h3>
-            <div>Self-Employed</div>
+            <hgroup>
+              <h3>
+                <div class="role">Web Developer</div>
+                <div class="employer">Freelance</div>
+              </h3>
+            </hgroup>
+
             <time>April 2024 – Present</time>
             <div>Boulder, CO</div>
             <p>
@@ -292,7 +298,7 @@ import "/src/styles/_resume.css";
 
       <section>
         <h2>Volunteer</h2>
-        <div>
+        <div class="volunteer">
           <section id="equine">
             <h3>Wix Developer and Horseback Riding Instructor</h3>
             <div>Community Health and Equine Coalition</div>
