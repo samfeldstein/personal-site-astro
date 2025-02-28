@@ -13,3 +13,21 @@ a.skiplink {
 a.skiplink:focus {
   translate: 0;
 }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: "American Typewriter", 'Courier New', Courier, monospace;
+  font-size: 6rem;
+}
+
+div.name {
+  font-weight: 400;
+}
+
+div.role {
+  font-weight: 100;
+  color: #555;
+}
