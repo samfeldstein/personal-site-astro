@@ -15,12 +15,21 @@ a.skiplink:focus {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "American Typewriter", "Courier New", Courier, monospace;
+  font-weight: 400;
 }
 
 h1 {
-  font-family: "American Typewriter", 'Courier New', Courier, monospace;
   font-size: 6rem;
+  border-bottom-style: solid;
+  border-bottom-color: #555;
+  margin-bottom: 1rem;
 }
 
 div.name {
