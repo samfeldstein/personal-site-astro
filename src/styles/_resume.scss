@@ -29,7 +29,8 @@ h1 div.role {
 
 header address {
   display: flex;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
   color: #555;
   font-style: normal;
   font-size: 0.75rem;
@@ -39,17 +40,8 @@ header address {
 p.summary {
   margin-top: 6rem;
   margin-bottom: 20rem;
-  font-size: 2rem;
+  font-size: calc(1.25rem + 1vw);
   color: #555;
-}
-
-main>section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top-style: solid;
-  border-top-width: 0.5px;
-  border-top-color: #afafaf;
-  padding-top: 3rem;
 }
 
 main>section ul {
@@ -73,7 +65,7 @@ div.volunteer {
 /* Elements */
 body {
   margin: 0 auto;
-  padding: 1rem;
+  padding: 16px;
   font-family: Lato, Arial, Helvetica, sans-serif;
 }
 
@@ -84,7 +76,7 @@ h2 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: calc(3.5rem + 1vw);
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
   border-bottom-color: #afafaf;
@@ -96,6 +88,7 @@ h2 {
   font-variant: small-caps;
   font-weight: 100;
   margin: 0;
+  margin-bottom: 2rem;
 
   /* Aligns top with h3 */
   line-height: 0.8;
@@ -122,8 +115,23 @@ a:focus {
   text-decoration-style: dotted;
 }
 
-time, .time {
+time,
+.time {
   color: #555;
   text-transform: uppercase;
   font-size: 0.75rem;
+}
+
+main>section {
+  border-top-style: solid;
+  border-top-width: 0.5px;
+  border-top-color: #afafaf;
+  padding-top: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  main>section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
