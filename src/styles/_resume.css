@@ -61,6 +61,11 @@ p.summary {
   color: #555;
 }
 
+main>section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 /* Elements */
 a {
   color: unset;
