@@ -14,28 +14,10 @@ a.skiplink:focus {
   translate: 0;
 }
 
-body {
-  font-family: Lato, Arial, Helvetica, sans-serif;
-}
-
 div.download {
   text-align: center;
 }
 
-h1,
-h2,
-h3 {
-  font-family: "American Typewriter", "Courier New", Courier, monospace;
-  font-weight: 400;
-}
-
-h1 {
-  font-size: 6rem;
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-  border-bottom-color: #afafaf;
-  margin-bottom: 0.5rem;
-}
 
 div.name {
   font-weight: 400;
@@ -56,7 +38,8 @@ header address {
 }
 
 p.summary {
-  margin: 6rem 0;
+  margin-top: 6rem;
+  margin-bottom: 20rem;
   font-size: 2rem;
   color: #555;
 }
@@ -64,14 +47,61 @@ p.summary {
 main>section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-top-style: solid;
+  border-top-width: 0.5px;
+  border-top-color: #afafaf;
+  padding-top: 3rem;
 }
 
 /* Elements */
+body {
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "American Typewriter", "Courier New", Courier, monospace;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 6rem;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+  border-bottom-color: #afafaf;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 3rem;
+  font-variant: small-caps;
+  font-weight: 100;
+  margin: 0;
+
+  /* Aligns top with h3 */
+  line-height: 0.8;
+}
+
+h3 {
+  margin: 0;
+  color: #555;
+  font-weight: 600;
+  
+  /* Aligns top with h2 */
+  line-height: 1.6;
+}
+
+main {
+  display: grid;
+  gap: 6rem;
+}
+
 a {
   color: unset;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
-  text-decoration-color: #999;
+  text-decoration-color: #afafaf;
 }
 
 a:hover,
