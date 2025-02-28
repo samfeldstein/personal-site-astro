@@ -95,6 +95,10 @@ import "/src/styles/_resume.scss";
     <a class="skiplink" href="#main-content">Skip to Content</a>
     <div class="page-container">
       <header>
+        <address class="contact print">
+          <span>Boulder, CO</span>
+          <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+        </address>
         <div class="download">
           <div>Download PDF</div>
           <div>Fancy Version | Plain Text Version</div>
@@ -103,8 +107,9 @@ import "/src/styles/_resume.scss";
           <div class="name">Sam Feldstein.</div>
           <div class="role">Frontend Developer.</div>
         </h1>
-        <address class="contact">
+        <address class="contact web">
           <span>Boulder, CO</span>
+          <a href="https://samfeldstein.xyz">Website</a>
           <a href="https://github.com/samfeldstein">GitHub</a>
           <a href="https://www.linkedin.com/in/samfeldstein">LinkedIn</a>
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
@@ -146,7 +151,7 @@ import "/src/styles/_resume.scss";
                 <li>Static site generation</li>
                 <li>Modern image formats</li>
                 <li>Font-loading strategies</li>
-                <li>Preloading/-fetching/-rendering resources</li>
+                <li>Preloading/-fetching/-rendering</li>
                 <li>CDN caching strategies</li>
               </ul>
             </section>
@@ -173,16 +178,23 @@ import "/src/styles/_resume.scss";
               <div class="time">
                 <time>April 2024 – Present</time> | <span>Boulder, CO</span>
               </div>
-              <p>
-                Build bespoke, high-performance websites using modern static
-                site generators (Astro, Eleventy) and Content Management Systems
-                (WordPress). Optimize site performance using strategies like
-                image optimization and lazy-loading, CDN caching, and lean
-                codebases to achieve sub-second load times and 95+ Lighthouse
-                scores. Where needed, create content management workflows with
-                headless CMS integrations, enabling non-technical clients to
-                update site content independently.
-              </p>
+              <ul>
+                <li>
+                  Build bespoke, high-performance websites using modern static
+                  site generators (Astro, Eleventy) and Content Management
+                  Systems (WordPress).
+                </li>
+                <li>
+                  Optimize site performance using strategies like image
+                  optimization, CDN caching, and lean codebases to achieve
+                  sub-second load times and 95+ Lighthouse scores.
+                </li>
+                <li>
+                  Where needed, create content management workflows with
+                  headless CMS integrations, enabling non-technical clients to
+                  update site content independently.
+                </li>
+              </ul>
             </section>
 
             <section id="sugar23">
@@ -192,18 +204,26 @@ import "/src/styles/_resume.scss";
                   >Hollywood, CA (remote)</span
                 >
               </div>
-              <p>
-                Evaluated manuscripts and scripts for potential TV/film
-                adaptation at the production company behind Netflix hits <cite
-                  >Maniac</cite
-                > and
-                <cite>The OA</cite>. Wrote comprehensive script coverage
-                including detailed story analysis, market potential assessment,
-                and adaptation recommendations that informed executive
-                decision-making. Delivered high-quality 10-page coverage reports
-                for two ~300-page manuscripts weekly, maintaining consistent
-                output while meeting tight deadlines.
-              </p>
+
+              <ul>
+                <li>
+                  Evaluated manuscripts and scripts for potential TV/film
+                  adaptation at the production company behind Netflix hits <cite
+                    >Maniac</cite
+                  > and
+                  <cite>The OA</cite>.
+                </li>
+                <li>
+                  Wrote comprehensive script coverage analyzing the story and
+                  market potential, offering adaptation recommendations that
+                  informed executive decision-making.
+                </li>
+                <li>
+                  Delivered high-quality 10-page coverage reports for two
+                  ~300-page manuscripts weekly, maintaining consistent output
+                  while meeting tight deadlines.
+                </li>
+              </ul>
             </section>
 
             <section id="sentinel-developer">
@@ -213,13 +233,21 @@ import "/src/styles/_resume.scss";
                   >Marfa, TX</span
                 >
               </div>
-              <p>
-                Designed, built, and deployed an online store using WordPress
-                and WooCommerce. Optimized site architecture and UX design to
-                achieve an optimal conversion rate. Implemented SEO best
-                practices and crafted compelling product descriptions to drive
-                organic search traffic.
-              </p>
+
+              <ul>
+                <li>
+                  Designed, built, and deployed an online store using WordPress
+                  and WooCommerce.
+                </li>
+                <li>
+                  Optimized site architecture and UI to achieve an optimal
+                  conversion rate.
+                </li>
+                <li>
+                  Implemented SEO best practices and crafted compelling product
+                  descriptions to drive organic search traffic.
+                </li>
+              </ul>
             </section>
           </div>
         </section>
@@ -229,70 +257,114 @@ import "/src/styles/_resume.scss";
           <div class="projects">
             <section id="regreen">
               <h3>ReGreen Big Bend</h3>
-              <time>January 2025 – February 2025</time>
-              <p>
-                Developed a custom WordPress theme for an environmental
-                restoration project in Far West Texas. Designed high-fidelity
-                mock-ups in Figma with a focus on regional aesthetics and
-                responsive design. Optimized performance through strategic asset
-                loading and caching to achieve 95+ Lighthouse scores.
-              </p>
+              <div class="time"><time>January 2025 – February 2025</time></div>
+
+              <ul>
+                <li>
+                  Developed a custom WordPress theme for an environmental
+                  restoration project in Far West Texas.
+                </li>
+                <li>
+                  Designed high-fidelity mock-ups in Figma with a focus on
+                  regional aesthetics and responsive design.
+                </li>
+                <li>
+                  Optimized performance through strategic asset loading and
+                  caching to achieve 95+ Lighthouse scores.
+                </li>
+              </ul>
             </section>
 
             <section id="danceophile">
-              <h3>Danceophile Studio/Postoley Dance Ensemble</h3>
-              <time>November 2024 – February 2025</time>
-              <p>
-                Built a website for an independent folk dance studio in Boulder,
-                CO. Transformed the legacy site into a modern, component-based
-                static website using Astro, achieving 95+ Lighthouse performance
-                scores.
-              </p>
+              <h3>Postoley Dance Ensemble</h3>
+              <div class="time"><time>November 2024 – February 2025</time></div>
+
+              <ul>
+                <li>
+                  Built a website for an independent folk dance studio in
+                  Boulder, CO.
+                </li>
+                <li>
+                  Transformed the legacy site into a modern, component-based
+                  static website using Astro, achieving 95+ Lighthouse
+                  performance scores.
+                </li>
+                <li>
+                  Integrated a headless CMS so the client could update site
+                  content independently.
+                </li>
+              </ul>
             </section>
 
             <section id="notebook">
               <h3>Digital Notebook</h3>
-              <time>September 2024 – December 2024</time>
-              <p>
-                Built a digital knowledge base using Obsidian and Eleventy,
-                integrating bidirectional linking capabilities with static site
-                generation. Implemented automated build processes to transform
-                wiki-style notation into standard Markdown, ensuring
-                maintainable documentation. Developed custom privacy controls to
-                automatically exclude sensitive content from version control and
-                public deployment. Created efficient deployment pipeline using
-                Digital Ocean for seamless subdomain integration.
-              </p>
+              <div class="time">
+                <time>September 2024 – December 2024</time>
+              </div>
+
+              <ul>
+                <li>
+                  Built a digital knowledge base using Obsidian and Eleventy.
+                </li>
+                <li>
+                  Automated build process to transform wiki-style notation into
+                  standard Markdown and generate bidirectional links.
+                </li>
+                <li>
+                  Developed custom privacy controls to automatically exclude
+                  sensitive content from version control and public deployment.
+                </li>
+              </ul>
             </section>
 
             <section id="prairie-rose">
               <h3>Prairie Rose Arena</h3>
-              <time>April 2024 – May 2024</time>
-              <p>
-                Built a custom static website for an equestrian event center in
-                Elkhart, IA. Conceived and implement a complete site redesign
-                Implemented mobile-first design and 100% responsive layouts
-                across all devices. Wrote a service worker to enable offline
-                access to the full website, and to improve user experience by
-                reducing page load times. Integrated headless CMS, allowing
-                client to independently manage events and content updates.
-                Optimized performance through modern build processes, lazy
-                loading, and asset optimization.
-              </p>
+              <div class="time"><time>April 2024 – May 2024</time></div>
+
+              <ul>
+                <li>
+                  Built a custom static website for an equestrian event center
+                  in Elkhart, IA.
+                </li>
+                <li>
+                  Conceived and implemented a complete site redesign with a
+                  mobile-first, responsive approach.
+                </li>
+
+                <li>
+                  Integrated a headless CMS to allow client to independently
+                  manage events.
+                </li>
+
+                <li>
+                  Optimized performance through modern build processes, lazy
+                  loading, and asset optimization.
+                </li>
+              </ul>
             </section>
 
             <section id="personal-site">
               <h3>Personal Website</h3>
-              <time>May 2024 – June 2024</time>
-              <p>
-                Built a high-performance personal site using Astro and
-                Cloudflare Pages, achieving sub-second load times and 100/100
-                Core Web Vitals scores. Used a component-based architecture with
-                scoped CSS modules, reducing CSS payload while maintaining
-                design consistency. Implemented advanced performance
-                optimizations including prefetching and automated image
-                optimization pipeline for WebP/AVIF delivery.
-              </p>
+              <div class="time"><time>May 2024 – June 2024</time></div>
+
+              <ul>
+                <li>
+                  Built a high-performance personal site using Astro and
+                  Cloudflare Pages, achieving sub-second load times and 100/100
+                  Core Web Vitals scores.
+                </li>
+
+                <li>
+                  Used a component-based architecture with scoped CSS modules,
+                  reducing CSS payload while maintaining design consistency.
+                </li>
+
+                <li>
+                  Implemented performance optimizations including prefetching
+                  and automated image optimization pipeline for WebP/AVIF
+                  delivery.
+                </li>
+              </ul>
             </section>
           </div>
         </section>
@@ -305,7 +377,31 @@ import "/src/styles/_resume.scss";
                 Wix Developer & Horseback Riding Instructor @ Community Health
                 and Equine Coalition
               </h3>
-              <time>April 2024 – May 2024</time>
+              <div class="time">
+                <time>April 2024 – May 2024</time> | <span>Galveston, TX</span>
+              </div>
+              <ul>
+                <li>
+                  Redesigned and maintained the organization’s website using Wix
+                  CMS, enhancing user experience and accessibility.
+                </li>
+                <li>
+                  Integrated a secure payment gateway, streamlining the donation
+                  process and increasing fundraising efficiency.
+                </li>
+                <li>
+                  Instructed clients aged 13-25 in horseback riding, fostering
+                  skill development and confidence.
+                </li>
+              </ul>
+            </section>
+
+            <section id="frida">
+              <h3>Theater Staff @ The Frida Cinema</h3>
+              <div class="time">
+                <time>March 2019 – March 2020</time> | <span>Santa Ana, CA</span
+                >
+              </div>
             </section>
           </div>
         </section>
