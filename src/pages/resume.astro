@@ -2,6 +2,74 @@
 import "/src/styles/_reset.css";
 import "/src/styles/_resume.scss";
 
+const work = [
+  {
+    role: "Freelance Web Developer",
+    date: "April 2024 – Present",
+    place: "Boulder, CO",
+    description: [
+      "Build bespoke, high-performance websites using modern static site generators (Astro, Eleventy) and Content Management Systems (WordPress).",
+      " Optimize site performance using strategies like image optimization, CDN caching, and lean codebases to achieve sub-second load times and 95+ Lighthouse scores.",
+      "Where needed, create content management workflows with headless CMS integrations, enabling non-technical clients to update site content independently.",
+    ],
+  },
+  {
+    role: "Development Assistant",
+    employer: "Sugar23",
+    date: "November 2022 – December 2023",
+    place: "Hollywood, CA (remote)",
+    description: [
+      "Evaluated manuscripts and scripts for potential TV/film adaptation at the production company behind Netflix hits <cite>Maniac</cite> and <cite>The OA</cite>.",
+      "Wrote comprehensive script coverage analyzing the story and market potential, offering adaptation recommendations that informed executive decision-making.",
+      "Delivered high-quality 10-page coverage reports for two ~300-page manuscripts weekly, maintaining consistent output while meeting tight deadlines.",
+    ],
+  },
+  {
+    role: "Freelance Journalist",
+    employer: "The Big Bend Sentinel",
+    place: "Marfa, TX",
+    date: "September 2022 – December 2023",
+    description: [
+      "Produced compelling local journalism covering community events and grassroots activism, developing expertise in interview techniques and deadline-driven writing.",
+      "Conducted in-depth interviews with community leaders, activists, and local stakeholders to uncover compelling narratives and ensure accurate representation.",
+      "Balanced journalistic integrity with narrative storytelling to create articles that were informative, engaging, and accessible.",
+    ],
+  },
+  {
+    role: "Shopify Store Manager",
+    employer: "The Marfa Store",
+    place: "Marfa, TX",
+    date: "January 2022 – December 2023",
+    description: [
+      "Managed the Shopify storefront and inventory across 100+ SKUs, ensuring accurate stock levels, timely restocks, and a seamless online shopping experience.",
+      "Handled order fulfillment, expertly packing and shipping artwork and retail goods with secure, professional-grade techniques to ensure safe delivery.",
+      "Provided top-tier customer support, resolving inquiries and order issues promptly while fostering positive client relationships that enhanced brand reputation.",
+    ],
+  },
+  {
+    role: "General Manager",
+    employer: "The Sentinel",
+    date: "March 2021 – November 2021",
+    place: "Marfa, TX",
+    description: [
+      "Managed front-of-house operations, delivering exceptional customer service and fostering a welcoming, community-oriented atmosphere.",
+      "Led hiring efforts by crafting compelling job postings, conducting interviews, and implementing a standardized training program to ensure team consistency and efficiency.",
+      "Oversaw inventory management, vendor relations, and supply ordering to optimize costs and maintain seamless operations.",
+    ],
+  },
+  {
+    role: "WordPress Developer",
+    employer: "The Sentinel",
+    date: "November 2020 – November 2022",
+    place: "Marfa, TX",
+    description: [
+      "Designed, developed, and launched an e-commerce platform using WordPress and WooCommerce, enhancing the business's digital presence and revenue potential.",
+      "Refined site architecture and user interface to streamline navigation and maximize conversions, leading to a more seamless customer experience.",
+      "Implemented SEO-driven strategies, including keyword optimization and engaging product descriptions, to boost organic search visibility and drive consistent traffic.",
+    ],
+  },
+];
+
 const publications = [
   {
     title: "Made of Memories",
@@ -150,9 +218,22 @@ const publications = [
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
         <p class="summary">
-          Frontend Developer building sites that load fast, work for everyone,
-          and live forever.
+          Frontend Developer building sites that load fast,<br />work for
+          everyone, and live forever.
         </p>
+
+        <nav>
+          <div>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+          </div>
+          <div>
+            <a href="#publications">Publications</a>
+            <a href="#volunteer">Volunteer</a>
+            <a href="#education">Education</a>
+          </div>
+        </nav>
       </header>
       <main id="main-content">
         <section id="skills">
@@ -205,85 +286,26 @@ const publications = [
         </section>
 
         <section id="experience">
-          <h2>Work Experience</h2>
+          <h2>Experience</h2>
           <div class="experience">
-            <section id="freelance-developer">
-              <h3>Freelance Web Developer</h3>
-
-              <div class="time">
-                <time>April 2024 – Present</time> | <span>Boulder, CO</span>
-              </div>
-              <ul>
-                <li>
-                  Build bespoke, high-performance websites using modern static
-                  site generators (Astro, Eleventy) and Content Management
-                  Systems (WordPress).
-                </li>
-                <li>
-                  Optimize site performance using strategies like image
-                  optimization, CDN caching, and lean codebases to achieve
-                  sub-second load times and 95+ Lighthouse scores.
-                </li>
-                <li>
-                  Where needed, create content management workflows with
-                  headless CMS integrations, enabling non-technical clients to
-                  update site content independently.
-                </li>
-              </ul>
-            </section>
-
-            <section id="sugar23">
-              <h3>Development Assistant @ Sugar23</h3>
-              <div class="time">
-                <time>November 2022 – December 2023</time> | <span
-                  >Hollywood, CA (remote)</span
-                >
-              </div>
-
-              <ul>
-                <li>
-                  Evaluated manuscripts and scripts for potential TV/film
-                  adaptation at the production company behind Netflix hits <cite
-                    >Maniac</cite
-                  > and
-                  <cite>The OA</cite>.
-                </li>
-                <li>
-                  Wrote comprehensive script coverage analyzing the story and
-                  market potential, offering adaptation recommendations that
-                  informed executive decision-making.
-                </li>
-                <li>
-                  Delivered high-quality 10-page coverage reports for two
-                  ~300-page manuscripts weekly, maintaining consistent output
-                  while meeting tight deadlines.
-                </li>
-              </ul>
-            </section>
-
-            <section id="sentinel-developer">
-              <h3>WordPress Developer @ The Sentinel</h3>
-              <div class="time">
-                <time>November 2020 – November 2022</time> | <span
-                  >Marfa, TX</span
-                >
-              </div>
-
-              <ul>
-                <li>
-                  Designed, built, and deployed an online store using WordPress
-                  and WooCommerce.
-                </li>
-                <li>
-                  Optimized site architecture and UI to achieve an optimal
-                  conversion rate.
-                </li>
-                <li>
-                  Implemented SEO best practices and crafted compelling product
-                  descriptions to drive organic search traffic.
-                </li>
-              </ul>
-            </section>
+            {
+              work.map((job) => (
+                <article>
+                  <h3>
+                    {job.role} {job.employer && `@ ${job.employer}`}
+                  </h3>
+                  <div class="time">
+                    <time>{job.date}</time> | {job.place}
+                  </div>
+                  <ul>
+                    {job.description.map((point) => (
+                      // Renders html in the object values
+                      <li set:html={point} />
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
           </div>
         </section>
 
