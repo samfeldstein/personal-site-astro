@@ -70,6 +70,55 @@ const work = [
   },
 ];
 
+const projects = [
+  {
+    title: "ReGreen Big Bend",
+    date: "January 2025 – February 2025",
+    description: [
+      "Developed a custom WordPress theme for an environmental restoration project in Far West Texas.",
+      "Designed high-fidelity mock-ups in Figma with a focus on regional aesthetics and responsive design.",
+      "Optimized performance through strategic asset loading and caching to achieve 95+ Lighthouse scores.",
+    ],
+  },
+  {
+    title: "Postoley Dance Ensemble",
+    date: "November 2024 – February 2025",
+    description: [
+      "Built a website for an independent folk dance studio in Boulder, CO.",
+      "Transformed the legacy site into a modern, component-based static website using Astro, achieving 95+ Lighthouse performance scores.",
+      "Integrated a headless CMS so the client could update site content independently.",
+    ],
+  },
+  {
+    title: "Digital Notebook",
+    date: "September 2024 – December 2024",
+    description: [
+      "Built a digital knowledge base using Obsidian and Eleventy.",
+      "Automated build process to transform wiki-style notation into standard Markdown and generate bidirectional links.",
+      "Developed custom privacy controls to automatically exclude sensitive content from version control and public deployment.",
+    ],
+  },
+  {
+    title: "Prairie Rose Arena",
+    date: "April 2024 – May 2024",
+    description: [
+      "Built a custom static website for an equestrian event center in Elkhart, IA.",
+      "Conceived and implemented a complete site redesign with a mobile-first, responsive approach.",
+      "Integrated a headless CMS to allow the client to independently manage events.",
+      "Optimized performance through modern build processes, lazy loading, and asset optimization.",
+    ],
+  },
+  {
+    title: "Personal Website",
+    date: "May 2024 – June 2024",
+    description: [
+      "Built a high-performance personal site using Astro and Cloudflare Pages, achieving sub-second load times and 100/100 Core Web Vitals scores.",
+      "Used a component-based architecture with scoped CSS modules, reducing CSS payload while maintaining design consistency.",
+      "Implemented performance optimizations including prefetching and an automated image optimization pipeline for WebP/AVIF delivery.",
+    ],
+  },
+];
+
 const publications = [
   {
     title: "Made of Memories",
@@ -102,6 +151,31 @@ const publications = [
     medium: "Film Criticism",
     outlet: "The Frida Cinema Blog",
     date: "April 2022",
+  },
+];
+
+const volunteer = [
+  {
+    role: "Wix Developer & Horseback Riding Instructor",
+    employer: "Community Health and Equine Coalition",
+    date: "April 2024 – May 2024",
+    place: "Galveston, TX",
+    description: [
+      "Redesigned and maintained the organization’s website using Wix CMS, enhancing user experience and accessibility.",
+      "Integrated a secure payment gateway, streamlining the donation process and increasing fundraising efficiency.",
+      "Instructed clients aged 13-25 in horseback riding, fostering skill development and confidence.",
+    ],
+  },
+  {
+    role: "Theater Staff",
+    employer: "The Frida Cinema",
+    date: "March 2019 – March 2020",
+    place: "Santa Ana, CA",
+    description: [
+      "Assisted in theater operations, including ticketing, concessions, and customer service, ensuring a seamless guest experience.",
+      "Maintained a welcoming and informative environment by providing guests with film details, schedules, and theater policies.",
+      "Solicited donations at the register, supporting fundraising efforts for independent film programming.",
+    ],
   },
 ];
 ---
@@ -312,117 +386,21 @@ const publications = [
         <section id="projects">
           <h2>Projects</h2>
           <div class="projects">
-            <section id="regreen">
-              <h3>ReGreen Big Bend</h3>
-              <div class="time"><time>January 2025 – February 2025</time></div>
-
-              <ul>
-                <li>
-                  Developed a custom WordPress theme for an environmental
-                  restoration project in Far West Texas.
-                </li>
-                <li>
-                  Designed high-fidelity mock-ups in Figma with a focus on
-                  regional aesthetics and responsive design.
-                </li>
-                <li>
-                  Optimized performance through strategic asset loading and
-                  caching to achieve 95+ Lighthouse scores.
-                </li>
-              </ul>
-            </section>
-
-            <section id="danceophile">
-              <h3>Postoley Dance Ensemble</h3>
-              <div class="time"><time>November 2024 – February 2025</time></div>
-
-              <ul>
-                <li>
-                  Built a website for an independent folk dance studio in
-                  Boulder, CO.
-                </li>
-                <li>
-                  Transformed the legacy site into a modern, component-based
-                  static website using Astro, achieving 95+ Lighthouse
-                  performance scores.
-                </li>
-                <li>
-                  Integrated a headless CMS so the client could update site
-                  content independently.
-                </li>
-              </ul>
-            </section>
-
-            <section id="notebook">
-              <h3>Digital Notebook</h3>
-              <div class="time">
-                <time>September 2024 – December 2024</time>
-              </div>
-
-              <ul>
-                <li>
-                  Built a digital knowledge base using Obsidian and Eleventy.
-                </li>
-                <li>
-                  Automated build process to transform wiki-style notation into
-                  standard Markdown and generate bidirectional links.
-                </li>
-                <li>
-                  Developed custom privacy controls to automatically exclude
-                  sensitive content from version control and public deployment.
-                </li>
-              </ul>
-            </section>
-
-            <section id="prairie-rose">
-              <h3>Prairie Rose Arena</h3>
-              <div class="time"><time>April 2024 – May 2024</time></div>
-
-              <ul>
-                <li>
-                  Built a custom static website for an equestrian event center
-                  in Elkhart, IA.
-                </li>
-                <li>
-                  Conceived and implemented a complete site redesign with a
-                  mobile-first, responsive approach.
-                </li>
-
-                <li>
-                  Integrated a headless CMS to allow client to independently
-                  manage events.
-                </li>
-
-                <li>
-                  Optimized performance through modern build processes, lazy
-                  loading, and asset optimization.
-                </li>
-              </ul>
-            </section>
-
-            <section id="personal-site">
-              <h3>Personal Website</h3>
-              <div class="time"><time>May 2024 – June 2024</time></div>
-
-              <ul>
-                <li>
-                  Built a high-performance personal site using Astro and
-                  Cloudflare Pages, achieving sub-second load times and 100/100
-                  Core Web Vitals scores.
-                </li>
-
-                <li>
-                  Used a component-based architecture with scoped CSS modules,
-                  reducing CSS payload while maintaining design consistency.
-                </li>
-
-                <li>
-                  Implemented performance optimizations including prefetching
-                  and automated image optimization pipeline for WebP/AVIF
-                  delivery.
-                </li>
-              </ul>
-            </section>
+            {
+              projects.map((project) => (
+                <article>
+                  <h3>{project.title}</h3>
+                  <div class="time">
+                    <time>{project.date}</time>{" "}
+                  </div>
+                  <ul>
+                    {project.description.map((point) => (
+                      <li set:html={point} />
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
           </div>
         </section>
 
@@ -446,65 +424,34 @@ const publications = [
         <section id="volunteer">
           <h2>Volunteer</h2>
           <div class="volunteer">
-            <section id="equine">
-              <h3>
-                Wix Developer & Horseback Riding Instructor @ Community Health
-                and Equine Coalition
-              </h3>
-              <div class="time">
-                <time>April 2024 – May 2024</time> | <span>Galveston, TX</span>
-              </div>
-              <ul>
-                <li>
-                  Redesigned and maintained the organization’s website using Wix
-                  CMS, enhancing user experience and accessibility.
-                </li>
-                <li>
-                  Integrated a secure payment gateway, streamlining the donation
-                  process and increasing fundraising efficiency.
-                </li>
-                <li>
-                  Instructed clients aged 13-25 in horseback riding, fostering
-                  skill development and confidence.
-                </li>
-              </ul>
-            </section>
-
-            <section id="frida">
-              <h3>Theater Staff @ The Frida Cinema</h3>
-              <div class="time">
-                <time>March 2019 – March 2020</time> | <span>Santa Ana, CA</span
-                >
-              </div>
-              <ul>
-                <li>
-                  Assisted in theater operations, including ticketing,
-                  concessions, and customer service, ensuring a seamless guest
-                  experience.
-                </li>
-                <li>
-                  Maintained a welcoming and informative environment by
-                  providing guests with film details, schedules, and theater
-                  policies.
-                </li>
-                <li>
-                  Solicited donations at the register, supporting fundraising
-                  efforts for independent film programming.
-                </li>
-              </ul>
-            </section>
+            {
+              volunteer.map((entry) => (
+                <article>
+                  <h3>
+                    {entry.role} {entry.employer && `@ ${entry.employer}`}
+                  </h3>
+                  <div class="time">
+                    <time>{entry.date}</time>{" "}
+                    {entry.place && `| ${entry.place}`}
+                  </div>
+                  <ul>
+                    {entry.description.map((point) => (
+                      <li set:html={point} />
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
           </div>
         </section>
 
         <section id="education">
           <h2>Education</h2>
           <div class="education">
-            <section>
-              <h3>Bachelor of Arts in English & Creative Writing</h3>
-              <div class="time">
-                <span>The University of Iowa</span> | <time>December 2016</time>
-              </div>
-            </section>
+            <h3>Bachelor of Arts in English & Creative Writing</h3>
+            <div class="time">
+              <span>The University of Iowa</span> | <time>December 2016</time>
+            </div>
           </div>
         </section>
       </main>
