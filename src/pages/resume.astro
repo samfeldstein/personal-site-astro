@@ -178,6 +178,21 @@ const volunteer = [
     ],
   },
 ];
+
+const education = [
+  {
+    degree: "Master of Fine Arts in Screenwriting",
+    school: "Chapman University",
+    city: "Orange, CA",
+    date: "December 2018 (withdrew)",
+  },
+  {
+    degree: "Bachelor of Arts in English and Creative Writing",
+    school: "The University of Iowa",
+    city: "Iowa City, IA",
+    date: "December 2016",
+  },
+];
 ---
 
 <!doctype html>
@@ -292,8 +307,8 @@ const volunteer = [
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
         <p class="summary">
-          Frontend Developer building sites that load fast,<br />work for
-          everyone, and live forever.
+          Frontend Developer building sites that load fast, work for everyone,
+          and live forever.
         </p>
 
         <nav>
@@ -448,10 +463,16 @@ const volunteer = [
         <section id="education">
           <h2>Education</h2>
           <div class="education">
-            <h3>Bachelor of Arts in English & Creative Writing</h3>
-            <div class="time">
-              <span>The University of Iowa</span> | <time>December 2016</time>
-            </div>
+            {
+              education.map((entry) => (
+                <article>
+                  <h3>{entry.degree}</h3>
+                  <div class="time">
+                    {entry.school} | {entry.city} | <time>{entry.date}</time>
+                  </div>
+                </article>
+              ))
+            }
           </div>
         </section>
       </main>

@@ -46,6 +46,8 @@ p.summary {
   font-size: calc(1.25rem + 1vw);
   color: #555;
   margin-bottom: 5rem;
+  max-width: 50rem;
+  text-wrap: pretty;
 }
 
 nav {
@@ -73,7 +75,8 @@ div.employer {
 div.skills,
 div.experience,
 div.projects,
-div.volunteer {
+div.volunteer,
+div.education {
   display: grid;
   gap: 1rem;
 }
@@ -83,6 +86,7 @@ body {
   max-width: 70rem;
   margin: 0 auto;
   padding: 16px;
+  padding-bottom: 5rem;
   font-family: Lato, Arial, Helvetica, sans-serif;
 }
 
