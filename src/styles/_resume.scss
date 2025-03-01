@@ -63,11 +63,10 @@ div.experience,
 div.projects,
 div.volunteer {
   display: grid;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Elements */
-
 body {
   max-width: 70rem;
   margin: 0 auto;
@@ -101,8 +100,11 @@ h2 {
   line-height: 0.8;
 }
 
-h3 {
+h3,
+.h3 {
   margin: 0;
+  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 main {
@@ -123,7 +125,8 @@ a:focus {
 }
 
 time,
-.time {
+.time,
+.info {
   color: #555;
   text-transform: uppercase;
   font-size: 0.75rem;
@@ -134,6 +137,14 @@ main>section {
   border-top-width: 0.5px;
   border-top-color: #afafaf;
   padding-top: 3rem;
+}
+
+ul.publications {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,6 +1,41 @@
 ---
 import "/src/styles/_reset.css";
 import "/src/styles/_resume.scss";
+
+const publications = [
+  {
+    title: "Made of Memories",
+    medium: "Short Story",
+    outlet: "Tales to Terrify",
+    date: "December 2023",
+  },
+  {
+    title:
+      "Big Bend Reproductive Coalition Launches Community Needs Assessment",
+    medium: "News Article",
+    outlet: "The Big Bend Sentinel",
+    date: "August 2023",
+  },
+  {
+    title: "The First",
+    medium: "Flash Fiction",
+    outlet: "The Collidescope",
+    date: "October 2022",
+  },
+  {
+    title:
+      "Trans-Pecos Festival of Music + Love Doubles as Platform for Advocacy and Outreach",
+    medium: "News Article",
+    outlet: "The Big Bend Sentinel",
+    date: "October 2022",
+  },
+  {
+    title: "Absence of Meaning in the Lighthouse",
+    medium: "Film Criticism",
+    outlet: "The Frida Cinema Blog",
+    date: "April 2022",
+  },
+];
 ---
 
 <!doctype html>
@@ -369,7 +404,24 @@ import "/src/styles/_resume.scss";
           </div>
         </section>
 
-        <section>
+        <section id="publications">
+          <h2>Publications</h2>
+          <ul class="publications">
+            {
+              publications.map((pub) => (
+                <li>
+                  <cite class="publication h3">{pub.title}</cite>
+                  <div class="info">
+                    {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
+                    <time>{pub.date}</time>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section id="volunteer">
           <h2>Volunteer</h2>
           <div class="volunteer">
             <section id="equine">
@@ -401,6 +453,34 @@ import "/src/styles/_resume.scss";
               <div class="time">
                 <time>March 2019 – March 2020</time> | <span>Santa Ana, CA</span
                 >
+              </div>
+              <ul>
+                <li>
+                  Assisted in theater operations, including ticketing,
+                  concessions, and customer service, ensuring a seamless guest
+                  experience.
+                </li>
+                <li>
+                  Maintained a welcoming and informative environment by
+                  providing guests with film details, schedules, and theater
+                  policies.
+                </li>
+                <li>
+                  Solicited donations at the register, supporting fundraising
+                  efforts for independent film programming.
+                </li>
+              </ul>
+            </section>
+          </div>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <div class="education">
+            <section>
+              <h3>Bachelor of Arts in English & Creative Writing</h3>
+              <div class="time">
+                <span>The University of Iowa</span> | <time>December 2016</time>
               </div>
             </section>
           </div>
