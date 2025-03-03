@@ -16,7 +16,8 @@ const schema = {
   "@type": "Blog",
   name: "Blog | Sam Feldstein",
   url: "https://samfeldstein.xyz/blog/",
-  image: "https://samfeldstein.xyz/images/sam-feldstein-open-graph-image.png",
+  image:
+    "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp",
   author: {
     "@type": "Person",
     name: "Sam Feldstein",
@@ -28,7 +29,11 @@ const schema = {
 <BaseLayout title="Blog" schema={schema}>
   <h1>Blog</h1>
   <p>
-    <a href="/blog/tags/">Browse by category</a>.  Subscribe via <a href="https://samfeldstein.xyz/feed.xml">RSS</a>. If you prefer to subscribe by email, you can use <a href="https://blogtrottr.com">Blogtrottr</a> to route the feed to your inbox.
+    <a href="/blog/tags/">Browse by category</a>. Subscribe via <a
+      href="https://samfeldstein.xyz/feed.xml">RSS</a
+    >. If you prefer to subscribe by email, you can use <a
+      href="https://blogtrottr.com">Blogtrottr</a
+    > to route the feed to your inbox.
   </p>
 
   <ul class="collection-list unstyled-list">
