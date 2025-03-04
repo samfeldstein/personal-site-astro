@@ -1,6 +1,7 @@
 ---
 import "/src/styles/_reset.css";
 import "/src/styles/_resume.scss";
+import "/src/styles/_resume-print.scss";
 
 const work = [
   {
@@ -287,7 +288,7 @@ const education = [
     <a class="skiplink" href="#main-content">Skip to Content</a>
     <div class="page-container">
       <header>
-        <address class="contact print">
+        <address class="print">
           <span>Boulder, CO</span>
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
@@ -299,7 +300,7 @@ const education = [
           <div class="name">Sam Feldstein.</div>
           <div class="role">Frontend Developer.</div>
         </h1>
-        <address class="contact web">
+        <address class="web">
           <span>Boulder, CO</span>
           <a href="https://samfeldstein.xyz">Website</a>
           <a href="https://github.com/samfeldstein">GitHub</a>
@@ -311,7 +312,7 @@ const education = [
           and live forever.
         </p>
 
-        <nav>
+        <nav class="hide-print">
           <div>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
@@ -399,7 +400,7 @@ const education = [
           </div>
         </section>
 
-        <section id="projects">
+        <section id="projects" class="projects">
           <h2>Projects</h2>
           <div class="projects">
             {
