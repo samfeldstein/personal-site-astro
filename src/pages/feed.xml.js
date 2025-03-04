@@ -3,13 +3,14 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { filterDrafts } from '../scripts/utils';
 import { sortCollectionByDate } from "../scripts/utils.ts";
+import { site } from "../../config.mjs";
 
 export async function GET(context) {
   const blog = await getCollection('blog', filterDrafts);
   sortCollectionByDate(blog);
   return rss({
     title: "Sam Feldstein's Blog",
-    description: "Sam is a photographer and web developer based in Boulder, CO. His photography captures portraits, concerts, and equestrian events. As a web developer, he specializes in crafting custom websites for creatives, freelancers, and small businesses.",
+    description: `${site.description}`,
     site: context.site,
     items: blog.map((post) => ({
       title: post.data.title,
