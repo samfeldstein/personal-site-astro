@@ -9,7 +9,7 @@ import { sortCollectionByDate } from "../scripts/utils.ts";
 import { filterDrafts } from "../scripts/utils.ts";
 
 // Styles
-import "/src/styles/_index.css";
+import "/src/styles/_index.scss";
 
 const posts = await getCollection("blog", filterDrafts);
 
@@ -28,7 +28,8 @@ const schema = {
   name: "Sam Feldstein",
   url: "https://samfeldstein.xyz/",
   description: site.description,
-  image: "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp",
+  image:
+    "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp",
 };
 ---
 
@@ -38,10 +39,10 @@ const schema = {
   <section id="intro">
     <p>
       <span>Hi, I'm <strong>Sam Feldstein</strong>.</span> I like <a
-        href="/writing/">writing</a
-      >, <a href="https://notebook.samfeldstein.xyz/">taking notes</a>, <a
-        href="/photos/">making photos</a
-      >, and <a href="/websites/">building websites</a>.
+        href="https://notebook.samfeldstein.xyz/">taking notes</a
+      >, <a href="/photos/">making photos</a>, and <a href="/websites/"
+        >building websites</a
+      >.
     </p>
 
     <p>
@@ -49,62 +50,69 @@ const schema = {
       lot from <a href="/blogroll/">people writing on the internet</a> and I like
       the idea of paying it forward.
     </p>
-  </section>
 
-  <section id="photography">
-    <h2>Latest Photo</h2>
-    <figure class="photo">
-      <Image
-        class="latest-photo"
-        src={latestPhoto}
-        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-        sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-        alt="Matt Heckler playing at the Skylark Lounge."
-      />
-      <figcaption>Matt Heckler at the Skylark Lounge.</figcaption>
-    </figure>
-    <p class="text-right">
-      <a href="/photos/">See all photos >>></a>
-    </p>
-  </section>
-
-  <section id="latest-website">
-    <h2>Latest Website</h2>
     <p>
-      An environmental restoration project in Far West Texas. Built with
-      Wordpress.
+      <strong
+        >I'm currently looking for work as a frontend/web developer.</strong
+      > I'm open to working full-time, part-time, or on a freelance basis. You can
+      find my previous work on the <a href="/websites/">Websites</a> page, and my <a href="/resume/">resume</a> is somewhere in here as well. If you've got a website that needs building, don't hesitate to <a href="mailto:sam@samfeldstein.xyz">drop me a line</a>.
     </p>
-    <a class="image" href="https://regreenbigbend.com">
-      <Image
-      class="latest-site"  
-      src={latestSite}
-        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-        sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-        alt="The ReGreen Studio website logo."
-      />
-    </a>
-    <p class="text-right"><a href="/websites/">See all websites >>></a></p>
-  </section>
 
-  <section id="latest-posts">
-    <h2>Latest Posts</h2>
+    <section id="photography">
+      <h2>Latest Photo</h2>
+      <figure class="photo">
+        <Image
+          class="latest-photo"
+          src={latestPhoto}
+          widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+          sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+          alt="Matt Heckler playing at the Skylark Lounge."
+        />
+        <figcaption>Matt Heckler at the Skylark Lounge.</figcaption>
+      </figure>
+      <p class="text-right">
+        <a href="/photos/">See all photos >>></a>
+      </p>
+    </section>
 
-    <ul class="latest-posts">
-      {
-        posts.slice(0, 3).map((post) => (
-          <li class="latest-posts">
-            <Date date={post.data.pubDate} />
-            <a href={`/blog/${post.id}/`} class="latest-posts title">
-              {post.data.title}
-            </a>
-            <Tags tags={post.data.tags} path="blog" />
-          </li>
-        ))
-      }
-    </ul>
+    <section id="latest-website">
+      <h2>Latest Website</h2>
+      <p>
+        An environmental restoration project in Far West Texas. Built with
+        Wordpress.
+      </p>
+      <a class="image" href="https://regreenbigbend.com">
+        <Image
+          class="latest-site"
+          src={latestSite}
+          widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+          sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
+          alt="The ReGreen Studio website logo."
+        />
+      </a>
+      <p class="text-right"><a href="/websites/">See all websites >>></a></p>
+    </section>
 
-    <p class="more">
-      <a href="/blog/">See all posts >>></a>
-    </p>
+    <section id="latest-posts">
+      <h2>Latest Posts</h2>
+
+      <ul class="latest-posts">
+        {
+          posts.slice(0, 3).map((post) => (
+            <li class="latest-posts">
+              <Date date={post.data.pubDate} />
+              <a href={`/blog/${post.id}/`} class="latest-posts title">
+                {post.data.title}
+              </a>
+              <Tags tags={post.data.tags} path="blog" />
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="more">
+        <a href="/blog/">See all posts >>></a>
+      </p>
+    </section>
   </section>
 </BaseLayout>
