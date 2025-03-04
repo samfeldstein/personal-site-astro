@@ -14,8 +14,12 @@ a.skiplink:focus {
   translate: 0;
 }
 
-div.download {
+.download-link {
+  // Must be block for text align to work
+  display: block;
   text-align: center;
+  text-transform: uppercase;
+  font-size: 0.75rem;
 }
 
 div.name {
