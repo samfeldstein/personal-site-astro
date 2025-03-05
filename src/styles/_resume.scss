@@ -59,7 +59,8 @@
 @font-face {
   font-family: 'American Typewriter';
   src:
-    local("American Typewriter"),
+    // Disable local to ensure consistency across systems and devices. Since it's a system font or some devices, results in varied weighting.
+    // local("American Typewriter"),
     url('/fonts/subset-AmericanTypewriter.woff2') format('woff2'),
     url('/fonts/subset-AmericanTypewriter.woff') format('woff');
   font-weight: 100;
@@ -70,7 +71,7 @@
 @font-face {
   font-family: 'American Typewriter';
   src:
-    local("American Typewriter"),
+    // local("American Typewriter"),
     url('/fonts/subset-AmericanTypewriter-Bold.woff2') format('woff2'),
     url('/fonts/subset-AmericanTypewriter-Bold.woff') format('woff');
   font-weight: 700;
