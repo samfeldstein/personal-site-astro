@@ -1,3 +1,80 @@
+@font-face {
+  font-family: 'Lato';
+  src:
+    local("Lato"),
+    url('/fonts/subset-Lato-Bold.woff2') format('woff2'),
+    url('/fonts/subset-Lato-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:
+    local("Lato"),
+    url('fonts/subset-Lato-BoldItalic.woff2') format('woff2'),
+    url('fonts/subset-Lato-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato"), url('/fonts/subset-Lato-Italic.woff2') format('woff2'),
+    url('/fonts/subset-Lato-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato"), url('/fonts/subset-Lato-LightItalic.woff2') format('woff2'),
+    url('/fonts/subset-Lato-LightItalic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato"), url('/fonts/subset-Lato-Light.woff2') format('woff2'),
+    url('/fonts/subset-Lato-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: local("Lato"), url('/fonts/subset-Lato-Regular.woff2') format('woff2'),
+    url('/fonts/subset-Lato-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+strong,
+b {
+  font-weight: 700;
+  // Browser knows to use the bold variation
+}
+
+em,
+i {
+  font-style: italic;
+  // Browser knows to use the italic variation
+}
+
+strong em,
+b i {
+  font-weight: 700;
+  font-style: italic;
+  // Browser combines bold + italic variation
+}
+
 a.skiplink {
   background-color: white;
   border-style: solid;
@@ -99,7 +176,7 @@ body {
 
 h1,
 h2 {
-  font-family: "American Typewriter", "Courier New", Courier, monospace;
+  font-family: "American Typewriter", "Courier Prime", "Courier New", Courier, monospace;
   font-weight: 400;
 }
 
