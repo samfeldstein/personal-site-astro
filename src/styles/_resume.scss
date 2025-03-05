@@ -13,8 +13,8 @@
   font-family: 'Lato';
   src:
     local("Lato"),
-    url('fonts/subset-Lato-BoldItalic.woff2') format('woff2'),
-    url('fonts/subset-Lato-BoldItalic.woff') format('woff');
+    url('/fonts/subset-Lato-BoldItalic.woff2') format('woff2'),
+    url('/fonts/subset-Lato-BoldItalic.woff') format('woff');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -59,7 +59,7 @@
 @font-face {
   font-family: 'American Typewriter';
   src:
-    // local("American Typewriter"),
+    local("American Typewriter"),
     url('/fonts/subset-AmericanTypewriter.woff2') format('woff2'),
     url('/fonts/subset-AmericanTypewriter.woff') format('woff');
   font-weight: 100;
@@ -70,7 +70,7 @@
 @font-face {
   font-family: 'American Typewriter';
   src:
-    // local("American Typewriter"),
+    local("American Typewriter"),
     url('/fonts/subset-AmericanTypewriter-Bold.woff2') format('woff2'),
     url('/fonts/subset-AmericanTypewriter-Bold.woff') format('woff');
   font-weight: 700;
