@@ -56,6 +56,28 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'American Typewriter';
+  src:
+    // local("American Typewriter"),
+    url('/fonts/subset-AmericanTypewriter.woff2') format('woff2'),
+    url('/fonts/subset-AmericanTypewriter.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'American Typewriter';
+  src:
+    // local("American Typewriter"),
+    url('/fonts/subset-AmericanTypewriter-Bold.woff2') format('woff2'),
+    url('/fonts/subset-AmericanTypewriter-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 strong,
 b {
   font-weight: 700;
