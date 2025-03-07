@@ -138,6 +138,10 @@ address {
   font-style: normal;
   font-size: 0.75rem;
   text-transform: uppercase;
+
+  .location {
+    color: black;
+  }
 }
 
 address.web {
@@ -237,15 +241,13 @@ main {
 }
 
 a {
-  color: unset;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  text-decoration-color: #afafaf;
+  color: #555;
+  text-decoration: none;
+  font-variant: small-caps;
 }
 
-a:hover,
-a:focus {
-  text-decoration-style: dotted;
+a:hover, a:focus {
+  color: black;
 }
 
 li {
