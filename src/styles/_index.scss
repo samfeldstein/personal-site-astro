@@ -65,3 +65,7 @@ ul.tags {
   flex-wrap: wrap;
   justify-content: center;
 }
+
+time {
+  font-size: calc(.75rem + .25vw);
+}
