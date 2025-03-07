@@ -141,14 +141,8 @@ section.published {
 }
 
 a.home {
-  text-decoration: none;
-}
-
-a.home {
-  text-transform: uppercase;
-  text-decoration: none;
+  /* Must be relative for underline effect to work */
   position: relative;
-  color: black;
 }
 
 a.home::after {
