@@ -106,10 +106,27 @@ b i {
 }
 
 body {
+  /* Layout */
   margin: 0 auto;
   padding: 1rem;
   gap: 1rem;
+
+  /* Typography */
   font-family: "Courier Prime", "Courier New", Courier, monospace;
+  font-size: calc(1rem + 0.5vw);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+a:not(.published a) {
+  font-variant: small-caps;
 }
 
 section.published {
@@ -119,22 +136,8 @@ section.published {
 }
 
 .intro {
-  font-size: calc(.75rem + .5vw);
-  text-align: center;
   margin-bottom: 2rem;
   text-wrap: pretty;
-}
-
-a {
-  color: black;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-a:hover,
-a:focus {
-  color: #666;
-  text-decoration-style: dotted;
 }
 
 a.home {
@@ -199,8 +202,8 @@ h1 {
 
 h2 {
   font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
-  font-variant: small-caps;
-  font-size: calc(1.5rem + 0.5vw);
+  text-transform: uppercase;
+  font-size: calc(1.25rem + 0.5vw);
   padding: 0 1rem;
 }
 
@@ -212,7 +215,7 @@ h2 {
 }
 
 .outlet {
-  font-size: calc(1rem + 0.25vw);
+  font-size: calc(0.75rem + 0.25vw);
 }
 
 /* Utilities */
