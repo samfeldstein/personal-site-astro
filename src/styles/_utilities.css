@@ -2,15 +2,6 @@
   text-align: right;
 }
 
-.no-decor {
-  text-decoration: none;
-}
-
-.no-decor:hover,
-.no-decor:focus {
-  text-decoration: underline;
-}
-
 .visually-hidden {
   position: absolute;
   translate: -1000%;
