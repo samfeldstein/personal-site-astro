@@ -4,9 +4,8 @@
 
 :root {
   /* Colors */
-  --text-color: #1a1a1a;
-  --background-color: #f5f5f5;
-  --link-color: #2754d8;
+  --text-color: #000000;
+  --background-color: #ffffff;
 
   /* Fonts */
   --monospace: ui-monospace,
@@ -20,8 +19,7 @@
   @media (prefers-color-scheme: dark) {
     /* Dark mode styles */
     --text-color: #ffffff;
-    --background-color: #1a1a1a;
-    --link-color: #6699ff;
+    --background-color: #000000;
   }
 }
 
