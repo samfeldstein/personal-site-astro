@@ -6,6 +6,7 @@
   /* Colors */
   --text-color: #000000;
   --background-color: #ffffff;
+  --accent: #666;
 
   /* Fonts */
   --monospace: ui-monospace,
@@ -20,6 +21,7 @@
     /* Dark mode styles */
     --text-color: #ffffff;
     --background-color: #000000;
+    --accent: #bfbfbf;
   }
 }
 
@@ -77,12 +79,13 @@ a {
   color: inherit;
   font-variant: small-caps;
   text-decoration: none;
+  transition-duration: 0.1s;
 }
 
 a:not(.skiplink):hover,
 a:not(.skiplink):focus,
 a:not(.skiplink):active {
-  opacity: 70%;
+  color: var(--accent);
 }
 
 .content-container {
