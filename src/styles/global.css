@@ -42,11 +42,6 @@ main {
   flex: 1;
 }
 
-main p {
-  text-align: justify;
-  hyphens: auto;
-}
-
 p,
 ul,
 ol {
