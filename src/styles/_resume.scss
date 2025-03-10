@@ -107,6 +107,7 @@ body {
   font-family: "Lato";
 }
 
+// Contact info
 address {
   display: flex;
   flex-wrap: wrap;
@@ -115,19 +116,20 @@ address {
   font-size: 0.75rem;
   text-transform: uppercase;
 
+  &.web {
+    gap: 0.5rem 1rem;
+  }
+  
+  &.print {
+    display: none;  
+  }
+  
   .location {
     color: black;
   }
 }
 
-address.web {
-  gap: 0.5rem 2rem;
-}
-
-address.print {
-  display: none;
-}
-
+// Page header
 header {
   .summary {
     margin-top: 6rem;
@@ -150,11 +152,15 @@ header {
   }
 }
 
-main>section ul {
-  padding-left: 2em;
-  display: grid;
-  gap: 0.5em;
+main>section  {
+  ul {
+    padding-left: 2em;
+    display: grid;
+    gap: 0.5em;
+  }
 }
+
+
 
 div.employer {
   font-weight: 400;
