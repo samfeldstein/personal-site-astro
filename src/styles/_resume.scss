@@ -120,11 +120,11 @@ address {
   &.web {
     gap: 0.25rem 1rem;
   }
-  
+
   &.print {
-    display: none;  
+    display: none;
   }
-  
+
   .location {
     color: black;
   }
@@ -152,16 +152,6 @@ header {
     }
   }
 }
-
-main>section  {
-  ul {
-    padding-left: 2em;
-    display: grid;
-    gap: 0.5em;
-  }
-}
-
-
 
 div.employer {
   font-weight: 400;
@@ -252,6 +242,12 @@ main>section {
   border-top-width: 0.5px;
   border-top-color: #afafaf;
   padding-top: 3rem;
+
+  ul {
+    display: grid;
+    gap: 0.5em;
+    padding-left: 1.5rem;
+  }
 }
 
 ul.publications {
@@ -272,7 +268,7 @@ ul.publications {
   html {
     font-size: 20px;
   }
-  
+
   main>section {
     display: grid;
     grid-template-columns: 1fr 1fr;
