@@ -8,6 +8,8 @@
 
   body {
     padding: 2rem;
+    // Prevents a blank third page from showing up
+    padding-bottom: 0;
   }
 
   .download-link {
