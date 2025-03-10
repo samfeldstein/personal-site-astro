@@ -71,10 +71,6 @@ const work = [
   },
 ];
 
-const skills = [
-technical = 
-]
-
 const projects = [
   {
     title: "ReGreen Big Bend",
@@ -92,15 +88,6 @@ const projects = [
       "Built a website for an independent folk dance studio in Boulder, CO.",
       "Transformed the legacy site into a modern, component-based static website using Astro, achieving 95+ Lighthouse performance scores.",
       "Integrated a headless CMS so the client could update site content independently.",
-    ],
-  },
-  {
-    title: "Digital Notebook",
-    date: "September 2024 – December 2024",
-    description: [
-      "Built a digital knowledge base using Obsidian and Eleventy.",
-      "Automated build process to transform wiki-style notation into standard Markdown and generate bidirectional links.",
-      "Developed custom privacy controls to automatically exclude sensitive content from version control and public deployment.",
     ],
   },
   {
@@ -235,20 +222,6 @@ const education = [
     <!-- Preload assets -->
     <link
       rel="preload"
-      href="/fonts/subset-AmericanTypewriter.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/subset-AmericanTypewriter-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
       href="/fonts/subset-Lato-Regular.woff2"
       as="font"
       type="font/woff2"
@@ -271,7 +244,7 @@ const education = [
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>Résumé | Sam Feldstein</title>
+    <title>Marketing Résumé | Sam Feldstein</title>
     <meta name="author" content="Sam Feldstein" />
     <meta
       name="description"
@@ -312,18 +285,6 @@ const education = [
       title="Sam Feldstein's Notebook"
       href="https://notebook.samfeldstein.xyz/feed.xml"
     />
-
-    <!-- Turn structured data into JSON string -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Résumé | Sam Feldstein",
-        "url": "https://samfeldstein.xyz/resume/",
-        "description": "Sam Feldstein's Résumé. Sam is a Frontend Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals.",
-        "image": "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
-      }
-    </script>
   </head>
   <body>
     <a class="skiplink" href="#main-content">Skip to Content</a>
@@ -335,7 +296,7 @@ const education = [
         </address>
         <a
           class="download-link"
-          href="/sam-feldstein-frontend-developer-resume.pdf"
+          href="/sam-feldstein-marketing-résumé.pdf"
           target="_blank">Download PDF</a
         >
         <h1>
@@ -345,80 +306,68 @@ const education = [
         <address class="web">
           <span class="location">Boulder, CO</span>
           <a href="/">Website</a>
-          <a href="https://github.com/samfeldstein">GitHub</a>
-          <a href="https://www.linkedin.com/in/samfeldstein">LinkedIn</a>
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
-        <p class="summary">
-          Crafting refined, content-driven websites with a focus on typography,
-          layout, and UX.
-        </p>
 
         <nav>
+          <!-- Split into columns -->
           <div>
+            <a href="#education">Education</a>
             <a href="#skills">Skills</a>
             <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
           </div>
+
           <div>
+            <a href="#projects">Projects</a>
             <a href="#publications">Publications</a>
             <a href="#volunteer">Volunteer</a>
-            <a href="#education">Education</a>
           </div>
         </nav>
       </header>
       <main id="main-content">
+        <section id="education">
+          <h2>Education</h2>
+          <div class="education">
+            {
+              education.map((entry) => (
+                <article>
+                  <h3>{entry.degree}</h3>
+                  <div class="time">
+                    {entry.school} | {entry.city} | <time>{entry.date}</time>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
         <section id="skills">
           <h2>Skills</h2>
           <div class="skills">
-            <section id="languages">
-              <h3>Web Technologies & Standards</h3>
+            <section>
+              <h3>Marketing</h3>
               <ul>
-                <li>Semantic HTML</li>
-                <li>
-                  Modern CSS
-                  <ul>
-                    <li>Sass</li>
-                  </ul>
-                </li>
-
-                <li>JavaScript</li>
-                <li>Accessibility best practices</li>
-              </ul>
-            </section>
-
-            <section id="tools">
-              <h3>Tools & Frameworks</h3>
-              <ul>
-                <li>Astro</li>
-                <li>Eleventy</li>
-                <li>Hugo</li>
-                <li>WordPress</li>
-                <li>Local</li>
-                <li>Git</li>
-                <li>Figma</li>
-              </ul>
-            </section>
-
-            <section id="performance">
-              <h3>Web Performance</h3>
-              <ul>
-                <li>Static site generation</li>
-                <li>Modern image formats</li>
-                <li>Font-loading strategies</li>
-                <li>Preloading/-fetching/-rendering</li>
-                <li>CDN caching</li>
-              </ul>
-            </section>
-
-            <section id="soft-skills">
-              <h3>Soft Skills</h3>
-              <ul>
-                <li>Communication</li>
                 <li>Writing</li>
-                <li>Problem-solving</li>
-                <li>Collaboration</li>
-                <li>Public speaking</li>
+                <li>Social media</li>
+                <li>SEO (working knowledge)</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>Design & Creative</h3>
+              <ul>
+                <li>Figma</li>
+                <li>Web Design</li>
+                <li>Photography</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>Technical</h3>
+              <ul>
+                <li>Video Editing</li>
+                <li>Audio Editing</li>
+                <li>Web Development</li>
               </ul>
             </section>
           </div>
@@ -509,23 +458,38 @@ const education = [
             }
           </div>
         </section>
-
-        <section id="education">
-          <h2>Education</h2>
-          <div class="education">
-            {
-              education.map((entry) => (
-                <article>
-                  <h3>{entry.degree}</h3>
-                  <div class="time">
-                    {entry.school} | {entry.city} | <time>{entry.date}</time>
-                  </div>
-                </article>
-              ))
-            }
-          </div>
-        </section>
       </main>
     </div>
   </body>
 </html>
+
+<style>
+  nav {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+  }
+
+  h2 {
+    line-height: 0.6;
+  }
+
+  div.skills {
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /* Select nested lists */
+    li {
+      ul {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  @media print {
+    h1 {
+      text-align: center;
+    }
+  }
+</style>

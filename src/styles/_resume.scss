@@ -82,6 +82,7 @@ a.skiplink {
   padding: 0.5em;
   font-variant: small-caps;
   text-decoration: none;
+  text-transform: lowercase;
   position: absolute;
   translate: -1000%;
   transition-duration: 0.25s;
@@ -133,9 +134,9 @@ address {
 header {
   .summary {
     margin-top: 6rem;
+    margin-bottom: 5rem;
     font-size: calc(1.2rem + 0.25vw);
     color: #555;
-    margin-bottom: 5rem;
     max-width: 40rem;
     text-wrap: pretty;
   }
@@ -243,9 +244,7 @@ time,
 .time,
 .info {
   color: #555;
-  font-variant: small-caps;
   font-size: 0.75rem;
-  text-transform: lowercase;
 }
 
 main>section {
