@@ -198,30 +198,30 @@ body {
   margin: 0 auto;
   padding: 16px;
   padding-bottom: 5rem;
-  font-family: Lato, Arial, Helvetica, sans-serif;
+  font-family: "Lato";
 }
 
 h1,
 h2 {
-  font-family: "American Typewriter", "Courier Prime", "Courier New", Courier, monospace;
-  font-weight: 400;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 1px;
 }
 
 h1 {
-  font-size: calc(3.5rem + 1vw);
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-  border-bottom-color: #afafaf;
+  font-size: calc(3.75rem + 2vw);
+  font-weight: 100;
   margin-top: 6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 0.7;
+  letter-spacing: 10px;
 }
 
 h2 {
   font-size: 3rem;
-  font-variant: small-caps;
-  font-weight: 100;
   margin: 0;
   margin-bottom: 2rem;
+  font-weight: 400;
 
   /* Aligns top with h3 */
   line-height: 0.8;

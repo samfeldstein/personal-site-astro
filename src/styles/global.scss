@@ -57,6 +57,7 @@ h3 {
   text-transform: lowercase;
   text-wrap: balance;
   line-height: 1;
+  letter-spacing: 2px;
 }
 
 h1 {
@@ -95,6 +96,7 @@ a:not(.skiplink):active {
   a:not(nav a, .tag) {
     font-variant: small-caps;
     text-transform: lowercase;
+    letter-spacing: 0.75px;
   }
 }
 
