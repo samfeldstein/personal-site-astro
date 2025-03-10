@@ -120,25 +120,26 @@ address.print {
   display: none;
 }
 
-p.summary {
-  margin-top: 6rem;
-  font-size: calc(1.25rem + 1vw);
-  color: #555;
-  margin-bottom: 5rem;
-  max-width: 50rem;
-  text-wrap: pretty;
-}
+header {
+  .summary {
+    margin-top: 6rem;
+    font-size: calc(1.2rem + 0.25vw);
+    color: #555;
+    margin-bottom: 5rem;
+    max-width: 40rem;
+    text-wrap: pretty;
+  }
 
-nav {
-  margin-bottom: 10rem;
-  font-size: 1rem;
-  display: flex;
-  gap: 4rem;
-}
+  nav {
+    margin-bottom: 10rem;
+    display: flex;
+    gap: 4rem;
 
-nav div {
-  display: grid;
-  gap: 1rem;
+    div {
+      display: grid;
+      gap: 1rem;
+    }
+  }
 }
 
 main>section ul {
