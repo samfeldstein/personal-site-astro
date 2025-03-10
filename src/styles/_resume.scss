@@ -56,29 +56,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'American Typewriter';
-  src:
-    // Disable local to ensure consistency across systems and devices. Since it's a system font or some devices, results in varied weighting.
-    // local("American Typewriter"),
-    url('/fonts/subset-AmericanTypewriter.woff2') format('woff2'),
-    url('/fonts/subset-AmericanTypewriter.woff') format('woff');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'American Typewriter';
-  src:
-    // local("American Typewriter"),
-    url('/fonts/subset-AmericanTypewriter-Bold.woff2') format('woff2'),
-    url('/fonts/subset-AmericanTypewriter-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 strong,
 b {
   font-weight: 700;
@@ -120,15 +97,6 @@ a.skiplink:focus {
   text-align: center;
   text-transform: uppercase;
   font-size: 0.75rem;
-}
-
-div.name {
-  font-weight: 400;
-}
-
-h1 div.role {
-  font-weight: 100;
-  color: #555;
 }
 
 address {
@@ -209,19 +177,30 @@ h2 {
 }
 
 h1 {
-  font-size: calc(3.75rem + 2vw);
-  font-weight: 100;
+  font-size: calc(2rem + 4vw);
   margin-top: 6rem;
-  margin-bottom: 1.5rem;
-  line-height: 0.7;
-  letter-spacing: 10px;
+  margin-bottom: 1rem;
+  line-height: 0.8;
+
+  text-wrap-mode: nowrap;
+
+  .name {
+    font-weight: 400;
+  }
+
+  .role {
+    font-weight: 100;
+    font-size: 0.66em;
+    color: #555;
+  }
 }
 
 h2 {
-  font-size: 3rem;
   margin: 0;
   margin-bottom: 2rem;
+  font-size: 3rem;
   font-weight: 400;
+  letter-spacing: 10px;
 
   /* Aligns top with h3 */
   line-height: 0.8;
@@ -284,9 +263,6 @@ ul.publications {
 }
 
 @media screen and (min-width: 768px) {
-  h1 {
-    font-size: calc(4rem + 2vw);
-  }
 
   main>section {
     display: grid;
