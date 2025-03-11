@@ -56,6 +56,42 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/subset-CormorantGaramond-Light.woff2') format('woff2'),
+    url('/fonts/subset-CormorantGaramond-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/subset-CormorantGaramond-Bold.woff2') format('woff2'),
+    url('/fonts/subset-CormorantGaramond-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/subset-CormorantGaramond-Light.woff2') format('woff2'),
+    url('/fonts/subset-CormorantGaramond-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/subset-CormorantGaramond-Regular.woff2') format('woff2'),
+    url('/fonts/subset-CormorantGaramond-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 strong,
 b {
   font-weight: 700;
@@ -173,12 +209,11 @@ h2 {
 }
 
 h1 {
-  font-size: calc(2rem + 4vw);
+  font-family: "Cormorant Garamond";
+  font-size: calc(3rem + 3vw);
   margin-top: 6rem;
   margin-bottom: 0.5rem;
-  line-height: 0.8;
-
-  text-wrap-mode: nowrap;
+  line-height: 0.9;
 
   .name {
     font-weight: 400;
@@ -186,7 +221,7 @@ h1 {
 
   .role {
     font-weight: 100;
-    font-size: 0.65em;
+    // font-size: 0.65em;
     color: #555;
   }
 }
