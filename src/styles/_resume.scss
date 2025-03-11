@@ -132,7 +132,7 @@ a.skiplink:focus {
   // Must be block for text align to work
   display: block;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: calc(0.75rem + 0.1vw);
 }
 
 body {
@@ -149,7 +149,7 @@ address {
   flex-wrap: wrap;
   color: #555;
   font-style: normal;
-  font-size: 0.75rem;
+  font-size: calc(0.75rem + 0.1vw);
   font-variant: small-caps;
   text-transform: lowercase;
 
@@ -181,6 +181,7 @@ header {
     margin-bottom: 10rem;
     display: flex;
     gap: 4rem;
+    font-size: calc(1rem + 0.25vw);
 
     div {
       display: grid;
@@ -213,7 +214,7 @@ h1 {
   font-size: calc(3rem + 3vw);
   margin-top: 6rem;
   margin-bottom: 0.5rem;
-  line-height: 0.9;
+  line-height: 0.7;
 
   .name {
     font-weight: 400;
