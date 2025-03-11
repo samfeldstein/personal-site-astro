@@ -111,6 +111,12 @@ b i {
   // Browser combines bold + italic variation
 }
 
+// Config
+:root {
+  --font-smallest: calc(.85rem + .1vw);
+  --font-small: calc(1.25em + .25vw);
+}
+
 a.skiplink {
   background-color: white;
   border-style: solid;
@@ -132,7 +138,7 @@ a.skiplink:focus {
   // Must be block for text align to work
   display: block;
   text-align: center;
-  font-size: calc(0.75rem + 0.1vw);
+  font-size: var(--font-smallest);
 }
 
 body {
@@ -149,7 +155,7 @@ address {
   flex-wrap: wrap;
   color: #555;
   font-style: normal;
-  font-size: calc(0.75rem + 0.1vw);
+  font-size: var(--font-smallest);
   font-variant: small-caps;
   text-transform: lowercase;
 
@@ -171,7 +177,7 @@ header {
   .summary {
     margin-top: 6rem;
     margin-bottom: 5rem;
-    font-size: calc(1.2rem + 0.25vw);
+    font-size: calc(var(--font-small) + 0.2em);
     color: #555;
     max-width: 40rem;
     text-wrap: pretty;
@@ -181,7 +187,7 @@ header {
     margin-bottom: 10rem;
     display: flex;
     gap: 4rem;
-    font-size: calc(1rem + 0.25vw);
+    font-size: var(--font-small);
 
     div {
       display: grid;
@@ -305,6 +311,12 @@ ul.publications {
 
   html {
     font-size: 20px;
+  }
+
+  h1 {
+    br {
+      display: none;
+    }
   }
 
   main>section {
