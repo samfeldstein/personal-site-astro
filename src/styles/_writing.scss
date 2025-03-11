@@ -127,6 +127,7 @@ a:hover {
 
 a:not(.published a) {
   font-variant: small-caps;
+  text-transform: lowercase;
 }
 
 section.published {
@@ -195,10 +196,14 @@ h1 {
 }
 
 h2 {
-  font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
-  text-transform: uppercase;
-  font-size: calc(1.25rem + 0.5vw);
+  /* Layout */
   padding: 0 1rem;
+  
+  /* Typography */
+  font-family: "EB Garamond", Georgia, 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+  font-size: calc(1.5rem + 0.5vw);
+  text-transform: lowercase;
 }
 
 .type.date {
