@@ -3,11 +3,6 @@
 @import url("/src/styles/_utilities.css");
 
 :root {
-  /* Colors */
-  --text-color: #000000;
-  --background-color: #ffffff;
-  --accent: #666;
-
   /* Fonts */
   --monospace: ui-monospace,
     "Cascadia Code",
@@ -17,16 +12,24 @@
     "DejaVu Sans Mono",
     monospace;
 
-  @media (prefers-color-scheme: dark) {
-    /* Dark mode styles */
-    --text-color: #ffffff;
-    --background-color: #000000;
-    --accent: #bfbfbf;
-  }
+  /* Colors */
+  color-scheme: light dark;
+  --text-color: light-dark(#000, #fff);
+  --background-color: light-dark(#fff, #000);
+  --accent: light-dark(#666, #bfbfbf);
+
+  // Keep this for writeup
+  // @media (prefers-color-scheme: dark) {
+  //   /* Dark mode styles */
+  //   --text-color: #ffffff;
+  //   --background-color: #000000;
+  //   --accent: #bfbfbf;
+  // }
 }
 
 html {
   background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 body {
@@ -37,7 +40,6 @@ body {
 
   font-family: "EB Garamond", Georgia, serif;
   font-size: calc(1rem + 0.5vw);
-  color: var(--text-color);
 }
 
 main {
