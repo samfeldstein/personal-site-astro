@@ -1,0 +1,495 @@
+---
+import "/src/styles/_reset.css";
+import "/src/styles/_resume.scss";
+import "/src/styles/_resume-print.scss";
+
+const info = {
+  title: "Résumé",
+  description:
+    "Sam Feldstein's résumé. Sam is a Web Developer and photographer in Boulder, CO.",
+};
+
+const work = [
+  {
+    role: "Freelance Web Developer",
+    date: "April 2024 – Present",
+    place: "Boulder, CO",
+    description: [
+      "Build bespoke, high-performance websites using modern static site generators (Astro, Eleventy) and Content Management Systems (WordPress).",
+      " Optimize site performance using strategies like image optimization, CDN caching, and lean codebases to achieve sub-second load times and 95+ Lighthouse scores.",
+      "Where needed, create content management workflows with headless CMS integrations, enabling non-technical clients to update site content independently.",
+    ],
+  },
+  {
+    role: "Development Assistant",
+    employer: "Sugar23",
+    date: "November 2022 – December 2023",
+    place: "Hollywood, CA (remote)",
+    description: [
+      "Evaluated manuscripts and scripts for potential TV/film adaptation at the production company behind Netflix hits <cite>Maniac</cite> and <cite>The OA</cite>.",
+      "Wrote comprehensive script coverage analyzing the story and market potential, offering adaptation recommendations that informed executive decision-making.",
+      "Delivered high-quality 10-page coverage reports for two ~300-page manuscripts weekly, maintaining consistent output while meeting tight deadlines.",
+    ],
+  },
+  {
+    role: "Freelance Journalist",
+    employer: "The Big Bend Sentinel",
+    place: "Marfa, TX",
+    date: "September 2022 – December 2023",
+    description: [
+      "Produced compelling local journalism covering community events and grassroots activism, developing expertise in interview techniques and deadline-driven writing.",
+      "Conducted in-depth interviews with community leaders, activists, and local stakeholders to uncover compelling narratives and ensure accurate representation.",
+      "Balanced journalistic integrity with narrative storytelling to create articles that were informative, engaging, and accessible.",
+    ],
+  },
+
+  {
+    role: "Retail Associate and Gallery Attendant",
+    employer: "The Marfa Store",
+    place: "Marfa, TX",
+    date: "January 2022 – December 2023",
+    description: [
+      "Managed the Shopify storefront and inventory across 100+ SKUs, ensuring accurate stock levels, timely restocks, and a seamless online shopping experience.",
+      "Handled order fulfillment, expertly packing and shipping artwork and retail goods with secure, professional-grade techniques to ensure safe delivery.",
+      "Provided top-tier customer support, resolving inquiries and order issues promptly while fostering positive client relationships that enhanced brand reputation.",
+    ],
+  },
+  {
+    role: "General Manager",
+    employer: "The Sentinel",
+    date: "March 2021 – November 2021",
+    place: "Marfa, TX",
+    description: [
+      "Managed front-of-house operations, delivering exceptional customer service and fostering a welcoming, community-oriented atmosphere.",
+      "Led hiring efforts by crafting compelling job postings, conducting interviews, and implementing a standardized training program to ensure team consistency and efficiency.",
+      "Oversaw inventory management, vendor relations, and supply ordering to optimize costs and maintain seamless operations.",
+    ],
+  },
+  {
+    role: "WordPress Developer",
+    employer: "The Sentinel",
+    date: "November 2020 – November 2022",
+    place: "Marfa, TX",
+    description: [
+      "Designed, developed, and launched an e-commerce platform using WordPress and WooCommerce, enhancing the business's digital presence and revenue potential.",
+      "Refined site architecture and user interface to streamline navigation and maximize conversions, leading to a more seamless customer experience.",
+      "Implemented SEO-driven strategies, including keyword optimization and engaging product descriptions, to boost organic search visibility and drive consistent traffic.",
+    ],
+  },
+];
+
+const projects = [
+  {
+    title: "ReGreen Big Bend",
+    type: "Website",
+    date: "January 2025 – February 2025",
+    description: [
+      "Developed a custom WordPress theme for an environmental restoration project in Far West Texas.",
+      "Designed high-fidelity mock-ups in Figma with a focus on regional aesthetics and responsive design.",
+      "Optimized performance through strategic asset loading and caching to achieve 95+ Lighthouse scores.",
+    ],
+  },
+  {
+    title: "Postoley Dance Ensemble",
+    type: "Website",
+    date: "November 2024 – February 2025",
+    description: [
+      "Built a website for an independent folk dance studio in Boulder, CO.",
+      "Transformed the legacy site into a modern, component-based static website using Astro, achieving 95+ Lighthouse performance scores.",
+      "Integrated a headless CMS so the client could update site content independently.",
+    ],
+  },
+  {
+    title: "Prairie Rose Arena",
+    type: "Website",
+    date: "April 2024 – May 2024",
+    description: [
+      "Built a custom static website for an equestrian event center in Elkhart, IA.",
+      "Conceived and implemented a complete site redesign with a mobile-first, responsive approach.",
+      "Integrated a headless CMS to allow the client to independently manage events.",
+      "Optimized performance through modern build processes, lazy loading, and asset optimization.",
+    ],
+  },
+  {
+    title: "Personal Website",
+    type: "Website",
+    date: "May 2024 – June 2024",
+    description: [
+      "Built a high-performance personal site using Astro and Cloudflare Pages, achieving sub-second load times and 100/100 Core Web Vitals scores.",
+      "Used a component-based architecture with scoped CSS modules, reducing CSS payload while maintaining design consistency.",
+      "Implemented performance optimizations including prefetching and an automated image optimization pipeline for WebP/AVIF delivery.",
+    ],
+  },
+];
+
+const publications = [
+  {
+    title: "Made of Memories",
+    medium: "Short Story",
+    outlet: "Tales to Terrify",
+    date: "December 2023",
+  },
+  {
+    title:
+      "Big Bend Reproductive Coalition Launches Community Needs Assessment",
+    medium: "News Article",
+    outlet: "The Big Bend Sentinel",
+    date: "August 2023",
+  },
+  {
+    title: "The First",
+    medium: "Flash Fiction",
+    outlet: "The Collidescope",
+    date: "October 2022",
+  },
+  {
+    title:
+      "Trans-Pecos Festival of Music + Love Doubles as Platform for Advocacy and Outreach",
+    medium: "News Article",
+    outlet: "The Big Bend Sentinel",
+    date: "October 2022",
+  },
+  {
+    title: "Absence of Meaning in the Lighthouse",
+    medium: "Film Criticism",
+    outlet: "The Frida Cinema Blog",
+    date: "April 2022",
+  },
+];
+
+const volunteer = [
+  {
+    role: "Wix Developer & Horseback Riding Instructor",
+    employer: "Community Health and Equine Coalition",
+    date: "April 2024 – May 2024",
+    place: "Galveston, TX",
+    description: [
+      "Redesigned and maintained the organization’s website using Wix CMS, enhancing user experience and accessibility.",
+      "Integrated a secure payment gateway, streamlining the donation process and increasing fundraising efficiency.",
+      "Instructed clients aged 13-25 in horseback riding, fostering skill development and confidence.",
+    ],
+  },
+  {
+    role: "Theater Staff",
+    employer: "The Frida Cinema",
+    date: "March 2019 – March 2020",
+    place: "Santa Ana, CA",
+    description: [
+      "Assisted in theater operations, including ticketing, concessions, and customer service, ensuring a seamless guest experience.",
+      "Maintained a welcoming and informative environment by providing guests with film details, schedules, and theater policies.",
+      "Solicited donations at the register, supporting fundraising efforts for independent film programming.",
+    ],
+  },
+];
+
+const education = [
+  {
+    degree: "Master of Fine Arts in Screenwriting",
+    school: "Chapman University",
+    city: "Orange, CA",
+    date: "December 2018 (withdrew)",
+  },
+  {
+    degree: "Bachelor of Arts in English and Creative Writing",
+    school: "The University of Iowa",
+    city: "Iowa City, IA",
+    date: "December 2016",
+  },
+];
+---
+
+<!doctype html>
+<html lang="en" prefix="og:https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Icons
+      - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
+      - Favicon generator: https://favicon.io
+      - Another favicon generator: https://realfavicongenerator.net/
+      - SVG generator: https://formito.com/tools/favicon
+      - Image compressor: https://squoosh.app/
+      - SVG optimizer: https://jakearchibald.github.io/svgomg/
+      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
+    -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon-96x96.png?v=3"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=3"
+    />
+    <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preload assets -->
+    <link
+      rel="preload"
+      href="/fonts/subset-Lato-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/subset-Lato-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="/fonts/subset-Lato-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Sam Feldstein" />
+
+    <title>{info.title} | Sam Feldstein</title>
+    <meta property="og:title" content={info.title} />
+    <meta name="twitter:title" content={info.title} />
+
+    <meta name="description" content={info.description} />
+    <meta
+      property="og:description"
+      content="description"
+      content={info.description}
+    />
+    <meta
+      name="twitter:description"
+      content="description"
+      content={info.description}
+    />
+
+    <meta property="og:type" content={"website"} />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta
+      property="og:image"
+      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
+    />
+    <meta
+      name="twitter:image"
+      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body>
+    <a class="skiplink" href="#main-content">Skip to Content</a>
+    <div class="page-container">
+      <header>
+        <address class="print">
+          <span>Boulder, CO</span>
+          <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+        </address>
+        <a
+          class="download-link"
+          href="/sam-feldstein-retail-resume.pdf"
+          target="_blank">Download PDF</a
+        >
+        <h1>
+          <div class="name">Sam<br /> Feldstein</div>
+          <div class="role">Retail<br /> Wizard</div>
+        </h1>
+        <address class="web">
+          <span class="location">Boulder, CO</span>
+          <a href="/">Website</a>
+          <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+        </address>
+
+        <nav>
+          <!-- Split into columns -->
+          <div>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+          </div>
+
+          <div>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Publications</a>
+            <a href="#volunteer">Volunteer</a>
+          </div>
+        </nav>
+      </header>
+      <main id="main-content">
+        <section id="education">
+          <h2>Education</h2>
+          <div class="education">
+            {
+              education.map((entry) => (
+                <article>
+                  <h3>{entry.degree}</h3>
+                  <div class="time">
+                    {entry.school} | {entry.city} | <time>{entry.date}</time>
+                  </div>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <div class="skills">
+            <section>
+              <h3>Shipping & Retail</h3>
+              <ul>
+                <li>Inventory management</li>
+                <li>Order fulfillment</li>
+                <li>Packaging and shipping</li>
+                <li>Customer service and support</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>Creative & Technical</h3>
+              <ul>
+                <li>Photography</li>
+                <li>Writing</li>
+                <li>Web Design and Development</li>
+                <li>E-commerce platforms</li>
+              </ul>
+            </section>
+          </div>
+        </section>
+
+        <section id="experience">
+          <h2>Experience</h2>
+          <div class="experience">
+            {
+              work.map((job) => (
+                <article>
+                  <h3>
+                    {job.role} {job.employer && `@ ${job.employer}`}
+                  </h3>
+                  <div class="time">
+                    <time>{job.date}</time> | {job.place}
+                  </div>
+                  <ul>
+                    {job.description.map((point) => (
+                      // Renders html in the object values
+                      <li set:html={point} />
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="projects" class="projects">
+          <h2>Projects</h2>
+          <div class="projects">
+            {
+              projects.map((project) => (
+                <article>
+                  <h3>{project.title}</h3>
+                  <div class="time">
+                    <span>{project.type}</span> | <time>{project.date}</time>{" "}
+                  </div>
+                  <ul>
+                    {project.description.map((point) => (
+                      <li set:html={point} />
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <section id="publications">
+          <h2>Publications</h2>
+          <ul class="publications">
+            {
+              publications.map((pub) => (
+                <li>
+                  <cite class="publication h3">{pub.title}</cite>
+                  <div class="info">
+                    {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
+                    <time>{pub.date}</time>
+                  </div>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+
+        <section id="volunteer">
+          <h2>Volunteer</h2>
+          <div class="volunteer">
+            {
+              volunteer.map((entry) => (
+                <article>
+                  <h3>
+                    {entry.role} {entry.employer && `@ ${entry.employer}`}
+                  </h3>
+                  <div class="time">
+                    <time>{entry.date}</time>{" "}
+                    {entry.place && `| ${entry.place}`}
+                  </div>
+                  <ul>
+                    {entry.description.map((point) => (
+                      <li set:html={point} />
+                    ))}
+                  </ul>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+
+<style>
+  nav {
+    margin-top: 6rem;
+    margin-bottom: 5rem;
+  }
+
+  h1 {
+    font-family: "Cormorant Garamond";
+  }
+
+  h2 {
+    line-height: 0.6;
+  }
+
+  div.skills {
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /* Select nested lists */
+    li {
+      ul {
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  @media print {
+    body {
+      font-size: 11.65px;
+    }
+    
+    h2 {
+      margin-top: 1.75rem;
+    }
+  }
+</style>
