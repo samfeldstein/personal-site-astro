@@ -67,6 +67,10 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
 h2,
 h4 {
   text-align: right;
