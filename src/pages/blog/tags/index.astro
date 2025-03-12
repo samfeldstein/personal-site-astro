@@ -31,3 +31,15 @@ const schema = {
   <h1>Tags</h1>
   <Tags tags={tags} path="blog" />
 </BaseLayout>
+
+<style is:global>
+  ul {
+display: grid;
+gap: 1rem;
+
+    .tag {
+      font-size: inherit;
+      font-weight: 400;
+    }
+  }
+</style>
