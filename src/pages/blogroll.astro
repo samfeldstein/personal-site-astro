@@ -6,7 +6,7 @@ const schema = {
   "@type": "ItemList",
   name: "Blogs I Read | Sam Feldstein",
   url: "https://samfeldstein.xyz/blogroll/",
-  description: "Blogs I read + personal websites I enjoy and admire.",
+  description: "Blogs I read + websites I enjoy and admire.",
 };
 
 // Blogroll
@@ -161,7 +161,7 @@ const blogs = [
 
 <BaseLayout
   title="Blogs I Read + Websites I Like"
-  description="Blogs I read + personal websites I enjoy and admire."
+  description="Blogs I read + websites I enjoy and admire."
   schema={schema}
 >
   <h1>Blogs I Read + Websites I Like</h1>
@@ -203,6 +203,8 @@ const blogs = [
 
   .title {
     font-size: calc(1.5rem + 0.5vw);
+    font-variant: normal;
+    text-transform: none;
     text-wrap: balance;
   }
 
