@@ -39,7 +39,7 @@ body {
   display: flex;
 
   font-family: "EB Garamond", Georgia, serif;
-  font-size: calc(1rem + 0.5vw);
+  font-size: clamp(1rem, 6vw, 1.5rem);
 }
 
 main {
