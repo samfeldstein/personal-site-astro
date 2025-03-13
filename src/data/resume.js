@@ -6,7 +6,7 @@ export const education = [
     date: "December 2018 (withdrew)",
   },
   {
-    degree: "Bachelor of Arts in English & Creative Writing",
+    degree: "Bachelor of Arts in English and Creative Writing",
     school: "The University of Iowa",
     city: "Iowa City, IA",
     date: "December 2016",

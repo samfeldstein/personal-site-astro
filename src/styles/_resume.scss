@@ -272,6 +272,12 @@ a:focus {
 
 li {
   text-wrap: pretty;
+
+  // Selected nested lists, as in some skills sections
+  &:has(> ul) {
+   display: grid;
+   gap: 0.5em;
+  }
 }
 
 time,
