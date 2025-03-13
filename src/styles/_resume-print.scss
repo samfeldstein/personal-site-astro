@@ -144,6 +144,11 @@
     gap: unset;
   }
 
+  // Break page at projects section
+  #projects {
+    break-before: page;
+  }
+
   %hide-print {
     display: none;
   }
