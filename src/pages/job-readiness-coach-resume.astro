@@ -15,7 +15,6 @@ import {
 // Define the relevant items
 const relevantJobs = [
   "devFreelance",
-  "devAssistant",
   "journalistSentinel",
   "managerSentinel",
   "TAChapman",
@@ -152,15 +151,15 @@ const info = {
           </div>
 
           <div>
-            <a href="#projects">Projects</a>
-            <a href="#publications">Publications</a>
             <a href="#volunteer">Volunteer</a>
+            <a href="#publications">Publications</a>
+            <a href="#projects">Projects</a>
           </div>
         </nav>
       </header>
       <main id="main-content">
         <section id="education">
-          <h2>Education</h2>
+          <h2 class="education">Education</h2>
           <div class="education">
             {
               education.map((entry) => (
@@ -231,18 +230,21 @@ const info = {
           </div>
         </section>
 
-        <section id="projects" class="projects">
-          <h2>Projects</h2>
-          <div class="projects">
+        <section id="volunteer" class="break">
+          <h2>Volunteer</h2>
+          <div class="volunteer">
             {
-              selectedProjects.map((project) => (
+              volunteer.map((entry) => (
                 <article>
-                  <h3>{project.title}</h3>
+                  <h3>
+                    {entry.role} {entry.employer && `@ ${entry.employer}`}
+                  </h3>
                   <div class="time">
-                    <span>{project.type}</span> | <time>{project.date}</time>
+                    <time>{entry.date}</time>{" "}
+                    {entry.place && `| ${entry.place}`}
                   </div>
                   <ul>
-                    {project.description.map((point) => (
+                    {entry.description.map((point) => (
                       <li set:html={point} />
                     ))}
                   </ul>
@@ -269,21 +271,18 @@ const info = {
           </ul>
         </section>
 
-        <section id="volunteer">
-          <h2>Volunteer</h2>
-          <div class="volunteer">
+        <section id="projects" class="projects">
+          <h2>Projects</h2>
+          <div class="projects">
             {
-              volunteer.map((entry) => (
+              selectedProjects.map((project) => (
                 <article>
-                  <h3>
-                    {entry.role} {entry.employer && `@ ${entry.employer}`}
-                  </h3>
+                  <h3>{project.title}</h3>
                   <div class="time">
-                    <time>{entry.date}</time>{" "}
-                    {entry.place && `| ${entry.place}`}
+                    <span>{project.type}</span> | <time>{project.date}</time>
                   </div>
                   <ul>
-                    {entry.description.map((point) => (
+                    {project.description.map((point) => (
                       <li set:html={point} />
                     ))}
                   </ul>
@@ -304,7 +303,6 @@ const info = {
   }
 
   h1 {
-    font-family: "Cormorant Garamond";
     margin-bottom: 1rem;
   }
 
@@ -312,27 +310,9 @@ const info = {
     line-height: 0.6;
   }
 
-  div.skills {
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    /* Select nested lists */
-    li {
-      ul {
-        padding-left: 1rem;
-      }
-    }
-  }
-
   @media print {
     body {
       font-size: 11.65px;
-    }
-
-    h2 {
-      margin-top: 1.75rem;
     }
   }
 </style>

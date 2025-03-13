@@ -19,7 +19,7 @@ export const workHistory = {
     date: "April 2024 – Present",
     place: "Boulder, CO",
     description: [
-      "Build bespoke, high-performance websites using modern static site generators (Astro, Eleventy) and Content Management Systems (WordPress).",
+      "Build bespoke, high-performance websites using modern static site generators and Content Management Systems.",
       "Optimize site performance using strategies like image optimization, CDN caching, and lean codebases to achieve sub-second load times and 95+ Lighthouse scores.",
       "Where needed, create content management workflows with headless CMS integrations, enabling non-technical clients to update site content independently.",
     ],
