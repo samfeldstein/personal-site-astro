@@ -7,6 +7,7 @@ import "/src/styles/_resume-print.scss";
 const info = {
   title: "Events Specialist Résumé",
   description: "Sam Feldstein's résumé.",
+  print: "/sam-feldstein-events-specialist-resume.pdf",
 };
 
 // Import resume sections
@@ -154,10 +155,8 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
           <span>Boulder, CO</span>
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
-        <a
-          class="download-link"
-          href="/sam-feldstein-job-readiness-coach-resume.pdf"
-          target="_blank">Download PDF</a
+        <a class="download-link" href=`/resumes/${info.print}` target="_blank"
+          >Download PDF</a
         >
         <h1>
           <div class="name">Sam<br /> Feldstein</div>
