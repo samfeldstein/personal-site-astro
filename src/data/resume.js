@@ -80,14 +80,14 @@ export const workHistory = {
     ],
   },
   fundraiserLear: {
-    role: "Philanthropy & Donor Engagement Specialist",
+    role: "Donor Engagement Specialist",
     employer: "Lear Solutions",
     date: "May 2019 – December 2019",
     place: "Santa Ana, CA",
     description: [
-      "Secured a projected ~$300,000 in funding for high-impact organizations, including the ASPCA and Doctors Without Borders, through persuasive donor engagement and strategic fundraising campaigns.",
+      "Secured a projected ~$300,000 in funding for high-impact organizations, including the ASPCA and Doctors Without Borders, through persuasive face-to-face donor engagement.",
       "Cultivated relationships with prospective donors, tailoring messaging to align with individual values and maximize long-term contributions.",
-      "Implemented proven rhetorical and psychological fundraising techniques to drive high-quality, recurring donations, strengthening donor retention and organizational sustainability.",
+      "Implemented proven rhetorical fundraising techniques to drive high-quality, recurring donations, strengthening donor retention and organizational sustainability.",
     ],
   },
   TAChapman: {
@@ -206,8 +206,8 @@ export const publications = [
   },
 ];
 
-export const volunteer = [
-  {
+export const volunteer = {
+  communityHealthAndEquine: {
     role: "Wix Developer & Horseback Riding Instructor",
     employer: "Community Health and Equine Coalition",
     date: "April 2024 – May 2024",
@@ -215,10 +215,22 @@ export const volunteer = [
     description: [
       "Redesigned and maintained the organization’s website using Wix CMS, enhancing user experience and accessibility.",
       "Integrated a secure payment gateway, streamlining the donation process and increasing fundraising efficiency.",
-      "Instructed clients aged 13-25 in horseback riding, fostering skill development and confidence.",
+      "Instructed clients aged 13-25 in horseback riding, fostering skill development and confidence."
     ],
   },
-  {
+  workaway: {
+    role: "Volunteer",
+    employer: "Workaway",
+    date: "April 2024 – September 2024",
+    place: "Various Locations",
+    description: [
+      "Hippotherapy Center and Farm in Galveston – Cared for farm animals, assisted with daily operations, and contributed to improvement projects.",
+      "Airbnb Supervision in New Orleans – Managed guest coordination, answered inquiries, resolved issues, and cleaned units to maintain high standards.",
+      "Home Improvement in Boulder – Built a flagstone wall and replaced deteriorating flagstone steps.",
+      "Collaborated with volunteers from Hungary, Italy, Spain, and France, developing strong cross-cultural communication and teamwork skills."
+    ],
+  },
+  frida: {
     role: "Theater Staff",
     employer: "The Frida Cinema",
     date: "March 2019 – March 2020",
@@ -226,10 +238,10 @@ export const volunteer = [
     description: [
       "Assisted in theater operations, including ticketing, concessions, and customer service, ensuring a seamless guest experience.",
       "Maintained a welcoming and informative environment by providing guests with film details, schedules, and theater policies.",
-      "Solicited donations at the register, supporting fundraising efforts for independent film programming.",
+      "Solicited donations at the register, supporting fundraising efforts for independent film programming."
     ],
   },
-  {
+  animalRescueLeague: {
     role: "Horse Trainer",
     employer: "Animal Rescue League",
     date: "January 2014 – January 2015",
@@ -237,7 +249,8 @@ export const volunteer = [
     description: [
       "Rehabilitated and trained rescued horses to improve handling, responsiveness, and trust, preparing them for adoption and new owners.",
       "Worked with neglected and abused horses, implementing patient, trust-building techniques to rebuild confidence and correct behavioral challenges.",
-      "Assisted with daily care and stable management, including feeding, grooming, and monitoring equine health to ensure proper rehabilitation.",
+      "Assisted with daily care and stable management, including feeding, grooming, and monitoring equine health to ensure proper rehabilitation."
     ],
   }
-];
+};
+

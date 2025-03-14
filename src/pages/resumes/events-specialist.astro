@@ -3,40 +3,60 @@ import "/src/styles/_reset.css";
 import "/src/styles/_resume.scss";
 import "/src/styles/_resume-print.scss";
 
-// Data
+// Page info
+const info = {
+  title: "Events Specialist Résumé",
+  description: "Sam Feldstein's résumé.",
+};
+
+// Import resume sections
 import {
   workHistory,
   projects,
   publications,
   volunteer,
   education,
-} from "../data/resume.js";
+} from "../../data/resume.js";
 
-// Define the relevant items
+// Define relevant items
 const relevantJobs = [
   "devFreelance",
   "journalistSentinel",
   "managerSentinel",
+  "fundraiserLear",
   "TAChapman",
-  "libAssistantNorthLiberty",
 ];
 const relevantProjects = ["regreen", "postoley", "prairieRose"];
 const relevantVolunteer = [
   "communityHealthAndEquine",
   "workaway",
-  "frida",
   "animalRescueLeague",
+];
+
+const skills = [
+  {
+    category: "Creative & Technical",
+    items: [
+      "Microsoft Office and Google Suite",
+      "Web content creation and publishing",
+      "Web Design and Development",
+      "Photography",
+    ],
+  },
+  {
+    category: "Nonprofits & Communication",
+    items: [
+      "Fundraising and donor relations",
+      "Empathy and diplomacy",
+      "Professional writing",
+    ],
+  },
 ];
 
 // Convert selected keys into an array of job objects
 const selectedWork = relevantJobs.map((key) => workHistory[key]);
 const selectedProjects = relevantProjects.map((key) => projects[key]);
 const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
-
-const info = {
-  title: "Job Readiness Coach Résumé",
-  description: "Sam Feldstein's résumé.",
-};
 ---
 
 <!doctype html>
@@ -141,7 +161,7 @@ const info = {
         >
         <h1>
           <div class="name">Sam<br /> Feldstein</div>
-          <div class="role">Job Readiness<br /> Coach</div>
+          <div class="role">Events<br /> Specialist</div>
         </h1>
         <address class="web">
           <span class="location">Boulder, CO</span>
@@ -184,33 +204,18 @@ const info = {
         <section id="skills">
           <h2>Skills</h2>
           <div class="skills">
-            <section>
-              <h3>Technical</h3>
-              <ul>
-                <li>Computer and digital literacy</li>
-                <li>Document and résumé formatting</li>
-
-                <li>Web Design and Development</li>
-              </ul>
-            </section>
-
-            <section>
-              <h3>Professional Development</h3>
-              <ul>
-                <li>Résumé and cover letter writing</li>
-                <li>Professional writing and communication</li>
-                <li>Career exploration and goal-setting</li>
-              </ul>
-            </section>
-
-            <section>
-              <h3>Education & Mentorship</h3>
-              <ul>
-                <li>Personalized instruction, including adult learners</li>
-                <li>Patience and empathy</li>
-                <li>Communication and conflict resolution</li>
-              </ul>
-            </section>
+            {
+              skills.map(({ category, items }) => (
+                <section>
+                  <h3>{category}</h3>
+                  <ul>
+                    {items.map((skill) => (
+                      <li>{skill}</li>
+                    ))}
+                  </ul>
+                </section>
+              ))
+            }
           </div>
         </section>
 
