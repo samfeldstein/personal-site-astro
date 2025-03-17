@@ -124,7 +124,6 @@ export const workHistory = {
       "Designed lessons to emphasize safety, effective communication with horses, and the principles of natural horsemanship, fostering well-rounded and capable riders.",
     ],
   },
-
 };
 
 export const projects = {
