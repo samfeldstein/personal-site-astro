@@ -10,31 +10,27 @@ import {
   publications,
   volunteer,
   education,
-} from "../../data/resume.js";
+} from "../data/resume.js";
 
-// Page info
-const info = {
-  title: "Creative Developer Résumé",
-  description:
-    "Sam Feldstein's résumé. Sam is a Creative Web Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals.",
-  print: "/sam-feldstein-developer-resume.pdf",
-};
+const {
+  jobTitle,
+  jobTitleFirstHalf,
+  jobTitleSecondHalf,
+  printUrl,
+  skills = [],
+  relevantWork = [],
+  relevantProjects = [],
+  relevantVolunteer = [],
+} = Astro.props;
 
-// Define relevant items
-const relevantJobs = [
-  "devFreelance",
-  "devAssistant",
-  "journalistSentinel",
-  "managerSentinel",
-  "devSentinel",
-];
-const relevantProjects = ["regreen", "postoley", "prairieRose", "personalSite"];
-const relevantVolunteer = ["communityHealthAndEquine", "workaway", "frida"];
+const description = `Sam Feldstein's ${jobTitle} résumé.`;
 
-// Convert selected keys into an array of job objects
-const selectedWork = relevantJobs.map((key) => workHistory[key]);
-const selectedProjects = relevantProjects.map((key) => projects[key]);
-const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
+// Convert relevant keys into an array of job objects
+const relevantWorkData = relevantWork.map((key) => workHistory[key] || {});
+const relevantProjectsData = relevantProjects.map((key) => projects[key] || {});
+const relevantVolunteerData = relevantVolunteer.map(
+  (key) => volunteer[key] || {},
+);
 ---
 
 <!doctype html>
@@ -42,6 +38,7 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Icons
       - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
@@ -50,7 +47,7 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
       - SVG generator: https://formito.com/tools/favicon
       - Image compressor: https://squoosh.app/
       - SVG optimizer: https://jakearchibald.github.io/svgomg/
-      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
+      - Favicon checker: https://realfavicongenerator.net/favicon_checker
     -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
     <link
@@ -66,10 +63,19 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
       sizes="180x180"
       href="/apple-touch-icon.png?v=3"
     />
+
+    <!-- Manifest -->
     <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
     <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Preload assets -->
+    <link
+      rel="preload"
+      href="/fonts/subset-CormorantGaramond-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
     <link
       rel="preload"
       href="/fonts/subset-Lato-Regular.woff2"
@@ -92,25 +98,27 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
       crossorigin="anonymous"
     />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
-    <title>{info.title} | Sam Feldstein</title>
+    <title>{jobTitle} | Sam Feldstein</title>
     <meta name="author" content="Sam Feldstein" />
-    <meta name="description" content={info.description} />
-    <meta property="og:title" content={`${info.title} | Sam Feldstein`} />
-    <meta name="twitter:title" content={`${info.title} | Sam Feldstein`} />
-    <meta property="og:description" content={info.description} />
-    <meta name="twitter:description" content={info.description} />
+    <meta name="description" content={description} />
+
+    <meta name="twitter:title" content={`${jobTitle} Résumé | Sam Feldstein`} />
+    <meta name="twitter:description" content={description} />
+    <meta
+      name="twitter:image"
+      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
+    />
+
     <meta property="og:type" content={"website"} />
+    <meta property="og:title" content={`${jobTitle} | Sam Feldstein`} />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content={Astro.url.href} />
     <meta
       property="og:image"
       content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
     />
-    <meta
-      name="twitter:image"
-      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
-    />
+
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link
       rel="alternate"
@@ -124,18 +132,6 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
       title="Sam Feldstein's Notebook"
       href="https://notebook.samfeldstein.xyz/feed.xml"
     />
-
-    <!-- Turn structured data into JSON string -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Résumé | Sam Feldstein",
-        "url": "https://samfeldstein.xyz/resume/",
-        "description": "Sam Feldstein's Résumé. Sam is a Creative Web Developer with a year of experience crafting high-performance, user-centric websites for small businesses and professionals.",
-        "image": "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
-      }
-    </script>
   </head>
   <body>
     <a class="skiplink" href="#main-content">Skip to Content</a>
@@ -147,13 +143,14 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
         </address>
         <a
           class="download-link"
-          href="/resumes/sam-feldstein-developer-resume.pdf"
+          href=`/resumes/sam-feldstein-${printUrl}-resume.pdf`
           target="_blank">Download PDF</a
         >
         <h1>
           <div class="name">Sam<br /> Feldstein</div>
-          <div class="role">Creative<br /> Developer</div>
+          <div class="role">{jobTitleFirstHalf}<br /> {jobTitleSecondHalf}</div>
         </h1>
+
         <address class="web">
           <span class="location">Boulder, CO</span>
           <a href="/">Website</a>
@@ -180,37 +177,18 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
         <section id="skills">
           <h2>Skills</h2>
           <div class="skills">
-            <section id="languages">
-              <h3>Web Technologies & Standards</h3>
-              <ul>
-                <li>Semantic HTML</li>
-                <li>Modern CSS</li>
-                <li>JavaScript</li>
-                <li>Accessibility best practices</li>
-              </ul>
-            </section>
-
-            <section id="tools">
-              <h3>Tools & Frameworks</h3>
-              <ul>
-                <li>Astro</li>
-                <li>Eleventy</li>
-                <li>WordPress</li>
-                <li>Git</li>
-                <li>Figma</li>
-              </ul>
-            </section>
-
-            <section id="performance">
-              <h3>Web Performance</h3>
-              <ul>
-                <li>Static site generation</li>
-                <li>Modern image formats</li>
-                <li>Font-loading strategies</li>
-                <li>Preloading/-fetching/-rendering</li>
-                <li>Headers and caching</li>
-              </ul>
-            </section>
+            {
+              skills.map(({ category, items }) => (
+                <section>
+                  <h3>{category}</h3>
+                  <ul>
+                    {items.map((skill) => (
+                      <li>{skill}</li>
+                    ))}
+                  </ul>
+                </section>
+              ))
+            }
           </div>
         </section>
 
@@ -234,7 +212,7 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
           <h2>Experience</h2>
           <div class="experience">
             {
-              selectedWork.map((job) => (
+              relevantWorkData?.map((job) => (
                 <article>
                   <h3>
                     {job.role} {job.employer && `@ ${job.employer}`}
@@ -243,7 +221,7 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
                     <time>{job.date}</time> | {job.place}
                   </div>
                   <ul>
-                    {job.description.map((point) => (
+                    {job.description?.map((point) => (
                       // Renders html in the object values
                       <li set:html={point} />
                     ))}
@@ -254,18 +232,18 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
           </div>
         </section>
 
-        <section id="projects" class="projects break">
+        <section id="projects" class="projects">
           <h2>Projects</h2>
           <div class="projects">
             {
-              selectedProjects.map((project) => (
+              relevantProjectsData?.map((project) => (
                 <article>
                   <h3>{project.title}</h3>
                   <div class="time">
                     <time>{project.date}</time>{" "}
                   </div>
                   <ul>
-                    {project.description.map((point) => (
+                    {project.description?.map((point) => (
                       <li set:html={point} />
                     ))}
                   </ul>
@@ -296,7 +274,7 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
           <h2>Volunteer</h2>
           <div class="volunteer">
             {
-              selectedVolunteer.map((entry) => (
+              relevantVolunteerData?.map((entry) => (
                 <article>
                   <h3>
                     {entry.role} {entry.employer && `@ ${entry.employer}`}
@@ -306,7 +284,7 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
                     {entry.place && `| ${entry.place}`}
                   </div>
                   <ul>
-                    {entry.description.map((point) => (
+                    {entry.description?.map((point) => (
                       <li set:html={point} />
                     ))}
                   </ul>
@@ -319,9 +297,3 @@ const selectedVolunteer = relevantVolunteer.map((key) => volunteer[key]);
     </div>
   </body>
 </html>
-
-<style>
-  div.skills {
-    justify-content: space-between;
-  }
-</style>

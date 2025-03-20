@@ -173,26 +173,22 @@ address {
 
 // Page header
 header {
-  .summary {
-    margin-top: 6rem;
-    margin-bottom: 5rem;
-    font-size: calc(var(--font-small) + 0.2em);
-    color: #555;
-    max-width: 40rem;
-    text-wrap: pretty;
-  }
 
   nav {
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
+    margin-top: 6rem;
     display: flex;
     gap: 4rem;
     font-size: var(--font-small);
 
+    // Split into columns
     div {
       display: grid;
       gap: 1rem;
     }
   }
+
+  
 }
 
 div.employer {
@@ -274,8 +270,8 @@ li {
 
   // Selected nested lists, as in some skills sections
   &:has(> ul) {
-   display: grid;
-   gap: 0.5em;
+    display: grid;
+    gap: 0.5em;
   }
 }
 

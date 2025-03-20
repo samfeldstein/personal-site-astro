@@ -1,0 +1,55 @@
+---
+// Layout
+import Resume from "../../layouts/Resume.astro";
+
+// Styles
+import "/src/styles/_reset.css";
+import "/src/styles/_resume.scss";
+import "/src/styles/_resume-print.scss";
+
+// Define relevant items
+const relevantWork = [
+  "devFreelance",
+  "journalistSentinel",
+  "managerSentinel",
+  "fundraiserLear",
+  "TAChapman",
+];
+const relevantProjects = ["regreen", "postoley", "prairieRose"];
+const relevantVolunteer = [
+  "communityHealthAndEquine",
+  "workaway",
+  "animalRescueLeague",
+];
+
+const skills = [
+  {
+    category: "Creative & Technical",
+    items: [
+      "Microsoft Office and Google Suite",
+      "Web content creation and publishing",
+      "Web Design and Development",
+      "Photography",
+    ],
+  },
+  {
+    category: "Nonprofits & Communication",
+    items: [
+      "Fundraising and donor relations",
+      "Empathy and diplomacy",
+      "Professional writing",
+    ],
+  },
+];
+---
+
+<Resume
+  jobTitle="Content Editor"
+  jobTitleFirstHalf="Content"
+  jobTitleSecondHalf="Editor"
+  printUrl="content-editor"
+  skills={skills}
+  relevantWork={relevantWork}
+  relevantProjects={relevantProjects}
+  relevantVolunteer={relevantVolunteer}
+/>
