@@ -47,7 +47,7 @@ export const workHistory = {
     ],
   },
   marfaStore: {
-    role: "Retail Associate and Gallery Attendant",
+    role: "Retail Associate & Gallery Attendant",
     employer: "The Marfa Store",
     place: "Marfa, TX",
     date: "January 2022 – December 2023",
