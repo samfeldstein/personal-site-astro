@@ -17,6 +17,7 @@ const {
   jobTitleFirstHalf,
   jobTitleSecondHalf,
   printUrl,
+  contactLinks = [],
   skills = [],
   relevantWork = [],
   relevantProjects = [],
@@ -154,8 +155,7 @@ const relevantVolunteerData = relevantVolunteer.map(
         <address class="web">
           <span class="location">Boulder, CO</span>
           <a href="/">Website</a>
-          <a href="https://github.com/samfeldstein">GitHub</a>
-          <a href="https://www.linkedin.com/in/samfeldstein">LinkedIn</a>
+          {contactLinks.map((link) => <a href={link.url}>{link.name}</a>)}
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
 

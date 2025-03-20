@@ -8,6 +8,10 @@ import "/src/styles/_resume.scss";
 import "/src/styles/_resume-print.scss";
 
 // Define relevant items
+const contactLinks = [
+  { name: "GitHub", url: "https://github.com/samfeldstein" },
+];
+
 const relevantWork = [
   "devFreelance",
   "journalistSentinel",
@@ -48,6 +52,7 @@ const skills = [
   jobTitleFirstHalf="Content"
   jobTitleSecondHalf="Editor"
   printUrl="content-editor"
+  contactLinks={contactLinks}
   skills={skills}
   relevantWork={relevantWork}
   relevantProjects={relevantProjects}
