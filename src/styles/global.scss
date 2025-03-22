@@ -55,28 +55,46 @@ ol {
 h1,
 h2,
 h3 {
-  font-variant: small-caps;
-  text-transform: lowercase;
+
   text-wrap: balance;
   line-height: 1;
   letter-spacing: 2px;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font: {
+    family: "Cormorant Garamond", "EB Garamond", serif;
+    variant: small-caps;
+    weight: 900;
+    size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  text: {
+    transform: lowercase;
+  }
+
   margin: 0;
 }
 
 h2 {
-  font-size: clamp(2.25rem, 8vw, 3rem);
-  font-weight: 400;
+  font: {
+    size: clamp(1.75rem, 5vw, 2.25rem);
+  }
+
+  text: {
+    align: right;
+  }
 }
 
 h2,
 h4 {
-  text-align: right;
-  border-bottom-style: dotted;
-  border-bottom-width: 1px;
+
+  // text-align: right;
+  border-bottom: {
+    style: solid;
+    width: 0.01em;
+  }
+
   margin-top: 2em;
 }
 
