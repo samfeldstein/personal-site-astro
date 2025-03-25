@@ -1,7 +1,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* One consistent family name */
-  src: local("EB Garamond"),
+  src: 
     url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2");
   font-weight: 400;
   /* Normal weight */
@@ -12,7 +12,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* Same family name */
-  src: local("EB Garamond Bold"),
+  src: 
     url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2");
   font-weight: 700;
   /* Bold weight */
@@ -23,7 +23,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* Same family name */
-  src: local("EB Garamond Italic"),
+  src: 
     url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2");
   font-weight: 400;
   /* Normal weight */
@@ -34,7 +34,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* Same family name */
-  src: local("EB Garamond Bold Italic"),
+  src: 
     url("/fonts/subset-EBGaramond-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   /* Bold weight */

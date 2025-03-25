@@ -259,7 +259,7 @@ const relevantVolunteerData = relevantVolunteer.map(
             {
               publications.map((pub) => (
                 <li>
-                  <cite class="publication h3">{pub.title}</cite>
+                  <cite class="publication h3" set:html={pub.title}>{pub.title}</cite>
                   <div class="info">
                     {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
                     <time>{pub.date}</time>

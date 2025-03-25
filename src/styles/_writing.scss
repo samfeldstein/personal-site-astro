@@ -4,7 +4,7 @@
 @font-face {
   font-family: "Cheveuxdange";
   /* One consistent family name */
-  src: local("Cheveuxdange"),
+  src:
     url("/fonts/subset-Cheveuxdange.woff2") format("woff2");
   font-weight: 400;
   /* Normal weight */
@@ -15,7 +15,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* One consistent family name */
-  src: local("EB Garamond"),
+  src:
     url("/fonts/subset-EBGaramond-Regular.woff2") format("woff2");
   font-weight: 400;
   /* Normal weight */
@@ -26,7 +26,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* Same family name */
-  src: local("EB Garamond Bold"),
+  src:
     url("/fonts/subset-EBGaramond-Bold.woff2") format("woff2");
   font-weight: 700;
   /* Bold weight */
@@ -37,7 +37,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* Same family name */
-  src: local("EB Garamond Italic"),
+  src:
     url("/fonts/subset-EBGaramond-Italic.woff2") format("woff2");
   font-weight: 400;
   /* Normal weight */
@@ -48,7 +48,7 @@
 @font-face {
   font-family: "EB Garamond";
   /* Same family name */
-  src: local("EB Garamond Bold Italic"),
+  src:
     url("/fonts/subset-EBGaramond-BoldItalic.woff2") format("woff2");
   font-weight: 700;
   /* Bold weight */
@@ -58,7 +58,7 @@
 
 @font-face {
   font-family: "Courier Prime";
-  src: local("Courier Prime"),
+  src:
     url("/fonts/subset-CourierPrime-Regular.woff2") format("woff2");
   font-weight: 400;
   /* Normal weight */
@@ -68,7 +68,7 @@
 
 @font-face {
   font-family: "Courier Prime";
-  src: local("Courier Prime Bold"),
+  src:
     url("/fonts/subset-CourierPrime-Bold.woff2") format("woff2");
   font-weight: 700;
   /* Normal weight */
@@ -78,7 +78,7 @@
 
 @font-face {
   font-family: "Courier Prime";
-  src: local("Courier Prime Italic"),
+  src:
     url("/fonts/subset-CourierPrime-Italic.woff2") format("woff2");
   font-weight: 400;
   /* Normal weight */
@@ -169,7 +169,8 @@ a {
     justify-content: space-between;
     gap: 1rem;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       box-shadow: #777 -4px 4px 4px;
     }
   }

@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Lato';
   src:
-    local("Lato"),
     url('/fonts/subset-Lato-Bold.woff2') format('woff2'),
     url('/fonts/subset-Lato-Bold.woff') format('woff');
   font-weight: 700;
@@ -12,7 +11,6 @@
 @font-face {
   font-family: 'Lato';
   src:
-    local("Lato"),
     url('/fonts/subset-Lato-BoldItalic.woff2') format('woff2'),
     url('/fonts/subset-Lato-BoldItalic.woff') format('woff');
   font-weight: 700;
@@ -22,7 +20,7 @@
 
 @font-face {
   font-family: 'Lato';
-  src: local("Lato"), url('/fonts/subset-Lato-Italic.woff2') format('woff2'),
+  src: url('/fonts/subset-Lato-Italic.woff2') format('woff2'),
     url('/fonts/subset-Lato-Italic.woff') format('woff');
   font-weight: normal;
   font-style: italic;
@@ -31,7 +29,7 @@
 
 @font-face {
   font-family: 'Lato';
-  src: local("Lato"), url('/fonts/subset-Lato-LightItalic.woff2') format('woff2'),
+  src: url('/fonts/subset-Lato-LightItalic.woff2') format('woff2'),
     url('/fonts/subset-Lato-LightItalic.woff') format('woff');
   font-weight: 300;
   font-style: italic;
@@ -40,7 +38,7 @@
 
 @font-face {
   font-family: 'Lato';
-  src: local("Lato"), url('/fonts/subset-Lato-Light.woff2') format('woff2'),
+  src: url('/fonts/subset-Lato-Light.woff2') format('woff2'),
     url('/fonts/subset-Lato-Light.woff') format('woff');
   font-weight: 300;
   font-style: normal;
@@ -49,7 +47,7 @@
 
 @font-face {
   font-family: 'Lato';
-  src: local("Lato"), url('/fonts/subset-Lato-Regular.woff2') format('woff2'),
+  src: url('/fonts/subset-Lato-Regular.woff2') format('woff2'),
     url('/fonts/subset-Lato-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -69,7 +67,7 @@
   font-family: 'Cormorant Garamond';
   src: url('/fonts/subset-CormorantGaramond-Bold.woff2') format('woff2'),
     url('/fonts/subset-CormorantGaramond-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -188,7 +186,7 @@ header {
     }
   }
 
-  
+
 }
 
 div.employer {
@@ -206,7 +204,11 @@ div.education {
 
 h1,
 h2 {
-  font-variant: small-caps;
+  font: {
+    variant: small-caps;
+    weight: 100;
+  }
+
   text-transform: lowercase;
 }
 
@@ -217,13 +219,7 @@ h1 {
   margin-bottom: 0.5rem;
   line-height: 0.7;
 
-  .name {
-    font-weight: 400;
-  }
-
   .role {
-    font-weight: 100;
-    // font-size: 0.65em;
     color: #555;
   }
 }
@@ -234,7 +230,6 @@ h2 {
 
   // Typography
   font-size: calc(2.5rem);
-  font-weight: 100;
 
   /* Aligns top with h3 */
   line-height: 0.8;
@@ -243,7 +238,7 @@ h2 {
 h3,
 .h3 {
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.25rem;
   text-wrap: balance;
 }
@@ -255,14 +250,17 @@ main {
 
 a {
   color: #555;
-  text-decoration: none;
   font-variant: small-caps;
-  text-transform: lowercase;
-}
 
-a:hover,
-a:focus {
-  color: black;
+  text: {
+    decoration: none;
+    transform: lowercase;
+  }
+
+  &:hover,
+  &:focus {
+    color: #000;
+  }
 }
 
 li {
@@ -308,6 +306,12 @@ ul.publications {
   background-color: #000;
 }
 
+// Publication title
+cite.h3 {
+  font-style: normal;
+}
+
+// Desktop styles
 @media screen and (min-width: 768px) {
 
   html {

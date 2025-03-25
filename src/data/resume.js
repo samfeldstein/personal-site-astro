@@ -168,6 +168,15 @@ export const projects = {
       "Implemented performance optimizations including prefetching and an automated image optimization pipeline for WebP/AVIF delivery.",
     ],
   },
+  likeMovies: {
+    title: "Like Father, Like Son, Like Movies",
+    type: "Podcast",
+    date: "November 2022 – Present",
+    description: [
+      "Create and produce a podcast about film, independently managing all aspects from concept development to distribution.",
+      "Developed comprehensive production workflow, delivering consistent content across all major listening platforms.",
+    ],
+  }
 };
 
 export const publications = [
@@ -198,8 +207,8 @@ export const publications = [
     date: "October 2022",
   },
   {
-    title: "Absence of Meaning in the Lighthouse",
-    medium: "Film Criticism",
+    title: "Absence of Meaning in <em>The Lighthouse</em>",
+    medium: "Criticism",
     outlet: "The Frida Cinema Blog",
     date: "April 2022",
   },
