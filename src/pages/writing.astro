@@ -1,7 +1,14 @@
 ---
-// Styles
-import "/src/styles/_reset.css";
-import "/src/styles/_writing.scss";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Date from "../components/Date.astro";
+import Tags from "../components/Tags.astro";
+
+import { getCollection } from "astro:content";
+import { sortCollectionByDate } from "../scripts/utils.ts";
+import { filterDrafts } from "../scripts/utils.ts";
+
+const posts = await getCollection("blog", filterDrafts);
+sortCollectionByDate(posts);
 
 const writing = [
   {
@@ -61,7 +68,7 @@ const writing = [
   },
 ];
 
-writing.sort((a, b) => new Date(b.date) - new Date(a.date));
+// writing.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 // Structured Data
 const schema = {
@@ -81,190 +88,48 @@ const schema = {
 };
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<BaseLayout title="Writing" schema={schema}>
+  <h1>Writing I've Written</h1>
+  <section class="published">
+    {
+      writing.map((item) => (
+        <a href={item.url} class="entry">
+          <div class="type date">
+            <span class="gray">{item.type}</span>
+            <span class="gray">{item.date}</span>
+          </div>
+          <h2 set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")} />
 
-    <!-- Preload assets -->
-    <link
-      rel="preload"
-      href="/fonts/subset-Cheveuxdange.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/subset-EBGaramond-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/subset-EBGaramond-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/subset-CourierPrime-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/fonts/subset-CourierPrime-Italic.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
+          <div class="gray outlet">
+            <em>{item.outlet}</em>
+          </div>
+        </a>
+      ))
+    }
+  </section>
+  
+  <p>
+    <a href="/blog/tags/">Browse by category</a>. Subscribe via <a
+      href="https://samfeldstein.xyz/feed.xml">RSS</a
+    >. If you prefer to subscribe by email, you can use <a
+      href="https://blogtrottr.com">Blogtrottr</a
+    > to route the feed to your inbox.
+  </p>
 
-    <!-- Icons
-      - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
-      - Favicon generator: https://favicon.io
-      - Another favicon generator: https://realfavicongenerator.net/
-      - SVG generator: https://formito.com/tools/favicon
-      - Image compressor: https://squoosh.app/
-      - SVG optimizer: https://jakearchibald.github.io/svgomg/
-      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
-    -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/favicon-96x96.png?v=3"
-    />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon.png?v=3"
-    />
-    <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
-    <link rel="manifest" href="/site.webmanifest" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Writing Portfolio | Sam Feldstein</title>
-    <meta name="author" content="Sam Feldstein" />
-    <meta
-      name="description"
-      content="My portfolio of fiction, short stories, poetry, essays, news articles, and informative video scripts."
-    />
-    <meta property="og:title" content="Writing Portfolio | Sam Feldstein" />
-    <meta
-      property="og:description"
-      content="My portfolio of fiction, short stories, poetry, essays, news articles, and informative video scripts."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta
-      property="og:image"
-      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
-    />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Sam Feldstein"
-      href={new URL("feed.xml", Astro.site)}
-    />
-    <link
-      rel="alternate"
-      type="application/atom+xml"
-      title="Sam Feldstein's Notebook"
-      href="https://notebook.samfeldstein.xyz/feed.xml"
-    />
-
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-
-    <!-- Clean up old service workers -->
-    <script>
-      async function uninstallServiceWorkers() {
-        try {
-          // Get a list of all service worker registrations
-          const registrations =
-            await navigator.serviceWorker.getRegistrations();
-
-          if (registrations.length === 0) {
-            console.log("No service workers found to uninstall");
-            return;
-          }
-
-          // Uninstall each service worker
-          const uninstallPromises = registrations.map(async (registration) => {
-            try {
-              const success = await registration.unregister();
-              if (success) {
-                console.log(
-                  `Service worker at ${registration.scope} successfully uninstalled`,
-                );
-              } else {
-                console.warn(
-                  `Failed to uninstall service worker at ${registration.scope}`,
-                );
-              }
-            } catch (error) {
-              console.error(
-                `Error uninstalling service worker at ${registration.scope}:`,
-                error,
-              );
-            }
-          });
-
-          // Wait for all uninstallation attempts to complete
-          await Promise.all(uninstallPromises);
-
-          console.log("Service worker uninstallation process completed");
-
-          // Optional: Reload the page to ensure clean state
-          // window.location.reload();
-        } catch (error) {
-          console.error("Error during service worker uninstallation:", error);
-          throw error;
-        }
-      }
-
-      uninstallServiceWorkers();
-    </script>
-  </head>
-  <body>
-    <header>
-      <a class="home" href="/">Home</a>
-      <h1>Words I've Written</h1>
-    </header>
-    <main>
-      <p class="intro">
-        This portfolio contains my published writing. You can find my personal
-        writing on my <a href="/blog/">blog</a> and in my <a
-          href="https://notebook.samfeldstein.xyz/">notebook</a
-        >.
-      </p>
-
-      <section class="published">
-        {
-          writing.map((item) => (
-            <a href={item.url} class="entry">
-              <div class="type date">
-                <span class="gray">{item.type}</span>
-                <span class="gray">{item.date}</span>
-              </div>
-              <h2 set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")} />
-
-              <div class="gray outlet">
-                <em>{item.outlet}</em>
-              </div>
-            </a>
-          ))
-        }
-      </section>
-    </main>
-  </body>
-</html>
+  <ul class="collection-list unstyled-list">
+    {
+      posts.map((post) => (
+        <li class="flex-column">
+          <Date date={post.data.pubDate} />
+          <a
+            href={`/blog/${post.id}/`}
+            class="title collection-item-title"
+          >
+            {post.data.title}
+          </a>
+          <Tags tags={post.data.tags} path="blog" />
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

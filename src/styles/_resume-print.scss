@@ -39,12 +39,15 @@
   }
 
   h2 {
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 0.75rem;
-    border-bottom-style: solid;
-    border-bottom-width: 0.5px;
-    border-bottom-color: #d1d1d1;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
+
+    border-top: {
+      style: solid;
+      width: 0.5px;
+      color: #d1d1d1;
+    }
 
     font-size: 1.75rem;
     text-align: right;
@@ -79,24 +82,30 @@
     &>section {
       border: none;
       padding: unset;
+
+      ul {
+        // Reduce space between list items
+        gap: 0.25rem;
+      }
     }
 
     section:first-of-type h2 {
-      margin-top: 1rem;
+      // margin-top: 1rem;
     }
   }
 
   div.skills {
     display: flex;
-    gap: 2.5rem;
+    justify-content: space-between;
 
     h3 {
       margin-bottom: 0.25rem;
     }
 
     ul {
+      list-style-type: none;
       margin: 0;
-      // padding-left: 0.5rem;
+      padding: 0;
     }
   }
 
@@ -108,6 +117,13 @@
 
     ul {
       margin-top: 0.5em;
+    }
+  }
+
+  section.projects {
+    h2 {
+      // Add some space to 2nd page top
+      margin-top: 4rem;
     }
   }
 
@@ -126,17 +142,6 @@
   .time {
     font-size: 8px;
     text-transform: none;
-  }
-
-  main {
-
-    &>section {
-
-      ul {
-        // Reduce space between list items
-        gap: 0.25rem;
-      }
-    }
   }
 
   div.experience,

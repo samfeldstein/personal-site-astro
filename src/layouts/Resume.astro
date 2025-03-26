@@ -240,7 +240,7 @@ const relevantVolunteerData = relevantVolunteer.map(
                 <article>
                   <h3>{project.title}</h3>
                   <div class="time">
-                    <time>{project.date}</time>{" "}
+                    <span>{project.type}</span> | <time>{project.date}</time>
                   </div>
                   <ul>
                     {project.description?.map((point) => (
@@ -259,7 +259,7 @@ const relevantVolunteerData = relevantVolunteer.map(
             {
               publications.map((pub) => (
                 <li>
-                  <cite class="publication h3" set:html={pub.title}>{pub.title}</cite>
+                  <cite class="publication h3" set:html={pub.title}></cite>
                   <div class="info">
                     {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
                     <time>{pub.date}</time>

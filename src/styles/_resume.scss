@@ -156,12 +156,21 @@ address {
   font-variant: small-caps;
   text-transform: lowercase;
 
+  &>* {
+    padding: 2px 4px;
+  }
+
   &.web {
     gap: 0.25rem 1rem;
   }
 
   &.print {
     display: none;
+  }
+
+  a:hover,
+  a:focus {
+    background-color: #f1f1f1;
   }
 
   .location {
@@ -256,6 +265,10 @@ a {
     decoration: none;
     transform: lowercase;
   }
+
+  border-radius: 4px;
+
+  transition: 0.2s ease;
 
   &:hover,
   &:focus {

@@ -173,8 +173,8 @@ export const projects = {
     type: "Podcast",
     date: "November 2022 – Present",
     description: [
-      "Create and produce a podcast about film, independently managing all aspects from concept development to distribution.",
-      "Developed comprehensive production workflow, delivering consistent content across all major listening platforms.",
+      "Host and produce a podcast about film, independently managing all aspects from concept development to distribution.",
+      "Utilize comprehensive production workflow, delivering consistent content across all major listening platforms.",
     ],
   }
 };
@@ -232,8 +232,8 @@ export const volunteer = {
     date: "April 2024 – September 2024",
     place: "Various Locations",
     description: [
-      "Hippotherapy Center and Farm in Galveston – Cared for farm animals, assisted with daily operations, and contributed to improvement projects.",
-      "Airbnb Supervision in New Orleans – Managed guest coordination, answered inquiries, resolved issues, and cleaned units to maintain high standards.",
+      "Hippotherapy Center in Galveston – Cared for farm animals, assisted with daily operations, and contributed to improvement projects.",
+      "Airbnb Supervision in New Orleans – Managed guest coordination, answered inquiries, resolved issues, and cleaned units.",
       "Home Improvement in Boulder – Built a flagstone wall and replaced deteriorating flagstone steps.",
       "Collaborated with volunteers from Hungary, Italy, Spain, and France, developing strong cross-cultural communication and teamwork skills."
     ],
