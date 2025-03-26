@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-title: "Riddled with Words: 'The Maltese Falcon'"
+title: "Riddled with Words: <cite>The Maltese Falcon</cite>"
 description: Every bastard gets what's coming to them.
 pubDate: 2023-01-31
 location: Marfa, TX

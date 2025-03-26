@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-title: Absence of Meaning in 'The Lighthouse'
+title: Absence of Meaning in <cite>The Lighthouse</cite>
 description: A successful exercise in atmosphere, but it's probably about nothing.
 pubDate: 2022-04-05
 location: Alpine, TX

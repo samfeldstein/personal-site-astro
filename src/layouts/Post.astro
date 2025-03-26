@@ -32,9 +32,7 @@ const schema = {
     <h1>{frontmatter.title}</h1>
     {
       frontmatter.description && (
-        <p class="description">
-          <i>{frontmatter.description}</i>
-        </p>
+        <p class="description" set:html={frontmatter.description.replace(/'(.*?)'/, "<em>$1</em>")}/>
       )
     }
     {(<Tags tags={frontmatter.tags} path="blog" />)}
@@ -103,7 +101,9 @@ const schema = {
   }
 
   .page-header {
-    border-bottom: 1px dotted;
+    border-bottom-style: solid;
+    border-bottom-width: 0.5px;
+    
     padding-bottom: 1rem;
     display: grid;
     gap: 0.5rem;

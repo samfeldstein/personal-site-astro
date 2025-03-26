@@ -90,9 +90,11 @@ const schema = {
           posts.slice(0, 3).map((post) => (
             <li class="latest-posts">
               <Date date={post.data.pubDate} />
-              <a href={`/blog/${post.id}/`} class="latest-posts title">
-                {post.data.title}
-              </a>
+              <a
+                href={`/blog/${post.id}/`}
+                class="latest-posts title"
+                set:html={post.data.title}
+              />
               <Tags tags={post.data.tags} path="blog" />
             </li>
           ))

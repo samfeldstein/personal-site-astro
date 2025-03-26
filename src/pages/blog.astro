@@ -44,9 +44,8 @@ const schema = {
           <a
             href={`/blog/${post.id}/`}
             class="title collection-item-title"
-          >
-            {post.data.title}
-          </a>
+            set:html={post.data.title}
+          />
           <Tags tags={post.data.tags} path="blog" />
         </li>
       ))
@@ -81,9 +80,10 @@ const schema = {
     flex-wrap: wrap;
     gap: 0.5em 1em;
     justify-content: center;
+    font-size: var(--font-small);
   }
 
   time {
-    font-size: calc(.9rem + .25vw);
+    font-size: var(--font-small);
   }
 </style>

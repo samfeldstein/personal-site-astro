@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-title: "Cinderella in Reverse: 'Roman Holiday'"
+title: "Cinderella in Reverse: <cite>Roman Holiday</cite>"
 description: Instead of putting the glass slipper on, Ann kicks it off.
 pubDate: 2023-01-24
 location: Marfa, TX

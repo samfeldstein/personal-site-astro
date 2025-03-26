@@ -11,6 +11,7 @@
     Consolas,
     "DejaVu Sans Mono",
     monospace;
+  --font-small: clamp(0.85rem, 4vw, 1.25rem);
 
   /* Colors */
   color-scheme: light dark;
@@ -63,7 +64,7 @@ h3 {
 
 h1 {
   font: {
-    family: "Cormorant Garamond", "EB Garamond", serif;
+    family: "EB Garamond", serif;
     variant: small-caps;
     weight: 900;
     size: clamp(2.5rem, 5vw, 3.5rem);
@@ -79,18 +80,21 @@ h1 {
 h2 {
   font: {
     size: clamp(1.75rem, 5vw, 2.25rem);
+    weight: 400;
   }
 
   text: {
     align: right;
   }
+
+  padding-top: 0.25rem;
 }
 
 h2,
 h4 {
 
   // text-align: right;
-  border-bottom: {
+  border-top: {
     style: solid;
     width: 0.01em;
   }
@@ -140,10 +144,10 @@ blockquote {
 
 blockquote p {
   margin: 0;
-}
 
-cite {
-  font-style: normal;
-  display: block;
-  margin-top: 1em;
+  cite {
+    font-style: normal;
+    display: block;
+    margin-top: 1em;
+  }
 }

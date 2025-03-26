@@ -49,7 +49,7 @@ const schema = {
     {
       posts.map((post) => (
         <li>
-          <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+          <a href={`/blog/${post.id}/`} set:html={post.data.title} />
         </li>
       ))
     }

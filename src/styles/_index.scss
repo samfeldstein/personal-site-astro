@@ -63,8 +63,9 @@ ul.tags {
   gap: 0.5em 1em;
   flex-wrap: wrap;
   justify-content: center;
+  font-size: var(--font-small);
 }
 
 time {
-  font-size: calc(.9rem + .25vw);
+  font-size: var(--font-small);
 }
