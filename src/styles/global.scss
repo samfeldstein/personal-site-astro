@@ -12,7 +12,7 @@
     "DejaVu Sans Mono",
     monospace;
   --font-small: clamp(0.85rem, 4vw, 1.25rem);
-  --font-medium: clamp(1.25rem, 8vw, 1.75rem);
+  --font-medium: clamp(1.25rem, 8vw, 2rem);
 
   /* Colors */
   color-scheme: light dark;
@@ -80,7 +80,7 @@ h1 {
 
 h2 {
   font: {
-    size: clamp(1.75rem, 5vw, 2.25rem);
+    size: clamp(1.75rem, 6vw, 2.5rem);
     weight: 400;
   }
 
