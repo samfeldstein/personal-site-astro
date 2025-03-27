@@ -11,8 +11,8 @@
     Consolas,
     "DejaVu Sans Mono",
     monospace;
-  --font-small: clamp(0.85rem, 4vw, 1.25rem);
-  --font-medium: clamp(1.25rem, 8vw, 2rem);
+  --font-small: clamp(1rem, 6vw, 1.25rem);
+  --font-medium: clamp(1.5rem, 8vw, 2rem);
 
   /* Colors */
   color-scheme: light dark;
@@ -57,7 +57,6 @@ ol {
 h1,
 h2,
 h3 {
-
   text-wrap: balance;
   line-height: 1;
   letter-spacing: 2px;
@@ -80,7 +79,7 @@ h1 {
 
 h2 {
   font: {
-    size: clamp(1.75rem, 6vw, 2.5rem);
+    size: clamp(2.5rem, 6vw, 3rem);
     weight: 400;
   }
 
