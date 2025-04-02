@@ -29,7 +29,7 @@ const schema = {
   schema={schema}
 >
   <header class="page-header" aria-label="Page Header">
-    <h1>{frontmatter.title}</h1>
+    <h1 set:html={frontmatter.title}/>
     {
       frontmatter.description && (
         <p class="description" set:html={frontmatter.description.replace(/'(.*?)'/, "<em>$1</em>")}/>
