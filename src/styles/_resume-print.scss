@@ -98,7 +98,8 @@
 
   div.skills {
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
+    gap: 4rem;
 
     h3 {
       margin-bottom: 0.25rem;
