@@ -14,6 +14,16 @@ export const education = [
 ];
 
 export const workHistory = {
+  composition: {
+    role: "Bookseller",
+    date: "April 2025 – Present",
+    place: "Longmont, CO",
+    description: [
+      "Deliver exceptional customer service, helping customers find books and recommending personalized selections, driving repeat business.",
+      "Manage inventory, organize displays, and process transactions with precision, ensuring smooth daily operations.",
+      "Maintain an extensive and up-to-date knowledge of a wide range of genres, authors, and literary trends, ensuring expert guidance and tailored recommendations for every customer."
+    ],
+  },
   devFreelance: {
     role: "Freelance Web Designer & Developer",
     date: "April 2024 – Present",
