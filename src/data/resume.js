@@ -16,6 +16,7 @@ export const education = [
 export const workHistory = {
   composition: {
     role: "Bookseller",
+    employer: "Composition Bookshop",
     date: "April 2025 – Present",
     place: "Longmont, CO",
     description: [
@@ -57,7 +58,7 @@ export const workHistory = {
     ],
   },
   marfaStore: {
-    role: "Retail Associate & Gallery Attendant",
+    role: "Ecommerce Manager",
     employer: "The Marfa Store",
     place: "Marfa, TX",
     date: "January 2022 – December 2023",
