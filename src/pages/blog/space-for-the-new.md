@@ -7,7 +7,7 @@ location: Boulder, CO
 tags: ["self-improvement"]
 ---
 
-Donald Glover once said he wasn't a rapper, but he *could rap*. I believe I was in college when I heard him say this. I know I wasn't on campus at the time because I was in a hotel room. I know I was in a hotel room because he was on a talk show and I've never watched a talk show anywhere but in hotel room.
+Donald Glover once said he wasn't a rapper, but he *could rap*. I believe I was in college when I heard him say this. I know I wasn't on campus at the time because I was in a hotel room. I know I was in a hotel room because he was on a talk show and I've never watched a talk show anywhere but in a hotel room.
 
 In 2023 I started learning to build websites. Before that, I’d assumed the people who could code were the same people who were good at math, and I was never good at math, and moreover I was bad at it, and moreover I still am. It's true that in most kinds of programming it helps to have a mathy sort of a brain, but websites are written with HTML and CSS, the languages that dictate content and style, and the results they produce are by and large static. Writing HTML is programming in the sense that you are giving instructions to a computer, but since there’s little formal logic involved, it’s usually not what people mean when they use the word. So while it helps to have a mathy brain in some types of programming, there are other types where it’s less important, only I didn't know that because I’d made certain assumptions about programming and programmers and never bothered to find out if those assumptions were correct.
 
