@@ -44,7 +44,7 @@ const milestones = [
   {
     org: "Kase Scenarios",
     orgUrl: "https://kasescenarios.com/",
-    milestone: "SCP: Insurgency Kase Scenario",
+    milestone: "SCP: Insurgency",
     milestoneUrl: "https://kasescenarios.com/scp-insurgency",
     date: "2025-04-19",
     cert: "Certificate",
@@ -53,7 +53,7 @@ const milestones = [
   {
     org: "Kase Scenarios",
     orgUrl: "https://kasescenarios.com/",
-    milestone: "Orkla: Dragon Con Detective Kase Scenario",
+    milestone: "Orkla: Dragon Con Detective",
     milestoneUrl: "https://courses.kasescenarios.com/courses/dragoncon",
     date: "2025-04-18",
     cert: "Certificate",
@@ -71,15 +71,20 @@ const milestones = [
     {
       milestones.map((milestone) => (
         <li class="milestone">
-          <strong class="milestone">
-            <a href={milestone.milestoneUrl}>{milestone.milestone}</a> @{" "}
-            <a href={milestone.orgUrl}>{milestone.org}</a>
-          </strong>
           <time>{milestone.date}</time>
+          <strong class="milestone">
+            <i>
+              <a href={milestone.milestoneUrl}>{milestone.milestone}</a>
+            </i>{" "}
+            @ <a href={milestone.orgUrl}>{milestone.org}</a>
+          </strong>
+
           {milestone.cert && milestone.certUrl && (
-            <a href={milestone.certUrl} target="_blank">
-              Certificate
-            </a>
+            <div class="details">
+              <a href={milestone.certUrl} target="_blank">
+                Certificate
+              </a>
+            </div>
           )}
         </li>
       ))
@@ -105,13 +110,9 @@ const milestones = [
     font-size: var(--font-medium);
   }
 
-  div.details {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
   time {
+    color: var(--accent);
+    font-size: var(--font-small);
     display: block;
   }
 </style>
