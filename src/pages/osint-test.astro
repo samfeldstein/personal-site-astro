@@ -65,12 +65,9 @@ const milestones = [
     {
       milestones.map((milestone) => (
         <li class="milestone">
-          <strong>{milestone.milestone}</strong>
+          <strong><a href={milestone.milestoneUrl}></a>{milestone.milestone}</strong>
           <p>Organization: {milestone.org}</p>
           <p>Date: {milestone.date}</p>
-          <p>
-            <a href={milestone.milestoneUrl}>Course URL</a>
-          </p>
           {milestone.cert && milestone.certUrl && (
             <p>
               <a href={milestone.certUrl} target="_blank">

@@ -119,11 +119,6 @@ a {
   transition-duration: 0.1s;
 }
 
-a[href^="http://"]::after,
-a[href^="https://"]::after {
-  content: ➶;
-}
-
 a:not(.skiplink):hover,
 a:not(.skiplink):focus,
 a:not(.skiplink):active {
