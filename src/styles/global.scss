@@ -117,12 +117,15 @@ a {
   color: inherit;
   text-decoration: none;
   transition-duration: 0.1s;
+  border-radius: 4px;
+  padding: 0.1em 0.25em;
 }
 
 a:not(.skiplink):hover,
 a:not(.skiplink):focus,
 a:not(.skiplink):active {
-  color: var(--accent);
+background-color: var(--text-color);
+color: var(--background-color);
 }
 
 // Page content

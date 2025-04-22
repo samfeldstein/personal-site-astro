@@ -65,7 +65,7 @@ const milestones = [
     {
       milestones.map((milestone) => (
         <li class="milestone">
-          <strong><a href={milestone.milestoneUrl}></a>{milestone.milestone}</strong>
+          <strong><a class="milestone-name" href={milestone.milestoneUrl}>{milestone.milestone}</a></strong>
           <p>Organization: {milestone.org}</p>
           <p>Date: {milestone.date}</p>
           {milestone.cert && milestone.certUrl && (
@@ -93,5 +93,9 @@ const milestones = [
     border-radius: 4px;
     padding: 1rem;
     box-shadow: 0 4px 6px #777777;
+  }
+
+  .milestone-name {
+    font-size: var(--font-medium);
   }
 </style>
