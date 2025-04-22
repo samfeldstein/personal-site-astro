@@ -75,14 +75,12 @@ const milestones = [
             <a href={milestone.milestoneUrl}>{milestone.milestone}</a> @{" "}
             <a href={milestone.orgUrl}>{milestone.org}</a>
           </strong>
-          <div class="details">
-            <time>{milestone.date}</time>
-            {milestone.cert && milestone.certUrl && (
-              <a href={milestone.certUrl} target="_blank">
-                Certificate
-              </a>
-            )}
-          </div>
+          <time>{milestone.date}</time>
+          {milestone.cert && milestone.certUrl && (
+            <a href={milestone.certUrl} target="_blank">
+              Certificate
+            </a>
+          )}
         </li>
       ))
     }
@@ -114,6 +112,7 @@ const milestones = [
   }
 
   time {
-    color: var(--accent)
+    display: block;
+    color: var(--accent);
   }
 </style>
