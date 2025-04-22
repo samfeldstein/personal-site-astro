@@ -119,10 +119,9 @@ a {
   transition-duration: 0.1s;
 }
 
-a[href^="http://"],
-a[href^="https://"] {
-  color: var(--accent);
-  text-decoration: underline;
+a[href^="http://"]::after,
+a[href^="https://"]::after {
+  content: ➶;
 }
 
 a:not(.skiplink):hover,
