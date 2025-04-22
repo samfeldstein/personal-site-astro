@@ -118,15 +118,12 @@ a {
   text-decoration: none;
   transition-duration: 0.1s;
   display: inline-block;
-  border-radius: 4px;
-  padding: 0.1em 0.25em;
 }
 
 a:not(.skiplink):hover,
 a:not(.skiplink):focus,
 a:not(.skiplink):active {
-background-color: var(--text-color);
-color: var(--background-color);
+color: var(--accent);
 }
 
 // Page content
