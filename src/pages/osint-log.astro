@@ -71,16 +71,16 @@ const milestones = [
     {
       milestones.map((milestone) => (
         <li class="milestone">
-          <time>{milestone.date}</time>
-          <strong class="milestone">
+          <div class="milestone">
             <i>
               <a href={milestone.milestoneUrl}>{milestone.milestone}</a>
             </i>{" "}
             @ <a href={milestone.orgUrl}>{milestone.org}</a>
-          </strong>
+          </div>
 
           {milestone.cert && milestone.certUrl && (
             <div class="details">
+              <time>{milestone.date}</time>|
               <a href={milestone.certUrl} target="_blank">
                 Certificate
               </a>
@@ -106,13 +106,19 @@ const milestones = [
     box-shadow: 0 4px 6px #777777;
   }
 
-  strong.milestone {
-    font-size: var(--font-medium);
+  div.milestone {
+    font: {
+      size: var(--font-medium);
+      weight: 700;
+    }
   }
 
-  time {
-    color: var(--accent);
+  div.details {
     font-size: var(--font-small);
-    display: block;
+    color: var(--accent);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
   }
 </style>
