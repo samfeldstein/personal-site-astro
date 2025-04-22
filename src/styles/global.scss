@@ -119,6 +119,12 @@ a {
   transition-duration: 0.1s;
 }
 
+a[href^="http://"],
+a[href^="https://"] {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 a:not(.skiplink):hover,
 a:not(.skiplink):focus,
 a:not(.skiplink):active {
