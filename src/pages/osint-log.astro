@@ -78,14 +78,15 @@ const milestones = [
             @ <a href={milestone.orgUrl}>{milestone.org}</a>
           </div>
 
-          {milestone.cert && milestone.certUrl && (
+          
             <div class="details">
-              <time>{milestone.date}</time>|
+              <time>{milestone.date}</time>
+              {milestone.cert && milestone.certUrl && (
+              <span>|</span>
               <a href={milestone.certUrl} target="_blank">
-                Certificate
-              </a>
+              Certificate
+              </a>)}
             </div>
-          )}
         </li>
       ))
     }
@@ -109,13 +110,6 @@ const milestones = [
   div.milestone {
     font-size: var(--font-medium);
     font-weight: 700;
-
-    a {
-      &:hover,
-      &:focus {
-        color: var(--text-color);
-      }
-    }
   }
 
   div.details {
@@ -125,5 +119,12 @@ const milestones = [
     display: flex;
     flex-wrap: wrap;
     gap: 0.25rem;
+
+    a {
+      &:hover,
+      &:focus {
+        color: var(--text-color);
+      }
+    }
   }
 </style>
