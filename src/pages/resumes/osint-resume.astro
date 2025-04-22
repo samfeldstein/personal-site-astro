@@ -1,0 +1,64 @@
+---
+// Layout
+import Resume from "../../layouts/Resume.astro";
+
+// Styles
+import "/src/styles/_reset.css";
+import "/src/styles/_resume.scss";
+import "/src/styles/_resume-print.scss";
+
+// Define relevant items
+const contactLinks = [
+  { name: "Writing", url: "/writing/" },
+  { name: "GitHub", url: "https://github.com/samfeldstein" },
+];
+
+const relevantWork = [
+  "composition",
+  "devFreelance",
+  "devAssistant",
+  "journalistSentinel",
+  "devSentinel",
+];
+const relevantProjects = ["regreen", "postoley", "prairieRose", "likeMovies"];
+const relevantVolunteer = ["communityHealthAndEquine", "workaway", "frida"];
+
+const skills = [
+  {
+    category: "Journalism",
+    items: [
+      "Professional and creative writing",
+      "Interviewing",
+      "Fact-checking",
+    ],
+  },
+  {
+    category: " Editorial",
+    items: [
+      "Web publishing workflows",
+      "Typography and formatting",
+      "Search Engine Optimization",
+    ],
+  },
+  {
+    category: "Technical",
+    items: [
+      "Content Management Systems",
+      "Web Design and Development",
+      "Accessibility best practices",
+    ],
+  },
+];
+---
+
+<Resume
+  jobTitle="OSINT Analyst"
+  jobTitleFirstHalf="OSINT"
+  jobTitleSecondHalf="Analyst"
+  printUrl="osint-analyst"
+  contactLinks={contactLinks}
+  skills={skills}
+  relevantWork={relevantWork}
+  relevantProjects={relevantProjects}
+  relevantVolunteer={relevantVolunteer}
+/>
