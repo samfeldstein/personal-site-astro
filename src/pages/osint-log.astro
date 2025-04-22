@@ -5,6 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const milestones = [
   {
     org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
     milestone: "Careers in OSINT",
     milestoneUrl:
       "https://www.myosint.training/courses/take/careers-using-osint-skills/",
@@ -14,6 +15,7 @@ const milestones = [
   },
   {
     org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
     milestone: "Introduction to OSINT",
     milestoneUrl:
       "https://www.myosint.training/courses/take/introduction-to-osint/",
@@ -23,6 +25,7 @@ const milestones = [
   },
   {
     org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
     milestone: "My OSINT Training Pretest",
     milestoneUrl: "https://myosint.link/pretest1",
     date: "2025-04-20",
@@ -31,6 +34,7 @@ const milestones = [
   },
   {
     org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
     milestone: "My OSINT Training Intro course",
     milestoneUrl: "https://www.myosint.training/courses/introduction-to-osint",
     date: "2025-04-20",
@@ -39,6 +43,7 @@ const milestones = [
   },
   {
     org: "Kase Scenarios",
+    orgUrl: "https://kasescenarios.com/",
     milestone: "SCP: Insurgency Kase Scenario",
     milestoneUrl: "https://kasescenarios.com/scp-insurgency",
     date: "2025-04-19",
@@ -47,6 +52,7 @@ const milestones = [
   },
   {
     org: "Kase Scenarios",
+    orgUrl: "https://kasescenarios.com/",
     milestone: "Orkla: Dragon Con Detective Kase Scenario",
     milestoneUrl: "https://courses.kasescenarios.com/courses/dragoncon",
     date: "2025-04-18",
@@ -65,16 +71,18 @@ const milestones = [
     {
       milestones.map((milestone) => (
         <li class="milestone">
-          <strong><a class="milestone-name" href={milestone.milestoneUrl}>{milestone.milestone}</a></strong>
-          <p>Organization: {milestone.org}</p>
-          <p>Date: {milestone.date}</p>
-          {milestone.cert && milestone.certUrl && (
-            <p>
+          <strong class="milestone">
+            <a href={milestone.milestoneUrl}>{milestone.milestone}</a> @{" "}
+            <a href={milestone.orgUrl}>{milestone.org}</a>
+          </strong>
+          <div class="details">
+            <time>{milestone.date}</time>
+            {milestone.cert && milestone.certUrl && (
               <a href={milestone.certUrl} target="_blank">
                 Certificate
               </a>
-            </p>
-          )}
+            )}
+          </div>
         </li>
       ))
     }
@@ -95,7 +103,11 @@ const milestones = [
     box-shadow: 0 4px 6px #777777;
   }
 
-  .milestone-name {
+  strong.milestone {
     font-size: var(--font-medium);
+  }
+
+  div.details {
+    color: var(--accent);
   }
 </style>
