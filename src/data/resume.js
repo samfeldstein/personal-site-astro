@@ -13,65 +13,6 @@ export const education = [
   },
 ];
 
-export const OsintMilestones = [
-  {
-    org: "My OSINT Training",
-    orgUrl: "https://www.myosint.training/",
-    milestone: "Careers in OSINT",
-    milestoneUrl:
-      "https://www.myosint.training/courses/take/careers-using-osint-skills/",
-    date: "2025-04-22",
-    cert: "Certificate",
-    certUrl: "/files/certificate-my-osint-training-careers.pdf",
-  },
-  {
-    org: "My OSINT Training",
-    orgUrl: "https://www.myosint.training/",
-    milestone: "Introduction to OSINT",
-    milestoneUrl:
-      "https://www.myosint.training/courses/take/introduction-to-osint/",
-    date: "2025-04-22",
-    cert: "Certificate",
-    certUrl: "/files/certificate-my-osint-training-introduction.pdf",
-  },
-  {
-    org: "My OSINT Training",
-    orgUrl: "https://www.myosint.training/",
-    milestone: "My OSINT Training Pretest",
-    milestoneUrl: "https://myosint.link/pretest1",
-    date: "2025-04-20",
-    cert: "",
-    certUrl: "",
-  },
-  {
-    org: "My OSINT Training",
-    orgUrl: "https://www.myosint.training/",
-    milestone: "My OSINT Training Intro course",
-    milestoneUrl: "https://www.myosint.training/courses/introduction-to-osint",
-    date: "2025-04-20",
-    cert: "",
-    certUrl: "",
-  },
-  {
-    org: "Kase Scenarios",
-    orgUrl: "https://kasescenarios.com/",
-    milestone: "SCP: Insurgency Kase Scenario",
-    milestoneUrl: "https://kasescenarios.com/scp-insurgency",
-    date: "2025-04-19",
-    cert: "Certificate",
-    certUrl: "/files/kase-certificate-scp-insurgency.pdf",
-  },
-  {
-    org: "Kase Scenarios",
-    orgUrl: "https://kasescenarios.com/",
-    milestone: "Orkla: Dragon Con Detective Kase Scenario",
-    milestoneUrl: "https://courses.kasescenarios.com/courses/dragoncon",
-    date: "2025-04-18",
-    cert: "Certificate",
-    certUrl: "/files/kase-certificate-dragon-con-detective.pdf",
-  },
-];
-
 export const workHistory = {
   composition: {
     role: "Bookseller",
