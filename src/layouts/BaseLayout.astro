@@ -1,6 +1,6 @@
 ---
 // Components
-import BaseHead from "../components/BaseHead.astro";
+import Head from "../components/Head.astro";
 import Skiplink from "../components/Skiplink.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -11,7 +11,7 @@ const { title, description, ogTitle, ogType, schema } = Astro.props;
 
 <!doctype html>
 <html lang="en" prefix="og:https://ogp.me/ns#">
-  <BaseHead
+  <Head
     title={title}
     description={description}
     ogTitle={ogTitle}

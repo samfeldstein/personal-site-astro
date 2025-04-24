@@ -1,6 +1,5 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-
+import Head from "../components/Head.astro";
 
 // Styles
 import "/src/styles/_index.scss";
@@ -19,7 +18,13 @@ const schema = {
 };
 ---
 
-<BaseLayout ogTitle="Sam Feldstein's Personal Website" schema={schema}>
+<Head
+  title="Sam Feldstein's Personal Website"
+  ogTitle="Sam Feldstein's Personal Website"
+  schema={schema}
+/>
+
+<body>
   <h1 class="visually-hidden">Sam Feldstein's Personal Website</h1>
 
   <section id="intro">
@@ -33,4 +38,4 @@ const schema = {
       lot from people writing on the internet and I'd like to pay it forward.
     </p>
   </section>
-</BaseLayout>
+</body>
