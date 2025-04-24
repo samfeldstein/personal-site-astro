@@ -11,14 +11,6 @@ import { filterDrafts } from "../scripts/utils.ts";
 // Styles
 import "/src/styles/_index.scss";
 
-const posts = await getCollection("blog", filterDrafts);
-
-sortCollectionByDate(posts);
-
-// Images
-import latestPhoto from "/src/images/gallery/matt-heckler-9.jpg";
-import latestSite from "/src/images/regreen-screenshot.png";
-
 // Data
 import { site } from "../../config.mjs";
 
@@ -46,64 +38,5 @@ const schema = {
       I don't have a particular objective for this website, but I've learned a
       lot from people writing on the internet and I'd like to pay it forward.
     </p>
-
-    <section id="photography">
-      <h2>Latest Photo</h2>
-      <figure class="photo">
-        <Image
-          class="latest-photo"
-          src={latestPhoto}
-          widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-          sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-          alt="Matt Heckler playing at the Skylark Lounge."
-        />
-        <figcaption>Matt Heckler at the Skylark Lounge.</figcaption>
-      </figure>
-      <p class="text-right">
-        <a href="/photos/">See all photos >>></a>
-      </p>
-    </section>
-
-    <section id="latest-website">
-      <h2>Latest Website</h2>
-      <p>
-        An environmental restoration project in Far West Texas. Built with
-        Wordpress.
-      </p>
-      <a class="image" href="https://regreenbigbend.com">
-        <Image
-          class="latest-site"
-          src={latestSite}
-          widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-          sizes="(min-width: 1020px) 707px, (min-width: 780px) calc(81.82vw - 111px), calc(100vw - 32px)"
-          alt="The ReGreen Studio website logo."
-        />
-      </a>
-      <p class="text-right"><a href="/websites/">See all websites >>></a></p>
-    </section>
-
-    <section id="latest-posts">
-      <h2>Latest Posts</h2>
-
-      <ul class="latest-posts">
-        {
-          posts.slice(0, 3).map((post) => (
-            <li class="latest-posts">
-              <Date date={post.data.pubDate} />
-              <a
-                href={`/blog/${post.id}/`}
-                class="latest-posts title"
-                set:html={post.data.title}
-              />
-              <Tags tags={post.data.tags} path="blog" />
-            </li>
-          ))
-        }
-      </ul>
-
-      <p class="more">
-        <a href="/blog/">See all posts >>></a>
-      </p>
-    </section>
   </section>
 </BaseLayout>
