@@ -2,7 +2,6 @@
 // Components
 import BaseHead from "../components/BaseHead.astro";
 import Skiplink from "../components/Skiplink.astro";
-import Sidebar from "../components/Sidebar.astro";
 import MobileMenu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
@@ -21,19 +20,10 @@ const { title, description, ogTitle, ogType, schema } = Astro.props;
   />
   <body>
     <Skiplink />
-    <Sidebar />
-    <div class="content-container flex-column">
-      <MobileMenu />
-      <main id="main-content">
-        <slot />
-      </main>
-      <SiteFooter />
-    </div>
+    <MobileMenu />
+    <main id="main-content">
+      <slot />
+    </main>
+    <SiteFooter />
   </body>
 </html>
-
-<style>
-  div.content-container {
-    flex: 4;
-  }
-</style>

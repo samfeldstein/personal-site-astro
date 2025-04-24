@@ -129,11 +129,7 @@ color: var(--accent);
 .content-container {
   flex: 1;
 
-  a:not(nav a, .tag) {
-    font-variant: small-caps;
-    text-transform: lowercase;
-    letter-spacing: 0.75px;
-  }
+  
 }
 
 ::selection {
