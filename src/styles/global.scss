@@ -38,7 +38,6 @@ body {
   margin: 0 auto;
   padding: 1rem;
   max-width: 70rem;
-  display: flex;
 
   font-family: "EB Garamond", Georgia, serif;
   font-size: clamp(1rem, 6vw, 1.5rem);
@@ -125,11 +124,10 @@ a:not(.skiplink):active {
 color: var(--accent);
 }
 
-// Page content
-.content-container {
-  flex: 1;
-
-  
+a:not(nav a, .tag) {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.75px;
 }
 
 ::selection {
