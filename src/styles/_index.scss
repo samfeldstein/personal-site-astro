@@ -1,71 +1,13 @@
-p:first-child {
-  margin-top: 0;
+body {
+  max-width: 60rem;
 }
 
-span {
+span.name {
   font-variant: small-caps;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.2em;
 }
 
-.notes.source {
-  display: flex;
-  justify-content: space-between;
-  font-size: 1rem;
-}
-
-ul.latest-posts {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
+nav, div.contact {
   display: grid;
   gap: 1rem;
-}
-
-li.latest-posts {
-  border: 1px solid;
-  padding: 1rem;
-  display: grid;
-  gap: 1rem;
-}
-
-a.title {
-  font-size: var(--font-medium);
-  text-decoration: none;
-}
-
-p.more {
-  text-align: right;
-}
-
-figure.photo {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: white;
-  padding: 0.5rem;
-  border-radius: 2px;
-}
-
-figcaption {
-  color: #1a1a1a;
-  text-align: center;
-  font-family: "5th Grade Cursive", serif;
-  font-size: 1rem;
-  padding-top: 0.5em;
-}
-
-img.latest-site {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 2px;
-}
-
-ul.tags {
-  display: flex;
-  gap: 0.5em 1em;
-  flex-wrap: wrap;
-  justify-content: center;
-  font-size: var(--font-small);
-}
-
-time {
-  font-size: var(--font-small);
 }

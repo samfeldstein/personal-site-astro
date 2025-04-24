@@ -37,10 +37,10 @@ html {
 body {
   margin: 0 auto;
   padding: 1rem;
-  max-width: 70rem;
+  max-width: 60rem;
 
   font-family: "EB Garamond", Georgia, serif;
-  font-size: clamp(1rem, 6vw, 1.5rem);
+  font-size: clamp(1rem, 6vw, 1.75rem);
 }
 
 main {
@@ -70,22 +70,16 @@ h3 {
 h1 {
   font: {
     family: "EB Garamond", serif;
-    variant: small-caps;
-    weight: 900;
-    size: clamp(2.75rem, 6vw, 3.5rem);
+    size: clamp(2.75rem, 6vw, 3rem);
+    weight: 400;
   }
-
-  text: {
-    transform: lowercase;
-  }
-
-  margin: 0;
 }
 
 h2 {
   font: {
-    size: clamp(2.5rem, 6vw, 3rem);
+    size: clamp(2.5rem, 6vw, 2.5rem);
     weight: 400;
+    style: italic;
   }
 
   text: {
@@ -121,10 +115,10 @@ a {
 a:not(.skiplink):hover,
 a:not(.skiplink):focus,
 a:not(.skiplink):active {
-color: var(--accent);
+  color: var(--accent);
 }
 
-a:not(nav a, .tag) {
+a:not(.tag) {
   font-variant: small-caps;
   text-transform: lowercase;
   letter-spacing: 0.75px;
