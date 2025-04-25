@@ -18,16 +18,6 @@ const blogs = [
     url: "https://home.omg.lol",
   },
   {
-    author: "Alan Jacobs",
-    title: "The Homebound Symphony",
-    url: "https://blog.ayjay.org/",
-  },
-  {
-    author: "Awwwards Panel",
-    title: "Awwwards",
-    url: "https://www.awwwards.com",
-  },
-  {
     author: "Ben LaCroix",
     title: "benlacroix.com",
     url: "https://benlacroix.com",
@@ -53,24 +43,9 @@ const blogs = [
     url: "https://gwern.net/",
   },
   {
-    author: "Henrik Karlsson",
-    title: "Escaping Flatland",
-    url: "https://www.henrikkarlsson.xyz/",
-  },
-  {
     author: "Henry Desroches",
     title: "True Terrors of the New Dark Web",
     url: "https://henry.codes",
-  },
-  {
-    author: "Henry Desroches",
-    title: "Hire Me (please)",
-    url: "https://hireme.website",
-  },
-  {
-    author: "Henry Desroches",
-    title: "Strange Website",
-    url: "https://strange.website",
   },
   {
     author: "Jonathan Basile",
@@ -168,7 +143,7 @@ const blogs = [
         <li>
           <a href={blog.url}>
             <span class="author">
-              <strong>{blog.author} @</strong>
+              {blog.author} @
             </span>
             <span class="title">
               <em>{blog.title}</em>
