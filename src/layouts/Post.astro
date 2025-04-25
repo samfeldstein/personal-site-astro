@@ -32,7 +32,7 @@ const schema = {
     <h1 set:html={frontmatter.title}/>
     {
       frontmatter.description && (
-        <p class="description" set:html={frontmatter.description.replace(/'(.*?)'/, "<em>$1</em>")}/>
+        <p class="description" set:html={frontmatter.description.replace(/'(.*?)'/, "<span class='normal'>$1</span>")}/>
       )
     }
     {(<Tags tags={frontmatter.tags} path="blog" />)}
@@ -146,5 +146,10 @@ const schema = {
     font-family: "5th Grade Cursive", serif;
     font-size: 1rem;
     padding-top: 0.5em;
+  }
+
+  /* Handle titles in descriptions */
+  span.normal {
+    font-style: normal;
   }
 </style>

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Post.astro
 title: "It's Not the Story's Fault You Thought You Were Still on the Ranch"
-description: Two short essays and one longish essay inspired by <cite>Lonesome Dove</cite>.
+description: Two short essays and one longish essay inspired by 'Lonesome Dove'.
 pubDate: 2023-12-05
 location: Alpine, TX
 tags: ["movies", "tv"]
