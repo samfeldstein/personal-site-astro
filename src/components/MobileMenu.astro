@@ -1,12 +1,10 @@
 ---
-import MenuContent from "./MenuContent.astro";
+import Menu from "./Menu.astro";
 ---
 
 <details>
   <summary>Menu</summary>
-  <div>
-    <MenuContent />
-  </div>
+  <Menu />
 </details>
 
 <style>
@@ -16,21 +14,6 @@ import MenuContent from "./MenuContent.astro";
     top: 0px;
     background: var(--background-color);
     margin-bottom: 1rem;
-
-    @media screen and (min-width: 768px) {
-      display: none;
-    }
-  }
-
-  details > div {
-    padding: 1rem;
-    position: absolute;
-    top: 100%;
-    z-index: 1;
-    background-color: var(--background-color);
-    width: 100%;
-    border-style: solid;
-    border-width: 1px;
   }
 
   summary {
@@ -38,16 +21,8 @@ import MenuContent from "./MenuContent.astro";
     border-style: solid;
     border-width: 1px;
 
-    font-size: clamp(1rem, 7vw, 1.25rem);
+    font-size: var(--font-small);
 
     cursor: pointer;
-  }
-</style>
-
-<style is:global>
-  details ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em 1em;
   }
 </style>

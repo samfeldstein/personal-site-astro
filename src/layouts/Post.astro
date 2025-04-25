@@ -106,13 +106,15 @@ const schema = {
     
     padding-bottom: 1rem;
     display: grid;
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .description {
     margin: 0;
-    font-size: clamp(1.5rem, 8vw, 1.65rem);
-    color: var(--accent);
+    /* color: var(--accent); */
+    font-style: italic;
+    text-align: center;
+    text-wrap: pretty;
   }
 </style>
 
@@ -126,7 +128,9 @@ const schema = {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
-    font-size: 1.25rem;
+    justify-content: center;
+    font-variant: small-caps;
+    font-size: var(--font-small);
   }
 
   div.photo {

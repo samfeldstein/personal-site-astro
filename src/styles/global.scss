@@ -11,8 +11,8 @@
     Consolas,
     "DejaVu Sans Mono",
     monospace;
-  --font-small: clamp(1rem, 6vw, 1.25rem);
-  --font-medium: clamp(1.5rem, 8vw, 2rem);
+  --font-small: clamp(1rem, 2vw, 1.25rem);
+  --font-medium: clamp(1rem, 2vw, 1.5rem);
 
   /* Colors */
   color-scheme: light dark;
@@ -43,7 +43,7 @@ body {
   flex-direction: column;
 
   font-family: "EB Garamond", Georgia, serif;
-  font-size: clamp(1rem, 6vw, 1.75rem);
+  font-size: var(--font-medium);
 }
 
 main {
@@ -74,14 +74,18 @@ h3 {
 h1 {
   font: {
     family: "EB Garamond", serif;
-    size: clamp(2.75rem, 6vw, 3rem);
-    weight: 700;
+    size: clamp(1.25rem, 4vw, 3rem);
+    weight: 400;
+    variant: small-caps;
   }
+
+  text-align: center;
+  margin-top: 2rem;
 }
 
 h2 {
   font: {
-    size: clamp(2.5rem, 6vw, 2.5rem);
+    size: clamp(1.25rem, 4vw, 2.25rem);
     weight: 400;
     style: italic;
   }
@@ -90,7 +94,9 @@ h2 {
     align: right;
   }
 
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
 }
 
 h2,
@@ -101,8 +107,6 @@ h4 {
     style: solid;
     width: 0.01em;
   }
-
-  margin-top: 2em;
 }
 
 h3 {
@@ -110,6 +114,7 @@ h3 {
     variant: small-caps;
     weight: 700;
   }
+
   text-transform: lowercase;
   margin-top: 3em;
 }

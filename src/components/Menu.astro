@@ -1,0 +1,60 @@
+<nav>
+  <div class="title">Navigation</div>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li>
+      <a href="/words/">Words</a>
+    </li>
+    <li><a href="/photos/">Photos</a></li>
+    <li>
+      <a href="/code/">Websites</a>
+    </li>
+  </ul>
+
+  <div class="title">Other</div>
+  <ul>
+    <li><a href="/uses/">Uses</a></li>
+    <li><a href="/blogroll/">Blogroll</a></li>
+    <li><a href="https://notebook.samfeldstein.xyz/">Notebook</a></li>
+  </ul>
+
+  <div class="title">Contact & Social</div>
+  <ul>
+    <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
+    <li><a href="https://github.com/samfeldstein">GitHub</a></li>
+    <li><a href="/feed.xml">Feed</a></li>
+  </ul>
+</nav>
+
+<style>
+  nav {
+    font-size: var(--font-small);
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    padding: 1rem;
+    
+    /* Keep from pushing content down when you open the details element */
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+    background-color: var(--background-color);
+    width: 100%;
+  }
+
+  div.title {
+    font-weight: 700;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+  }
+</style>
