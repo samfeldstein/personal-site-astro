@@ -2,7 +2,7 @@
 const { tags, path } = Astro.props;
 ---
 
-<ul class="tags unstyled-list">
+<ul class="tags">
   {
     tags.map((tag) => (
       <li>
@@ -13,3 +13,12 @@ const { tags, path } = Astro.props;
     ))
   }
 </ul>
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 2rem;
+  }
+</style>

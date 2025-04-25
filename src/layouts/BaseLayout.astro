@@ -2,7 +2,6 @@
 // Components
 import Head from "../components/Head.astro";
 import Skiplink from "../components/Skiplink.astro";
-import MobileMenu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 // Variables
@@ -20,10 +19,18 @@ const { title, description, ogTitle, ogType, schema } = Astro.props;
   />
   <body>
     <Skiplink />
-    <MobileMenu />
+    <nav>
+      <a class="home" href="/">Home</a>
+    </nav>
     <main id="main-content">
       <slot />
     </main>
     <SiteFooter />
   </body>
 </html>
+
+<style>
+  a.home {
+    font-size: var(--font-small);
+  }
+</style>

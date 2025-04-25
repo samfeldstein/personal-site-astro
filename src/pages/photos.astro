@@ -28,9 +28,8 @@ const schema = {
 >
   <h1>Photos I've Taken</h1>
   <p>
-    I'm working on getting an online store set up. In the meantime, <a
-      href="mailto:sam@samfeldstein.xyz">shoot me an email</a
-    > if you'd like to order a print.
+    <a href="mailto:sam@samfeldstein.xyz">Shoot me an email</a> if you'd like to
+    order a print.
   </p>
   <div class="gallery">
     {
@@ -59,14 +58,20 @@ const schema = {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     padding: 0.5rem;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 
   div.title {
     color: #1a1a1a;
     text-align: center;
     font-family: "5th Grade Cursive", serif;
-    font-size: 1rem;
+    font-size: var(--font-small);
     padding-top: 0.5em;
+  }
+</style>
+
+<style is:global>
+  body {
+    max-width: 60rem;
   }
 </style>

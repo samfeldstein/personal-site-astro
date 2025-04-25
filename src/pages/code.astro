@@ -1,15 +1,47 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { Image } from "astro:assets";
 
-import pairings from "/src/images/pairings-screenshot.jpg";
-import prairieRose from "/src/images/prairie-rose-arena-screenshot.jpg";
-import personalSite from "/src/images/personal-site-screenshot.jpg";
-import notebook from "/src/images/notebook-homepage-screenshot.jpg";
-import personalSiteHugo from "/src/images/personal-website-hugo-screenshot.jpg";
-import firstWebsite from "/src/images/first-website-screenshot.jpg";
-import danceophile from "/src/images/danceophile-screenshot.jpg";
-import regreen from "/src/images/regreen-screenshot.png";
+// Import resume sections
+const projects = [
+  {
+    title: "Regreen Big Bend",
+    type: "Website",
+    date: "February 2025",
+    url: "https://regreenbigbend.com",
+    source: "https://github.com/samfeldstein/regreen-big-bend",
+  },
+  {
+    title: "Postoley Dance Ensemble",
+    type: "Website",
+    date: "February 2025",
+    url: "https://danceophile.com",
+    source: "https://github.com/samfeldstein/danceophile-studio",
+  },
+  {
+    title: "Digital Notebook",
+    type: "Website",
+    date: "October 2024",
+    url: "https://notebook.samfeldstein.xyz/",
+    source: "https://github.com/sameldstein/notebook",
+    notes:
+      "https://notebook.samfeldstein.xyz/notes/digital-notebook-project-notes/",
+  },
+  {
+    title: "Prairie Rose Arena",
+    type: "Website",
+    date: "May 2024",
+    url: "https://prairierosearena.com/",
+    notes: "https://notebook.samfeldstein.xyz/notes/prairie-rose-arena-notes",
+  },
+  {
+    title: "Pairings",
+    type: "Web Application",
+    date: "May 2024",
+    url: "https://pairingapp.netlify.app",
+    source: "https://github.com/samfeldstein/pairings",
+    notes: "https://notebook.samfeldstein.xyz/notes/pairings-notes",
+  },
+];
 
 const schema = {
   "@context": "https://schema.org",
@@ -28,152 +60,54 @@ const schema = {
   schema={schema}
 >
   <h1>Code I've Coded</h1>
-  <div>
-    <h2>ReGreen Big Bend</h2>
-    <p>
-      An environmental restoration project in Far West Texas. Built with
-      WordPress.
-    </p>
-    <a class="image" href="https://regreenbigbend.com">
-      <Image
-        src={regreen}
-        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-        sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-        alt="The ReGreen Big Bend website logo."
-      />
-    </a>
-    <div class="notes source">
-      <a href="https://github.com/samfeldstein/regreen-big-bend">Source</a>
-    </div>
-  </div>
-
-  <div>
-    <h2>Danceophile Studio</h2>
-    <p>An independent folk dance studio in Boulder, CO. Built with Astro.</p>
-    <a class="image" href="https://danceophile.com">
-      <Image
-        src={danceophile}
-        widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-        sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-        alt="A screenshot of the homepage of the Danceophile Studio website."
-      />
-    </a>
-    <div class="notes source">
-      <a href="https://github.com/samfeldstein/danceophile-studio">Source</a>
-    </div>
-  </div>
-
-  <h2>My Digital Notebook</h2>
-  <p>My personal wiki. Built with Eleventy.</p>
-  <a class="image" href="https://notebook.samfeldstein.xyz/">
-    <Image
-      src={notebook}
-      widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-      alt="A screenshot of the homepage of my personal notebook."
-    />
-  </a>
-  <div class="notes source">
-    <a
-      href="https://notebook.samfeldstein.xyz/notes/digital-notebook-project-notes/"
-      >Notes</a
-    >
-    <a href="https://github.com/sameldstein/notebook">Source</a>
-  </div>
-
-  <h2>Pairings</h2>
-  <p>
-    An app that generates pairings from any two lists. My first JavaScript app.
-  </p>
-  <a class="image" href="https://pairingapp.netlify.app">
-    <Image
-      src={pairings}
-      widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-      alt="A screenshot of the Pairings webapp homepage."
-    />
-  </a>
-  <div class="notes source">
-    <a href="https://notebook.samfeldstein.xyz/notes/pairings-notes">Notes</a>
-    <a href="https://github.com/samfeldstein/pairings">Source</a>
-  </div>
-
-  <h2>Prairie Rose Arena</h2>
-  <p>An equestrian event center in Elkhart, IA. Built with Eleventy.</p>
-  <a class="image" href="https://prairierosearena.com/">
-    <Image
-      src={prairieRose}
-      widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-      alt="A screenshot of the Prairie Rose Arena website homepage."
-    />
-  </a>
-  <div class="notes source">
-    <a href="https://notebook.samfeldstein.xyz/notes/prairie-rose-arena-notes"
-      >Notes</a
-    >
-  </div>
-
-  <h2>Personal Site (current version)</h2>
-  <p>The website you are currently on. Built with Astro.</p>
-  <a class="image" href="/">
-    <Image
-      src={personalSite}
-      widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-      alt="A screenshot of the homepage of Sam Feldstein's personal website."
-    />
-  </a>
-  <div class="notes source">
-    <a href="https://notebook.samfeldstein.xyz/notes/personal-site-notes"
-      >Notes</a
-    >
-    <a href="https://github.com/samfeldstein/personal-site-astro">Source</a>
-  </div>
-
-  <h2>Personal Site (Hugo, archived)</h2>
-  <p>An archived version of my personal site. Built with Hugo.</p>
-  <a class="image" href="https://samfeldstein.github.io/personal-site-hugo/">
-    <Image
-      src={personalSiteHugo}
-      widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-      alt="A screenshot of the homepage of an archived version of Sam Feldstein's personal website."
-    />
-  </a>
-  <div class="notes source">
-    <a href="https://github.com/samfeldstein/personal-site-hugo">Source</a>
-  </div>
-
-  <h2>My First Website</h2>
-  <p>
-    The first version of my personal site. Built by hand. No generators, no
-    nothin.
-  </p>
-  <a class="image" href="https://samfeldstein.github.io/first-website/">
-    <Image
-      src={firstWebsite}
-      widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-      sizes="(min-width: 1180px) 767px, (min-width: 780px) calc(73.95vw - 91px), calc(100vw - 32px)"
-      alt="A screenshot of the homepage of the first website I ever built."
-    />
-  </a>
-  <div class="notes source">
-    <a href="https://github.com/samfeldstein/first-website">Source</a>
-  </div>
+  <ul class="projects">
+    {
+      projects.map((item) => (
+        <li class="project">
+          <a class="name" href={item.url}>
+            {item.title}
+          </a>
+          <div class="info">
+            <span>{item.type} | </span>
+            <time>{item.date}</time>
+            {item.source && (
+              <>
+                <span>|</span>
+                <a href={`${item.source}`}>Source</a>
+              </>
+            )}
+            {item.notes && (
+              <>
+                <span>|</span>
+                <a href={`${item.notes}`}>Notes</a>
+              </>
+            )}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </BaseLayout>
 
 <style>
-  .notes.source {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1rem;
+  ul.projects {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 2rem;
   }
-</style>
 
-<style is:global>
-  img {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 2px;
+  .info {
+    font-size: var(--font-small);
+  }
+
+  a {
+    &.name {
+      font-weight: 700;
+      font-size: var(--font-medium);
+      text-wrap: balance;
+      line-height: 1;
+    }
   }
 </style>
