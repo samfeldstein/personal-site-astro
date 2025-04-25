@@ -4,7 +4,7 @@ title: Absence of Meaning in <cite>The Lighthouse</cite>
 description: A successful exercise in atmosphere, but it's probably about nothing.
 pubDate: 2022-04-05
 location: Alpine, TX
-tags: ["horror", "movies"]
+tags: ["movies"]
 ---
 
 All movies have to become real, on some level, in order to do their good work, and some of them can only achieve this by taking active steps to distance themselves from reality. All movies do this to some extent simply by appearing on a screen, but some of them, as with *The Lighthouse*, need a little more than that. Eggers’s choice to shoot on 35mm negative in an aspect ratio of 1.19:1 is the kind of cinematic idiosyncrasy usually referred to as an “artistic” decision, though its effect here is intensely pragmatic. Watching something so outwardly anachronistic forces a peculiar kind of dissonance. It untethers us from the real world, such as we experience it, and with the blast of a foghorn, tips us headlong into the film’s frigid, perpetually overcast, horrific, salt-sprayed world. And now that we’re here, we’ll buy whatever bizarro bunkum the film wants to sell. Throw in all the shrieking banshee mermaids and tentacle monsters you want, we’ll eat it up and ask for seconds. In the words of Sam Spade, we’ll take it and we’ll like it. All this to say that *The Lighthouse* isn’t so much a movie as it is an experience.

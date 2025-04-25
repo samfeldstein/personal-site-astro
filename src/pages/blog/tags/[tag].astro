@@ -2,6 +2,9 @@
 // Layout
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 
+// Components
+import Date from "../../../components/Date.astro";
+
 // Collections
 import { getCollection } from "astro:content";
 
@@ -49,7 +52,10 @@ const schema = {
     {
       posts.map((post) => (
         <li>
-          <a href={`/blog/${post.id}/`} set:html={post.data.title} />
+          <a class="title" href={`/blog/${post.id}/`} set:html={post.data.title} />
+          <div class="info">
+            <Date date={post.data.pubDate} />
+          </div>
         </li>
       ))
     }
@@ -62,14 +68,26 @@ const schema = {
   h1 {
     font-style: italic;
   }
-  
+
   ul {
+    list-style-type: none;
     display: grid;
     gap: 2rem;
     margin: 6rem 0;
+    padding: 0;
   }
 
-  li {
-    padding-left: 1rem;
+  .info {
+    font-size: var(--font-small);
+  }
+
+  a {
+    &.title {
+      font-weight: 700;
+      font-size: var(--font-medium);
+      display: inline-block;
+      text-wrap: balance;
+      line-height: 1;
+    }
   }
 </style>
