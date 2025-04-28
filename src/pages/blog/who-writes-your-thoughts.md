@@ -25,8 +25,8 @@ or after-the-thought.
 
 But there is a before-the-thought  
 and an after-the-thought.  
-Therefore, "you"  
+Therefore, “you”  
 (in the sense that we mean)  
 can't have written the thought.  
-But if not "you"  
+But if not “you”  
 who?

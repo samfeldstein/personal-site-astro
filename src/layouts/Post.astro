@@ -29,6 +29,7 @@ const schema = {
   schema={schema}
 >
   <header class="page-header" aria-label="Page Header">
+
     <h1 set:html={frontmatter.title}/>
     {
       frontmatter.description && (
@@ -95,6 +96,10 @@ const schema = {
 </BaseLayout>
 
 <style>
+  h1 {
+    margin-bottom: 0;
+  }
+  
   .dateline {
     font-size: 0.75em;
     margin-top: 4rem;
@@ -117,9 +122,6 @@ const schema = {
 </style>
 
 <style is:global>
-  h1 {
-    margin-bottom: 0;
-  }
   
   ul.tags {
     margin: 0;

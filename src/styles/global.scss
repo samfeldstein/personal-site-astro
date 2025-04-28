@@ -123,6 +123,9 @@ a {
   color: inherit;
   text-decoration: none;
   transition-duration: 0.1s;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.75px;
 }
 
 a:not(.skiplink):hover,
@@ -132,12 +135,6 @@ a:not(.skiplink):active {
   text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-}
-
-a:not(.tag) {
-  font-variant: small-caps;
-  text-transform: lowercase;
-  letter-spacing: 0.75px;
 }
 
 ::selection {

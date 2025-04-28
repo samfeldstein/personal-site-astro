@@ -47,12 +47,16 @@ const schema = {
   description=`Posts tagged "${tag}".`
   schema={schema}
 >
-  <h1>#{tag}</h1>
+  <h1>Posts About {tag}</h1>
   <ul>
     {
       posts.map((post) => (
         <li>
-          <a class="title" href={`/blog/${post.id}/`} set:html={post.data.title} />
+          <a
+            class="title"
+            href={`/blog/${post.id}/`}
+            set:html={post.data.title}
+          />
           <div class="info">
             <Date date={post.data.pubDate} />
           </div>
@@ -66,9 +70,10 @@ const schema = {
 
 <style>
   h1 {
-    font-style: italic;
+    /* Tags are lowercare by default */
+    text-transform: capitalize;
   }
-
+  
   ul {
     list-style-type: none;
     display: grid;

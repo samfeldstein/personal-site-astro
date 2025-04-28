@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
-title: And God Said, "Care, Dammit"
+title: And God Said, “Care, Dammit”
 description: Talmudic wisdom in 'The Exorcist.'
 pubDate: 2023-12-05
 location: Alpine, TX
