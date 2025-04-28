@@ -128,7 +128,8 @@ a {
 a:not(.skiplink):hover,
 a:not(.skiplink):focus,
 a:not(.skiplink):active {
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
