@@ -74,7 +74,7 @@ The potential impact from the loss of an asset is rated as medium, because the I
 - [x] Firewall
 - [ ] Intrusion detection system (IDS)
 - [ ] Backups
-- [ ] Antivirus software
+- [x] Antivirus software
 - [ ] Manual monitoring, maintenance, and intervention for legacy systems
 - [ ] Encryption
 - [ ] Password management system
@@ -87,7 +87,7 @@ The potential impact from the loss of an asset is rated as medium, because the I
 #### Payment Card Industry Data Security Standard (PCI DSS)
 
 - [ ] Only authorized users have access to customers’ credit card information.
-- [x] Credit card information is stored, accepted, processed, and transmitted internally, in a secure environment.
+- [ ] Credit card information is stored, accepted, processed, and transmitted internally, in a secure environment.
 - [ ] Implement data encryption procedures to better secure credit card transaction touchpoints and data. 
 - [ ] Adopt secure password management policies.
 
@@ -95,7 +95,7 @@ The potential impact from the loss of an asset is rated as medium, because the I
 
 - [ ] E.U. customers’ data is kept private/secured.
 - [x] There is a plan in place to notify E.U. customers within 72 hours if their data is compromised/there is a breach.
-- [x] Ensure data is properly classified and inventoried.
+- [ ] Ensure data is properly classified and inventoried.
 - [x] Enforce privacy policies, procedures, and processes to properly document and maintain data.
 
 #### System and Organizations Controls (SOC type 1, SOC type 2)
@@ -103,7 +103,7 @@ The potential impact from the loss of an asset is rated as medium, because the I
 - [ ] User access policies are established.
 - [ ] Sensitive data (PII/SPII) is confidential/private.
 - [x] Data integrity ensures the data is consistent, complete, accurate, and has been validated.
-- [x] Data is available to individuals authorized to access it.
+- [ ] Data is available to individuals authorized to access it.
 
 ## Recommendations
 
@@ -118,7 +118,6 @@ Based on the controls and compliance checklist assessment, here are key recommen
 - Establish manual monitoring and maintenance procedures for legacy systems that may lack automated security features.
 - Adopt a centralized password management system to improve credential security and reduce password-related risks.
 - Implement a secure backup strategy to mitigate risks of data loss and ransomware attacks.
-- Install antivirus software to safeguard against malware and emerging cyber threats.
 
 ### Enhance Compliance with Regulations
 
