@@ -107,9 +107,10 @@ const schema = {
               set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")}
             />
             <div class="info">
-              <span>{item.type} | </span>
+              <span>{item.type}</span>
+              <span>|</span>
               <span class="outlet">{item.outlet}</span>
-              <span> | </span>
+              <span>|</span>
               <span>{item.date}</span>
             </div>
           </li>
@@ -172,8 +173,8 @@ const schema = {
   }
 
   span.outlet {
-      font-style: italic;
-    }
+    font-style: italic;
+  }
 </style>
 
 <style is:global>
