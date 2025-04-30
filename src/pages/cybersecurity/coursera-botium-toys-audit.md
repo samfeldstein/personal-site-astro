@@ -65,21 +65,40 @@ The potential impact from the loss of an asset is rated as medium, because the I
 
 ## Controls and compliance checklist
 
-### Payment Card Industry Data Security Standard (PCI DSS)
+### Controls assessment
+
+- [ ] Least Privilege
+- [ ] Disaster recovery plans
+- [ ] Password policies
+- [ ] Separation of duties
+- [x] Firewall
+- [ ] Intrusion detection system (IDS)
+- [ ] Backups
+- [ ] Antivirus software
+- [ ] Manual monitoring, maintenance, and intervention for legacy systems
+- [ ] Encryption
+- [ ] Password management system
+- [x] Locks (offices, storefront, warehouse)
+- [x] Closed-circuit television (CCTV) surveillance
+- [x] Fire detection/prevention (fire alarm, sprinkler system, etc.)
+
+### Compliance assessment
+
+#### Payment Card Industry Data Security Standard (PCI DSS)
 
 - [ ] Only authorized users have access to customers’ credit card information.
 - [x] Credit card information is stored, accepted, processed, and transmitted internally, in a secure environment.
 - [ ] Implement data encryption procedures to better secure credit card transaction touchpoints and data. 
 - [ ] Adopt secure password management policies.
 
-### General Data Protection Regulation (GDPR)
+#### General Data Protection Regulation (GDPR)
 
 - [ ] E.U. customers’ data is kept private/secured.
 - [x] There is a plan in place to notify E.U. customers within 72 hours if their data is compromised/there is a breach.
 - [x] Ensure data is properly classified and inventoried.
 - [x] Enforce privacy policies, procedures, and processes to properly document and maintain data.
 
-### System and Organizations Controls (SOC type 1, SOC type 2)
+#### System and Organizations Controls (SOC type 1, SOC type 2)
 
 - [ ] User access policies are established.
 - [ ] Sensitive data (PII/SPII) is confidential/private.
