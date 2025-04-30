@@ -55,6 +55,12 @@ main {
     text-align: justify;
     hyphens: auto;
   }
+
+  ul,
+  ol {
+    display: grid;
+    gap: 0.75rem;
+  }
 }
 
 p,
@@ -96,13 +102,12 @@ h2 {
 
   padding-top: 0.5rem;
   margin-top: 4rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
-h2,
-h4 {
+h2 {
 
-  // text-align: right;
+  text-align: right;
   border-top: {
     style: solid;
     width: 0.01em;
@@ -116,7 +121,11 @@ h3 {
   }
 
   text-transform: lowercase;
-  margin-top: 3em;
+  margin-top: 2em;
+}
+
+h4 {
+  font-style: italic;
 }
 
 a {
@@ -157,5 +166,17 @@ blockquote {
     font-style: normal;
     display: block;
     margin-top: 1em;
+  }
+}
+
+// Handle checkboxes. As far as I know, this is only in use on the cybersecurity page.
+ul.contains-task-list {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 1rem;
+    align-items: first baseline;
   }
 }
