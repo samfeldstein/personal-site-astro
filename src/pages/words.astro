@@ -108,9 +108,8 @@ const schema = {
             />
             <div class="info">
               <span>{item.type} | </span>
-              <span>
-                <em>{item.outlet} | </em>
-              </span>
+              <span class="outlet">{item.outlet}</span>
+              <span> | </span>
               <span>{item.date}</span>
             </div>
           </li>
@@ -171,6 +170,10 @@ const schema = {
       line-height: 1;
     }
   }
+
+  span.outlet {
+      font-style: italic;
+    }
 </style>
 
 <style is:global>
@@ -178,6 +181,7 @@ const schema = {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
+    font-size: var(--font-smallest);
 
     a {
       display: inline-block;
