@@ -31,21 +31,11 @@ const { posts } = Astro.props;
 
 // Calls
 sortCollectionByDate(posts);
-
-// Data
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: `Posts Tagged "${tag.charAt(0).toUpperCase() + tag.slice(1)}" | Sam Feldstein's Blog`,
-  url: `https://samfeldstein.xyz/blog/tags/${tag}`,
-  description: `Posts tagged "${tag}"`,
-};
 ---
 
 <BaseLayout
-  title=`Posts Tagged "${tag.charAt(0).toUpperCase() + tag.slice(1)}"`
+  title=`Posts About ${tag.charAt(0).toUpperCase() + tag.slice(1)}`
   description=`Posts tagged "${tag}".`
-  schema={schema}
 >
   <h1>Posts About {tag}</h1>
   <ul>

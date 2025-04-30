@@ -75,8 +75,7 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "CreativeWork",
   name: "Writing | Sam Feldstein",
-  description:
-    "My portfolio of fiction, short stories, poetry, essays, news articles, and blog posts.",
+  description: "My professional and personal writing",
   url: "https://samfeldstein.xyz/words/",
   image:
     "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp",
@@ -88,7 +87,12 @@ const schema = {
 };
 ---
 
-<BaseLayout title="Writing" schema={schema}>
+<BaseLayout
+  title="Writing"
+  description="My professional and personal writing"
+  ogType="website"
+  schema={schema}
+>
   <h1>Writing I've Written</h1>
 
   <section class="published">
@@ -174,7 +178,7 @@ const schema = {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
-    
+
     a {
       display: inline-block;
       padding: 0.15rem 0.25rem 0.15rem 0;

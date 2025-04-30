@@ -12,21 +12,11 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("blog");
 const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
 tags.sort();
-
-// Data
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Blog Tags | Sam Feldstein",
-  url: "https://samfeldstein.xyz/blog/tags/",
-  description: "Browse my blog by category.",
-};
 ---
 
 <BaseLayout
   title="Blog Tags"
   description="Browse my blog by category."
-  schema={schema}
 >
   <h1>Tags</h1>
   <Tags tags={tags} path="blog" />

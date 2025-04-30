@@ -5,18 +5,25 @@ import Skiplink from "../components/Skiplink.astro";
 import Menu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
+import { site } from "../../config.mjs";
+
 // Variables
-const { title, description, ogTitle, ogType, schema } = Astro.props;
+const {
+  title = `${site.title}`,
+  description = `${site.description}`,
+  ogTitle = `${title}`,
+  ogType = "website",
+  frontmatter,
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" prefix="og:https://ogp.me/ns#">
   <Head
-    title={title}
-    description={description}
-    ogTitle={ogTitle}
-    ogType={ogType}
-    schema={schema}
+    title={title || frontmatter.title}
+    description={description || frontmatter.description}
+    ogTitle={ogTitle || title || frontmatter.ogTitle || frontmatter.title}
+    ogType={ogType || frontmatter.ogType}
   />
   <body>
     <Skiplink />

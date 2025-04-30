@@ -1,7 +1,6 @@
 ---
 layout: ../../layouts/Post.astro
 title: Who Writes Your Thoughts?
-description: ""
 pubDate: 2024-07-02
 location: New Orleans, LA
 tags: ["psychology", "poetry"]
