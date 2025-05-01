@@ -89,7 +89,7 @@ h2 {
 
   padding-top: 0.5rem;
   margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 h2 {
@@ -168,6 +168,14 @@ ul.contains-task-list {
     gap: 1rem;
     align-items: first baseline;
   }
+}
+
+pre {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--accent);
+  border-radius: 4px;
+  padding: 1rem;
 }
 
 code {

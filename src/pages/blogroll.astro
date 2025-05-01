@@ -63,6 +63,11 @@ const blogs = [
     url: "https://ribo.zone",
   },
   {
+    author: "Maggie Appleton",
+    title: "maggieappleton.com",
+    url: "https://maggieappleton.com/",
+  },
+  {
     author: "Maria Popova",
     title: "The Marginalian",
     url: "https://www.themarginalian.org/",
@@ -142,9 +147,7 @@ const blogs = [
       blogs.map((blog) => (
         <li>
           <a href={blog.url}>
-            <span class="author">
-              {blog.author} @
-            </span>
+            <span class="author">{blog.author} @</span>
             <span class="title">
               <em>{blog.title}</em>
             </span>
@@ -159,7 +162,7 @@ const blogs = [
   h1 {
     margin-bottom: 2em;
   }
-  
+
   ul {
     list-style-type: none;
     padding: 0;
