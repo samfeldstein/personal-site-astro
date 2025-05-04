@@ -1,4 +1,5 @@
 {
+  // https://docs.astro.build/en/guides/content-collections/#typescript-configuration-for-collections
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
     "strictNullChecks": true,

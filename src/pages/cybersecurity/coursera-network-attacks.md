@@ -2,10 +2,6 @@
 layout: ../../layouts/BaseLayout.astro
 ---
 
-import { Image } from "astro:assets";
-
-import tcpdump from "../../images/coursera-network-traffic-analysis.jpg";
-
 # Coursera Practice: Cybersecurity Incident Report
 
 Completed on **May 3, 2025**. You can find the assignment on [Coursera's website](https://www.coursera.org/learn/networks-and-network-security/assignment-submission/QHIX5/activity-analyze-network-attacks/).

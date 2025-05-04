@@ -1,0 +1,48 @@
+---
+// Notes must be in the content folder for this to work
+
+import MobileMenu from "../../components/MobileMenu.astro";
+import Skiplink from "../../components/Skiplink.astro";
+import Head from "../../components/Head.astro";
+import Tags from "../../components/Tags.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+
+import "../../styles/_note.scss";
+
+import { getCollection, render } from "astro:content";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const posts = await getCollection("notes");
+  return posts.map((note) => ({
+    params: { id: note.id },
+    props: { note },
+  }));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { note } = Astro.props;
+const { Content } = await render(note);
+---
+
+<!doctype html>
+<html lang="en">
+  <Head title={note.data.title} description={note.data.description} />
+  <body>
+    <Skiplink />
+    <header class="page-header">
+      <MobileMenu/>
+      <h1 set:html={note.data.title} />
+      {
+        note.data.description && (
+          <p class="description" set:html={note.data.description} />
+        )
+      }
+      {(<Tags tags={note.data.tags} path="notes" />)}
+    </header>
+    <main id="main-content">
+      <article>
+        <Content />
+      </article>
+    </main>
+    <SiteFooter/>
+  </body>
+</html>

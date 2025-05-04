@@ -1,0 +1,28 @@
+h1 {
+  margin-bottom: 0;
+}
+
+.page-header {
+  border-bottom-style: solid;
+  border-bottom-width: 0.5px;
+
+  padding-bottom: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.description {
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+}
+
+ul.tags {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+  font-variant: small-caps;
+  font-size: var(--font-small);
+}

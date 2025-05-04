@@ -6,8 +6,14 @@ import "/src/styles/global.scss";
 import { site } from "../../config.mjs";
 
 // Variables and properties
-const { title, description, ogTitle, ogDescription, ogType, ogImage, schema } =
-  Astro.props;
+const {
+  title,
+  description = title,
+  ogTitle = title,
+  ogDescription = description,
+  ogType = "website",
+  ogImage,
+} = Astro.props;
 ---
 
 <head>
@@ -63,17 +69,14 @@ const { title, description, ogTitle, ogDescription, ogType, ogImage, schema } =
   </title>
   <meta name="author" content="Sam Feldstein" />
   <meta name="description" content={description || site.description} />
-  <meta property="og:title" content={ogTitle || title || site.title} />
-  <meta name="twitter:title" content={ogTitle || title || site.title} />
-  <meta
-    property="og:description"
-    content={ogDescription || description || site.description}
-  />
+  <meta property="og:title" content={ogTitle || site.title} />
+  <meta name="twitter:title" content={ogTitle || site.title} />
+  <meta property="og:description" content={ogDescription || site.description} />
   <meta
     name="twitter:description"
-    content={ogDescription || description || site.description}
+    content={ogDescription || site.description}
   />
-  <meta property="og:type" content={ogType || "website"} />
+  <meta property="og:type" content={ogType} />
   <meta property="og:url" content={Astro.url.href} />
   <meta
     property="og:image"
