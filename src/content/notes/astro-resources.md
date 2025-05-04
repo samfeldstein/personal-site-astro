@@ -1,9 +1,9 @@
 ---
 title: Astro Resources
 tags:
-  - astro
-  - web development
-  - static site generators
+  - Astro
+  - Web Development
+  - Static Site Generators
 created: 2025-02-02
 updated: 2025-03-03
 ---

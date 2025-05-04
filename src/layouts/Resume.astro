@@ -1,5 +1,5 @@
 ---
-import "/src/styles/_reset.css";
+import "/src/styles/_reset.scss";
 import "/src/styles/_resume.scss";
 import "/src/styles/_resume-print.scss";
 
@@ -259,7 +259,7 @@ const relevantVolunteerData = relevantVolunteer.map(
             {
               publications.map((pub) => (
                 <li>
-                  <cite class="publication h3" set:html={pub.title}></cite>
+                  <cite class="publication h3" set:html={pub.title} />
                   <div class="info">
                     {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
                     <time>{pub.date}</time>

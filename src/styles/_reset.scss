@@ -49,6 +49,14 @@ select {
   font: inherit;
 }
 
+hr {
+  border: none;
+  height: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {

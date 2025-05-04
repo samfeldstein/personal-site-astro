@@ -1,5 +1,5 @@
 @import url("/src/styles/_fonts.css");
-@import url("/src/styles/_reset.css");
+@import url("/src/styles/_reset.scss");
 @import url("/src/styles/_utilities.css");
 
 :root {
@@ -178,7 +178,16 @@ pre {
   padding: 1rem;
 }
 
-code, samp {
+code,
+samp {
   font-family: var(--font-body);
   font-weight: 700;
+}
+
+
+hr {
+  border-top-style: solid;
+  border-width: 0.5px;
+  border-color: var(--accent);
+  margin: 1rem 0;
 }

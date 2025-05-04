@@ -2,7 +2,7 @@
 title: Advice
 created: 2025-01-25
 updated: 2025-01-25
-tags: ["life"]
+tags: ["Life"]
 ---
 
 - **[Avoid bullshit](https://paulgraham.com/vb.html),** where "bullshit" is anything that completes the sentence "Life is too short for..."
