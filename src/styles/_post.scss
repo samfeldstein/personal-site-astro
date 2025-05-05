@@ -57,3 +57,10 @@ div.photo-caption {
 span.normal {
   font-style: normal;
 }
+
+div.signoff {
+  text-align: right;
+  font-size: var(--font-small);
+  font-style: italic;
+  margin-top: 4rem;
+}

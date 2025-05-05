@@ -6,6 +6,7 @@ import Skiplink from "../../components/Skiplink.astro";
 import Head from "../../components/Head.astro";
 import Tags from "../../components/Tags.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
+import Date from "../../components/Date.astro";
 
 import "../../styles/_post.scss";
 
@@ -31,8 +32,9 @@ const { Content } = await render(post);
   <Head title={post.data.title} description={post.data.description} />
   <body>
     <Skiplink />
+    <MobileMenu />
     <header class="page-header">
-      <MobileMenu />
+      
       <h1 set:html={post.data.title} />
       {
         post.data.description && (
@@ -45,6 +47,10 @@ const { Content } = await render(post);
       <article>
         <Content />
       </article>
+      <div class="signoff">
+        <div>{post.data.location}</div>
+        <Date date={post.data.pubDate} />
+      </div>
     </main>
     <SiteFooter />
   </body>
