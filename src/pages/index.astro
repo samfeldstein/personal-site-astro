@@ -19,46 +19,49 @@ const schema = {
 };
 ---
 
-<Head
-title="Sam Feldstein's Personal Website"
+
+
+<html lang="en-us">
+  <Head
+  title="Sam Feldstein's Personal Website"
   description={site.description}
   ogTitle="Sam Feldstein's Personal Website"
   ogType="website"
   schema={schema}
 />
+  <body>
+    <h1>Hi, I'm <span class="name">Sam Feldstein</span></h1>
+    <main id="main-content">
+      <section id="intro">
+        <p>
+          I'm a sometime blogger and hobbyist web developer. I don't have a
+          particular objective for this website, but I've learned a lot from
+          people writing on the internet and I'd like to pay it forward.
+        </p>
+      </section>
 
-<body>
-  <h1>Hi, I'm <span class="name">Sam Feldstein</span></h1>
-  <main id="main-content">
-    <section id="intro">
-      <p>
-        I'm a sometime blogger and hobbyist web developer. I don't have a
-        particular objective for this website, but I've learned a lot from
-        people writing on the internet and I'd like to pay it forward.
-      </p>
-    </section>
+      <section id="nav">
+        <h2>Navigation</h2>
+        <nav>
+          <a href="/words/">Words</a>
+          <a href="/code/">Code</a>
+          <a href="/photos/">Photos</a>
+          <a href="/uses/">Uses</a>
+          <a href="/blogroll/">Blogroll</a>
+          <a href="https://notebook.samfeldstein.xyz/">Notebook</a>
+        </nav>
+      </section>
 
-    <section id="nav">
-      <h2>Navigation</h2>
-      <nav>
-        <a href="/words/">Words</a>
-        <a href="/code/">Code</a>
-        <a href="/photos/">Photos</a>
-        <a href="/uses/">Uses</a>
-        <a href="/blogroll/">Blogroll</a>
-        <a href="https://notebook.samfeldstein.xyz/">Notebook</a>
-      </nav>
-    </section>
+      <section>
+        <h2>Contact & Social</h2>
+        <div class="contact">
+          <a href="mailto:sam@samfeldstein.xyz">Email</a>
+          <a href="https://github.com/samfeldstein">GitHub</a>
+          <a href="/feed.xml">Feed</a>
+        </div>
+      </section>
+    </main>
 
-    <section>
-      <h2>Contact & Social</h2>
-      <div class="contact">
-        <a href="mailto:sam@samfeldstein.xyz">Email</a>
-        <a href="https://github.com/samfeldstein">GitHub</a>
-        <a href="/feed.xml">Feed</a>
-      </div>
-    </section>
-  </main>
-
-  <SiteFooter />
-</body>
+    <SiteFooter />
+  </body>
+</html>

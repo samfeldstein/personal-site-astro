@@ -156,4 +156,20 @@ const {
 
     uninstallServiceWorkers();
   </script>
+
+  <!-- Prefetch internal links -->
+  <script type="speculationrules">
+    {
+      "rules": [
+        {
+          "action": "prefetch",
+          "source": "document",
+          "where": {
+            "href_matches": "^/.*"
+          },
+          "eagerness": "eager"
+        }
+      ]
+    }
+  </script>
 </head>
