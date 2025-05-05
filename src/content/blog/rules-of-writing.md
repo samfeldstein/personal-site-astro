@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: My Rules of Writing
 description: And you know what they say about rules.
 pubDate: 2025-02-11

@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/Post.astro
 title: Space for the New
 description: The best way to make space for the new is to challenge your assumptions about yourself, and the best way to challenge your assumptions about yourself is to make space for the new.
 pubDate: 2025-04-16
 location: Boulder, CO
 tags: ["life"]
+draft: true
 ---
 
 Donald Glover once said he wasn't a rapper, but he *could rap*. I believe I was in college when I heard him say this. I know I wasn't on campus at the time because I was in a hotel room. I know I was in a hotel room because he was on a talk show and I've never watched a talk show anywhere but in a hotel room.

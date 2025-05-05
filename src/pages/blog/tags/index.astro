@@ -9,23 +9,24 @@ import Tags from "../../../components/Tags.astro";
 import { getCollection } from "astro:content";
 
 // Variables
-const posts = await getCollection("blog");
-const tags = [...new Set(posts.map((post) => post.data.tags).flat())];
-tags.sort();
+// Filter drafts when building for production
+const posts = await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
+const tags = [...new Set(posts.map((post) => post.data.tags).flat())].sort(
+  (a, b) => a.localeCompare(b),
+);
 ---
 
-<BaseLayout
-  title="Blog Tags"
-  description="Browse my blog by category."
->
+<BaseLayout title="Blog Tags" description="Browse my blog by category.">
   <h1>Tags</h1>
   <Tags tags={tags} path="blog" />
 </BaseLayout>
 
 <style is:global>
   ul {
-display: grid;
-gap: 1rem;
+    display: grid;
+    gap: 1rem;
 
     .tag {
       font-size: inherit;

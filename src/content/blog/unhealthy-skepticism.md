@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: Unhealthy Skepticism
 pubDate: 2024-07-02
 location: New Orleans, LA

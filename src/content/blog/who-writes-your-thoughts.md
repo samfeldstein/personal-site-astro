@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: Who Writes Your Thoughts?
 pubDate: 2024-07-02
 location: New Orleans, LA

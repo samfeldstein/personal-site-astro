@@ -8,8 +8,10 @@ export function sortCollectionByDate(collection) {
   return collection;
 }
 
-export function filterDrafts({ data }) {
-  return import.meta.env.PROD ? data.draft !== true : true;
+export function formatTag(str) {
+  return str
+    .replace(/-/g, ' ') // Replace hyphens with spaces
+    .replace(/\b\w/g, char => char.toUpperCase()); // Capitalize the first letter of each word
 }
 
 export async function getGalleryImages() {

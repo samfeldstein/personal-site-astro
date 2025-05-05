@@ -14,6 +14,7 @@ import { sortCollectionByDate } from "../../../scripts/utils.ts";
 // Functions
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
+  
   const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
   return uniqueTags.map((tag) => {
@@ -25,19 +26,23 @@ export async function getStaticPaths() {
   });
 }
 
+import { formatTag } from "../../../scripts/utils.ts";
+
 // Variables
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+
+const formattedTag = formatTag(tag);
 
 // Calls
 sortCollectionByDate(posts);
 ---
 
 <BaseLayout
-  title=`Posts About ${tag.charAt(0).toUpperCase() + tag.slice(1)}`
-  description=`Posts tagged "${tag}".`
+  title=`Posts about ${formattedTag}`
+  description=`Posts tagged "${formattedTag}".`
 >
-  <h1>Posts About {tag}</h1>
+  <h1>Posts about {formattedTag}</h1>
   <ul>
     {
       posts.map((post) => (
@@ -59,11 +64,6 @@ sortCollectionByDate(posts);
 </BaseLayout>
 
 <style>
-  h1 {
-    /* Tags are lowercare by default */
-    text-transform: capitalize;
-  }
-  
   ul {
     list-style-type: none;
     display: grid;

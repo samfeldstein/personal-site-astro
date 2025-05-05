@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: What is Rain?
 description: Poetry as a way of thinking.
 pubDate: 2024-03-16

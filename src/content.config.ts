@@ -9,28 +9,17 @@ import { glob } from 'astro/loaders';
 
 // Collections
 const blog = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx,yml}', base: './src/pages/blog' }),
-  // schema: z.object({
-  //   title: z.string(),
-  //   pubDate: z.date(),
-  //   location: z.string(),
-  //   description: z.string(),
-  //   tags: z.array(z.string()),
-  //   draft: z.boolean().optional().default(true),
-  // }),
-});
-
-const notes = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/notes' }),
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
+    pubDate: z.date(),
+    location: z.string(),
     description: z.string().optional(),
-    created: z.coerce.date(),
-    updated: z.coerce.date().optional(),
     tags: z.array(z.string()),
-    private: z.boolean().optional().default(true),
-  })
-})
+    // If set to true, filters all posts even if key not in frontmatter
+    draft: z.boolean().optional().default(false),
+  }),
+});
 
 // Export a single `collections` object to register your collection(s)
-export const collections = { blog, notes };
+export const collections = { blog };

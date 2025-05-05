@@ -1,18 +1,20 @@
 // Not sure how to render MDX in the xml feed. This might help: https://scottwillsey.com/rss-pt2/
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
-import { filterDrafts } from '../scripts/utils';
-import { sortCollectionByDate } from "../scripts/utils.ts";
+import { sortCollectionByDate } from '../scripts/utils';
 import { site } from "../../config.mjs";
 
 export async function GET(context) {
-  const blog = await getCollection('blog', filterDrafts);
-  sortCollectionByDate(blog);
+  // Filter drafts
+  const publishedPosts = await getCollection('blog', ({ data }) => { return data.draft !== true; });
+  console.log(publishedPosts);
+  
+  sortCollectionByDate(publishedPosts);
   return rss({
     title: "Sam Feldstein's Blog",
     description: `${site.description}`,
     site: context.site,
-    items: blog.map((post) => ({
+    items: publishedPosts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,
       description: post.data.description,

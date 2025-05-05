@@ -7,42 +7,45 @@ import Head from "../../components/Head.astro";
 import Tags from "../../components/Tags.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 
-import "../../styles/_note.scss";
+import "../../styles/_post.scss";
 
 import { getCollection, render } from "astro:content";
-// 1. Generate a new path for every collection entry
+
 export async function getStaticPaths() {
-  const posts = await getCollection("notes");
-  return posts.map((note) => ({
-    params: { id: note.id },
-    props: { note },
+  // Filter drafts when building for production
+  const posts = await getCollection("blog", ({ data }) => {
+    return import.meta.env.PROD ? data.draft !== true : true;
+  });
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
   }));
 }
-// 2. For your template, you can get the entry directly from the prop
-const { note } = Astro.props;
-const { Content } = await render(note);
+
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <!doctype html>
 <html lang="en">
-  <Head title={note.data.title} description={note.data.description} />
+  <Head title={post.data.title} description={post.data.description} />
   <body>
     <Skiplink />
     <header class="page-header">
-      <MobileMenu/>
-      <h1 set:html={note.data.title} />
+      <MobileMenu />
+      <h1 set:html={post.data.title} />
       {
-        note.data.description && (
-          <p class="description" set:html={note.data.description} />
+        post.data.description && (
+          <p class="description" set:html={post.data.description} />
         )
       }
-      {(<Tags tags={note.data.tags} path="notes" />)}
+      {(<Tags tags={post.data.tags} path="blog" />)}
     </header>
     <main id="main-content">
       <article>
         <Content />
       </article>
     </main>
-    <SiteFooter/>
+    <SiteFooter />
   </body>
 </html>

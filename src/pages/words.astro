@@ -5,9 +5,11 @@ import Tags from "../components/Tags.astro";
 
 import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils.ts";
-import { filterDrafts } from "../scripts/utils.ts";
 
-const posts = await getCollection("blog", filterDrafts);
+// Filter drafts when building for production
+const posts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
 sortCollectionByDate(posts);
 
 const writing = [
@@ -67,31 +69,12 @@ const writing = [
     url: "https://thefridacinema.org/film-criticism/absence-of-meaning-the-lighthouse/",
   },
 ];
-
-// writing.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-// Structured Data
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  name: "Writing | Sam Feldstein",
-  description: "My professional and personal writing",
-  url: "https://samfeldstein.xyz/words/",
-  image:
-    "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp",
-  author: {
-    "@type": "Person",
-    name: "Sam Feldstein",
-    url: "https://samfeldstein.xyz",
-  },
-};
 ---
 
 <BaseLayout
   title="Writing"
-  description="My professional and personal writing"
+  description="My professional and personal writing."
   ogType="website"
-  schema={schema}
 >
   <h1>Writing I've Written</h1>
 

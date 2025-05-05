@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: The First
 description: A different theory of strings.
 pubDate: 2024-02-27

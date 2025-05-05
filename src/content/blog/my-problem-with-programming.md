@@ -1,6 +1,5 @@
 ---
-layout: ../../layouts/Post.astro
-title: My Problem With Programming
+title: My Problem with Programming
 description: I like programming, but I don't know yet if it can tell me anything about how the world works.
 pubDate: 2024-06-09
 location: New Orleans, LA

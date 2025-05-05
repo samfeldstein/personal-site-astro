@@ -1,7 +1,6 @@
 ---
-layout: ../../layouts/Post.astro
 title: "D'var Coen: Kindness as Duh-Statement"
-description: "Thoughts on 'A Serious Man.'"
+description: "Thoughts on <cite>A Serious Man</cite>."
 pubDate: 2025-02-20
 location: Boulder, CO
 tags: ["movies", "judaism"]

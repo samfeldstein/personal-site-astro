@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Post.astro
 title: Buffalo Sorting and My First Gambling Foray
 description: Notes from the Badlands.
 pubDate: 2023-11-12
