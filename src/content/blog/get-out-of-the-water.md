@@ -4,6 +4,7 @@ description: On worry, intuition, and trying new things.
 pubDate: 2024-02-06
 location: Bondurant, IA
 tags: ["life", "work"]
+draft: true
 ---
 
 Paul Graham once described [prestige as a magnet](https://www.paulgraham.com/love.html) that warps your ability to tell the difference between what you like and what you'd like to like. I think that's right, and I think you could extend the analogy to any number of confounding forces (desire, greed, peer pressure, parental pressure, societal pressure, how good you are at lying to yourself, conventional wisdom, overconfidence, underconfidence, misguided devotion to a bygone aspiration, et al) that distort your thinking, cloud your motives, and altogether make understanding yourself and why you do the things you do much harder than understanding yourself and why you do the things you do has any right to be.

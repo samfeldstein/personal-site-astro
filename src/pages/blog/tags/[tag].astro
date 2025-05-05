@@ -13,8 +13,8 @@ import { sortCollectionByDate } from "../../../scripts/utils.ts";
 
 // Functions
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  
+// Filter drafts. Won't see the tag page in prod. Tried filtering them same way as posts so you can see them in prod, but doesn't work here.
+  const posts = await getCollection("blog", ({ data }) => data.draft !== true);
   const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
   return uniqueTags.map((tag) => {
