@@ -26,3 +26,5 @@ pnpm-debug.log*
 package-lock.json
 .obsidian/
 dist
+templates
+default.md
