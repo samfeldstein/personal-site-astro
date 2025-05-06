@@ -10,6 +10,7 @@ import { sortCollectionByDate } from "../scripts/utils.ts";
 const posts = await getCollection("blog", ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
 });
+// Sort posts by date
 sortCollectionByDate(posts);
 
 const writing = [
@@ -71,12 +72,8 @@ const writing = [
 ];
 ---
 
-<BaseLayout
-  title="Writing"
-  description="My professional and personal writing."
-  ogType="website"
->
-  <h1>Writing I've Written</h1>
+<BaseLayout title="Writing" description="My professional and personal writing.">
+  <h1>Words</h1>
 
   <section class="published">
     <h2>Published Work</h2>

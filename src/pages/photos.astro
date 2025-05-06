@@ -9,24 +9,13 @@ import { Image } from "astro:assets";
 import { getGalleryImages } from "../scripts/utils";
 
 const photos = await getGalleryImages();
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ImageGallery",
-  name: "Photos I've Taken | Sam Feldstein",
-  url: "https://samfeldstein.xyz/photos/",
-  description:
-    "My photography portfolio of portraits, concert photography, and equestrian events.",
-  image: "https://samfeldstein.xyz/images/baby-possum.jpg",
-};
 ---
 
 <BaseLayout
-  title="Photos I've Taken"
-  description="My photography portfolio of portraits, concert photography, and equestrian events."
-  schema={schema}
+  title="Photos"
+  description="My photography portfolio."
 >
-  <h1>Photos I've Taken</h1>
+  <h1>Photos</h1>
   <p>
     <a href="mailto:sam@samfeldstein.xyz">Shoot me an email</a> if you'd like to
     order a print.
@@ -65,7 +54,7 @@ const schema = {
     color: #1a1a1a;
     text-align: center;
     font-family: "5th Grade Cursive", serif;
-    font-size: clamp(1rem, 1vw, 1.25rem);
+    font-size: clamp(0.75rem, 1vw, 1.25rem);
     padding-top: 0.5em;
   }
 </style>
