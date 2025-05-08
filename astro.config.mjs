@@ -1,4 +1,6 @@
 import { defineConfig } from "astro/config";
+
+// Plugins
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 

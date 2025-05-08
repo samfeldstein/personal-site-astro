@@ -25,6 +25,4 @@ Home to my gallery, blog, portfolio, and more.
 - Vanilla CSS
 - Markdown and MDX for content
 
-The site is published with [Cloudflare Pages](https://pages.cloudflare.com).
-
-You can read more about this website in [my notes on the subject](https://notebook.samfeldstein.xyz/notes/personal-site-notes/).
+The site is published with [Cloudflare Pages](https://pages.cloudflare.com). You can read more about it in [my notes on the subject](https://notebook.samfeldstein.xyz/notes/personal-site-notes/).

@@ -1,66 +1,17 @@
 ---
-import { author } from "../../config.mjs";
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  name: "Blogs I Read | Sam Feldstein",
-  url: "https://samfeldstein.xyz/blogroll/",
-  description: "Blogs I read + websites I enjoy and admire.",
-};
 
 // Blogroll
 const blogs = [
-  {
-    author: "Adam Newbold",
-    title: "omg.lol",
-    url: "https://home.omg.lol",
-  },
-  {
-    author: "Ben LaCroix",
-    title: "benlacroix.com",
-    url: "https://benlacroix.com",
-  },
-  {
-    author: "Brittany Walker",
-    title: "Musical Web Dev",
-    url: "https://musicalwebdev.com/",
-  },
-  {
-    author: "dimden",
-    title: "Dimden's Hotel",
-    url: "https://dimden.dev",
-  },
-  {
-    author: "Freddie deBoer",
-    title: "Freddie deBoer's Blog",
-    url: "https://freddiedeboer.substack.com/",
-  },
   {
     author: "Gwern Branwen",
     title: "gwern.net",
     url: "https://gwern.net/",
   },
   {
-    author: "Henry Desroches",
-    title: "True Terrors of the New Dark Web",
-    url: "https://henry.codes",
-  },
-  {
     author: "Jonathan Basile",
     title: "Library of Babel",
     url: "https://libraryofbabel.info",
-  },
-  {
-    author: "Kheoh Yee Wei",
-    title: "The Best Films on Wikipedia",
-    url: "https://kudos.wiki",
-  },
-  {
-    author: "Loren",
-    title: "ribo.zone",
-    url: "https://ribo.zone",
   },
   {
     author: "Maggie Appleton",
@@ -73,29 +24,9 @@ const blogs = [
     url: "https://www.themarginalian.org/",
   },
   {
-    author: "Matt Round",
-    title: "vole.wtf",
-    url: "https://vole.wtf",
-  },
-  {
-    author: "Molly White",
-    title: "Web3 is Going Just Great",
-    url: "https://www.web3isgoinggreat.com",
-  },
-  {
-    author: "Neal Agarwal",
-    title: "neal.fun",
-    url: "https://neal.fun",
-  },
-  {
     author: "Paul Graham",
     title: "paulgraham.com",
     url: "https://www.paulgraham.com/",
-  },
-  {
-    author: "Peter Himmelman",
-    title: "Morning Musings",
-    url: "https://peterhimmelman.substack.com",
   },
   {
     author: "Scott Aaronson",
@@ -108,37 +39,16 @@ const blogs = [
     url: "https://www.astralcodexten.com/",
   },
   {
-    author: "Sefaria",
-    title: "sefaria.org",
-    url: "https://www.sefaria.org/texts",
-  },
-  {
-    author: "Sharif Shameem",
-    title: "En",
-    url: "https://en.app",
-  },
-  {
-    author: "Stephanie Eckles",
-    title: "Style Stage",
-    url: "https://stylestage.dev",
-  },
-  {
     author: "Tim Urban",
     title: "Wait But Why",
     url: "https://waitbutwhy.com/",
-  },
-  {
-    author: "Viktor Lofgren",
-    title: "Marginalia",
-    url: "https://www.marginalia.nu",
   },
 ];
 ---
 
 <BaseLayout
   title="Blogs I Read + Websites I Like"
-  description="Blogs I read + websites I enjoy and admire."
-  schema={schema}
+  description="Blogs I read + websites I like."
 >
   <h1>Blogs I Read + Websites I Like</h1>
 

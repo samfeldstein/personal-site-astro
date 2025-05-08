@@ -4,6 +4,10 @@ layout: ../../layouts/BaseLayout.astro
 
 # Coursera Challenge: Use Linux Commands to Manage File Permissions
 
+Completed on **May 07, 2025**. You can find the complete assignment on [Coursera's website](https://www.coursera.org/learn/linux-and-sql/assignment-submission/3qweg/portfolio-activity-use-linux-commands-to-manage-file-permissions/attempt).
+
+**Assignment:** Demonstrate your experience using Linux commands to manage file permissions.
+
 ## Scenario
 
 You are a security professional at a large organization. You mainly work with their research team. Part of your job is to ensure users on this team are authorized with the appropriate permissions. This helps keep the system secure.
