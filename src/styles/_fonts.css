@@ -46,6 +46,7 @@
   font-display: swap;
 }
 
+/* Used in photos */
 @font-face {
   font-family: '5th Grade Cursive';
   src: url('/fonts/subset-5thGradeCursive.woff2') format('woff2'),
