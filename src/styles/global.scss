@@ -140,7 +140,7 @@ a:not(.skiplink):active {
 }
 
 blockquote {
-  font-style: italic;
+  font-size: var(--font-small);
   margin: 0 1rem;
   border-left-style: solid;
   border-left-width: 1px;
@@ -155,6 +155,7 @@ blockquote {
     display: block;
     margin-top: 1em;
   }
+
 }
 
 // Handle checkboxes. As far as I know, this is only in use on the cybersecurity page.

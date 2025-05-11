@@ -64,3 +64,13 @@ div.signoff {
   font-style: italic;
   margin-top: 4rem;
 }
+
+// Not quite working yet. If the sentence breaks, the latter half of the sentence won't be in small caps. Looks weird?
+// Also need to account for poems, which might need their own collection and layout
+// article {
+
+//   p:first-of-type::first-line {
+//     font-variant: small-caps;
+//     letter-spacing: 0.75px;
+//   }
+// }
