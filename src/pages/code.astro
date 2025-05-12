@@ -4,6 +4,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 // Import resume sections
 const projects = [
   {
+    title: "The Simplest Writing Tracker",
+    type: "Text-based App",
+    date: "May 2025",
+    source: "https://github.com/samfeldstein/writing-tracker",
+  },
+  {
     title: "Regreen Big Bend",
     type: "Website",
     date: "February 2025",
@@ -35,36 +41,25 @@ const projects = [
   },
   {
     title: "Pairings",
-    type: "Web Application",
+    type: "Web App",
     date: "May 2024",
     url: "https://pairingapp.netlify.app",
     source: "https://github.com/samfeldstein/pairings",
     notes: "https://notebook.samfeldstein.xyz/notes/pairings-notes",
   },
 ];
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Websites I've Built | Sam Feldstein",
-  url: "https://samfeldstein.xyz/code/",
-  description:
-    "My portfolio of custom websites built for small businesses, creatives, and professionals. I specialize in fast, accessible sites built with modern web technologies.",
-  image: "https://samfeldstein.xyz/images/prairie-rose-arena-screenshot.jpg",
-};
 ---
 
 <BaseLayout
   title="Code"
-  description="My portfolio of websites and apps."
-  schema={schema}
+  description="Websites and apps I've built."
 >
   <h1>Code</h1>
   <ul class="projects">
     {
       projects.map((item) => (
         <li class="project">
-          <a class="name" href={item.url}>
+          <a class="name" href={item.url || item.source}>
             {item.title}
           </a>
           <div class="info">
@@ -93,7 +88,7 @@ const schema = {
   h1 {
     margin-bottom: 2em;
   }
-  
+
   ul.projects {
     list-style-type: none;
     margin: 0;
