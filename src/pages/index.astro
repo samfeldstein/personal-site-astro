@@ -7,16 +7,6 @@ import "/src/styles/_index.scss";
 
 // Data
 import { site } from "../../config.mjs";
-
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Sam Feldstein",
-  url: "https://samfeldstein.xyz/",
-  description: site.description,
-  image:
-    "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp",
-};
 ---
 
 <html lang="en-us">
@@ -25,7 +15,6 @@ const schema = {
     description={site.description}
     ogTitle="Sam Feldstein's Personal Website"
     ogType="website"
-    schema={schema}
   />
   <body>
     <h1>Hi, I’m <span class="name">Sam Feldstein</span></h1>
