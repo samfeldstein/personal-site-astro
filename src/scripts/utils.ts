@@ -2,10 +2,9 @@
 import path from "path";
 import { ExifTool } from "exiftool-vendored";
 
-// Transformations
+// Sort collections by date
 export function sortCollectionByDate(collection) {
-  collection.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
-  return collection;
+  return collection.sort((a, b) => new Date(b.data.pubDate) - new Date(a.data.pubDate));
 }
 
 export function formatTag(str) {

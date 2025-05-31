@@ -1,0 +1,26 @@
+ul.entries {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+}
+
+time {
+  display: block;
+  font-size: var(--font-small);
+}
+
+a {
+  &.title {
+    font-weight: 700;
+    font-size: var(--font-medium);
+    display: inline-block;
+    text-wrap: balance;
+    line-height: 1;
+  }
+}
+
+span.outlet {
+  font-style: italic;
+}

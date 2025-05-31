@@ -1,12 +1,11 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+title: "Coursera Practice Audit: Botium Toys"
+pubDate: 2025-04-29
+assignment:
+  description: Complete the Controls and Compliance Checklist based on the provided Scope, Goals, and Risk Assessment Report. Offer security recommendations to Botium's IT department.
+  site: Coursera.org
+  url: https://www.coursera.org/learn/manage-security-risks/assignment-submission/TMBj8/portfolio-activity-conduct-a-security-audit/
 ---
-
-# Coursera Practice Audit: Botium Toys
-
-Completed on **April 29, 2025**. You can find the complete assignment on [Coursera's website](https://www.coursera.org/learn/manage-security-risks/assignment-submission/TMBj8/portfolio-activity-conduct-a-security-audit/).
-
-**Assignment:** Complete the Controls and Compliance Checklist based on the provided Scope, Goals, and Risk Assessment Report. Offer security recommendations to Botium's IT department.
 
 ## Scope, goals, and risk assessment report
 

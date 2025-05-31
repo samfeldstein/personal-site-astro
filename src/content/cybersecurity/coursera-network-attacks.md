@@ -1,12 +1,11 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+title: "Coursera Practice: Cybersecurity Incident Report"
+pubDate: 2025-05-03
+assignment:
+  description: Identify the likely cause of a service interruption to a client's website. Explain how the attack occurred and the negative impact it had on the website.
+  site: Coursera.org
+  url: https://www.coursera.org/learn/networks-and-network-security/assignment-submission/QHIX5/activity-analyze-network-attacks/
 ---
-
-# Coursera Practice: Cybersecurity Incident Report
-
-Completed on **May 3, 2025**. You can find the assignment on [Coursera's website](https://www.coursera.org/learn/networks-and-network-security/assignment-submission/QHIX5/activity-analyze-network-attacks/).
-
-**Assignment:** Identify the likely cause of a service interruption to a client's website. Explain how the attack occurred and the negative impact it had on the website.
 
 ## Scenario
 

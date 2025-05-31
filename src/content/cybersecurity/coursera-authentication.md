@@ -1,12 +1,11 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+title: "Coursera Challenge: Improve Authentication and Authorization for a Small Business"
+pubDate: 2025-05-21
+assignment:
+  description: Assess the access controls used by a business. Analyze their current process, identify issues, and make recommendations to improve their security practices.
+  site: Coursera.org
+  url: https://www.coursera.org/learn/assets-threats-and-vulnerabilities/assignment-submission/waX2u/activity-improve-authentication-authorization-and-accounting-for-a-small/attempt
 ---
-
-# Coursera Challenge: Improve Authentication and Authorization for a Small Business
-
-Completed on **May 21, 2025**. You can find the complete assignment on [Coursera's website](https://www.coursera.org/learn/assets-threats-and-vulnerabilities/assignment-submission/waX2u/activity-improve-authentication-authorization-and-accounting-for-a-small/attempt).
-
-**Assignment:** Assess the access controls used by a business. Analyze their current process, identify issues, and make recommendations to improve their security practices.
 
 ## Scenario
 

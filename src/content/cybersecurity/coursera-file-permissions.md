@@ -1,12 +1,11 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+title: "Coursera Challenge: Use Linux Commands to Manage File Permissions"
+pubDate: 2025-05-07
+assignment:
+  description: Demonstrate your experience using Linux commands to manage file permissions.
+  site: Coursera.org
+  url: https://www.coursera.org/learn/linux-and-sql/assignment-submission/3qweg/portfolio-activity-use-linux-commands-to-manage-file-permissions/attempt
 ---
-
-# Coursera Challenge: Use Linux Commands to Manage File Permissions
-
-Completed on **May 07, 2025**. You can find the complete assignment on [Coursera's website](https://www.coursera.org/learn/linux-and-sql/assignment-submission/3qweg/portfolio-activity-use-linux-commands-to-manage-file-permissions/attempt).
-
-**Assignment:** Demonstrate your experience using Linux commands to manage file permissions.
 
 ## Scenario
 

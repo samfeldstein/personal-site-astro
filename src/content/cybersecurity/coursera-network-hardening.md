@@ -1,12 +1,11 @@
 ---
-layout: ../../layouts/BaseLayout.astro
+title: "Coursera Activity: Network Hardening Analysis"
+pubDate: 2025-05-06
+assignment:
+  description: Conduct a network hardening analysis for a social media organization.
+  site: Coursera.org
+  url: https://www.coursera.org/learn/networks-and-network-security/assignment-submission/9tlOr/activity-analysis-of-network-hardening
 ---
-
-# Coursera Activity: Network Hardening Analysis
-
-Completed on **May 6, 2025**. You can find the assignment on [Coursera's website](https://www.coursera.org/learn/networks-and-network-security/assignment-submission/9tlOr/activity-analysis-of-network-hardening).
-
-**Assignment:** A social media organization recently experienced a major data breach caused by undetected vulnerabilities. Identify some common network hardening tools that can be implemented to protect the organization’s overall security. Select a specific vulnerability that the company has and propose different network hardening methods. Explain how the methods and tools you chose will be effective for managing the vulnerability and how they will prevent potential breaches in the future.
 
 ## Scenario
 

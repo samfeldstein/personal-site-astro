@@ -18,6 +18,18 @@ const blog = defineCollection({
     draft: z.boolean().optional().default(false),
   }),
 });
+const cyber = defineCollection({
+  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/cybersecurity' }),
+  schema: z.object({
+    title: z.string(),
+    pubDate: z.date(),
+    assignment: z.object({
+      description: z.string(),
+      site: z.string(),
+      url: z.string().url()
+    })
+  }),
+});
 
 // Export a single `collections` object to register your collection(s)
-export const collections = { blog };
+export const collections = { blog, cyber };
