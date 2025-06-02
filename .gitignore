@@ -25,5 +25,4 @@ pnpm-debug.log*
 .jampack/
 package-lock.json
 .obsidian/
-dist
 templates
