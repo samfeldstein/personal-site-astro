@@ -3,8 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 const projects = [
   {
+    title: "Shelf Talker Generator",
+    type: "Web App",
+    date: "June 2025",
+    source: "https://github.com/samfeldstein/shelf-talker",
+  },
+  {
     title: "The Simplest Writing Tracker",
-    type: "Text-based App",
+    type: "Terminal App",
     date: "May 2025",
     source: "https://github.com/samfeldstein/writing-tracker",
   },
@@ -27,7 +33,7 @@ const projects = [
     type: "Website",
     date: "October 2024",
     url: "https://notebook.samfeldstein.xyz/",
-    source: "https://github.com/sameldstein/notebook",
+    source: "https://github.com/samfeldstein/notebook",
   },
   {
     title: "Prairie Rose Arena",
@@ -47,10 +53,7 @@ const projects = [
 ];
 ---
 
-<BaseLayout
-  title="Code"
-  description="Websites and apps I've built."
->
+<BaseLayout title="Code" description="Websites and apps I've built.">
   <h1>Code</h1>
   <ul class="projects">
     {
