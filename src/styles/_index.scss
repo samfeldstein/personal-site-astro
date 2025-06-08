@@ -1,7 +1,11 @@
 h1 {
-  text-align: left;
   font-variant: normal;
   font-weight: 400;
+  text-align: left;
+  
+  // Undo global h1 margins
+  margin: unset;
+  margin-top: 3rem;
 }
 
 span.name {

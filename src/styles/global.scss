@@ -59,13 +59,13 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
-  line-height: 1;
 }
 
 h1 {
+  
   font: {
     family: var(--font-body);
-    size: clamp(1.75rem, 4vw, 3rem);
+    size: clamp(1.75rem, 4vw, 2.5rem);
     weight: 700;
     variant: small-caps;
   }
