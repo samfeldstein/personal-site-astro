@@ -1,0 +1,48 @@
+title:
+  full: Writer Editor
+  firstHalf: Writer &
+  secondHalf: Editor
+printUrl: writer-editor
+
+links:
+  - name: Writing
+    url: /words/
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+work:
+  - composition
+  - devFreelance
+  - devAssistant
+  - journalistSentinel
+  - devSentinel
+
+projects:
+  - regreen
+  - postoley
+  - prairieRose
+  - likeMovies
+
+volunteer:
+  - communityHealthAndEquine
+  - workaway
+  - frida
+
+skills:
+  - category: Journalism
+    items:
+      - Professional and creative writing
+      - Interviewing
+      - Fact-checking
+
+  - category: Editorial
+    items:
+      - Web publishing workflows
+      - Typography and formatting
+      - Search Engine Optimization
+
+  - category: Technical
+    items:
+      - Content Management Systems
+      - Web Design and Development
+      - Accessibility best practices

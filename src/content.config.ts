@@ -18,6 +18,7 @@ const blog = defineCollection({
     draft: z.boolean().optional().default(false),
   }),
 });
+
 const cyber = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/cybersecurity' }),
   schema: z.object({
@@ -31,5 +32,11 @@ const cyber = defineCollection({
   }),
 });
 
+const resumes = defineCollection({
+  loader: glob({
+    pattern: "**/*.yml", base: "./src/content/resumes"
+  }),
+})
+
 // Export a single `collections` object to register your collection(s)
-export const collections = { blog, cyber };
+export const collections = { blog, cyber, resumes };

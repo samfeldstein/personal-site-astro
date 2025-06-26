@@ -3,6 +3,8 @@ import "/src/styles/_reset.scss";
 import "/src/styles/_resume.scss";
 import "/src/styles/_resume-print.scss";
 
+import { getCollection } from "astro:content";
+
 // Import resume sections
 import {
   workHistory,
@@ -10,26 +12,26 @@ import {
   publications,
   volunteer,
   education,
-} from "../data/resume.js";
+} from "../../data/resume.js";
 
-const {
-  jobTitle,
-  jobTitleFirstHalf,
-  jobTitleSecondHalf,
-  printUrl,
-  contactLinks = [],
-  skills = [],
-  relevantWork = [],
-  relevantProjects = [],
-  relevantVolunteer = [],
-} = Astro.props;
+export async function getStaticPaths() {
+  const entries = await getCollection("resumes");
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
 
-const description = `Sam Feldstein's ${jobTitle} résumé.`;
+const { entry } = Astro.props;
+
+const description = `Sam Feldstein's ${entry.data.title.full} résumé.`;
 
 // Convert relevant keys into an array of job objects
-const relevantWorkData = relevantWork.map((key) => workHistory[key] || {});
-const relevantProjectsData = relevantProjects.map((key) => projects[key] || {});
-const relevantVolunteerData = relevantVolunteer.map(
+const relevantWorkData = entry.data.work.map((key) => workHistory[key] || {});
+const relevantProjectsData = entry.data.projects.map(
+  (key) => projects[key] || {},
+);
+const relevantVolunteerData = entry.data.volunteer.map(
   (key) => volunteer[key] || {},
 );
 ---
@@ -100,11 +102,14 @@ const relevantVolunteerData = relevantVolunteer.map(
     />
 
     <meta name="generator" content={Astro.generator} />
-    <title>{jobTitle} Résumé | Sam Feldstein</title>
+    <title>{entry.data.title.full} Résumé | Sam Feldstein</title>
     <meta name="author" content="Sam Feldstein" />
     <meta name="description" content={description} />
 
-    <meta name="twitter:title" content={`${jobTitle} Résumé | Sam Feldstein`} />
+    <meta
+      name="twitter:title"
+      content={`${entry.data.title.full} Résumé | Sam Feldstein`}
+    />
     <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
@@ -112,7 +117,10 @@ const relevantVolunteerData = relevantVolunteer.map(
     />
 
     <meta property="og:type" content={"website"} />
-    <meta property="og:title" content={`${jobTitle} | Sam Feldstein`} />
+    <meta
+      property="og:title"
+      content={`${entry.data.title.full} | Sam Feldstein`}
+    />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={Astro.url.href} />
     <meta
@@ -139,23 +147,26 @@ const relevantVolunteerData = relevantVolunteer.map(
     <div class="page-container">
       <header>
         <address class="print">
-          <span>Boulder, CO</span>
+          <div class="city">Boulder, CO</div>
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
         <a
           class="download-link"
-          href=`/resumes/sam-feldstein-${printUrl}-resume.pdf`
+          href=`/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
           target="_blank">Download PDF</a
         >
         <h1>
           <div class="name">Sam<br /> Feldstein</div>
-          <div class="role">{jobTitleFirstHalf}<br /> {jobTitleSecondHalf}</div>
+          <div class="role">
+            {entry.data.title.firstHalf}<br />
+            {entry.data.title.secondHalf}
+          </div>
         </h1>
 
         <address class="web">
           <span class="location">Boulder, CO</span>
           <a href="/">Website</a>
-          {contactLinks.map((link) => <a href={link.url}>{link.name}</a>)}
+          {entry.data.links.map((link) => <a href={link.url}>{link.name}</a>)}
           <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
         </address>
 
@@ -178,7 +189,7 @@ const relevantVolunteerData = relevantVolunteer.map(
           <h2>Skills</h2>
           <div class="skills">
             {
-              skills.map(({ category, items }) => (
+              entry.data.skills.map(({ category, items }) => (
                 <section>
                   <h3>{category}</h3>
                   <ul>

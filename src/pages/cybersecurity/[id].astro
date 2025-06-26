@@ -9,7 +9,6 @@ import Date from "../../components/Date.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-  // Filter drafts when building for production
   const entries = await getCollection("cyber");
   return entries.map((entry) => ({
     params: { id: entry.id },

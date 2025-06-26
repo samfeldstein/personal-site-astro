@@ -1,0 +1,49 @@
+title:
+  full: Support Specialist
+  firstHalf: Support
+  secondHalf: Specialist
+printUrl: support-specialist
+
+links:
+  - name: Writing
+    url: /words/
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+work:
+  - composition
+  - devFreelance
+  - devAssistant
+  - marfaStore
+  - devSentinel
+
+projects:
+  - regreen
+  - postoley
+  - prairieRose
+  - personalSite
+
+volunteer:
+  - communityHealthAndEquine
+  - workaway
+  - frida
+
+skills:
+  - category: Communication
+    items:
+      - Client support
+      - Customer relations
+      - Professional and technical writing
+  
+  - category: Technical
+    items:
+      - Web development and publishing
+      - Content Management Systems
+      - Version Control Systems
+  
+  - category: Web Technologies & Standards
+    items:
+      - Semantic HTML
+      - Modern CSS
+      - JavaScript
+      - Accessibility best practices

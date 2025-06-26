@@ -1,0 +1,49 @@
+title:
+  full: Web Developer
+  firstHalf: Web
+  secondHalf: Developer
+printUrl: developer
+
+links:
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+work:
+  - composition
+  - devFreelance
+  - devAssistant
+  - marfaStore
+  - devSentinel
+
+projects:
+  - regreen
+  - postoley
+  - prairieRose
+  - personalSite
+
+volunteer:
+  - communityHealthAndEquine
+  - workaway
+  - frida
+
+skills:
+  - category: Web Technologies & Standards
+    items:
+      - Semantic HTML
+      - Modern CSS
+      - JavaScript
+      - Accessibility best practices
+
+  - category: Tools & Frameworks
+    items:
+      - Astro
+      - Eleventy
+      - Git
+      - Figma
+
+  - category: Web Performance
+    items:
+      - Responsive Design
+      - Static site generation
+      - Modern image formats
+      - Headers and caching
