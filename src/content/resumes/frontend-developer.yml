@@ -1,8 +1,9 @@
 title:
-  full: Web Developer
-  firstHalf: Web
+  full: Frontend Developer
+  firstHalf: Frontend
   secondHalf: Developer
-printUrl: developer
+
+printUrl: frontend-developer
 
 links:
   - name: GitHub
