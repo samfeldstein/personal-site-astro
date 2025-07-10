@@ -22,7 +22,7 @@ Home to my gallery, blog, portfolio, and more.
 ## 🚘 Under the Hood
 
 - Astro components
-- Vanilla CSS
+- Sass
 - Markdown and MDX for content
 
 The site is published with [Cloudflare Pages](https://pages.cloudflare.com). You can read more about it in [my notes on the subject](https://notebook.samfeldstein.xyz/notes/personal-site-notes/).

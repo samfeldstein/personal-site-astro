@@ -1,18 +1,50 @@
+@use 'utils';
+
+header {
+  margin: 1rem 0 6rem 0;
+}
+
+#slogan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.5em;
+  font-size: var(--font-small);
+  font-style: italic;
+  text-align: center;
+  line-height: 1;
+}
+
 h1 {
-  font-variant: normal;
+  @extend .small-caps;
+  font-family: var(--font-body);
+  font-size: var(--font-large);
   font-weight: 400;
-  text-align: left;
-  
-  // Undo global h1 margins
-  margin: unset;
-  margin-top: 3rem;
+  margin: 0;
+  border-style: double none;
+  border-width: 0.1em;
 }
 
-span.name {
-  letter-spacing: 0.2em;
+hgroup {
+  @extend .flex-column;
+  gap: 0.25rem;
 }
 
-nav, div.contact {
+main {
+  @extend .flex-column;
+  gap: 4rem;
+}
+
+nav ul,
+ul.contact {
+  @extend .unstyled-list;
   display: grid;
-  gap: 1rem;
+  gap: 0.5em 1.25em;
+  max-width: 30rem;
+}
+
+nav ul {
+  grid-template-columns: 1fr 1fr;
 }

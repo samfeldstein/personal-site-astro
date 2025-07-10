@@ -1,0 +1,15 @@
+:root {
+  /* Fonts */
+  --font-body: "Computer Modern", Georgia, serif;
+  --font-size-base: clamp(1rem, 4vw, 1.5rem);
+  --font-smallest: calc(var(--font-size-base) * 0.5);
+  --font-small: calc(var(--font-size-base) * 0.75);
+  --font-medium: clamp(1.25rem, 4vw, 1.5rem);
+  --font-large: calc(var(--font-size-base) * 1.25);
+
+  /* Colors */
+  color-scheme: light dark;
+  --text-color: light-dark(#000, #fff);
+  --background-color: light-dark(#fff, #000);
+  --accent: light-dark(#666, #bfbfbf);
+}

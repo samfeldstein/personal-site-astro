@@ -17,38 +17,45 @@ import { site } from "../../config.mjs";
     ogType="website"
   />
   <body>
-    <h1>Hi, I’m <span class="name">Sam Feldstein</span></h1>
+    <header id="page-header">
+      <hgroup>
+        <h1>Sam Feldstein</h1>
+        <p id="slogan">Frontend developer, sometime writer.</p>
+      </hgroup>
+    </header>
+
     <main id="main-content">
-      <section id="intro">
+      <!-- <section id="intro">
         <p>
-          I’m a sometime <a href="/words/">writer</a> and hobbyist <a
-            href="/code/">web developer</a
-          >. I don’t have a particular objective for this website, but I’ve
-          learned a lot from people writing on the internet and I’d like to pay
-          it forward.
+          Hi, I’m <strong>Sam Feldstein</strong>, a <a href="/code/"
+            >frontend developer</a
+          > and sometime <a href="/words/">writer</a> currently based in {
+            site.location.city
+          }, {site.location.state}.
         </p>
-      </section>
+      </section> -->
 
       <section id="nav">
-        <h2>Navigation</h2>
+        <h2>Contents</h2>
         <nav>
-          <a href="/words/">Words</a>
-          <a href="/code/">Code</a>
-          <a href="/photos/">Photos</a>
-          <a href="/uses/">Uses</a>
-          <a href="/blogroll/">Blogroll</a>
-          <a href="https://notebook.samfeldstein.xyz/">Notebook</a>
-          <a href="/colophon/">Colophon</a>
+          <ul>
+            <li><a href="/words/">Words</a></li>
+            <li><a href="/code/">Code</a></li>
+            <li><a href="/photos/">Photos</a></li>
+            <li><a href="/uses/">Uses</a></li>
+            <li><a href="https://notebook.samfeldstein.xyz/">Notebook</a></li>
+            <li><a href="/colophon/">Colophon</a></li>
+          </ul>
         </nav>
       </section>
 
       <section>
         <h2>Contact & Social</h2>
-        <div class="contact">
-          <a href="mailto:sam@samfeldstein.xyz">Email</a>
-          <a href="https://github.com/samfeldstein">GitHub</a>
-          <a href="/feed.xml">Feed</a>
-        </div>
+        <ul class="contact">
+          <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
+          <li><a href="https://github.com/samfeldstein">GitHub</a></li>
+          <li><a href="/feed.xml">Feed</a></li>
+        </ul>
       </section>
     </main>
 

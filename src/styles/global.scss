@@ -1,19 +1,6 @@
-@import url("/src/styles/_fonts.css");
-@import url("/src/styles/_reset.scss");
-
-:root {
-  /* Fonts */
-  --font-body: "Computer Modern", Georgia, serif;
-  --font-smallest: clamp(0.95rem, 2vw, 1rem);
-  --font-small: clamp(1rem, 2vw, 1.25rem);
-  --font-medium: clamp(1.25rem, 4vw, 1.5rem);
-
-  /* Colors */
-  color-scheme: light dark;
-  --text-color: light-dark(#000, #fff);
-  --background-color: light-dark(#fff, #000);
-  --accent: light-dark(#666, #bfbfbf);
-}
+@use 'fonts';
+@use 'reset';
+@use 'config';
 
 html {
   background-color: var(--background-color);
@@ -23,13 +10,12 @@ html {
 body {
   margin: 0 auto;
   padding: 1rem;
-  max-width: 50rem;
+  max-width: 60rem;
   // Push footer to bottom
   display: flex;
   flex-direction: column;
-
   font-family: var(--font-body);
-  font-size: var(--font-medium);
+  font-size: var(--font-size-base);
 }
 
 main {
@@ -37,15 +23,10 @@ main {
   flex: 1;
 
   p,
-  ol {
+  ol,
+  ul {
     text-align: justify;
     hyphens: auto;
-  }
-
-  ul,
-  ol {
-    display: grid;
-    gap: 0.75rem;
   }
 }
 
@@ -76,29 +57,8 @@ h1 {
 }
 
 h2 {
-  font: {
-    size: clamp(1.5rem, 4vw, 2.25rem);
-    weight: 400;
-    style: italic;
-  }
-
-  text: {
-    align: right;
-  }
-
-  padding-top: 0.5rem;
-  margin-top: 4rem;
-  margin-bottom: 3rem;
-}
-
-h2 {
-
-  text-align: right;
-
-  border-top: {
-    style: solid;
-    width: 0.01em;
-  }
+  font-style: italic;
+  font-weight: 400;
 }
 
 h3 {
@@ -121,6 +81,7 @@ a {
   text-decoration: none;
   text-transform: lowercase;
   letter-spacing: 0.1em;
+  border-radius: 4px;
   transition-duration: 0.2s;
 }
 
@@ -129,7 +90,6 @@ a:not(.skiplink):focus,
 a:not(.skiplink):active {
   background-color: var(--text-color);
   color: var(--background-color);
-  border-radius: 2px;
 }
 
 ::selection {
