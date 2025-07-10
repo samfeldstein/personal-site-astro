@@ -1,7 +1,7 @@
 :root {
   /* Fonts */
   --font-body: "Computer Modern", Georgia, serif;
-  --font-size-base: clamp(1rem, 4vw, 1.5rem);
+  --font-size-base: clamp(1.25rem, 4vw, 1.5rem);
   --font-smallest: calc(var(--font-size-base) * 0.5);
   --font-small: calc(var(--font-size-base) * 0.75);
   --font-medium: clamp(1.25rem, 4vw, 1.5rem);
