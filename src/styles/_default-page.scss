@@ -1,0 +1,17 @@
+body {
+  margin: 0 auto;
+  font-family: var(--font-body);
+}
+
+#page-header {
+  text-align: right;
+  width: fit-content;
+  line-height: 1;
+  margin-bottom: 4rem;
+}
+
+h1 {
+  font-family: 'CMU Concrete';
+  font-size: var(--font-huge);
+  margin: 0;
+}

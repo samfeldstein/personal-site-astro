@@ -2,7 +2,6 @@
 // Components
 import Head from "../components/Head.astro";
 import Skiplink from "../components/Skiplink.astro";
-import Menu from "../components/MobileMenu.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 
 import { site } from "../../config.mjs";
@@ -27,10 +26,7 @@ const {
   />
   <body>
     <Skiplink />
-    <Menu />
-    <main id="main-content">
       <slot />
-    </main>
     <SiteFooter />
   </body>
 </html>

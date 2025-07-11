@@ -1,0 +1,27 @@
+---
+import Base from "../layouts/Base.astro";
+import List from "../components/PortfolioList.astro";
+import Date from "../components/Date.astro";
+import Tags from "../components/Tags.astro";
+
+// Styles
+import "../styles/_default-page.scss";
+
+// Functions
+import { getCollection } from "astro:content";
+import { sortCollectionByDate } from "../scripts/utils.ts";
+
+// Data
+import { writing } from "../data/published-writing.js";
+
+const description = "My published writing.";
+---
+
+<Base title="Published Writing" description={description}>
+  <header id="page-header">
+    <h1>Published Writing</h1>
+  </header>
+  <main id="main-content">
+    <List data={writing} />
+  </main>
+</Base>

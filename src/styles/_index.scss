@@ -3,7 +3,7 @@
 body {
   display: flex;
   flex-wrap: wrap;
-  gap: 10rem;
+  justify-content: space-between;
   font-family: 'CMU Bright';
   max-width: 50rem;
 }

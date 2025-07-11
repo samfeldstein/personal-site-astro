@@ -1,0 +1,71 @@
+---
+const { data } = Astro.props;
+---
+
+<ul>
+  {
+    data.map((item) => (
+      <li class="publication">
+        <div class="info">
+          <span>{item.type}</span>
+          <span>|</span>
+          <span class="outlet">{item.outlet}</span>
+          <span>|</span>
+          <span>{item.date}</span>
+        </div>
+        <a
+          class="title"
+          href={item.url}
+          set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")}
+        />
+        <a class="read" href={item.url}>
+          Read
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  ul {
+    --minwidth: 250px;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--minwidth), 1fr));
+    gap: 2rem;
+
+    @media screen and (width >= 400px) {
+      --minwidth: 350px;
+    }
+  }
+
+  li {
+    border: 0.05em solid;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+  }
+
+  .title {
+    font-size: var(--font-large);
+    text-wrap: balance;
+  }
+
+  .info {
+    font-size: var(--font-small);
+    font-family: var(--font-meta);
+    font-variant: small-caps;
+    text-transform: lowercase;
+    margin-bottom: 1rem;
+  }
+
+  .outlet {
+    font-style: italic;
+  }
+
+  .read {
+    display: block;
+  }
+</style>
