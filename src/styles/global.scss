@@ -1,6 +1,7 @@
 @use 'fonts';
 @use 'reset';
 @use 'config';
+@use 'utils';
 
 html {
   background-color: var(--background-color);
@@ -8,20 +9,11 @@ html {
 }
 
 body {
-  margin: 0 auto;
   padding: 1rem;
-  max-width: 60rem;
-  // Push footer to bottom
-  display: flex;
-  flex-direction: column;
-  font-family: var(--font-body);
   font-size: var(--font-size-base);
 }
 
 main {
-  // Push footer to bottom
-  flex: 1;
-
   p,
   ol,
   ul {
@@ -43,21 +35,11 @@ h3 {
 }
 
 h1 {
-
-  font: {
-    family: var(--font-body);
-    size: clamp(1.75rem, 4vw, 2.5rem);
-    weight: 700;
-    variant: small-caps;
-  }
-
-  text-align: center;
-  letter-spacing: 0.1em;
-  margin: 3rem 0;
+@extend .small-caps;
 }
 
 h2 {
-  font-style: italic;
+  font-family: 'CMU Bright';
   font-weight: 400;
 }
 
@@ -77,9 +59,7 @@ h4 {
 
 a {
   color: inherit;
-  font-variant: small-caps;
   text-decoration: none;
-  text-transform: lowercase;
   letter-spacing: 0.1em;
   border-radius: 4px;
   transition-duration: 0.2s;
@@ -146,11 +126,4 @@ code,
 samp {
   font-family: var(--font-body);
   font-weight: 700;
-}
-
-hr {
-  border-top-style: solid;
-  border-width: 0.5px;
-  border-color: var(--accent);
-  margin: 1rem 0;
 }

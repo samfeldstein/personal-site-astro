@@ -1,6 +1,5 @@
 ---
 import Head from "../components/Head.astro";
-import SiteFooter from "../components/SiteFooter.astro";
 
 // Styles
 import "/src/styles/_index.scss";
@@ -20,7 +19,9 @@ import { site } from "../../config.mjs";
     <header id="page-header">
       <hgroup>
         <h1>Sam Feldstein</h1>
-        <p id="slogan">Frontend developer, sometime writer.</p>
+        <!-- <hr> is defined semantically, so seems wrong to use it here. -->
+        <div class="hr"></div>
+        <p id="slogan">Frontend developer</p>
       </hgroup>
     </header>
 
@@ -58,7 +59,5 @@ import { site } from "../../config.mjs";
         </ul>
       </section>
     </main>
-
-    <SiteFooter />
   </body>
 </html>

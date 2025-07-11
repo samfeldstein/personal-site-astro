@@ -1,30 +1,18 @@
 @use 'utils';
 
-header {
-  margin: 1rem 0 6rem 0;
-}
-
-#slogan {
+body {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0.5em;
-  font-size: var(--font-small);
-  font-style: italic;
-  text-align: center;
-  line-height: 1;
+  gap: 10rem;
+  font-family: 'CMU Bright';
+  max-width: 50rem;
 }
 
-h1 {
-  @extend .small-caps;
-  font-family: var(--font-body);
-  font-size: var(--font-large);
-  font-weight: 400;
-  margin: 0;
-  border-style: solid none;
-  border-width: 0.01em;
+header {
+@extend .small-caps;  
+  text-align: left;
+  line-height: 1;
+  width: fit-content;
 }
 
 hgroup {
@@ -32,17 +20,47 @@ hgroup {
   gap: 0.25rem;
 }
 
+h1 {
+  font-size: calc(var(--font-large) * 1.2);
+  font-weight: 700;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  font-size: var(--font-large);
+  font-weight: 700;
+}
+
+.hr {
+  border: 0.1rem solid;
+}
+
+#slogan {
+  margin: 0;
+} 
+
 main {
   @extend .flex-column;
   gap: 4rem;
 }
 
-nav ul,
-ul.contact {
+nav, .contact {
+  text-transform: lowercase;
+}
+
+ul {
   @extend .unstyled-list;
   display: grid;
-  gap: 0.5em 1.25em;
-  max-width: 30rem;
+  gap: 0.5em 1.5em;
+  width: fit-content;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+li::before {
+  content: '/';
 }
 
 nav ul {
