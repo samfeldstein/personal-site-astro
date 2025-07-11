@@ -4,9 +4,9 @@
   --font-meta: "CMU Bright";
   --font-size-base: clamp(1.25rem, 4vw, 1.5rem);
   --font-smallest: calc(var(--font-size-base) * 0.5);
-  --font-small: calc(var(--font-size-base) * 0.6);
+  --font-small: calc(var(--font-size-base) * 0.75);
   --font-medium: clamp(1.25rem, 4vw, 1.5rem);
-  --font-large: calc(var(--font-size-base) * 1.2);
+  --font-large: calc(var(--font-size-base) * 1.5);
   --font-huge: clamp(3rem, 10vw, 10rem);
 
   /* Colors */

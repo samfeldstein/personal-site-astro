@@ -9,15 +9,17 @@ const { data } = Astro.props;
         <a href={item.url}>
           <div class="info">
             <div>{item.type}</div>
-            <div>
-              <span class="outlet">{item.outlet}</span> | {item.date}
+            <div class="date-outlet">
+              <span class="outlet">{item.outlet}</span>
+              <span>&nbsp;|&nbsp;</span>
+              <span>{item.date}</span>
             </div>
           </div>
           <div
             class="title"
             set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")}
           />
-          <div class="read">Read</div>
+          <div class="read">Read&nbsp;→</div>
         </a>
       </li>
     ))
@@ -48,12 +50,17 @@ const { data } = Astro.props;
   a {
     border: 0.05em solid;
     border-radius: 12px;
-    border-color: var(--accent-2);
+    border-color: var(--local-accent);
     display: flex;
     flex-direction: column;
     padding: 2rem 1.5rem;
     // Grow to fill space
     flex: 1;
+
+    // Trigger .read underline
+    &:hover .read::after {
+      width: 100%;
+    }
 
     &:hover {
       // Reverse color scheme in dark mode
@@ -64,7 +71,9 @@ const { data } = Astro.props;
   .title {
     font-size: var(--font-large);
     text-wrap: balance;
-    margin: 0.5rem 0 2rem 0;
+    letter-spacing: 0.025em;
+    line-height: 1.1;
+    margin: 1rem 0 2rem 0;
     // Fill space, push .read to bottom
     flex: 1;
   }
@@ -75,6 +84,12 @@ const { data } = Astro.props;
     font-variant: small-caps;
     text-transform: lowercase;
     color: var(--local-accent);
+    line-height: 1;
+  }
+
+  .date-outlet {
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .outlet {
@@ -87,12 +102,21 @@ const { data } = Astro.props;
     font-weight: 700;
     font-variant: small-caps;
     text-transform: lowercase;
-    text-align: right;
-    margin-block-end: -1rem;
+    align-self: flex-end;
+    width: fit-content;
+    // Animation
+    position: relative;
 
+    // Animation
     &::after {
-      content: "→";
-      margin-left: 0.25em;
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 0.1em; /* thickness of the underline */
+      width: 0; /* start with zero width */
+      background-color: var(--background-color); /* underline color */
+      transition: width 0.3s ease;
     }
   }
 
