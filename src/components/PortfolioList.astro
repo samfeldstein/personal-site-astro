@@ -6,27 +6,29 @@ const { data } = Astro.props;
   {
     data.map((item) => (
       <li class="publication">
-        <div class="info">
-          <span>{item.type}</span>
-          <span>|</span>
-          <span class="outlet">{item.outlet}</span>
-          <span>|</span>
-          <span>{item.date}</span>
-        </div>
-        <a
-          class="title"
-          href={item.url}
-          set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")}
-        />
-        <a class="read" href={item.url}>
-          Read
+        <a href={item.url}>
+          <div class="info">
+            <div>{item.type}</div>
+            <div>
+              <span class="outlet">{item.outlet}</span> | {item.date}
+            </div>
+          </div>
+          <div
+            class="title"
+            set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")}
+          />
+          <div class="read">Read</div>
         </a>
       </li>
     ))
   }
 </ul>
 
-<style>
+<style lang="scss">
+  :root {
+    --local-accent: var(--accent);
+  }
+
   ul {
     --minwidth: 250px;
 
@@ -35,22 +37,36 @@ const { data } = Astro.props;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--minwidth), 1fr));
-    gap: 2rem;
-
-    @media screen and (width >= 400px) {
-      --minwidth: 350px;
-    }
+    gap: 1rem;
   }
 
   li {
+    // Allow <a> children to flex
+    display: flex;
+  }
+
+  a {
     border: 0.05em solid;
     border-radius: 12px;
-    padding: 0.5rem 1rem;
+    border-color: var(--accent-2);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    // Grow to fill space
+    flex: 1;
+
+    &:hover {
+      // Reverse color scheme in dark mode
+      --local-accent: var(--accent-2);
+    }
   }
 
   .title {
     font-size: var(--font-large);
     text-wrap: balance;
+    margin: 0.5rem 0 2rem 0;
+    // Fill space, push .read to bottom
+    flex: 1;
   }
 
   .info {
@@ -58,7 +74,7 @@ const { data } = Astro.props;
     font-family: var(--font-meta);
     font-variant: small-caps;
     text-transform: lowercase;
-    margin-bottom: 1rem;
+    color: var(--local-accent);
   }
 
   .outlet {
@@ -66,6 +82,24 @@ const { data } = Astro.props;
   }
 
   .read {
-    display: block;
+    font-family: var(--font-meta);
+    font-size: var(--font-small);
+    font-weight: 700;
+    font-variant: small-caps;
+    text-transform: lowercase;
+    text-align: right;
+    margin-block-end: -1rem;
+
+    &::after {
+      content: "→";
+      margin-left: 0.25em;
+    }
+  }
+
+  /* Responsive styles */
+  @media screen and (min-width: 400px) {
+    ul {
+      --minwidth: 350px;
+    }
   }
 </style>

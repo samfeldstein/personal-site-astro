@@ -1,17 +1,18 @@
 :root {
   /* Fonts */
   --font-body: "Computer Modern", Georgia, serif;
-  --font-meta: "CMU Concrete";
+  --font-meta: "CMU Bright";
   --font-size-base: clamp(1.25rem, 4vw, 1.5rem);
   --font-smallest: calc(var(--font-size-base) * 0.5);
-  --font-small: calc(var(--font-size-base) * 0.65);
+  --font-small: calc(var(--font-size-base) * 0.6);
   --font-medium: clamp(1.25rem, 4vw, 1.5rem);
-  --font-large: calc(var(--font-size-base) * 1.25);
+  --font-large: calc(var(--font-size-base) * 1.2);
   --font-huge: clamp(3rem, 10vw, 10rem);
 
   /* Colors */
   color-scheme: light dark;
   --text-color: light-dark(#000, #fff);
   --background-color: light-dark(#fff, #000);
-  --accent: light-dark(#666, #bfbfbf);
+  --accent: light-dark(#595959, #999999);
+  --accent-2: light-dark(#999999, #595959);
 }
