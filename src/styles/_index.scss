@@ -1,15 +1,18 @@
 @use 'utils';
 
 body {
+  font-family: var(--font-meta);
+  max-width: 50rem;
+  margin: 0;
+  // Flex
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-family: 'CMU Bright';
-  max-width: 50rem;
+  gap: 4rem;
 }
 
 header {
-@extend .small-caps;  
+  @extend .small-caps;
   text-align: left;
   line-height: 1;
   width: fit-content;
@@ -21,7 +24,7 @@ hgroup {
 }
 
 h1 {
-  font-size: calc(var(--font-large) * 1.2);
+  font-size: var(--font-large);
   font-weight: 700;
   margin: 0;
 }
@@ -39,14 +42,15 @@ h2 {
 
 #slogan {
   margin: 0;
-} 
+}
 
 main {
   @extend .flex-column;
   gap: 4rem;
 }
 
-nav, .contact {
+nav,
+.contact {
   text-transform: lowercase;
 }
 
