@@ -17,6 +17,7 @@ hgroup {
   @extend .flex-column;
   gap: 0.25rem;
   text-align: right;
+  min-height: 100vh;
 }
 
 #title {
@@ -60,7 +61,6 @@ h3 {
 }
 
 a {
-  transition-duration: 0.1s;
 
   &:hover {
     color: var(--accent);
@@ -82,9 +82,10 @@ ul {
 
 a {
   counter-increment: item;
+  // Must be block for positioning to work
+  display: block;
   position: relative;
   padding-right: 2em;
-  display: block;
 
   // Add space before the numbers
   &::after {
