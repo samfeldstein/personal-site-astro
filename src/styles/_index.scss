@@ -1,72 +1,94 @@
 @use 'utils';
 
 body {
-  font-family: var(--font-meta);
-  max-width: 50rem;
   margin: 0;
-  // Flex
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  min-height: 100vh;
+  display: grid;
   gap: 4rem;
+  font-family: 'CMU Bright';
 }
 
 header {
-  @extend .small-caps;
-  text-align: left;
-  line-height: 1;
-  width: fit-content;
+  outline: 0.15em solid;
+  outline-offset: 0.5rem;
 }
 
 hgroup {
   @extend .flex-column;
   gap: 0.25rem;
+  text-align: right;
+}
+
+#title {
+  font-family: 'Broadcast Titling';
+  font-size: 4.5rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  margin: 0;
+}
+
+#byline {
+  font-size: var(--font-small);
 }
 
 h1 {
+  font-family: 'Bebas Neue';
   font-size: var(--font-large);
-  font-weight: 700;
+  font-size: 4.5rem;
+  font-weight: 100;
+  line-height: 1;
   margin: 0;
 }
 
 h2 {
-  margin: 0;
-  margin-bottom: 0.5rem;
-  font-size: var(--font-large);
-  font-weight: 700;
+  font-family: 'Bebas Neue';
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
-.hr {
-  border: 0.1rem solid;
+h3 {
+  font-weight: 700;
+  font-size: calc(var(--font-size-base) * 1.25);
+  margin: 0;
 }
 
 #slogan {
   margin: 0;
+  font-size: var(--font-large);
+  line-height: 1;
 }
 
-main {
-  @extend .flex-column;
-  gap: 4rem;
+nav {
+  counter-reset: item;
 }
 
-nav,
-.contact {
-  text-transform: lowercase;
-}
-
+// developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters
 ul {
   @extend .unstyled-list;
+  margin: 0.5em 0 3em 0;
+  padding: 0;
   display: grid;
-  gap: 0.5em 1.5em;
-  width: fit-content;
-  margin-top: 1rem;
-  padding-left: 1rem;
+  gap: 0.5em;
 }
 
-li::before {
-  content: '/';
+li {
+  counter-increment: item;
+  position: relative;
+  padding-right: 2em;
+
+  // Add space before the numbers
+  &::after {
+    content: counter(item);
+    position: absolute;
+    right: 0;
+  }
 }
 
-nav ul {
-  grid-template-columns: 1fr 1fr;
+
+section {
+// Use roman numerals for external links
+  li::after {
+    content: counter(item, upper-roman);
+  }
 }

@@ -16,46 +16,58 @@ import { site } from "../../config.mjs";
     ogType="website"
   />
   <body>
-    <header id="page-header">
+    <header id="page-header" class="page">
       <hgroup>
-        <h1>Sam Feldstein</h1>
-        <!-- <hr> is defined semantically, so seems wrong to use it here. -->
-        <div class="hr"></div>
-        <p id="slogan">Frontend developer</p>
+        <p id="title">Some Title</p>
+
+        <p id="byline">a website by <h1>Samuel Feldstein</h1></p>
       </hgroup>
     </header>
 
-    <main id="main-content">
-      <!-- <section id="intro">
-        <p>
-          Hi, I’m <strong>Sam Feldstein</strong>, a <a href="/code/"
-            >frontend developer</a
-          > and sometime <a href="/words/">writer</a> currently based in {
-            site.location.city
-          }, {site.location.state}.
-        </p>
-      </section> -->
-
-      <section id="nav">
-        <h2>Contents</h2>
-        <nav>
+    <main id="main-content" class="page">
+      <h2>Contents</h2>
+      <nav>
+        <div id="code">
+          <h3>Code</h3>
           <ul>
-            <li><a href="/words/">Words</a></li>
-            <li><a href="/code/">Code</a></li>
-            <li><a href="/photos/">Photos</a></li>
-            <li><a href="/uses/">Uses</a></li>
-            <li><a href="https://notebook.samfeldstein.xyz/">Notebook</a></li>
-            <li><a href="/colophon/">Colophon</a></li>
+            <li><a href="/dev-work/">Work</a></li>
+            <li><a href="/dev-projects">Projects</a></li>
+            <li><a href="/resumes/frontend-developer/">Résumé</a></li>
           </ul>
-        </nav>
+        </div>
+        <div id="words">
+          <h3>Words</h3>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/published-writing">Published Work</a></li>
+          </ul>
+        </div>
+
+        <div id="else">
+          <h3>Else</h3>
+          <ul>
+            <li><a href="/about/">About the Author</a></li>
+            <li><a href="/uses/">Uses</a></li>
+            <li><a href="/photos/">Gallery</a></li>
+            <li><a href="/colophon/">Colophon</a></li>
+            <li><a href="/feed.xml">Feed</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <section id="other-sites">
+        <h2>Other Sites</h2>
+        <ul>
+          <li><a href="https://notes.samfeldstein.xyz/">Notebook</a></li>
+          <li><a href="https://cookbook.samfeldstein.xyz/">Cookbook</a></li>
+        </ul>
       </section>
 
-      <section>
+      <section id="contact">
         <h2>Contact & Social</h2>
         <ul class="contact">
           <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
           <li><a href="https://github.com/samfeldstein">GitHub</a></li>
-          <li><a href="/feed.xml">Feed</a></li>
         </ul>
       </section>
     </main>

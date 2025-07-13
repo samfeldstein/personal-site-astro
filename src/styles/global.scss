@@ -25,10 +25,6 @@ h3 {
   text-wrap: balance;
 }
 
-h1 {
-@extend .small-caps;
-}
-
 h2 {
   font-family: 'CMU Bright';
   font-weight: 400;
@@ -40,7 +36,6 @@ h3 {
 
   text-transform: lowercase;
   letter-spacing: 0.1em;
-  margin-top: 2em;
 }
 
 h4 {
@@ -53,13 +48,6 @@ a {
   text-decoration: none;
   border-radius: 4px;
   transition-duration: 0.2s;
-}
-
-a:not(.skiplink):hover,
-a:not(.skiplink):focus,
-a:not(.skiplink):active {
-  background-color: var(--text-color);
-  color: var(--background-color);
 }
 
 ::selection {
