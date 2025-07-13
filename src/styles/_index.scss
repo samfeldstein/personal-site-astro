@@ -59,6 +59,14 @@ h3 {
   line-height: 1;
 }
 
+a {
+  transition-duration: 0.1s;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
 nav {
   counter-reset: item;
 }
@@ -72,10 +80,11 @@ ul {
   gap: 0.5em;
 }
 
-li {
+a {
   counter-increment: item;
   position: relative;
   padding-right: 2em;
+  display: block;
 
   // Add space before the numbers
   &::after {
@@ -85,10 +94,10 @@ li {
   }
 }
 
-
 section {
-// Use roman numerals for external links
-  li::after {
+
+  // Use roman numerals for external links
+  a::after {
     content: counter(item, upper-roman);
   }
 }
