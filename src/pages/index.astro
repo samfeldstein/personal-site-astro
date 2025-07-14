@@ -6,6 +6,13 @@ import "/src/styles/_index.scss";
 
 // Data
 import { site } from "../../config.mjs";
+
+// Preloads
+const fonts = [
+  "subset-BebasNeue-Regular",
+  "subset-CMUBright-Roman",
+  "subset-CMUBright-SemiBold",
+];
 ---
 
 <html lang="en-us">
@@ -14,6 +21,7 @@ import { site } from "../../config.mjs";
     description={site.description}
     ogTitle="Sam Feldstein's Personal Website"
     ogType="website"
+    preloadFonts={fonts}
   />
   <body>
     <header>

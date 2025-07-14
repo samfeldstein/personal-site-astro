@@ -1,12 +1,44 @@
 @use 'utils';
 
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/fonts/subset-BebasNeue-Regular.woff2') format('woff2'),
+    url('/fonts/subset-BebasNeue-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CMU Bright';
+  src: url('/fonts/subset-CMUBright-Roman.woff2') format('woff2'),
+    url('/fonts/subset-CMUBright-Roman.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'CMU Bright';
+  src: url('/fonts/subset-CMUBright-SemiBold.woff2') format('woff2'),
+    url('/fonts/subset-CMUBright-SemiBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-1: 'CMU Bright';
+  --font-2: 'Bebas Neue';
+}
+
 body {
   @extend .flex-column;
   margin: 0 auto;
   border: 0.5rem solid;
   min-height: 100vh;
   gap: 4rem;
-  font-family: 'CMU Bright';
+  font-family: var(--font-1);
   // Set here so counter applies to footer as well
   counter-reset: item;
 
@@ -22,33 +54,27 @@ header {
 }
 
 #title {
-  font-family: 'Broadcast Titling';
-  font-size: 5.5rem;
-  font-size: clamp(5rem, 12vw, 10rem);
-  letter-spacing: 0.1em;
-  margin: 0;
+  color: var(--background-color);
+  -webkit-text-stroke: 1.25px var(--text-color);
 }
 
 #byline {
-  font-family: 'CMU Bright';
+  font-family: var(--font-1);
   font-size: var(--font-size-base);
-}
-
-#name {
-  font-size: clamp(5rem, 12vw, 10rem);
 }
 
 h1 {
   @extend .flex-column;
-  font-family: 'Bebas Neue';
+  font-family: var(--font-2);
   font-weight: 100;
   text-align: right;
   margin: 0;
   gap: 2rem;
+  font-size: clamp(5rem, 12vw, 10rem);
 }
 
 h2 {
-  font-family: 'Bebas Neue';
+  font-family: var(--font-2);
   font-size: 2em;
   text-align: center;
   margin: 0;
@@ -57,6 +83,7 @@ h2 {
 }
 
 h3 {
+  @extend .small-caps;
   margin: 0;
 }
 

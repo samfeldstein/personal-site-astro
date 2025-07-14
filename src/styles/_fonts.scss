@@ -1,47 +1,39 @@
 @font-face {
   font-family: "Computer Modern";
-  /* One consistent family name */
   src:
     url("/fonts/subset-CMUSerif-Roman.woff2") format("woff2"),
     url('/fonts/subset-CMUSerif-Roman.woff') format('woff');
   font-weight: 400;
-  /* Normal weight */
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Computer Modern";
-  /* Same family name */
   src:
     url("/fonts/subset-CMUSerif-Bold.woff2") format("woff2"),
     url('/fonts/subset-CMUSerif-Bold.woff') format('woff');
   font-weight: 700;
-  /* Bold weight */
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Computer Modern";
-  /* Same family name */
   src:
     url("/fonts/subset-CMUSerif-Italic.woff2") format("woff2"),
     url('/fonts/subset-CMUSerif-Italic.woff') format('woff');
   font-weight: 400;
-  /* Normal weight */
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Computer Modern";
-  /* Same family name */
   src:
     url("/fonts/subset-CMUSerif-BoldItalic.woff2") format("woff2"),
     url('/fonts/subset-CMUSerif-BoldItalic.woff') format('woff');
   font-weight: 700;
-  /* Bold weight */
   font-style: italic;
   font-display: swap;
 }

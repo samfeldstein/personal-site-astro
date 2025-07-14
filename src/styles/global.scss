@@ -1,4 +1,3 @@
-@use 'fonts';
 @use 'reset';
 @use 'config';
 @use 'utils';
@@ -24,23 +23,6 @@ h1,
 h2,
 h3 {
   text-wrap: balance;
-}
-
-h2 {
-  font-family: 'CMU Bright';
-  font-weight: 400;
-}
-
-h3 {
-  font-variant: small-caps;
-  font-weight: 700;
-  text-transform: lowercase;
-  letter-spacing: 0.1em;
-}
-
-h4 {
-  font-style: italic;
-  margin-top: 2em;
 }
 
 a {

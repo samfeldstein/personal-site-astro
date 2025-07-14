@@ -13,6 +13,7 @@ const {
   ogDescription = description,
   ogType = "website",
   ogImage,
+  preloadFonts,
 } = Astro.props;
 ---
 
@@ -48,27 +49,17 @@ const {
   <link rel="manifest" href="/site.webmanifest" />
 
   <!-- Preload assets -->
-  <link
-    rel="preload"
-    href="/fonts/subset-CMUSerif-Roman.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/fonts/subset-CMUSerif-Bold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/fonts/subset-CMUSerif-Italic.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
+  {
+    preloadFonts?.map((font) => (
+      <link
+        rel="preload"
+        href=`/fonts/${font}.woff2`
+        as="font"
+        type="font/woff2"
+        crossorigin="anonymous"
+      />
+    ))
+  }
   <meta name="generator" content={Astro.generator} />
   <title>
     {title ? `${title} | ${site.title}` : "Sam Feldstein's Personal Website"}
@@ -107,69 +98,4 @@ const {
     title="Sam Feldstein's Notebook"
     href="https://notebook.samfeldstein.xyz/feed.xml"
   />
-
-  <!-- Clean up old service workers -->
-  <script>
-    async function uninstallServiceWorkers() {
-      try {
-        // Get a list of all service worker registrations
-        const registrations = await navigator.serviceWorker.getRegistrations();
-
-        if (registrations.length === 0) {
-          console.log("No service workers found to uninstall");
-          return;
-        }
-
-        // Uninstall each service worker
-        const uninstallPromises = registrations.map(async (registration) => {
-          try {
-            const success = await registration.unregister();
-            if (success) {
-              console.log(
-                `Service worker at ${registration.scope} successfully uninstalled`,
-              );
-            } else {
-              console.warn(
-                `Failed to uninstall service worker at ${registration.scope}`,
-              );
-            }
-          } catch (error) {
-            console.error(
-              `Error uninstalling service worker at ${registration.scope}:`,
-              error,
-            );
-          }
-        });
-
-        // Wait for all uninstallation attempts to complete
-        await Promise.all(uninstallPromises);
-
-        console.log("Service worker uninstallation process completed");
-
-        // Optional: Reload the page to ensure clean state
-        // window.location.reload();
-      } catch (error) {
-        console.error("Error during service worker uninstallation:", error);
-        throw error;
-      }
-    }
-
-    uninstallServiceWorkers();
-  </script>
-
-  <!-- Prefetch internal links -->
-  <script type="speculationrules">
-    {
-      "rules": [
-        {
-          "action": "prefetch",
-          "source": "document",
-          "where": {
-            "href_matches": "^/.*"
-          },
-          "eagerness": "eager"
-        }
-      ]
-    }
-  </script>
 </head>
