@@ -4,11 +4,12 @@
 @use 'utils';
 
 html {
-  background-color: var(--background-color);
+  background-color: var(--text-color);
   color: var(--text-color);
 }
 
 body {
+  background-color: var(--background-color);
   padding: 1rem;
   font-size: var(--font-size-base);
 }

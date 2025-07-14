@@ -16,12 +16,12 @@ import { site } from "../../config.mjs";
     ogType="website"
   />
   <body>
-    <header id="page-header" class="page">
-      <hgroup>
-        <p id="title">Some Title</p>
-
-        <p id="byline">a website by <h1>Samuel Feldstein</h1></p>
-      </hgroup>
+    <header>
+      <h1>
+        <div id="title">Ever<br />in<br />Flux</div>
+        <div id="byline">the personal website of</div>
+        <div id="name">Samuel<br />Feldstein</div>
+      </h1>
     </header>
 
     <main id="main-content" class="page">
@@ -54,7 +54,9 @@ import { site } from "../../config.mjs";
           </ul>
         </div>
       </nav>
+    </main>
 
+    <footer>
       <section id="other-sites">
         <h2>Other Sites</h2>
         <ul>
@@ -70,6 +72,7 @@ import { site } from "../../config.mjs";
           <li><a href="https://github.com/samfeldstein">GitHub</a></li>
         </ul>
       </section>
-    </main>
+    </footer>
+    <div id="bottom-border"></div>
   </body>
 </html>

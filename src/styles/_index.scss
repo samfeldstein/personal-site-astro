@@ -1,68 +1,74 @@
 @use 'utils';
 
 body {
-  margin: 0;
-  padding: 0;
+  @extend .flex-column;
+  margin: 0 auto;
+  border: 0.5rem solid;
   min-height: 100vh;
-  display: grid;
   gap: 4rem;
   font-family: 'CMU Bright';
+  // Set here so counter applies to footer as well
+  counter-reset: item;
+
+  @media screen and (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 header {
   @extend .flex-column;
-  padding: 0.5rem;
   min-height: 100vh;
-}
-
-hgroup {
-  @extend .flex-column;
-  // Fill viewport
-  flex: 1;
-  gap: 2rem;
-  border: 0.15em solid;
-  padding: 0.5rem;
-  text-align: right;
 }
 
 #title {
   font-family: 'Broadcast Titling';
-  font-size: 6rem;
+  font-size: 5.5rem;
+  font-size: clamp(5rem, 12vw, 10rem);
   letter-spacing: 0.1em;
-  line-height: 1;
   margin: 0;
+}
+
+#byline {
+  font-family: 'CMU Bright';
+  font-size: var(--font-size-base);
+}
+
+#name {
+  font-size: clamp(5rem, 12vw, 10rem);
 }
 
 h1 {
+  @extend .flex-column;
   font-family: 'Bebas Neue';
-  font-size: var(--font-large);
-  font-size: 6.5rem;
   font-weight: 100;
-  line-height: 1;
+  text-align: right;
   margin: 0;
-}
-
-main {
-  padding: 0 1rem;
+  gap: 2rem;
 }
 
 h2 {
   font-family: 'Bebas Neue';
-  font-size: 2.5rem;
+  font-size: 2em;
   text-align: center;
+  margin: 0;
   margin-bottom: 0.5em;
+  padding-top: 1rem;
 }
 
 h3 {
-  font-weight: 700;
-  font-size: calc(var(--font-size-base) * 1.25);
   margin: 0;
 }
 
-#slogan {
-  margin: 0;
-  font-size: var(--font-large);
-  line-height: 1;
+main,
+footer {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  font-size: var(--font-size-base);
 }
 
 a {
@@ -73,16 +79,15 @@ a {
 }
 
 nav {
-  counter-reset: item;
+  display: grid;
+  gap: 2em;
 }
 
 // developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters
 ul {
   @extend .unstyled-list;
-  margin: 0.5em 0 3em 0;
-  padding: 0;
-  display: grid;
-  gap: 0.5em;
+  margin: 0;
+  padding-left: 0.5em;
 }
 
 a {
@@ -90,7 +95,7 @@ a {
   // Must be block for positioning to work
   display: block;
   position: relative;
-  padding-right: 2em;
+  padding: 0.5em 2em 0.5em 0;
 
   // Add space before the numbers
   &::after {
@@ -106,4 +111,23 @@ section {
   a::after {
     content: counter(item, upper-roman);
   }
+}
+
+footer {
+  display: grid;
+  gap: 4rem;
+}
+
+#bottom-border {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 0;
+  border-bottom: 0.5rem solid;
+  /* Adjust thickness and color */
+  z-index: 9999;
+  /* Ensures it stays on top */
+  pointer-events: none;
+  /* Allows clicks to pass through */
 }
