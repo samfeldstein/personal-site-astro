@@ -45,26 +45,32 @@ body {
 }
 
 header {
+  @extend .flex-column;
+  justify-content: center;
   min-height: 100vh;
-}
-
-#title {
-  color: var(--background-color);
-  -webkit-text-stroke: 1.25px var(--text-color);
-}
-
-#byline {
-  font-family: var(--font-1);
-  font-size: var(--font-size-base);
 }
 
 h1 {
   @extend .flex-column;
   gap: 2rem;
+  margin: 0 auto; // Center
+  width: 100%;
+  max-width: 95%; // Effectively add padding
   font-family: var(--font-2);
-  font-size: clamp(5rem, 10vw, 10rem);
+  font-size: clamp(5rem, 20vw, 20vh); // 20vh key (I think) to filling header without overflow
   font-weight: 100;
   text-align: right;
+  line-height: 1;
+}
+
+#title {
+  color: var(--background-color); // Reverse color scheme
+  -webkit-text-stroke: 1.25px var(--text-color);
+}
+
+#byline {
+  font-family: var(--font-1);
+  font-size: clamp(var(--font-size-base), 2vw, 5vh);
 }
 
 h2 {
