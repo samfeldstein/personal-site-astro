@@ -42,15 +42,9 @@ body {
   font-family: var(--font-1);
   // Set here so counter applies to footer as well
   counter-reset: item;
-
-  @media screen and (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 header {
-  @extend .flex-column;
   min-height: 100vh;
 }
 
@@ -66,12 +60,11 @@ header {
 
 h1 {
   @extend .flex-column;
+  gap: 2rem;
   font-family: var(--font-2);
+  font-size: clamp(5rem, 10vw, 10rem);
   font-weight: 100;
   text-align: right;
-  margin: 0;
-  gap: 2rem;
-  font-size: clamp(5rem, 12vw, 10rem);
 }
 
 h2 {
