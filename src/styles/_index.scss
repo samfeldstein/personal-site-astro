@@ -35,7 +35,8 @@
 body {
   @extend .flex-column;
   margin: 0 auto;
-  border: 0.5rem solid;
+  border-style: none solid;
+  border-width: 0.5rem;
   min-height: 100vh;
   gap: 4rem;
   font-family: var(--font-1);
@@ -145,10 +146,9 @@ footer {
   gap: 4rem;
 }
 
-#bottom-border {
+.border {
   position: fixed;
   left: 0;
-  bottom: 0;
   width: 100vw;
   height: 0;
   border-bottom: 0.5rem solid;
@@ -157,4 +157,12 @@ footer {
   /* Ensures it stays on top */
   pointer-events: none;
   /* Allows clicks to pass through */
+
+  &.top {
+    top: 0;
+  }
+
+  &.bottom {
+    bottom: 0;
+  }
 }
