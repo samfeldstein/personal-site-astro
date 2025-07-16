@@ -84,7 +84,7 @@ h1 {
   width: 100%;
   max-width: 95%; // Effectively add padding
   font-family: var(--font-2);
-  font-size: clamp(5rem, 20vw, 20vh); // 20vh key (I think) to filling header without overflow
+  font-size: clamp(5rem, 20vw, 20vh); // 20vh key (I think) to filling header without overflow. Initial size should always fill viewport
   font-weight: 100;
   text-align: right;
   line-height: 1;
