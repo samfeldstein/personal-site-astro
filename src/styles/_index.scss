@@ -53,7 +53,22 @@ body {
   gap: 4rem;
   font-family: var(--font-1);
   font-size: var(--font-size-base);
-  counter-reset: item; // Set here so counter applies to footer as well
+}
+
+#skiplink {
+  font-family: var(--font-2);
+  background-color: var(--background-color);
+  border-style: solid;
+  border-width: 0.1em;
+  padding: 0.5em;
+  z-index: 100;
+  position: absolute;
+  translate: -1000%; // Hide visually by default
+  transition-duration: 0.25s;
+
+  &:focus {
+    translate: 0;
+  }
 }
 
 header {
@@ -106,18 +121,15 @@ h3 {
   margin: 0;
 }
 
+main {
+  counter-reset: item; // Set here so counter applies to footer as well
+}
+
 main,
 footer {
   max-width: 50rem;
   width: 100%;
   margin: 0 auto;
-}
-
-a {
-
-  &:hover {
-    color: var(--accent);
-  }
 }
 
 nav {
@@ -134,30 +146,30 @@ ul {
 
 a {
   counter-increment: item;
-  // Must be block for positioning to work
-  display: block;
+  display: block; // Must be block for positioning for counters to work
   position: relative;
   padding: 0.5em 2em 0.5em 0;
 
-  // Add space before the numbers
-  &::after {
+  &:hover,
+  &:not(#skiplink):focus {
+    color: var(--accent);
+  }
+
+  // Add "page" numbers
+  &:not(#skiplink)::after {
     content: counter(item);
     position: absolute;
     right: 0;
   }
 }
 
-section {
-
-  // Use roman numerals for external links
-  a::after {
-    content: counter(item, upper-roman);
-  }
-}
-
 footer {
   display: grid;
   gap: 4rem;
+
+  a::after {
+    content: counter(item, upper-roman) !important; // Use Roman numerals for external links
+  }
 }
 
 .border {

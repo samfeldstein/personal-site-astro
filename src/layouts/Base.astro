@@ -2,7 +2,6 @@
 // Components
 import Head from "../components/Head.astro";
 import Skiplink from "../components/Skiplink.astro";
-import SiteFooter from "../components/SiteFooter.astro";
 
 import { site } from "../../config.mjs";
 
@@ -13,6 +12,7 @@ const {
   ogTitle = `${title}`,
   ogType = "website",
   frontmatter,
+  preloadFonts = [],
 } = Astro.props;
 ---
 
@@ -23,10 +23,10 @@ const {
     description={description || frontmatter.description}
     ogTitle={ogTitle || title || frontmatter.ogTitle || frontmatter.title}
     ogType={ogType || frontmatter.ogType}
+    preloadFonts={preloadFonts}
   />
   <body>
     <Skiplink />
-      <slot />
-    <SiteFooter />
+    <slot />
   </body>
 </html>

@@ -1,5 +1,5 @@
 ---
-import Head from "../components/Head.astro";
+import Base from "../layouts/Base.astro";
 
 // Styles
 import "/src/styles/_index.scss";
@@ -15,75 +15,72 @@ const fonts = [
 ];
 ---
 
-<html lang="en-us">
-  <Head
-    title="Home"
-    description={site.description}
-    ogTitle="Sam Feldstein's Personal Website"
-    ogType="website"
-    preloadFonts={fonts}
-  />
-  <body>
-    <div class="border top"></div>
-    <header>
-      <h1>
-        <div id="title">
-          <div>Ever in</div><div>Flux</div>
-        </div>
-        <div id="byline">the personal website of</div>
-        <div id="name"><div>Samuel</div><div>Feldstein</div></div>
-      </h1>
-    </header>
+<Base
+  title="Home"
+  description={site.description}
+  ogTitle="Sam Feldstein's Personal Website"
+  ogType="website"
+  preloadFonts={fonts}
+>
+  <div class="border top"></div>
+  <header>
+    <h1>
+      <div id="title">
+        <div>Ever in</div><div>Flux</div>
+      </div>
+      <div id="byline">the personal website of</div>
+      <div id="name"><div>Samuel</div><div>Feldstein</div></div>
+    </h1>
+  </header>
 
-    <main id="main-content" class="page">
-      <h2>Contents</h2>
-      <nav>
-        <div id="code">
-          <h3>Code</h3>
-          <ul>
-            <li><a href="/dev-work/">Work</a></li>
-            <li><a href="/dev-projects">Projects</a></li>
-            <li><a href="/resumes/frontend-developer/">Résumé</a></li>
-          </ul>
-        </div>
-        <div id="words">
-          <h3>Words</h3>
-          <ul>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/published-writing">Published Work</a></li>
-            <li><a href="/feed.xml">Feed</a></li>
-          </ul>
-        </div>
-
-        <div id="else">
-          <h3>Else</h3>
-          <ul>
-            <li><a href="/about/">About the Author</a></li>
-            <li><a href="/uses/">Uses</a></li>
-            <li><a href="/photos/">Gallery</a></li>
-            <li><a href="/colophon/">Colophon</a></li>
-          </ul>
-        </div>
-      </nav>
-    </main>
-
-    <footer>
-      <section id="other-sites">
-        <h2>Other Sites</h2>
+  <main id="main-content" class="page">
+    <h2>Contents</h2>
+    <nav>
+      <div id="code">
+        <h3>Code</h3>
         <ul>
-          <li><a href="https://notes.samfeldstein.xyz/">Notebook</a></li>
-          <li><a href="https://cookbook.samfeldstein.xyz/">Cookbook</a></li>
+          <li><a href="/dev-work/">Work</a></li>
+          <li><a href="/dev-projects">Projects</a></li>
+          <li><a href="/resumes/frontend-developer/">Résumé</a></li>
         </ul>
-      </section>
+      </div>
+      <div id="words">
+        <h3>Words</h3>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/published-writing">Published Work</a></li>
+          <li><a href="/feed.xml">Feed</a></li>
+        </ul>
+      </div>
 
-      <section id="contact">
-        <h2>Contact & Social</h2>
-        <ul class="contact">
-          <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
-          <li><a href="https://github.com/samfeldstein">GitHub</a></li>
+      <div id="else">
+        <h3>Else</h3>
+        <ul>
+          <li><a href="/about/">About the Author</a></li>
+          <li><a href="/uses/">Uses</a></li>
+          <li><a href="/photos/">Gallery</a></li>
+          <li><a href="/colophon/">Colophon</a></li>
         </ul>
-      </section>
-    </footer>
-    <div class="border bottom"></div>
-  </body>
-</html>
+      </div>
+    </nav>
+  </main>
+
+  <footer>
+    <section id="other-sites">
+      <h2>Other Sites</h2>
+      <ul>
+        <li><a href="https://notes.samfeldstein.xyz/">Notebook</a></li>
+        <li><a href="https://cookbook.samfeldstein.xyz/">Cookbook</a></li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact & Social</h2>
+      <ul class="contact">
+        <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
+        <li><a href="https://github.com/samfeldstein">GitHub</a></li>
+      </ul>
+    </section>
+  </footer>
+  <div class="border bottom"></div>
+</Base>
