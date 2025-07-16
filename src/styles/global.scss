@@ -7,11 +7,11 @@
 
 html {
   background-color: var(--text-color);
-  color: var(--text-color);
 }
 
 body {
   background-color: var(--background-color);
+  color: var(--text-color);
   padding: 1rem;
   font-size: var(--font-size-base);
 }
@@ -36,50 +36,6 @@ a {
 ::selection {
   background-color: var(--text-color);
   color: var(--background-color);
-}
-
-blockquote {
-  font-size: var(--font-small);
-  font-style: italic;
-  text-align: justify;
-  margin: 2em 0;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  padding: 1rem 0;
-
-  cite {
-    font-style: normal;
-    display: block;
-    margin-top: 2em;
-  }
-}
-
-// Handle checkboxes. As far as I know, this is only in use on the cybersecurity page.
-ul.contains-task-list {
-  list-style-type: none;
-  padding: 0;
-
-  li {
-    display: flex;
-    gap: 1rem;
-    align-items: first baseline;
-  }
-}
-
-pre {
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--accent);
-  border-radius: 4px;
-  padding: 1rem;
-
-  code {
-    font-family: monospace;
-    font-weight: 400;
-    font-size: var(--font-small);
-  }
 }
 
 code,

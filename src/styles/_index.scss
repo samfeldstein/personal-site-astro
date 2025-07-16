@@ -90,10 +90,15 @@ h1 {
   line-height: 1;
 
   &>div {
+    --time: 0.5s;
     // Wipe animation
     display: inline-block; // Confine styles to line width instead of full block width
     clip-path: inset(0 0 0 100%); // Hide on page load
-    animation: wipeIn 0.8s ease-out forwards;
+    animation: wipeIn var(--time) ease-out forwards;
+
+    @media screen and (min-width: 768px) {
+      --time: 0.8s;
+    }
   }
 }
 
