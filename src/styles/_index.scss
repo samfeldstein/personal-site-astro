@@ -73,6 +73,13 @@ h1 {
   font-weight: 100;
   text-align: right;
   line-height: 1;
+
+  &>div {
+    // Wipe animation
+    display: inline-block; // Confine styles to line width instead of full block width
+    clip-path: inset(0 0 0 100%); // Hide on page load
+    animation: wipeIn 0.8s ease-out forwards;
+  }
 }
 
 #title {
@@ -171,5 +178,16 @@ footer {
 
   &.bottom {
     bottom: 0;
+  }
+}
+
+// Animations
+@keyframes wipeIn {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
