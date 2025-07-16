@@ -15,4 +15,18 @@ const score = isDev
   : data.lighthouseResult.categories.performance.score * 100;
 ---
 
-<p>Total Performance: {score}/100</p>
+<small>Lighthouse Performance Score: <span class="score">{score}</span></small>
+
+<style>
+  .score {
+    background-color: #e4f9ee;
+    color: #00cc66;
+    min-width: 2.6em;
+    height: 2.6em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 0.153846em solid;
+  }
+</style>

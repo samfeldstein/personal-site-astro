@@ -31,6 +31,7 @@
   --font-1: 'CMU Bright', sans-serif;
   --font-2: 'Bebas Neue', sans-serif;
   --font-size-base: clamp(1.25rem, 5vw, 2rem);
+  --font-small: calc(var(--font-size-base) * 0.5);
 
   // Colors
   color-scheme: light dark;
@@ -175,6 +176,10 @@ footer {
   a::after {
     content: counter(item, upper-roman) !important; // Use Roman numerals for external links
   }
+}
+
+small {
+  font-size: var(--font-small);
 }
 
 .border {
