@@ -144,19 +144,19 @@ ul {
   padding-left: 0.5em;
 }
 
-a {
+a:not(#skiplink) {
   counter-increment: item;
   display: block; // Must be block for positioning for counters to work
   position: relative;
   padding: 0.5em 2em 0.5em 0;
 
   &:hover,
-  &:not(#skiplink):focus {
+  &:focus {
     color: var(--accent);
   }
 
   // Add "page" numbers
-  &:not(#skiplink)::after {
+  &::after {
     content: counter(item);
     position: absolute;
     right: 0;
