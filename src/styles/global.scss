@@ -1,6 +1,9 @@
 @use 'reset';
-@use 'config';
 @use 'utils';
+
+@view-transition {
+  navigation: auto;
+}
 
 html {
   background-color: var(--text-color);
@@ -51,7 +54,6 @@ blockquote {
     display: block;
     margin-top: 2em;
   }
-
 }
 
 // Handle checkboxes. As far as I know, this is only in use on the cybersecurity page.

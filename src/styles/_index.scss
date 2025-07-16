@@ -28,8 +28,20 @@
 }
 
 :root {
-  --font-1: 'CMU Bright';
-  --font-2: 'Bebas Neue';
+  --font-1: 'CMU Bright', sans-serif;
+  --font-2: 'Bebas Neue', sans-serif;
+  --font-size-base: clamp(1.25rem, 5vw, 2rem);
+
+  // Colors
+  color-scheme: light dark;
+  --text-color: light-dark(#000, #fff);
+  --background-color: light-dark(#fff, #000);
+  --accent: light-dark(#595959, #999999);
+  --accent-2: light-dark(#999999, #595959);
+}
+
+html {
+  scrollbar-color: var(--text-color) var(--background-color);
 }
 
 body {
@@ -40,8 +52,8 @@ body {
   min-height: 100vh;
   gap: 4rem;
   font-family: var(--font-1);
-  // Set here so counter applies to footer as well
-  counter-reset: item;
+  font-size: var(--font-size-base);
+  counter-reset: item; // Set here so counter applies to footer as well
 }
 
 header {
@@ -89,13 +101,9 @@ h3 {
 
 main,
 footer {
-  max-width: 600px;
+  max-width: 50rem;
   width: 100%;
   margin: 0 auto;
-}
-
-main {
-  font-size: var(--font-size-base);
 }
 
 a {
