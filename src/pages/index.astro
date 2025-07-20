@@ -8,6 +8,11 @@ import "/src/styles/_index.scss";
 // Data
 import { site } from "../../config.mjs";
 
+// Utils
+import { getCurrentYear } from "../scripts/utils";
+
+const year = getCurrentYear();
+
 // Preloads
 const fonts = [
   "subset-BebasNeue-Regular",
@@ -41,7 +46,7 @@ const fonts = [
         <h3>Code</h3>
         <ul>
           <li><a href="/dev-work/">Work</a></li>
-          <li><a href="/dev-projects">Projects</a></li>
+          <li><a href="/dev-projects/">Projects</a></li>
           <li><a href="/resumes/frontend-developer/">Résumé</a></li>
         </ul>
       </div>
@@ -64,9 +69,7 @@ const fonts = [
         </ul>
       </div>
     </nav>
-  </main>
 
-  <footer>
     <section id="other-sites">
       <h2>Other Sites</h2>
       <ul>
@@ -82,7 +85,15 @@ const fonts = [
         <li><a href="https://github.com/samfeldstein">GitHub</a></li>
       </ul>
     </section>
+  </main>
+
+  <footer>
     <PageSpeed />
+    <div class="location-etc">
+      <div>{site.location.city}, {site.location.state}</div>
+      <div>Powered by <a href="https://astro.build">Astro</a></div>
+      <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
+    </div>
   </footer>
   <div class="border bottom"></div>
 </Base>

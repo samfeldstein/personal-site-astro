@@ -117,9 +117,7 @@ h2 {
   font-family: var(--font-2);
   font-size: 2em;
   text-align: center;
-  margin: 0;
-  margin-bottom: 0.5em;
-  padding-top: 1rem;
+  margin: 2em 0 0.5em 0;
 }
 
 h3 {
@@ -131,8 +129,7 @@ main {
   counter-reset: item; // Set here so counter applies to footer as well
 }
 
-main,
-footer {
+main {
   max-width: 50rem;
   width: 100%;
   margin: 0 auto;
@@ -147,10 +144,14 @@ nav {
 ul {
   @extend .unstyled-list;
   margin: 0;
-  padding-left: 0.5em;
+  padding: 0;
 }
 
-a:not(#skiplink) {
+main ul {
+  padding-left: 0.5rem;
+}
+
+main a:not(#skiplink) {
   counter-increment: item;
   display: block; // Must be block for positioning for counters to work
   position: relative;
@@ -169,17 +170,27 @@ a:not(#skiplink) {
   }
 }
 
-footer {
-  display: grid;
-  gap: 4rem;
-
-  a::after {
-    content: counter(item, upper-roman) !important; // Use Roman numerals for external links
-  }
+section a::after {
+  content: counter(item, upper-roman) !important; // Use Roman numerals for external links
 }
 
-small {
+footer {
+  @extend .flex-column;
+  gap: 2rem;
   font-size: var(--font-small);
+  text-align: right;
+  margin-top: 4rem;
+  border-top: 0.01em solid;
+  padding-top: 1rem;
+  
+  a {
+    @extend .small-caps;
+
+    &:hover,
+    &:focus {
+      @extend .underline;
+    }
+  }
 }
 
 .border {

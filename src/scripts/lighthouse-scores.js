@@ -1,25 +1,40 @@
-// ←── Insert your real API key here.
-const apiKey = "AIzaSyDZEaRCQCP0oAdNo3Ty4Ttm99ZBCpxY4nA";
-const endpoint =
-  "https://www.googleapis.com/pagespeedonline/v5/runPagespeed";
+// https://developers.google.com/speed/docs/insights/v5/get-started#javascript
 
 export default async function fetchLighthouseData(target) {
+  const apiKey = import.meta.env.PAGESPEED_API_KEY // Disguise for prod
+  const endpoint =
+    'https://www.googleapis.com/pagespeedonline/v5/runPagespeed'
+  const url = new URL(endpoint);
+  url.searchParams.set('url', target)
+  url.searchParams.set('key', apiKey)
+
   try {
-    const url = new URL(endpoint);
-    url.searchParams.set("url", target);
-    url.searchParams.set("key", apiKey);
+    url.searchParams.set("url", target)
+    const response = await fetch(url)
 
-    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    const json = await response.json()
 
-    if (!response.ok) throw new Error(`PageSpeed API error: ${response.status}`);
-    const json = await response.json();
-    console.log(json);
-    
-    return json;
-  }
-  catch (error) {
-    console.error(`❌ fetchLighthouseData failed for ${target}`, error);
-    // Re-throw so caller knows something went wrong
-    throw error;
+    // Get lighthouse metrics
+    const lighthouse = json.lighthouseResult
+
+    const lighthouseMetrics = {
+      performanceScore: Math.round(lighthouse?.categories?.performance?.score) * 100,
+      fcp:
+        lighthouse.audits['first-contentful-paint']?.displayValue,
+      speedIndex: lighthouse.audits['speed-index']?.displayValue,
+      lcp:
+        lighthouse.audits['largest-contentful-paint']?.displayValue,
+      blockingTime:
+        lighthouse.audits['total-blocking-time']?.displayValue,
+      tti: lighthouse.audits['interactive']?.displayValue,
+    }
+
+    return lighthouseMetrics
+
+  } catch (error) {
+    console.error('Fetching PageSpeed Insights failed:', error)
   }
 }

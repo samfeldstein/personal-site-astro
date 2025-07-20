@@ -1,32 +1,64 @@
 ---
-import fetchScores from "../scripts/lighthouse-scores.js";
-
-export const prerender = true;
+import fetchData from "../scripts/lighthouse-scores.js";
 
 const isDev = import.meta.env.DEV;
+const target = Astro.url;
+// Sample object for dev purposes
+const devMetrics = {
+  performanceScore: 100,
+  blockingTime: "0.2 s",
+  speedIndex: "0.2 s",
+  tti: "0.3 s",
+};
 
-// If isDev false, use Astro.url
-const target = isDev ? `${Astro.site}` : `${Astro.url}`;
-
-const data = isDev ? null : await fetchScores(target);
-
-const score = isDev
-  ? 100
-  : data.lighthouseResult.categories.performance.score * 100;
+const metrics = isDev ? devMetrics : await fetchData(target); // Only run in prod
 ---
 
-<small>Lighthouse Performance Score: <span class="score">{score}</span></small>
+<figure>
+  <figcaption class="small-caps">Lighthouse Metrics</figcaption>
+  <ul>
+    <li>
+      <span>Blocking Time:</span><span>{metrics?.blockingTime}</span>
+    </li>
+    <li><span>Speed Index:</span><span>{metrics?.speedIndex}</span></li>
+    <li><span>Time to Interactive:</span><span>{metrics?.tti}</span></li>
+    <li class="performance">
+      <span>Performance Score:</span><span
+        >&nbsp;&nbsp;{metrics?.performanceScore}</span
+      >
+    </li>
+  </ul>
+</figure>
 
-<style>
-  .score {
-    background-color: #e4f9ee;
-    color: #00cc66;
-    min-width: 2.6em;
-    height: 2.6em;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 0.153846em solid;
+<style lang="scss">
+  figure {
+    text-align: right;
+  }
+
+  figcaption {
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    // Unstyled in index.scss
+    padding: 0;
+    font-size: 0.9em;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  span:first-of-type {
+    // min-width: 100%;
+    flex: 1;
+    text-align: right;
+  }
+
+  .performance {
+    font-weight: bold;
+    margin-top: 0.5em;
   }
 </style>
