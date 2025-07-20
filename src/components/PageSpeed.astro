@@ -2,7 +2,9 @@
 import fetchData from "../scripts/lighthouse-scores.js";
 
 const isDev = import.meta.env.DEV;
-const target = Astro.url;
+const target = Astro.url.href; // https://docs.astro.build/en/reference/api-reference/#url
+console.log(target);
+
 // Sample object for dev purposes
 const devMetrics = {
   performanceScore: 100,
