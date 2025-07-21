@@ -1,7 +1,6 @@
 // https://developers.google.com/speed/docs/insights/v5/get-started#javascript
 
-export default async function fetchLighthouseData(target) {
-  const apiKey = import.meta.env.PAGESPEED_API_KEY // Disguise for prod
+export default async function fetchLighthouseData(target, apiKey) {
   const endpoint =
     'https://www.googleapis.com/pagespeedonline/v5/runPagespeed'
   const url = new URL(endpoint);
@@ -9,7 +8,6 @@ export default async function fetchLighthouseData(target) {
   url.searchParams.set('key', apiKey)
 
   try {
-    url.searchParams.set("url", target)
     const response = await fetch(url)
 
     if (!response.ok) {
@@ -21,7 +19,7 @@ export default async function fetchLighthouseData(target) {
     const lighthouse = json.lighthouseResult
 
     const lighthouseMetrics = {
-      performanceScore: Math.round(lighthouse?.categories?.performance?.score) * 100,
+      performanceScore: Math.round(lighthouse?.categories?.performance?.score * 100),
       fcp:
         lighthouse.audits['first-contentful-paint']?.displayValue,
       speedIndex: lighthouse.audits['speed-index']?.displayValue,
