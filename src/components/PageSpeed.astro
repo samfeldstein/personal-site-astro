@@ -3,7 +3,7 @@ import fetchData from "../scripts/lighthouse-scores.js";
 
 const isDev = import.meta.env.DEV;
 const target = Astro.url.href; // https://docs.astro.build/en/reference/api-reference/#url
-console.log("PAGESPEED TARGET:", target);
+// console.log("PAGESPEED TARGET:", target);
 
 const key = import.meta.env.PSI_KEY; // Variable set in Cloudflare, and this import logic works fine I guess
 
@@ -16,7 +16,7 @@ const devMetrics = {
 };
 
 const metrics = isDev ? devMetrics : await fetchData(target, key); // Only run in prod
-console.log(metrics);
+// console.log(metrics);
 ---
 
 <figure>
@@ -37,7 +37,7 @@ console.log(metrics);
 
 <style lang="scss">
   figure {
-    text-align: right;
+    margin-top: 4rem;
   }
 
   figcaption {
@@ -47,7 +47,6 @@ console.log(metrics);
   ul {
     // Unstyled in index.scss
     padding: 0;
-    font-family: "CMU Concrete";
     font-size: 0.9em;
   }
 

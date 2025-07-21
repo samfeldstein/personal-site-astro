@@ -1,6 +1,5 @@
 @use 'fonts/bebas-neue';
 @use 'fonts/cmu-bright';
-@use 'fonts/cmu-concrete';
 @use 'utils';
 
 // Config
@@ -96,6 +95,7 @@ h1 {
 h2 {
   font-family: var(--font-2);
   font-size: 2em;
+  font-weight: 100;
   text-align: center;
   margin: 2em 0 0.5em 0;
 }
@@ -106,14 +106,12 @@ h3 {
 }
 
 main {
-  padding: 0 1rem;
-  counter-reset: item; // Set here so counter applies to footer as well
-}
-
-main {
   max-width: 50rem;
   width: 100%;
   margin: 0 auto;
+  border-top: 0.25rem solid;
+  padding: 0 1rem;
+  counter-reset: item; // Set here so counter applies to footer as well
 }
 
 nav {
@@ -157,13 +155,21 @@ section a::after {
 
 footer {
   @extend .flex-column;
+  min-height: 100vh;
+  justify-content: space-evenly;
   gap: 2rem;
-  font-size: var(--font-small);
+  font-size: 0.8em;
   text-align: right;
-  margin-top: 4rem;
+  margin-top: 10rem;
   border-top: 0.25rem solid;
-  padding: 4rem 1rem;
-  
+  padding: 4rem 1rem 1rem 1rem;
+
+  &>* {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+
   a {
     @extend .small-caps;
 
@@ -172,6 +178,28 @@ footer {
       @extend .underline;
     }
   }
+}
+
+.etc, .toc {
+  @extend .flex-column;
+  gap: 0.5em;
+}
+
+.blockquote {
+  border: 0.1em solid;
+  outline: 0.2em solid;
+  outline-offset: .25em;
+  padding: 1em;
+
+  .attribution {
+    font-size: 0.8em;
+  }
+}
+
+blockquote {
+  margin: 0;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .border {

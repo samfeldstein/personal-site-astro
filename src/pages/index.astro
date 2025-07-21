@@ -14,10 +14,7 @@ import { getCurrentYear } from "../scripts/utils";
 const year = getCurrentYear();
 
 // Preloads
-const fonts = [
-  "subset-BebasNeue-Regular",
-  "subset-CMUBright-Roman",
-];
+const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
 ---
 
 <Base
@@ -39,35 +36,37 @@ const fonts = [
   </header>
 
   <main id="main-content" class="page">
-    <h2>Contents</h2>
-    <nav>
-      <div id="code">
-        <h3>Code</h3>
-        <ul>
-          <li><a href="/dev-work/">Work</a></li>
-          <li><a href="/dev-projects/">Projects</a></li>
-          <li><a href="/resumes/frontend-developer/">Résumé</a></li>
-        </ul>
-      </div>
-      <div id="words">
-        <h3>Words</h3>
-        <ul>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/published-writing">Published Work</a></li>
-          <li><a href="/feed.xml">Feed</a></li>
-        </ul>
-      </div>
+    <section id="contents">
+      <h2>Contents</h2>
+      <nav>
+        <div id="code">
+          <h3>Code</h3>
+          <ul>
+            <li><a href="/dev-work/">Work</a></li>
+            <li><a href="/dev-projects/">Projects</a></li>
+            <li><a href="/resumes/frontend-developer/">Résumé</a></li>
+          </ul>
+        </div>
+        <div id="words">
+          <h3>Words</h3>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/published-writing">Published Work</a></li>
+            <li><a href="/feed.xml">Feed</a></li>
+          </ul>
+        </div>
 
-      <div id="else">
-        <h3>Else</h3>
-        <ul>
-          <li><a href="/about/">About the Author</a></li>
-          <li><a href="/uses/">Uses</a></li>
-          <li><a href="/photos/">Gallery</a></li>
-          <li><a href="/colophon/">Colophon</a></li>
-        </ul>
-      </div>
-    </nav>
+        <div id="else">
+          <h3>Else</h3>
+          <ul>
+            <li><a href="/about/">About the Author</a></li>
+            <li><a href="/uses/">Uses</a></li>
+            <li><a href="/photos/">Gallery</a></li>
+            <li><a href="/colophon/">Colophon</a></li>
+          </ul>
+        </div>
+      </nav>
+    </section>
 
     <section id="other-sites">
       <h2>Other Sites</h2>
@@ -87,8 +86,22 @@ const fonts = [
   </main>
 
   <footer>
+    <div class="blockquote">
+      <blockquote>
+        <p>
+          This is a very interesting quote from a very interesting person. Let's
+          make it a bit longer to see what happens.
+        </p>
+      </blockquote>
+      <p class="attribution">A very interesting person</p>
+    </div>
     <PageSpeed />
-    <div class="location-etc">
+    <ul class="toc">
+      <li><a href="#contents">Contents</a></li>
+      <li><a href="#other-sites">Other Sites</a></li>
+      <li><a href="#contact">Contact & Social</a></li>
+    </ul>
+    <div class="etc">
       <div>{site.location.city}, {site.location.state}</div>
       <div>Powered by <a href="https://astro.build">Astro</a></div>
       <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
