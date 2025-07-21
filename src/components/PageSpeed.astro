@@ -4,13 +4,13 @@ import fetchData from "../scripts/lighthouse-scores.js";
 const isDev = import.meta.env.DEV;
 const target = Astro.url.href; // https://docs.astro.build/en/reference/api-reference/#url
 console.log("PAGESPEED TARGET:", target);
-const key = import.meta.env.PSI_KEY;
-console.log("KEY:", key);
+
+const key = import.meta.env.PSI_KEY; // Variable set in Cloudflare, and this import logic works fine I guess
 
 // Sample object for dev purposes
 const devMetrics = {
   performanceScore: 100,
-  blockingTime: "0.2 s",
+  blockingTime: "0 ms",
   speedIndex: "0.2 s",
   tti: "0.3 s",
 };
@@ -47,6 +47,7 @@ console.log(metrics);
   ul {
     // Unstyled in index.scss
     padding: 0;
+    font-family: "CMU Concrete";
     font-size: 0.9em;
   }
 
@@ -64,6 +65,6 @@ console.log(metrics);
 
   .performance {
     font-weight: bold;
-    margin-top: 0.5em;
+    margin-top: 0.25em;
   }
 </style>

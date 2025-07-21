@@ -1,32 +1,9 @@
+@use 'fonts/bebas-neue';
+@use 'fonts/cmu-bright';
+@use 'fonts/cmu-concrete';
 @use 'utils';
 
-@font-face {
-  font-family: 'Bebas Neue';
-  src: url('/fonts/subset-BebasNeue-Regular.woff2') format('woff2'),
-    url('/fonts/subset-BebasNeue-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CMU Bright';
-  src: url('/fonts/subset-CMUBright-Roman.woff2') format('woff2'),
-    url('/fonts/subset-CMUBright-Roman.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'CMU Bright';
-  src: url('/fonts/subset-CMUBright-SemiBold.woff2') format('woff2'),
-    url('/fonts/subset-CMUBright-SemiBold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
+// Config
 :root {
   --font-1: 'CMU Bright', sans-serif;
   --font-2: 'Bebas Neue', sans-serif;
@@ -50,6 +27,7 @@ body {
   margin: 0 auto;
   border-style: none solid;
   border-width: 0.5rem;
+  padding: 0;
   min-height: 100vh;
   gap: 4rem;
   font-family: var(--font-1);
@@ -59,6 +37,7 @@ body {
 #skiplink {
   font-family: var(--font-2);
   background-color: var(--background-color);
+  margin: 0.5em 0.25em;
   border-style: solid;
   border-width: 0.1em;
   padding: 0.5em;
@@ -76,6 +55,7 @@ header {
   @extend .flex-column;
   justify-content: center;
   min-height: 100vh;
+  padding: 0 1rem;
 }
 
 h1 {
@@ -126,6 +106,7 @@ h3 {
 }
 
 main {
+  padding: 0 1rem;
   counter-reset: item; // Set here so counter applies to footer as well
 }
 
@@ -180,8 +161,8 @@ footer {
   font-size: var(--font-small);
   text-align: right;
   margin-top: 4rem;
-  border-top: 0.01em solid;
-  padding-top: 1rem;
+  border-top: 0.25rem solid;
+  padding: 4rem 1rem;
   
   a {
     @extend .small-caps;
