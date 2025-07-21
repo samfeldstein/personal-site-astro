@@ -3,8 +3,9 @@ import fetchData from "../scripts/lighthouse-scores.js";
 
 const isDev = import.meta.env.DEV;
 const target = Astro.url.href; // https://docs.astro.build/en/reference/api-reference/#url
-// console.log('PAGESPEED TARGET', target);
+console.log("PAGESPEED TARGET:", target);
 const key = import.meta.env.PSI_KEY;
+console.log("KEY:", key);
 
 // Sample object for dev purposes
 const devMetrics = {
