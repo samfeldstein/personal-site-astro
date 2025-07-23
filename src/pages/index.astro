@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import PageSpeed from "../components/PageSpeed.astro";
+import QuoteGenerator from "../components/QuoteGenerator.astro";
 
 // Styles
 import "/src/styles/_index.scss";
@@ -36,8 +37,8 @@ const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
   </header>
 
   <main id="main-content" class="page">
-    <section id="contents">
-      <h2>Contents</h2>
+    <section>
+      <h2 id="contents">Contents</h2>
       <nav>
         <div id="code">
           <h3>Code</h3>
@@ -68,16 +69,16 @@ const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
       </nav>
     </section>
 
-    <section id="other-sites">
-      <h2>Other Sites</h2>
+    <section class="other">
+      <h2 id="other-sites">Other Sites</h2>
       <ul>
         <li><a href="https://notes.samfeldstein.xyz/">Notebook</a></li>
         <li><a href="https://cookbook.samfeldstein.xyz/">Cookbook</a></li>
       </ul>
     </section>
 
-    <section id="contact">
-      <h2>Contact & Social</h2>
+    <section class="other">
+      <h2 id="contact">Contact & Social</h2>
       <ul class="contact">
         <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
         <li><a href="https://github.com/samfeldstein">GitHub</a></li>
@@ -86,15 +87,7 @@ const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
   </main>
 
   <footer>
-    <div class="blockquote">
-      <blockquote>
-        <p>
-          This is a very interesting quote from a very interesting person. Let's
-          make it a bit longer to see what happens.
-        </p>
-      </blockquote>
-      <p class="attribution">A very interesting person</p>
-    </div>
+    <QuoteGenerator/>
     <PageSpeed />
     <ul class="toc">
       <li><a href="#contents">Contents</a></li>

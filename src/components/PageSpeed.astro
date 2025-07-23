@@ -19,21 +19,39 @@ const metrics = isDev ? devMetrics : await fetchData(target, key); // Only run i
 // console.log(metrics);
 ---
 
-<figure>
-  <figcaption class="small-caps">Lighthouse Metrics</figcaption>
-  <ul>
-    <li>
-      <span>Blocking Time:</span><span>{metrics?.blockingTime}</span>
-    </li>
-    <li><span>Speed Index:</span><span>{metrics?.speedIndex}</span></li>
-    <li><span>Time to Interactive:</span><span>{metrics?.tti}</span></li>
-    <li class="performance">
-      <span>Performance Score:</span><span
-        >&nbsp;&nbsp;{metrics?.performanceScore}</span
-      >
-    </li>
-  </ul>
-</figure>
+{
+  metrics && (
+    <figure>
+      <figcaption class="small-caps">Lighthouse Metrics</figcaption>
+      <ul>
+        <li>
+          <>
+            <span>Blocking Time:</span>
+            <span>{metrics?.blockingTime}</span>
+          </>
+        </li>
+        <li>
+          <>
+            <span>Speed Index:</span>
+            <span>{metrics?.speedIndex}</span>
+          </>
+        </li>
+        <li>
+          <>
+            <span>Time to Interactive:</span>
+            <span>{metrics?.tti}</span>
+          </>
+        </li>
+        <li class="performance">
+          <>
+            <span>Performance Score:</span>
+            <span>&nbsp;&nbsp;{metrics?.performanceScore}</span>
+          </>
+        </li>
+      </ul>
+    </figure>
+  )
+}
 
 <style lang="scss">
   figure {

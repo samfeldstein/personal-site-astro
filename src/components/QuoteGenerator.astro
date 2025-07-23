@@ -1,0 +1,44 @@
+<script>
+  // Doesn't need to be in public, I don't think. Like css, when you import it it makes the data available in the published site
+  import quotes from "../data/quotes";
+
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+
+  document.getElementById("quote").textContent = randomQuote.quote;
+  document.getElementById("speaker").textContent = randomQuote.speaker + ", ";
+  document.getElementById("work").textContent = randomQuote.work;
+
+  if (randomQuote.url) {
+    document.querySelector("blockquote")?.setAttribute("cite", randomQuote.url);
+  }
+</script>
+
+<div class="container">
+  <blockquote>
+    <p id="quote"></p>
+  </blockquote>
+  <p class="attribution"><span id="speaker"></span><cite id="work"></cite></p>
+</div>
+
+<style lang="scss">
+  .container {
+    border-style: solid none;
+    border-width: 0.01em;
+    border-color: var(--accent-2);
+    background: var(--accent-3);
+    padding: 1em;
+  }
+
+  blockquote {
+    margin: 0;
+    position: relative; // To position scrolling text
+  }
+
+  #quote {
+    text-align: left;
+  }
+
+  .attribution {
+    font-size: 0.8em;
+  }
+</style>
