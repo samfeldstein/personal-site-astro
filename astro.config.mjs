@@ -3,11 +3,14 @@ import { defineConfig } from "astro/config"
 // Plugins
 import mdx from "@astrojs/mdx"
 import sitemap from "@astrojs/sitemap"
+import remarkSmartypants from 'remark-smartypants'
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://samfeldstein.xyz",
-  assetsInclude: ["**/*.yml"],
+  markdown: {
+    remarkPlugins: [remarkSmartypants],
+  },
 
   // https://docs.astro.build/en/guides/prefetch/
   prefetch: {

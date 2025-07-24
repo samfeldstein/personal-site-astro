@@ -125,7 +125,7 @@ main {
     padding: 0 1rem;
 
     &.other a::after {
-      content: counter(item, upper-roman) !important; // Use Roman numerals for external links
+      content: counter(item, upper-roman) !important; // Use Roman numerals
     }
   }
 
@@ -167,6 +167,7 @@ main {
 
     &:hover,
     &:focus-within {
+      // Outline li instead of <a> on focus, so the padding/offset is even
       color: var(--background-color);
       background: var(--text-color);
       outline: 0.05em solid var(--text-color);

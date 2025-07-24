@@ -1,6 +1,6 @@
 const quotes = [
   {
-    quote: "I’m your huckleberry.",
+    quote: "I'm your huckleberry.",
     speaker: "Doc Holliday",
     work: "Tombstone"
   },
