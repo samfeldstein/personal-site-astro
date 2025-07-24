@@ -2,7 +2,7 @@
 @use 'fonts/cmu-bright';
 @use 'utils';
 
-// Config
+// === CONFIG ===
 :root {
   --font-1: 'CMU Bright', sans-serif;
   --font-2: 'Bebas Neue', sans-serif;
@@ -18,6 +18,7 @@
   --accent-3: light-dark(#f8f8f8, #252525);
 }
 
+// === GENERAL ELEMENTS ===
 html {
   scrollbar-color: var(--text-color) var(--background-color);
 }
@@ -31,22 +32,27 @@ body {
   min-height: 100vh;
   font-family: var(--font-1);
   font-size: var(--font-size-base);
-}
 
-#skiplink {
-  font-family: var(--font-2);
-  background-color: var(--background-color);
-  margin: 0.5em 0.25em;
-  border-style: solid;
-  border-width: 0.1em;
-  padding: 0.5em;
-  z-index: 100;
-  position: absolute;
-  translate: -1000%; // Hide visually by default
-  transition-duration: 0.25s;
+  .border {
+    /* Stick to position relative to nearest scrolling ancestor (body) */
+    position: sticky;
+    left: 0;
+    /* Fill width of parent container */
+    width: 100%;
+    height: 0;
+    border-bottom: 0.5rem solid;
+    /* Keep "above" other content */
+    z-index: 9999;
 
-  &:focus {
-    translate: 0;
+    &.top {
+      /* Place at top */
+      top: 0;
+    }
+
+    &.bottom {
+      /* Place at bottom */
+      bottom: 0;
+    }
   }
 }
 
@@ -69,7 +75,8 @@ h1 {
   text-align: right;
   line-height: 1;
 
-  &>div {
+  // Apply wipe to each child div
+  div {
     --time: 0.5s;
     // Wipe animation
     display: inline-block; // Confine styles to line width instead of full block width
@@ -77,19 +84,20 @@ h1 {
     animation: wipeIn var(--time) ease-out forwards;
 
     @media screen and (min-width: 768px) {
+      // Appears shorter on bigger screens
       --time: 0.8s;
     }
   }
-}
 
-#title {
-  color: var(--background-color); // Reverse color scheme
-  -webkit-text-stroke: 1.25px var(--text-color);
-}
+  .title {
+    color: var(--background-color); // Reverse color scheme
+    -webkit-text-stroke: 1.25px var(--text-color);
+  }
 
-#byline {
-  font-family: var(--font-1);
-  font-size: clamp(var(--font-size-base), 2vw, 5vh);
+  .byline {
+    font-family: var(--font-1);
+    font-size: clamp(var(--font-size-base), 2vw, 5vh);
+  }
 }
 
 h2 {
@@ -103,6 +111,7 @@ h2 {
 h3 {
   @extend .small-caps;
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 main {
@@ -114,25 +123,43 @@ main {
     width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
+
+    &.other a::after {
+      content: counter(item, upper-roman) !important; // Use Roman numerals for external links
+    }
   }
-}
 
-nav {
-  display: grid;
-  gap: 2em;
-}
+  // Space contents sections (Code, Words, etc)
+  nav {
+    display: grid;
+    gap: 2em;
+  }
 
-// developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters
-ul {
-  @extend .unstyled-list;
-  margin: 0;
-  padding: 0;
-}
+  a {
+    // developer.mozilla.org/en-US/docs/Web/CSS/CSS_counter_styles/Using_CSS_counters
+    counter-increment: item;
+    display: block; // Must be block for counters to work
+    position: relative; // For "page" number positioning
+    padding: 0.25em 2em 0.25em 0;
 
-main ul {
-  padding-left: 0.5rem;
-  display: grid;
-  gap: 0.5em;
+    // Add "page" numbers
+    &::after {
+      content: counter(item);
+      position: absolute;
+      right: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  ul {
+    @extend .unstyled-list;
+    padding-left: 0.5rem;
+    display: grid;
+    gap: 0.5em;
+  }
 
   li {
     // For hover styles
@@ -146,29 +173,6 @@ main ul {
       outline-offset: 0.05em;
     }
   }
-}
-
-// Links in main
-main a {
-  counter-increment: item;
-  display: block; // Must be block for counters to work
-  position: relative; // For "page" number positioning
-  padding: 0.25em 2em 0.25em 0;
-
-  // Add "page" numbers
-  &::after {
-    content: counter(item);
-    position: absolute;
-    right: 0;
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
-
-section.other a::after {
-  content: counter(item, upper-roman) !important; // Use Roman numerals for external links
 }
 
 footer {
@@ -188,53 +192,54 @@ footer {
     margin: 0 auto;
   }
 
+  ul {
+    @extend .unstyled-list;
+    margin: 0;
+    padding: 0;
+  }
+
+  .etc,
+  .toc {
+    @extend .flex-column;
+    gap: 0.5em;
+  }
+
   // Footer links
   a {
     @extend .small-caps;
 
-    &:hover,
-    &:focus {
+    &:hover {
       @extend .underline;
       text-decoration-thickness: 0.1em;
     }
   }
-}
 
-.etc,
-.toc {
-  @extend .flex-column;
-  gap: 0.5em;
-}
-
-.border {
-  /* Stick to position relative to nearest scrolling ancestor (body) */
-  position: sticky;
-  left: 0;
-  /* Fill width of parent container */
-  width: 100%;
-  height: 0;
-  border-bottom: 0.5rem solid;
-  /* Keep "above" other content */
-  z-index: 9999;
-
-  &.top {
-    /* Place at top */
-    top: 0;
-  }
-
-  &.bottom {
-    /* Place at bottom */
-    bottom: 0;
+  // Focus styles
+  :focus-visible {
+    outline: 0.1em solid var(--text-color);
+    outline-offset: 0.05em;
   }
 }
 
-// Focus styles
-:focus-visible {
-  outline: 0.1em solid var(--text-color);
-  outline-offset: 0.1em;
+// === SKIPLINK ===
+#skiplink {
+  font-family: var(--font-2);
+  background-color: var(--background-color);
+  margin: 0.5em 0.25em;
+  border-style: solid;
+  border-width: 0.1em;
+  padding: 0.5em;
+  z-index: 100;
+  position: absolute;
+  translate: -1000%; // Hide visually by default
+  transition-duration: 0.25s;
+
+  &:focus {
+    translate: 0;
+  }
 }
 
-// Animations
+// === ANIMATIONS ===
 @keyframes wipeIn {
   from {
     clip-path: inset(0 0 0 100%);

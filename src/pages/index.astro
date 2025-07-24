@@ -28,16 +28,14 @@ const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
   <div class="border top"></div>
   <header>
     <h1>
-      <div id="title">
-        <div>Ever in</div><div>Flux</div>
-      </div>
-      <div id="byline">the personal website of</div>
-      <div id="name"><div>Samuel</div><div>Feldstein</div></div>
+      <div class="title">Ever in<br />Flux</div>
+      <div class="byline">the personal website of</div>
+      <div class="name">Samuel<br />Feldstein</div>
     </h1>
   </header>
 
   <main id="main-content" class="page">
-    <section>
+    <section class="contents">
       <h2 id="contents">Contents</h2>
       <nav>
         <div id="code">
@@ -88,11 +86,13 @@ const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
 
   <footer>
     <QuoteGenerator />
-    <ul class="toc">
-      <li><a href="#contents">Contents</a></li>
-      <li><a href="#other-sites">Other Sites</a></li>
-      <li><a href="#contact">Contact & Social</a></li>
-    </ul>
+    <nav>
+      <ul class="toc">
+        <li><a href="#contents">Contents</a></li>
+        <li><a href="#other-sites">Other Sites</a></li>
+        <li><a href="#contact">Contact & Social</a></li>
+      </ul>
+    </nav>
     <PageSpeed />
     <div class="etc">
       <div>{site.location.city}, {site.location.state}</div>
