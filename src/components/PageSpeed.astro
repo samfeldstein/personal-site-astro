@@ -19,6 +19,35 @@ const metrics = isDev ? devMetrics : await fetchData(target, key); // Only run i
 // console.log(metrics);
 ---
 
+<style lang="scss">
+  figcaption {
+    margin-bottom: 0.5em;
+  }
+
+  ul {
+    // Unstyled in index.scss
+    padding: 0;
+    font-size: 0.9em;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  span:first-of-type {
+    // min-width: 100%;
+    flex: 1;
+    text-align: right;
+  }
+
+  .performance {
+    font-weight: bold;
+    margin-top: 0.25em;
+  }
+</style>
+
 {
   metrics && (
     <figure>
@@ -52,36 +81,3 @@ const metrics = isDev ? devMetrics : await fetchData(target, key); // Only run i
     </figure>
   )
 }
-
-<style lang="scss">
-  figure {
-    margin-top: 4rem;
-  }
-
-  figcaption {
-    margin-bottom: 0.5em;
-  }
-
-  ul {
-    // Unstyled in index.scss
-    padding: 0;
-    font-size: 0.9em;
-  }
-
-  li {
-    display: flex;
-    justify-content: space-between;
-    gap: 1em;
-  }
-
-  span:first-of-type {
-    // min-width: 100%;
-    flex: 1;
-    text-align: right;
-  }
-
-  .performance {
-    font-weight: bold;
-    margin-top: 0.25em;
-  }
-</style>

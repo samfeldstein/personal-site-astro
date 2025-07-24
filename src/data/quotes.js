@@ -1,6 +1,11 @@
 const quotes = [
   {
-    quote: "If you run into an asshole in the morning, you ran into an asshole. If you run into assholes all day, you're the asshole.",
+    quote: "I’m your huckleberry.",
+    speaker: "Doc Holliday",
+    work: "Tombstone"
+  },
+  {
+    quote: "If you run into an asshole in the morning, you ran into an asshole. If you run into assholes all day, you’re the asshole.",
     speaker: "Raylan Givens",
     work: "Justified",
   },
@@ -68,7 +73,7 @@ const quotes = [
     year: 2010
   },
   {
-    quote: "I am Iron Man",
+    quote: "I am Iron Man.",
     speaker: "Tony Stark",
     work: "Iron Man"
   },
@@ -83,7 +88,7 @@ const quotes = [
     work: "The Man Who Shot Liberty Valance"
   },
   {
-    quote: "Thrill Me",
+    quote: "Thrill me.",
     speaker: "Detective Ray Cameron",
     work: "Night of the Creeps"
   },
@@ -107,6 +112,11 @@ const quotes = [
     quote: "Get busy livin, or get busy dyin.",
     speaker: "Red",
     work: "Rita Hayworth and the Shawshank Redemption"
+  },
+  {
+    quote: "I'm Dapper Dan man, dammit!",
+    speaker: "Ulysses Everett McGill",
+    work: "O Brother, Where Art Thou?"
   }
 ]
 
