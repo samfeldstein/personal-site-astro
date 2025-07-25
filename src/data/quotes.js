@@ -1,6 +1,11 @@
 const quotes = [
   {
-    quote: "I'm your huckleberry.",
+    quote: "One does not go to see Humphrey Bogart as Sam Spade: one goes to see Sam Spade as Humphrey Bogart.",
+    speaker: "James Baldwin",
+    work: "The Devil Finds Work"
+  },
+  {
+    quote: "I’m your huckleberry.",
     speaker: "Doc Holliday",
     work: "Tombstone"
   },
@@ -20,7 +25,7 @@ const quotes = [
     work: "The Good, the Bad, and the Ugly"
   },
   {
-    quote: "That'll be the day.",
+    quote: "That’ll be the day.",
     speaker: "Ethan Edwards",
     work: "The Searchers"
   },
@@ -46,7 +51,7 @@ const quotes = [
     work: "The Fellowship of the Ring",
   },
   {
-    quote: "The teeth, we don't know. Signs from Hashem? Don't know. Helping others. Couldn't hurt.",
+    quote: ".*’.*",
     speaker: "Rabbi Nachtner",
     work: "A Serious Man"
   },
@@ -69,8 +74,7 @@ const quotes = [
   {
     quote: "Fill your hands, you son of a bitch!",
     speaker: "Rooster Cogburn",
-    work: "True Grit",
-    year: 2010
+    work: "True Grit"
   },
   {
     quote: "I am Iron Man.",
@@ -96,7 +100,7 @@ const quotes = [
     quote: `And should we win the day, the Fourth of July will no longer be known as an American holiday, but as the day when the world declared in one voice:
     <br>
     <br>
-    "We will not go quietly into the night! We will not vanish without a fight! We're going to live on! We're going to survive!"
+    "We will not go quietly into the night! We will not vanish without a fight! We’re going to live on! We’re going to survive!"
     <br>
     <br>
     Today, we celebrate our Independence Day!`,
@@ -114,7 +118,7 @@ const quotes = [
     work: "Rita Hayworth and the Shawshank Redemption"
   },
   {
-    quote: "I'm Dapper Dan man, dammit!",
+    quote: "I’m Dapper Dan man, dammit!",
     speaker: "Ulysses Everett McGill",
     work: "O Brother, Where Art Thou?"
   }

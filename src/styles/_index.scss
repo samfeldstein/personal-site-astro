@@ -115,6 +115,7 @@ h3 {
 }
 
 main {
+  @extend .defer;
   border-top: 0.25rem solid;
   counter-reset: item; // Set here so counter applies to footer as well
 
@@ -177,6 +178,7 @@ main {
 }
 
 footer {
+  @extend .defer;
   @extend .flex-column;
   min-height: 100vh;
   justify-content: space-evenly;

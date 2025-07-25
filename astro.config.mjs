@@ -1,13 +1,13 @@
-import { defineConfig } from "astro/config"
+import { defineConfig } from 'astro/config'
 
 // Plugins
-import mdx from "@astrojs/mdx"
-import sitemap from "@astrojs/sitemap"
+import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
 import remarkSmartypants from 'remark-smartypants'
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://samfeldstein.xyz",
+  site: 'https://samfeldstein.xyz',
   markdown: {
     remarkPlugins: [remarkSmartypants],
   },
