@@ -32,34 +32,14 @@ body {
   min-height: 100vh;
   font-family: var(--font-1);
   font-size: var(--font-size-base);
-
-  .border {
-    /* Stick to position relative to nearest scrolling ancestor (body) */
-    position: sticky;
-    left: 0;
-    /* Fill width of parent container */
-    width: 100%;
-    height: 0;
-    border-bottom: 0.5rem solid;
-    /* Keep "above" other content */
-    z-index: 9999;
-
-    &.top {
-      /* Place at top */
-      top: 0;
-    }
-
-    &.bottom {
-      /* Place at bottom */
-      bottom: 0;
-    }
-  }
 }
 
 header {
   @extend .flex-column;
   justify-content: center;
-  min-height: 100vh;
+  height: 100vh;
+  border-bottom: 0.5rem solid;
+  padding-bottom: 0.5rem; // Prevent overlapping bottom border
 }
 
 h1 {
@@ -116,14 +96,16 @@ h3 {
 
 main {
   @extend .defer;
-  border-top: 0.25rem solid;
-  counter-reset: item; // Set here so counter applies to footer as well
 
   section {
     max-width: 50rem;
     width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
+
+    &.contents {
+      counter-reset: item;
+    }
 
     &.other a::after {
       content: counter(item, upper-roman) !important; // Use Roman numerals
@@ -186,7 +168,7 @@ footer {
   font-size: 0.8em;
   text-align: right;
   margin-top: 10rem;
-  border-top: 0.25rem solid;
+  border-top: 0.5rem solid;
   padding: 10rem 1rem 4rem 1rem;
 
   &>* {
@@ -221,6 +203,25 @@ footer {
   :focus-visible {
     outline: 0.1em solid var(--text-color);
     outline-offset: 0.05em;
+  }
+}
+
+// === PAGE BORDERS ===
+.border {
+  position: sticky; // Stick to position relative to nearest scrolling ancestor (body)
+  left: 0;
+  width: 100%; // Fill width of parent container
+  height: 0;
+  z-index: 9999; // Keep "above" other content
+
+  &.top {
+    top: 0;
+    border-bottom: 0.5rem solid;
+  }
+
+  &.bottom {
+    bottom: 0;
+    border-top: 0.5rem solid;
   }
 }
 
