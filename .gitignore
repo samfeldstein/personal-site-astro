@@ -3,7 +3,8 @@
 dist/
 
 # dependencies
-node_modules/
+node_modules/*
+!node_modules/.astro/
 
 # logs
 npm-debug.log*
