@@ -40,15 +40,16 @@ header {
   height: 100vh;
   border-bottom: 0.5rem solid;
   padding-bottom: 0.5rem; // Prevent overlapping bottom border
+
+  animation: fadeIn 0.5s ease-in;
 }
 
 h1 {
   @extend .flex-column;
   gap: 2rem;
-  margin: 0 auto; // Center
-  width: 100%;
+  margin: 0 auto;
+  width: 100%; // Otherwise margin auto eats all unused space
   max-width: 90%; // Effectively add padding
-  max-height: 90%; // Ditto
   font-family: var(--font-2);
   font-size: clamp(5rem, 20vw, 20vh); // 20vh key (I think) to filling header without overflow. Initial size should always fill viewport
   font-weight: 100;
@@ -60,8 +61,8 @@ h1 {
     --time: 0.5s;
     // Wipe animation
     display: inline-block; // Confine styles to line width instead of full block width
-    clip-path: inset(0 0 0 100%); // Hide on page load
-    animation: wipeIn var(--time) ease-out forwards;
+    // clip-path: inset(0 0 0 100%); // Hide on page load
+    // animation: wipeIn var(--time) ease-out forwards;
 
     @media screen and (min-width: 768px) {
       // Appears shorter on bigger screens
@@ -230,8 +231,6 @@ footer {
   font-family: var(--font-2);
   background-color: var(--background-color);
   margin: 0.5em 0.25em;
-  border-style: solid;
-  border-width: 0.1em;
   padding: 0.5em;
   z-index: 100;
   position: absolute;
@@ -240,6 +239,10 @@ footer {
 
   &:focus {
     translate: 0;
+  }
+
+  &:focus-visible {
+    outline-width: 0.1em;
   }
 }
 
@@ -251,5 +254,15 @@ footer {
 
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }
