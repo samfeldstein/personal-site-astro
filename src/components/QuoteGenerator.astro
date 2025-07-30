@@ -1,9 +1,12 @@
 <style lang="scss">
   .container {
+    color-scheme: light dark;
+    --accent: light-dark(#999999, #595959);
+    --accent-2: light-dark(#f8f8f8, #252525);
     border-style: solid none;
     border-width: 0.01em;
-    border-color: var(--accent-2);
-    background: var(--accent-3);
+    border-color: var(--accent);
+    background: var(--accent-2);
     padding: 1em;
   }
 
@@ -14,6 +17,7 @@
 
   #quote {
     text-align: left;
+    font-variation-settings: "wdth" 50;
   }
 
   .attribution {
@@ -42,8 +46,11 @@
     : quotes[Math.floor(Math.random() * quotes.length)];
 
   document.getElementById("quote").innerHTML = randomQuote.quote;
-  document.getElementById("speaker").textContent = randomQuote.speaker + ", ";
-  document.getElementById("work").textContent = randomQuote.work;
+  document.getElementById("speaker").textContent = randomQuote.speaker;
+
+  if (randomQuote.work) {
+    document.getElementById("work").textContent = ", " + randomQuote.work;
+  }
 
   if (randomQuote.year) {
     document.getElementById("year").textContent = " " + `(${randomQuote.year})`;

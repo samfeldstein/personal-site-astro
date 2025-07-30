@@ -6,3 +6,11 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Bebas Fallback';
+  src: local('Verdana'); // Good support on Windows and Mac. See cssfontstack.com
+  font-weight: normal;
+  font-style: normal;
+  size-adjust: 75%;
+}

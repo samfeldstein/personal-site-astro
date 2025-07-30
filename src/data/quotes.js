@@ -1,5 +1,14 @@
 const quotes = [
   {
+    quote: "Sometimes, magic is just someone spending more time on something than anyone else might reasonably expect.",
+    speaker: "Teller"
+  },
+  {
+    quote: "I am a brief light that flashes but once in all the aeons of time.",
+    speaker: "Alan Watts",
+    work: "The Book"
+  },
+  {
     quote: "One does not go to see Humphrey Bogart as Sam Spade: one goes to see Sam Spade as Humphrey Bogart.",
     speaker: "James Baldwin",
     work: "The Devil Finds Work"

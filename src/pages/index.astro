@@ -14,8 +14,11 @@ import { getCurrentYear } from "../scripts/utils";
 
 const year = getCurrentYear();
 
-// Preloads
-const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
+// Fonts
+const googleFonts = [
+  "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap",
+  "https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,YTLC,YTUC@8..144,25..151,100..1000,416..570,528..760&display=swap",
+];
 ---
 
 <Base
@@ -23,7 +26,7 @@ const fonts = ["subset-BebasNeue-Regular", "subset-CMUBright-Roman"];
   description={site.description}
   ogTitle="Sam Feldstein's Personal Website"
   ogType="website"
-  preloadFonts={fonts}
+  googleFonts={googleFonts}
 >
   <div class="border top"></div>
   <header>

@@ -1,21 +1,15 @@
 @use 'fonts/bebas-neue';
-@use 'fonts/cmu-bright';
 @use 'utils';
 
 // === CONFIG ===
 :root {
-  --font-1: 'CMU Bright', sans-serif;
-  --font-2: 'Bebas Neue', sans-serif;
+  --font-1: 'Roboto Flex', sans-serif;
   --font-size-base: clamp(1.25rem, 5vw, 2rem);
-  --font-small: calc(var(--font-size-base) * 0.5);
 
   // Colors
   color-scheme: light dark;
   --text-color: light-dark(#000, #fff);
   --background-color: light-dark(#fff, #000);
-  --accent: light-dark(#595959, #999999);
-  --accent-2: light-dark(#999999, #595959);
-  --accent-3: light-dark(#f8f8f8, #252525);
 }
 
 // === GENERAL ELEMENTS ===
@@ -32,6 +26,23 @@ body {
   min-height: 100vh;
   font-family: var(--font-1);
   font-size: var(--font-size-base);
+  // Variable font settings
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  // https://fonts.google.com/specimen/Roboto+Flex
+  font-variation-settings:
+    "slnt" 0,
+    // "wdth" <width>,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    // "YTLC" <lowercase height>,
+    // "YTUC" <uppercase height>;
 }
 
 header {
@@ -41,18 +52,18 @@ header {
   border-bottom: 0.5rem solid;
   padding-bottom: 0.5rem; // Prevent overlapping bottom border
 
+  // Fade in
   animation: fadeIn 0.5s ease-in;
 }
 
 h1 {
+  @extend .bebas;
   @extend .flex-column;
   gap: 2rem;
   margin: 0 auto;
   width: 100%; // Otherwise margin auto eats all unused space
   max-width: 90%; // Effectively add padding
-  font-family: var(--font-2);
   font-size: clamp(5rem, 20vw, 20vh); // 20vh key (I think) to filling header without overflow. Initial size should always fill viewport
-  font-weight: 100;
   text-align: right;
   line-height: 1;
 
@@ -71,18 +82,24 @@ h1 {
   }
 
   .title {
+    @extend .small-caps; // For fallback consistency
     color: var(--background-color); // Reverse color scheme
-    -webkit-text-stroke: 1.25px var(--text-color);
+    -webkit-text-stroke: 1px var(--text-color);
+  }
+
+  .name {
+    @extend .small-caps; // For fallback consistency
   }
 
   .byline {
     font-family: var(--font-1);
-    font-size: clamp(var(--font-size-base), 2vw, 5vh);
+    font-size: var(--font-size-base);
+    font-weight: 200;
   }
 }
 
 h2 {
-  font-family: var(--font-2);
+  @extend .bebas;
   font-size: 2em;
   font-weight: 100;
   text-align: center;
@@ -93,6 +110,11 @@ h3 {
   @extend .small-caps;
   margin: 0;
   margin-bottom: 1rem;
+  font-size: calc(var(--font-size-base) * 1.2);
+  // Variable font settings
+  font-weight: 600;
+  font-variation-settings:
+    "wdth" 100,
 }
 
 main {
@@ -265,4 +287,11 @@ footer {
   to {
     opacity: 1;
   }
+}
+
+// === Utils ===
+.bebas {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
