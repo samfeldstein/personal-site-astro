@@ -12,7 +12,7 @@ const {
   ogTitle = `${title}`,
   ogType = "website",
   frontmatter,
-  googleFonts = [],
+  preloadFonts = [],
 } = Astro.props;
 ---
 
@@ -23,7 +23,7 @@ const {
     description={description || frontmatter.description}
     ogTitle={ogTitle || title || frontmatter.ogTitle || frontmatter.title}
     ogType={ogType || frontmatter.ogType}
-    googleFonts={googleFonts}
+    preloadFonts={preloadFonts}
   />
   <body>
     <Skiplink />

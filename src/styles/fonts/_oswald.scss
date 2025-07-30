@@ -1,14 +1,13 @@
 @font-face {
-  font-family: 'Bebas Neue';
-  src: url('/fonts/subset-BebasNeue-Regular.woff2') format('woff2'),
-    url('/fonts/subset-BebasNeue-Regular.woff') format('woff');
-  font-weight: normal;
+  font-family: 'Oswald';
+  src: url('/fonts/oswald.woff2') format('woff2');
+  font-weight: 200 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Bebas Fallback';
+  font-family: 'Oswald Fallback';
   src: local('Verdana'); // Good support on Windows and Mac. See cssfontstack.com
   font-weight: normal;
   font-style: normal;

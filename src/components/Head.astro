@@ -13,7 +13,7 @@ const {
   ogDescription = description,
   ogType = "website",
   ogImage,
-  googleFonts,
+  preloadFonts,
 } = Astro.props;
 ---
 
@@ -48,19 +48,19 @@ const {
   <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="" />
-  {googleFonts && googleFonts.map((url) => <link href={url} rel="stylesheet" />)}
-
-  <link
-    rel="preload"
-    href="fonts/cicle_fina-webfont.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-  />
+  <!-- Preload Fonts -->
+  {
+    preloadFonts &&
+      preloadFonts.map((font) => (
+        <link
+          rel="preload"
+          href={`fonts/${font}.woff2`}
+          as="font"
+          type="font/woff2"
+          crossorigin
+        />
+      ))
+  }
 
   <!-- Metadata -->
   <meta name="generator" content={Astro.generator} />

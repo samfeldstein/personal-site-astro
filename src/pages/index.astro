@@ -15,9 +15,8 @@ import { getCurrentYear } from "../scripts/utils";
 const year = getCurrentYear();
 
 // Fonts
-const googleFonts = [
-  "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap",
-  "https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght,YTLC,YTUC@8..144,25..151,100..1000,416..570,528..760&display=swap",
+const preloadFonts = [
+  "oswald",
 ];
 ---
 
@@ -26,7 +25,7 @@ const googleFonts = [
   description={site.description}
   ogTitle="Sam Feldstein's Personal Website"
   ogType="website"
-  googleFonts={googleFonts}
+  preloadFonts={preloadFonts}
 >
   <div class="border top"></div>
   <header>
@@ -46,7 +45,7 @@ const googleFonts = [
           <ul>
             <li><a href="/dev-work/">Work</a></li>
             <li><a href="/dev-projects/">Projects</a></li>
-            <li><a href="/resumes/frontend-developer/">Résumé</a></li>
+            <li><a href="/resumes/frontend-developer/">Resume</a></li>
           </ul>
         </div>
         <div id="words">
