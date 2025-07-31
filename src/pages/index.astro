@@ -78,11 +78,13 @@ const preloadFonts = ["oswald"];
       <ul>
         <li>
           <a href="https://notes.samfeldstein.xyz/"
-            >Notebook<ExternalLinkIcon class="inline" /></a>
+            >Notebook<ExternalLinkIcon class="inline" /></a
+          >
         </li>
         <li>
           <a href="https://cookbook.samfeldstein.xyz/"
-            >Cookbook<ExternalLinkIcon class="inline" /></a>
+            >Cookbook<ExternalLinkIcon class="inline" /></a
+          >
         </li>
       </ul>
     </section>
@@ -91,8 +93,8 @@ const preloadFonts = ["oswald"];
       <h2 id="contact">Contact & Social</h2>
       <ul class="contact">
         <li>
-          <a href="mailto:sam@samfeldstein.xyz"
-            >Email<Email class="inline" /></a>
+          <a href="mailto:sam@samfeldstein.xyz">Email<Email class="inline" /></a
+          >
         </li>
         <li>
           <a href="https://github.com/samfeldstein"
@@ -121,3 +123,8 @@ const preloadFonts = ["oswald"];
   </footer>
   <div class="border bottom"></div>
 </Base>
+
+<script>
+  // Set --vh to the initial viewport height and don't update it
+  document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+</script>
