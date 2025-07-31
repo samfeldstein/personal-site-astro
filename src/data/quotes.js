@@ -60,7 +60,7 @@ const quotes = [
     work: "The Fellowship of the Ring",
   },
   {
-    quote: ".*’.*",
+    quote: "The teeth? We don’t know. Signs from Hashem? Don’t know. Helping others? Couldn’t hurt.",
     speaker: "Rabbi Nachtner",
     work: "A Serious Man"
   },
