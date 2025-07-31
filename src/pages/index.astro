@@ -2,6 +2,10 @@
 import Base from "../layouts/Base.astro";
 import PageSpeed from "../components/PageSpeed.astro";
 import QuoteGenerator from "../components/QuoteGenerator.astro";
+import RSS from "../components/RssIcon.astro";
+import Github from "../components/GithubIcon.astro";
+import Email from "../components/EmailIcon.astro";
+import ExternalLinkIcon from "../components/ExternalLinkIcon.astro";
 
 // Styles
 import "/src/styles/_index.scss";
@@ -15,9 +19,7 @@ import { getCurrentYear } from "../scripts/utils";
 const year = getCurrentYear();
 
 // Fonts
-const preloadFonts = [
-  "oswald",
-];
+const preloadFonts = ["oswald"];
 ---
 
 <Base
@@ -53,7 +55,9 @@ const preloadFonts = [
           <ul>
             <li><a href="/blog/">Blog</a></li>
             <li><a href="/published-writing">Published Work</a></li>
-            <li><a href="/feed.xml">Feed</a></li>
+            <li>
+              <a href="/feed.xml">Feed<RSS class="inline" /></a>
+            </li>
           </ul>
         </div>
 
@@ -72,16 +76,29 @@ const preloadFonts = [
     <section class="other">
       <h2 id="other-sites">Other Sites</h2>
       <ul>
-        <li><a href="https://notes.samfeldstein.xyz/">Notebook</a></li>
-        <li><a href="https://cookbook.samfeldstein.xyz/">Cookbook</a></li>
+        <li>
+          <a href="https://notes.samfeldstein.xyz/"
+            >Notebook<ExternalLinkIcon class="inline" /></a>
+        </li>
+        <li>
+          <a href="https://cookbook.samfeldstein.xyz/"
+            >Cookbook<ExternalLinkIcon class="inline" /></a>
+        </li>
       </ul>
     </section>
 
     <section class="other">
       <h2 id="contact">Contact & Social</h2>
       <ul class="contact">
-        <li><a href="mailto:sam@samfeldstein.xyz">Email</a></li>
-        <li><a href="https://github.com/samfeldstein">GitHub</a></li>
+        <li>
+          <a href="mailto:sam@samfeldstein.xyz"
+            >Email<Email class="inline" /></a>
+        </li>
+        <li>
+          <a href="https://github.com/samfeldstein"
+            >GitHub<Github class="inline" /></a
+          >
+        </li>
       </ul>
     </section>
   </main>

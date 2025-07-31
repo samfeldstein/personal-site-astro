@@ -151,7 +151,6 @@ main {
 footer {
   @extend .defer;
   @extend .flex-column;
-  min-height: 100vh;
   justify-content: space-evenly;
   gap: 5em;
   font-size: 0.8em;
@@ -194,6 +193,14 @@ footer {
     outline: 0.1em solid var(--text-color);
     outline-offset: 0.1em;
     border-radius: 5px;
+  }
+}
+
+svg.inline {
+  width: 1em;
+
+  path {
+    fill: currentColor;
   }
 }
 
