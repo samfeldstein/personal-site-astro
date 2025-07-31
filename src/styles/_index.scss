@@ -33,7 +33,7 @@ body {
 header {
   @extend .flex-column;
   justify-content: center;
-  height: 100dvh;
+  height: 100lvh;
   border-bottom: 0.5rem solid; // Prevent overlapping bottom border
   padding-bottom: 0.5rem; // Ditto
   animation: fadeIn 0.5s ease-in;
