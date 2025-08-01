@@ -39,10 +39,7 @@ const quotes = [
     work: "The Searchers"
   },
   {
-    quote: `We rip out so much of ourselves to be cured of things faster that we go bankrupt by the age of thirty and have less to offer each time we start with someone new. But to make yourself feel nothing so as not to feel anything—what a waste! 
-      <br>
-      <br>
-      Right now there's sorrow, pain. Don't kill it, and with it, all the joy you've felt.`,
+    quote: `We rip out so much of ourselves to be cured of things faster that we go bankrupt by the age of thirty and have less to offer each time we start with someone new. Right now there's sorrow, pain. Don't kill it, and with it, all the joy you've felt.`,
     speaker: "Mr. Perlman",
     work: "Call Me By Your Name",
   },
