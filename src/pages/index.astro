@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import Head from "../components/Head.astro";
 import PageSpeed from "../components/PageSpeed.astro";
 import QuoteGenerator from "../components/QuoteGenerator.astro";
 import RSS from "../components/RssIcon.astro";
@@ -22,13 +23,14 @@ const year = getCurrentYear();
 const preloadFonts = ["oswald"];
 ---
 
-<Base
-  title="Home"
-  description={site.description}
-  ogTitle="Sam Feldstein's Personal Website"
-  ogType="website"
-  preloadFonts={preloadFonts}
->
+<Base>
+  <Head
+    slot="head"
+    title="Home"
+    description={site.description}
+    ogType="website"
+    preloadFonts={preloadFonts}
+  />
   <div class="border top"></div>
   <header>
     <h1>
@@ -37,7 +39,6 @@ const preloadFonts = ["oswald"];
       <div class="name">Samuel<br />Feldstein</div>
     </h1>
   </header>
-
   <main id="main-content" class="page">
     <section class="contents">
       <h2 id="contents">Contents</h2>

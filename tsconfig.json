@@ -1,7 +1,26 @@
 {
   "extends": "astro/tsconfigs/base",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
+  "verbatimModuleSyntax": true,
   "compilerOptions": {
-    // https://docs.astro.build/en/guides/content-collections/#typescript-configuration-for-collections
+    "baseUrl": ".",
+    "paths": {
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ]
+    },
     "strictNullChecks": true,
     "allowJs": true
   }

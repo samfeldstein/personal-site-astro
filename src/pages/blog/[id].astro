@@ -1,13 +1,13 @@
 ---
 // Notes must be in the content folder for this to work
 // Components
-import MobileMenu from "../../components/MobileMenu.astro";
-import Skiplink from "../../components/Skiplink.astro";
+import Base from "../../layouts/Base.astro";
 import Head from "../../components/Head.astro";
 import Tags from "../../components/Tags.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import Date from "../../components/Date.astro";
 
+// Styles
 import "../../styles/_post.scss";
 
 import { getCollection, render } from "astro:content";
@@ -27,31 +27,29 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<!doctype html>
-<html lang="en-us">
-  <Head title={post.data.title} description={post.data.description} />
-  <body>
-    <Skiplink />
-    <MobileMenu />
-    <header class="page-header">
-      
-      <h1 set:html={post.data.title} />
-      {
-        post.data.description && (
-          <p class="description" set:html={post.data.description} />
-        )
-      }
-      {(<Tags tags={post.data.tags} path="blog" />)}
-    </header>
-    <main id="main-content">
-      <article>
-        <Content />
-      </article>
-      <div class="signoff">
-        <div>{post.data.location}</div>
-        <Date date={post.data.pubDate} />
-      </div>
-    </main>
-    <SiteFooter />
-  </body>
-</html>
+<Base>
+  <Head
+    slot="head"
+    title={post.data.title}
+    description={post.data.description}
+  />
+  <header class="page-header">
+    <h1 set:html={post.data.title} />
+    {
+      post.data.description && (
+        <p class="description" set:html={post.data.description} />
+      )
+    }
+    {(<Tags tags={post.data.tags} path="blog" />)}
+  </header>
+  <main id="main-content">
+    <article>
+      <Content />
+    </article>
+    <div class="signoff">
+      <div>{post.data.location}</div>
+      <Date date={post.data.pubDate} />
+    </div>
+  </main>
+  <SiteFooter />
+</Base>

@@ -45,7 +45,8 @@ h1 {
   width: 100%; // Otherwise margin auto eats all unused space
   max-width: 90%; // Effectively add padding
   height: 100%;
-  font-size: clamp(4rem, 20vw, 15vh); // 15vh key (I think) to filling header without overflow. Should always fill viewport
+  font-size: 10rem;
+  font-size: clamp(4rem, 15vw, 10rem);
   text-align: right;
   line-height: 1.3;
 
