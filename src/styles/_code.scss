@@ -1,0 +1,81 @@
+@use 'mixins';
+@use 'utils';
+
+/* === INSPIRATION ===
+https://stylestage.dev/styles/pipboy/
+*/
+
+// === Config ===
+
+:root {
+  // https: //modernfontstacks.com
+  --font-1: ui-monospace,
+    'Cascadia Code',
+    'Source Code Pro',
+    Menlo,
+    Consolas,
+    'DejaVu Sans Mono',
+    monospace;
+  --text-color: #f2a138;
+  --background-color: #12100d;
+}
+
+body {
+  @include mixins.fluid-font;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  display: grid;
+  gap: 2em;
+  font-family: var(--font-1);
+  text-shadow: 0rem 0.2rem 1rem currentColor;
+}
+
+header {
+  --padding-left: 0.25rem;
+  border: 0.15rem solid;
+  padding: 1em;
+  position: relative;
+
+  h1 {
+    @extend .small-caps;
+    position: absolute;
+    top: -1.5rem;
+    margin: 0;
+    padding: 0 var(--padding-left);
+    background-color: var(--background-color);
+    font-size: 1.5em;
+  }
+
+  p {
+    padding: 0 var(--padding-left);
+    font-style: italic;
+  }
+}
+
+ul.projects {
+  @extend .unstyled-list;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2rem;
+
+  li {
+    border: 1px solid;
+    box-shadow: 5px 5px 0 black, 6px 6px 0;
+    padding: 0.5em 1em;
+  }
+}
+
+a {
+  @extend .small-caps;
+  color: inherit;
+  text-decoration: none;
+}
+
+#skiplink {
+  @extend .visually-hidden;
+}
+
+::selection {
+  text-shadow: none;
+}

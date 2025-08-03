@@ -31,7 +31,3 @@ package-lock.json
 # Obsidian
 .obsidian/
 templates/
-
-# Pages
-cybersecurity/
-osint-log

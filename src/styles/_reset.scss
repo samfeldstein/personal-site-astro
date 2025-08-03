@@ -11,6 +11,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  height: 100vh;
+  margin: 0 auto;
+}
+
 img {
   /* Make images responsive */
   max-width: 100%;

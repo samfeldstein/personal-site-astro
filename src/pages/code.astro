@@ -1,55 +1,58 @@
 ---
-import BaseLayout from "../layouts/Base.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+
+import "../styles/_code.scss";
 
 const projects = [
   {
-    title: "Shelf Talker Generator",
+    name: "Shelf Talker Generator",
     type: "Web App",
     date: "June 2025",
     url: "https://shelftalkers.samfeldstein.xyz",
     source: "https://github.com/samfeldstein/shelf-talkers",
   },
   {
-    title: "The Simplest Writing Tracker",
+    name: "The Simplest Writing Tracker",
     type: "Terminal App",
     date: "May 2025",
     source: "https://github.com/samfeldstein/writing-tracker",
   },
   {
-    title: "Cookbook",
+    name: "Cookbook",
     type: "Website",
     date: "March 2025",
     url: "https://cookbook.samfeldstein.xyz/",
     source: "https://github.com/samfeldstein/cookbook",
   },
   {
-    title: "Regreen Big Bend",
+    client: "Regreen Big Bend",
     type: "Website",
     date: "February 2025",
     url: "https://regreenbigbend.com",
   },
   {
-    title: "Postoley Dance Ensemble",
+    client: "Postoley Dance Ensemble",
     type: "Website",
     date: "February 2025",
     url: "https://danceophile.com",
   },
   {
-    title: "Digital Notebook",
+    name: "Digital Notebook",
     type: "Website",
     date: "October 2024",
     url: "https://notebook.samfeldstein.xyz/",
     source: "https://github.com/samfeldstein/notebook",
   },
   {
-    title: "Prairie Rose Arena",
+    client: "Prairie Rose Arena",
     type: "Website",
     date: "May 2024",
     url: "https://prairierosearena.com/",
     notes: "https://notebook.samfeldstein.xyz/notes/prairie-rose-arena-notes",
   },
   {
-    title: "Pairings",
+    name: "Pairings",
     type: "Web App",
     date: "May 2024",
     url: "https://pairingapp.netlify.app",
@@ -57,61 +60,50 @@ const projects = [
     notes: "https://notebook.samfeldstein.xyz/notes/pairings-notes",
   },
 ];
+
+// const personal = projects.filter((project) => project.name);
+// const professional = projects.filter((project) => project.client);
 ---
 
-<BaseLayout title="Code" description="Websites and apps I've built.">
-  <h1>Code</h1>
-  <ul class="projects">
-    {
-      projects.map((item) => (
-        <li class="project">
-          <a class="name" href={item.url || item.source}>
-            {item.title}
-          </a>
-          <div class="info">
-            <span>{item.type} | </span>
-            <time>{item.date}</time>
-            {item.source && (
-              <>
-                <span>|</span>
-                <a href={`${item.source}`}>Source</a>
-              </>
-            )}
-            {item.notes && (
-              <>
-                <span>|</span>
-                <a href={`${item.notes}`}>Notes</a>
-              </>
-            )}
-          </div>
-        </li>
-      ))
-    }
-  </ul>
-</BaseLayout>
+<Base>
+  <Head
+    slot="head"
+    title="Code"
+    description="Websites and applications, for work and personal projects."
+    ogType="website"
+  />
+  <header>
+    <h1>Code I’ve Written</h1>
+    <p>My coding projects, personal and professional.</p>
+  </header>
 
-<style>
-  h1 {
-    margin-bottom: 2em;
-  }
-
-  ul.projects {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 2rem;
-  }
-
-  .info {
-    font-size: var(--font-small);
-  }
-
-  a {
-    &.name {
-      font-weight: 700;
-      font-size: var(--font-medium);
-      text-wrap: balance;
-    }
-  }
-</style>
+  <main id="main-content">
+    <ul class="projects">
+      {
+        projects.map((project) => (
+          <li class="project">
+            <a class="name" href={project.url || project.source}>
+              {project.name || project.client}
+            </a>
+            <div class="info">
+              <span>{project.type} | </span>
+              <time>{project.date}</time>
+              {project.source && (
+                <>
+                  <span>|</span>
+                  <a href={`${project.source}`}>Source</a>
+                </>
+              )}
+              {project.notes && (
+                <>
+                  <span>|</span>
+                  <a href={`${project.notes}`}>Notes</a>
+                </>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Base>
