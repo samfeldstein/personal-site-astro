@@ -16,6 +16,7 @@
 
 // === ELEMENTS ===
 html {
+  background-color: var(--text-color);
   scrollbar-color: var(--text-color) var(--background-color);
 }
 
@@ -193,6 +194,10 @@ footer {
     outline-offset: 0.1em;
     border-radius: 5px;
   }
+}
+
+a {
+  @extend .unstyled-link;
 }
 
 svg.inline {

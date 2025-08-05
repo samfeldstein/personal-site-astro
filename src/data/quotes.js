@@ -1,5 +1,9 @@
 const quotes = [
   {
+    quote: "Writing about music is like dancing about architecture.",
+    speaker: "Martin Mull"
+  },
+  {
     quote: "Sometimes, magic is just someone spending more time on something than anyone else might reasonably expect.",
     speaker: "Teller"
   },

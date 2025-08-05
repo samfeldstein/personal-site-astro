@@ -8,6 +8,11 @@
   flex-direction: column;
 }
 
+.unstyled-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .small-caps {
   font-variant: small-caps;
   text-transform: lowercase;

@@ -3,52 +3,106 @@
 
 /* === INSPIRATION ===
 https://stylestage.dev/styles/pipboy/
+https://codepen.io/odyssey-os/pen/bNdowNB
 */
 
 // === Config ===
-
 :root {
   // https: //modernfontstacks.com
-  --font-1: ui-monospace,
+  --font-1:
     'Cascadia Code',
     'Source Code Pro',
     Menlo,
     Consolas,
     'DejaVu Sans Mono',
     monospace;
-  --text-color: #f2a138;
-  --background-color: #12100d;
+  // Colors
+  --text-color: #66ff66;
+  --background-color: #1d311d;
+  --accent: #177317;
+}
+
+html {
+  background-color: var(--background-color);
+  scrollbar-color: var(--accent) var(--background-color);
+  scrollbar-width: thin;
 }
 
 body {
   @include mixins.fluid-font;
-  margin: 0 auto;
-  padding: 3rem 1rem;
+  position: relative;
+  z-index: -2;
   display: grid;
-  gap: 2em;
+  gap: 4rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 1rem;
+  margin: 0 auto;
+  min-height: 100vh;
   font-family: var(--font-1);
-  text-shadow: 0rem 0.2rem 1rem currentColor;
+  text-shadow: 0rem 0.2rem 1em currentColor;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1; // Make sure it's above the background but below content
+    opacity: 0.15; // Adjust for subtlety
+    background: repeating-linear-gradient(to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 2px,
+        rgba(0, 0, 0, 0.2) 4px,
+        rgba(0, 0, 0, 0.6) 6px);
+    // The numbers above set the thickness and spacing of the lines
+  }
 }
 
-header {
-  --padding-left: 0.25rem;
-  border: 0.15rem solid;
-  padding: 1em;
+hgroup {
   position: relative;
+  border-style: solid none;
+  border-width: 0.2rem;
+  padding: 1em;
 
-  h1 {
-    @extend .small-caps;
+  &::before,
+  &::after {
     position: absolute;
-    top: -1.5rem;
-    margin: 0;
-    padding: 0 var(--padding-left);
-    background-color: var(--background-color);
-    font-size: 1.5em;
+    content: '';
+    background: linear-gradient(to bottom, var(--text-color) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 65%, var(--text-color) 100%);
+    width: 0.2rem;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  &::before {
+    left: 0;
   }
 
   p {
-    padding: 0 var(--padding-left);
     font-style: italic;
+  }
+}
+
+h1 {
+  @include mixins.fluid-font(2rem, 4vw, 3rem);
+  @extend .small-caps;
+  position: absolute;
+  top: -1.5rem;
+  margin: 0;
+  padding: 0 0.2em;
+  letter-spacing: 0.1em;
+  z-index: 1;
+
+  &::after {
+    background-color: var(--background-color);
+    content: '';
+    height: 0.2rem;
+    width: 100%;
+    left: 0;
+    top: 21px;
+    position: absolute;
+    z-index: -1;
   }
 }
 
@@ -68,14 +122,27 @@ ul.projects {
 
 a {
   @extend .small-caps;
-  color: inherit;
-  text-decoration: none;
+  @extend .unstyled-link;
+  display: inline-block;
+
+  &:hover {
+
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
+  }
+
+  &.home {
+    display: block;
+    margin-bottom: 4rem;
+    width: fit-content;
+
+    &::before {
+      content: '←';
+      margin-right: 0.25em;
+    }
+  }
 }
 
 #skiplink {
   @extend .visually-hidden;
-}
-
-::selection {
-  text-shadow: none;
 }
