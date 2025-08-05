@@ -1,3 +1,4 @@
+@use 'fonts/orbitron';
 @use 'mixins';
 @use 'utils';
 
@@ -10,6 +11,7 @@ https://codepen.io/odyssey-os/pen/bNdowNB
 :root {
   // https: //modernfontstacks.com
   --font-1: 'Fira Code', monospace;
+  --font-2: 'Orbitron', 'Orbitron Fallback';
   // Colors
   --text-color: #66ff66;
   --background-color: #1d311d;
@@ -23,7 +25,6 @@ html {
 }
 
 body {
-  @include mixins.fluid-font;
   position: relative;
   z-index: -2;
   display: grid;
@@ -89,12 +90,13 @@ hgroup {
 }
 
 h1 {
-  @include mixins.fluid-font(2rem, 4vw, 3rem);
   @extend .small-caps;
   position: absolute;
-  top: -1.5rem;
+  top: -26px;
   margin: 0;
-  padding: 0 0.2em;
+  padding: 0 0.3em;
+  font-family: var(--font-2);
+  font-weight: 400;
   letter-spacing: 0.1em;
   z-index: 1;
 
@@ -104,7 +106,7 @@ h1 {
     height: 0.2rem;
     width: 100%;
     left: 0;
-    top: 21px;
+    top: 23px;
     position: absolute;
     z-index: -1;
   }
@@ -146,6 +148,12 @@ a {
       content: '←';
       margin-right: 0.25em;
     }
+  }
+
+  &.name {
+    font-family: var(--font-2);
+    letter-spacing: 0.1em;
+    font-size: 1.1rem;
   }
 }
 
