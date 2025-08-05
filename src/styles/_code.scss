@@ -34,6 +34,7 @@ body {
   padding: 1rem;
   margin: 0 auto;
   min-height: 100vh;
+  max-width: 70rem;
   font-family: var(--font-1);
   text-shadow: 0rem 0.2rem 1em currentColor;
 
@@ -67,7 +68,7 @@ hgroup {
   position: relative;
   border-style: solid none;
   border-width: 0.2rem;
-  padding: 1em;
+  padding: 2rem 4rem;
 
   &::before,
   &::after {
@@ -90,14 +91,14 @@ hgroup {
 }
 
 h1 {
-  @extend .small-caps;
   position: absolute;
   top: -26px;
   margin: 0;
   padding: 0 0.3em;
   font-family: var(--font-2);
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   z-index: 1;
 
   &::after {
@@ -118,7 +119,7 @@ ul.projects {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 20rem;
+  grid-auto-rows: 250px;
   gap: 2rem;
 
   li {

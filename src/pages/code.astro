@@ -71,8 +71,7 @@ const projects = [
     title="Code"
     description="Websites and applications, for work and personal projects."
     ogType="website"
-  >
-  </Head>
+  />
   <header>
     <a class="home" href="/">Home</a>
     <hgroup>
@@ -96,16 +95,16 @@ const projects = [
             <div class="info">
               <span>{project.type} | </span>
               <time>{project.date}</time>
-              {project.source && (
-                <>
-                  <span>|</span>
-                  <a href={`${project.source}`}>Source</a>
-                </>
-              )}
               {project.notes && (
                 <>
                   <span>|</span>
                   <a href={`${project.notes}`}>Notes</a>
+                </>
+              )}
+              {project.source && (
+                <>
+                  <span>|</span>
+                  <a href={`${project.source}`}>Source</a>
                 </>
               )}
             </div>

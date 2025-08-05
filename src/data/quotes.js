@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: `unless being still would<br>drive you to madness or<br>suicide or murder,<br>don't do it.`,
+    speaker: "Charles Bukowski",
+    work: "so you want to be a writer?",
+    medium: "poem"
+  },
+  {
     quote: "Writing about music is like dancing about architecture.",
     speaker: "Martin Mull"
   },
