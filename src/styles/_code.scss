@@ -13,9 +13,10 @@ https://codepen.io/odyssey-os/pen/bNdowNB
   --font-1: 'Fira Code', monospace;
   --font-2: 'Orbitron', 'Orbitron Fallback';
   // Colors
-  --text-color: #66ff66;
-  --background-color: #1d311d;
-  --accent: #177317;
+  --text-color: oklch(0.887 0.234 143);
+  --text-color: oklch(79.268% 0.17097 70.665);
+  --background-color: oklch(0.207 0.013 78);
+  --accent: oklch(from var(--text-color) l c h / 0.5);
 }
 
 html {
@@ -29,8 +30,6 @@ body {
   z-index: -2;
   display: grid;
   gap: 4rem;
-  background-color: var(--background-color);
-  color: var(--text-color);
   padding: 1rem;
   margin: 0 auto;
   min-height: 100vh;
@@ -44,13 +43,11 @@ body {
     inset: 0;
     pointer-events: none;
     z-index: -1; // Make sure it's above the background but below content
-    opacity: 0.15;
     background: repeating-linear-gradient(to bottom,
         rgba(255, 255, 255, 0),
         rgba(255, 255, 255, 0) 2px,
-        rgba(0, 0, 0, 0.2) 4px,
-        rgba(0, 0, 0, 0.6) 6px);
-    // The numbers above set the thickness and spacing of the lines
+        rgba(0, 0, 0, 0.1) 4px,
+        rgba(0, 0, 0, 0.6) 0.45rem);
   }
 
   &::after {
@@ -59,8 +56,8 @@ body {
     inset: 0;
     pointer-events: none;
     z-index: 3;
-    opacity: 0.25;
-    background: radial-gradient(circle, rgba(102, 255, 102, 1) 0%, rgba(0, 112, 0, 1) 100%);
+    opacity: 0.07;
+    background: radial-gradient(circle at center, var(--text-color) 0%, var(--accent) 58%);
   }
 }
 

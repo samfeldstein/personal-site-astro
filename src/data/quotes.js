@@ -21,7 +21,8 @@ const quotes = [
   {
     quote: "One does not go to see Humphrey Bogart as Sam Spade: one goes to see Sam Spade as Humphrey Bogart.",
     speaker: "James Baldwin",
-    work: "The Devil Finds Work"
+    work: "The Devil Finds Work",
+    medium: "essay"
   },
   {
     quote: "I’m your huckleberry.",

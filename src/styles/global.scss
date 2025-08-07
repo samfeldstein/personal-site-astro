@@ -5,7 +5,6 @@
 }
 
 body {
-  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -18,10 +17,4 @@ h3 {
 ::selection {
   background-color: var(--text-color);
   color: var(--background-color);
-}
-
-code,
-samp {
-  font-family: var(--font-body);
-  font-weight: 700;
 }
