@@ -13,8 +13,3 @@ h2,
 h3 {
   text-wrap: balance;
 }
-
-::selection {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}

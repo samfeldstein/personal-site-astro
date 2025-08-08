@@ -1,9 +1,18 @@
 ---
 import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
+import HtmlIcon from "@components/HtmlIcon.astro";
+import CssIcon from "@components/CssIcon.astro";
+import JsIcon from "@components/JsIcon.astro";
+import AstroIcon from "@components/AstroIcon.astro";
+import EleventyIcon from "@components/EleventyIcon.astro";
+import GitIcon from "@components/GitIcon.astro";
+import CloudflareIcon from "@components/CloudflareIcon.astro";
 
+// Styles
 import "../styles/_code.scss";
 
+// Projects
 const projects = [
   {
     name: "Shelf Talker Generator",
@@ -76,11 +85,15 @@ const projects = [
     <a class="home" href="/">Home</a>
     <hgroup>
       <h1>Code</h1>
-      <p>My coding projects, personal and professional.</p>
-      <p>My coding projects, personal and professional.</p>
-      <p>My coding projects, personal and professional.</p>
-      <p>My coding projects, personal and professional.</p>
-      <p>My coding projects, personal and professional.</p>
+      <div class="code-icons">
+        <HtmlIcon />
+        <CssIcon />
+        <JsIcon />
+        <GitIcon />
+        <AstroIcon/>
+        <EleventyIcon />
+        <CloudflareIcon />
+      </div>
     </hgroup>
   </header>
 
