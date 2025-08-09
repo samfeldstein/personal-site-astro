@@ -8,6 +8,9 @@ import AstroIcon from "@components/AstroIcon.astro";
 import EleventyIcon from "@components/EleventyIcon.astro";
 import GitIcon from "@components/GitIcon.astro";
 import CloudflareIcon from "@components/CloudflareIcon.astro";
+import FigmaIcon from "@components/FigmaIcon.astro";
+import WordPressIcon from "@components/WordPressIcon.astro";
+import TerminalIcon from "@components/TerminalIcon.astro";
 
 // Styles
 import "../styles/_code.scss";
@@ -86,13 +89,55 @@ const projects = [
     <hgroup>
       <h1>Code</h1>
       <div class="code-icons">
-        <HtmlIcon />
-        <CssIcon />
-        <JsIcon />
-        <GitIcon />
-        <AstroIcon/>
-        <EleventyIcon />
-        <CloudflareIcon />
+        <figure>
+          <HtmlIcon />
+          <figcaption>HMTL</figcaption>
+        </figure>
+
+        <figure>
+          <CssIcon />
+          <figcaption>CSS</figcaption>
+        </figure>
+
+        <figure>
+          <JsIcon />
+          <figcaption>JavaScript</figcaption>
+        </figure>
+
+        <figure>
+          <AstroIcon />
+          <figcaption>Astro</figcaption>
+        </figure>
+
+        <figure>
+          <EleventyIcon />
+          <figcaption>Eleventy</figcaption>
+        </figure>
+
+        <figure>
+          <GitIcon />
+          <figcaption>Git</figcaption>
+        </figure>
+
+        <figure>
+          <TerminalIcon />
+          <figcaption>Bash</figcaption>
+        </figure>
+
+        <figure>
+          <FigmaIcon />
+          <figcaption>Figma</figcaption>
+        </figure>
+
+        <figure>
+          <CloudflareIcon />
+          <figcaption>Cloudflare</figcaption>
+        </figure>
+
+        <figure>
+          <WordPressIcon />
+          <figcaption>WordPress</figcaption>
+        </figure>
       </div>
     </hgroup>
   </header>

@@ -66,7 +66,6 @@ hgroup {
   position: relative;
   border-style: solid none;
   border-width: 0.15rem;
-  padding: 4rem 2rem;
 
   &::before,
   &::after {
@@ -153,12 +152,24 @@ a {
 }
 
 .code-icons {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
-  gap: 1rem;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+
+  figure {
+    width: fit-content;
+  }
+
+  figcaption {
+    @extend .small-caps;
+    font-size: .75rem;
+    text-align: center;
+  }
 
   svg {
-    max-width: 6rem;
+    width: clamp(4rem, 10vw, 5rem);
     fill: currentColor;
   }
 }
