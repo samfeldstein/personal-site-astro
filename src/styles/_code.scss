@@ -84,13 +84,14 @@ hgroup {
 }
 
 h1 {
+  @extend .small-caps;
   position: absolute;
   top: -26px;
+  left: 4rem;
   margin: 0;
   padding: 0 0.3em;
   font-family: var(--font-2);
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 400;
   letter-spacing: 0.2em;
   z-index: 1;
 
@@ -111,14 +112,24 @@ ul.projects {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 250px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
   gap: 2rem;
 
   li {
+    @extend .flex-column;
+    justify-content: space-between;
     border: 1px solid;
     box-shadow: 5px 5px 0 var(--background-color), 6px 6px 0;
     padding: 0.5em 1em;
+    text-align: center;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
   }
 }
 
@@ -156,7 +167,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 
   figure {
     width: fit-content;
@@ -170,6 +181,15 @@ a {
 
   svg {
     width: clamp(4rem, 10vw, 5rem);
+    fill: currentColor;
+  }
+}
+
+.project-image {
+  text-align: center;
+
+  svg {
+    width: clamp(5rem, 40vw, 10rem);
     fill: currentColor;
   }
 }
