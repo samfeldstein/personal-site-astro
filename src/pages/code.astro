@@ -11,6 +11,7 @@ import CloudflareIcon from "@components/CloudflareIcon.astro";
 import FigmaIcon from "@components/FigmaIcon.astro";
 import WordPressIcon from "@components/WordPressIcon.astro";
 import TerminalIcon from "@components/TerminalIcon.astro";
+import GithubIcon from "@components/GithubIcon.astro";
 
 // Styles
 import "../styles/_code.scss";
@@ -89,7 +90,7 @@ const projects = [
   <Head
     slot="head"
     title="Code"
-    description="Websites and applications, for work and personal projects."
+    description="My portfolio of personal and professional coding projects."
     ogType="website"
   />
   <header>
@@ -149,6 +150,13 @@ const projects = [
       </div>
     </hgroup>
   </header>
+
+  <div class="hire">
+    <a class="github" href="https://github.com/samfeldstein"
+      ><GithubIcon/>GitHub</a
+    >
+    <a class="hire" href="mailto:sam@samfeldstein.xyz">Hire me</a>
+  </div>
 
   <main id="main-content">
     <ul class="projects">
