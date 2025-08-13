@@ -11,10 +11,17 @@ import CloudflareIcon from "@components/CloudflareIcon.astro";
 import FigmaIcon from "@components/FigmaIcon.astro";
 import WordPressIcon from "@components/WordPressIcon.astro";
 import TerminalIcon from "@components/TerminalIcon.astro";
-import GithubIcon from "@components/GithubIcon.astro";
 
 // Styles
 import "../styles/_code.scss";
+
+// Data
+import { site } from "config.mjs";
+
+// Utils
+import { getCurrentYear } from "../scripts/utils";
+
+const year = getCurrentYear();
 
 // Projects
 const projects = [
@@ -152,9 +159,7 @@ const projects = [
   </header>
 
   <div class="hire">
-    <a class="github" href="https://github.com/samfeldstein"
-      ><GithubIcon/>GitHub</a
-    >
+    <a class="github" href="https://github.com/samfeldstein">GitHub</a>
     <a class="hire" href="mailto:sam@samfeldstein.xyz">Hire me</a>
   </div>
 
@@ -176,4 +181,11 @@ const projects = [
       }
     </ul>
   </main>
+  <footer>
+    <div class="etc">
+      <div>{site.location.city}, {site.location.state}</div>
+      <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
+      <div>Powered by <a href="https://astro.build">Astro</a></div>
+    </div>
+  </footer>
 </Base>

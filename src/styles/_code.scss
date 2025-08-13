@@ -29,6 +29,7 @@ html {
 }
 
 body {
+  @include mixins.fluid-font();
   position: relative;
   z-index: -2;
   display: grid;
@@ -89,12 +90,13 @@ hgroup {
 h1 {
   @extend .small-caps;
   position: absolute;
-  top: -26px;
+  top: -30px;
   left: 4rem;
   margin: 0;
   padding: 0 0.3em;
   font-family: var(--font-2);
   font-weight: 400;
+  font-size: 2em;
   letter-spacing: 0.2em;
   z-index: 1;
 
@@ -104,7 +106,7 @@ h1 {
     height: 0.2rem;
     width: 100%;
     left: 0;
-    top: 23px;
+    top: 27px;
     position: absolute;
     z-index: -1;
   }
@@ -115,8 +117,9 @@ div.hire {
   flex-wrap: wrap;
   gap: 1rem;
   font-family: var(--font-2);
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
+  text-wrap: nowrap;
 
   a {
     background-color: var(--background-color);
@@ -129,17 +132,12 @@ div.hire {
     align-items: center;
     transition: all 0.2s;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: var(--accent);
       // color: unset;
       text-shadow: unset;
     }
-  }
-
-  svg {
-    width: 3em;
-    fill: currentColor;
-    display: none;
   }
 }
 
@@ -166,7 +164,7 @@ ul.projects {
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
-    font-size: 0.85em;
+    font-size: 0.75em;
   }
 }
 
@@ -197,6 +195,19 @@ a {
     font-family: var(--font-2);
     letter-spacing: 0.1em;
     font-size: 1.1rem;
+  }
+}
+
+footer {
+  margin: 8rem 0 1rem 0;
+  font-size: 0.75em;
+  text-align: center;
+
+  .etc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
   }
 }
 
