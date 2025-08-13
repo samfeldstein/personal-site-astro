@@ -39,6 +39,7 @@ body {
   font-family: var(--font-1);
   font-weight: 100;
   text-shadow: 0rem 0.2rem 1em currentColor;
+  cursor: url("../images/icons/pointer.svg"), auto;
 
   &::before {
     content: "";
@@ -143,6 +144,7 @@ a {
 
   &:hover {
 
+    cursor: url("../images/icons/pointer.svg"), auto;
     color: #FFFFFF;
     text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
   }
