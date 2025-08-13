@@ -1,4 +1,5 @@
 @use 'fonts/orbitron';
+@use 'fonts/victor-mono';
 @use 'mixins';
 @use 'utils';
 
@@ -10,7 +11,7 @@ https://codepen.io/odyssey-os/pen/bNdowNB
 // === Config ===
 :root {
   // https: //modernfontstacks.com
-  --font-1: 'Fira Code', monospace;
+  --font-1: 'Victor Mono', monospace;
   --font-2: 'Orbitron', 'Orbitron Fallback';
   // Colors
   --text-color: oklch(0.887 0.234 143);
@@ -36,6 +37,7 @@ body {
   min-height: 100vh;
   max-width: 70rem;
   font-family: var(--font-1);
+  font-weight: 100;
   text-shadow: 0rem 0.2rem 1em currentColor;
 
   &::before {
@@ -130,6 +132,7 @@ ul.projects {
     justify-content: space-between;
     align-items: flex-end;
     flex-wrap: wrap;
+    font-size: 0.85em;
   }
 }
 
