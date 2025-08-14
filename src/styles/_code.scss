@@ -18,15 +18,15 @@ https://codepen.io/odyssey-os/pen/bNdowNB
   // --text-color: oklch(79.268% 0.17097 70.665);
   --background-color: oklch(0.207 0.013 78);
   --accent: oklch(from var(--text-color) l c h / 0.5);
-  --accent-2: oklch(from var(--text-color) l c h / 0.25);
+  --accent-2: oklch(from var(--text-color) l c h / 0.15);
 }
 
 // === GLOBAL ===
 html {
+  @extend .custom-cursor;
   background-color: var(--background-color);
   scrollbar-color: var(--accent) var(--background-color);
   scrollbar-width: thin;
-  cursor: url("../images/icons/pointer.svg"), auto;
 }
 
 body {
@@ -36,7 +36,6 @@ body {
   display: grid;
   gap: 2rem;
   padding: 0.5rem;
-  margin: 0 auto;
   min-height: 100vh;
   max-width: 70rem;
   font-family: var(--font-1);
@@ -70,11 +69,10 @@ body {
 a {
   @extend .small-caps;
   @extend .unstyled-link;
+  @extend .custom-cursor;
   display: inline-block;
 
   &:hover {
-
-    cursor: url("../images/icons/pointer.svg"), auto;
     color: #FFFFFF;
     text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
   }
@@ -240,22 +238,39 @@ ul.projects {
 
 // === FOOTER ===
 footer {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 1rem;
 
   .etc {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2em;
+    @extend .flex-column;
+    gap: 1em;
     font-size: 0.75em;
-    text-align: center;
+    text-align: right;
   }
 }
 
 .quote-container {
-  background-color: var(--accent-2);
+  background-color: var(--background-color);
+  border: 1px solid;
+  box-shadow: 5px 5px 0 var(--background-color), 6px 6px 0;
+  padding: 1em;
 
   blockquote {
     margin: 0;
+  }
+
+  #quote {
+    font-family: var(--font-2);
+    letter-spacing: 0.2em;
+
+    // font-style: italic;
+  }
+
+  .attribution {
+    margin-top: 4em;
+    font-size: 0.9em;
+    text-align: right;
   }
 }
 
@@ -269,4 +284,9 @@ footer {
 
 ::selection {
   background-color: var(--accent-2);
+}
+
+// === Utilities ===
+.custom-cursor {
+  cursor: url("../images/icons/pointer.svg"), auto;
 }
