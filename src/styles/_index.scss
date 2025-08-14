@@ -236,14 +236,6 @@ svg.inline {
   background-color: var(--background-color);
   margin: 0.5em 0.25em;
   padding: 0.5em;
-  z-index: 100;
-  position: absolute;
-  translate: -1000%; // Hide visually by default
-  transition-duration: 0.25s;
-
-  &:focus {
-    translate: 0;
-  }
 
   &:focus-visible {
     outline-width: 0.1em;

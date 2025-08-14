@@ -1,1 +1,14 @@
 <a id="skiplink" href="#main-content">Skip to Content</a>
+
+<style lang="scss">
+  a {
+    z-index: 100;
+    position: absolute;
+    translate: -1000%; // Hide visually
+    transition-duration: 0.25s;
+
+    &:focus {
+      translate: 0;
+    }
+  }
+</style>

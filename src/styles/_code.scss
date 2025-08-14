@@ -21,6 +21,7 @@ https://codepen.io/odyssey-os/pen/bNdowNB
   --accent-2: oklch(from var(--text-color) l c h / 0.25);
 }
 
+// === GLOBAL ===
 html {
   background-color: var(--background-color);
   scrollbar-color: var(--accent) var(--background-color);
@@ -66,6 +67,41 @@ body {
   }
 }
 
+a {
+  @extend .small-caps;
+  @extend .unstyled-link;
+  display: inline-block;
+
+  &:hover {
+
+    cursor: url("../images/icons/pointer.svg"), auto;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
+  }
+
+  &:focus-visible {
+    outline: 0.1em solid var(--text-color);
+  }
+
+  &.home {
+    display: block;
+    margin-bottom: 4rem;
+    width: fit-content;
+
+    &::before {
+      content: '←';
+      margin-right: 0.25em;
+    }
+  }
+
+  &.name {
+    font-family: var(--font-2);
+    letter-spacing: 0.1em;
+    font-size: 1.1rem;
+  }
+}
+
+// === HEADER ===
 hgroup {
   position: relative;
   border-style: solid none;
@@ -112,6 +148,7 @@ h1 {
   }
 }
 
+// === HIRE ===
 div.hire {
   display: flex;
   flex-wrap: wrap;
@@ -141,6 +178,7 @@ div.hire {
   }
 }
 
+// === MAIN ===
 ul.projects {
   @extend .unstyled-list;
   margin: 0;
@@ -165,49 +203,6 @@ ul.projects {
     align-items: flex-end;
     flex-wrap: wrap;
     font-size: 0.75em;
-  }
-}
-
-a {
-  @extend .small-caps;
-  @extend .unstyled-link;
-  display: inline-block;
-
-  &:hover {
-
-    cursor: url("../images/icons/pointer.svg"), auto;
-    color: #FFFFFF;
-    text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
-  }
-
-  &.home {
-    display: block;
-    margin-bottom: 4rem;
-    width: fit-content;
-
-    &::before {
-      content: '←';
-      margin-right: 0.25em;
-    }
-  }
-
-  &.name {
-    font-family: var(--font-2);
-    letter-spacing: 0.1em;
-    font-size: 1.1rem;
-  }
-}
-
-footer {
-  margin: 8rem 0 1rem 0;
-  font-size: 0.75em;
-  text-align: center;
-
-  .etc {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2em;
   }
 }
 
@@ -243,8 +238,33 @@ footer {
   }
 }
 
+// === FOOTER ===
+footer {
+
+  .etc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2em;
+    font-size: 0.75em;
+    text-align: center;
+  }
+}
+
+.quote-container {
+  background-color: var(--accent-2);
+
+  blockquote {
+    margin: 0;
+  }
+}
+
+// === MISC ===
 #skiplink {
-  @extend .visually-hidden;
+  margin: 4px;
+  padding: 1rem;
+  background-color: var(--background-color);
+
 }
 
 ::selection {

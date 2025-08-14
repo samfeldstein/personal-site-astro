@@ -1,6 +1,9 @@
 ---
 import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
+import QuoteGenerator from "@components/QuoteGenerator.astro";
+
+// Icons
 import HtmlIcon from "@components/HtmlIcon.astro";
 import CssIcon from "@components/CssIcon.astro";
 import JsIcon from "@components/JsIcon.astro";
@@ -182,6 +185,7 @@ const projects = [
     </ul>
   </main>
   <footer>
+    <QuoteGenerator />
     <div class="etc">
       <div>{site.location.city}, {site.location.state}</div>
       <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
