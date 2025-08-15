@@ -35,7 +35,7 @@ body {
   z-index: -2;
   display: grid;
   gap: 2rem;
-  padding: 0.5rem;
+  padding: 2rem 0.5rem;
   min-height: 100vh;
   max-width: 70rem;
   font-family: var(--font-1);
@@ -148,6 +148,7 @@ h1 {
 
 // === HIRE ===
 div.hire {
+  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -240,7 +241,6 @@ ul.projects {
 footer {
   display: grid;
   gap: 2rem;
-  margin-bottom: 1rem;
 
   .etc {
     @extend .flex-column;

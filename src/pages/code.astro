@@ -161,28 +161,30 @@ const projects = [
     </hgroup>
   </header>
 
-  <div class="hire">
-    <a class="github" href="https://github.com/samfeldstein">GitHub</a>
-    <a class="hire" href="mailto:sam@samfeldstein.xyz">Hire me</a>
-  </div>
-
   <main id="main-content">
-    <ul class="projects">
-      {
-        projects.map((project) => (
-          <li class="project">
-            <a class="name" href={project.url || project.source}>
-              {project.name || project.client}
-            </a>
-            <div class="project-image" set:html={project.image} />
-            <div class="info">
-              <span>{project.type}</span>
-              <time>{project.date}</time>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="hire">
+      <a class="github" href="https://github.com/samfeldstein">GitHub</a>
+      <a class="hire" href="mailto:sam@samfeldstein.xyz">Hire me</a>
+    </div>
+    <section>
+      <h2 class="visually-hidden">Projects</h2>
+      <ul class="projects">
+        {
+          projects.map((project) => (
+            <li class="project">
+              <a class="name" href={project.url || project.source}>
+                {project.name || project.client}
+              </a>
+              <div class="project-image" set:html={project.image} />
+              <div class="info">
+                <span>{project.type}</span>
+                <time>{project.date}</time>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </main>
   <footer>
     <QuoteGenerator />
