@@ -1,0 +1,296 @@
+@use 'fonts/orbitron';
+@use 'fonts/victor-mono';
+@use 'mixins';
+@use 'utils';
+
+/* === INSPIRATION ===
+https://stylestage.dev/styles/pipboy/
+https://codepen.io/odyssey-os/pen/bNdowNB
+*/
+
+// === Config ===
+:root {
+  // https: //modernfontstacks.com
+  --font-1: 'Victor Mono', monospace;
+  --font-2: 'Orbitron', 'Orbitron Fallback';
+  // Colors
+  --text-color: oklch(0.887 0.234 143);
+  // --text-color: oklch(79.268% 0.17097 70.665);
+  --background-color: oklch(0.207 0.013 78);
+  --accent: oklch(from var(--text-color) l c h / 0.5);
+  --accent-2: oklch(from var(--text-color) l c h / 0.15);
+}
+
+// === GLOBAL ===
+html {
+  @extend .custom-cursor;
+  background-color: var(--background-color);
+  scrollbar-color: var(--accent) var(--background-color);
+  scrollbar-width: thin;
+  scroll-padding: 2rem;
+}
+
+body {
+  @include mixins.fluid-font();
+  position: relative;
+  z-index: -2;
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0.5rem;
+  min-height: 100vh;
+  max-width: 70rem;
+  font-family: var(--font-1);
+  font-weight: 100;
+  text-shadow: 0rem 0.2rem 1em currentColor;
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1; // Make sure it's above the background but below content
+    background: repeating-linear-gradient(to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 2px,
+        rgba(0, 0, 0, 0.1) 4px,
+        rgba(0, 0, 0, 0.6) 0.45rem);
+  }
+
+  &::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0.25;
+    background: radial-gradient(circle, var(--text-color) 20%, var(--background-color) 100%);
+  }
+}
+
+a {
+  @extend .small-caps;
+  @extend .unstyled-link;
+  @extend .custom-cursor;
+  display: inline-block;
+  padding: 0.5em 0;
+
+  &:hover {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
+  }
+
+  &:focus-visible {
+    outline: 0.1em solid white;
+  }
+
+  &.home {
+    display: block;
+    margin-bottom: 4rem;
+    width: fit-content;
+
+    &::before {
+      content: '←';
+      margin-right: 0.25em;
+    }
+  }
+
+  &.name {
+    font-family: var(--font-2);
+    letter-spacing: 0.1em;
+    font-size: 1.1rem;
+  }
+}
+
+// === HEADER ===
+hgroup {
+  position: relative;
+  border-style: solid none;
+  border-width: 0.15rem;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: '';
+    background: linear-gradient(to bottom, var(--text-color) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 65%, var(--text-color) 100%);
+    width: 0.15rem;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+
+  &::before {
+    left: 0;
+  }
+}
+
+h1 {
+  @extend .small-caps;
+  position: absolute;
+  top: -30px;
+  left: 4rem;
+  margin: 0;
+  padding: 0 0.3em;
+  font-family: var(--font-2);
+  font-weight: 400;
+  font-size: 2em;
+  letter-spacing: 0.2em;
+  z-index: 1;
+
+  &::after {
+    background-color: var(--background-color);
+    content: '';
+    height: 0.2rem;
+    width: 100%;
+    left: 0;
+    top: 27px;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+// === HIRE ===
+div.hire {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-2);
+  font-size: 1.5em;
+  text-align: center;
+  text-wrap: nowrap;
+
+  a {
+    background-color: var(--background-color);
+    // color: var(--text-color);
+    min-width: 250px; // Force wrap on mobile
+    border: 1px solid;
+    padding: 1em;
+    flex: 1;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus {
+      background-color: var(--accent);
+      color: white;
+      // color: unset;
+      text-shadow: unset;
+    }
+  }
+}
+
+// === MAIN ===
+ul.projects {
+  @extend .unstyled-list;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 2rem;
+
+  li {
+    @extend .flex-column;
+    justify-content: space-between;
+    border: 1px solid;
+    box-shadow: 5px 5px 0 var(--background-color), 6px 6px 0;
+    padding: 0.5em 1em;
+    text-align: center;
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    font-size: 0.75em;
+  }
+}
+
+.code-icons {
+  padding: 4rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  figure {
+    width: fit-content;
+  }
+
+  figcaption {
+    @extend .small-caps;
+    font-size: .75rem;
+    text-align: center;
+  }
+
+  svg {
+    width: clamp(4rem, 10vw, 5rem);
+    fill: currentColor;
+  }
+}
+
+.project-image {
+  text-align: center;
+
+  svg {
+    width: clamp(5rem, 40vw, 10rem);
+    fill: currentColor;
+  }
+}
+
+// === FOOTER ===
+footer {
+  display: grid;
+  gap: 2rem;
+
+  .etc {
+    @extend .flex-column;
+    gap: 1em;
+    font-size: 0.75em;
+    text-align: right;
+  }
+}
+
+.quote-container {
+  background-color: var(--background-color);
+  border: 1px solid;
+  box-shadow: 5px 5px 0 var(--background-color), 6px 6px 0;
+  padding: 1em;
+
+  blockquote {
+    margin: 0;
+  }
+
+  #quote {
+    font-family: var(--font-2);
+    letter-spacing: 0.2em;
+
+    // font-style: italic;
+  }
+
+  .attribution {
+    margin-top: 4em;
+    font-size: 0.9em;
+    text-align: right;
+  }
+}
+
+// === MISC ===
+#skiplink {
+  margin: 4px;
+  padding: 1rem;
+  background-color: var(--background-color);
+
+}
+
+::selection {
+  background-color: var(--accent-2);
+}
+
+// === Utilities ===
+.custom-cursor {
+  cursor: url("../images/icons/pointer.svg"), auto;
+}

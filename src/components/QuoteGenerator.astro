@@ -1,0 +1,40 @@
+<div class="quote-container">
+  <blockquote>
+    <p id="quote"></p>
+  </blockquote>
+  <p class="attribution">
+    <span id="speaker"></span><cite id="work"></cite><span id="year"></span>
+  </p>
+</div>
+
+<script>
+  // Doesn't need to be in public, I don't think. Like css, when you import it it makes the data available in the published site
+  import quotes from "../data/quotes";
+
+  const isDev = import.meta.env.DEV;
+
+  // Always first quote in dev, to make sure it looks okay
+  const randomQuote = isDev
+    ? quotes[0]
+    : quotes[Math.floor(Math.random() * quotes.length)];
+
+  document.getElementById("quote").innerHTML = randomQuote.quote;
+  document.getElementById("speaker").textContent = randomQuote.speaker;
+
+  if (randomQuote.work) {
+    document.getElementById("work").textContent = ", " + randomQuote.work;
+  }
+
+  if (randomQuote.year) {
+    document.getElementById("year").textContent = " " + `(${randomQuote.year})`;
+  }
+
+  if (randomQuote.url) {
+    document.querySelector("blockquote")?.setAttribute("cite", randomQuote.url);
+  }
+
+  if (["poem", "essay", "song", "short story"].includes(randomQuote.medium)) {
+    document.querySelector("cite")?.style.setProperty("font-style", "normal");
+    document.getElementById("work").textContent = `, “${randomQuote.work}”`;
+  }
+</script>

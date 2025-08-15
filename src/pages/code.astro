@@ -1,117 +1,197 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import QuoteGenerator from "@components/QuoteGenerator.astro";
 
+// Icons
+import HtmlIcon from "@components/HtmlIcon.astro";
+import CssIcon from "@components/CssIcon.astro";
+import JsIcon from "@components/JsIcon.astro";
+import AstroIcon from "@components/AstroIcon.astro";
+import EleventyIcon from "@components/EleventyIcon.astro";
+import GitIcon from "@components/GitIcon.astro";
+import CloudflareIcon from "@components/CloudflareIcon.astro";
+import FigmaIcon from "@components/FigmaIcon.astro";
+import WordPressIcon from "@components/WordPressIcon.astro";
+import TerminalIcon from "@components/TerminalIcon.astro";
+
+// Styles
+import "../styles/_code.scss";
+
+// Data
+import { site } from "config.mjs";
+
+// Utils
+import { getCurrentYear } from "../scripts/utils";
+
+const year = getCurrentYear();
+
+// Projects
 const projects = [
   {
-    title: "Shelf Talker Generator",
+    name: "Shelf Talker Generator",
     type: "Web App",
     date: "June 2025",
     url: "https://shelftalkers.samfeldstein.xyz",
     source: "https://github.com/samfeldstein/shelf-talkers",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M576 304c0 132.5-114.6 240-256 240-37.1 0-72.3-7.4-104.1-20.7L97.5 574.1c-9.4 4-20.2 1.7-27.1-5.8-6.9-7.5-8.4-18.5-3.6-27.5l48.8-92.2C83.2 408.3 64 358.3 64 304 64 171.5 178.6 64 320 64s256 107.5 256 240z"/></svg>`,
   },
   {
-    title: "The Simplest Writing Tracker",
+    name: "The Simplest Writing Tracker",
     type: "Terminal App",
     date: "May 2025",
     source: "https://github.com/samfeldstein/writing-tracker",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M96 128c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64H96zm16 64h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zM96 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm112-112h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm-16 112c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h224c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm80-176c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm80-80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm80-80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16z"/></svg>`,
   },
   {
-    title: "Cookbook",
+    name: "Personal Cookbook",
     type: "Website",
     date: "March 2025",
     url: "https://cookbook.samfeldstein.xyz/",
     source: "https://github.com/samfeldstein/cookbook",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M127.9 78.4c-.8-8.2-7.7-14.4-15.9-14.4s-15.1 6.2-16 14.3L81.9 213.7c-1.3 6-1.9 12.1-1.9 18.2 0 45.9 35.1 83.6 80 87.7V544c0 17.7 14.3 32 32 32s32-14.3 32-32V319.6c44.9-4.1 80-41.8 80-87.7 0-6.1-.6-12.2-1.9-18.2L287.9 78.3c-.8-8.1-7.7-14.3-15.9-14.3s-15.1 6.2-15.9 14.4l-13.6 135.5c-.6 5.7-5.4 10.1-11.1 10.1-5.8 0-10.6-4.4-11.2-10.2L207.9 78.6c-.7-8.3-7.6-14.6-15.9-14.6s-15.2 6.3-15.9 14.6l-12.3 135.2c-.5 5.8-5.4 10.2-11.2 10.2-5.8 0-10.6-4.4-11.1-10.1L127.9 78.4zM512 64c-16 0-128 32-128 176v112c0 35.3 28.7 64 64 64h32v128c0 17.7 14.3 32 32 32s32-14.3 32-32V96c0-17.7-14.3-32-32-32z"/></svg>`,
   },
   {
-    title: "Regreen Big Bend",
+    client: "Regreen Big Bend",
     type: "Website",
     date: "February 2025",
     url: "https://regreenbigbend.com",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.--><path d="M320 32c7 0 13.7 3.1 18.3 8.5l136 160c6.1 7.1 7.4 17.1 3.5 25.6-3.9 8.5-12.4 13.9-21.8 13.9h-24.9l75.2 88.5c6.1 7.1 7.4 17.1 3.5 25.6-3.9 8.5-12.4 13.9-21.8 13.9h-38.5l88.8 104.5c6.1 7.1 7.4 17.1 3.5 25.6-3.9 8.5-12.4 13.9-21.8 13.9H352v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64H120c-9.4 0-17.9-5.4-21.8-13.9-3.9-8.5-2.6-18.5 3.5-25.6L190.5 368H152c-9.4 0-17.9-5.4-21.8-13.9-3.9-8.5-2.6-18.5 3.5-25.6l75.2-88.5H184c-9.4 0-17.9-5.4-21.8-13.9-3.9-8.5-2.6-18.5 3.5-25.6l136-160C306.3 35.1 313 32 320 32z"/></svg>`,
   },
   {
-    title: "Postoley Dance Ensemble",
+    client: "Postoley Dance Ensemble",
     type: "Website",
     date: "February 2025",
     url: "https://danceophile.com",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M360-120v-200q-62-5-121.5-14T120-360l20-80q83 23 168 31.5t172 8.5q86 0 171-8.5T820-440l20 80q-60 17-119.5 26T600-320v200H360Zm120-320q-34 0-57-23t-23-57q0-33 23-56.5t57-23.5q33 0 56.5 23.5T560-520q0 34-23.5 57T480-440ZM180-560q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T240-620q0 26-17.5 43T180-560Zm600 0q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T840-620q0 26-17.5 43T780-560ZM290-710q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T350-770q0 26-17.5 43T290-710Zm380 0q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T730-770q0 26-17.5 43T670-710Zm-190-50q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T540-820q0 26-17.5 43T480-760Z"/></svg>`,
   },
   {
-    title: "Digital Notebook",
+    name: "Digital Notebook",
     type: "Website",
     date: "October 2024",
     url: "https://notebook.samfeldstein.xyz/",
     source: "https://github.com/samfeldstein/notebook",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M184 120c0-30.9 25.1-56 56-56h24c17.7 0 32 14.3 32 32v448c0 17.7-14.3 32-32 32h-32c-29.8 0-54.9-20.4-62-48h-2c-44.2 0-80-35.8-80-80 0-18 6-34.6 16-48-19.4-14.6-32-37.8-32-64 0-30.9 17.6-57.8 43.2-71.1-7.1-12-11.2-26-11.2-40.9 0-44.2 35.8-80 80-80v-24zm272 0v24c44.2 0 80 35.8 80 80 0 15-4.1 29-11.2 40.9C550.5 278.2 568 305 568 336c0 26.2-12.6 49.4-32 64 10 13.4 16 30 16 48 0 44.2-35.8 80-80 80h-2c-7.1 27.6-32.2 48-62 48h-32c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32h24c30.9 0 56 25.1 56 56z"/></svg>`,
   },
   {
-    title: "Prairie Rose Arena",
+    client: "Prairie Rose Arena",
     type: "Website",
     date: "May 2024",
     url: "https://prairierosearena.com/",
     notes: "https://notebook.samfeldstein.xyz/notes/prairie-rose-arena-notes",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="m182.2 140.1-51.4 231.4c14.7 17.4 36.6 28.5 61.2 28.5h256c24.6 0 46.5-11.1 61.2-28.5l-51.4-231.4c-5.7-25.8-28.6-44.1-55-44.1-12.2 0-24.1 4-33.8 11.3l-4.7 3.5c-26.3 19.7-62.4 19.7-88.6 0l-4.7-3.5C261.2 100 249.4 96 237.2 96c-26.4 0-49.3 18.3-55 44.1zM64 320c0-17.7-14.3-32-32-32S0 302.3 0 320c0 106 86 192 192 192h256c106 0 192-86 192-192 0-17.7-14.3-32-32-32s-32 14.3-32 32c0 70.7-57.3 128-128 128H192c-70.7 0-128-57.3-128-128z"/></svg>`,
   },
   {
-    title: "Pairings",
+    name: "Pairings",
     type: "Web App",
     date: "May 2024",
     url: "https://pairingapp.netlify.app",
     source: "https://github.com/samfeldstein/pairings",
     notes: "https://notebook.samfeldstein.xyz/notes/pairings-notes",
+    image: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M467.8 98.4c12-5 25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6 0 8.5-3.4 16.6-9.4 22.6l-64 64c-9.2 9.2-22.9 11.9-34.9 6.9S448 268.9 448 256v-32h-32c-10.1 0-19.6 4.7-25.6 12.8L358 280l-40-53.3 21.2-28.3c18.1-24.2 46.6-38.4 76.8-38.4h32v-32c0-12.9 7.8-24.6 19.8-29.6zM218 360l40 53.3-21.2 28.3C218.7 465.8 190.2 480 160 480H96c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c10.1 0 19.6-4.7 25.6-12.8L218 360zm284.6 174.6c-9.2 9.2-22.9 11.9-34.9 6.9S448 524.9 448 512v-32h-32c-30.2 0-58.7-14.2-76.8-38.4L185.6 236.8c-6-8.1-15.5-12.8-25.6-12.8H96c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c30.2 0 58.7 14.2 76.8 38.4l153.6 204.8c6 8.1 15.5 12.8 25.6 12.8h32v-32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6 0 8.5-3.4 16.6-9.4 22.6l-64 64z"/></svg>`,
   },
 ];
+
+// const personal = projects.filter((project) => project.name);
+// const professional = projects.filter((project) => project.client);
 ---
 
-<BaseLayout title="Code" description="Websites and apps I've built.">
-  <h1>Code</h1>
-  <ul class="projects">
-    {
-      projects.map((item) => (
-        <li class="project">
-          <a class="name" href={item.url || item.source}>
-            {item.title}
-          </a>
-          <div class="info">
-            <span>{item.type} | </span>
-            <time>{item.date}</time>
-            {item.source && (
-              <>
-                <span>|</span>
-                <a href={`${item.source}`}>Source</a>
-              </>
-            )}
-            {item.notes && (
-              <>
-                <span>|</span>
-                <a href={`${item.notes}`}>Notes</a>
-              </>
-            )}
-          </div>
-        </li>
-      ))
-    }
-  </ul>
-</BaseLayout>
+<Base>
+  <Head
+    slot="head"
+    title="Code"
+    description="My portfolio of personal and professional coding projects."
+    ogType="website"
+  />
+  <header>
+    <a class="home" href="/">Home</a>
+    <hgroup>
+      <h1>Code</h1>
+      <div class="code-icons">
+        <figure>
+          <HtmlIcon />
+          <figcaption>HMTL</figcaption>
+        </figure>
 
-<style>
-  h1 {
-    margin-bottom: 2em;
-  }
+        <figure>
+          <CssIcon />
+          <figcaption>CSS</figcaption>
+        </figure>
 
-  ul.projects {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 2rem;
-  }
+        <figure>
+          <JsIcon />
+          <figcaption>JavaScript</figcaption>
+        </figure>
 
-  .info {
-    font-size: var(--font-small);
-  }
+        <figure>
+          <AstroIcon />
+          <figcaption>Astro</figcaption>
+        </figure>
 
-  a {
-    &.name {
-      font-weight: 700;
-      font-size: var(--font-medium);
-      text-wrap: balance;
-    }
-  }
-</style>
+        <figure>
+          <EleventyIcon />
+          <figcaption>Eleventy</figcaption>
+        </figure>
+
+        <figure>
+          <GitIcon />
+          <figcaption>Git</figcaption>
+        </figure>
+
+        <figure>
+          <TerminalIcon />
+          <figcaption>Bash</figcaption>
+        </figure>
+
+        <figure>
+          <FigmaIcon />
+          <figcaption>Figma</figcaption>
+        </figure>
+
+        <figure>
+          <CloudflareIcon />
+          <figcaption>Cloudflare</figcaption>
+        </figure>
+
+        <figure>
+          <WordPressIcon />
+          <figcaption>WordPress</figcaption>
+        </figure>
+      </div>
+    </hgroup>
+  </header>
+
+  <main id="main-content">
+    <div class="hire">
+      <a class="github" href="https://github.com/samfeldstein">GitHub</a>
+      <a class="hire" href="mailto:sam@samfeldstein.xyz">Hire me</a>
+    </div>
+    <section>
+      <h2 class="visually-hidden">Projects</h2>
+      <ul class="projects">
+        {
+          projects.map((project) => (
+            <li class="project">
+              <a class="name" href={project.url || project.source}>
+                {project.name || project.client}
+              </a>
+              <div class="project-image" set:html={project.image} />
+              <div class="info">
+                <span>{project.type}</span>
+                <time>{project.date}</time>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <QuoteGenerator />
+    <div class="etc">
+      <div>{site.location.city}, {site.location.state}</div>
+      <div>Powered by <a href="https://astro.build">Astro</a></div>
+      <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
+    </div>
+  </footer>
+</Base>

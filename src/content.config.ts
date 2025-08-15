@@ -2,8 +2,8 @@
 // https://docs.astro.build/en/tutorials/add-content-collections/#create-a-collection-for-your-blog-posts
 
 // Import utilities from `astro:content`
-import { z, defineCollection } from "astro:content";
-import { glob } from 'astro/loaders';
+import { z, defineCollection } from "astro:content"
+import { glob } from 'astro/loaders'
 
 // Collections
 const blog = defineCollection({
@@ -30,13 +30,11 @@ const cyber = defineCollection({
       url: z.string().url()
     })
   }),
-});
+})
 
 const resumes = defineCollection({
-  loader: glob({
-    pattern: "**/*.yml", base: "./src/content/resumes"
-  }),
+  loader: glob({ pattern: "**/*.yml", base: "./src/content/resumes" }),
 })
 
 // Export a single `collections` object to register your collection(s)
-export const collections = { blog, cyber, resumes };
+export const collections = { blog, cyber, resumes }

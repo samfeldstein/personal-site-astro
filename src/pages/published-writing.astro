@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import List from "../components/PortfolioList.astro";
+
+// Styles
+import "../styles/_default-page.scss";
+
+// Data
+import { writing } from "../data/published-writing.js";
+
+const description = "My published writing.";
+---
+
+<Base title="Published Writing" description={description}>
+  <header id="page-header">
+    <a href="/">←&nbsp;Home</a>
+    <h1>Published Writing</h1>
+  </header>
+  <main id="main-content">
+    <List data={writing} />
+  </main>
+</Base>

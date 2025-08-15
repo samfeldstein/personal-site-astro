@@ -14,7 +14,7 @@ work:
   - composition
   - devFreelance
   - devAssistant
-  - marfaStore
+  - journalistSentinel
   - devSentinel
 
 projects:
@@ -34,13 +34,13 @@ skills:
       - Client support
       - Customer relations
       - Professional and technical writing
-  
+
   - category: Technical
     items:
       - Web development and publishing
       - Content Management Systems
       - Version Control Systems
-  
+
   - category: Web Technologies & Standards
     items:
       - Semantic HTML

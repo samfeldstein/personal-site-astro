@@ -1,57 +1,142 @@
 ---
-import Head from "../components/Head.astro";
-import SiteFooter from "../components/SiteFooter.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import PageSpeed from "../components/PageSpeed.astro";
+import QuoteGenerator from "../components/QuoteGenerator.astro";
+import RSS from "../components/RssIcon.astro";
+import Github from "../components/GithubIcon.astro";
+import Email from "../components/EmailIcon.astro";
+import ExternalLinkIcon from "../components/ExternalLinkIcon.astro";
 
 // Styles
 import "/src/styles/_index.scss";
+import "/src/styles/_quote-generator-home.scss";
 
 // Data
 import { site } from "../../config.mjs";
+
+// Utils
+import { getCurrentYear } from "../scripts/utils";
+
+const year = getCurrentYear();
+
+// Fonts
+const preloadFonts = ["oswald", "noto"];
 ---
 
-<html lang="en-us">
+<Base>
   <Head
+    slot="head"
     title="Home"
     description={site.description}
-    ogTitle="Sam Feldstein's Personal Website"
     ogType="website"
+    preloadFonts={preloadFonts}
   />
-  <body>
-    <h1>Hi, I’m <span class="name">Sam Feldstein</span></h1>
-    <main id="main-content">
-      <section id="intro">
-        <p>
-          I’m a sometime <a href="/words/">writer</a> and hobbyist <a
-            href="/code/">web developer</a
-          >. I don’t have a particular objective for this website, but I’ve
-          learned a lot from people writing on the internet and I’d like to pay
-          it forward.
-        </p>
-      </section>
-
-      <section id="nav">
-        <h2>Navigation</h2>
-        <nav>
-          <a href="/words/">Words</a>
-          <a href="/code/">Code</a>
-          <a href="/photos/">Photos</a>
-          <a href="/uses/">Uses</a>
-          <a href="/blogroll/">Blogroll</a>
-          <a href="https://notebook.samfeldstein.xyz/">Notebook</a>
-          <a href="/colophon/">Colophon</a>
-        </nav>
-      </section>
-
-      <section>
-        <h2>Contact & Social</h2>
-        <div class="contact">
-          <a href="mailto:sam@samfeldstein.xyz">Email</a>
-          <a href="https://github.com/samfeldstein">GitHub</a>
-          <a href="/feed.xml">Feed</a>
+  <div class="border top"></div>
+  <header>
+    <h1>
+      <div class="title">Ever in<br />Flux</div>
+      <div class="byline">the personal website of</div>
+      <div class="name">Samuel<br />Feldstein</div>
+    </h1>
+  </header>
+  <main id="main-content">
+    <section class="contents">
+      <h2 id="contents">Contents</h2>
+      <nav>
+        <div id="code">
+          <h3>Code</h3>
+          <ul>
+            <li><a href="/code/">Projects</a></li>
+            <li><a href="/resumes/frontend-developer/">Resume</a></li>
+          </ul>
         </div>
-      </section>
-    </main>
+        <div id="words">
+          <h3>Words</h3>
+          <ul>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/published-writing">Published Work</a></li>
+            <li>
+              <a href="/feed.xml"
+                >Feed<RSS class="inline" aria-hidden="true" /></a
+              >
+            </li>
+          </ul>
+        </div>
 
-    <SiteFooter />
-  </body>
-</html>
+        <div id="else">
+          <h3>Else</h3>
+          <ul>
+            <li><a href="/about/">About the Author</a></li>
+            <li><a href="/uses/">Uses</a></li>
+            <li><a href="/photos/">Gallery</a></li>
+            <li><a href="/colophon/">Colophon</a></li>
+          </ul>
+        </div>
+      </nav>
+    </section>
+
+    <section class="other">
+      <h2 id="other-sites">Other Sites</h2>
+      <ul>
+        <li>
+          <a href="https://notes.samfeldstein.xyz/"
+            >Notebook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
+          >
+        </li>
+        <li>
+          <a href="https://cookbook.samfeldstein.xyz/"
+            >Cookbook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <section class="other">
+      <h2 id="contact">Contact & Social</h2>
+      <ul class="contact">
+        <li>
+          <a href="mailto:sam@samfeldstein.xyz">Email<Email class="inline" /></a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/samfeldstein"
+            >GitHub<Github class="inline" aria-hidden="true" /></a
+          >
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <QuoteGenerator />
+    <nav>
+      <ul class="toc">
+        <li><a href="#contents">Contents</a></li>
+        <li><a href="#other-sites">Other Sites</a></li>
+        <li><a href="#contact">Contact & Social</a></li>
+      </ul>
+    </nav>
+    <PageSpeed />
+    <div class="etc">
+      <div>{site.location.city}, {site.location.state}</div>
+      <div>Powered by <a href="https://astro.build">Astro</a></div>
+      <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
+    </div>
+  </footer>
+  <div class="border bottom"></div>
+</Base>
+
+<script>
+  // Set --vh to the initial viewport height and don't update it. Prevent layout shift from 100vh on mobile
+  const header = document.querySelector("header");
+
+  if (header) {
+    header.style.setProperty(
+      "--vh",
+      `${document.documentElement.clientHeight}px`,
+    );
+  }
+
+  // See https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
+</script>

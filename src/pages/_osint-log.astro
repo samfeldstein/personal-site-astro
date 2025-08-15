@@ -1,0 +1,130 @@
+---
+// Layout
+import BaseLayout from "../layouts/Base.astro";
+
+const milestones = [
+  {
+    org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
+    milestone: "Careers in OSINT",
+    milestoneUrl:
+      "https://www.myosint.training/courses/take/careers-using-osint-skills/",
+    date: "2025-04-22",
+    cert: "Certificate",
+    certUrl: "/files/certificate-my-osint-training-careers.pdf",
+  },
+  {
+    org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
+    milestone: "Introduction to OSINT",
+    milestoneUrl:
+      "https://www.myosint.training/courses/take/introduction-to-osint/",
+    date: "2025-04-22",
+    cert: "Certificate",
+    certUrl: "/files/certificate-my-osint-training-introduction.pdf",
+  },
+  {
+    org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
+    milestone: "My OSINT Training Pretest",
+    milestoneUrl: "https://myosint.link/pretest1",
+    date: "2025-04-20",
+    cert: "",
+    certUrl: "",
+  },
+  {
+    org: "My OSINT Training",
+    orgUrl: "https://www.myosint.training/",
+    milestone: "My OSINT Training Intro course",
+    milestoneUrl: "https://www.myosint.training/courses/introduction-to-osint",
+    date: "2025-04-20",
+    cert: "",
+    certUrl: "",
+  },
+  {
+    org: "Kase Scenarios",
+    orgUrl: "https://kasescenarios.com/",
+    milestone: "SCP: Insurgency",
+    milestoneUrl: "https://kasescenarios.com/scp-insurgency",
+    date: "2025-04-19",
+    cert: "Certificate",
+    certUrl: "/files/kase-certificate-scp-insurgency.pdf",
+  },
+  {
+    org: "Kase Scenarios",
+    orgUrl: "https://kasescenarios.com/",
+    milestone: "Orkla: Dragon Con Detective",
+    milestoneUrl: "https://courses.kasescenarios.com/courses/dragoncon",
+    date: "2025-04-18",
+    cert: "Certificate",
+    certUrl: "/files/kase-certificate-dragon-con-detective.pdf",
+  },
+];
+---
+
+<BaseLayout
+  title="OSINT Learning Path"
+  description="My Open Source Intelligence learning path."
+>
+  <h1>OSINT Learning Path</h1>
+  <ul class="milestones">
+    {
+      milestones.map((milestone) => (
+        <li class="milestone">
+          <div class="milestone">
+            <i>
+              <a href={milestone.milestoneUrl}>{milestone.milestone}</a>
+            </i>{" "}
+            @ <a href={milestone.orgUrl}>{milestone.org}</a>
+          </div>
+
+          
+            <div class="details">
+              <time>{milestone.date}</time>
+              {milestone.cert && milestone.certUrl && (
+              <span>|</span>
+              <a href={milestone.certUrl} target="_blank">
+              Certificate
+              </a>)}
+            </div>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  ul.milestones {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    gap: 2rem;
+  }
+
+  li.milestone {
+    border-radius: 4px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px #777777;
+  }
+
+  div.milestone {
+    font-size: var(--font-medium);
+    font-weight: 700;
+  }
+
+  div.details {
+    font-size: var(--font-small);
+    color: var(--accent);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+
+    a {
+      &:hover,
+      &:focus {
+        color: var(--text-color);
+      }
+    }
+  }
+</style>

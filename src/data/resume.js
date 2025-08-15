@@ -27,7 +27,7 @@ export const workHistory = {
   },
   devFreelance: {
     role: "Freelance Web Designer & Developer",
-    date: "April 2024 – February 2025",
+    date: "April 2024 – Present",
     place: "Boulder, CO",
     description: [
       "Build bespoke, high-performance websites using modern static site generators and Content Management Systems.",
@@ -272,4 +272,3 @@ export const volunteer = {
     ],
   }
 };
-

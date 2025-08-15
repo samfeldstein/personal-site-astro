@@ -1,0 +1,13 @@
+---
+// Components
+import Skiplink from "../components/Skiplink.astro";
+---
+
+<!doctype html>
+<html lang="en-us" prefix="og:https://ogp.me/ns#">
+  <slot name="head" />
+  <body>
+    <Skiplink />
+    <slot />
+  </body>
+</html>

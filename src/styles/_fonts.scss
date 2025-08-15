@@ -1,0 +1,28 @@
+/* Used in photos */
+@font-face {
+  font-family: '5th Grade Cursive';
+  src: url('/fonts/subset-5thGradeCursive.woff2') format('woff2'),
+    url('/fonts/subset-5thGradeCursive.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+strong,
+b {
+  font-weight: 700;
+  /* Browser knows to use the bold variation */
+}
+
+em,
+i {
+  font-style: italic;
+  /* Browser knows to use the italic variation */
+}
+
+strong em,
+b i {
+  font-weight: 700;
+  font-style: italic;
+  /* Browser combines bold + italic variation */
+}

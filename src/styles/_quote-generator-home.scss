@@ -1,0 +1,24 @@
+.quote-container {
+  color-scheme: light dark;
+  --accent: light-dark(#999999, #595959);
+  --accent-2: light-dark(#f8f8f8, #252525);
+  border-style: solid none;
+  border-width: 0.01em;
+  border-color: var(--accent);
+  background: var(--accent-2);
+  padding: 1em;
+
+  blockquote {
+    margin: 0;
+    position: relative; // To position scrolling text
+  }
+
+  #quote {
+    text-align: left;
+    font-style: italic;
+  }
+
+  .attribution {
+    font-size: 0.8em;
+  }
+}

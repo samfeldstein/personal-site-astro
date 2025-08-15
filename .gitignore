@@ -1,9 +1,12 @@
 # generated types
 dist/
 .astro/
+dist/
 
 # dependencies
-node_modules/
+node_modules/*
+## For Cloudflare
+!node_modules/.astro/
 
 # logs
 npm-debug.log*
@@ -25,5 +28,7 @@ pnpm-debug.log*
 .vscode/
 .jampack/
 package-lock.json
+
+# Obsidian
 .obsidian/
-templates
+templates/

@@ -1,10 +1,16 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/Base.astro";
 import Date from "../components/Date.astro";
 import Tags from "../components/Tags.astro";
 
+// Styles
+import "../styles/_default-page.scss";
+import "../styles/_words.scss";
+
 import { getCollection } from "astro:content";
 import { sortCollectionByDate } from "../scripts/utils.ts";
+
+const description = "My professional and personal writing.";
 
 // Filter drafts when building for production
 const posts = await getCollection("blog", ({ data }) => {
@@ -72,8 +78,10 @@ const writing = [
 ];
 ---
 
-<BaseLayout title="Writing" description="My professional and personal writing.">
-  <h1>Words</h1>
+<BaseLayout title="Writing" description={description}>
+  <header>
+    <h1>Words</h1>
+  </header>
 
   <section class="published">
     <h2>Published Work</h2>
