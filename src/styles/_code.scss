@@ -11,8 +11,8 @@ https://codepen.io/odyssey-os/pen/bNdowNB
 // === Config ===
 :root {
   // https: //modernfontstacks.com
-  --font-1: 'Victor Mono', monospace;
-  --font-2: 'Orbitron', 'Orbitron Fallback';
+  --font-1: 'Victor Mono', Monaco, 'Lucida Console', monospace;
+  --font-2: 'Orbitron', 'Orbitron Fallback', sans-serif;
   // Colors
   --text-color: oklch(0.887 0.234 143);
   // --text-color: oklch(79.268% 0.17097 70.665);
@@ -192,6 +192,7 @@ ul.projects {
   gap: 2rem;
 
   li {
+    @extend .defer;
     @extend .flex-column;
     justify-content: space-between;
     border: 1px solid;
@@ -243,6 +244,7 @@ ul.projects {
 
 // === FOOTER ===
 footer {
+  @extend .defer;
   display: grid;
   gap: 2rem;
 

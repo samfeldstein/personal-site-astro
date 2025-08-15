@@ -17,10 +17,13 @@ import WordPressIcon from "@components/WordPressIcon.astro";
 import TerminalIcon from "@components/TerminalIcon.astro";
 
 // Styles
-import "../styles/_code.scss";
+import "@styles/_code.scss";
 
 // Data
 import { site } from "config.mjs";
+
+// Fonts
+const preloadFonts = ["victor-mono", "orbitron"];
 
 // Projects
 const projects = [
@@ -97,6 +100,7 @@ const projects = [
     slot="head"
     title="Code"
     description="My portfolio of personal and professional coding projects."
+    preloadFonts={preloadFonts}
   />
   <header>
     <a class="home" href="/">Home</a>
