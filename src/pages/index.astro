@@ -3,6 +3,7 @@ import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
 import PageSpeed from "../components/PageSpeed.astro";
 import QuoteGenerator from "../components/QuoteGenerator.astro";
+import Copyright from "@components/Copyright.astro";
 import RSS from "../components/RssIcon.astro";
 import Github from "../components/GithubIcon.astro";
 import Email from "../components/EmailIcon.astro";
@@ -15,11 +16,6 @@ import "/src/styles/_quote-generator-home.scss";
 // Data
 import { site } from "../../config.mjs";
 
-// Utils
-import { getCurrentYear } from "../scripts/utils";
-
-const year = getCurrentYear();
-
 // Fonts
 const preloadFonts = ["oswald", "noto"];
 ---
@@ -29,7 +25,6 @@ const preloadFonts = ["oswald", "noto"];
     slot="head"
     title="Home"
     description={site.description}
-    ogType="website"
     preloadFonts={preloadFonts}
   />
   <div class="border top"></div>
@@ -121,7 +116,7 @@ const preloadFonts = ["oswald", "noto"];
     <div class="etc">
       <div>{site.location.city}, {site.location.state}</div>
       <div>Powered by <a href="https://astro.build">Astro</a></div>
-      <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
+      <Copyright />
     </div>
   </footer>
   <div class="border bottom"></div>
