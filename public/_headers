@@ -1,0 +1,14 @@
+/*.html
+  Cache-Control: public, max-age=3600
+
+/_astro/*
+  Cache-Control: public, max-age=31556952, immutable
+
+/static/fonts/*
+  Cache-Control: public, max-age=31556952, immutable
+
+/static/images/*
+  Cache-Control: public, max-age=31556952, immutable
+
+/static/*.pdf
+  Cache-Control: public, max-age=3600

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Victor Mono';
-  src: url('/fonts/victor-mono.woff2') format('woff2');
+  src: url('/static/fonts/victor-mono.woff2') format('woff2');
   unicode-range: U+0020-007F;
   font-weight: 100 700;
   font-style: normal;
@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Victor Mono';
-  src: url('/fonts/victor-mono-italic.woff2') format('woff2');
+  src: url('/static/fonts/victor-mono-italic.woff2') format('woff2');
   unicode-range: U+0020-007F;
   font-weight: 100 700;
   font-style: italic;

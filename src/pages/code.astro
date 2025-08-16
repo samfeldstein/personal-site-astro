@@ -2,6 +2,7 @@
 import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
 import QuoteGenerator from "@components/QuoteGenerator.astro";
+import Copyright from "@components/Copyright.astro";
 
 // Icons
 import HtmlIcon from "@components/HtmlIcon.astro";
@@ -16,15 +17,13 @@ import WordPressIcon from "@components/WordPressIcon.astro";
 import TerminalIcon from "@components/TerminalIcon.astro";
 
 // Styles
-import "../styles/_code.scss";
+import "@styles/_code.scss";
 
 // Data
 import { site } from "config.mjs";
 
-// Utils
-import { getCurrentYear } from "../scripts/utils";
-
-const year = getCurrentYear();
+// Fonts
+const preloadFonts = ["victor-mono", "orbitron"];
 
 // Projects
 const projects = [
@@ -101,7 +100,7 @@ const projects = [
     slot="head"
     title="Code"
     description="My portfolio of personal and professional coding projects."
-    ogType="website"
+    preloadFonts={preloadFonts}
   />
   <header>
     <a class="home" href="/">Home</a>
@@ -191,7 +190,7 @@ const projects = [
     <div class="etc">
       <div>{site.location.city}, {site.location.state}</div>
       <div>Powered by <a href="https://astro.build">Astro</a></div>
-      <div class="copyright">&copy; 2022 – {year} Samuel Feldstein</div>
+      <Copyright />
     </div>
   </footer>
 </Base>

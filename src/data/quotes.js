@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "This is the secret of the arts: always be a beginner.",
+    speaker: "Shunryu Suzuki",
+    work: "Zen Mind, Beginner’s Mind",
+    medium: "book"
+  },
+  {
     quote: "It is the job of thinking people not to be on the side of the executioners.",
     speaker: "Albert Camus"
   },

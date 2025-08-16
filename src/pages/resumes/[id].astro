@@ -74,28 +74,28 @@ const relevantVolunteerData = entry.data.volunteer.map(
     <!-- Preload assets -->
     <link
       rel="preload"
-      href="/fonts/subset-CormorantGaramond-Regular.woff2"
+      href="/static/fonts/subset-CormorantGaramond-Regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="/fonts/subset-Lato-Regular.woff2"
+      href="/static/fonts/subset-Lato-Regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="/fonts/subset-Lato-Light.woff2"
+      href="/static/fonts/subset-Lato-Light.woff2"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
     />
     <link
       rel="preload"
-      href="/fonts/subset-Lato-Light.woff2"
+      href="/static/fonts/subset-Lato-Light.woff2"
       as="font"
       type="font/woff2"
       crossorigin="anonymous"
@@ -113,7 +113,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
     <meta name="twitter:description" content={description} />
     <meta
       name="twitter:image"
-      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
+      content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp"
     />
 
     <meta property="og:type" content={"website"} />
@@ -125,7 +125,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
     <meta property="og:url" content={Astro.url.href} />
     <meta
       property="og:image"
-      content="https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp"
+      content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp"
     />
 
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -152,7 +152,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
         </address>
         <a
           class="download-link"
-          href=`/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
+          href=`/static/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
           target="_blank">Download PDF</a
         >
         <h1>

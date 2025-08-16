@@ -10,7 +10,7 @@ const {
   title,
   description = title,
   ogType = "website",
-  ogImage = "https://samfeldstein.xyz/images/sam-feldstein-open-graph-default.webp",
+  ogImage = "https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp",
   preloadFonts = [],
 } = Astro.props;
 ---
@@ -52,7 +52,7 @@ const {
       preloadFonts.map((font) => (
         <link
           rel="preload"
-          href={`/fonts/${font}.woff2`}
+          href={`/static/fonts/${font}.woff2`}
           as="font"
           type="font/woff2"
           crossorigin
@@ -92,5 +92,5 @@ const {
     title="Sam Feldstein's Notebook"
     href="https://notebook.samfeldstein.xyz/feed.xml"
   />
-<slot/>
+  <slot />
 </head>
