@@ -124,18 +124,17 @@ const preloadFonts = ["oswald", "noto"];
     </div>
   </footer>
   <div class="border bottom"></div>
+  <script>
+    // Set --vh to the initial viewport height and don't update it. Prevent layout shift from 100vh on mobile
+    const header = document.querySelector("header");
+
+    if (header) {
+      header.style.setProperty(
+        "--vh",
+        `${document.documentElement.clientHeight}px`,
+      );
+    }
+
+    // See https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
+  </script>
 </Base>
-
-<script>
-  // Set --vh to the initial viewport height and don't update it. Prevent layout shift from 100vh on mobile
-  const header = document.querySelector("header");
-
-  if (header) {
-    header.style.setProperty(
-      "--vh",
-      `${document.documentElement.clientHeight}px`,
-    );
-  }
-
-  // See https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
-</script>
