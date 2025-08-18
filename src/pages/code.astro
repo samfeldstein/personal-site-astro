@@ -181,6 +181,7 @@ const projects = [
               <div class="project-image" set:html={project.image} />
               <div class="info">
                 <span>{project.type}</span>
+                {/* Using time here would have invalid datetime */}
                 <span>{project.date}</span>
               </div>
             </li>

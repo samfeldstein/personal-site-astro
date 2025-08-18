@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/static/fonts/noto-sans.woff2') format('woff2');
+  unicode-range: U+0020-007F;
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('/static/fonts/noto-sans-italic.woff2') format('woff2');
+  unicode-range: U+0020-007F;
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans Fallback';
+  src: local('Verdana'); // Good support on Windows and Mac. See https://cssfontstack.com
+  unicode-range: U+0020-007F;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

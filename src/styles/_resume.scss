@@ -1,164 +1,53 @@
-@font-face {
-  font-family: 'Lato';
-  src:
-    url('/static/fonts/subset-Lato-Bold.woff2') format('woff2'),
-    url('/static/fonts/subset-Lato-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+@use 'fonts/cormorant';
+@use 'fonts/noto-sans';
+@use 'global';
+@use 'utils';
 
-@font-face {
-  font-family: 'Lato';
-  src:
-    url('/static/fonts/subset-Lato-BoldItalic.woff2') format('woff2'),
-    url('/static/fonts/subset-Lato-BoldItalic.woff') format('woff');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/static/fonts/subset-Lato-Italic.woff2') format('woff2'),
-    url('/static/fonts/subset-Lato-Italic.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/static/fonts/subset-Lato-LightItalic.woff2') format('woff2'),
-    url('/static/fonts/subset-Lato-LightItalic.woff') format('woff');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/static/fonts/subset-Lato-Light.woff2') format('woff2'),
-    url('/static/fonts/subset-Lato-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Lato';
-  src: url('/static/fonts/subset-Lato-Regular.woff2') format('woff2'),
-    url('/static/fonts/subset-Lato-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('/static/fonts/subset-CormorantGaramond-Light.woff2') format('woff2'),
-    url('/static/fonts/subset-CormorantGaramond-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('/static/fonts/subset-CormorantGaramond-Bold.woff2') format('woff2'),
-    url('/static/fonts/subset-CormorantGaramond-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('/static/fonts/subset-CormorantGaramond-Light.woff2') format('woff2'),
-    url('/static/fonts/subset-CormorantGaramond-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Cormorant Garamond';
-  src: url('/static/fonts/subset-CormorantGaramond-Regular.woff2') format('woff2'),
-    url('/static/fonts/subset-CormorantGaramond-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-strong,
-b {
-  font-weight: 700;
-  // Browser knows to use the bold variation
-}
-
-em,
-i {
-  font-style: italic;
-  // Browser knows to use the italic variation
-}
-
-strong em,
-b i {
-  font-weight: 700;
-  font-style: italic;
-  // Browser combines bold + italic variation
-}
-
-// Config
+// === CONFIG ===
 :root {
-  --font-smallest: calc(.85rem + .1vw);
-  --font-small: calc(1.25em + .25vw);
-}
-
-a.skiplink {
-  background-color: white;
-  border-style: solid;
-  border-width: 1px;
-  padding: 0.5em;
-  font-variant: small-caps;
-  text-decoration: none;
-  text-transform: lowercase;
-  position: absolute;
-  translate: -1000%;
-  transition-duration: 0.25s;
-}
-
-a.skiplink:focus {
-  translate: 0;
-}
-
-.download-link {
-  // Must be block for text align to work
-  display: block;
-  text-align: center;
-  font-size: var(--font-smallest);
+  --font-1: 'Cormorant', 'Cormorant Fallback', serif;
+  --font-2: 'Noto Sans', 'Noto Sans Fallback', serif;
+  --font-size-base: clamp(1rem, 10vw, 1.25rem);
+  --font-small: calc(var(--font-size-base) * .75);
+  --dark-grey: oklch(0.457 0 0);
 }
 
 body {
-  max-width: 70rem;
+  max-width: 60rem;
   margin: 0 auto;
-  padding: 16px;
-  font-family: "Lato";
+  padding: 1rem;
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+}
+
+// === HEADER ===
+.download-link {
+  display: block; // Must be block for text align to work
+
+  // Typography
+  @extend .font-2;
+  font-size: var(--font-small);
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: var(--dark-grey);
 }
 
 // Contact info
 address {
+  // Layout
   display: flex;
   flex-wrap: wrap;
-  color: #555;
+
+  // Typography
+  @extend .font-2;
   font-style: normal;
-  font-size: var(--font-smallest);
+  font-size: var(--font-small);
+  font-weight: 300;
   font-variant: small-caps;
   text-transform: lowercase;
-
-  &>* {
-    padding: 2px 4px;
-  }
+  letter-spacing: 0.05em;
+  color: var(--dark-grey);
 
   &.web {
     gap: 0.25rem 1rem;
@@ -168,34 +57,74 @@ address {
     display: none;
   }
 
-  a:hover,
-  a:focus {
-    background-color: #f1f1f1;
-  }
-
   .location {
     color: black;
   }
 }
 
-// Page header
-header {
+hgroup {
+  margin-top: 5rem;
+}
 
-  nav {
-    margin-bottom: 5rem;
-    margin-top: 6rem;
-    display: flex;
-    gap: 4rem;
-    font-size: var(--font-small);
+h1 {
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  font-size: clamp(4rem, 10vw, 7rem);
+  font-weight: 300;
+  line-height: 1;
 
-    // Split into columns
-    div {
-      display: grid;
-      gap: 1rem;
-    }
+  .role {
+    color: var(--dark-grey);
   }
+}
 
+// TOC
+nav.contents {
+  
+  // Layout
+  margin-bottom: 5rem;
+  margin-top: 6rem;
+  display: flex;
+  gap: 4rem;
 
+  // Typography
+  @extend .font-2;
+  font-size: clamp(1rem, 5.5vw, 1.5rem);
+  font-weight: 200;
+  letter-spacing: 0.075em;
+
+  // Split into columns
+  div {
+    display: grid;
+    gap: 1rem;
+  }
+}
+
+// === MAIN ===
+h2 {
+  @extend .font-2;
+  margin: 0;
+  margin-bottom: 2rem;
+
+  // Typography
+  font-weight: 300;
+  font-size: 1.5em;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  /* Aligns top with h3 */
+  line-height: 0.8;
+}
+
+h3,
+.h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.2em;
+  text-wrap: balance;
 }
 
 div.employer {
@@ -211,51 +140,18 @@ div.education {
   gap: 1rem;
 }
 
-h1,
-h2 {
-  font-variant: small-caps;
-  font-weight: 100;
-  text-transform: lowercase;
-}
-
-h1 {
-  font-family: "Cormorant Garamond";
-  font-size: calc(3.5rem + 3vw);
-  margin-top: 6rem;
-  margin-bottom: 0.5rem;
-  line-height: 0.7;
-
-  .role {
-    color: #555;
-  }
-}
-
-h2 {
-  margin: 0;
-  margin-bottom: 2rem;
-
-  // Typography
-  font-size: calc(2.5rem);
-
-  /* Aligns top with h3 */
-  line-height: 0.8;
-}
-
-h3,
-.h3 {
-  margin: 0;
-  font-weight: 700;
-  font-size: 1.25rem;
-  text-wrap: balance;
-}
-
 main {
   display: grid;
   gap: 6rem;
+
+  ul:not(.skills, .publications) {
+    list-style-type: circle;
+    gap: 1em;
+  }
 }
 
 a {
-  color: #555;
+  color: var(--dark-grey);
   font-variant: small-caps;
 
   text: {
@@ -263,13 +159,16 @@ a {
     transform: lowercase;
   }
 
-  border-radius: 4px;
-
-  transition: 0.2s ease;
+  transition: all 0.2s;
 
   &:hover,
   &:focus {
     color: #000;
+  }
+
+  &:focus-visible {
+    outline: 0.08em solid currentColor;
+    border-radius: 0.1em;
   }
 }
 
@@ -284,22 +183,22 @@ li {
 }
 
 time,
-.time,
 .info {
-  color: #555;
-  font-size: 0.75rem;
+  color: var(--dark-grey);
+  font-size: 1rem;
 }
 
-main>section {
-  border-top-style: solid;
-  border-top-width: 0.5px;
-  border-top-color: #afafaf;
-  padding-top: 3rem;
+main {
+  &>section {
+    border-top-style: solid;
+    border-top-width: 0.5px;
+    border-top-color: var(--dark-grey);
+    padding-top: 1.5em;
+  }
 
   ul {
     display: grid;
-    gap: 0.5em;
-    padding-left: 1.5rem;
+    padding-left: 1em;
   }
 }
 
@@ -310,6 +209,12 @@ ul.publications {
   display: grid;
   gap: 1rem;
 }
+
+ul.skills {
+  @extend .unstyled-list;
+  gap: 0.5em;
+}
+
 
 ::selection {
   color: #fff;
@@ -328,10 +233,8 @@ cite.h3 {
     font-size: 20px;
   }
 
-  h1 {
-    br {
-      display: none;
-    }
+  h2 {
+    text-align: left;
   }
 
   main>section {
@@ -339,4 +242,13 @@ cite.h3 {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
+}
+
+// === UTILS ===
+.font-1 {
+  font-family: var(--font-1);
+}
+
+.font-2 {
+  font-family: var(--font-2);
 }

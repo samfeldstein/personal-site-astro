@@ -1,5 +1,6 @@
 ---
-import "/src/styles/_reset.scss";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
 import "/src/styles/_resume.scss";
 import "/src/styles/_resume-print.scss";
 
@@ -25,6 +26,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 
 const description = `Sam Feldstein's ${entry.data.title.full} résumé.`;
+const preloadFonts = ["cormorant", "noto"];
 
 // Convert relevant keys into an array of job objects
 const relevantWorkData = entry.data.work.map((key) => workHistory[key] || {});
@@ -36,275 +38,169 @@ const relevantVolunteerData = entry.data.volunteer.map(
 );
 ---
 
-<!doctype html>
-<html lang="en-us" prefix="og:https://ogp.me/ns#">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<Base>
+  <Head
+    slot="head"
+    title=`${entry.data.title.full} Résumé`
+    description={description}
+    preloadFonts={preloadFonts}
+  />
+  <header>
+    <address class="print">
+      <div class="city">Boulder, CO</div>
+      <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+    </address>
+    <a
+      class="download-link"
+      href=`/static/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
+      target="_blank">Download PDF</a
+    >
+    <hgroup>
+      <h1>
+        <span class="name">Samuel Feldstein,</span>
+        <span class="role">{entry.data.title.full}</span>
+      </h1>
+    </hgroup>
 
-    <!-- Icons
-      - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
-      - Favicon generator: https://favicon.io
-      - Another favicon generator: https://realfavicongenerator.net/
-      - SVG generator: https://formito.com/tools/favicon
-      - Image compressor: https://squoosh.app/
-      - SVG optimizer: https://jakearchibald.github.io/svgomg/
-      - Favicon checker: https://realfavicongenerator.net/favicon_checker
-    -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="/favicon-96x96.png?v=3"
-    />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/apple-touch-icon.png?v=3"
-    />
+    <address class="web">
+      <span class="location">Boulder, CO</span>
+      <a href="/">Website</a>
+      {entry.data.links.map((link) => <a href={link.url}>{link.name}</a>)}
+      <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+    </address>
 
-    <!-- Manifest -->
-    <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <nav class="contents">
+      <div>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+      </div>
 
-    <!-- Preload assets -->
-    <link
-      rel="preload"
-      href="/static/fonts/subset-CormorantGaramond-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/static/fonts/subset-Lato-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/static/fonts/subset-Lato-Light.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      href="/static/fonts/subset-Lato-Light.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
+      <div>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#volunteer">Volunteer</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        {
+          entry.data.skills.map(({ category, items }) => (
+            <section>
+              <h3>{category}</h3>
+              <ul class="skills">
+                {items.map((skill) => (
+                  <li>{skill}</li>
+                ))}
+              </ul>
+            </section>
+          ))
+        }
+      </div>
+    </section>
 
-    <meta name="generator" content={Astro.generator} />
-    <title>{entry.data.title.full} Résumé | Sam Feldstein</title>
-    <meta name="author" content="Sam Feldstein" />
-    <meta name="description" content={description} />
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education">
+        {
+          education.map((entry) => (
+            <article>
+              <h3>{entry.degree}</h3>
+              <div class="info">
+                {entry.school} | {entry.city} | <time>{entry.date}</time>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-    <meta
-      name="twitter:title"
-      content={`${entry.data.title.full} Résumé | Sam Feldstein`}
-    />
-    <meta name="twitter:description" content={description} />
-    <meta
-      name="twitter:image"
-      content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp"
-    />
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience">
+        {
+          relevantWorkData?.map((job) => (
+            <article>
+              <h3>
+                {job.role} {job.employer && `@ ${job.employer}`}
+              </h3>
+              <div class="info">
+                <time>{job.date}</time> | {job.place}
+              </div>
+              <ul>
+                {job.description?.map((point) => (
+                  // Renders html in the object values
+                  <li set:html={point} />
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-    <meta property="og:type" content={"website"} />
-    <meta
-      property="og:title"
-      content={`${entry.data.title.full} | Sam Feldstein`}
-    />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={Astro.url.href} />
-    <meta
-      property="og:image"
-      content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp"
-    />
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        {
+          relevantProjectsData?.map((project) => (
+            <article>
+              <h3>{project.title}</h3>
+              <div class="info">
+                <span>{project.type}</span> | <time>{project.date}</time>
+              </div>
+              <ul>
+                {project.description?.map((point) => (
+                  <li set:html={point} />
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Sam Feldstein's Blog"
-      href={new URL("feed.xml", Astro.site)}
-    />
-    <link
-      rel="alternate"
-      type="application/atom+xml"
-      title="Sam Feldstein's Notebook"
-      href="https://notebook.samfeldstein.xyz/feed.xml"
-    />
-  </head>
-  <body>
-    <a class="skiplink" href="#main-content">Skip to Content</a>
-    <div class="page-container">
-      <header>
-        <address class="print">
-          <div class="city">Boulder, CO</div>
-          <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
-        </address>
-        <a
-          class="download-link"
-          href=`/static/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
-          target="_blank">Download PDF</a
-        >
-        <h1>
-          <div class="name">Sam<br /> Feldstein</div>
-          <div class="role">
-            {entry.data.title.firstHalf}<br />
-            {entry.data.title.secondHalf}
-          </div>
-        </h1>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="publications">
+        {
+          publications.map((pub) => (
+            <li>
+              <cite class="publication h3" set:html={pub.title} />
+              <div class="info">
+                {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
+                <time>{pub.date}</time>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
 
-        <address class="web">
-          <span class="location">Boulder, CO</span>
-          <a href="/">Website</a>
-          {entry.data.links.map((link) => <a href={link.url}>{link.name}</a>)}
-          <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
-        </address>
-
-        <nav>
-          <div>
-            <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
-          </div>
-
-          <div>
-            <a href="#projects">Projects</a>
-            <a href="#publications">Publications</a>
-            <a href="#volunteer">Volunteer</a>
-          </div>
-        </nav>
-      </header>
-      <main id="main-content">
-        <section id="skills">
-          <h2>Skills</h2>
-          <div class="skills">
-            {
-              entry.data.skills.map(({ category, items }) => (
-                <section>
-                  <h3>{category}</h3>
-                  <ul>
-                    {items.map((skill) => (
-                      <li>{skill}</li>
-                    ))}
-                  </ul>
-                </section>
-              ))
-            }
-          </div>
-        </section>
-
-        <section id="education">
-          <h2>Education</h2>
-          <div class="education">
-            {
-              education.map((entry) => (
-                <article>
-                  <h3>{entry.degree}</h3>
-                  <div class="time">
-                    {entry.school} | {entry.city} | <time>{entry.date}</time>
-                  </div>
-                </article>
-              ))
-            }
-          </div>
-        </section>
-
-        <section id="experience">
-          <h2>Experience</h2>
-          <div class="experience">
-            {
-              relevantWorkData?.map((job) => (
-                <article>
-                  <h3>
-                    {job.role} {job.employer && `@ ${job.employer}`}
-                  </h3>
-                  <div class="time">
-                    <time>{job.date}</time> | {job.place}
-                  </div>
-                  <ul>
-                    {job.description?.map((point) => (
-                      // Renders html in the object values
-                      <li set:html={point} />
-                    ))}
-                  </ul>
-                </article>
-              ))
-            }
-          </div>
-        </section>
-
-        <section id="projects" class="projects">
-          <h2>Projects</h2>
-          <div class="projects">
-            {
-              relevantProjectsData?.map((project) => (
-                <article>
-                  <h3>{project.title}</h3>
-                  <div class="time">
-                    <span>{project.type}</span> | <time>{project.date}</time>
-                  </div>
-                  <ul>
-                    {project.description?.map((point) => (
-                      <li set:html={point} />
-                    ))}
-                  </ul>
-                </article>
-              ))
-            }
-          </div>
-        </section>
-
-        <section id="publications">
-          <h2>Publications</h2>
-          <ul class="publications">
-            {
-              publications.map((pub) => (
-                <li>
-                  <cite class="publication h3" set:html={pub.title} />
-                  <div class="info">
-                    {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
-                    <time>{pub.date}</time>
-                  </div>
-                </li>
-              ))
-            }
-          </ul>
-        </section>
-
-        <section id="volunteer">
-          <h2>Volunteer</h2>
-          <div class="volunteer">
-            {
-              relevantVolunteerData?.map((entry) => (
-                <article>
-                  <h3>
-                    {entry.role} {entry.employer && `@ ${entry.employer}`}
-                  </h3>
-                  <div class="time">
-                    <time>{entry.date}</time>{" "}
-                    {entry.place && `| ${entry.place}`}
-                  </div>
-                  <ul>
-                    {entry.description?.map((point) => (
-                      <li set:html={point} />
-                    ))}
-                  </ul>
-                </article>
-              ))
-            }
-          </div>
-        </section>
-      </main>
-    </div>
-  </body>
-</html>
+    <section id="volunteer">
+      <h2>Volunteer</h2>
+      <div class="volunteer">
+        {
+          relevantVolunteerData?.map((entry) => (
+            <article>
+              <h3>
+                {entry.role} {entry.employer && `@ ${entry.employer}`}
+              </h3>
+              <div class="info">
+                <time>{entry.date}</time> {entry.place && `| ${entry.place}`}
+              </div>
+              <ul>
+                {entry.description?.map((point) => (
+                  <li set:html={point} />
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+  </main>
+</Base>
