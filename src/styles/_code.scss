@@ -86,7 +86,6 @@ a {
 
   &.home {
     display: block;
-    margin-bottom: 4rem;
     width: fit-content;
 
     &::before {
@@ -102,8 +101,29 @@ a {
   }
 }
 
-// === HEADER ===
 hgroup {
+  margin: 1rem 0; // Compensate for skills h2 absolute positioning
+  border: 0.1rem solid;
+  padding: 2rem 0;
+  background-color: var(--background-color);
+  text-align: center;
+
+  p {
+    font-style: italic;
+  }
+}
+
+h1 {
+  font-family: var(--font-2);
+  font-variant: small-caps;
+  font-weight: 200;
+  font-size: 2.5em;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+// === HEADER ===
+section.skills {
   position: relative;
   border-style: solid none;
   border-width: 0.15rem;
@@ -124,16 +144,15 @@ hgroup {
   }
 }
 
-h1 {
+h2 {
   @extend .small-caps;
   position: absolute;
-  top: -30px;
+  top: -25px;
   left: 4rem;
   margin: 0;
   padding: 0 0.3em;
   font-family: var(--font-2);
   font-weight: 400;
-  font-size: 2em;
   letter-spacing: 0.2em;
   z-index: 1;
 
@@ -143,7 +162,7 @@ h1 {
     height: 0.2rem;
     width: 100%;
     left: 0;
-    top: 27px;
+    top: 22px;
     position: absolute;
     z-index: -1;
   }
@@ -151,7 +170,6 @@ h1 {
 
 // === HIRE ===
 div.hire {
-  margin-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -171,6 +189,7 @@ div.hire {
     justify-content: center;
     align-items: center;
     transition: all 0.2s;
+    letter-spacing: 0.1em;
 
     &:hover,
     &:focus {
@@ -183,6 +202,12 @@ div.hire {
 }
 
 // === MAIN ===
+
+main {
+  display: grid;
+  gap: 2rem;
+}
+
 ul.projects {
   @extend .unstyled-list;
   margin: 0;
