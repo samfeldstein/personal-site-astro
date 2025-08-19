@@ -62,25 +62,24 @@ const relevantVolunteerData = entry.data.volunteer.map(
       </h1>
     </hgroup>
 
-    <address class="web">
-      <span class="location">Boulder, CO</span>
-      <a href="/">Website</a>
-      {entry.data.links.map((link) => <a href={link.url}>{link.name}</a>)}
-      <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
-    </address>
+    <div class="address-grid-container">
+      <address class="web">
+        <span class="location">Boulder, CO</span>
+        <a href="/">Website</a>
+        {entry.data.links.map((link) => <a href={link.url}>{link.name}</a>)}
+        <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+      </address>
+    </div>
+
+    {entry.data.summary && <p class="summary">{entry.data.summary}</p>}
 
     <nav class="contents">
-      <div>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#experience">Experience</a>
-      </div>
-
-      <div>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#volunteer">Volunteer</a>
-      </div>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#volunteer">Volunteer</a>
     </nav>
   </header>
   <main id="main-content">
@@ -110,7 +109,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
             <article>
               <h3>{entry.degree}</h3>
               <div class="info">
-                {entry.school} | {entry.city} | <time>{entry.date}</time>
+                {entry.school} | {entry.city} | <span>{entry.date}</span>
               </div>
             </article>
           ))
@@ -128,7 +127,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
                 {job.role} {job.employer && `@ ${job.employer}`}
               </h3>
               <div class="info">
-                <time>{job.date}</time> | {job.place}
+                <span>{job.date}</span> | {job.place}
               </div>
               <ul>
                 {job.description?.map((point) => (
@@ -150,7 +149,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
             <article>
               <h3>{project.title}</h3>
               <div class="info">
-                <span>{project.type}</span> | <time>{project.date}</time>
+                <span>{project.type}</span> | <span>{project.date}</span>
               </div>
               <ul>
                 {project.description?.map((point) => (
@@ -172,7 +171,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
               <cite class="publication h3" set:html={pub.title} />
               <div class="info">
                 {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
-                <time>{pub.date}</time>
+                <span>{pub.date}</span>
               </div>
             </li>
           ))
@@ -190,7 +189,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
                 {entry.role} {entry.employer && `@ ${entry.employer}`}
               </h3>
               <div class="info">
-                <time>{entry.date}</time> {entry.place && `| ${entry.place}`}
+                <span>{entry.date}</span> {entry.place && `| ${entry.place}`}
               </div>
               <ul>
                 {entry.description?.map((point) => (
@@ -203,4 +202,17 @@ const relevantVolunteerData = entry.data.volunteer.map(
       </div>
     </section>
   </main>
+  <script>
+    // Set --vh to the initial viewport height and don't update it. Prevent layout shift from 100vh on mobile
+    const header = document.querySelector("header");
+
+    if (header) {
+      header.style.setProperty(
+        "--vh",
+        `${document.documentElement.clientHeight}px`,
+      );
+    }
+
+    // See https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
+  </script>
 </Base>

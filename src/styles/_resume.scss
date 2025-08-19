@@ -7,7 +7,7 @@
 :root {
   --font-1: 'Cormorant', 'Cormorant Fallback', serif;
   --font-2: 'Noto Sans', 'Noto Sans Fallback', serif;
-  --font-size-base: clamp(1rem, 10vw, 1.25rem);
+  --font-size-base: clamp(1rem, 5vw, 1.25rem);
   --font-small: calc(var(--font-size-base) * .75);
   --dark-grey: oklch(0.457 0 0);
 }
@@ -15,16 +15,23 @@
 body {
   max-width: 60rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 1rem 6rem 1rem;
+  display: grid;
+  gap: 6rem;
   font-family: var(--font-1);
   font-size: var(--font-size-base);
 }
 
 // === HEADER ===
-.download-link {
-  display: block; // Must be block for text align to work
+header {
+  height: calc(var(--vh, 100dvh)); // Set --vh with JS
+  padding-bottom: 4rem;
+  display: grid;
+  grid-template-rows: 2fr auto 3fr 3fr auto;
+}
 
-  // Typography
+.download-link {
+  display: block;
   @extend .font-2;
   font-size: var(--font-small);
   font-weight: 300;
@@ -35,10 +42,9 @@ body {
 
 // Contact info
 address {
-  // Layout
   display: flex;
   flex-wrap: wrap;
-
+  gap: 0.5em 1em;
   // Typography
   @extend .font-2;
   font-style: normal;
@@ -49,10 +55,6 @@ address {
   letter-spacing: 0.05em;
   color: var(--dark-grey);
 
-  &.web {
-    gap: 0.25rem 1rem;
-  }
-
   &.print {
     display: none;
   }
@@ -60,10 +62,6 @@ address {
   .location {
     color: black;
   }
-}
-
-hgroup {
-  margin-top: 5rem;
 }
 
 h1 {
@@ -80,33 +78,33 @@ h1 {
   }
 }
 
+.summary {
+  max-width: 40rem;
+  margin: 0;
+  @extend .font-2;
+  font-weight: 300;
+  text-wrap: pretty;
+}
+
 // TOC
 nav.contents {
-  
+
   // Layout
-  margin-bottom: 5rem;
-  margin-top: 6rem;
-  display: flex;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 4rem;
 
   // Typography
   @extend .font-2;
-  font-size: clamp(1rem, 5.5vw, 1.5rem);
+  font-size: clamp(1rem, 5.5vw, 1.25rem);
   font-weight: 200;
   letter-spacing: 0.075em;
-
-  // Split into columns
-  div {
-    display: grid;
-    gap: 1rem;
-  }
 }
 
 // === MAIN ===
 h2 {
   @extend .font-2;
-  margin: 0;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem 0;
 
   // Typography
   font-weight: 300;
@@ -114,9 +112,6 @@ h2 {
   text-align: right;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-
-  /* Aligns top with h3 */
-  line-height: 0.8;
 }
 
 h3,
@@ -124,11 +119,6 @@ h3,
   margin: 0;
   font-weight: 700;
   font-size: 1.2em;
-  text-wrap: balance;
-}
-
-div.employer {
-  font-weight: 400;
 }
 
 div.skills,
@@ -144,9 +134,31 @@ main {
   display: grid;
   gap: 6rem;
 
-  ul:not(.skills, .publications) {
-    list-style-type: circle;
+  &>section {
+    border-top-style: solid;
+    border-top-width: 0.5px;
+    border-top-color: var(--dark-grey);
+    padding-top: 1rem;
+  }
+
+  ul {
+    display: grid;
     gap: 1em;
+    padding-left: 1em;
+
+    &:not(.skills, .publications) {
+      list-style-type: circle;
+    }
+
+    li {
+      text-wrap: pretty;
+
+      // Selected nested lists, as in some skills sections
+      &:has(> ul) {
+        display: grid;
+        gap: 0.5em;
+      }
+    }
   }
 }
 
@@ -154,11 +166,8 @@ a {
   color: var(--dark-grey);
   font-variant: small-caps;
 
-  text: {
-    decoration: none;
-    transform: lowercase;
-  }
-
+  text-decoration: none;
+  text-transform: lowercase;
   transition: all 0.2s;
 
   &:hover,
@@ -172,42 +181,15 @@ a {
   }
 }
 
-li {
-  text-wrap: pretty;
-
-  // Selected nested lists, as in some skills sections
-  &:has(> ul) {
-    display: grid;
-    gap: 0.5em;
-  }
-}
-
-time,
 .info {
   color: var(--dark-grey);
   font-size: 1rem;
 }
 
-main {
-  &>section {
-    border-top-style: solid;
-    border-top-width: 0.5px;
-    border-top-color: var(--dark-grey);
-    padding-top: 1.5em;
-  }
-
-  ul {
-    display: grid;
-    padding-left: 1em;
-  }
-}
-
 ul.publications {
-  list-style-type: none;
+  @extend .unstyled-list;
   margin: 0;
   padding: 0;
-  display: grid;
-  gap: 1rem;
 }
 
 ul.skills {
@@ -218,15 +200,15 @@ ul.skills {
 
 ::selection {
   color: #fff;
-  background-color: #000;
+  background-color: var(--dark-grey);
 }
 
-// Publication title
+// Publication titles
 cite.h3 {
   font-style: normal;
 }
 
-// Desktop styles
+// === Desktop ===
 @media screen and (min-width: 768px) {
 
   html {
@@ -235,12 +217,17 @@ cite.h3 {
 
   h2 {
     text-align: left;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    margin: 0;
   }
 
   main>section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    position: relative;
   }
 }
 
