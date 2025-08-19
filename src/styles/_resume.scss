@@ -7,7 +7,7 @@
 :root {
   --font-1: 'Cormorant', 'Cormorant Fallback', serif;
   --font-2: 'Noto Sans', 'Noto Sans Fallback', serif;
-  --font-size-base: clamp(1rem, 5vw, 1.25rem);
+  --font-size-base: clamp(1rem, 2vw, 1.25rem);
   --font-small: calc(var(--font-size-base) * .75);
   --dark-grey: oklch(0.457 0 0);
 }
@@ -30,9 +30,9 @@ body {
 // === HEADER ===
 header {
   height: calc(var(--vh, 100dvh)); // Set --vh with JS
-  padding-bottom: 4rem;
   display: grid;
   grid-template-rows: 2fr auto 3fr 3fr auto;
+  padding-bottom: 2rem;
 }
 
 .download-link {
@@ -70,8 +70,9 @@ address {
 }
 
 h1 {
-  margin-bottom: 0.5rem;
-  font-size: clamp(4rem, 10vw, 7rem);
+  display: grid;
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(2.25rem, 10vw, 7rem);
   font-weight: 300;
   line-height: 1;
 
@@ -82,7 +83,6 @@ h1 {
 
 .summary {
   max-width: 40rem;
-  margin: 0;
   @extend .font-2;
   font-weight: 300;
   text-wrap: pretty;
@@ -98,7 +98,7 @@ nav.contents {
 
   // Typography
   @extend .font-2;
-  font-size: clamp(1rem, 5.5vw, 1.25rem);
+  font-size: var(--font-size-base);
   font-weight: 200;
   letter-spacing: 0.075em;
 }
@@ -217,6 +217,10 @@ cite.h3 {
 
   html {
     font-size: 20px;
+  }
+
+  header {
+    padding-bottom: 6rem;
   }
 
   h2 {
