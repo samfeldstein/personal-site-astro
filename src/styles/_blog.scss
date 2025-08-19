@@ -1,0 +1,9 @@
+@use 'fonts/cormorant';
+@use 'global';
+@use 'utils';
+
+body {
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Cormorant', 'Cormorant Fallback', serif;
+}

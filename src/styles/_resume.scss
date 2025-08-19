@@ -8,6 +8,7 @@
   --font-1: 'Cormorant', 'Cormorant Fallback', serif;
   --font-2: 'Noto Sans', 'Noto Sans Fallback', serif;
   --font-size-base: clamp(1rem, 2vw, 1.25rem);
+  --font-large: calc(var(--font-size-base) * 1.25);
   --font-small: calc(var(--font-size-base) * .75);
   --dark-grey: oklch(0.457 0 0);
 }
@@ -83,8 +84,9 @@ h1 {
 
 .summary {
   max-width: 40rem;
-  @extend .font-2;
+  @extend .font-1;
   font-weight: 300;
+  font-size: var(--font-large);
   text-wrap: pretty;
 }
 

@@ -22,6 +22,9 @@
       ],
       "@assets/*": [
         "src/assets/*"
+      ],
+      "@scripts/*": [
+        "src/scripts/*"
       ]
     },
     "strictNullChecks": true,

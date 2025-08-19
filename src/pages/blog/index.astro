@@ -1,0 +1,49 @@
+---
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import Date from "@components/Date.astro";
+import Tags from "@components/Tags.astro";
+
+import { getCollection } from "astro:content";
+import { sortCollectionByDate } from "@scripts/utils.ts";
+
+import "@styles/_blog.scss";
+
+const preloadFonts = [];
+
+// Filter drafts when building for production
+const posts = await getCollection("blog", ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+// Sort posts by date
+sortCollectionByDate(posts);
+---
+
+<Base>
+  <Head
+    slot="head"
+    title="Blog"
+    description="Musings, essays, poetry, and more."
+    preloadFonts={preloadFonts}
+  />
+  <header>
+    <h1>Blog</h1>
+  </header>
+  <ul class="blog">
+    {
+      posts.map((post) => (
+        <li>
+          <a
+            href={`/blog/${post.id}/`}
+            class="title"
+            set:html={post.data.title}
+          />
+          <div class="info">
+            <Date date={post.data.pubDate} />
+            <Tags tags={post.data.tags} path="blog" />
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
