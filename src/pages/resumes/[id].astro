@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 
 const description = `Sam Feldstein's ${entry.data.title.full} résumé.`;
-const preloadFonts = ["cormorant", "noto"];
+const preloadFonts = ["cormorant", "noto-sans"];
 
 // Convert relevant keys into an array of job objects
 const relevantWorkData = entry.data.work.map((key) => workHistory[key] || {});

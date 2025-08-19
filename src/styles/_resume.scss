@@ -71,9 +71,6 @@ address {
 
 h1 {
   margin-bottom: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 1rem;
   font-size: clamp(4rem, 10vw, 7rem);
   font-weight: 300;
   line-height: 1;
@@ -136,10 +133,12 @@ div.education {
 }
 
 main {
+  @extend .defer;
   display: grid;
   gap: 6rem;
 
   &>section {
+    @extend .defer;
     border-top-style: solid;
     border-top-width: 0.5px;
     border-top-color: var(--dark-grey);
