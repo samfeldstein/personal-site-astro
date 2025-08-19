@@ -32,7 +32,7 @@ header {
   height: calc(var(--vh, 100dvh)); // Set --vh with JS
   display: grid;
   grid-template-rows: 2fr auto 3fr 3fr auto;
-  padding-bottom: 2rem;
+  padding-bottom: 6rem;
 }
 
 .download-link {
@@ -217,10 +217,6 @@ cite.h3 {
 
   html {
     font-size: 20px;
-  }
-
-  header {
-    padding-bottom: 6rem;
   }
 
   h2 {

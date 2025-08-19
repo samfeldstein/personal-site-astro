@@ -85,7 +85,7 @@ export const workHistory = {
     date: "November 2020 – November 2022",
     place: "Marfa, TX",
     description: [
-      "Designed, developed, and launched an online storefront using WordPress and WooCommerce, enhancing the business's digital presence and revenue potential.",
+      "Designed, developed, and launched an online storefront using WordPress and WooCommerce, enhancing the business’s digital presence and revenue potential.",
       "Refined site architecture and user interface to streamline navigation and maximize conversions, leading to a more seamless customer experience.",
       "Implemented SEO-driven strategies, including keyword optimization and engaging product descriptions, to boost organic search visibility and drive consistent traffic.",
     ],
