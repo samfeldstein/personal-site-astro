@@ -27,21 +27,21 @@ sortCollectionByDate(posts);
     preloadFonts={preloadFonts}
   />
   <header>
-    <h1>Blog</h1>
+    <h1>This Be Me Blog</h1>
   </header>
-  <ul class="blog">
+  <ul class="posts">
     {
       posts.map((post) => (
-        <li>
-          <a
-            href={`/blog/${post.id}/`}
-            class="title"
-            set:html={post.data.title}
-          />
+        <li class="post">
           <div class="info">
             <Date date={post.data.pubDate} />
             <Tags tags={post.data.tags} path="blog" />
           </div>
+          <a
+            class="title"
+            href={`/blog/${post.id}/`}
+            set:html={post.data.title}
+          />
         </li>
       ))
     }

@@ -149,11 +149,12 @@ const relevantVolunteerData = entry.data.volunteer.map(
               <div class="info">
                 <span>{project.type}</span> | <span>{project.date}</span>
               </div>
-              <ul>
+              <p class="project-description">{project.description}</p>
+              {/* <ul class="projects">
                 {project.description?.map((point) => (
                   <li set:html={point} />
                 ))}
-              </ul>
+              </ul> */}
             </article>
           ))
         }
@@ -189,11 +190,7 @@ const relevantVolunteerData = entry.data.volunteer.map(
               <div class="info">
                 <span>{entry.date}</span> {entry.place && `| ${entry.place}`}
               </div>
-              <ul>
-                {entry.description?.map((point) => (
-                  <li set:html={point} />
-                ))}
-              </ul>
+              <p>{entry.description}</p>
             </article>
           ))
         }

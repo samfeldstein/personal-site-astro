@@ -1,3 +1,5 @@
+import { title } from "process";
+
 export const education = [
   {
     degree: "Master of Fine Arts in Screenwriting",
@@ -20,9 +22,9 @@ export const workHistory = {
     date: "April 2025 – Present",
     place: "Longmont, CO",
     description: [
-      "Deliver exceptional customer service, helping customers find books and recommending personalized selections, driving repeat business.",
-      "Manage inventory, organize displays, and process transactions with precision, ensuring smooth daily operations.",
-      "Maintain an extensive and up-to-date knowledge of a wide range of genres, authors, and literary trends, ensuring expert guidance and tailored recommendations for every customer."
+      "Drive repeat business by offering exceptional customer service and personalized recommendations.",
+      "Maintain extensive knowledge of popular genres, authors, and literary trends, ensuring tailored guidance for every customer.",
+      "Build custom web applications to streamline store processes, e.g. shelf-talker templates and formatting."
     ],
   },
   devFreelance: {
@@ -31,8 +33,8 @@ export const workHistory = {
     place: "Boulder, CO",
     description: [
       "Build bespoke, high-performance websites using modern static site generators and Content Management Systems.",
-      "Optimize site performance using strategies like image optimization, CDN caching, and lean codebases to achieve sub-second load times and 95+ Lighthouse scores.",
-      "Where needed, create content management workflows with headless CMS integrations, enabling non-technical clients to update site content independently.",
+      "Optimize site performance with image optimization, asset caching, component-driven design, and other strategies to achieve sub-second load times.",
+      "Integrate headless content managements systems, allowing non-technical clients to update websites independently.",
     ],
   },
   devAssistant: {
@@ -41,9 +43,8 @@ export const workHistory = {
     date: "November 2022 – December 2023",
     place: "Hollywood, CA (remote)",
     description: [
-      "Evaluated manuscripts and scripts for potential TV/film adaptation at the production company behind Netflix hits <cite>Maniac</cite> and <cite>The OA</cite>.",
+      "Evaluated scripts and manuscripts for potential TV/film adaptation at the production company behind hit properties like <cite>Maniac</cite> and <cite>The OA</cite>.",
       "Wrote comprehensive script coverage analyzing the story and market potential, offering adaptation recommendations that informed executive decision-making.",
-      "Delivered high-quality 10-page coverage reports for two ~300-page manuscripts weekly, maintaining consistent output while meeting tight deadlines.",
     ],
   },
   journalistSentinel: {
@@ -71,23 +72,23 @@ export const workHistory = {
   managerSentinel: {
     role: "General Manager",
     employer: "The Sentinel",
-    date: "October 2020 – November 2021",
+    date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
-      "Managed front-of-house operations, delivering exceptional customer service and fostering a welcoming, community-oriented atmosphere.",
+      "Managed front-of-house operations, delivering exceptional customer service and fostering a welcoming, communal atmosphere.",
       "Led hiring efforts by crafting compelling job postings, conducting interviews, and implementing a standardized training program to ensure team consistency and efficiency.",
-      "Oversaw inventory management, vendor relations, and supply ordering to optimize costs and maintain seamless operations.",
+      "Oversaw inventory management, vendor relations, and supply ordering to ensure seamless operations.",
     ],
   },
   devSentinel: {
     role: "WordPress Developer",
     employer: "The Sentinel",
-    date: "November 2020 – November 2022",
+    date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
-      "Designed, developed, and launched an online storefront using WordPress and WooCommerce, enhancing the business’s digital presence and revenue potential.",
-      "Refined site architecture and user interface to streamline navigation and maximize conversions, leading to a more seamless customer experience.",
-      "Implemented SEO-driven strategies, including keyword optimization and engaging product descriptions, to boost organic search visibility and drive consistent traffic.",
+      "Designed, developed, and launched an online storefront using WordPress and WooCommerce, enhancing the Sentinel’s digital presence and revenue potential.",
+      "Refined site architecture and user interface to create a seamless customer experience and maximize conversions.",
+      "Implemented SEO strategies like keyword optimization and engaging product descriptions, boosting search visibility and driving organic traffic.",
     ],
   },
   fundraiserLear: {
@@ -141,52 +142,63 @@ export const projects = {
   regreen: {
     title: "ReGreen Big Bend",
     type: "Website",
-    date: "January 2025 – February 2025",
-    description: [
-      "Developed a custom WordPress theme for an environmental restoration project in Far West Texas.",
-      "Designed high-fidelity mock-ups in Figma with a focus on regional aesthetics and responsive design.",
-      "Optimized performance through strategic asset loading and caching to achieve 95+ Lighthouse scores.",
-    ],
+    date: "February 2025",
+    description: "A custom WordPress site for an environmental restoration project in Far West Texas."
+    // description: [
+    //   "Developed a custom WordPress theme for an environmental restoration project in Far West Texas.",
+    //   "Designed high-fidelity mock-ups in Figma with a focus on regional aesthetics and responsive design.",
+    //   "Optimized performance through strategic asset loading and caching to achieve 95+ Lighthouse scores.",
+    // ],
   },
   postoley: {
     title: "Postoley Dance Ensemble",
     type: "Website",
-    date: "November 2024 – February 2025",
-    description: [
-      "Built a website for an independent folk dance studio in Boulder, CO.",
-      "Transformed the legacy site into a modern, component-based static website using Astro, achieving 95+ Lighthouse performance scores.",
-      "Integrated a headless CMS so the client could update site content independently.",
-    ],
+    date: "February 2025",
+    description: "A website for an independent folk dance studio in Boulder. Built with Astro and Netlify."
+    // description: [
+    //       "Built a website for an independent folk dance studio in Boulder, CO.",
+    //       "Transformed the legacy site into a modern, component-based static website using Astro, achieving 95+ Lighthouse performance scores.",
+    //       "Integrated a headless CMS so the client could update site content independently.",
+    //     ],
+  },
+  digitalNotebook: {
+    title: "Digital Notebook",
+    type: "Website",
+    date: "November 2024",
+    description: "A wiki-like personal knowledge base. Built with Obsidian, Eleventy, and Cloudflare Pages.",
   },
   prairieRose: {
     title: "Prairie Rose Arena",
     type: "Website",
-    date: "April 2024 – May 2024",
-    description: [
-      "Built a custom static website for an equestrian event center in Elkhart, IA.",
-      "Conceived and implemented a complete site redesign with a mobile-first, responsive approach.",
-      "Integrated a headless CMS to allow the client to independently manage events.",
-      "Optimized performance through modern build processes, lazy loading, and asset optimization.",
-    ],
+    date: "May 2024",
+    description: "A custom static website for an equestrian event center in Iowa. Built with Eleventy and Netlify."
+    // description: [
+    //   "Built a custom static website for an equestrian event center in Iowa using Eleventy and Netlify.",
+    //   "Conceived and implemented a complete site redesign with a mobile-first, responsive approach.",
+    //   "Integrated a headless CMS to allow the client to independently manage events.",
+    //   "Optimized performance through modern build processes, lazy loading, and asset optimization.",
+    // ],
   },
   personalSite: {
     title: "Personal Website",
     type: "Website",
-    date: "May 2024 – June 2024",
-    description: [
-      "Built a high-performance personal site using Astro and Cloudflare Pages, achieving sub-second load times and 100/100 Core Web Vitals scores.",
-      "Used a component-based architecture with scoped CSS modules, reducing CSS payload while maintaining design consistency.",
-      "Implemented performance optimizations including prefetching and an automated image optimization pipeline for WebP/AVIF delivery.",
-    ],
+    date: "June 2024",
+    description: "A high-performance personal site built with Astro and Cloudflare Pages."
+    // description: [
+    //   "Built a high-performance personal site using Astro and Cloudflare Pages, achieving sub-second load times and 100/100 Core Web Vitals scores.",
+    //   "Used a component-based architecture with scoped CSS modules, reducing CSS payload while maintaining design consistency.",
+    //   "Implemented performance optimizations including prefetching and an automated image optimization pipeline for WebP/AVIF delivery.",
+    // ],
   },
   likeMovies: {
     title: "Like Father, Like Son, Like Movies",
     type: "Podcast",
     date: "November 2022 – Present",
-    description: [
-      "Host and produce a podcast about film, independently managing all aspects from concept development to distribution.",
-      "Utilize comprehensive production workflow, delivering consistent content across all major listening platforms.",
-    ],
+    description: "A podcast about movies, co-hosted with my dad."
+    // description: [
+    //   "Host and produce a podcast about film, independently managing all aspects from concept development to distribution.",
+    //   "Utilize comprehensive production workflow, delivering consistent content across all major listening platforms.",
+    // ],
   }
 };
 
@@ -231,44 +243,28 @@ export const volunteer = {
     employer: "Community Health and Equine Coalition",
     date: "April 2024 – May 2024",
     place: "Galveston, TX",
-    description: [
-      "Redesigned and maintained the organization’s website using Wix CMS, enhancing user experience and accessibility.",
-      "Integrated a secure payment gateway, streamlining the donation process and increasing fundraising efficiency.",
-      "Instructed clients aged 13-25 in horseback riding, fostering skill development and confidence."
-    ],
+    description: "Redesigned and maintained the coalition’s Wix site. Enhanced user experience and accessibility, and integrated a secure payment gateway for donations."
   },
   workaway: {
     role: "Volunteer",
     employer: "Workaway",
     date: "April 2024 – September 2024",
     place: "Various Locations",
-    description: [
-      "Hippotherapy Center in Galveston – Cared for farm animals, assisted with daily operations, and contributed to improvement projects.",
-      "Airbnb Supervision in New Orleans – Managed guest coordination, answered inquiries, resolved issues, and cleaned units.",
-      "Home Improvement in Boulder – Built a flagstone wall and replaced deteriorating flagstone steps.",
-      "Collaborated with volunteers from Hungary, Italy, Spain, and France, developing strong cross-cultural communication and teamwork skills."
-    ],
+    description: "Volunteered for various organizations and individuals, including a Hippotherapy center in Galveston, a property manager in New Orleans, and an entrepreneur in Boulder. Worked with other volunteers from Hungary, Italy, Spain, and France,"
   },
   frida: {
     role: "Theater Staff",
     employer: "The Frida Cinema",
     date: "March 2019 – March 2020",
     place: "Santa Ana, CA",
-    description: [
-      "Assisted in theater operations, including ticketing, concessions, and customer service, ensuring a seamless guest experience.",
-      "Maintained a welcoming and informative environment by providing guests with film details, schedules, and theater policies.",
-      "Solicited donations at the register, supporting fundraising efforts for independent film programming."
-    ],
+    description: "Assisted with theater operations, provided excellent customer, and occasionally wrote for the theater’s blog."
   },
   animalRescueLeague: {
     role: "Horse Trainer",
     employer: "Animal Rescue League",
     date: "January 2014 – January 2015",
     place: "Ankeny, IA",
-    description: [
-      "Rehabilitated and trained rescued horses to improve handling, responsiveness, and trust, preparing them for adoption and new owners.",
-      "Worked with neglected and abused horses, implementing patient, trust-building techniques to rebuild confidence and correct behavioral challenges.",
-      "Assisted with daily care and stable management, including feeding, grooming, and monitoring equine health to ensure proper rehabilitation."
-    ],
+    description:
+      "Trained rescued horses to prepare them for adoption."
   }
 };

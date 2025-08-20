@@ -152,7 +152,7 @@ main {
     gap: 1em;
     padding-left: 1.5em;
 
-    &:not(.skills, .publications) {
+    &:not(.skills, .publications, .projects) {
       list-style-type: circle;
     }
 
@@ -202,7 +202,6 @@ ul.skills {
   @extend .unstyled-list;
   gap: 0.5em;
 }
-
 
 ::selection {
   color: #fff;

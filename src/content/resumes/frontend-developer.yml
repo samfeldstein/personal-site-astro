@@ -3,7 +3,9 @@ title:
   firstHalf: Frontend
   secondHalf: Developer
 
-summary: I’m a frontend developer focussing on web performance, elegant design, and sustainable architecture.
+summary:
+  Building websites with an eye toward performance, lean code, and
+  content-driven design.
 
 printUrl: frontend-developer
 
@@ -15,19 +17,20 @@ work:
   - composition
   - devFreelance
   - devAssistant
-  - marfaStore
   - devSentinel
+  - managerSentinel
 
 projects:
   - regreen
   - postoley
+  - digitalNotebook
   - prairieRose
-  - personalSite
 
 volunteer:
   - communityHealthAndEquine
   - workaway
   - frida
+  - animalRescueLeague
 
 skills:
   - category: Web Technologies & Standards

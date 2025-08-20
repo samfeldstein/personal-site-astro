@@ -2,8 +2,52 @@
 @use 'global';
 @use 'utils';
 
+:root {
+  --dark-grey: oklch(0.457 0 0);
+}
+
 body {
+  max-width: 70rem;
   margin: 0 auto;
   padding: 1rem;
   font-family: 'Cormorant', 'Cormorant Fallback', serif;
+}
+
+a {
+  @extend .unstyled-link;
+
+  &.title {
+    font-size: 2em;
+  }
+}
+
+ul {
+  &.posts {
+    @extend .unstyled-list;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 300px;
+    gap: 1rem;
+  }
+
+  &.tags {
+    @extend .unstyled-list;
+    @extend .small-caps;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+}
+
+li.post {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.info {
+  color: var(--dark-grey);
 }
