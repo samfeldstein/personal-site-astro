@@ -25,59 +25,80 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 
-const description = `Sam Feldstein's ${entry.data.title.full} résumé.`;
+const description = `Sam Feldstein's ${entry.data.title} résumé.`;
 const preloadFonts = ["cormorant", "noto-sans"];
 
 // Convert relevant keys into an array of job objects
-const relevantWorkData = entry.data.work.map((key) => workHistory[key] || {});
-const relevantProjectsData = entry.data.projects.map(
-  (key) => projects[key] || {},
+const relevantExperience = entry.data.relevantExperience.map(
+  (key) => workHistory[key] || {},
 );
+
+// Convert relevant keys into an array of job objects
+const otherExperience = entry.data.otherExperience.map(
+  (key) => workHistory[key],
+);
+
+const projectsData = entry.data.projects?.map((key) => projects[key] || []);
+
 const relevantVolunteerData = entry.data.volunteer.map(
   (key) => volunteer[key] || {},
+);
+const publicationsData = entry.data.publications?.map(
+  (key) => publications[key] || [],
 );
 ---
 
 <Base>
   <Head
     slot="head"
-    title=`${entry.data.title.full} Résumé`
+    title=`${entry.data.title} Résumé`
     description={description}
     preloadFonts={preloadFonts}
   />
   <header>
-    <address class="print">
+    <!-- <address class="print">
       <div class="city">Boulder, CO</div>
       <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
-    </address>
+    </address> -->
     <a
       class="download-link"
       href=`/static/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
       target="_blank">Download PDF</a
     >
     <h1>
-      <span class="name">Samuel Feldstein,</span>
-      <span class="role">{entry.data.title.full}</span>
+      <span class="name">Samuel Feldstein</span>
+      <span class="role">{entry.data.title}</span>
     </h1>
 
     <div class="address-grid-container">
-      <address class="web">
+      <address>
         <span class="location">Boulder, CO</span>
-        <a href="/">Website</a>
-        {entry.data.links.map((link) => <a href={link.url}>{link.name}</a>)}
+        <a href="tel:5156572243">(515) 657-2243</a>
         <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+        <a class="no-print" href="/">Website</a>
+        {
+          entry.data.links.map((link) => (
+            <a class="no-print" href={link.url}>
+              {link.name}
+            </a>
+          ))
+        }
       </address>
     </div>
 
     {entry.data.summary && <p class="summary">{entry.data.summary}</p>}
 
     <nav class="contents">
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#publications">Publications</a>
-      <a href="#volunteer">Volunteer</a>
+      <div>
+        <a href="#skills">Skills</a>
+        <a href="#relevant-experience">Experience</a>
+        <a href="#projects">Projects</a>
+      </div>
+      <div>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+      </div>
     </nav>
   </header>
   <main id="main-content">
@@ -99,27 +120,11 @@ const relevantVolunteerData = entry.data.volunteer.map(
       </div>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <div class="education">
+    <section id="relevant-experience">
+      <h2>{entry.data.experienceKey} Experience</h2>
+      <div class="relevant-experience">
         {
-          education.map((entry) => (
-            <article>
-              <h3>{entry.degree}</h3>
-              <div class="info">
-                {entry.school} | {entry.city} | <span>{entry.date}</span>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="experience">
-        {
-          relevantWorkData?.map((job) => (
+          relevantExperience?.map((job) => (
             <article>
               <h3>
                 {job.role} {job.employer && `@ ${job.employer}`}
@@ -139,44 +144,53 @@ const relevantVolunteerData = entry.data.volunteer.map(
       </div>
     </section>
 
-    <section id="projects" class="projects">
-      <h2>Projects</h2>
-      <div class="projects">
+    <section id="other-experience">
+      <h2>Other Experience</h2>
+      <div class="other-experience">
         {
-          relevantProjectsData?.map((project) => (
+          otherExperience?.map((job) => (
             <article>
-              <h3>{project.title}</h3>
+              <h3>
+                {job.role} {job.employer && `@ ${job.employer}`}
+              </h3>
               <div class="info">
-                <span>{project.type}</span> | <span>{project.date}</span>
+                <span>{job.date}</span> | {job.place}
               </div>
-              <p class="project-description">{project.description}</p>
-              {/* <ul class="projects">
-                {project.description?.map((point) => (
+              <ul>
+                {job.description?.map((point) => (
+                  // Renders html in the object values
                   <li set:html={point} />
                 ))}
-              </ul> */}
+              </ul>
             </article>
           ))
         }
       </div>
     </section>
 
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul class="publications">
-        {
-          publications.map((pub) => (
-            <li>
-              <cite class="publication h3" set:html={pub.title} />
-              <div class="info">
-                {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
-                <span>{pub.date}</span>
-              </div>
-            </li>
-          ))
-        }
-      </ul>
-    </section>
+    {
+      projectsData && (
+        <section id="projects" class="projects">
+          <h2>Selected Projects</h2>
+          <div class="projects">
+            {projectsData?.map((project) => (
+              <article>
+                <h3>{project.title}</h3>
+                <div class="info">
+                  <span>{project.type}</span> | <span>{project.date}</span>
+                </div>
+                <p class="project-description">{project.description}</p>
+                {/* <ul class="projects">
+                {project.description?.map((point) => (
+                  <li set:html={point} />
+                ))}
+              </ul> */}
+              </article>
+            ))}
+          </div>
+        </section>
+      )
+    }
 
     <section id="volunteer">
       <h2>Volunteer</h2>
@@ -191,6 +205,42 @@ const relevantVolunteerData = entry.data.volunteer.map(
                 <span>{entry.date}</span> {entry.place && `| ${entry.place}`}
               </div>
               <p>{entry.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="publications">
+        {
+          publicationsData.map((pub) => (
+            <li>
+              <cite class="publication h3" set:html={pub.title} />
+              <div class="info">
+                {pub.medium} | <cite>{pub.outlet}</cite> |{" "}
+                <span>{pub.date}</span>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education">
+        {
+          education.map((entry) => (
+            <article>
+              <h3>{entry.school}</h3>
+              <div class="info">
+                {entry.city} | <span>{entry.date}</span>
+              </div>
+              <ul>
+                <li set:html={entry.degree} />
+              </ul>
             </article>
           ))
         }

@@ -1,15 +1,13 @@
-import { title } from "process";
-
 export const education = [
   {
-    degree: "Master of Fine Arts in Screenwriting",
-    school: "Chapman University",
+    degree: "MFA, Screenwriting, incomplete",
+    school: "Chapman University Dodge College of Film and Media Arts",
     city: "Orange, CA",
-    date: "December 2018 (withdrew)",
+    date: "December 2018",
   },
   {
-    degree: "Bachelor of Arts in English and Creative Writing",
-    school: "The University of Iowa",
+    degree: "BA, English and Creative Writing, <i>cum laude</i>",
+    school: "University of Iowa",
     city: "Iowa City, IA",
     date: "December 2016",
   },
@@ -22,9 +20,9 @@ export const workHistory = {
     date: "April 2025 – Present",
     place: "Longmont, CO",
     description: [
-      "Drive repeat business by offering exceptional customer service and personalized recommendations.",
-      "Maintain extensive knowledge of popular genres, authors, and literary trends, ensuring tailored guidance for every customer.",
-      "Build custom web applications to streamline store processes, e.g. shelf-talker templates and formatting."
+      "Build custom web applications to streamline store processes.",
+      "Maintain extensive knowledge of popular genres, authors, and literary trends.",
+      "Provide tailored guidance and recommendations to customers.",
     ],
   },
   devFreelance: {
@@ -32,19 +30,20 @@ export const workHistory = {
     date: "April 2024 – Present",
     place: "Boulder, CO",
     description: [
-      "Build bespoke, high-performance websites using modern static site generators and Content Management Systems.",
-      "Optimize site performance with image optimization, asset caching, component-driven design, and other strategies to achieve sub-second load times.",
-      "Integrate headless content managements systems, allowing non-technical clients to update websites independently.",
+      "Build bespoke websites with modern web technologies and frameworks.",
+      "Employ strategic asset caching, component-driven design, and other performance strategies.",
+      "Integrate headless content management systems, allowing independent client updates.",
     ],
   },
   devAssistant: {
     role: "Development Assistant",
     employer: "Sugar23",
     date: "November 2022 – December 2023",
-    place: "Hollywood, CA (remote)",
+    place: "Hollywood, CA",
     description: [
-      "Evaluated scripts and manuscripts for potential TV/film adaptation at the production company behind hit properties like <cite>Maniac</cite> and <cite>The OA</cite>.",
-      "Wrote comprehensive script coverage analyzing the story and market potential, offering adaptation recommendations that informed executive decision-making.",
+      "Evaluated manuscripts for a notable Hollywood production company.",
+      "Wrote comprehensive script coverage analyzing adaptation and market potential.",
+      "Offered adaptation recommendations that informed executive decision-making.",
     ],
   },
   journalistSentinel: {
@@ -75,9 +74,9 @@ export const workHistory = {
     date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
-      "Managed front-of-house operations, delivering exceptional customer service and fostering a welcoming, communal atmosphere.",
-      "Led hiring efforts by crafting compelling job postings, conducting interviews, and implementing a standardized training program to ensure team consistency and efficiency.",
-      "Oversaw inventory management, vendor relations, and supply ordering to ensure seamless operations.",
+      "Led hiring efforts by writing job postings and interviewing candidates.",
+      "Implemented a standardized training program to ensure consistency and efficiency.",
+      "Oversaw inventory, ordering, and vendor relations to ensure seamless operations.",
     ],
   },
   devSentinel: {
@@ -86,9 +85,9 @@ export const workHistory = {
     date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
-      "Designed, developed, and launched an online storefront using WordPress and WooCommerce, enhancing the Sentinel’s digital presence and revenue potential.",
-      "Refined site architecture and user interface to create a seamless customer experience and maximize conversions.",
-      "Implemented SEO strategies like keyword optimization and engaging product descriptions, boosting search visibility and driving organic traffic.",
+      "Developed and launched an online storefront with WordPress and WooCommerce.",
+      "Refined user interface to create a seamless customer experience and maximize conversions.",
+      "Implemented SEO strategies to boost search visibility and drive organic traffic.",
     ],
   },
   fundraiserLear: {
@@ -139,45 +138,42 @@ export const workHistory = {
 };
 
 export const projects = {
+
+  shelfTalkers: {
+    title: "Shelf-Talkers",
+    type: "Web Application",
+    date: "June 2025",
+    description: "A web-based tool for formatting shelf-talkers. Built with Astro and vanilla JavaScript."
+  },
   regreen: {
     title: "ReGreen Big Bend",
     type: "Website",
     date: "February 2025",
-    description: "A custom WordPress site for an environmental restoration project in Far West Texas."
+    place: "Terlingua, TX",
+    description: "A custom WordPress site for an environmental restoration project in Far West Texas.",
     // description: [
-    //   "Developed a custom WordPress theme for an environmental restoration project in Far West Texas.",
+    //   "Developed a WordPress theme for an environmental restoration project.",
     //   "Designed high-fidelity mock-ups in Figma with a focus on regional aesthetics and responsive design.",
-    //   "Optimized performance through strategic asset loading and caching to achieve 95+ Lighthouse scores.",
+    //   "Optimized performance through strategic asset loading and caching.",
     // ],
   },
   postoley: {
     title: "Postoley Dance Ensemble",
     type: "Website",
     date: "February 2025",
-    description: "A website for an independent folk dance studio in Boulder. Built with Astro and Netlify."
+    place: "Boulder, CO",
+    description: "A website for an independent folk dance studio in Boulder. Built with Astro and Netlify.",
     // description: [
-    //       "Built a website for an independent folk dance studio in Boulder, CO.",
-    //       "Transformed the legacy site into a modern, component-based static website using Astro, achieving 95+ Lighthouse performance scores.",
-    //       "Integrated a headless CMS so the client could update site content independently.",
-    //     ],
+    //   "Designed and built a custom website for an independent folk dance studio.",
+    //   "Transformed the legacy site into a modern, component-based static site.",
+    //   "Integrated a headless CMS so the client could update site content independently.",
+    // ],
   },
   digitalNotebook: {
     title: "Digital Notebook",
     type: "Website",
     date: "November 2024",
     description: "A wiki-like personal knowledge base. Built with Obsidian, Eleventy, and Cloudflare Pages.",
-  },
-  prairieRose: {
-    title: "Prairie Rose Arena",
-    type: "Website",
-    date: "May 2024",
-    description: "A custom static website for an equestrian event center in Iowa. Built with Eleventy and Netlify."
-    // description: [
-    //   "Built a custom static website for an equestrian event center in Iowa using Eleventy and Netlify.",
-    //   "Conceived and implemented a complete site redesign with a mobile-first, responsive approach.",
-    //   "Integrated a headless CMS to allow the client to independently manage events.",
-    //   "Optimized performance through modern build processes, lazy loading, and asset optimization.",
-    // ],
   },
   personalSite: {
     title: "Personal Website",
@@ -188,6 +184,18 @@ export const projects = {
     //   "Built a high-performance personal site using Astro and Cloudflare Pages, achieving sub-second load times and 100/100 Core Web Vitals scores.",
     //   "Used a component-based architecture with scoped CSS modules, reducing CSS payload while maintaining design consistency.",
     //   "Implemented performance optimizations including prefetching and an automated image optimization pipeline for WebP/AVIF delivery.",
+    // ],
+  },
+  prairieRose: {
+    title: "Prairie Rose Arena",
+    type: "Website",
+    date: "May 2024",
+    place: "Elkhart, IA",
+    description: "A custom static website for an equestrian event center in Iowa. Built with Eleventy and Netlify.",
+    // description: [
+    //   "Conceived and implemented a complete site redesign with a mobile-first, responsive approach.",
+    //   "Integrated a headless CMS to allow the client to independently manage events.",
+    //   "Optimized performance through modern build processes, image lazy-loading, and asset caching.",
     // ],
   },
   likeMovies: {
@@ -202,40 +210,40 @@ export const projects = {
   }
 };
 
-export const publications = [
-  {
+export const publications = {
+  madeOfMemories: {
     title: "Made of Memories",
     medium: "Short Story",
     outlet: "Tales to Terrify",
     date: "December 2023",
   },
-  {
+  reproductiveCoalition: {
     title:
       "Big Bend Reproductive Coalition Launches Community Needs Assessment",
     medium: "News Article",
     outlet: "The Big Bend Sentinel",
     date: "August 2023",
   },
-  {
+  theFirst: {
     title: "The First",
     medium: "Flash Fiction",
     outlet: "The Collidescope",
     date: "October 2022",
   },
-  {
+  transPecos: {
     title:
       "Trans-Pecos Festival of Music + Love Doubles as Platform for Advocacy and Outreach",
     medium: "News Article",
     outlet: "The Big Bend Sentinel",
     date: "October 2022",
   },
-  {
+  theLighthouse: {
     title: "Absence of Meaning in <em>The Lighthouse</em>",
     medium: "Criticism",
     outlet: "The Frida Cinema Blog",
     date: "April 2022",
   },
-];
+}
 
 export const volunteer = {
   communityHealthAndEquine: {
@@ -243,21 +251,21 @@ export const volunteer = {
     employer: "Community Health and Equine Coalition",
     date: "April 2024 – May 2024",
     place: "Galveston, TX",
-    description: "Redesigned and maintained the coalition’s Wix site. Enhanced user experience and accessibility, and integrated a secure payment gateway for donations."
+    description: "Enhanced user experience and accessibility, and integrated a secure payment gateway."
   },
   workaway: {
     role: "Volunteer",
     employer: "Workaway",
     date: "April 2024 – September 2024",
     place: "Various Locations",
-    description: "Volunteered for various organizations and individuals, including a Hippotherapy center in Galveston, a property manager in New Orleans, and an entrepreneur in Boulder. Worked with other volunteers from Hungary, Italy, Spain, and France,"
+    description: "Volunteered for various organizations and individuals alongside Workawayers from Hungary, Italy, Spain, and France."
   },
   frida: {
     role: "Theater Staff",
     employer: "The Frida Cinema",
     date: "March 2019 – March 2020",
     place: "Santa Ana, CA",
-    description: "Assisted with theater operations, provided excellent customer, and occasionally wrote for the theater’s blog."
+    description: "Assisted with theater operations, provided excellent customer service, and occasionally wrote for the blog."
   },
   animalRescueLeague: {
     role: "Horse Trainer",

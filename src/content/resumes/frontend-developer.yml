@@ -1,7 +1,4 @@
-title:
-  full: Frontend Developer
-  firstHalf: Frontend
-  secondHalf: Developer
+title: Frontend Developer
 
 summary:
   Building websites with an eye toward performance, lean code, and
@@ -13,24 +10,30 @@ links:
   - name: GitHub
     url: https://github.com/samfeldstein
 
-work:
-  - composition
+experienceKey: Development
+
+relevantExperience:
   - devFreelance
-  - devAssistant
   - devSentinel
+
+otherExperience:
+  - composition
+  - devAssistant
   - managerSentinel
 
 projects:
-  - regreen
   - postoley
+  - regreen
   - digitalNotebook
   - prairieRose
 
 volunteer:
-  - communityHealthAndEquine
   - workaway
   - frida
-  - animalRescueLeague
+
+publications:
+  - madeOfMemories
+  - theFirst
 
 skills:
   - category: Web Technologies & Standards

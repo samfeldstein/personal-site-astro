@@ -1,64 +1,117 @@
-// Résumé print styles
+@page {
+  margin: 0.5in 1.5in;
+
+  @bottom-center {
+    content: "Feldstein Résumé — Page " counter(page) " of " counter(pages);
+    font-family: var(--font-2);
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
 @media print {
+
+  :root {
+    --dark-grey: black;
+  }
 
   html {
     // Set here so that rem units work
-    font-size: 10px;
-    color: black;
+    font-size: 13.5px;
   }
 
   body {
-    padding: 4rem;
+    display: unset;
     // Prevents blank extra page
     padding-bottom: 0;
   }
 
-  .download-link {
-    display: none;
-  }
-
   header {
-    nav {
-      display: none;
-    }
+    height: unset;
+    display: unset;
+    text-align: center;
   }
 
   h1 {
-    margin-top: 1rem;
-    margin-bottom: 0;
-    border: none;
+    margin-bottom: 0.75rem;
+    gap: 0.25rem;
+    font-family: var(--font-2);
+    font-variant: small-caps;
+    text-transform: lowercase;
 
-    font-size: 3rem;
-    text-align: center;
-
-    .role {
+    .name {
       font-size: 2rem;
-      margin-top: 0.25rem;
+      font-weight: 350;
+      letter-spacing: 0.1em;
     }
 
-    br {
-      display: none;
+    .role {
+      font-size: 1rem;
+      font-weight: 350;
+      letter-spacing: 0.1em;
     }
   }
 
+  address {
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  .download-link {
+    @extend .hide;
+  }
+
+  nav.contents {
+    @extend .hide;
+  }
+
   h2 {
-    margin-top: 3.75rem;
+    margin-top: 2.5rem;
     margin-bottom: 0.75rem;
     padding: 0.5rem 0;
+    border-top: 1px solid black;
 
-    border-top: {
-      style: solid;
-      width: 0.5px;
-      color: #d1d1d1;
+    font-size: 0.5rem;
+    font-weight: 800;
+    text-align: left;
+  }
+
+  div.skills,
+  div.relevant-experience,
+  div.other-experience,
+  div.projects,
+  div.volunteer,
+  div.education,
+  ul.publications {
+    gap: 1rem;
+  }
+
+  div.skills {
+    h3 {
+      @extend .hide;
     }
+  }
 
-    font-size: 1.75rem;
-    text-align: right;
+  div.volunteer {
+    p {
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+    }
   }
 
   ul {
     // Remove extra space between headings and points
-    margin-bottom: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    &.skills {
+      gap: 0.25em;
+    }
+
+    &:not(.skills, .publications, .projects) {
+      list-style-type: disc !important;
+    }
   }
 
   a {
@@ -84,16 +137,12 @@
 
     &>section {
       border: none;
-      padding: unset;
+      padding: 0;
 
       ul {
         // Reduce space between list items
         gap: 0.25rem;
       }
-    }
-
-    section:first-of-type h2 {
-      // margin-top: 1rem;
     }
   }
 
@@ -125,9 +174,10 @@
   }
 
   section.projects {
-    h2 {
-      // Add some space to 2nd page top
-      margin-top: 4rem;
+
+    p {
+      margin-top: 0.5rem;
+      margin-bottom: 0;
     }
   }
 
@@ -148,19 +198,12 @@
     text-transform: none;
   }
 
-  div.experience,
-  div.volunteer,
-  div.projects,
-  div.publications,
-  div.education {
-    gap: 1rem;
-  }
-
-  section.projects {
-    break-before: page;
-  }
-
   p.summary {
     display: none;
+  }
+
+  .hide,
+  .no-print {
+    display: none !important;
   }
 }

@@ -2,6 +2,7 @@
 @use 'fonts/noto-sans';
 @use 'global';
 @use 'utils';
+@use 'resume-print';
 
 // === CONFIG ===
 :root {
@@ -50,7 +51,7 @@ header {
 address {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5em 1em;
+  gap: 0.5em 1.5em;
   // Typography
   @extend .font-2;
   font-style: normal;
@@ -96,13 +97,18 @@ nav.contents {
   // Layout
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1rem 4rem;
+  gap: 4rem;
 
   // Typography
   @extend .font-2;
   font-size: var(--font-size-base);
   font-weight: 200;
   letter-spacing: 0.075em;
+
+  div {
+    display: grid;
+    gap: 1rem;
+  }
 }
 
 // === MAIN ===
@@ -112,7 +118,7 @@ h2 {
 
   // Typography
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.25em;
   text-align: right;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -126,12 +132,20 @@ h3,
 }
 
 div.skills,
-div.experience,
+div.relevant-experience,
+div.other-experience,
 div.projects,
 div.volunteer,
-div.education {
+div.education,
+ul.publications {
   display: grid;
   gap: 1rem;
+}
+
+div.projects, div.volunteer {
+  p {
+    margin-top: 0.75em;
+  }
 }
 
 main {
