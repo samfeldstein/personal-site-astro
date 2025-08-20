@@ -27,6 +27,7 @@ sortCollectionByDate(posts);
     preloadFonts={preloadFonts}
   />
   <header>
+    <a class="home" href="/">Home</a>
     <h1>This Be Me Blog</h1>
   </header>
   <ul class="posts">
@@ -37,11 +38,8 @@ sortCollectionByDate(posts);
             <Date date={post.data.pubDate} />
             <Tags tags={post.data.tags} path="blog" />
           </div>
-          <a
-            class="title"
-            href={`/blog/${post.id}/`}
-            set:html={post.data.title}
-          />
+          <div class="title" set:html={post.data.title} />
+          <a class="read" href={`/blog/${post.id}/`}>Read the thing</a>
         </li>
       ))
     }

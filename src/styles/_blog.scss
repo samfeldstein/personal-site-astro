@@ -1,8 +1,14 @@
 @use 'fonts/cormorant';
+@use 'fonts/oswald';
 @use 'global';
 @use 'utils';
 
 :root {
+  --font-1: 'Cormorant',
+    'Cormorant Fallback',
+    serif;
+  --font-2: 'Noto Sans', 'Noto Sans Fallback', sans-serif;
+  --font-size-base: clamp(1rem, 2vw, 1.25rem);
   --dark-grey: oklch(0.457 0 0);
 }
 
@@ -10,14 +16,36 @@ body {
   max-width: 70rem;
   margin: 0 auto;
   padding: 1rem;
-  font-family: 'Cormorant', 'Cormorant Fallback', serif;
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+}
+
+h1 {
+  font-family: var(--font-2);
+  font-weight: 300;
+  font-size: 3rem;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 a {
   @extend .unstyled-link;
 
-  &.title {
-    font-size: 2em;
+  &:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.1em;
+  }
+
+  &.home {
+    @extend .small-caps;
+    font-family: var(--font-2);
+  }
+
+  &.read {
+    font-weight: 900;
+    text-align: right;
+    position: relative;
   }
 }
 
@@ -39,15 +67,24 @@ ul {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
+    font-family: var(--font-2);
+    font-size: 0.9em;
   }
 }
 
 li.post {
   border: 1px solid;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  display: grid;
+  grid-template-rows: 1fr 2fr auto;
+}
+
+.title {
+  font-size: 2rem;
 }
 
 .info {
+  font-size: 1rem;
   color: var(--dark-grey);
 }
