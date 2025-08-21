@@ -1,184 +1,188 @@
 ---
 // Layout
-import BaseLayout from "../layouts/Base.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import "@styles/_uses.scss";
 
-// Structured data
-const schema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "Things I Use | Sam Feldstein",
-  url: "https://samfeldstein.xyz/uses/",
-  description:
-    "The tools, software, and equipment I use for photography, web development, writing, reading, and learning.",
-  image:
-    "https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp",
-};
+const preloadFonts = ["cormorant", "noto-sans"];
 ---
 
-<BaseLayout
+<Base
   title="Things I Use"
   description="The tools, software, and equipment I use for photography, web development, writing, reading, and learning."
-  schema={schema}
 >
-  <h1>Things I Use</h1>
-  <section id="hardware">
-    <h2>Hardware</h2>
-    <p>
-      A 15-inch MacBook Air (Apple M2, 2023) does everything I need it to do
-      with zero problems. I've tried a few different mice because my hands get
-      sore, but right now I have a <a
-        href="https://www.logitech.com/en-us/shop/p/ergo-m575s-wireless-trackball.910-007027"
-        >Logitech Ergo M575S</a
-      >. The track ball definitely helps.
-    </p>
-
-    <p>
-      I take photos with a <a
-        href="https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6000l-b?srsltid=AfmBOoq-RLburCCFwOBMuWQ0q0_7j6nLw0aMH20v7ioOyqPar6GfYiqW"
-        >Sony a6000</a
-      > that I mostly pair with a <a
-        href="https://7artisans.store/products/7artisans-35mm-f1-2-ii"
-        >7Artisans 35mm f/1.2 lens</a
-      >. The lens was only $150 but it feels far from cheap. It has some
-      vignetting around the edges if you open the aperture too wide, but I think
-      it gives the photos texture, and I love the way it captures color.
-    </p>
-
-    <p>
-      I have a Toyota Corolla that I&#39;ve taken all the over the country. If
-      it had cruise control and all-wheel drive it&#39;d be the perfect vehicle.
-      100,000 miles and all I&#39;ve ever done to it is change the oil, swap the
-      battery, and replace the tires.
-    </p>
-  </section>
-
-  <section id="software">
-    <h2>Software</h2>
-
-    <p>
-      I browse the Web with <a href="https://www.mozilla.org/en-US/firefox/new/"
-        >Firefox</a
-      > and the following extensions:
-    </p>
-
-    <ul>
-      <li><a href="">Readwise Highlighter</a></li>
-      <li><a href="https://nodetics.com/feedbro/">Feedbro</a></li>
-      <li>
-        <a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/"
-          >uBlock Origin</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
-          >Privacy Badger</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://addons.mozilla.org/en-US/firefox/addon/side-view/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
-          >Side View</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
-          >Tree Style Tab</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/"
-          >Auto Tab Discard</a
-        >
-      </li>
-    </ul>
-
-    <p>
-      I access the terminal with <a href="https://iterm2.com/">iTerm</a>. I code
-      in <a href="https://code.visualstudio.com/">VS Code</a>. I use <a
-        href="https://github.com/samfeldstein/">GitHub</a
-      > for version control. I use <a
-        href="https://www.mozilla.org/en-US/firefox/developer/"
-        >Firefox Developer Edition's</a
-      > DevTools. I don't like designing, but when I have to I use <a
-        href="https://www.figma.com">Figma</a
-      >.
-    </p>
-
-    <p>
-      I built this website with <a href="https://astro.build/">Astro</a> and I built
-      my <a href="https://notebook.samfeldstein.xyz/">notebook</a> with
-      <a href="https://www.11ty.dev">Eleventy</a>.
-    </p>
-
-    <p>I edit photos in Lightroom Classic.</p>
-
-    <section id="writing-and-reading">
-      <h3 id="writing-and-reading">Writing and Reading</h3>
+  <Head
+    slot="head"
+    title="Uses"
+    description="Things I use."
+    preloadFonts={preloadFonts}
+  />
+  <header>
+    <nav><a href="/">Home</a></nav>
+    <h1>Things I Use</h1>
+  </header>
+  <main id="main-content">
+    <section id="hardware">
+      <h2>Hardware</h2>
       <p>
-        I write and take <a href="https://notebook.samfeldstein.xyz/">notes</a>
-        in
-        <a href="https://obsidian.md/">Obsidian</a>. I use the <a
-          href="https://github.com/kepano/obsidian-minimal">Minimal theme</a
-        >
-        and the following community plugins:
+        A 15-inch MacBook Air (Apple M2, 2023) does everything I need it to do
+        with zero problems. I've tried a few different mice because my hands get
+        sore, but right now I have a <a
+          href="https://www.logitech.com/en-us/shop/p/ergo-m575s-wireless-trackball.910-007027"
+          >Logitech Ergo M575S</a
+        >. The track ball definitely helps.
       </p>
 
-      <ul>
-        <li>Style Settings</li>
-        <li>Hider</li>
-        <li>Typewriter Scroll</li>
-        <li>Readwise Official</li>
-      </ul>
-
       <p>
-        I track feeds and read articles with <a href="https://netnewswire.com/"
-          >NetNewsWire</a
-        >. For books, I have a Kindle and a library card. I make great use of <a
-          href="https://www.overdrive.com/apps/libby">Libby</a
-        >, and I occasionally patronize the <a href="https://archive.org"
-          >Internet Archive</a
-        >.
-      </p>
-      <p>
-        I annotate eBooks and articles with <a href="https://readwise.io/"
-          >Readwise</a
-        >. All notes I take in <a href="https://read.readwise.io"
-          >Readwise Reader</a
-        >, with the <a
-          href="https://addons.mozilla.org/en-US/firefox/addon/readwise-highlighter/"
-          >Readwise Highlighter extension</a
-        >, or on my Kindle show up in my Readwise database, which I export to
-        Obsidian.
-      </p>
-      <p>
-        I track books I&#39;ve read and want to read with <a
-          href="https://www.librarything.com/home">LibraryThing</a
-        >.
-      </p>
-      <p>
-        I memorize information with <a href="https://apps.ankiweb.net/">Anki</a
-        >.
+        I take photos with a <a
+          href="https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6000l-b?srsltid=AfmBOoq-RLburCCFwOBMuWQ0q0_7j6nLw0aMH20v7ioOyqPar6GfYiqW"
+          >Sony a6000</a
+        > that I mostly pair with a <a
+          href="https://7artisans.store/products/7artisans-35mm-f1-2-ii"
+          >7Artisans 35mm f/1.2 lens</a
+        >. The lens was only $150 but it feels far from cheap. It has some
+        vignetting around the edges if you open the aperture too wide, but I
+        think it gives the photos texture, and I love the way it captures color.
       </p>
 
-      <h4>Dictionaries:</h4>
-      <ul>
-        <li><em>The New Oxford American Dictionary</em> (macOS)</li>
-        <li>
-          <a href="https://www.merriam-webster.com/"><em>Merriam-Webster</em></a
-          >
-        </li>
-        <li>
-          <a href="https://www.thefreedictionary.com/">The Free Dictionary</a>
-        </li>
-        <li>
-          <a href="https://www.etymonline.com/"
-            >The Online Etymology Dictionary</a
-          >
-        </li>
-      </ul>
+      <p>
+        I have a Toyota Corolla that I&#39;ve taken all the over the country. If
+        it had cruise control and all-wheel drive it&#39;d be the perfect
+        vehicle. 100,000 miles and all I&#39;ve ever done to it is change the
+        oil, swap the battery, and replace the tires.
+      </p>
     </section>
-  </section>
-</BaseLayout>
+
+    <section id="software">
+      <h2>Software</h2>
+
+      <p>
+        I browse the Web with <a
+          href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a
+        > and the following extensions:
+      </p>
+
+      <ul>
+        <li><a href="">Readwise Highlighter</a></li>
+        <li><a href="https://nodetics.com/feedbro/">Feedbro</a></li>
+        <li>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/"
+            >uBlock Origin</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
+            >Privacy Badger</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/side-view/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
+            >Side View</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/tree-style-tab/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
+            >Tree Style Tab</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/"
+            >Auto Tab Discard</a
+          >
+        </li>
+      </ul>
+
+      <p>
+        I access the terminal with <a href="https://iterm2.com/">iTerm</a>. I
+        code in <a href="https://code.visualstudio.com/">VS Code</a>. I use <a
+          href="https://github.com/samfeldstein/">GitHub</a
+        > for version control. I use <a
+          href="https://www.mozilla.org/en-US/firefox/developer/"
+          >Firefox Developer Edition's</a
+        > DevTools. I design with <a href="https://www.figma.com">Figma</a>.
+      </p>
+
+      <p>
+        I built this website with <a href="https://astro.build/">Astro</a> and I
+        built my <a href="https://notebook.samfeldstein.xyz/">notebook</a> with
+        <a href="https://www.11ty.dev">Eleventy</a>.
+      </p>
+
+      <p>I edit photos in Lightroom Classic.</p>
+
+      <section id="writing-and-reading">
+        <h3 id="writing-and-reading">Writing and Reading</h3>
+        <p>
+          I write and take <a href="https://notebook.samfeldstein.xyz/">notes</a
+          >
+          in
+          <a href="https://obsidian.md/">Obsidian</a>. I use the <a
+            href="https://github.com/kepano/obsidian-minimal">Minimal theme</a
+          >
+          and the following community plugins:
+        </p>
+
+        <ul>
+          <li>Style Settings</li>
+          <li>Hider</li>
+          <li>Typewriter Scroll</li>
+          <li>Readwise Official</li>
+        </ul>
+
+        <p>
+          I track feeds and read articles with <a
+            href="https://netnewswire.com/">NetNewsWire</a
+          >. For books, I have a Kindle and a library card. I make great use of <a
+            href="https://www.overdrive.com/apps/libby">Libby</a
+          >, and I occasionally patronize the <a href="https://archive.org"
+            >Internet Archive</a
+          >.
+        </p>
+        <p>
+          I annotate eBooks and articles with <a href="https://readwise.io/"
+            >Readwise</a
+          >. All notes I take in <a href="https://read.readwise.io"
+            >Readwise Reader</a
+          >, with the <a
+            href="https://addons.mozilla.org/en-US/firefox/addon/readwise-highlighter/"
+            >Readwise Highlighter extension</a
+          >, or on my Kindle show up in my Readwise database, which I export to
+          Obsidian.
+        </p>
+        <p>
+          I track books I&#39;ve read and want to read with <a
+            href="https://www.librarything.com/home">LibraryThing</a
+          >.
+        </p>
+        <p>
+          I memorize information with <a href="https://apps.ankiweb.net/"
+            >Anki</a
+          >.
+        </p>
+
+        <h4>Dictionaries:</h4>
+        <ul>
+          <li><em>The New Oxford American Dictionary</em> (macOS)</li>
+          <li>
+            <a href="https://www.merriam-webster.com/"
+              ><em>Merriam-Webster</em></a
+            >
+          </li>
+          <li>
+            <a href="https://www.thefreedictionary.com/">The Free Dictionary</a>
+          </li>
+          <li>
+            <a href="https://www.etymonline.com/"
+              >The Online Etymology Dictionary</a
+            >
+          </li>
+        </ul>
+      </section>
+    </section>
+  </main>
+</Base>
