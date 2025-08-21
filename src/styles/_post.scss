@@ -1,25 +1,80 @@
+@use 'fonts/cormorant';
+@use 'fonts/noto-sans';
+@use 'global';
+@use 'utils';
+
+:root {
+  --font-1: 'Cormorant',
+    'Cormorant Fallback',
+    serif;
+  --font-2: 'Noto Sans', 'Noto Sans Fallback', sans-serif;
+  --font-size-base: clamp(1rem, 5vw, 1.75rem);
+  --dark-grey: oklch(0.457 0 0);
+
+  // Colors
+  color-scheme: light dark;
+  --text-color: light-dark(#000, #fff);
+  --background-color: light-dark(#fff, #000);
+}
+
+// === ELEMENTS ===
+html {
+  background-color: var(--background-color);
+  scrollbar-color: var(--text-color) var(--background-color);
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+}
+
+header {
+  margin-bottom: 4rem;
+  border-bottom: 1px dotted;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+nav,
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  font-family: var(--font-2);
+  font-weight: 300;
+  font-size: 0.65em;
+}
+
+.tags {
+  @extend .unstyled-list;
+  padding: 0;
+  justify-content: center;
+}
+
 h1 {
+  font-variant: small-caps;
+  font-weight: 500;
+  margin-top: 1.5em;
   margin-bottom: 0;
 }
 
-.dateline {
-  font-size: 0.75em;
-  margin-top: 4rem;
-}
-
-.page-header {
-  border-bottom-style: solid;
-  border-bottom-width: 0.5px;
-
-  padding-bottom: 1rem;
-  display: grid;
-  gap: 1rem;
+h2 {
+  margin-top: 2em;
+  border-top: 1px solid;
+  padding-top: 0.25em;
+  font-weight: 400;
+  text-align: right;
 }
 
 .description {
-  margin: 0;
+  max-width: 60rem;
+  margin: 1em auto;
   font-style: italic;
-  text-align: center;
+  text-wrap: pretty;
 
   // Handle titles in post descriptions
   cite {
@@ -27,40 +82,34 @@ h1 {
   }
 }
 
+a {
+  @extend .unstyled-link;
+  @extend .small-caps;
+  letter-spacing: 0.07em;
 
-ul.tags {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1em;
-  justify-content: center;
-  font-variant: small-caps;
-  font-size: var(--font-small);
+  &:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.1em;
+    text-underline-offset: 0.1em;
+  }
 }
 
-div.photo {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background-color: white;
-  padding: 0.5rem;
-  border-radius: 2px;
+main {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+
+  p,
+  ul,
+  ol {
+    @extend .justify;
+    line-height: 1.3;
+  }
 }
 
-div.photo-caption {
-  color: #1a1a1a;
-  text-align: center;
-  font-family: "5th Grade Cursive", serif;
-  font-size: 1rem;
-  padding-top: 0.5em;
-}
-
-/* Handle titles in descriptions */
-span.normal {
-  font-style: normal;
-}
-
-div.signoff {
+.signature {
   text-align: right;
-  font-size: var(--font-small);
+  font-size: 0.75em;
   font-style: italic;
   margin-top: 4rem;
 }

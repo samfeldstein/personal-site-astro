@@ -9,6 +9,8 @@ import Date from "../../components/Date.astro";
 // Styles
 import "@styles/_post.scss";
 
+const preloadFonts = ["cormorant", "noto-sans"];
+
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -31,8 +33,14 @@ const { Content } = await render(post);
     slot="head"
     title={post.data.title}
     description={post.data.description}
+    preloadFonts={preloadFonts}
   />
   <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">All Posts</a>
+      <a href="/blog/tags/">All Tags</a>
+    </nav>
     <h1 set:html={post.data.title} />
     {
       post.data.description && (
@@ -45,7 +53,7 @@ const { Content } = await render(post);
     <article>
       <Content />
     </article>
-    <div class="signoff">
+    <div class="signature">
       <div>{post.data.location}</div>
       <Date date={post.data.pubDate} />
     </div>

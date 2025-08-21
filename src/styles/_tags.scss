@@ -65,4 +65,24 @@ a {
   @extend .unstyled-link;
   font-variant: small-caps;
   text-transform: lowercase;
+
+  &:hover {
+      text-decoration-line: underline;
+      text-decoration-thickness: 0.1em;
+      text-underline-offset: 0.1em;
+    }
+}
+
+// === SKIPLINK ===
+#skiplink {
+  font-family: var(--font-2);
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: var(--background-color);
+  padding: 0.5em;
+
+  &:focus-visible {
+    outline-width: 0.1em;
+    outline-color: var(--text-color);
+  }
 }
