@@ -41,10 +41,19 @@ header {
     hyphens: auto;
     text-wrap: pretty;
   }
-  
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  font-family: var(--font-2);
+  font-weight: 300;
+
   a {
     @extend .small-caps;
-    letter-spacing: 0.05em;
+    font-family: var(--font-2);
+    font-weight: 300;
   }
 }
 
@@ -65,12 +74,6 @@ a {
     text-underline-offset: 0.1em;
   }
 
-  &.home {
-    @extend .small-caps;
-    font-family: var(--font-2);
-    font-weight: 300;
-  }
-
   &.read {
     font-weight: 900;
     text-align: right;
@@ -85,6 +88,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     grid-auto-rows: 300px;
+    justify-items: left; // Center items in the grid
     gap: 1rem;
   }
 
@@ -109,6 +113,8 @@ li.post {
   padding: 1rem 2rem;
   display: grid;
   grid-template-rows: 1fr 2fr auto;
+  max-width: 500px; // Set your preferred max width
+  width: 100%;
 }
 
 .title {

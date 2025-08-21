@@ -1,19 +1,23 @@
 ---
 // Layout
-import BaseLayout from "../../../layouts/Base.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import Tags from "@components/Tags.astro";
 
 // Components
-import Date from "../../../components/Date.astro";
+import Date from "@components/Date.astro";
+
+import "@styles/_tag.scss";
 
 // Collections
 import { getCollection } from "astro:content";
 
 // Utils
-import { sortCollectionByDate } from "../../../scripts/utils.ts";
+import { sortCollectionByDate } from "@scripts/utils";
 
 // Functions
 export async function getStaticPaths() {
-// Filter drafts. Won't see the tag page in prod. Tried filtering them same way as posts so you can see them in prod, but doesn't work here.
+  // Filter drafts. Won't see the tag page in prod. Tried filtering them same way as posts so you can see them in prod, but doesn't work here.
   const posts = await getCollection("blog", ({ data }) => data.draft !== true);
   const uniqueTags = [...new Set(posts.map((post) => post.data.tags).flat())];
 
@@ -26,62 +30,51 @@ export async function getStaticPaths() {
   });
 }
 
-import { formatTag } from "../../../scripts/utils.ts";
+import { formatTag } from "@scripts/utils.ts";
 
-// Variables
+// Props
 const { tag } = Astro.params;
 const { posts } = Astro.props;
 
 const formattedTag = formatTag(tag);
+const preloadFonts = ["cormorant", "noto-sans"];
 
 // Calls
 sortCollectionByDate(posts);
 ---
 
-<BaseLayout
+<Base
   title=`Posts about ${formattedTag}`
   description=`Posts tagged "${formattedTag}".`
 >
-  <h1>Posts about {formattedTag}</h1>
-  <ul>
+  <Head
+    slot="head"
+    title="Tags"
+    description="An index of blog post categories."
+    preloadFonts={preloadFonts}
+  />
+  <header>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/blog/">All Posts</a>
+      <a href="/blog/tags/">All Tags</a>
+    </nav>
+    <h1>Posts about {formattedTag}</h1>
+  </header>
+  <ul class="posts">
     {
       posts.map((post) => (
-        <li>
-          <a
-            class="title"
-            href={`/blog/${post.id}/`}
-            set:html={post.data.title}
-          />
+        <li class="post">
           <div class="info">
             <Date date={post.data.pubDate} />
+            <Tags tags={post.data.tags} path="blog" />
           </div>
+          <div class="title" set:html={post.data.title} />
+          <a class="read" href={`/blog/${post.id}/`}>
+            Read the thing
+          </a>
         </li>
       ))
     }
   </ul>
-
-  <p>See <a href="/blog/tags/">all tags</a>.</p>
-</BaseLayout>
-
-<style>
-  ul {
-    list-style-type: none;
-    display: grid;
-    gap: 2rem;
-    margin: 6rem 0;
-    padding: 0;
-  }
-
-  .info {
-    font-size: var(--font-small);
-  }
-
-  a {
-    &.title {
-      font-weight: 700;
-      font-size: var(--font-medium);
-      display: inline-block;
-      text-wrap: balance;
-    }
-  }
-</style>
+</Base>
