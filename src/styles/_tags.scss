@@ -1,0 +1,68 @@
+@use 'fonts/cormorant';
+@use 'fonts/noto-sans';
+@use 'global';
+@use 'utils';
+
+:root {
+  --font-1: 'Cormorant',
+    'Cormorant Fallback',
+    serif;
+  --font-2: 'Noto Sans', 'Noto Sans Fallback', sans-serif;
+  --font-size-base: clamp(1rem, 5vw, 1.5rem);
+  --dark-grey: oklch(0.457 0 0);
+
+  // Colors
+  color-scheme: light dark;
+  --text-color: light-dark(#000, #fff);
+  --background-color: light-dark(#fff, #000);
+}
+
+// === ELEMENTS ===
+html {
+  background-color: var(--background-color);
+  scrollbar-color: var(--text-color) var(--background-color);
+}
+
+body {
+  background-color: var(--background-color);
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+}
+
+header {
+  margin-bottom: 4rem;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  font-family: var(--font-2);
+  font-weight: 300;
+  font-size: 0.75em;
+}
+
+h1 {
+  font-family: var(--font-2);
+  font-weight: 300;
+  font-size: 3em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+ul.tags {
+  @extend .unstyled-list;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1em;
+}
+
+a {
+  @extend .unstyled-link;
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
