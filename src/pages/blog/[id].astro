@@ -44,7 +44,7 @@ const { Content } = await render(post);
     <h1 set:html={post.data.title} />
     {
       post.data.description && (
-        <p class="description" set:html={post.data.description} />
+        <p class="page-description" set:html={post.data.description} />
       )
     }
     {(<Tags tags={post.data.tags} path="blog" />)}
