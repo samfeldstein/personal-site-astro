@@ -9,7 +9,7 @@ import { sortCollectionByDate } from "@scripts/utils.ts";
 
 import "@styles/_blog.scss";
 
-const preloadFonts = [];
+const preloadFonts = ["cormorant", "noto-sans"];
 
 // Filter drafts when building for production
 const posts = await getCollection("blog", ({ data }) => {
@@ -29,19 +29,30 @@ sortCollectionByDate(posts);
   <header>
     <a class="home" href="/">Home</a>
     <h1>This Be Me Blog</h1>
+    <p>
+      This be me blog. You can also <a href="/blog/tags/">browse by category</a
+      >, and you can <a href="/feed.xml">subscribe via RSS</a>. If you prefer to
+      subscribe by email, you can use <a href="https://blogtrottr.com/"
+        >Blogtrottr</a
+      > to route the feed to your inbox.
+    </p>
   </header>
-  <ul class="posts">
-    {
-      posts.map((post) => (
-        <li class="post">
-          <div class="info">
-            <Date date={post.data.pubDate} />
-            <Tags tags={post.data.tags} path="blog" />
-          </div>
-          <div class="title" set:html={post.data.title} />
-          <a class="read" href={`/blog/${post.id}/`}>Read the thing</a>
-        </li>
-      ))
-    }
-  </ul>
+  <main id="main-content">
+    <ul class="posts">
+      {
+        posts.map((post) => (
+          <li class="post">
+            <div class="info">
+              <Date date={post.data.pubDate} />
+              <Tags tags={post.data.tags} path="blog" />
+            </div>
+            <div class="title" set:html={post.data.title} />
+            <a class="read" href={`/blog/${post.id}/`}>
+              Read the thing
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </Base>

@@ -4,11 +4,10 @@
 import Base from "../../layouts/Base.astro";
 import Head from "../../components/Head.astro";
 import Tags from "../../components/Tags.astro";
-import SiteFooter from "../../components/SiteFooter.astro";
 import Date from "../../components/Date.astro";
 
 // Styles
-import "../../styles/_post.scss";
+import "@styles/_post.scss";
 
 import { getCollection, render } from "astro:content";
 
@@ -33,7 +32,7 @@ const { Content } = await render(post);
     title={post.data.title}
     description={post.data.description}
   />
-  <header class="page-header">
+  <header>
     <h1 set:html={post.data.title} />
     {
       post.data.description && (
@@ -51,5 +50,4 @@ const { Content } = await render(post);
       <Date date={post.data.pubDate} />
     </div>
   </main>
-  <SiteFooter />
 </Base>
