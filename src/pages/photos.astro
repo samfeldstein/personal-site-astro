@@ -1,66 +1,50 @@
 ---
 // Layout
-import BaseLayout from "../layouts/Base.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import "@styles/_photos.scss";
 
 // Components
 import { Image } from "astro:assets";
 
 // Functions
-import { getGalleryImages } from "../scripts/utils";
+import { getGalleryImages } from "@scripts/utils";
+
+const preloadFonts = ["cormorant", "noto-sans"];
 
 const photos = await getGalleryImages();
 ---
 
-<BaseLayout
-  title="Photos"
-  description="My photography portfolio."
->
-  <h1>Photos</h1>
-  <p>
-    <a href="mailto:sam@samfeldstein.xyz">Shoot me an email</a> if you'd like to
-    order a print.
-  </p>
-  <div class="gallery">
-    {
-      photos.map((photo) => (
-        <div class="photo">
-          <Image
-            src={photo.src}
-            widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-            sizes="(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)"
-            alt={photo.alt || photo.title}
-          />
-          <div class="title">{photo.title}</div>
-        </div>
-      ))
-    }
-  </div>
-</BaseLayout>
-
-<style>
-  div.gallery {
-    display: grid;
-    gap: 1rem;
-  }
-
-  div.photo {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: white;
-    padding: 0.5rem;
-    border-radius: 4px;
-  }
-
-  div.title {
-    color: #1a1a1a;
-    text-align: center;
-    font-family: "5th Grade Cursive", serif;
-    font-size: clamp(0.75rem, 1vw, 1.25rem);
-    padding-top: 0.5em;
-  }
-</style>
-
-<style is:global>
-  body {
-    max-width: 60rem;
-  }
-</style>
+<Base>
+  <Head
+    slot="head"
+    title="Gallery"
+    description="Photos I’ve taken."
+    preloadFonts={preloadFonts}
+  />
+  <header>
+    <nav><a href="/">Home</a></nav>
+    <h1>Photos</h1>
+    <p>
+      <a href="mailto:sam@samfeldstein.xyz">Shoot me an email</a> if you'd like to
+      order a print.
+    </p>
+  </header>
+  <main>
+    <div class="gallery">
+      {
+        photos.map((photo) => (
+          <div class="photo">
+            <Image
+              src={photo.src}
+              widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+              sizes="(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)"
+              alt={photo.alt || photo.title}
+            />
+            <div class="title">{photo.title}</div>
+          </div>
+        ))
+      }
+    </div>
+  </main>
+</Base>
