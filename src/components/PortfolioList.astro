@@ -2,11 +2,11 @@
 const { data } = Astro.props;
 ---
 
-<ul>
+<ul class="portfolio">
   {
     data.map((item) => (
-      <li class="publication">
-        <a href={item.url}>
+      <li>
+        <a class="entry" href={item.url}>
           <div class="info">
             <div>{item.type}</div>
             <div class="date-outlet">
@@ -19,111 +19,9 @@ const { data } = Astro.props;
             class="title"
             set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")}
           />
-          <div class="read">Read&nbsp;→</div>
+          <div class="read">Read</div>
         </a>
       </li>
     ))
   }
 </ul>
-
-<style lang="scss">
-  :root {
-    --local-accent: var(--accent);
-  }
-
-  ul {
-    --minwidth: 250px;
-
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--minwidth), 1fr));
-    gap: 1rem;
-  }
-
-  li {
-    // Allow <a> children to flex
-    display: flex;
-  }
-
-  a {
-    border: 0.05em solid;
-    border-radius: 12px;
-    border-color: var(--local-accent);
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1.5rem;
-    // Grow to fill space
-    flex: 1;
-
-    // Trigger .read underline
-    &:hover .read::after {
-      width: 100%;
-    }
-
-    &:hover {
-      // Reverse color scheme in dark mode
-      --local-accent: var(--accent-2);
-    }
-  }
-
-  .title {
-    font-size: var(--font-large);
-    text-wrap: balance;
-    letter-spacing: 0.025em;
-    line-height: 1.1;
-    margin: 1rem 0 2rem 0;
-    // Fill space, push .read to bottom
-    flex: 1;
-  }
-
-  .info {
-    font-size: var(--font-small);
-    font-family: var(--font-meta);
-    font-variant: small-caps;
-    text-transform: lowercase;
-    color: var(--local-accent);
-    line-height: 1;
-  }
-
-  .date-outlet {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .outlet {
-    font-style: italic;
-  }
-
-  .read {
-    font-family: var(--font-meta);
-    font-size: var(--font-small);
-    font-weight: 700;
-    font-variant: small-caps;
-    text-transform: lowercase;
-    align-self: flex-end;
-    width: fit-content;
-    // Animation
-    position: relative;
-
-    // Animation
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 0.1em; /* thickness of the underline */
-      width: 0; /* start with zero width */
-      background-color: var(--background-color); /* underline color */
-      transition: width 0.3s ease;
-    }
-  }
-
-  /* Responsive styles */
-  @media screen and (min-width: 400px) {
-    ul {
-      --minwidth: 350px;
-    }
-  }
-</style>

@@ -114,6 +114,20 @@ main {
   margin-top: 4rem;
 }
 
+// === SKIPLINK ===
+#skiplink {
+  font-family: var(--font-2);
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: var(--background-color);
+  padding: 0.5em;
+
+  &:focus-visible {
+    outline-width: 0.1em;
+    outline-color: var(--text-color);
+  }
+}
+
 // Not quite working yet. If the sentence breaks, the latter half of the sentence won't be in small caps. Looks weird?
 // Also need to account for poems, which might need their own collection and layout
 // article {

@@ -1,22 +1,53 @@
 ---
-import Base from "../layouts/Base.astro";
-import List from "../components/PortfolioList.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import List from "@components/PortfolioList.astro";
 
 // Styles
-import "../styles/_default-page.scss";
+import "@styles/_published-writing.scss";
 
 // Data
 import { writing } from "../data/published-writing.js";
 
-const description = "My published writing.";
+const preloadFonts = ["cormorant", "noto-sans"];
 ---
 
-<Base title="Published Writing" description={description}>
-  <header id="page-header">
-    <a href="/">←&nbsp;Home</a>
+<Base>
+  <Head
+    slot="head"
+    title="Publish Writing"
+    description="My publish writing, including short stories, news articles, and roleplaying adventures."
+    preloadFonts={preloadFonts}
+  />
+  <header>
+    <nav>
+      <a class="home" href="/">Home</a>
+    </nav>
     <h1>Published Writing</h1>
   </header>
   <main id="main-content">
-    <List data={writing} />
+    <ul class="portfolio">
+      {
+        writing.map((item) => (
+          <li>
+            <a class="entry" href={item.url}>
+              <div class="info">
+                <div class="type">{item.type}</div>
+                <div class="date-outlet">
+                  <cite class="outlet">{item.outlet}</cite>
+                  <span>&nbsp;|&nbsp;</span>
+                  <span>{item.date}</span>
+                </div>
+              </div>
+              <div
+                class="title"
+                set:html={item.title.replace(/'(.*?)'/, "<em>$1</em>")}
+              />
+              <div class="read">Read</div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </main>
 </Base>
