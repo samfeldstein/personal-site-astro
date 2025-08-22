@@ -17,7 +17,6 @@ ul {
     padding: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    justify-content: center;
     gap: 1rem;
   }
 
@@ -37,19 +36,21 @@ ul {
 
 li.post {
   @extend .defer;
+  // Outer layout
+  height: auto;
+  width: 100%;
+  aspect-ratio: 1/1;
   border: 1px solid;
   border-radius: 8px;
+  // Inner layout
   padding: 1rem 2rem;
   display: grid;
   grid-template-rows: 1fr 2fr auto;
   gap: 2em;
-  height: 100%;
-  width: 100%;
-  aspect-ratio: 1 / 1;
 }
 
 .title {
-  font-size: 1.75em;
+  font-size: 1.5em;
 }
 
 .info {
