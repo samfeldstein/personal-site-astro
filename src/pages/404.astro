@@ -1,12 +1,40 @@
 ---
-import BaseLayout from "../layouts/Base.astro";
+import Base from "@layouts/Base.astro";
+import Head from "@components/Head.astro";
+import "@styles/_default.scss";
+
+const preloadFonts = ["cormorant, noto-sans"];
 ---
 
-<BaseLayout title="404 - Page Not Found">
-  <h1>Page Not Found</h1>
-  <p>
-    It looks like this page doesn't exist. If you think this is a mistake,
-    please
-    <a href="mailto:sam@samfeldstein.xyz">email me</a>.
-  </p>
-</BaseLayout>
+<Base>
+  <Head
+    slot="head"
+    title="Home"
+    description="404 — Page Not Found"
+    preloadFonts={preloadFonts}
+  />
+  <header>
+    <nav><a href="/">Home</a></nav>
+    <h1>Page Not Found</h1>
+  </header>
+  <main>
+    <p>
+      It looks like this page doesn't exist. If you think this is a mistake,
+      please
+      <a href="mailto:sam@samfeldstein.xyz">email me</a>.
+    </p>
+  </main>
+</Base>
+
+<style>
+  body {
+    main {
+      font-size: 1.25em;
+    }
+
+    main a {
+      font-variant: small-caps;
+      text-transform: lowercase;
+    }
+  }
+</style>
