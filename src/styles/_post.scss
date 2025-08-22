@@ -17,16 +17,11 @@ header {
 
 h2 {
   font-family: inherit;
-  margin-top: 2em;
-  border-top: 1px solid;
-  padding-top: 0.25em;
-  font-weight: 400;
-  text-align: right;
+  font-style: italic;
 }
 
 .page-description {
   max-width: 60rem;
-  margin: 1em auto;
   font-style: italic;
   text-wrap: pretty;
 
@@ -58,6 +53,17 @@ main {
   ol {
     @extend .justify;
   }
+}
+
+blockquote {
+  font-size: 0.9em;
+  margin: 0 auto;
+  max-width: 95%;
+  border-style: solid none;
+  border-width: 1px;
+  border-color: var(--accent-reversed);
+  padding: 0 1.5em;
+  background-color: var(--accent-light);
 }
 
 .signature {

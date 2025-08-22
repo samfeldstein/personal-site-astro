@@ -15,6 +15,8 @@
   --text-color: light-dark(#000, #fff);
   --background-color: light-dark(#fff, #000);
   --accent: light-dark(oklch(0.457 0 0), oklch(0.6731 0 0));
+  --accent-reversed: light-dark(oklch(0.6731 0 0), oklch(0.457 0 0));
+  --accent-light: light-dark(#f8f8f8, #252525);
 }
 
 html {
@@ -115,4 +117,9 @@ main {
   text-transform: uppercase;
   background-color: var(--background-color);
   padding: 0.5em;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--background-color);
 }
