@@ -9,6 +9,12 @@ main {
   font-size: 1.25em;
   max-width: 50rem;
   margin: 0 auto;
+
+  p,
+    ul,
+    ol {
+      @extend .justify;
+    }
 }
 
 a {
