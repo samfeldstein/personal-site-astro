@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "The trick, William Potter, is not minding that it hurts.",
+    speaker: "T.E. Lawrence",
+    work: "Lawrence of Arabia",
+    medium: "film"
+  },
+  {
     quote: "This is the secret of the arts: always be a beginner.",
     speaker: "Shunryu Suzuki",
     work: "Zen Mind, Beginner’s Mind",
