@@ -2,6 +2,7 @@
 
 header {
   border-bottom: 1px dotted;
+  text-align: center;
 }
 
 .tags {
@@ -21,9 +22,9 @@ h2 {
 }
 
 .page-description {
-  max-width: 60rem;
   font-style: italic;
   text-wrap: pretty;
+  text-align: center;
 
   // Handle titles in post descriptions
   cite {

@@ -1,5 +1,9 @@
 @use 'default';
 
+h1 {
+  text-align: center;
+}
+
 ul.tags {
   @extend .unstyled-list;
   @extend .small-caps;

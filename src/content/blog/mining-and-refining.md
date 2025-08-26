@@ -1,6 +1,6 @@
 ---
-title: "Mining and Refining: The Two Modes of Writing"
-description: You're either digging for coal, or pressing it into diamonds.
+title: Mining and Refining
+description: The two modes of writing.
 pubDate: 2024-03-07
 location: Bondurant, IA
 tags: ["writing"]

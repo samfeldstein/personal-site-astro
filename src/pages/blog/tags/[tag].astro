@@ -46,8 +46,8 @@ sortCollectionByDate(posts);
 <Base>
   <Head
     slot="head"
-    title=`Posts About ${formattedTag}`
-    description=`Posts tagged "${formattedTag}".`
+    title=`Filed Under: “${formattedTag}”`
+    description=`Posts filed under “${formattedTag}”.`
     preloadFonts={preloadFonts}
   />
   <header>
@@ -56,7 +56,7 @@ sortCollectionByDate(posts);
       <a href="/blog/">All Posts</a>
       <a href="/blog/tags/">All Tags</a>
     </nav>
-    <h1>Posts about {formattedTag}</h1>
+    <h1>Filed Under: {formattedTag}</h1>
   </header>
   <main id="main-content">
     <ul class="posts">
