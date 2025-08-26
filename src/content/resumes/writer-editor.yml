@@ -1,0 +1,59 @@
+title: Writer, Editor
+
+summary:
+  Producing articles and copy with an eye toward engaging prose, informative
+  content, and accessible language.
+
+printUrl: writer-editor
+
+links:
+  - name: Portfolio
+    url: /published-writing
+
+sections:
+  education:
+    - chapman
+    - iowa
+
+  relevantExperience:
+    - devAssistant
+    - journalistSentinel
+    - fundraiserLear
+
+  otherExperience:
+    - composition
+    - devFreelance
+    - managerSentinel
+
+  publications:
+    - madeOfMemories
+    - reproductiveCoalition
+    - transPecos
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
+  projects:
+    - regreen
+    - postoley
+    - prairieRose
+
+  skills:
+    - category: Writing
+      items:
+        - Website copy, journalism, creative works
+        - Interviewing and engagement
+        - Research and fact-checking
+    - category: Editorial
+      items:
+        - Web publishing workflows
+        - Search Engine Optimization
+        - Typography and formatting
+
+    - category: Technical
+      items:
+        - Content Management Systems
+        - Web Design and Development
+        - Accessibility best practices
