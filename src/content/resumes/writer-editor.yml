@@ -44,16 +44,16 @@ sections:
     - category: Writing
       items:
         - Website copy, journalism, creative works
-        - Interviewing and engagement
-        - Research and fact-checking
+        - Interviewing, research, fact-checking
+        - Technical documentation, user guides
     - category: Editorial
       items:
         - Web publishing workflows
-        - Search Engine Optimization
+        - Search engine optimization
         - Typography and formatting
 
     - category: Technical
       items:
-        - Content Management Systems
-        - Web Design and Development
+        - Content management systems
+        - Web design and development
         - Accessibility best practices
