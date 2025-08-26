@@ -1,17 +1,17 @@
-export const education = [
-  {
+export const education = {
+  chapman: {
     degree: "MFA, Screenwriting, incomplete",
     school: "Chapman University Dodge College of Film and Media Arts",
     city: "Orange, CA",
     date: "December 2018",
   },
-  {
+  iowa: {
     degree: "BA, English and Creative Writing, <i>cum laude</i>",
     school: "University of Iowa",
     city: "Iowa City, IA",
     date: "December 2016",
-  },
-];
+  }
+}
 
 export const workHistory = {
   composition: {
@@ -101,7 +101,7 @@ export const workHistory = {
       "Implemented proven rhetorical fundraising techniques to drive high-quality, recurring donations, strengthening donor retention and organizational sustainability.",
     ],
   },
-  TAChapman: {
+  chapman: {
     role: "Graduate Teaching Assistant",
     employer: "Chapman University",
     date: "January 2018 – December 2018",
@@ -138,7 +138,6 @@ export const workHistory = {
 };
 
 export const projects = {
-
   shelfTalkers: {
     title: "Shelf-Talkers",
     type: "Web Application",
@@ -163,11 +162,6 @@ export const projects = {
     date: "February 2025",
     place: "Boulder, CO",
     description: "A website for an independent folk dance studio in Boulder. Built with Astro and Netlify.",
-    // description: [
-    //   "Designed and built a custom website for an independent folk dance studio.",
-    //   "Transformed the legacy site into a modern, component-based static site.",
-    //   "Integrated a headless CMS so the client could update site content independently.",
-    // ],
   },
   digitalNotebook: {
     title: "Digital Notebook",
@@ -180,11 +174,6 @@ export const projects = {
     type: "Website",
     date: "June 2024",
     description: "A high-performance personal site built with Astro and Cloudflare Pages."
-    // description: [
-    //   "Built a high-performance personal site using Astro and Cloudflare Pages, achieving sub-second load times and 100/100 Core Web Vitals scores.",
-    //   "Used a component-based architecture with scoped CSS modules, reducing CSS payload while maintaining design consistency.",
-    //   "Implemented performance optimizations including prefetching and an automated image optimization pipeline for WebP/AVIF delivery.",
-    // ],
   },
   prairieRose: {
     title: "Prairie Rose Arena",
@@ -192,21 +181,12 @@ export const projects = {
     date: "May 2024",
     place: "Elkhart, IA",
     description: "A custom static website for an equestrian event center in Iowa. Built with Eleventy and Netlify.",
-    // description: [
-    //   "Conceived and implemented a complete site redesign with a mobile-first, responsive approach.",
-    //   "Integrated a headless CMS to allow the client to independently manage events.",
-    //   "Optimized performance through modern build processes, image lazy-loading, and asset caching.",
-    // ],
   },
   likeMovies: {
     title: "Like Father, Like Son, Like Movies",
     type: "Podcast",
     date: "November 2022 – Present",
     description: "A podcast about movies, co-hosted with my dad."
-    // description: [
-    //   "Host and produce a podcast about film, independently managing all aspects from concept development to distribution.",
-    //   "Utilize comprehensive production workflow, delivering consistent content across all major listening platforms.",
-    // ],
   }
 };
 

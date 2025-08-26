@@ -14,11 +14,6 @@
   --dark-grey: oklch(0.457 0 0);
 }
 
-#skiplink {
-  @extend .font-2;
-  font-weight: 300;
-}
-
 body {
   max-width: 60rem;
   margin: 0 auto;
@@ -142,7 +137,8 @@ ul.publications {
   gap: 1rem;
 }
 
-div.projects, div.volunteer {
+div.projects,
+div.volunteer {
   p {
     margin-top: 0.75em;
   }
@@ -248,6 +244,12 @@ cite.h3 {
     gap: 1rem;
     position: relative;
   }
+}
+
+#skiplink {
+  @extend .font-2;
+  font-weight: 300;
+  padding: 0.25em;
 }
 
 // === UTILS ===
