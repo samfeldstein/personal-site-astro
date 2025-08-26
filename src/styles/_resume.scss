@@ -102,6 +102,7 @@ nav.contents {
 
   div {
     display: grid;
+    grid-auto-rows: max-content;
     gap: 1rem;
   }
 }
