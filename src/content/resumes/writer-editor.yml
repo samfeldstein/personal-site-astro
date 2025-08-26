@@ -1,8 +1,8 @@
 title: Writer, Editor
 
 summary:
-  Building websites with an eye toward performance, lean code, and
-  content-driven design.
+  Producing articles and copy with an eye toward engaging prose, informative
+  content, and accessible language.
 
 printUrl: writer-editor
 
@@ -14,7 +14,7 @@ sections:
   education:
     - chapman
     - iowa
-  
+
   relevantExperience:
     - devAssistant
     - journalistSentinel
@@ -25,37 +25,35 @@ sections:
     - devFreelance
     - managerSentinel
 
+  publications:
+    - madeOfMemories
+    - reproductiveCoalition
+    - transPecos
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
   projects:
     - regreen
     - postoley
     - prairieRose
 
-  volunteer:
-    - workaway
-    - frida
-
-  publications:
-    - madeOfMemories
-    - theFirst
-
   skills:
-    - category: Web Technologies & Standards
+    - category: Writing
       items:
-        - Semantic HTML
-        - Modern CSS
-        - JavaScript
+        - Website copy, journalism, creative works
+        - Interviewing and engagement
+        - Research and fact-checking
+    - category: Editorial
+      items:
+        - Web publishing workflows
+        - Search Engine Optimization
+        - Typography and formatting
+
+    - category: Technical
+      items:
+        - Content Management Systems
+        - Web Design and Development
         - Accessibility best practices
-
-    - category: Tools & Frameworks
-      items:
-        - Astro
-        - Eleventy
-        - Git
-        - Figma
-
-    - category: Web Performance
-      items:
-        - Responsive Design
-        - Static site generation
-        - Modern image formats
-        - Headers and caching

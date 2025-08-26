@@ -1,6 +1,6 @@
 export const education = {
   chapman: {
-    degree: "MFA, Screenwriting, incomplete",
+    degree: "MFA, Screenwriting, withdrew",
     school: "Chapman University Dodge College of Film and Media Arts",
     city: "Orange, CA",
     date: "December 2018",
@@ -52,9 +52,8 @@ export const workHistory = {
     place: "Marfa, TX",
     date: "September 2022 – December 2023",
     description: [
-      "Produced compelling local journalism covering community events and grassroots activism, developing expertise in interview techniques and deadline-driven writing.",
-      "Conducted in-depth interviews with community leaders, activists, and local stakeholders to uncover compelling narratives and ensure accurate representation.",
-      "Balanced journalistic integrity with narrative storytelling to create articles that were informative, engaging, and accessible.",
+      "Wrote informative, engaging, accessible articles covering community events and grassroots activism.",
+      "Interviewed community leaders, activists, and local stakeholders to ensure accurate representation.",
     ],
   },
   marfaStore: {
@@ -96,9 +95,8 @@ export const workHistory = {
     date: "May 2019 – December 2019",
     place: "Santa Ana, CA",
     description: [
-      "Secured a projected ~$300,000 in funding for high-impact organizations, including the ASPCA and Doctors Without Borders, through persuasive face-to-face donor engagement.",
-      "Cultivated relationships with prospective donors, tailoring messaging to align with individual values and maximize long-term contributions.",
-      "Implemented proven rhetorical fundraising techniques to drive high-quality, recurring donations, strengthening donor retention and organizational sustainability.",
+      "Raised a projected ~$300,000 in recurring donations for high-impact nonprofits including the ASPCA and Doctors Without Borders.",
+      "Improved donor retention and long-term contributions through persuasive face-to-face engagement.",
     ],
   },
   chapman: {
@@ -150,11 +148,6 @@ export const projects = {
     date: "February 2025",
     place: "Terlingua, TX",
     description: "A custom WordPress site for an environmental restoration project in Far West Texas.",
-    // description: [
-    //   "Developed a WordPress theme for an environmental restoration project.",
-    //   "Designed high-fidelity mock-ups in Figma with a focus on regional aesthetics and responsive design.",
-    //   "Optimized performance through strategic asset loading and caching.",
-    // ],
   },
   postoley: {
     title: "Postoley Dance Ensemble",
@@ -226,7 +219,7 @@ export const publications = {
 }
 
 export const volunteer = {
-  communityHealthAndEquine: {
+  chec: {
     role: "Wix Developer & Horseback Riding Instructor",
     employer: "Community Health and Equine Coalition",
     date: "April 2024 – May 2024",
