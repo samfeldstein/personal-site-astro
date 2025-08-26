@@ -37,7 +37,7 @@ ul {
 li.post {
   @extend .defer;
   // Outer layout
-  border: 1px solid;
+  border: 2px solid;
   border-radius: 8px;
   // Inner layout
   padding: 1rem 2rem;
@@ -47,7 +47,7 @@ li.post {
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 1.75em;
 }
 
 .info {
