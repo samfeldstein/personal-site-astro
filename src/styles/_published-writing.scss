@@ -36,7 +36,7 @@ ul {
   display: grid;
   grid-template-rows: 1fr 2fr auto;
   gap: 2em;
-  aspect-ratio: 1 / 1;
+  // aspect-ratio: 1 / 1;
 
   &:hover {
     border-color: #000;
@@ -51,7 +51,7 @@ ul {
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 1.75em;
   text-wrap: balance;
 }
 
