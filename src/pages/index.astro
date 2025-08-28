@@ -6,8 +6,9 @@ import QuoteGenerator from "../components/QuoteGenerator.astro";
 import Copyright from "@components/Copyright.astro";
 import RSS from "../components/RssIcon.astro";
 import Github from "../components/GithubIcon.astro";
-import Email from "../components/EmailIcon.astro";
+import EmailIcon from "../components/EmailIcon.astro";
 import ExternalLinkIcon from "../components/ExternalLinkIcon.astro";
+import Email from "@components/Email.astro";
 
 // Styles
 import "/src/styles/_index.scss";
@@ -90,8 +91,7 @@ const preloadFonts = ["oswald", "noto"];
       <h2 id="contact">Contact & Social</h2>
       <ul class="contact">
         <li>
-          <a href="mailto:sam@samfeldstein.xyz">Email<Email class="inline" /></a
-          >
+          <Email>Email <EmailIcon class="inline" /></Email>
         </li>
         <li>
           <a href="https://github.com/samfeldstein"

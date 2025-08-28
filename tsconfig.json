@@ -25,6 +25,9 @@
       ],
       "@scripts/*": [
         "src/scripts/*"
+      ],
+      "@data/*": [
+        "src/data/*"
       ]
     },
     "strictNullChecks": true,

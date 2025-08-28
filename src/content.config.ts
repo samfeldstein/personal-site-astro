@@ -12,8 +12,6 @@ const blog = defineCollection({
     title: z.string(),
     pubDate: z.date(),
     location: z.string(),
-    description: z.string().optional(),
-    tags: z.array(z.string()),
     // If set to true, filters all posts even if key not in frontmatter
     draft: z.boolean().optional().default(false),
   }),

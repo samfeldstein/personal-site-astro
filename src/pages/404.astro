@@ -1,7 +1,9 @@
 ---
 import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
+import Email from "@components/Email.astro";
 import "@styles/_default.scss";
+import { author } from "config.mjs";
 
 const preloadFonts = ["cormorant, noto-sans"];
 ---
@@ -21,7 +23,7 @@ const preloadFonts = ["cormorant, noto-sans"];
     <p>
       It looks like this page doesn't exist. If you think this is a mistake,
       please
-      <a href="mailto:sam@samfeldstein.xyz">email me</a>.
+      <Email>email me</Email>.
     </p>
   </main>
 </Base>

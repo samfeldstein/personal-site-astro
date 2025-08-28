@@ -1,8 +1,12 @@
 ---
 import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
+import Email from "@components/Email.astro";
+
 import "/src/styles/_resume.scss";
 import "/src/styles/_resume-print.scss";
+
+import { author } from "config.mjs";
 
 import { getCollection } from "astro:content";
 
@@ -93,10 +97,6 @@ if (entry.data.sections) {
     preloadFonts={preloadFonts}
   />
   <header>
-    <!-- <address class="print">
-      <div class="city">Boulder, CO</div>
-      <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
-    </address> -->
     <a
       class="download-link"
       href=`/static/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
@@ -111,7 +111,7 @@ if (entry.data.sections) {
       <address>
         <span class="location">Boulder, CO</span>
         <a href="tel:5156572243">(515) 657-2243</a>
-        <a href="mailto:sam@samfeldstein.xyz">sam@samfeldstein.xyz</a>
+        <Email>{author.email}</Email>
         <a class="no-print" href="/">Website</a>
         {
           entry.data.links.map((link) => (

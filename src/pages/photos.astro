@@ -2,6 +2,7 @@
 // Layout
 import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
+import Email from "@components/Email.astro";
 import "@styles/_photos.scss";
 
 // Components
@@ -26,8 +27,7 @@ const photos = await getGalleryImages();
     <nav><a href="/">Home</a></nav>
     <h1>Photos</h1>
     <p>
-      <a href="mailto:sam@samfeldstein.xyz">Shoot me an email</a> if you'd like to
-      order a print.
+      <Email>Shoot me an email</Email> if you’d like to order a print.
     </p>
   </header>
   <main>
