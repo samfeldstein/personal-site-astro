@@ -12,27 +12,16 @@ const blog = defineCollection({
     title: z.string(),
     pubDate: z.date(),
     location: z.string(),
+    description: z.string().optional(),
+    tags: z.array(z.string()),
     // If set to true, filters all posts even if key not in frontmatter
     draft: z.boolean().optional().default(false),
   }),
 });
-
-const cyber = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/cybersecurity' }),
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    assignment: z.object({
-      description: z.string(),
-      site: z.string(),
-      url: z.string().url()
-    })
-  }),
-})
 
 const resumes = defineCollection({
   loader: glob({ pattern: "**/*.yml", base: "./src/content/resumes" }),
 })
 
 // Export a single `collections` object to register your collection(s)
-export const collections = { blog, cyber, resumes }
+export const collections = { blog, resumes }
