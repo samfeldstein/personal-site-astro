@@ -28,7 +28,7 @@ export const workHistory = {
     ],
   },
   devFreelance: {
-    role: "Freelance Web Designer & Developer",
+    role: "Freelance Web Developer",
     date: "April 2024 – Present",
     place: "Boulder, CO",
     description: [
@@ -91,8 +91,8 @@ export const workHistory = {
       "Implemented SEO strategies to boost search visibility and drive organic traffic.",
     ],
   },
-  fundraiserLear: {
-    role: "Donor Engagement Specialist",
+  lear: {
+    role: "Fundraiser",
     employer: "Lear Solutions",
     date: "May 2019 – December 2019",
     place: "Santa Ana, CA",
@@ -149,14 +149,14 @@ export const projects = {
     type: "Website",
     date: "February 2025",
     place: "Terlingua, TX",
-    description: "A custom WordPress site for an environmental restoration project in Far West Texas.",
+    description: "Designed and built a custom WordPress site for an environmental restoration project in Far West Texas.",
   },
   postoley: {
     title: "Postoley Dance Ensemble",
     type: "Website",
     date: "February 2025",
     place: "Boulder, CO",
-    description: "A website for an independent folk dance studio in Boulder. Built with Astro and Netlify.",
+    description: "A ground-up rebuild of a website for an independent folk dance studio in Boulder. Built with Astro and Netlify.",
   },
   digitalNotebook: {
     title: "Digital Notebook",
@@ -175,13 +175,13 @@ export const projects = {
     type: "Website",
     date: "May 2024",
     place: "Elkhart, IA",
-    description: "A custom static website for an equestrian event center in Iowa. Built with Eleventy and Netlify.",
+    description: "Built a custom static website for an equestrian event center. Made with Eleventy, Netlify, and Decap CMS.",
   },
   likeMovies: {
     title: "Like Father, Like Son, Like Movies",
     type: "Podcast",
-    date: "November 2022 – Present",
-    description: "A podcast about movies, co-hosted with my dad."
+    date: "November 2022 – April 2025",
+    description: "Produced and co-hosted a podcast about movies."
   }
 };
 

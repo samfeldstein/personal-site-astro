@@ -21,6 +21,7 @@ sections:
     - composition
     - devFreelance
     - managerSentinel
+    - lear
 
   publications:
     - madeOfMemories
@@ -28,14 +29,13 @@ sections:
     - transPecos
 
   volunteer:
-    - chec
     - workaway
     - frida
 
   projects:
     - regreen
-    - postoley
     - prairieRose
+    - likeMovies
 
   skills:
     - category: Writing
