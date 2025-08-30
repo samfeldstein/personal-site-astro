@@ -5,10 +5,10 @@ summary: Publishing for the web with an eye toward performant sites, deliberate 
 printUrl: writer-developer
 
 links:
-  - name: Published Writing
-    url: /published-writing
-  - name: GitHub
-    url: https://github.com/samfeldstein
+  - name: Writing
+    url: /published-writing/
+  - name: Code
+    url: /code/
 
 sections:
   education:
