@@ -222,11 +222,11 @@ export const publications = {
 
 export const volunteer = {
   chec: {
-    role: "Wix Developer & Horseback Riding Instructor",
+    role: "Wix Developer",
     employer: "Community Health and Equine Coalition",
     date: "April 2024 – May 2024",
     place: "Galveston, TX",
-    description: "Enhanced user experience and accessibility, and integrated a secure payment gateway."
+    description: "Enhanced user experience and accessibility, integrated a secure payment gateway."
   },
   workaway: {
     role: "Volunteer",

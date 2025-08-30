@@ -32,14 +32,16 @@ header {
   padding-bottom: 6rem;
 }
 
-.download-link {
-  display: block;
+nav.main {
   @extend .font-2;
   font-size: var(--font-small);
   font-weight: 300;
-  text-align: center;
-  letter-spacing: 0.05em;
   color: var(--dark-grey);
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  
 }
 
 // Contact info

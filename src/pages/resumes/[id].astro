@@ -32,25 +32,6 @@ const { entry } = Astro.props;
 const description = `Sam Feldstein's ${entry.data.title} résumé.`;
 const preloadFonts = ["cormorant", "noto-sans"];
 
-// Convert relevant keys into an array of job objects
-// const relevantExperience = entry.data.relevantExperience.map(
-//   (key) => workHistory[key] || {},
-// );
-
-// // Convert relevant keys into an array of job objects
-// const otherExperience = entry.data.otherExperience.map(
-//   (key) => workHistory[key],
-// );
-
-// const projectsData = entry.data.projects?.map((key) => projects[key] || []);
-
-// const relevantVolunteerData = entry.data.volunteer.map(
-//   (key) => volunteer[key] || {},
-// );
-// const publicationsData = entry.data.publications?.map(
-//   (key) => publications[key] || [],
-// );
-
 const sectionData = {};
 if (entry.data.sections) {
   Object.keys(entry.data.sections).forEach((key) => {
@@ -97,11 +78,15 @@ if (entry.data.sections) {
     preloadFonts={preloadFonts}
   />
   <header>
-    <a
-      class="download-link"
-      href=`/static/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
-      target="_blank">Download PDF</a
-    >
+    <nav class="main no-print">
+      <a href="/">Home</a>
+      <a
+        class="download-link"
+        href=`/static/resumes/sam-feldstein-${entry.data.printUrl}-resume.pdf`
+        target="_blank">Download PDF</a
+      >
+    </nav>
+
     <h1>
       <span class="name">Sam Feldstein</span>
       <span class="role">{entry.data.title}</span>
