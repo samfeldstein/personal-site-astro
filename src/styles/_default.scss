@@ -8,7 +8,7 @@
     'Cormorant Fallback',
     serif;
   --font-2: 'Noto Sans', 'Noto Sans Fallback', sans-serif;
-  --font-size-base: clamp(1rem, 3vw, 1.25rem);
+  --font-size-base: clamp(1rem, 4vw, 1.25rem);
 
   // Colors
   color-scheme: light dark;
@@ -66,8 +66,9 @@ nav {
 }
 
 h1 {
-  font-size: clamp(2.25rem, 10vw, 7rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   font-weight: 300;
+  font-style: italic;
   margin-bottom: 0;
 }
 

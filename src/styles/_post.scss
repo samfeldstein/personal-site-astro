@@ -3,6 +3,8 @@
 header {
   border-bottom: 1px dotted;
   text-align: center;
+  display: grid;
+  gap: 1rem;
 }
 
 .tags {
@@ -16,20 +18,17 @@ header {
   font-weight: 300;
 }
 
+h1 cite {
+  font-style: normal;
+}
+
 h2 {
   font-family: inherit;
   font-style: italic;
 }
 
 .page-description {
-  font-style: italic;
-  text-wrap: pretty;
   text-align: center;
-
-  // Handle titles in post descriptions
-  cite {
-    font-style: normal;
-  }
 }
 
 a {
@@ -45,8 +44,7 @@ a {
 }
 
 main {
-  font-size: 1.25em;
-  max-width: 50rem;
+  font-size: 1.5em;
   margin: 0 auto;
 
   p, ul, ol {
