@@ -1,0 +1,56 @@
+title: Writer & Developer
+
+printUrl: writer-developer
+
+links:
+  - name: Published Writing
+    url: /published-writing
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+sections:
+  education:
+    - chapman
+    - iowa
+
+  relevantExperience:
+    - devFreelance
+    - devAssistant
+    - journalistSentinel
+
+  otherExperience:
+    - composition
+    - managerSentinel
+
+  publications:
+    - madeOfMemories
+    - reproductiveCoalition
+    - transPecos
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
+  projects:
+    - regreen
+    - postoley
+    - prairieRose
+
+  skills:
+    - category: Writing
+      items:
+        - Website copy, journalism, creative works
+        - Interviewing, research, fact-checking
+        - Technical documentation, user guides
+    - category: Editorial
+      items:
+        - Web publishing workflows
+        - Search engine optimization
+        - Typography and formatting
+
+    - category: Technical
+      items:
+        - Content management systems
+        - Web design and development
+        - Accessibility best practices

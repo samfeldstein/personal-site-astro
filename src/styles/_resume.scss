@@ -261,3 +261,9 @@ cite.h3 {
 .font-2 {
   font-family: var(--font-2);
 }
+
+.no-web {
+  @media screen {
+    display: none;
+  }
+}
