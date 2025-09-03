@@ -162,7 +162,7 @@ export const projects = {
     title: "Digital Notebook",
     type: "Website",
     date: "November 2024",
-    description: "A wiki-like personal knowledge base. Built with Obsidian, Eleventy, and Cloudflare Pages.",
+    description: "A wiki-like personal knowledge base. Built with Obsidian, Astro, and Cloudflare Workers.",
   },
   personalSite: {
     title: "Personal Website",

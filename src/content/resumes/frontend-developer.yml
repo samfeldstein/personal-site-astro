@@ -42,6 +42,7 @@ sections:
   otherExperience:
     - composition
     - devAssistant
+    - journalistSentinel
     - managerSentinel
 
   projects:
@@ -51,6 +52,7 @@ sections:
     - prairieRose
 
   volunteer:
+    - chec
     - workaway
     - frida
 
