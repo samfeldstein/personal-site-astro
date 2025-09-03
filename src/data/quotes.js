@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "If the universe is meaningless, so is the statement that it is so. The meaning and purpose of dancing is the dance.",
+    speaker: "Alan Watts",
+    work: "The Wisdom of Insecurity",
+    medium: "book"
+  },
+  {
     quote: "The trick, William Potter, is not minding that it hurts.",
     speaker: "T.E. Lawrence",
     work: "Lawrence of Arabia",
