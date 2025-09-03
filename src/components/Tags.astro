@@ -1,6 +1,8 @@
 ---
 const { tags, path } = Astro.props;
 
+tags.sort()
+
 function formatString(str) {
   return str.replace(/-/g, " "); // Replace hyphens with spaces
 }
