@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "Only to the extent that we expose ourselves over and over to annihilation can that which is indestructible be found in us.",
+    speaker: "Pema Chödrön",
+    work: "When Things Fall Apart",
+    medium: "book"
+  },
+  {
     quote: "If the universe is meaningless, so is the statement that it is so. The meaning and purpose of dancing is the dance.",
     speaker: "Alan Watts",
     work: "The Wisdom of Insecurity",
