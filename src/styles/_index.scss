@@ -1,11 +1,11 @@
 @use 'fonts/oswald';
-@use 'fonts/noto';
+@use 'fonts/noto-serif';
 @use 'base';
 @use 'utils';
 
 // === CONFIG ===
 :root {
-  --font-1: 'Noto', 'Noto Fallback', serif;
+  --font-1: 'Noto Serif', 'Noto Fallback', serif;
   --font-2: 'Oswald', 'Oswald Fallback', sans-serif;
   --font-size-base: clamp(1.25rem, 5vw, 2rem);
 
