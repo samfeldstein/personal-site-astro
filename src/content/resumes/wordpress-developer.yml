@@ -14,26 +14,23 @@ links:
 
 sections:
   skills:
-    - category: Web Technologies & Standards
+    - category: Web Design & Development
       items:
-        - Semantic HTML
-        - Modern CSS
-        - JavaScript
+        - Semantic HTML, modern CSS, JavaScript
         - Accessibility best practices
+        - Figma, prototypes, responsive design
 
-    - category: Tools & Frameworks
+    - category: WordPress Development
       items:
-        - WordPress
-        - Astro
-        - Git
-        - Figma
+        - WordPress-focussed PHP
+        - Custom theme development
+        - Site administration and management
 
-    - category: Web Performance
+    - category: Communication
       items:
-        - Responsive Design
-        - Static site generation
-        - Modern image formats
-        - Headers and caching
+        - Client relations and support
+        - Writing; professional, technical, creative
+        - Public speaking
 
   relevantExperience:
     - devFreelance
