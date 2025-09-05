@@ -1,0 +1,65 @@
+title: WordPress Developer
+
+summary:
+  Building websites with an eye toward performance, beautiful interfaces, and
+  user-centered design.
+
+printUrl: wordpress-developer
+
+links:
+  - name: Portfolio
+    url: https://samfeldstein.xyz/code/
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+sections:
+  skills:
+    - category: Web Technologies & Standards
+      items:
+        - Semantic HTML
+        - Modern CSS
+        - JavaScript
+        - Accessibility best practices
+
+    - category: Tools & Frameworks
+      items:
+        - WordPress
+        - Astro
+        - Git
+        - Figma
+
+    - category: Web Performance
+      items:
+        - Responsive Design
+        - Static site generation
+        - Modern image formats
+        - Headers and caching
+
+  relevantExperience:
+    - devFreelance
+    - devSentinel
+
+  otherExperience:
+    - composition
+    - devAssistant
+    - journalistSentinel
+    - managerSentinel
+
+  projects:
+    - postoley
+    - regreen
+    - digitalNotebook
+    - prairieRose
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
+  publications:
+    - madeOfMemories
+    - theFirst
+
+  education:
+    - chapman
+    - iowa

@@ -15,7 +15,7 @@
 }
 
 body {
-  max-width: 60rem;
+  max-width: 70rem;
   margin: 0 auto;
   padding: 1rem 1rem 6rem 1rem;
   display: grid;
@@ -71,7 +71,7 @@ address {
 h1 {
   display: grid;
   margin: 0 0 1rem 0;
-  font-size: clamp(2.25rem, 10vw, 7rem);
+  font-size: clamp(2.2rem, 10vw, 7rem);
   font-weight: 300;
   line-height: 1;
 
