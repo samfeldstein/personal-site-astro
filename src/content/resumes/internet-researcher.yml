@@ -14,20 +14,21 @@ sections:
   skills:
     - category: Internet Research
       items:
-        - Advanced search techniques like Google dorking
-        - Knowledge management with tools like Obsidian and Notion
-        - Foundational journalistic skills, e.g. interviewing and fact-checking
+        - Advanced internet search methods
+        - Knowledge management tools
+        - Foundational journalistic skills
 
     - category: Communication
       items:
-        - "Writing: website copy, news articles, technical documentation"
-        - Customer/client relations, incl. remote and face-to-face engagement
+        - Advanced and diverse writing skills
+        - Customer/client relations
+        - Donor engagement, face-to-face and otherwise
 
     - category: Technical
       items:
         - Tech savviness and digital fluency
-        - Web design, development, and best practices
-        - Content management systems, e.g. WordPress and Squarespace
+        - Web development and best practices
+        - Content management systems, e.g. WordPress
 
   relevantExperience:
     - journalistSentinel

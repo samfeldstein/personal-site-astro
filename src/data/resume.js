@@ -2,7 +2,7 @@ export const education = {
   chapman: {
     degree: "MFA, Screenwriting, withdrew",
     school: "Chapman University Dodge College of Film and Media Arts",
-    achievements: ["Panelist on the Incoming Student Welcoming Committee", "Teacher’s Assistant for Script Analysis"],
+    achievements: ["Panelist on the New Student Welcoming Committee", "Teacher’s Assistant for Script Analysis"],
     city: "Orange, CA",
     date: "December 2018",
   },
