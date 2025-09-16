@@ -99,11 +99,12 @@ if (entry.data.sections) {
         <Email>{author.email}</Email>
         <a class="no-web" href="https://samfeldstein.xyz">samfeldstein.xyz</a>
         {
-          entry.data.links.map((link) => (
-            <a class="no-print" href={link.url}>
-              {link.name}
-            </a>
-          ))
+          entry.data.links &&
+            entry.data.links.map((link) => (
+              <a class="no-print" href={link.url}>
+                {link.name}
+              </a>
+            ))
         }
       </address>
     </div>

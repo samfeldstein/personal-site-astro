@@ -22,9 +22,9 @@ export const workHistory = {
     date: "April 2025 – Present",
     place: "Longmont, CO",
     description: [
-      "Build custom web applications to streamline store processes.",
       "Maintain extensive knowledge of popular genres, authors, and literary trends.",
       "Provide tailored guidance and recommendations to customers.",
+      "Build custom web applications to streamline store processes.",
     ],
   },
   devFreelance: {
@@ -141,8 +141,8 @@ export const projects = {
   shelfTalkers: {
     title: "Shelf-Talkers",
     type: "Web Application",
-    date: "June 2025",
-    description: "A web-based tool for formatting shelf-talkers. Built with Astro and vanilla JavaScript."
+    date: "September 2025",
+    description: "A web-based tool for formatting shelf-talkers. Built with Astro and Vue."
   },
   regreen: {
     title: "ReGreen Big Bend",

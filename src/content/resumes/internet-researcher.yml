@@ -1,0 +1,55 @@
+title: Internet Researcher
+
+printUrl: internet-researcher
+
+summary:
+  Tech-savvy animal-lover excelling at internet research and knowledge
+  management.
+
+sections:
+  education:
+    - chapman
+    - iowa
+
+  skills:
+    - category: Internet Research
+      items:
+        - Advanced search techniques like Google dorking
+        - Knowledge management with tools like Obsidian and Notion
+        - Foundational journalistic skills, e.g. interviewing and fact-checking
+
+    - category: Communication
+      items:
+        - "Writing: website copy, news articles, technical documentation"
+        - Customer/client relations, incl. remote and face-to-face engagement
+
+    - category: Technical
+      items:
+        - Tech savviness and digital fluency
+        - Web design, development, and best practices
+        - Content management systems, e.g. WordPress and Squarespace
+
+  relevantExperience:
+    - journalistSentinel
+    - lear
+
+  otherExperience:
+    - composition
+    - devFreelance
+    - devAssistant
+    - managerSentinel
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
+  publications:
+    - madeOfMemories
+    - reproductiveCoalition
+    - transPecos
+
+  projects:
+    - regreen
+    - postoley
+    - prairieRose
