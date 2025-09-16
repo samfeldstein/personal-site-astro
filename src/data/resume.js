@@ -242,7 +242,7 @@ export const volunteer = {
     place: "Santa Ana, CA",
     description: "Assisted with theater operations, provided excellent customer service, and occasionally wrote for the blog."
   },
-  animalRescueLeague: {
+  arl: {
     role: "Horse Trainer",
     employer: "Animal Rescue League",
     date: "January 2014 – January 2015",
