@@ -1,14 +1,16 @@
-title: Writer & Developer
+title: Page Designer
 
-summary: Designing for the web with an eye toward performant sites, thoughtful typography, and accessible writing.
+summary:
+  Designing with an eye toward efficient layouts, thoughtful typography, and
+  accessible content.
 
-printUrl: writer-developer
+printUrl: page-designer
 
 links:
-  - name: Writing
-    url: /published-writing/
-  - name: Code
+  - name: Design Portfolio
     url: /code/
+  - name: Published Writing
+    url: /published-writing/
 
 sections:
   education:
@@ -16,23 +18,23 @@ sections:
     - iowa
 
   skills:
-    - category: Writing
+    - category: Writing & Editorial
       items:
         - Journalism, creative works
         - Interviewing, research, fact-checking
         - Technical documentation
-    
-    - category: Editorial
-      items:
-        - Web publishing
-        - Search engine optimization
-        - Typography and formatting
 
-    - category: Web Technologies & Standards
+    - category: Design & Technical
       items:
-        - HTML, CSS, JavaScript
-        - Accessibility best practices
+        - Page typography and layout
+        - G-suite, Microsoft Office
+        - Design software, e.g. Figma
+        
+    - category: Other
+      items:
+        - Web design, development, and technologies
         - Content management systems
+        - Search engine optimization
 
   relevantExperience:
     - devFreelance
