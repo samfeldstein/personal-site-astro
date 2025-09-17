@@ -16,21 +16,20 @@ sections:
   skills:
     - category: Web Design & Development
       items:
-        - Semantic HTML, modern CSS, JavaScript
+        - Semantic HTML, CSS3, ES6+
         - Accessibility best practices
         - Figma, prototypes, responsive design
 
     - category: WordPress Development
       items:
-        - WordPress-focussed PHP
         - Custom theme development
         - Site administration and management
+        - Git version control
 
     - category: Communication
       items:
         - Client relations and support
-        - Writing; professional, technical, creative
-        - Public speaking
+        - Writing — professional, technical, creative
 
   relevantExperience:
     - devFreelance
