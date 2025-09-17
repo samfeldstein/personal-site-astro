@@ -2,13 +2,13 @@ title: Frontend Developer
 
 summary:
   Building websites with an eye toward performance, lean code, and
-  content-driven design.
+  user-centered design.
 
 printUrl: frontend-developer
 
 links:
   - name: Portfolio
-    url: https://samfeldstein.xyz/code/
+    url: https://samfeldstein.xyz/code
   - name: GitHub
     url: https://github.com/samfeldstein
 
@@ -16,24 +16,23 @@ sections:
   skills:
     - category: Web Technologies & Standards
       items:
-        - Semantic HTML
-        - Modern CSS
-        - JavaScript
+        - HTML5
+        - CSS3
+        - ES6+
         - Accessibility best practices
 
     - category: Tools & Frameworks
       items:
-        - Astro
-        - Eleventy
-        - Git
-        - Figma
+        - Vue.js
+        - Astro.js
+        - Node.js
+        - Vite
 
     - category: Web Performance
       items:
         - Responsive Design
         - Static site generation
-        - Modern image formats
-        - Headers and caching
+        - UI component hydration
 
   relevantExperience:
     - devFreelance
@@ -59,7 +58,7 @@ sections:
   publications:
     - madeOfMemories
     - theFirst
-  
+
   education:
-   - chapman
-   - iowa
+    - chapman
+    - iowa
