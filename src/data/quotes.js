@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "A little pain<br>never hurt anyone.",
+    speaker: "Margo Price",
+    work: "A Little Pain",
+    medium: "song"
+  },
+  {
     quote: "Only to the extent that we expose ourselves over and over to annihilation can that which is indestructible be found in us.",
     speaker: "Pema Chödrön",
     work: "When Things Fall Apart",
