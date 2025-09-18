@@ -17,7 +17,7 @@ sections:
     - category: Web Technologies & Standards
       items:
         - HTML5
-        - CSS3
+        - CSS3 (Sass)
         - ES6+
         - Accessibility best practices
 
