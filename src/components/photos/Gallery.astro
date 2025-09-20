@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+import { getGalleryImages } from "@scripts/utils";
+
+const photos = await getGalleryImages();
+---
+
+<div class="gallery">
+  {
+    photos.map((photo) => (
+      <div class="photo">
+        <Image
+          src={photo.src}
+          widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
+          sizes="(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)"
+          alt={photo.alt || photo.title}
+        />
+        <div class="title">{photo.title}</div>
+      </div>
+    ))
+  }
+</div>
+
+<style lang="scss">
+@use "@styles/utils.scss";
+
+  div.gallery {
+    display: grid;
+    gap: 1rem;
+  }
+
+  div.photo {
+    @extend .defer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: white;
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+
+  div.title {
+    font-style: italic;
+    text-align: center;
+    margin: 0.75em 0;
+    color: black;
+  }
+</style>

@@ -3,17 +3,11 @@
 import Base from "@layouts/Base.astro";
 import Head from "@components/Head.astro";
 import Email from "@components/Email.astro";
-import "@styles/_photos.scss";
+import Gallery from "@/components/photos/Gallery.astro";
 
-// Components
-import { Image } from "astro:assets";
-
-// Functions
-import { getGalleryImages } from "@scripts/utils";
+import "@styles/_default.scss";
 
 const preloadFonts = ["cormorant", "noto-sans"];
-
-const photos = await getGalleryImages();
 ---
 
 <Base>
@@ -31,20 +25,6 @@ const photos = await getGalleryImages();
     </p>
   </header>
   <main>
-    <div class="gallery">
-      {
-        photos.map((photo) => (
-          <div class="photo">
-            <Image
-              src={photo.src}
-              widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
-              sizes="(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)"
-              alt={photo.alt || photo.title}
-            />
-            <div class="title">{photo.title}</div>
-          </div>
-        ))
-      }
-    </div>
+    <Gallery />
   </main>
 </Base>
