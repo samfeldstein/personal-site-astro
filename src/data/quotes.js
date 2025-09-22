@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "If the process is sound, the product takes care of itself.",
+    speaker: "William Zinsser",
+    work: "On Writing Well",
+    medium: "book"
+  },
+  {
     quote: "A little pain<br>never hurt anyone.",
     speaker: "Margo Price",
     work: "A Little Pain",
