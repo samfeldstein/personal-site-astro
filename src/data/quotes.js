@@ -1,5 +1,9 @@
 const quotes = [
   {
+    quote: "How do you make God laugh? Tell him your plans.",
+    speaker: "Yiddish Proverb"
+  },
+  {
     quote: "If the process is sound, the product takes care of itself.",
     speaker: "William Zinsser",
     work: "On Writing Well",
