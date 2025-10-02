@@ -161,7 +161,7 @@ const quotes = [
     quote: `And should we win the day, the Fourth of July will no longer be known as an American holiday, but as the day when the world declared in one voice:
     <br>
     <br>
-    "We will not go quietly into the night! We will not vanish without a fight! We’re going to live on! We’re going to survive!"
+    “We will not go quietly into the night! We will not vanish without a fight! We’re going to live on! We’re going to survive!”
     <br>
     <br>
     Today, we celebrate our Independence Day!`,
