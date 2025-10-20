@@ -1,7 +1,7 @@
 const location = {
   country: "USA",
   state: "CO",
-  city: "Boulder",
+  city: "Denver",
 }
 
 export const site = {
