@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "Life is pain, Highness. Anyone who says differently is selling something.",
+    speaker: "The Man in Black",
+    work: "The Princess Bride",
+    medium: "movie"
+  },
+  {
     quote: "The trouble with the world is that the stupid are cocksure and the intelligent are full of doubt.",
     speaker: "Bertrand Russell"
   },
