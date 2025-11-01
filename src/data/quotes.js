@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "There is no drearier, sorrier creature in nature than the man who has evaded his own genius.",
+    speaker: "Friedrich Nietzsche",
+    work: "Schopenhauer as Educator",
+    medium: "essay"
+  },
+  {
     quote: "Life is pain, Highness. Anyone who says differently is selling something.",
     speaker: "The Man in Black",
     work: "The Princess Bride",
