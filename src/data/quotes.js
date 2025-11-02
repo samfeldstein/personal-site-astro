@@ -1,4 +1,18 @@
+import { workHistory } from "./resume"
+
 const quotes = [
+  {
+    quote: "There is but one truly serious philosophical problem, and that is suicide.",
+    speaker: "Albert Camus",
+    work: "The Myth of Sisyphus",
+    medium: "essay"
+  },
+  {
+    quote: "No one can build you the bridge on which you, and only you, must cross the river of life.",
+    speaker: "Friedrich Nietzsche",
+    work: "Schopenhauer as Educator",
+    medium: "essay"
+  },
   {
     quote: "There is no drearier, sorrier creature in nature than the man who has evaded his own genius.",
     speaker: "Friedrich Nietzsche",
