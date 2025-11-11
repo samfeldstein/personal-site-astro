@@ -2,6 +2,12 @@ import { workHistory } from "./resume"
 
 const quotes = [
   {
+    quote: 'A man may skin himself seventy times seven times without being able to say, “Now that is truly you; that is no longer your outside.”',
+    speaker: "Friedrich Nietzsche",
+    work: "Schopenhauer as Educator",
+    medium: "essay"
+  },
+  {
     quote: "There is but one truly serious philosophical problem, and that is suicide.",
     speaker: "Albert Camus",
     work: "The Myth of Sisyphus",
