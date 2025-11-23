@@ -33,7 +33,11 @@
     document.querySelector("blockquote")?.setAttribute("cite", randomQuote.url);
   }
 
-  if (["poem", "essay", "song", "short story"].includes(randomQuote.medium)) {
+  if (
+    ["poem", "essay", "song", "short story", "speech"].includes(
+      randomQuote.medium,
+    )
+  ) {
     document.querySelector("cite")?.style.setProperty("font-style", "normal");
     document.getElementById("work").textContent = `, “${randomQuote.work}”`;
   }

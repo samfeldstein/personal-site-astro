@@ -1,6 +1,10 @@
-import { workHistory } from "./resume"
-
 const quotes = [
+  {
+    quote: "Those who are afraid to fail will coast through life and never come close to their potential. Failure—honest failure despite genuine effort—is a sign that one is striving at close to full capacity. If you’re not failing from time to time, you’re not pushing yourself. And if you’re not pushing yourself, your life, when you look back on it, is destined to be a sorry litany of mightas and couldas.",
+    speaker: "William Zinsser",
+    work: "The Right to Fail",
+    medium: "speech"
+  },
   {
     quote: 'A man may skin himself seventy times seven times without being able to say, “Now that is truly you; that is no longer your outside.”',
     speaker: "Friedrich Nietzsche",
