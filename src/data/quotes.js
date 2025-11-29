@@ -1,5 +1,23 @@
 const quotes = [
   {
+    quote: "I have told my sons that they are not under any circumstances to take part in massacres, and that the news of massacres of enemies is not to fill them with satisfaction or glee.",
+    speaker: "Kurt Vonnegut",
+    work: "Slaughterhouse-Five",
+    medium: "book"
+  },
+  {
+    quote: "He supposed that the intent of the Gospels was to teach people, among other things, to be merciful, even to the lowest of the low.<br><br>But the Gospels actually taught this:<br><br>Before you kill somebody, make absolutely sure he isn't well connected.<br><br>So it goes.",
+    speaker: "Kurt Vonnegut",
+    work: "Slaughterhouse-Five",
+    medium: "book"
+  },
+  {
+    quote: "He could find no explanation for why the song had affected him so grotesquely. He had supposed for years that he had no secrets from himself. Here was proof that he had a great big secret somewhere inside, and he could not imagine what it was.",
+    speaker: "Kurt Vonnegut",
+    work: "Slaughterhouse-Five",
+    medium: "book"
+  },
+  {
     quote: "Those who are afraid to fail will coast through life and never come close to their potential. Failure—honest failure despite genuine effort—is a sign that one is striving at close to full capacity. If you’re not failing from time to time, you’re not pushing yourself. And if you’re not pushing yourself, your life, when you look back on it, is destined to be a sorry litany of mightas and couldas.",
     speaker: "William Zinsser",
     work: "The Right to Fail",
