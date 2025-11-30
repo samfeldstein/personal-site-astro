@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "Woe to him that is alone when he falls,<br>for he has not another to help him up.",
+    work: "Ecclesiastes",
+    verse: "1:9:12",
+    medium: "book"
+  },
+  {
     quote: "Quantity gives experience. From experience alone can quality come.",
     speaker: "Ray Bradbury",
     work: "Zen in the Art of Writing",
