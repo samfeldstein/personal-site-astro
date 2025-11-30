@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "Quantity gives experience. From experience alone can quality come.",
+    speaker: "Ray Bradbury",
+    work: "Zen in the Art of Writing",
+    medium: "book"
+  },
+  {
     quote: "I have told my sons that they are not under any circumstances to take part in massacres, and that the news of massacres of enemies is not to fill them with satisfaction or glee.",
     speaker: "Kurt Vonnegut",
     work: "Slaughterhouse-Five",
@@ -62,7 +68,7 @@ const quotes = [
     speaker: "Yiddish Proverb"
   },
   {
-    quote: "If the process is sound, the product takes care of itself.",
+    quote: "If the process is sound, the product will take care of itself.",
     speaker: "William Zinsser",
     work: "On Writing Well",
     medium: "book"
