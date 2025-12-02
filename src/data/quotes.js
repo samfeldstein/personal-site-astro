@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "I want a house with a crowded table<br>and a place by the fire for everyone.",
+    work: "Crowded Table",
+    speaker: "The Highwomen",
+    medium: "song"
+  },
+  {
     quote: "Woe to him that is alone when he falls,<br>for he has not another to help him up.",
     work: "Ecclesiastes",
     verse: "1:9:12",
