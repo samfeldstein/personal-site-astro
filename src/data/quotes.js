@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "The days are long<br>but the years are lightnin’.",
+    speaker: "Tanya Tucker",
+    work: "Bring My Flowers Now",
+    medium: "song"
+  },
+  {
     quote: "I want a house with a crowded table<br>and a place by the fire for everyone.",
     work: "Crowded Table",
     speaker: "The Highwomen",
