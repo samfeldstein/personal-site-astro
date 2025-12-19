@@ -1,4 +1,13 @@
+import { workHistory } from "./resume"
+
 const quotes = [
+  {
+    quote: "It is not your duty to finish the work, but neither are you at liberty to neglect it.",
+    speaker: "Rabbi Tarfon",
+    work: "Pirkei Avot",
+    verse: "2:16",
+    medium: "book"
+  },
   {
     quote: "The days are long<br>but the years are lightnin’.",
     speaker: "Tanya Tucker",
