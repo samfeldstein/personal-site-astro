@@ -9,6 +9,7 @@
     serif;
   --font-2: 'Noto Sans', 'Noto Sans Fallback', sans-serif;
   --font-size-base: clamp(1rem, 4vw, 1.25rem);
+  --font-small: calc(var(--font-size-base) * .85);
 
   // Colors
   color-scheme: light dark;
@@ -59,16 +60,15 @@ nav {
   @extend .small-caps;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 2em;
   font-family: var(--font-2);
   font-weight: 300;
+  font-size: var(--font-small);
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(3rem, 7vw, 8rem);
   font-weight: 300;
-  font-style: italic;
   margin-bottom: 0;
 }
 

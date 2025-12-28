@@ -1,5 +1,3 @@
-import { workHistory } from "./resume"
-
 const quotes = [
   {
     quote: "It is not your duty to finish the work, but neither are you at liberty to neglect it.",
