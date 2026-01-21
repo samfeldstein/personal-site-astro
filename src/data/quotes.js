@@ -1,5 +1,9 @@
 const quotes = [
   {
+    quote: "Don’t be afraid to be confused. Try to remain permanently confused. Anything is possible. Stay open, forever, so open it hurts, and then open up some more, until the day you die.",
+    speaker: "George Saunders"
+  },
+  {
     quote: "It is not your duty to finish the work, but neither are you at liberty to neglect it.",
     speaker: "Rabbi Tarfon",
     work: "Pirkei Avot",
