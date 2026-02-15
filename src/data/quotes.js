@@ -1,5 +1,9 @@
 const quotes = [
   {
+    quote: "Technical knowledge is not enough. One must transcend technique so that the art becomes an artless art, growing out of the unconscious.",
+    speaker: "Daisetsu Suzuki"
+  },
+  {
     quote: "Don’t be afraid to be confused. Try to remain permanently confused. Anything is possible. Stay open, forever, so open it hurts, and then open up some more, until the day you die.",
     speaker: "George Saunders"
   },
