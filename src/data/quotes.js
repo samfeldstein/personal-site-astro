@@ -1,5 +1,9 @@
 const quotes = [
   {
+    quote: "Receive with simplicity everything that happens to you.",
+    speaker: "Rashi"
+  },
+  {
     quote: "Technical knowledge is not enough. One must transcend technique so that the art becomes an artless art, growing out of the unconscious.",
     speaker: "Daisetsu Suzuki"
   },
