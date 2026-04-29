@@ -8,7 +8,7 @@ const photos = await getGalleryImages();
 <div class="gallery">
   {
     photos.map((photo) => (
-      <div class="photo">
+      <div class="photo defer">
         <Image
           src={photo.src}
           widths={[256, 691, 936, 1382, 1640, 1850, 2048]}
@@ -22,7 +22,6 @@ const photos = await getGalleryImages();
 </div>
 
 <style lang="scss">
-@use "@styles/utils.scss";
 
   div.gallery {
     display: grid;
@@ -30,7 +29,6 @@ const photos = await getGalleryImages();
   }
 
   div.photo {
-    @extend .defer;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     background-color: white;
     padding: 0.5rem;
