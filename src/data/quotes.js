@@ -1,5 +1,9 @@
 const quotes = [
   {
+    quote: "The unexamined life is not worth living.",
+    speaker: "Socrates"
+  },
+  {
     quote: "Receive with simplicity everything that happens to you.",
     speaker: "Rashi"
   },
@@ -155,7 +159,7 @@ const quotes = [
     speaker: "Martin Mull"
   },
   {
-    quote: "Sometimes, magic is just someone spending more time on something than anyone else might reasonably expect.",
+    quote: "Make the se­cret a lot more trou­ble than the trick seems worth.",
     speaker: "Teller"
   },
   {
