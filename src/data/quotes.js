@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "The man truly conversant with life knows, against all appearances, that there is a remedy for every wrong, and that every wall is a gate.",
+    speaker: "Ralph Waldo Emerson",
+    work: "Natural History Of Intellect",
+    medium: "essay"
+  },
+  {
     quote: "The unexamined life is not worth living.",
     speaker: "Socrates"
   },
