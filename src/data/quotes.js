@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "There is work to be done, and we will do it well. Outside we will look like gangsters. On the inside we will wear the gowns of priests.",
+    speaker: "Werner Herzog, via Alan Greenberg",
+    work: "Every Night the Trees Disappear: Werner Herzog and the Making of Heart of Glass.",
+    medium: "book"
+  },
+  {
     quote: "The man truly conversant with life knows, against all appearances, that there is a remedy for every wrong, and that every wall is a gate.",
     speaker: "Ralph Waldo Emerson",
     work: "Natural History Of Intellect",
