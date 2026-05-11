@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "It’s amazing what one can accomplish when one doesn’t know what one can’t do.",
+    speaker: "Jim Davis",
+    work: "Garfield",
+    medium: "comic"
+  },
+  {
     quote: "There is work to be done, and we will do it well. Outside we will look like gangsters. On the inside we will wear the gowns of priests.",
     speaker: "Werner Herzog, via Alan Greenberg",
     work: "Every Night the Trees Disappear: Werner Herzog and the Making of Heart of Glass.",
