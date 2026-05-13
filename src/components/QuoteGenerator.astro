@@ -1,4 +1,4 @@
-<div class="quote-container">
+<div>
   <blockquote>
     <p id="quote"></p>
   </blockquote>
@@ -7,6 +7,36 @@
     ></span><span id="year"></span>
   </p>
 </div>
+
+<style lang="scss">
+  div {
+    color-scheme: light dark;
+    --accent: light-dark(#999999, #595959);
+    --accent-2: light-dark(#f8f8f8, #252525);
+
+    background: var(--accent-2);
+
+    border-style: solid none;
+    border-width: 0.01em;
+    border-color: var(--accent);
+    padding: 1em;
+  }
+
+  blockquote {
+    margin: 0;
+    position: relative; // To position scrolling text
+  }
+
+  .attribution {
+    font-size: 0.7em;
+    margin-top: 3em;
+  }
+
+  #quote {
+    text-align: left;
+    font-style: italic;
+  }
+</style>
 
 <script>
   // Doesn't need to be in public, I don't think. Like css, when you import it it makes the data available in the published site

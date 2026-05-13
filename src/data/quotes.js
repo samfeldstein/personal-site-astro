@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "Chickens in some forms—roasted, for example–are perfectly acceptable to me, but look into their eyes while they are alive and bear witness to genuine, bottomless stupidity.",
+    speaker: "Werner Herzog",
+    work: "Werner Herzog - A Guide for the Perplexed: Conversations with Paul Cronin",
+    medium: "book"
+  },
+  {
     quote: "It’s amazing what one can accomplish when one doesn’t know what one can’t do.",
     speaker: "Jim Davis",
     work: "Garfield",
@@ -7,7 +13,7 @@ const quotes = [
   },
   {
     quote: "There is work to be done, and we will do it well. Outside we will look like gangsters. On the inside we will wear the gowns of priests.",
-    speaker: "Werner Herzog, via Alan Greenberg",
+    speaker: "Werner Herzog",
     work: "Every Night the Trees Disappear: Werner Herzog and the Making of Heart of Glass.",
     medium: "book"
   },
