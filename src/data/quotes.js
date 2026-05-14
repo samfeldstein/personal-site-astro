@@ -1,8 +1,14 @@
 const quotes = [
   {
+    quote: "Academia stifles cinema, encircling it like a liana vine wraps round a tree, smothering and draining away all life. Construct films, don’t deconstruct them. Create poetry, don’t destroy it. Whenever I encounter film theorists, I lower my head and charge.",
+    speaker: "Werner Herzog",
+    work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
+    medium: "book"
+  },
+  {
     quote: "Chickens in some forms—roasted, for example–are perfectly acceptable to me, but look into their eyes while they are alive and bear witness to genuine, bottomless stupidity.",
     speaker: "Werner Herzog",
-    work: "Werner Herzog - A Guide for the Perplexed: Conversations with Paul Cronin",
+    work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
     medium: "book"
   },
   {
