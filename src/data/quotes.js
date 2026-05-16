@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "So spoke the King: My children,<br>Have patience. We shall wait a few<br>Hundred Thousand years,<br>Until then the stones will wander in the field<br>And perhaps someone will weep even once.",
+    speaker: "Werner Herzog",
+    work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
+    medium: "book"
+  },
+  {
     quote: "Academia stifles cinema, encircling it like a liana vine wraps round a tree, smothering and draining away all life. Construct films, don’t deconstruct them. Create poetry, don’t destroy it. Whenever I encounter film theorists, I lower my head and charge.",
     speaker: "Werner Herzog",
     work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
