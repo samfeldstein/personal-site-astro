@@ -1,5 +1,12 @@
 const quotes = [
   {
+    quote: "Life in the oceans must be sheer hell. A vast, merciless hell of permanent and immediate danger. So much of a hell that during evolution some species–including man–crawled, fled onto some small continents of solid land, where the Lessons of Darkness continue.",
+    speaker: "Werner Herzog",
+    work: "The Minnesota Declaration: Truth and Fact in Documentary Cinema",
+    medium: "manifesto"
+
+  },
+  {
     quote: "So spoke the King: My children,<br>Have patience. We shall wait a few<br>Hundred Thousand years,<br>Until then the stones will wander in the field<br>And perhaps someone will weep even once.",
     speaker: "Werner Herzog",
     work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
