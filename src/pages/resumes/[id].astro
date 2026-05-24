@@ -1,12 +1,11 @@
 ---
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
-import Email from "@components/Email.astro";
+import Base from "@/layouts/Base.astro";
+import Email from "@/components/Email.astro";
 
-import "/src/styles/_resume.scss";
-import "/src/styles/_resume-print.scss";
+import "@/styles/_resume.scss";
+import "@/styles/_resume-print.scss";
 
-import { author, site } from "config.mjs";
+import { author, site } from "../../../config.mjs";
 
 import { getCollection } from "astro:content";
 
@@ -70,13 +69,11 @@ if (entry.data.sections) {
 }
 ---
 
-<Base>
-  <Head
-    slot="head"
-    title=`${entry.data.title} Résumé`
-    description={description}
-    preloadFonts={preloadFonts}
-  />
+<Base
+  title=`${entry.data.title} Résumé`
+  description={description}
+  preloadFonts={preloadFonts}
+>
   <header>
     <nav class="main no-print">
       <a href="/">Home</a>
@@ -94,7 +91,8 @@ if (entry.data.sections) {
 
     <div class="address-grid-container">
       <address>
-        <span class="location">{site.location.city}, {site.location.state}</span>
+        <span class="location">{site.location.city}, {site.location.state}</span
+        >
         <a href="tel:5156572243">(515) 657-2243</a>
         <Email>{author.email}</Email>
         <a class="no-web" href="https://samfeldstein.xyz">samfeldstein.xyz</a>

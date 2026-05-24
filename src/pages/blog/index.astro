@@ -1,13 +1,12 @@
 ---
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
-import Date from "@components/Date.astro";
-import Tags from "@components/Tags.astro";
+import Base from "@/layouts/Base.astro";
+import Date from "@/components/Date.astro";
+import Tags from "@/components/Tags.astro";
 
 import { getCollection } from "astro:content";
-import { sortCollectionByDate } from "@scripts/utils.ts";
+import { sortCollectionByDate } from "@/scripts/utils.ts";
 
-import "@styles/_blog.scss";
+import "@/styles/_blog.scss";
 
 const preloadFonts = ["cormorant", "noto-sans"];
 
@@ -19,21 +18,20 @@ const posts = await getCollection("blog", ({ data }) => {
 sortCollectionByDate(posts);
 ---
 
-<Base>
-  <Head
-    slot="head"
-    title="Blog"
-    description="Musings, essays, poetry, and more."
-    preloadFonts={preloadFonts}
-  />
+<Base
+  title="Blog"
+  description="Musings, essays, poetry, and more."
+  preloadFonts={preloadFonts}
+>
   <header>
     <nav>
       <a class="home" href="/">Home</a>
     </nav>
     <h1>Blog</h1>
     <p class="controls">
-      <a href="/blog/tags/">Browse by category</a
-      ><a href="/feed.xml">Subscribe via RSS</a>
+      <a href="/blog/tags/">Browse by category</a><a href="/feed.xml"
+        >Subscribe via RSS</a
+      >
     </p>
   </header>
   <main id="main-content">

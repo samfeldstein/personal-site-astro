@@ -1,19 +1,18 @@
 ---
 // Layout
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
-import Tags from "@components/Tags.astro";
+import Base from "@/layouts/Base.astro";
+import Tags from "@/components/Tags.astro";
 
 // Components
-import Date from "@components/Date.astro";
+import Date from "@/components/Date.astro";
 
-import "@styles/_tag.scss";
+import "@/styles/_tag.scss";
 
 // Collections
 import { getCollection } from "astro:content";
 
 // Utils
-import { sortCollectionByDate } from "@scripts/utils";
+import { sortCollectionByDate } from "@/scripts/utils";
 
 // Functions
 export async function getStaticPaths() {
@@ -30,7 +29,7 @@ export async function getStaticPaths() {
   });
 }
 
-import { formatTag } from "@scripts/utils.ts";
+import { formatTag } from "@/scripts/utils.ts";
 
 // Props
 const { tag } = Astro.params;
@@ -43,13 +42,11 @@ const preloadFonts = ["cormorant", "noto-sans"];
 sortCollectionByDate(posts);
 ---
 
-<Base>
-  <Head
-    slot="head"
-    title=`Filed Under: “${formattedTag}”`
-    description=`Posts filed under “${formattedTag}”.`
-    preloadFonts={preloadFonts}
-  />
+<Base
+  title=`Filed Under: “${formattedTag}”`
+  description=`Posts filed under “${formattedTag}”.`
+  preloadFonts={preloadFonts}
+>
   <header>
     <nav>
       <a href="/">Home</a>

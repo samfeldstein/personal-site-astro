@@ -1,5 +1,6 @@
 ---
-// Data
+import Icons from "./Icons.astro";
+
 import { site } from "../../config.mjs";
 
 // Variables and properties
@@ -17,32 +18,7 @@ const {
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Icons
-      - Guide: https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs
-      - Favicon generator: https://favicon.io
-      - Another favicon generator: https://realfavicongenerator.net/
-      - SVG generator: https://formito.com/tools/favicon
-      - Image compressor: https://squoosh.app/
-      - SVG optimizer: https://jakearchibald.github.io/svgomg/
-      - Favicon checker: https://realfavicongenerator.net/favicon_checker  
-    -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="96x96"
-    href="/favicon-96x96.png?v=3"
-  />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="/apple-touch-icon.png?v=3"
-  />
-  <!-- Manifest -->
-  <meta name="apple-mobile-web-app-title" content="Sam Feldstein" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <Icons />
 
   <!-- Preload Fonts -->
   {

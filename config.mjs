@@ -7,7 +7,7 @@ const location = {
 export const site = {
   title: "Sam Feldstein",
   description:
-    `Sam Feldstein is a frontend developer and sometime writer based in ${location.city}, ${location.state}.`,
+    `Sam Feldstein is human being based in ${location.city}, ${location.state}.`,
   url: "https://samfeldstein.xyz",
   location: {
     country: location.country,

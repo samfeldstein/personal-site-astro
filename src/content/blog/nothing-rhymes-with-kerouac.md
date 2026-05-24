@@ -1,6 +1,5 @@
 ---
 title: Nothing Rhymes with Kerouac
-description: Not the dumbest thing I've ever done.
 pubDate: 2024-02-13
 location: Bondurant, IA
 tags: ["poetry"]

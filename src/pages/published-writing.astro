@@ -1,9 +1,8 @@
 ---
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
+import Base from "@/layouts/Base.astro";
 
 // Styles
-import "@styles/_published-writing.scss";
+import "@/styles/_published-writing.scss";
 
 // Data
 import { writing } from "../data/published-writing.js";
@@ -11,13 +10,11 @@ import { writing } from "../data/published-writing.js";
 const preloadFonts = ["cormorant", "noto-sans"];
 ---
 
-<Base>
-  <Head
-    slot="head"
-    title="Published Writing"
-    description="My publish writing, including short stories, news articles, and roleplaying adventures."
-    preloadFonts={preloadFonts}
-  />
+<Base
+  title="Published Writing"
+  description="My publish writing, including short stories, news articles, and roleplaying adventures."
+  preloadFonts={preloadFonts}
+>
   <header>
     <nav>
       <a class="home" href="/">Home</a>

@@ -1,27 +1,25 @@
 ---
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
-import QuoteGenerator from "@components/QuoteGenerator.astro";
-import Copyright from "@components/Copyright.astro";
-import Email from "@components/Email.astro";
+import Base from "@/layouts/Base.astro";
+import QuoteGenerator from "@/components/QuoteGenerator.astro";
+import Copyright from "@/components/Copyright.astro";
+import Email from "@/components/Email.astro";
 
 // Icons
-import HtmlIcon from "@components/HtmlIcon.astro";
-import CssIcon from "@components/CssIcon.astro";
-import JsIcon from "@components/JsIcon.astro";
-import AstroIcon from "@components/AstroIcon.astro";
-import EleventyIcon from "@components/EleventyIcon.astro";
-import GitIcon from "@components/GitIcon.astro";
-import CloudflareIcon from "@components/CloudflareIcon.astro";
-import FigmaIcon from "@components/FigmaIcon.astro";
-import WordPressIcon from "@components/WordPressIcon.astro";
-import TerminalIcon from "@components/TerminalIcon.astro";
+import HtmlIcon from "@/components/HtmlIcon.astro";
+import CssIcon from "@/components/CssIcon.astro";
+import JsIcon from "@/components/JsIcon.astro";
+import AstroIcon from "@/components/AstroIcon.astro";
+import EleventyIcon from "@/components/EleventyIcon.astro";
+import GitIcon from "@/components/GitIcon.astro";
+import CloudflareIcon from "@/components/CloudflareIcon.astro";
+import FigmaIcon from "@/components/FigmaIcon.astro";
+import TerminalIcon from "@/components/TerminalIcon.astro";
 
 // Styles
-import "@styles/_code.scss";
+import "@/styles/_code.scss"
 
 // Data
-import { site } from "config.mjs";
+import { site } from "../../config.mjs";
 
 // Fonts
 const preloadFonts = ["victor-mono", "orbitron"];
@@ -96,13 +94,11 @@ const projects = [
 // const professional = projects.filter((project) => project.client);
 ---
 
-<Base>
-  <Head
-    slot="head"
-    title="Code"
-    description="My portfolio of personal and professional coding projects."
-    preloadFonts={preloadFonts}
-  />
+<Base
+  title="Code"
+  description="My portfolio of personal and professional coding projects."
+  preloadFonts={preloadFonts}
+>
   <header>
     <a class="home" href="/">Home</a>
     <hgroup>
@@ -158,11 +154,6 @@ const projects = [
         <figure>
           <CloudflareIcon />
           <figcaption>Cloudflare</figcaption>
-        </figure>
-
-        <figure>
-          <WordPressIcon />
-          <figcaption>WordPress</figcaption>
         </figure>
       </div>
     </section>

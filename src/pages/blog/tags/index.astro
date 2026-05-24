@@ -1,10 +1,9 @@
 ---
 // Layout
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
-import Tags from "../../../components/Tags.astro";
+import Base from "@/layouts/Base.astro";
+import Tags from "@/components/Tags.astro";
 
-import "@styles/_tags.scss";
+import "@/styles/_tags.scss";
 
 // Collections
 import { getCollection } from "astro:content";
@@ -21,13 +20,11 @@ const tags = [...new Set(posts.map((post) => post.data.tags).flat())].sort(
 );
 ---
 
-<Base>
-  <Head
-    slot="head"
-    title="Blog Tags"
-    description="An index of blog post tags."
-    preloadFonts={preloadFonts}
-  />
+<Base
+  title="Blog Tags"
+  description="An index of blog post tags."
+  preloadFonts={preloadFonts}
+>
   <header>
     <nav>
       <a href="/">Home</a>

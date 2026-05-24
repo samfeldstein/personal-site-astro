@@ -1,22 +1,18 @@
 ---
 // Layout
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
-import Email from "@components/Email.astro";
+import Base from "@/layouts/Base.astro";
 import Gallery from "@/components/photos/Gallery.astro";
 
-import "@styles/_default.scss";
+import "@/styles/_default.scss";
 
 const preloadFonts = ["cormorant", "noto-sans"];
 ---
 
-<Base>
-  <Head
-    slot="head"
-    title="Gallery"
-    description="Photos I’ve taken."
-    preloadFonts={preloadFonts}
-  />
+<Base
+  title="Gallery"
+  description="Photos I’ve taken."
+  preloadFonts={preloadFonts}
+>
   <header>
     <nav><a href="/">Home</a></nav>
     <h1>Photos</h1>

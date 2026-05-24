@@ -1,14 +1,13 @@
 ---
-import Base from "@layouts/Base.astro";
-import Head from "@components/Head.astro";
+import Base from "@/layouts/Base.astro";
+import Head from "@/components/Head.astro";
 import PageSpeed from "../components/PageSpeed.astro";
 import QuoteGenerator from "../components/QuoteGenerator.astro";
-import Copyright from "@components/Copyright.astro";
-import RSS from "../components/RssIcon.astro";
+import Copyright from "@/components/Copyright.astro";
 import Github from "../components/GithubIcon.astro";
 import EmailIcon from "../components/EmailIcon.astro";
 import ExternalLinkIcon from "../components/ExternalLinkIcon.astro";
-import Email from "@components/Email.astro";
+import Email from "@/components/Email.astro";
 
 // Styles
 import "/src/styles/_index.scss";
@@ -20,9 +19,8 @@ import { site } from "../../config.mjs";
 const preloadFonts = ["oswald", "noto-serif"];
 ---
 
-<Base>
+<Base title="Home" description={site.description}>
   <Head
-    slot="head"
     title="Home"
     description={site.description}
     preloadFonts={preloadFonts}
@@ -44,61 +42,60 @@ const preloadFonts = ["oswald", "noto-serif"];
           <li><a href="/published-writing/">Published Writing</a></li>
           <li><a href="/photos/">Photography</a></li>
           <li><a href="/code/">Code</a></li>
-          <li><a href="/uses/">Uses</a></li>
           <li><a href="/resumes/web-developer">Résumé</a></li>
         </ul>
       </nav>
     </section>
+
+    <section class="other">
+      <h2 id="other-sites">Other Sites</h2>
+      <ul>
+        <li>
+          <a href="https://notes.samfeldstein.xyz/"
+            >Notebook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
+          >
+        </li>
+        <li>
+          <a href="https://cookbook.samfeldstein.xyz/"
+            >Cookbook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
+          >
+        </li>
+      </ul>
+    </section>
+
+    <section class="other">
+      <h2 id="contact">Contact & Social</h2>
+      <ul class="contact">
+        <li>
+          <Email>Email <EmailIcon class="inline" /></Email>
+        </li>
+        <li>
+          <a href="https://github.com/samfeldstein"
+            >GitHub<Github class="inline" aria-hidden="true" /></a
+          >
+        </li>
+      </ul>
+    </section>
   </main>
 
-  <section class="other">
-    <h2 id="other-sites">Other Sites</h2>
-    <ul>
-      <li>
-        <a href="https://notes.samfeldstein.xyz/"
-          >Notebook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
-        >
-      </li>
-      <li>
-        <a href="https://cookbook.samfeldstein.xyz/"
-          >Cookbook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
-        >
-      </li>
-    </ul>
-  </section>
-
-  <section class="other">
-    <h2 id="contact">Contact & Social</h2>
-    <ul class="contact">
-      <li>
-        <Email>Email <EmailIcon class="inline" /></Email>
-      </li>
-      <li>
-        <a href="https://github.com/samfeldstein"
-          >GitHub<Github class="inline" aria-hidden="true" /></a
-        >
-      </li>
-    </ul>
-  </section>
+  <footer>
+    <QuoteGenerator />
+    <nav>
+      <ul class="toc">
+        <li><a href="#contents">Contents</a></li>
+        <li><a href="#other-sites">Other Sites</a></li>
+        <li><a href="#contact">Contact & Social</a></li>
+      </ul>
+    </nav>
+    <PageSpeed />
+    <div class="etc">
+      <div>{site.location.city}, {site.location.state}</div>
+      <div>Powered by <a href="https://astro.build">Astro</a></div>
+      <Copyright />
+    </div>
+  </footer>
+  <div class="border bottom"></div>
 </Base>
-
-<footer>
-  <QuoteGenerator />
-  <nav>
-    <ul class="toc">
-      <li><a href="#contents">Contents</a></li>
-      <li><a href="#other-sites">Other Sites</a></li>
-      <li><a href="#contact">Contact & Social</a></li>
-    </ul>
-  </nav>
-  <PageSpeed />
-  <div class="etc">
-    <div>{site.location.city}, {site.location.state}</div>
-    <div>Powered by <a href="https://astro.build">Astro</a></div>
-    <Copyright />
-  </div>
-</footer>
-<div class="border bottom"></div>
 
 <script>
   // Set --vh to the initial viewport height and don't update it. Prevent layout shift from 100vh on mobile
