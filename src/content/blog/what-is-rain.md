@@ -20,8 +20,6 @@ Eventually we'd give up. Then Ryan would come out with something like, _A car is
 
 _Ahhh._
 
-It was like he was a magician, and had just performed the most wonderful trick.
-
 We'd go home and come back the next week hungry for more. We'd listen to Ryan's song, or watch his video, and await the question. And then it would come: _What is rain?_
 
 Every object, every concept, comprises layers of somethingness. A car is a mode of transportation, but it is also an expensive necessity, but it is also a chair strapped to four wheels and an engine. Ryan was teaching us to peel back the layers.

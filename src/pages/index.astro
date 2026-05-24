@@ -39,96 +39,77 @@ const preloadFonts = ["oswald", "noto-serif"];
     <section class="contents">
       <h2 id="contents">Contents</h2>
       <nav>
-        <div id="code">
-          <h3>Code</h3>
-          <ul>
-            <li><a href="/code/">Projects</a></li>
-            <li><a href="/resumes/web-developer">Résumé</a></li>
-          </ul>
-        </div>
-
-        <div id="words">
-          <h3>Words</h3>
-          <ul>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/published-writing/">Published Work</a></li>
-            <li>
-              <a href="/feed.xml"
-                >Feed<RSS class="inline" aria-hidden="true" /></a
-              >
-            </li>
-          </ul>
-        </div>
-
-        <div id="else">
-          <h3>Else</h3>
-          <ul>
-            <li><a href="/uses/">Uses</a></li>
-            <li><a href="/photos/">Gallery</a></li>
-          </ul>
-        </div>
+        <ul>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/published-writing/">Published Writing</a></li>
+          <li><a href="/photos/">Photography</a></li>
+          <li><a href="/code/">Code</a></li>
+          <li><a href="/uses/">Uses</a></li>
+          <li><a href="/resumes/web-developer">Résumé</a></li>
+        </ul>
       </nav>
-    </section>
-
-    <section class="other">
-      <h2 id="other-sites">Other Sites</h2>
-      <ul>
-        <li>
-          <a href="https://notes.samfeldstein.xyz/"
-            >Notebook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
-          >
-        </li>
-        <li>
-          <a href="https://cookbook.samfeldstein.xyz/"
-            >Cookbook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
-          >
-        </li>
-      </ul>
-    </section>
-
-    <section class="other">
-      <h2 id="contact">Contact & Social</h2>
-      <ul class="contact">
-        <li>
-          <Email>Email <EmailIcon class="inline" /></Email>
-        </li>
-        <li>
-          <a href="https://github.com/samfeldstein"
-            >GitHub<Github class="inline" aria-hidden="true" /></a
-          >
-        </li>
-      </ul>
     </section>
   </main>
 
-  <footer>
-    <QuoteGenerator />
-    <nav>
-      <ul class="toc">
-        <li><a href="#contents">Contents</a></li>
-        <li><a href="#other-sites">Other Sites</a></li>
-        <li><a href="#contact">Contact & Social</a></li>
-      </ul>
-    </nav>
-    <PageSpeed />
-    <div class="etc">
-      <div>{site.location.city}, {site.location.state}</div>
-      <div>Powered by <a href="https://astro.build">Astro</a></div>
-      <Copyright />
-    </div>
-  </footer>
-  <div class="border bottom"></div>
-  <script>
-    // Set --vh to the initial viewport height and don't update it. Prevent layout shift from 100vh on mobile
-    const header = document.querySelector("header");
+  <section class="other">
+    <h2 id="other-sites">Other Sites</h2>
+    <ul>
+      <li>
+        <a href="https://notes.samfeldstein.xyz/"
+          >Notebook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
+        >
+      </li>
+      <li>
+        <a href="https://cookbook.samfeldstein.xyz/"
+          >Cookbook<ExternalLinkIcon class="inline" aria-hidden="true" /></a
+        >
+      </li>
+    </ul>
+  </section>
 
-    if (header) {
-      header.style.setProperty(
-        "--vh",
-        `${document.documentElement.clientHeight}px`,
-      );
-    }
-
-    // See https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
-  </script>
+  <section class="other">
+    <h2 id="contact">Contact & Social</h2>
+    <ul class="contact">
+      <li>
+        <Email>Email <EmailIcon class="inline" /></Email>
+      </li>
+      <li>
+        <a href="https://github.com/samfeldstein"
+          >GitHub<Github class="inline" aria-hidden="true" /></a
+        >
+      </li>
+    </ul>
+  </section>
 </Base>
+
+<footer>
+  <QuoteGenerator />
+  <nav>
+    <ul class="toc">
+      <li><a href="#contents">Contents</a></li>
+      <li><a href="#other-sites">Other Sites</a></li>
+      <li><a href="#contact">Contact & Social</a></li>
+    </ul>
+  </nav>
+  <PageSpeed />
+  <div class="etc">
+    <div>{site.location.city}, {site.location.state}</div>
+    <div>Powered by <a href="https://astro.build">Astro</a></div>
+    <Copyright />
+  </div>
+</footer>
+<div class="border bottom"></div>
+
+<script>
+  // Set --vh to the initial viewport height and don't update it. Prevent layout shift from 100vh on mobile
+  const header = document.querySelector("header");
+
+  if (header) {
+    header.style.setProperty(
+      "--vh",
+      `${document.documentElement.clientHeight}px`,
+    );
+  }
+
+  // See https://developer.mozilla.org/en-US/docs/Web/API/Element/clientHeight
+</script>
