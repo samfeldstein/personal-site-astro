@@ -1,12 +1,11 @@
 ---
 import Base from "@/layouts/Base.astro";
-import Head from "@/components/Head.astro";
 import PageSpeed from "../components/PageSpeed.astro";
-import QuoteGenerator from "../components/QuoteGenerator.astro";
+import QuoteGenerator from "@/components/QuoteGenerator.astro";
 import Copyright from "@/components/Copyright.astro";
-import Github from "../components/GithubIcon.astro";
-import EmailIcon from "../components/EmailIcon.astro";
-import ExternalLinkIcon from "../components/ExternalLinkIcon.astro";
+import Github from "@/components/GithubIcon.astro";
+import EmailIcon from "@/components/EmailIcon.astro";
+import ExternalLinkIcon from "@/components/ExternalLinkIcon.astro";
 import Email from "@/components/Email.astro";
 
 // Styles
@@ -19,12 +18,7 @@ import { site } from "../../config.mjs";
 const preloadFonts = ["oswald", "noto-serif"];
 ---
 
-<Base title="Home" description={site.description}>
-  <Head
-    title="Home"
-    description={site.description}
-    preloadFonts={preloadFonts}
-  />
+<Base title="Home" description={site.description} preloadFonts={preloadFonts}>
   <div class="border top"></div>
   <header>
     <hgroup>
@@ -42,7 +36,6 @@ const preloadFonts = ["oswald", "noto-serif"];
           <li><a href="/published-writing/">Published Writing</a></li>
           <li><a href="/photos/">Photography</a></li>
           <li><a href="/code/">Code</a></li>
-          <li><a href="/resumes/web-developer">Résumé</a></li>
         </ul>
       </nav>
     </section>
