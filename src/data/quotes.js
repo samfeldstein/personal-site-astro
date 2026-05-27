@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "He had known several men who blew their heads off, and he had pondered it much. It seemed to him it was probably because they could not take enough happiness just from the sky and the moon to carry them over the low feelings that came to all men.",
+    speaker: "Larry McMurtry",
+    work: "Lonesome Dove",
+    medium: "book"
+  },
+  {
     quote: "Life in the oceans must be sheer hell. A vast, merciless hell of permanent and immediate danger. So much of a hell that during evolution some species–including man–crawled, fled onto some small continents of solid land, where the Lessons of Darkness continue.",
     speaker: "Werner Herzog",
     work: "The Minnesota Declaration: Truth and Fact in Documentary Cinema",
