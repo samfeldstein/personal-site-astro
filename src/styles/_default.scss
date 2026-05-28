@@ -4,9 +4,7 @@
 @use 'utils';
 
 :root {
-  --font-1: 'Cormorant',
-    'Cormorant Fallback',
-    serif;
+  --font-1: 'Noto Serif', 'Noto Fallback', serif;
   --font-2: 'Noto Sans', 'Noto Sans Fallback', sans-serif;
   --font-size-base: clamp(1rem, 4vw, 1.25rem);
   --font-small: calc(var(--font-size-base) * .85);
@@ -67,7 +65,7 @@ nav {
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 8rem);
+  font-size: clamp(3rem, 10vw, 6rem);
   font-weight: 300;
   margin-bottom: 0;
 }

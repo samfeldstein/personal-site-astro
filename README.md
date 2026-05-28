@@ -17,7 +17,7 @@
 
 # ✏️ My Personal Website
 
-Home to my gallery, blog, portfolio, and more.
+Home to my gallery, portfolio, and more.
 
 ## 🚘 Under the Hood
 

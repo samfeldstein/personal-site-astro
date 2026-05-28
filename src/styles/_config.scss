@@ -1,0 +1,9 @@
+:root {
+  --font-1: 'Noto Serif', 'Noto Fallback', serif;
+  --font-2: 'Oswald', 'Oswald Fallback', sans-serif;
+  --font-size-base: clamp(1.25rem, 5vw, 2rem);
+
+  color-scheme: light dark;
+  --text-color: light-dark(#000, #fff);
+  --background-color: light-dark(#fff, #000);
+}
