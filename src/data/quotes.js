@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "It’s a fine world, though rich in hardships at times.",
+    speaker: "Larry McMurtry",
+    work: "Lonesome Dove",
+    medium: "book"
+  },
+  {
     quote: "He had known several men who blew their heads off, and he had pondered it much. It seemed to him it was probably because they could not take enough happiness just from the sky and the moon to carry them over the low feelings that came to all men.",
     speaker: "Larry McMurtry",
     work: "Lonesome Dove",
