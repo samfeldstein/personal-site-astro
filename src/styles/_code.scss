@@ -283,20 +283,12 @@ footer {
 }
 
 .quote-container {
-  background-color: var(--background-color);
-  border: 1px solid;
-  box-shadow: 5px 5px 0 var(--background-color), 6px 6px 0;
+  background-color: var(--background-color) !important;
+  border: 0.1rem solid currentColor !important;
   padding: 1em;
 
   blockquote {
     margin: 0;
-  }
-
-  #quote {
-    font-family: var(--font-2);
-    letter-spacing: 0.2em;
-
-    // font-style: italic;
   }
 
   .attribution {
