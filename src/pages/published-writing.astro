@@ -1,13 +1,9 @@
 ---
 import Base from "@/layouts/Base.astro";
-
-// Styles
+import { writing } from "../data/published-writing.js";
 import "@/styles/_published-writing.scss";
 
-// Data
-import { writing } from "../data/published-writing.js";
-
-const preloadFonts = ["cormorant", "noto-sans"];
+const preloadFonts = ["oswald", "noto-serif"];
 ---
 
 <Base
@@ -16,7 +12,7 @@ const preloadFonts = ["cormorant", "noto-sans"];
   preloadFonts={preloadFonts}
 >
   <header>
-    <nav>
+    <nav class="main">
       <a class="home" href="/">Home</a>
     </nav>
     <h1>Published Writing</h1>
@@ -28,12 +24,13 @@ const preloadFonts = ["cormorant", "noto-sans"];
           <li>
             <a class="entry" href={item.url}>
               <div class="info">
-                <div class="type">{item.type}</div>
-                <div class="date-outlet">
+                <span class="type">{item.type}</span>
+                <span>&nbsp;|&nbsp;</span>
+                <span class="date-outlet">
                   <cite class="outlet">{item.outlet}</cite>
                   <span>&nbsp;|&nbsp;</span>
                   <span>{item.date}</span>
-                </div>
+                </span>
               </div>
               <div
                 class="title"

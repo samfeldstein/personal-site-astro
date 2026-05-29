@@ -1,17 +1,6 @@
-@use 'fonts/oswald';
-@use 'fonts/noto-serif';
-@use 'config';
-@use 'base';
-@use 'utils';
-
-// === ELEMENTS ===
-html {
-  background-color: var(--text-color); // Same color as borders
-  scrollbar-color: var(--text-color) var(--background-color);
-}
+@use 'default';
 
 body {
-  background-color: var(--background-color);
   margin: 0 auto;
   border-style: none solid;
   border-width: 0.5rem;

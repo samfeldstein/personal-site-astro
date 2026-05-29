@@ -1,22 +1,8 @@
-@use 'fonts/cormorant';
-@use 'fonts/noto-sans';
+@use 'fonts/oswald';
+@use 'fonts/noto-serif';
+@use 'config';
 @use 'base';
 @use 'utils';
-
-:root {
-  --font-1: 'Noto Serif', 'Noto Fallback', serif;
-  --font-2: 'Noto Sans', 'Noto Sans Fallback', sans-serif;
-  --font-size-base: clamp(1rem, 4vw, 1.25rem);
-  --font-small: calc(var(--font-size-base) * .85);
-
-  // Colors
-  color-scheme: light dark;
-  --text-color: light-dark(#000, #fff);
-  --background-color: light-dark(#fff, #000);
-  --accent: light-dark(oklch(0.457 0 0), oklch(0.6731 0 0));
-  --accent-reversed: light-dark(oklch(0.6731 0 0), oklch(0.457 0 0));
-  --accent-light: light-dark(#f8f8f8, #252525);
-}
 
 html {
   background-color: var(--background-color);
@@ -25,22 +11,28 @@ html {
 
 body {
   background-color: var(--background-color);
-  max-width: 70rem;
-  margin: 0 auto;
-  padding: 0.5rem;
   font-family: var(--font-1);
   font-size: var(--font-size-base);
+
+  padding: 2vw;
+}
+
+nav.main {
+  @extend .small-caps;
+  
+  font-size: 0.5em;
+  text-align: left;
+  font-family: var(--font-2);
+  font-weight: 300;
+
+  a {
+    padding: 1em;
+  }
 }
 
 // === GLOBAL ===
 a {
   @extend .unstyled-link;
-
-  &:hover {
-    text-decoration-line: underline;
-    text-decoration-thickness: 0.1em;
-    text-underline-offset: 0.1em;
-  }
 
   &:focus-visible {
     outline-width: 0.1em;
@@ -54,29 +46,10 @@ header {
   text-align: center;
 }
 
-nav {
-  @extend .small-caps;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  font-family: var(--font-2);
-  font-weight: 300;
-  font-size: var(--font-small);
-}
-
 h1 {
-  font-size: clamp(3rem, 10vw, 6rem);
-  font-weight: 300;
-  margin-bottom: 0;
-}
-
-h2 {
-  margin-top: 3em;
-  border-top: 1px solid;
-  padding-top: 0.25em;
   font-family: var(--font-2);
-  font-weight: 300;
-  text-align: right;
+  font-size: 2em;
+  font-weight: 100;
 }
 
 h3 {

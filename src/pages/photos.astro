@@ -5,7 +5,7 @@ import Gallery from "@/components/photos/Gallery.astro";
 
 import "@/styles/_default.scss";
 
-const preloadFonts = ["cormorant", "noto-sans"];
+const preloadFonts = ["oswald", "noto-serif"];
 ---
 
 <Base
@@ -14,10 +14,10 @@ const preloadFonts = ["cormorant", "noto-sans"];
   preloadFonts={preloadFonts}
 >
   <header>
-    <nav><a href="/">Home</a></nav>
+    <nav class="main"><a href="/">Home</a></nav>
     <h1>Photos</h1>
   </header>
-  <main>
+  <main id="main-content">
     <Gallery />
   </main>
 </Base>

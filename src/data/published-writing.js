@@ -46,12 +46,4 @@ export const writing = [
     outlet: "The Big Bend Sentinel",
     url: "https://bigbendsentinel.com/2022/10/05/trans-pecos-festival-of-music-love-doubles-as-platform-for-advocacy-and-outreach/",
   },
-  {
-    title: "Absence of Meaning in 'The Lighthouse'",
-    type: "Criticism",
-    medium: "Digital",
-    date: "Apr 2022",
-    outlet: "The Frida Cinema Blog",
-    url: "https://thefridacinema.org/film-criticism/absence-of-meaning-the-lighthouse/",
-  },
 ];

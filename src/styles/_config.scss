@@ -2,8 +2,13 @@
   --font-1: 'Noto Serif', 'Noto Fallback', serif;
   --font-2: 'Oswald', 'Oswald Fallback', sans-serif;
   --font-size-base: clamp(1.25rem, 5vw, 2rem);
+  --font-small: calc(var(--font-size-base) * .85);
 
+  // Colors
   color-scheme: light dark;
   --text-color: light-dark(#000, #fff);
   --background-color: light-dark(#fff, #000);
+  --accent: light-dark(oklch(0.457 0 0), oklch(0.6731 0 0));
+  --accent-reversed: light-dark(oklch(0.6731 0 0), oklch(0.457 0 0));
+  --accent-light: light-dark(#f8f8f8, #252525);
 }
