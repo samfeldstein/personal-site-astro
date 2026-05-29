@@ -1,5 +1,31 @@
 const quotes = [
   {
+    quote:
+      `“I wish it need not have happened in my time,” said Frodo.
+    
+      “So do I,” said Gandalf, “and so do all who live to see such times. But that is not for them to decide. All we have to decide is what to do with the time that is given us.”`,
+    speaker: "Frodo Baggins and Gandalf the Grey",
+    work: "The Fellowship of the Ring",
+  },
+  {
+    quote:
+      `He supposed that the intent of the Gospels was to teach people, among other things, to be merciful, even to the lowest of the low. But the Gospels actually taught this:
+      
+      Before you kill somebody, make absolutely sure he isn't well connected.
+      
+      So it goes.`,
+    speaker: "Kurt Vonnegut",
+    work: "Slaughterhouse-Five",
+    medium: "book"
+  },
+  {
+    quote:
+      `So spoke the King: My children,<br>Have patience. We shall wait a few<br>Hundred Thousand years,<br>Until then the stones will wander in the field<br>And perhaps someone will weep even once.`,
+    speaker: "Werner Herzog",
+    work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
+    medium: "book"
+  },
+  {
     quote: "It’s a fine world, though rich in hardships at times.",
     speaker: "Larry McMurtry",
     work: "Lonesome Dove",
@@ -17,12 +43,6 @@ const quotes = [
     work: "The Minnesota Declaration: Truth and Fact in Documentary Cinema",
     medium: "manifesto"
 
-  },
-  {
-    quote: "So spoke the King: My children,<br>Have patience. We shall wait a few<br>Hundred Thousand years,<br>Until then the stones will wander in the field<br>And perhaps someone will weep even once.",
-    speaker: "Werner Herzog",
-    work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
-    medium: "book"
   },
   {
     quote: "Academia stifles cinema, encircling it like a liana vine wraps round a tree, smothering and draining away all life. Construct films, don’t deconstruct them. Create poetry, don’t destroy it. Whenever I encounter film theorists, I lower my head and charge.",
@@ -103,12 +123,6 @@ const quotes = [
   },
   {
     quote: "I have told my sons that they are not under any circumstances to take part in massacres, and that the news of massacres of enemies is not to fill them with satisfaction or glee.",
-    speaker: "Kurt Vonnegut",
-    work: "Slaughterhouse-Five",
-    medium: "book"
-  },
-  {
-    quote: "He supposed that the intent of the Gospels was to teach people, among other things, to be merciful, even to the lowest of the low.<br><br>But the Gospels actually taught this:<br><br>Before you kill somebody, make absolutely sure he isn't well connected.<br><br>So it goes.",
     speaker: "Kurt Vonnegut",
     work: "Slaughterhouse-Five",
     medium: "book"
@@ -204,7 +218,7 @@ const quotes = [
     speaker: "Albert Camus"
   },
   {
-    quote: `unless being still would<br>drive you to madness or<br>suicide or murder,<br>don’t do it.`,
+    quote: `unless being still would<br>drive you to madness or<br>suicide or murder,< br > don’t do it.`,
     speaker: "Charles Bukowski",
     work: "so you want to be a writer?",
     medium: "poem"
@@ -254,7 +268,7 @@ const quotes = [
     work: "The Searchers"
   },
   {
-    quote: `We rip out so much of ourselves to be cured of things faster that we go bankrupt by the age of thirty and have less to offer each time we start with someone new. Right now there's sorrow, pain. Don't kill it, and with it, all the joy you've felt.`,
+    quote: `We rip out so much of ourselves to be cured of things faster that we go bankrupt by the age of thirty and have less to offer each time we start with someone new.Right now there's sorrow, pain. Don't kill it, and with it, all the joy you've felt.`,
     speaker: "Mr. Perlman",
     work: "Call Me By Your Name",
   },
@@ -262,14 +276,6 @@ const quotes = [
     quote: "To wives, and sweethearts. May they never meet.",
     speaker: "Captain Jack Aubrey",
     work: "Master and Commander: The Far Side of the World"
-  },
-  {
-    quote: `“I wish it need not have happened in my time,” said Frodo.
-    <br>
-    <br>
-    “So do I,” said Gandalf, “and so do all who live to see such times. But that is not for them to decide. All we have to decide is what to do with the time that is given us.”`,
-    speaker: "Frodo Baggins and Gandalf the Grey",
-    work: "The Fellowship of the Ring",
   },
   {
     quote: "The teeth? We don’t know. Signs from Hashem? Don’t know. Helping others? Couldn’t hurt.",
@@ -318,13 +324,12 @@ const quotes = [
     work: "Night of the Creeps"
   },
   {
-    quote: `And should we win the day, the Fourth of July will no longer be known as an American holiday, but as the day when the world declared in one voice:
-    <br>
-    <br>
-    “We will not go quietly into the night! We will not vanish without a fight! We’re going to live on! We’re going to survive!”
-    <br>
-    <br>
-    Today, we celebrate our Independence Day!`,
+    quote:
+      `And should we win the day, the Fourth of July will no longer be known as an American holiday, but as the day when the world declared in one voice:
+    
+      “We will not go quietly into the night! We will not vanish without a fight! We’re going to live on! We’re going to survive!”
+      
+      Today, we celebrate our Independence Day!`,
     speaker: "President Thomas J. Whitmore",
     work: "Independence Day",
   },

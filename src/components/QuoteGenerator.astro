@@ -1,6 +1,5 @@
 <div>
-  <blockquote>
-    <p id="quote"></p>
+  <blockquote id="quote">
   </blockquote>
   <p class="attribution">
     <span id="speaker"></span><cite id="work"></cite><span id="verse"
@@ -41,7 +40,6 @@
 </style>
 
 <script>
-  // Doesn't need to be in public, I don't think. Like css, when you import it it makes the data available in the published site
   import quotes from "../data/quotes";
 
   const isDev = import.meta.env.DEV;
@@ -51,7 +49,12 @@
     ? quotes[0]
     : quotes[Math.floor(Math.random() * quotes.length)];
 
-  document.getElementById("quote").innerHTML = randomQuote.quote;
+  const formatted = randomQuote.quote
+    .split("\n")
+    .filter((line) => line.trim() !== "")
+    .map((line) => `<p>${line}</p>`)
+    .join("");
+  document.getElementById("quote").innerHTML = formatted;
 
   let previousPartExists = false;
 
