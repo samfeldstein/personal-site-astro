@@ -1,5 +1,9 @@
 const quotes = [
   {
+    quote: "The wicked flee when none pursueth.",
+    speaker: "Proverbs 28:1"
+  },
+  {
     quote:
       `“I wish it need not have happened in my time,” said Frodo.
     
