@@ -13,7 +13,6 @@ const preloadFonts = ["cormorant, noto-sans"];
   preloadFonts={preloadFonts}
 >
   <header>
-    <nav><a href="/">Home</a></nav>
     <h1>Page Not Found</h1>
   </header>
   <main>
@@ -25,15 +24,16 @@ const preloadFonts = ["cormorant, noto-sans"];
   </main>
 </Base>
 
-<style>
-  body {
-    main {
-      font-size: 1.25em;
-    }
+<style is:global lang="scss">
+  a {
+    font-variant: small-caps;
+    text-transform: lowercase;
 
-    main a {
-      font-variant: small-caps;
-      text-transform: lowercase;
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 0.1em;
+      text-underline-offset: 0.1em;
     }
   }
 </style>
