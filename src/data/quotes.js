@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "Take your hands off my friend and I'll remove the crowbar from your body.",
+    speaker: "Jack Reacher",
+    work: "Reacher",
+    medium: "show"
+  },
+  {
     quote: "The wicked flee when none pursueth.",
     speaker: "Proverbs 28:1"
   },
