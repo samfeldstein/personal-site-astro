@@ -1,0 +1,54 @@
+title: Customer Experience Associate
+
+summary: Curing tech-caused headaches one email at a time.
+
+printUrl: customer-success
+
+links:
+  - name: Portfolio
+    url: https://samfeldstein.xyz/code
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+sections:
+  skills:
+    - category: Customer Relationship Management
+      items:
+        - Customer onboarding and support
+        - Relationship-building and retention
+        - Issue resolution and problem solving
+
+    - category: Technical Product Support
+      items:
+        - Technical troubleshooting
+        - CMS and ecommerce platforms
+        - Translating technical concepts for non-technical users
+
+    - category: User Experience
+      items:
+        - User experience optimization
+        - Customer needs assessment
+        - Product feedback and iteration
+
+  relevantExperience:
+    - devFreelance
+    - devSentinel
+    - managerSentinel
+
+  # projects:
+  #   - postoley
+  #   - regreen
+  #   - prairieRose
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
+  publications:
+    - madeOfMemories
+    - theFirst
+
+  education:
+    - chapman
+    - iowa

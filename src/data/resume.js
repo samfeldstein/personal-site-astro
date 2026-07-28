@@ -27,14 +27,24 @@ export const workHistory = {
       "Build custom web applications to streamline store processes.",
     ],
   },
+  // devFreelance: {
+  //   role: "Freelance Web Developer",
+  //   date: "April 2024 – Present",
+  //   place: "Boulder, CO",
+  //   description: [
+  //     "Build bespoke websites with modern web technologies and frameworks.",
+  //     "Employ strategic asset caching, component-driven design, and other performance strategies.",
+  //     "Integrate headless content management systems, allowing independent client updates.",
+  //   ],
+  // },
   devFreelance: {
     role: "Freelance Web Developer",
     date: "April 2024 – Present",
     place: "Boulder, CO",
     description: [
-      "Build bespoke websites with modern web technologies and frameworks.",
-      "Employ strategic asset caching, component-driven design, and other performance strategies.",
-      "Integrate headless content management systems, allowing independent client updates.",
+      "Identify client business needs and deliver tailored digital solutions that improve customer and user experiences.",
+      "Guide clients through website launches, platform integrations, and content management workflows.",
+      "Provide ongoing technical support and training, empowering clients to independently manage and optimize their digital presence.",
     ],
   },
   devAssistant: {
@@ -69,26 +79,48 @@ export const workHistory = {
       "Provided top-tier customer support, resolving inquiries and order issues promptly while fostering positive client relationships that enhanced brand reputation.",
     ],
   },
+  // managerSentinel: {
+  //   role: "General Manager",
+  //   employer: "The Sentinel",
+  //   date: "November 2020 – November 2021",
+  //   place: "Marfa, TX",
+  //   description: [
+  //     "Led hiring efforts by writing job postings and interviewing candidates.",
+  //     "Implemented a standardized training program to ensure consistency and efficiency.",
+  //     "Oversaw inventory, ordering, and vendor relations to ensure seamless operations.",
+  //   ],
+  // },
   managerSentinel: {
     role: "General Manager",
     employer: "The Sentinel",
     date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
-      "Led hiring efforts by writing job postings and interviewing candidates.",
-      "Implemented a standardized training program to ensure consistency and efficiency.",
-      "Oversaw inventory, ordering, and vendor relations to ensure seamless operations.",
+      "Owned customer-facing operations, ensuring reliable service and positive experiences throughout the customer journey.",
+      "Created onboarding and training processes that empowered team members to deliver consistent support and resolve customer needs effectively.",
+      "Managed operational workflows to identify issues, implement solutions, and improve overall customer satisfaction.",
     ],
   },
+  // devSentinel: {
+  //   role: "WordPress Developer",
+  //   employer: "The Sentinel",
+  //   date: "November 2020 – November 2021",
+  //   place: "Marfa, TX",
+  //   description: [
+  //     "Developed and launched an online storefront with WordPress and WooCommerce.",
+  //     "Refined user interface to create a seamless customer experience and maximize conversions.",
+  //     "Implemented SEO strategies to boost search visibility and drive organic traffic.",
+  //   ],
+  // },
   devSentinel: {
     role: "WordPress Developer",
     employer: "The Sentinel",
     date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
-      "Developed and launched an online storefront with WordPress and WooCommerce.",
-      "Refined user interface to create a seamless customer experience and maximize conversions.",
-      "Implemented SEO strategies to boost search visibility and drive organic traffic.",
+      "Implemented and supported a digital commerce platform, helping users seamlessly adopt new online purchasing workflows.",
+      "Translated business requirements into user-focused solutions that improved accessibility, usability, and customer satisfaction.",
+      "Provided ongoing platform support and training, empowering internal teams to manage content, products, and customer experiences.",
     ],
   },
   lear: {
@@ -149,7 +181,7 @@ export const projects = {
     type: "Website",
     date: "February 2025",
     place: "Terlingua, TX",
-    description: "Designed and built a custom WordPress site for an environmental restoration project in Far West Texas.",
+    description: "A custom WordPress site for an environmental restoration project in Far West Texas.",
   },
   postoley: {
     title: "Postoley Dance Ensemble",
@@ -175,7 +207,7 @@ export const projects = {
     type: "Website",
     date: "May 2024",
     place: "Elkhart, IA",
-    description: "Built a custom static website for an equestrian event center. Made with Eleventy, Netlify, and Decap CMS.",
+    description: "A custom static website for an equestrian event center in Iowa. Made with Eleventy, Netlify, and Decap CMS.",
   },
   likeMovies: {
     title: "Like Father, Like Son, Like Movies",
