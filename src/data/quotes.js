@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "When you write a passionate love letter and focus on making sure your longhand is as beautiful as possible, it isn’t going to be much of a love letter. But if you concentrate on the words and emotions, your particular style of longhand—which has nothing to do with the letter per se—will somehow seep in of its own accord. Aesthetics, if they even exist, are to be discovered only once a film has been completed. I leave it to the philosophers to enlighten me about such things.",
+    speaker: "Werner Herzog",
+    work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",
+    medium: "book"
+  },
+  {
     quote: "Take your hands off my friend and I'll remove the crowbar from your body.",
     speaker: "Jack Reacher",
     work: "Reacher",
