@@ -12,10 +12,12 @@ sections:
   projects:
     - key: shelfTalkers
       description:
-        - Built a single-page web application with a reactive component
+        - Built a single-page web application with a clear, reactive component
           architecture.
-        - Implemented client-side state management and persistent local storage.
-        - Designed reusable UI components and responsive layouts.
+        - Implemented client-side state management and persistent local storage
+          using patterns designed to be maintainable and easy to follow.
+        - Designed reusable UI components with clear structure, making the
+          codebase approachable for future contributors.
 
     - key: postoley
       description:
@@ -26,51 +28,46 @@ sections:
         - Created reusable layouts and optimized performance across desktop and
           mobile devices.
 
-    - key: regreen
-      description:
-        - Designed and developed a custom website for an environmental
-          restoration nonprofit.
-        - Improved accessibility and created an intuitive content management
-          experience.
-        - Configured the site so non-technical users could confidently update
-          content independently.
-
     - key: digitalNotebook
       description:
-        - Developed a personal knowledge base featuring Markdown content,
-          backlinks, and graph visualization.
+        - Developed a personal knowledge base on top of an Obsidian vault.
         - Organized a large content library with scalable architecture and
           optimized static-site performance.
         - Built custom functionality to support efficient knowledge management
           and navigation.
 
-    - key: personalSite
-      description:
-        - Designed and built a high-performance personal website to showcase
-          projects and writing.
-        - Developed reusable layouts, custom styling, and optimized asset
-          delivery for fast page loads.
-        - Continuously expanded the project to explore modern frontend tooling
-          and deployment workflows.
-
-    - key: prairieRose
-      description:
-        - Built a custom static website for an equestrian event center with a
-          focus on speed and maintainability.
-        - Integrated a content management system that enabled the client to
-          update site content without writing code.
-        - Collaborated with the client to deliver a streamlined editing
-          experience tailored to their workflow.
-
   relevantExperience:
-    - devFreelance
-    - devSentinel
-    - chapman
+    - key: devFreelance
+      description:
+        - Identify client business needs and translate technical concepts into
+          clear, actionable guidance.
+        - Guide clients step-by-step through website launches, platform
+          integrations, and content management workflows.
+        - Provide ongoing technical support and training, empowering clients to
+          confidently manage their own digital presence.
 
-  otherExperience:
-    - composition
-    - devAssistant
-    - journalistSentinel
+    - key: devSentinel
+      description:
+        - Implemented and supported a digital commerce platform, teaching users
+          how to navigate new online purchasing workflows.
+        - Translated technical business requirements into user-focused
+          solutions, explaining tradeoffs in accessible terms.
+        - Provided hands-on platform training, empowering internal teams to
+          independently manage content and products.
+
+    - key: chapman
+      description:
+        - Facilitated classroom operations, preparing lesson plans and leading
+          discussions on screenwriting techniques.
+        - Mentored first-year graduate students one-on-one, offering detailed
+          feedback on scripts, résumés, and applications.
+        - Evaluated assignments with a focus on clear, constructive feedback on
+          structure and craft.
+
+  # otherExperience:
+  #   - composition
+  #   - devAssistant
+  #   - journalistSentinel
 
   publications:
     - madeOfMemories

@@ -42,9 +42,11 @@ if (entry.data.sections) {
         break;
       case "relevantExperience":
       case "otherExperience":
-        sectionData[key] = entry.data.sections[key].map(
-          (k) => workHistory[k] || {},
-        );
+        sectionData[key] = entry.data.sections[key].map((experience) => ({
+          ...workHistory[experience.key],
+          description:
+            experience.description ?? workHistory[experience.key]?.description,
+        }));
         break;
       case "projects":
         sectionData[key] = entry.data.sections[key].map((project) => ({
@@ -232,19 +234,25 @@ if (entry.data.sections) {
               <section id="relevant-experience">
                 <h2>Relevant Experience</h2>
                 <div class="relevant-experience">
-                  {data?.map((job) => (
+                  {data?.map((experience) => (
                     <article>
                       <h3>
-                        {job.role} {job.employer && `@ ${job.employer}`}
+                        {experience.role}{" "}
+                        {experience.employer && `@ ${experience.employer}`}
                       </h3>
                       <div class="info">
-                        <span>{job.date}</span> | {job.place}
+                        <span>{experience.date}</span> | {experience.place}
                       </div>
-                      <ul>
-                        {job.description?.map((point) => (
-                          <li set:html={point} />
-                        ))}
-                      </ul>
+                      {experience.description &&
+                      Array.isArray(experience.description) ? (
+                        <ul>
+                          {experience.description.map((point) => (
+                            <li set:html={point} />
+                          ))}
+                        </ul>
+                      ) : (
+                        <p class="job-description">{experience.description}</p>
+                      )}
                     </article>
                   ))}
                 </div>
