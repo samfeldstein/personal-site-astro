@@ -1,8 +1,8 @@
-title: Customer Experience Associate
+title: Technical Support Specialist
 
 summary: Curing tech-caused headaches one email at a time.
 
-printUrl: customer-success
+printUrl: account-manager
 
 links:
   - name: Portfolio
@@ -35,10 +35,10 @@ sections:
     - devSentinel
     - managerSentinel
 
-  # projects:
-  #   - postoley
-  #   - regreen
-  #   - prairieRose
+  projects:
+    - postoley
+    - regreen
+    - prairieRose
 
   volunteer:
     - chec

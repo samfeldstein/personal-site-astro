@@ -1,10 +1,12 @@
-title: Writer, Editor
+title: Freelance Writer
 
-printUrl: writer-editor
+printUrl: /freelance-writer
 
 links:
   - name: Portfolio
     url: /published-writing
+  - name: samfeldstein.xyz
+    url: https://samfeldstein.xyz/
 
 sections:
   education:
@@ -16,8 +18,8 @@ sections:
     - journalistSentinel
 
   otherExperience:
-    - composition
     - devFreelance
+    - composition
     - managerSentinel
 
   publications:

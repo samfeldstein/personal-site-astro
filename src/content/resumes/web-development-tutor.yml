@@ -1,0 +1,100 @@
+title: Web Development Tutor
+
+printUrl: /web-development-tutor
+
+links:
+  - name: Portfolio
+    url: https://samfeldstein.xyz/code
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+sections:
+  projects:
+    - key: shelfTalkers
+      description:
+        - Built a single-page web application with a reactive component
+          architecture.
+        - Implemented client-side state management and persistent local storage.
+        - Designed reusable UI components and responsive layouts.
+
+    - key: postoley
+      description:
+        - Rebuilt a client's website with a focus on accessibility,
+          responsiveness, and long-term maintainability.
+        - Collaborated with the client to translate design goals into a polished
+          production website.
+        - Created reusable layouts and optimized performance across desktop and
+          mobile devices.
+
+    - key: regreen
+      description:
+        - Designed and developed a custom website for an environmental
+          restoration nonprofit.
+        - Improved accessibility and created an intuitive content management
+          experience.
+        - Configured the site so non-technical users could confidently update
+          content independently.
+
+    - key: digitalNotebook
+      description:
+        - Developed a personal knowledge base featuring Markdown content,
+          backlinks, and graph visualization.
+        - Organized a large content library with scalable architecture and
+          optimized static-site performance.
+        - Built custom functionality to support efficient knowledge management
+          and navigation.
+
+    - key: personalSite
+      description:
+        - Designed and built a high-performance personal website to showcase
+          projects and writing.
+        - Developed reusable layouts, custom styling, and optimized asset
+          delivery for fast page loads.
+        - Continuously expanded the project to explore modern frontend tooling
+          and deployment workflows.
+
+    - key: prairieRose
+      description:
+        - Built a custom static website for an equestrian event center with a
+          focus on speed and maintainability.
+        - Integrated a content management system that enabled the client to
+          update site content without writing code.
+        - Collaborated with the client to deliver a streamlined editing
+          experience tailored to their workflow.
+
+  relevantExperience:
+    - devFreelance
+    - devSentinel
+    - chapman
+
+  otherExperience:
+    - composition
+    - devAssistant
+    - journalistSentinel
+
+  publications:
+    - madeOfMemories
+    - reproductiveCoalition
+    - transPecos
+
+  education:
+    - chapman
+    - iowa
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
+  skills:
+    - category: Writing
+      items:
+        - Journalism, academic writing, and creative works
+        - APA/MLA formatting
+        - Proofreading and copyediting
+
+    - category: Teaching
+      items:
+        - Constructive Written Feedback
+        - One-on-One Instruction
+        - Lesson Planning

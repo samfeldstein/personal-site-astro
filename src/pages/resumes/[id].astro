@@ -47,9 +47,11 @@ if (entry.data.sections) {
         );
         break;
       case "projects":
-        sectionData[key] = entry.data.sections[key].map(
-          (k) => projects[k] || {},
-        );
+        sectionData[key] = entry.data.sections[key].map((project) => ({
+          ...projects[project.key],
+          description:
+            project.description ?? projects[project.key]?.description,
+        }));
         break;
       case "volunteer":
         sectionData[key] = entry.data.sections[key].map(
@@ -285,7 +287,16 @@ if (entry.data.sections) {
                         <span>{project.type}</span> |{" "}
                         <span>{project.date}</span>
                       </div>
-                      <p class="project-description">{project.description}</p>
+                      {project.description &&
+                      Array.isArray(project.description) ? (
+                        <ul>
+                          {project.description.map((point) => (
+                            <li set:html={point} />
+                          ))}
+                        </ul>
+                      ) : (
+                        <p class="project-description">{project.description}</p>
+                      )}
                     </article>
                   ))}
                 </div>

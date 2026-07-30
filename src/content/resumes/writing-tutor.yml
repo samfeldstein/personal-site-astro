@@ -1,0 +1,46 @@
+title: Writing Tutor
+
+printUrl: /writing-tutor
+
+links:
+  - name: Portfolio
+    url: /published-writing
+  - name: samfeldstein.xyz
+    url: https://samfeldstein.xyz/
+
+sections:
+  publications:
+    - madeOfMemories
+    - reproductiveCoalition
+    - transPecos
+
+  relevantExperience:
+    - devAssistant
+    - journalistSentinel
+    - chapman
+
+  education:
+    - chapman
+    - iowa
+
+  otherExperience:
+    - devFreelance
+    - composition
+
+  volunteer:
+    - chec
+    - workaway
+    - frida
+
+  skills:
+    - category: Writing
+      items:
+        - Journalism, academic writing, and creative works
+        - APA/MLA formatting
+        - Proofreading and copyediting
+
+    - category: Teaching
+      items:
+        - Constructive Written Feedback
+        - One-on-One Instruction
+        - Lesson Planning
