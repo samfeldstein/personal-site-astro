@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 
 const description = `Sam Feldstein's ${entry.data.title} résumé.`;
-const preloadFonts = ["cormorant", "noto-sans"];
+const preloadFonts = ["cormorant", "cormorant-italic", "noto-sans"];
 
 const sectionData = {};
 if (entry.data.sections) {

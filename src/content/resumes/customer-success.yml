@@ -1,8 +1,8 @@
-title: Technical Support Specialist
+title: Customer Success Associate
 
-summary: Curing tech-caused headaches one email at a time.
+summary: Resourceful problem-solver who turns confused customers into confident ones.
 
-printUrl: account-manager
+printUrl: coalition-csa
 
 links:
   - name: Portfolio
@@ -12,43 +12,84 @@ links:
 
 sections:
   skills:
-    - category: Customer Relationship Management
+    - category: Customer Support
       items:
-        - Customer onboarding and support
-        - Relationship-building and retention
-        - Issue resolution and problem solving
+        - Issue resolution and end-to-end ownership
+        - Multi-channel support (chat, email, phone)
+        - Customer education and onboarding
 
-    - category: Technical Product Support
+    - category: Coaching & Training
       items:
-        - Technical troubleshooting
-        - CMS and ecommerce platforms
+        - Onboarding and training new team members
+        - Creating training materials and documentation
         - Translating technical concepts for non-technical users
 
-    - category: User Experience
+    - category: Operations
       items:
-        - User experience optimization
-        - Customer needs assessment
-        - Product feedback and iteration
+        - Working across multiple systems and structured processes
+        - Fast-paced, high-growth startup environments
+        - Process improvement and attention to detail
 
   relevantExperience:
-    - devFreelance
-    - devSentinel
-    - managerSentinel
+    - key: managerSentinel
+      description:
+        - Owned customer-facing operations end-to-end, ensuring reliable
+          service and positive experiences throughout the customer journey.
+        - Created onboarding and training processes and materials that
+          empowered new and existing team members to deliver consistent
+          support and resolve customer needs effectively.
+        - Identified recurring operational issues and implemented process
+          improvements to increase efficiency and customer satisfaction.
+    - key: marfaStore
+      description:
+        - Provided responsive, empathetic customer support across 100+ SKUs,
+          resolving inquiries and order issues while maintaining positive
+          client relationships.
+        - Handled fulfillment and administrative operations, learning new
+          tools and systems quickly to keep the business running smoothly.
+        - Ensured accurate inventory and a seamless online shopping
+          experience for customers.
+    - key: devFreelance
+      description:
+        - Identify client needs and deliver tailored solutions that improve
+          customer and user experience in fast-moving, resource-constrained
+          environments.
+        - Guide clients through launches, integrations, and workflows,
+          resolving issues quickly and independently.
+        - Provide ongoing technical support and training, empowering
+          non-technical clients to manage their own tools confidently.
+    - key: devSentinel
+      description:
+        - Implemented and supported a new digital commerce platform, helping
+          staff and customers adopt online purchasing workflows.
+        - Translated business requirements into user-focused solutions that
+          improved accessibility and customer satisfaction.
+        - Provided ongoing platform support and training, enabling teams to
+          independently manage content and customer-facing tools.
 
   projects:
-    - postoley
-    - regreen
-    - prairieRose
+    - key: prairieRose
+      description:
+        - Built and deployed a website with a content management system
+          tailored to the client's workflow.
+        - Configured tools that allowed nontechnical users to independently
+          update and maintain content.
+        - Provided guidance and support throughout implementation to ensure
+          successful adoption.
+    - key: regreen
+      description:
+        - Developed a custom website for a nonprofit organization with a
+          focus on usability and accessibility.
+        - Improved content management workflows to help users efficiently
+          maintain the platform.
+        - Supported implementation by translating organizational needs into
+          practical technical solutions.
 
   volunteer:
-    - chec
     - workaway
+    - chec
     - frida
 
-  publications:
-    - madeOfMemories
-    - theFirst
-
   education:
-    - chapman
     - iowa
+    - chapman

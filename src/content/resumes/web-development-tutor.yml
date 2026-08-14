@@ -36,6 +36,31 @@ sections:
         - Built custom functionality to support efficient knowledge management
           and navigation.
 
+  skills:
+    - category: Languages & Frameworks
+      items:
+        - JavaScript
+        - Astro, Vue
+        - HTML, CSS/SCSS
+
+    - category: Tools & Platforms
+      items:
+        - Git
+        - Cloudflare Workers, Netlify
+        - Headless/static CMS (Decap, etc.)
+
+    - category: Practices
+      items:
+        - Responsive & accessible design
+        - Component-driven architecture
+        - Performance optimization
+
+    - category: Teaching
+      items:
+        - Constructive written feedback
+        - Personalized instruction
+        - Lesson planning
+
   relevantExperience:
     - key: devFreelance
       description:
@@ -64,10 +89,10 @@ sections:
         - Evaluated assignments with a focus on clear, constructive feedback on
           structure and craft.
 
-  # otherExperience:
-  #   - composition
-  #   - devAssistant
-  #   - journalistSentinel
+  volunteer:
+    - chec
+    - workaway
+    - frida
 
   publications:
     - madeOfMemories
@@ -77,21 +102,3 @@ sections:
   education:
     - chapman
     - iowa
-
-  volunteer:
-    - chec
-    - workaway
-    - frida
-
-  skills:
-    - category: Writing
-      items:
-        - Journalism, academic writing, and creative works
-        - APA/MLA formatting
-        - Proofreading and copyediting
-
-    - category: Teaching
-      items:
-        - Constructive Written Feedback
-        - One-on-One Instruction
-        - Lesson Planning
