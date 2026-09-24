@@ -1,0 +1,60 @@
+---
+import HtmlIcon from "@/components/HtmlIcon.astro";
+import CssIcon from "@/components/CssIcon.astro";
+import JsIcon from "@/components/JsIcon.astro";
+import AstroIcon from "@/components/AstroIcon.astro";
+import GitIcon from "@/components/GitIcon.astro";
+import CloudflareIcon from "@/components/CloudflareIcon.astro";
+import TerminalIcon from "@/components/TerminalIcon.astro";
+import ClaudeIcon from "./ClaudeIcon.astro";
+
+const skills = [
+  { icon: HtmlIcon, name: "HTML" },
+  { icon: CssIcon, name: "CSS" },
+  { icon: JsIcon, name: "JavaScript" },
+  { icon: AstroIcon, name: "Astro" },
+  { icon: GitIcon, name: "Git" },
+  { icon: TerminalIcon, name: "Bash" },
+  { icon: CloudflareIcon, name: "Cloudflare" },
+  { icon: ClaudeIcon, name: "Claude" },
+];
+---
+
+<section class="skills">
+  <h2>Skills</h2>
+
+  <div class="code-icons">
+    {
+      skills.map(({ icon: Icon, name }) => (
+        <figure>
+          <Icon />
+          <figcaption>{name}</figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .code-icons {
+    padding: 4rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    svg {
+      width: clamp(4rem, 10vw, 5rem);
+      fill: currentColor;
+    }
+  }
+
+  figure {
+    width: fit-content;
+  }
+
+  figcaption {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+</style>

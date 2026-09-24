@@ -1,6 +1,7 @@
-title: Customer Success Associate
+title: Customer Success Manager
 
-summary: Resourceful problem-solver who turns confused customers into confident ones.
+summary:
+  Resourceful problem-solver who turns confused customers into confident ones.
 
 printUrl: coalition-csa
 
@@ -33,29 +34,29 @@ sections:
   relevantExperience:
     - key: managerSentinel
       description:
-        - Owned customer-facing operations end-to-end, ensuring reliable
-          service and positive experiences throughout the customer journey.
-        - Created onboarding and training processes and materials that
-          empowered new and existing team members to deliver consistent
-          support and resolve customer needs effectively.
+        - Owned customer-facing operations end-to-end, ensuring reliable service
+          and positive experiences throughout the customer journey.
+        - Created onboarding and training processes and materials that empowered
+          new and existing team members to deliver consistent support and
+          resolve customer needs effectively.
         - Identified recurring operational issues and implemented process
           improvements to increase efficiency and customer satisfaction.
     - key: marfaStore
       description:
         - Provided responsive, empathetic customer support across 100+ SKUs,
-          resolving inquiries and order issues while maintaining positive
-          client relationships.
-        - Handled fulfillment and administrative operations, learning new
-          tools and systems quickly to keep the business running smoothly.
-        - Ensured accurate inventory and a seamless online shopping
-          experience for customers.
+          resolving inquiries and order issues while maintaining positive client
+          relationships.
+        - Handled fulfillment and administrative operations, learning new tools
+          and systems quickly to keep the business running smoothly.
+        - Ensured accurate inventory and a seamless online shopping experience
+          for customers.
     - key: devFreelance
       description:
         - Identify client needs and deliver tailored solutions that improve
           customer and user experience in fast-moving, resource-constrained
           environments.
-        - Guide clients through launches, integrations, and workflows,
-          resolving issues quickly and independently.
+        - Guide clients through launches, integrations, and workflows, resolving
+          issues quickly and independently.
         - Provide ongoing technical support and training, empowering
           non-technical clients to manage their own tools confidently.
     - key: devSentinel
@@ -70,16 +71,16 @@ sections:
   projects:
     - key: prairieRose
       description:
-        - Built and deployed a website with a content management system
-          tailored to the client's workflow.
+        - Built and deployed a website with a content management system tailored
+          to the client's workflow.
         - Configured tools that allowed nontechnical users to independently
           update and maintain content.
         - Provided guidance and support throughout implementation to ensure
           successful adoption.
     - key: regreen
       description:
-        - Developed a custom website for a nonprofit organization with a
-          focus on usability and accessibility.
+        - Developed a custom website for a nonprofit organization with a focus
+          on usability and accessibility.
         - Improved content management workflows to help users efficiently
           maintain the platform.
         - Supported implementation by translating organizational needs into

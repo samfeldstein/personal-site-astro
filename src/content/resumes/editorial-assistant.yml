@@ -1,0 +1,72 @@
+title: Editorial Assistant
+
+summary: Journalist and web developer bridging content production, digital publishing, and donor communications.
+
+printUrl: editorial-assistant
+
+links:
+  - name: Portfolio
+    url: https://samfeldstein.xyz/code
+  - name: GitHub
+    url: https://github.com/samfeldstein
+
+sections:
+  skills:
+    - category: Editorial & Publishing
+      items:
+        - Proofreading and copyediting
+        - Fact-checking and source verification
+        - CMS publishing (WordPress and similar platforms)
+
+    - category: Fundraising & Donor Relations
+      items:
+        - Donor communication and stewardship
+        - Fundraising campaign support
+        - Relationship-building and retention
+
+    - category: Administrative Coordination
+      items:
+        - Scheduling and workflow coordination
+        - Inbox and correspondence management
+        - Cross-team communication
+
+  relevantExperience:
+    - key: journalistSentinel
+      description:
+        - Wrote and fact-checked articles covering community events and
+          grassroots activism, verifying names, dates, and primary-source
+          details for accuracy.
+        - Interviewed community leaders, activists, and local stakeholders to
+          ensure accurate representation and sourcing.
+        - Coordinated with editors to meet publication deadlines and
+          maintain consistent editorial standards.
+    - key: devSentinel
+      description:
+        - Developed and launched a WordPress-based online storefront,
+          building hands-on CMS publishing and content management experience.
+        - Refined layout and content presentation to improve accessibility
+          and usability.
+        - Supported ongoing platform maintenance and content updates.
+    - key: lear
+      description:
+        - Raised a projected ~$300,000 in recurring donations for nonprofits
+          including the ASPCA and Doctors Without Borders.
+        - Built and maintained donor relationships, improving retention
+          through personalized engagement and communication.
+    - key: chapman
+      description:
+        - Coordinated course materials, schedules, and communications to
+          support smooth day-to-day academic operations.
+        - Provided detailed written feedback to students on scripts, résumés,
+          and applications, honing proofreading and editorial judgment.
+
+  publications:
+    - reproductiveCoalition
+    - transPecos
+
+  volunteer:
+    - chec
+
+  education:
+    - iowa
+    - chapman

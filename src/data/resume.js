@@ -79,48 +79,60 @@ export const workHistory = {
       "Provided top-tier customer support, resolving inquiries and order issues promptly while fostering positive client relationships that enhanced brand reputation.",
     ],
   },
-  // managerSentinel: {
-  //   role: "General Manager",
-  //   employer: "The Sentinel",
-  //   date: "November 2020 – November 2021",
-  //   place: "Marfa, TX",
-  //   description: [
-  //     "Led hiring efforts by writing job postings and interviewing candidates.",
-  //     "Implemented a standardized training program to ensure consistency and efficiency.",
-  //     "Oversaw inventory, ordering, and vendor relations to ensure seamless operations.",
-  //   ],
-  // },
+  baristaCedar: {
+    role: "Barista",
+    employer: "Cedar Coffee & Supply",
+    date: "November 2021 – December 2023",
+    place: "Alpine, TX",
+    description: [
+      "Prepared and served coffee drinks in a customer-facing café role.",
+      "Built rapport with customers through friendly conversation and attentive service.",
+    ],
+  },
   managerSentinel: {
     role: "General Manager",
     employer: "The Sentinel",
     date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
+      "Promoted from barista to general manager of a combined café, retail shop, and restaurant.",
       "Owned customer-facing operations, ensuring reliable service and positive experiences throughout the customer journey.",
-      "Created onboarding and training processes that empowered team members to deliver consistent support and resolve customer needs effectively.",
+      "Managed staff scheduling and hiring, and created onboarding and training processes that empowered team members to deliver consistent support and resolve customer needs effectively.",
+      "Ordered and managed inventory, including milk, coffee beans, and other supplies, and maintained vendor relations.",
       "Managed operational workflows to identify issues, implement solutions, and improve overall customer satisfaction.",
+      "Prepared and served food and worked large events.",
+      "Bartended, mostly morning cocktails, with occasional evening shifts.",
     ],
   },
-  // devSentinel: {
-  //   role: "WordPress Developer",
-  //   employer: "The Sentinel",
-  //   date: "November 2020 – November 2021",
-  //   place: "Marfa, TX",
-  //   description: [
-  //     "Developed and launched an online storefront with WordPress and WooCommerce.",
-  //     "Refined user interface to create a seamless customer experience and maximize conversions.",
-  //     "Implemented SEO strategies to boost search visibility and drive organic traffic.",
-  //   ],
-  // },
   devSentinel: {
     role: "WordPress Developer",
     employer: "The Sentinel",
     date: "November 2020 – November 2021",
     place: "Marfa, TX",
     description: [
+      "Developed and launched an online storefront with WordPress and WooCommerce.",
       "Implemented and supported a digital commerce platform, helping users seamlessly adopt new online purchasing workflows.",
+      "Refined user interface to create a seamless customer experience and maximize conversions.",
       "Translated business requirements into user-focused solutions that improved accessibility, usability, and customer satisfaction.",
+      "Implemented SEO strategies to boost search visibility and drive organic traffic.",
       "Provided ongoing platform support and training, empowering internal teams to manage content, products, and customer experiences.",
+    ],
+  },
+  frida: {
+    role: "Theater Staff (Volunteer)",
+    employer: "The Frida Cinema",
+    date: "March 2019 – March 2020",
+    place: "Santa Ana, CA",
+    description: [
+      "Volunteered every Friday at a nonprofit independent cinema and picked up additional shifts as needed.",
+      "Sold tickets and concessions using a POS system, delivering friendly, enthusiastic customer service to every guest.",
+      "Answered patron questions and helped guests feel welcome.",
+      "Solicited donations from patrons in a friendly, enthusiastic way; the Friday night team frequently placed first in the theater's team donation bracket.",
+      "Updated the theater's marquee.",
+      "Cleaned the theater and stocked concessions to keep the space welcoming and ready for guests.",
+      "Handled closing duties at the end of the night.",
+      "Trained fellow volunteers.",
+      "Assisted with day-to-day theater operations.",
     ],
   },
   lear: {
@@ -196,8 +208,7 @@ export const projects = {
   digitalNotebook: {
     title: "Digital Notebook",
     type: "Website",
-    date: "November 2024",
-    // description: "A wiki-like personal knowledge base. Built with Obsidian, Astro, and Cloudflare Workers.",
+    date: "November 2024 – Present",
     description: "Built a high-performance personal knowledge base with Astro, Obsidian, and Cloudflare Workers. Implemented Markdown content collections, dynamic routing, backlinks, and graph visualization.Optimized build performance and content organization for a large static site."
   },
   personalSite: {
@@ -219,8 +230,18 @@ export const projects = {
     title: "Like Father, Like Son, Like Movies",
     type: "Podcast",
     date: "November 2022 – April 2025",
-    description: "Produced and co-hosted a podcast about movies."
-  }
+    description: [
+      "Produced and co-hosted a podcast about movies, releasing more than a dozen episodes.",
+      "Handled nearly all production work as a one-person team.",
+      "Covered films of all kinds, generally not new releases, with each episode centered on a movie one host had long wanted the other to see.",
+      "Researched films and topics in advance and planned the structure of each episode to guide the discussion.",
+      "Learned and set up remote recording with Riverside and Yeti microphones to record with a co-host.",
+      "Edited every episode in Descript.",
+      "Set up podcast hosting with Acast and distributed episodes to podcast platforms.",
+      "Wrote episode show notes.",
+      "Hired and worked with an artist to create original artwork for the show.",
+    ],
+  },
 };
 
 export const publications = {
@@ -250,12 +271,6 @@ export const publications = {
     outlet: "The Big Bend Sentinel",
     date: "October 2022",
   },
-  theLighthouse: {
-    title: "Absence of Meaning in <em>The Lighthouse</em>",
-    medium: "Criticism",
-    outlet: "The Frida Cinema Blog",
-    date: "April 2022",
-  },
 }
 
 export const volunteer = {
@@ -272,13 +287,6 @@ export const volunteer = {
     date: "April 2024 – September 2024",
     place: "Various Locations",
     description: "Volunteered for various organizations and individuals alongside Workawayers from Hungary, Italy, Spain, and France."
-  },
-  frida: {
-    role: "Theater Staff",
-    employer: "The Frida Cinema",
-    date: "March 2019 – March 2020",
-    place: "Santa Ana, CA",
-    description: "Assisted with theater operations, provided excellent customer service, and occasionally wrote for the blog."
   },
   arl: {
     role: "Horse Trainer",

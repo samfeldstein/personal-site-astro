@@ -236,29 +236,6 @@ ul.projects {
   }
 }
 
-.code-icons {
-  padding: 4rem 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-
-  figure {
-    width: fit-content;
-  }
-
-  figcaption {
-    @extend .small-caps;
-    font-size: .75rem;
-    text-align: center;
-  }
-
-  svg {
-    width: clamp(4rem, 10vw, 5rem);
-    fill: currentColor;
-  }
-}
-
 .project-image {
   text-align: center;
 

@@ -1,5 +1,11 @@
 const quotes = [
   {
+    quote: "When facing a well-seasoned or truly gifted opponent, you must always attempt to redefine your opponent’s base understanding of the encounter. You attack their primary hypothesis. If there is an expectation that a conflict is between two parties—one of them being yours, the first thing you do is introduce a third.",
+    speaker: "Reed Richards",
+    work: "Secret Wars",
+    medium: "comic"
+  },
+  {
     quote: "When you write a passionate love letter and focus on making sure your longhand is as beautiful as possible, it isn’t going to be much of a love letter. But if you concentrate on the words and emotions, your particular style of longhand—which has nothing to do with the letter per se—will somehow seep in of its own accord. Aesthetics, if they even exist, are to be discovered only once a film has been completed. I leave it to the philosophers to enlighten me about such things.",
     speaker: "Werner Herzog",
     work: "Werner Herzog: A Guide for the Perplexed: Conversations with Paul Cronin",

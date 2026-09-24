@@ -1,60 +1,87 @@
-title: Writer & Developer
+title: Developer Writer
 
-summary: Designing for the web with an eye toward performant sites, thoughtful typography, and accessible writing.
+summary: Turning technical work into content developers can actually use.
 
-printUrl: writer-developer
+printUrl: developer-writer
 
 links:
-  - name: Writing
-    url: /published-writing/
-  - name: Code
-    url: /code/
+  - name: Portfolio
+    url: https://samfeldstein.xyz/code
+  - name: GitHub
+    url: https://github.com/samfeldstein
 
 sections:
-  education:
-    - chapman
-    - iowa
-
   skills:
-    - category: Writing
+    - category: Technical Content Creation
       items:
-        - Journalism, creative works
-        - Interviewing, research, fact-checking
-        - Technical documentation
-    
-    - category: Editorial
-      items:
-        - Web publishing
-        - Search engine optimization
-        - Typography and formatting
+        - Technical writing and documentation
+        - Translating code and technical concepts for varied audiences
+        - Tutorial and how-to content development
 
-    - category: Web Technologies & Standards
+    - category: Content Strategy
       items:
-        - HTML, CSS, JavaScript
-        - Accessibility best practices
-        - Content management systems
+        - Content structuring for clarity and discoverability
+        - Research-driven writing and fact verification
+        - Managing multiple assignments against deadlines
 
   relevantExperience:
-    - devFreelance
-    - devAssistant
-    - journalistSentinel
+    - key: devFreelance
+      description:
+        - Build websites and technical solutions across multiple frameworks
+          (Astro, WordPress, Eleventy, Vue), requiring fluency in varied
+          languages and SDK environments.
+        - Guide clients through platform integrations and technical workflows,
+          translating implementation details into clear, actionable
+          instructions.
+        - Provide ongoing technical support and training, writing documentation
+          that helps non-technical users manage their own platforms
+          independently.
+    - key: journalistSentinel
+      description:
+        - Wrote clear, accurate articles under deadline, interviewing
+          subject-matter experts to ensure technical and factual precision.
+        - Structured reporting for a general audience without sacrificing
+          accuracy or nuance.
+    - key: devSentinel
+      description:
+        - Implemented a digital commerce platform and documented workflows to
+          help users adopt new online purchasing processes.
+        - Translated business requirements into user-focused solutions,
+          balancing technical accuracy with accessibility.
+        - Trained internal teams and produced supporting materials so staff
+          could independently manage content and products.
+    - key: devAssistant
+      description:
+        - Wrote detailed analysis (script coverage) evaluating structure,
+          feasibility, and adaptation potential for executive decision-making.
+        - Synthesized complex source material into concise, actionable written
+          recommendations.
 
-  otherExperience:
-    - composition
-    - managerSentinel
+  projects:
+    - key: digitalNotebook
+      description:
+        - Write and maintain technical notes documenting implementation
+          decisions across Astro.js infrastructure, including content
+          collections, dynamic routing, and Cloudflare Workers deployment.
+        - Practice writing precise, code-adjacent explanations intended for
+          future reference and reuse.
+    - key: prairieRose
+      description:
+        - Integrated a CMS (Decap) and documented the editing workflow so a
+          non-technical client could update content independently.
+        - Focused on maintainability and a streamlined editing experience,
+          balancing technical accuracy with usability.
+    - key: regreen
+      description:
+        - Customized a WordPress implementation and improved accessibility,
+          configuring the site for independent nontechnical content management.
+        - Translated organizational needs into a practical technical build.
 
   publications:
     - madeOfMemories
-    - reproductiveCoalition
     - transPecos
+    - reproductiveCoalition
 
-  projects:
-    - regreen
-    - postoley
-    - digitalNotebook
-    - prairieRose
-
-  volunteer:
-    - chec
-    - workaway
-    - frida
+  education:
+    - iowa
+    - chapman

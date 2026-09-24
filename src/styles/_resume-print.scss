@@ -2,7 +2,7 @@
   margin: 0.5in 1.5in;
 
   @bottom-center {
-    content: "Feldstein Résumé — Page " counter(page) " of " counter(pages);
+    content: "Feldstein Resume — Page " counter(page) " of " counter(pages);
     font-family: var(--font-2);
     font-size: 0.5rem;
     text-transform: uppercase;
@@ -163,7 +163,7 @@
   }
 
   section.projects {
-    // break-before: page;
+    break-before: page;
 
     p {
       margin-top: 0.5rem;

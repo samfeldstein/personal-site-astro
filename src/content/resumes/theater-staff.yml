@@ -1,0 +1,89 @@
+title: "Theater Staff"
+summary:
+  "Indie cinema staffer with a background in hospitality, community events, and
+  script analysis."
+printUrl: "theater-staff"
+links:
+  - name: "Website"
+    url: "https://samfeldstein.xyz"
+sections:
+  skills:
+    - category: "Guest Experience & Events"
+      items:
+        - "Customer service"
+        - "Event support"
+        - "Food and beverage service"
+        - "Bartending"
+    - category: "Team & Operations"
+      items:
+        - "Staff scheduling, onboarding, and training"
+        - "Inventory and vendor ordering"
+        - "Cataloging and records"
+    - category: "Film & Writing"
+      items:
+        - "Screenwriting"
+        - "Script coverage and analysis"
+        - "Blog and news writing"
+        - "Podcast production and co-hosting"
+    - category: "Digital"
+      items:
+        - "WordPress"
+        - "Shopify"
+        - "HTML, CSS, and JavaScript"
+  relevantExperience:
+    - key: "frida"
+      description:
+        - "Volunteered every Friday at a nonprofit independent cinema, picking
+          up additional shifts as needed."
+        - "Sold tickets and concessions on a POS system, delivering friendly,
+          enthusiastic customer service to every guest."
+        - "Answered patron questions and solicited donations with enthusiasm;
+          the Friday night team frequently placed first in the theater's team
+          donation bracket."
+        - "Updated the marquee, cleaned the theater, stocked concessions, and
+          handled closing duties."
+        - "Trained fellow volunteers."
+    - key: "managerSentinel"
+      description:
+        - "Promoted from barista to general manager of a combined cafe, retail
+          shop, and restaurant, owning customer-facing operations and a
+          consistently positive guest experience."
+        - "Prepared and served food, bartended, and worked large events."
+        - "Managed staff scheduling and hiring, created onboarding and training
+          processes, and handled inventory and vendor relations."
+    - key: "composition"
+      description:
+        - "Guided customers with tailored recommendations drawn from extensive
+          knowledge of popular genres, authors, and literary trends."
+        - "Built custom web applications to streamline store processes."
+    - key: "devAssistant"
+      description:
+        - "Evaluated manuscripts for a Hollywood production company."
+        - "Wrote script coverage analyzing adaptation and market potential."
+        - "Offered adaptation recommendations that informed executive
+          decision-making."
+    - key: "chapman"
+      description:
+        - "Led discussions on screenwriting techniques and industry practices as
+          a graduate teaching assistant."
+        - "Mentored first-year graduate students with detailed feedback on
+          scripts, résumés, and internship applications."
+        - "Evaluated and graded assignments on narrative structure, character
+          development, and industry standards."
+  projects:
+    - key: "likeMovies"
+      description:
+        - "Produced and co-hosted a podcast about movies, releasing more than a
+          dozen episodes."
+        - "Researched films in advance and planned the structure of each episode
+          to guide the discussion."
+        - "Handled nearly all production: remote recording
+          with Riverside, editing in Descript, hosting and distribution through
+          Acast, show notes, and commissioned artwork."
+  publications:
+    - "madeOfMemories"
+    - "theFirst"
+    - "transPecos"
+  education:
+    - "iowa"
+    - "chapman"
