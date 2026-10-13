@@ -23,6 +23,20 @@ Known problems and small cleanups found during a site review on 2026-10-13.
 - [ ] **Old OSINT log page.** [src/pages/_osint-log.astro](src/pages/_osint-log.astro) is disabled by its underscore prefix and links to `/files/*.pdf` certificates that aren't in the repo. Delete it.
 - [ ] **Unreferenced résumé PDFs.** No variant links to the page-designer, support-specialist, writer-editor, or customer-success PDFs. They're still public at their URLs. Keep them if you've sent those links out; otherwise remove them.
 - [ ] **Old email address in résumé PDFs.** The site now uses sam@samfeldstein.com, but every PDF in [public/static/resumes/](public/static/resumes/) still shows an older address. The support-specialist PDF has sam@samfeldstein.xyz, and the other nine have samfeldstein@pm.me. Re-export the ones you still use and delete the rest.
-- [ ] **Committed image cache.** `node_modules/.astro/` is committed so Cloudflare can reuse processed gallery images. That's about 1,450 files, including variants for 10 source images that are no longer in the gallery, and it has grown the git history to roughly 930 MB. Options: prune the orphans, stop committing the cache and rely on Cloudflare's build cache, or rewrite history to shrink the repo.
+- [ ] **Committed image cache and slow builds.** `node_modules/.astro/` is committed so Cloudflare can reuse processed gallery images instead of regenerating them (87 photos at seven widths, about 600 images) on every build. That's about 1,450 files, including variants for 10 source images that are no longer in the gallery, and it has grown the git history to roughly 930 MB, which Cloudflare has to clone on every build. Worse, if Cloudflare installs dependencies with a clean install (`npm ci`), it deletes `node_modules/` before building, cache included. In that case, every build reprocesses every photo anyway, and the committed cache only adds clone time.
+  - First, check the timestamps in a Cloudflare build log to see whether the time goes to cloning or to image generation.
+  - Likely fix: stop committing `node_modules/.astro/`, remove it from git, and keep processed images between builds with Cloudflare's build cache instead. Confirm that the build cache actually preserves that folder before relying on it.
+  - Optional: rewrite history to shrink the repo once the cache is no longer committed.
 - [ ] **Unused Bridgy Fed redirects.** The two `/.well-known/*` rules at the bottom of [public/_redirects](public/_redirects) forward fediverse lookups to fed.brid.gy. Remove them, since Bridgy Fed isn't in use.
 - [ ] **Web manifest colors.** [public/site.webmanifest](public/site.webmanifest) uses white for both `theme_color` and `background_color`, which doesn't match dark mode.
+
+## Content
+
+- [ ] **Review the Code page portfolio.** Some of the projects on [code.astro](src/pages/code.astro) aren't very interesting to highlight. The page currently lists Little Peaks Pediatric Therapy, Shelf Talker Generator, The Simplest Writing Tracker, Personal Cookbook, Regreen Big Bend, Postoley Dance Ensemble, Digital Notebook, Prairie Rose Arena, and Pairings. Decide between:
+  - Replacing the project list with a link to GitHub.
+  - Trimming it to the projects worth featuring.
+  - **Generating the list from GitHub,** so the page never needs manual updates. At build time, fetch public repos from the GitHub API (`https://api.github.com/users/samfeldstein/repos`), keep the ones tagged with a topic like `portfolio`, and render each one from its name, description, homepage URL, and topics. Featuring a project then just means adding the topic on GitHub. Things to work out:
+    - Exclude the `samfeldstein/samfeldstein` repo. It's the GitHub profile README, not a project. A topic filter would skip it as long as it isn't tagged, but exclude it by name too, in case the filter changes later.
+    - The page only refreshes when the site rebuilds. A scheduled Cloudflare deploy hook, for example once a day, would keep it current without manual pushes.
+    - Client sites without a public repo (Regreen Big Bend, Postoley Dance Ensemble, and Prairie Rose Arena) would drop off unless they get a repo or a small manual list alongside the fetched ones.
+    - Unauthenticated API calls are limited to 60 per hour, which is plenty for builds. Pinned repos would need the GraphQL API and a token.
