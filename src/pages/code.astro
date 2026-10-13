@@ -9,7 +9,7 @@ import Skills from "@/components/CodeSkills.astro";
 import "@/styles/_code.scss";
 
 // Data
-import { site } from "../../config.mjs";
+import { site, author } from "../../config.mjs";
 
 // Fonts
 const preloadFonts = ["victor-mono", "orbitron"];
@@ -107,7 +107,7 @@ const projects = [
     <Skills />
     <div class="hire">
       <a class="github" href="https://github.com/samfeldstein">GitHub</a>
-      <Email>Hire me</Email>
+      <Email address={author.businessEmail}>Hire me</Email>
     </div>
     <section>
       <h2 class="visually-hidden">Projects</h2>

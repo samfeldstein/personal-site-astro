@@ -1,5 +1,7 @@
 ---
 import { author } from "../../config.mjs"
+
+const { address = author.email } = Astro.props
 ---
 
-<a href=`mailto:${author.email}`><slot /></a>
+<a href=`mailto:${address}`><slot /></a>
