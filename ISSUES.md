@@ -10,7 +10,7 @@ Known problems and small cleanups found during a site review on 2026-10-13.
   - `coalition-csa` (customer-success), `developer-writer` (writer-developer), and `theater-staff` have no matching PDF.
   - `/freelance-writer`, `/writing-tutor`, and `/web-development-tutor` have a leading slash, which produces paths like `sam-feldstein-/freelance-writer-resume.pdf`.
 - [ ] **Legacy redirects point to a missing page.** [public/_redirects](public/_redirects) sends `/web-development-projects` and `/projects` to `/websites`, which doesn't exist. Point them at `/code`.
-- [ ] **Project links on the Code page and in the head:**
+- [x] **Project links on the Code page and in the head:**
   - In [code.astro](src/pages/code.astro), Little Peaks Pediatric Therapy's `source` points to the shelf-talkers repo.
   - The Code page links to `notebook.samfeldstein.xyz`, while the home page uses `notes.samfeldstein.xyz`. Use one domain everywhere.
   - [Head.astro](src/components/Head.astro) has an alternate feed link to `notebook.samfeldstein.xyz/feed.xml` with type `application/atom+xml`. The notebook's feed is RSS (`application/rss+xml`).

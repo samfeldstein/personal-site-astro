@@ -1,8 +1,8 @@
 # Sam Feldstein’s Personal Site
 
-The source for [samfeldstein.xyz](https://samfeldstein.xyz), home to my published writing, photography, coding projects, and résumés.
+The source for [samfeldstein.xyz](https://samfeldstein.xyz), home to my published writing, photography, and coding projects.
 
-I keep this repo public mainly as a code sample. You’re welcome to read it, borrow from it, or fork it. The content is mine, though: the writing list, photos, quotes, and résumé data.
+I keep this repo public mainly as a code sample. You’re welcome to read it, borrow from it, or fork it. The content is mine.
 
 ## Stack
 
@@ -12,17 +12,13 @@ I keep this repo public mainly as a code sample. You’re welcome to read it, bo
 - The PageSpeed Insights API for live performance scores
 - Cloudflare Workers static assets for hosting. Cloudflare builds and deploys from GitHub on every push.
 
-There's no client-side framework. The only browser scripts I wrote are the quote generator and a small viewport-height fix on the home and résumé pages.
+There's no client-side framework. The only browser scripts I wrote are the quote generator and a small viewport-height fix on the home page.
 
 ## How it works
 
-### Pages with their own typography
+### Per-page styling
 
-Each section of the site has its own look. Every page imports its own Sass partial and passes the fonts it uses to the layout:
-
-- The [home page](src/pages/index.astro), [Published Writing](src/pages/published-writing.astro), and [Photos](src/pages/photos.astro) use Oswald and Noto Serif.
-- [Code](src/pages/code.astro) uses Victor Mono and Orbitron.
-- [Résumés](src/pages/resumes/[id].astro) use Cormorant and Noto Sans.
+Any page can be styled on its own. Each page imports its own Sass partial and tells the layout which fonts it uses, so a page can depart from the rest of the site without affecting anything else. Most pages share Oswald and Noto Serif, while the [Code](src/pages/code.astro) page has its own look, with Victor Mono and Orbitron.
 
 All the fonts are self-hosted variable woff2 files. Each `@font-face` in [src/styles/fonts/](src/styles/fonts/) limits the font to the characters it covers with `unicode-range`. It also pairs the font with a metric-adjusted local fallback that uses `size-adjust`, so text doesn't jump when the web font loads. Colors are `light-dark()` tokens in [_config.scss](src/styles/_config.scss), so every page follows the OS light or dark setting without any JavaScript.
 
@@ -31,18 +27,6 @@ All the fonts are self-hosted variable woff2 files. Each `@font-face` in [src/st
 The [Photos](src/pages/photos.astro) page is built from whatever image files are in `src/images/gallery/`. Nothing needs to be listed by hand. [get-gallery-images.js](src/scripts/get-gallery-images.js) collects the files with `import.meta.glob`. It reads each photo's embedded title, description, and creation date with ExifTool and sorts the photos newest first. The description becomes the alt text, so I write captions once in my photo editor and they carry through to the site.
 
 [Gallery.astro](src/components/photos/Gallery.astro) renders each photo with Astro's `<Image>` at seven responsive widths, with a `sizes` attribute matched to the layout's breakpoints. The first photo loads eagerly with high fetch priority, and the rest lazy-load.
-
-### Résumés
-
-I keep one set of résumé data and generate a résumé for each kind of job I apply for.
-
-- **One source of truth.** [src/data/resume.js](src/data/resume.js) holds every education entry, job, project, volunteer role, and publication as an object keyed by a short name, like `devFreelance`.
-- **One YAML file per variant.** Each file in [src/content/resumes/](src/content/resumes/) is an entry in a `resumes` content collection. It sets a title, summary, and links. Its `sections` list decides which sections appear, in what order, and which entries each one includes, picked by key.
-- **Per-variant wording.** A variant can override an entry's description, so the same job can emphasize development on one résumé and writing on another, without copying the job's dates or employer.
-- **One page template.** [resumes/[id].astro](src/pages/resumes/[id].astro) generates a page per variant at `/resumes/<id>/`. It looks up each key, builds a two-column table of contents from the chosen sections, and renders each section type.
-- **Print-ready.** [_resume-print.scss](src/styles/_resume-print.scss) restyles the page for paper. It hides navigation, sets page margins, and uses `@page` margin boxes with `counter(page)` and `counter(pages)` for a "Page X of Y" footer. The downloadable PDFs in `public/static/resumes/` come from printing these pages to PDF.
-
-Adding a résumé for a new kind of job only takes a new YAML file.
 
 ### Live Lighthouse scores
 
@@ -67,18 +51,16 @@ The footer on the home and Code pages shows a random quote from [src/data/quotes
 ├── wrangler.jsonc          Cloudflare static assets config
 ├── public/
 │   ├── static/fonts/       Self-hosted woff2 fonts
-│   ├── static/resumes/     Printed résumé PDFs
 │   ├── _headers            Cache rules
 │   └── _redirects          Legacy URL redirects
 └── src/
-    ├── pages/              Home, Published Writing, Photos, Code, résumés, 404
+    ├── pages/              Home, Published Writing, Photos, Code, 404
     ├── layouts/Base.astro  Page shell
     ├── components/         Head, gallery, quote generator, Lighthouse panel, icons
-    ├── content/resumes/    One YAML file per résumé variant
-    ├── data/               Résumé entries, published writing, quotes
+    ├── data/               Published writing and quotes
     ├── images/gallery/     Source photos for the gallery
     ├── scripts/            Gallery metadata, PageSpeed fetch, utilities
-    └── styles/             Sass partials, per-page styles, fonts, print styles
+    └── styles/             Sass partials, per-page styles, and fonts
 ```
 
 ## Running it locally
@@ -107,4 +89,4 @@ A production build calls the PageSpeed Insights API. Without a `PSI_KEY`, the re
 
 ## Reuse
 
-The code is here to learn from and borrow. The writing, photos, and résumé content are mine, so please don't republish them as your own.
+The code is here to learn from and borrow. The writing and photos are mine, so please don't republish them as your own.
