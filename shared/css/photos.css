@@ -83,20 +83,22 @@
   background: transparent;
 }
 .lightbox figure {
+  --chrome: 8rem;
   box-sizing: border-box;
-  display: grid;
-  place-content: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 100%;
   margin: 0;
   padding: 3.5rem clamp(3rem, 6vw, 5rem) 1rem;
 }
 .lightbox-image {
   display: block;
-  width: auto;
+  width: min(100%, calc((100svh - var(--chrome)) * var(--r, 1.5)));
   height: auto;
-  max-width: 100%;
-  max-height: calc(100svh - 8rem);
+  aspect-ratio: var(--r, 1.5);
+  object-fit: contain;
   animation: none;
 }
 .lightbox figcaption {
@@ -154,6 +156,7 @@
 
 @media (max-width: 500px) {
   .lightbox figure {
+    --chrome: 11rem;
     padding: 3.5rem 0.5rem 4.5rem;
   }
   .lightbox-prev,
