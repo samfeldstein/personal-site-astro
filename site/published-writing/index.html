@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
 <head>
-<!-- page: {"title":"Published Writing","description":"My publish writing, including short stories, news articles, and roleplaying adventures.","css":["writing"],"fonts":["oswald","noto-serif"]} -->
+<!-- page: {"title":"Published Writing","description":"My publish writing, including short stories, news articles, and roleplaying adventures.","css":["book","writing"],"fonts":["cormorant-garamond","cormorant-garamond-italic"],"typefaces":"Cormorant Garamond"} -->
 <!-- shared:head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="sitemap" href="/sitemap-index.xml">
 <link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
-<link rel="preload" href="/static/fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/noto-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 *,
 *::before,
@@ -99,94 +99,80 @@ h3,
   translate: 0;
 }
 @font-face {
-  font-family: "Oswald";
-  src: url("/static/fonts/oswald.woff2") format("woff2");
-  unicode-range: U+0020-007F;
-  font-weight: 200 700;
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Oswald Fallback";
-  src: local("Arial");
-  unicode-range: U+0020-007F;
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  size-adjust: 80%;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("/static/fonts/noto-serif.woff2") format("woff2");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("/static/fonts/noto-serif-italic.woff2") format("woff2");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: 100 900;
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond-italic.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  font-weight: 300 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "Noto Serif Fallback";
+  font-family: "Cormorant Garamond Fallback";
   src: local("Georgia");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  size-adjust: 88%;
 }
+
 :root {
-  --font-1: "Noto Serif", "Noto Fallback", serif;
-  --font-2: "Oswald", "Oswald Fallback", sans-serif;
-  --font-size-base: clamp(1.25rem, 5vw, 2rem);
-  --font-small: calc(var(--font-size-base) * .85);
   color-scheme: light dark;
-  --text-color: light-dark(#000, #fff);
-  --background-color: light-dark(#fff, #000);
-  --accent: light-dark(oklch(0.457 0 0), oklch(0.6731 0 0));
-  --accent-reversed: light-dark(oklch(0.6731 0 0), oklch(0.457 0 0));
-  --accent-light: light-dark(#f8f8f8, #252525);
+  --paper: light-dark(#e4dac2, #1d1914);
+  --ink: light-dark(#2a2118, #ddd1b6);
+  --ink-faded: light-dark(#5e5040, #a99c84);
+  --rubric: light-dark(#8e2a1e, #cf6a4f);
+  --leader: light-dark(#9a8a70, #6c6050);
+  --cloth: #24392f;
+  --cloth-weave: #1c2e25;
+  --gilt: #c9a65c;
+  --font-book: "Cormorant Garamond", "Cormorant Garamond Fallback", Georgia, serif;
+  --measure: 26em;
 }
 
-.hide {
-  display: none;
+html {
+  background: var(--paper);
+  scrollbar-color: var(--ink-faded) var(--paper);
 }
 
-.defer {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 300px auto 100vh;
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-book);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.45;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "liga", "dlig";
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.justify {
-  text-align: justify;
-  hyphens: auto;
-}
-
-.small-caps, nav.main, .type {
-  font-variant: small-caps;
-  text-transform: lowercase;
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
-.unstyled-link, a, .entry {
+a {
   color: inherit;
   text-decoration: none;
 }
+a:focus-visible {
+  outline: 2px solid var(--rubric);
+  outline-offset: 0.15em;
+  border-radius: 2px;
+}
 
-.unstyled-list, ul.portfolio {
-  list-style: none;
+::selection {
+  background: var(--rubric);
+  color: var(--paper);
+}
+
+#skiplink {
+  margin: 0.5em;
+  padding: 0.4em 0.8em;
+  background: var(--paper);
+  color: var(--ink);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
 }
 
 .visually-hidden {
@@ -199,108 +185,166 @@ h3,
   position: absolute;
   width: 1px;
 }
-
-html {
-  background-color: var(--background-color);
-  scrollbar-color: var(--text-color) var(--background-color);
-}
-
-body {
-  background-color: var(--background-color);
-  font-family: var(--font-1);
-  font-size: var(--font-size-base);
-  padding: 2vw;
-}
-
-nav.main {
-  font-size: 0.75em;
-  text-align: left;
-  font-family: var(--font-2);
-  font-weight: 300;
-}
-nav.main a {
-  padding: 1em;
-}
-
-a:focus-visible {
-  outline-width: 0.1em;
-  outline-color: var(--text-color);
-}
-
-header {
-  margin-bottom: 4rem;
-  text-align: center;
-}
-
-h1 {
-  font-family: var(--font-2);
-  font-size: 2em;
-  font-weight: 100;
-}
-
-h3 {
-  font-family: var(--font-2);
-  font-weight: 500;
-  font-size: 1em;
-  text-transform: uppercase;
-  margin-top: 3em;
-  letter-spacing: 0.08em;
-}
-
-.page-description {
-  font-size: 1.25em;
-  text-wrap: pretty;
-}
-
-main {
-  padding-bottom: 2em;
-}
-main p,
-main ul,
-main ol {
-  line-height: 1.3;
-}
-
-#skiplink {
-  font-family: var(--font-2);
-  font-weight: 300;
-  text-transform: uppercase;
-  background-color: var(--background-color);
-  padding: 0.5em;
-}
-
-::selection {
-  background-color: var(--accent);
-  color: var(--background-color);
-}
-
-main {
-  max-width: 50rem;
-  margin: 0 auto;
-}
-
 h2 {
-  font-family: var(--font-2);
-  font-size: 2em;
-  font-weight: 100;
+  margin: 0 0 2.5rem;
+  font-weight: 500;
+  font-size: 1.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
   text-align: center;
-  margin-top: 3em;
 }
-
-ul.portfolio {
+h3 {
+  margin: 2.75rem 0 0.75rem;
+  font-weight: 500;
+  font-size: 0.9em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--ink-faded);
+  text-align: center;
+}
+.toc {
+  margin: 0;
   padding: 0;
-  display: grid;
-  gap: 3rem;
+  list-style: none;
+}
+.toc li {
+  counter-increment: page;
+}
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  padding: 0.3em 0;
+}
+.toc a span {
+  order: 1;
+}
+.toc a::before {
+  content: "";
+  order: 2;
+  flex: 1;
+  border-bottom: 2px dotted var(--leader);
+}
+.toc a::after {
+  content: counter(page);
+  order: 3;
+}
+.toc.roman a::after {
+  content: counter(page, lower-roman);
+}
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--rubric);
+}
+.toc a:hover::before,
+.toc a:focus-visible::before {
+  border-bottom-color: currentColor;
+}
+.ornament {
+  margin: -1.5rem 0 2rem;
+  color: var(--rubric);
+  font-size: 1.4em;
 }
 
-.title {
-  font-weight: 100;
+.running-head {
+  padding: 1.5rem 1rem 0;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.85em;
+}
+.running-head a {
+  color: var(--ink-faded);
+}
+.running-head a:hover {
+  color: var(--rubric);
+}
+
+.chapter {
+  margin: clamp(3rem, 10vh, 6rem) auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.chapter-number {
+  margin: 0 0 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: var(--ink-faded);
+}
+.chapter h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.4rem);
+  line-height: 1.1;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
   text-wrap: balance;
 }
+.chapter .ornament {
+  margin: 1.25rem 0 0;
+}
 
-.info {
-  font-size: 0.5em;
-  color: var(--dark-grey);
+.book-page {
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+.works {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.works li + li {
+  margin-top: 1.6em;
+}
+.works a {
+  display: block;
+  font-feature-settings: "liga";
+}
+.work-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: last baseline;
+  column-gap: 0.4em;
+}
+.work-title {
+  overflow-x: clip;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+.work-title::after {
+  content: "";
+  display: inline-block;
+  width: 100vw;
+  margin: 0 -100vw 0 0.4em;
+  border-bottom: 2px dotted var(--leader);
+}
+.works time {
+  white-space: nowrap;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+}
+.work-source {
+  display: block;
+  margin-top: 0.15em;
+  padding-left: 1.25em;
+  color: var(--ink-faded);
+}
+.work-type {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+}
+.works a:hover,
+.works a:focus-visible,
+.works a:hover .work-source,
+.works a:focus-visible .work-source {
+  color: var(--rubric);
+}
+.works a:hover .work-title::after,
+.works a:focus-visible .work-title::after {
+  border-bottom-color: currentColor;
 }
 </style>
 <script type="speculationrules">
@@ -330,83 +374,47 @@ ul.portfolio {
   <!-- shared:skip-link -->
 <a id="skiplink" href="#main-content">Skip to Content</a>
 <!-- /shared:skip-link -->
-  <header>
-    <nav class="main"><a class="home" href="/">Home</a></nav>
+  <!-- shared:running-head -->
+<nav class="running-head" aria-label="Site"><a href="/">Ever in Flux</a></nav>
+<!-- /shared:running-head -->
+  <header class="chapter">
+    <p class="chapter-number">Chapter 1</p>
     <h1>Published Writing</h1>
+    <p class="ornament" aria-hidden="true">❦</p>
   </header>
-  <main id="main-content">
-    <ul class="portfolio">
+  <main id="main-content" class="book-page">
+    <ol class="works">
       <li>
-        <a class="entry" href="https://talestoterrify.com/episodes/619-z-j-garcia-samuel-feldstein/"
-          ><div class="info">
-            <span class="type">Short Story</span><span>&nbsp;|&nbsp;</span
-            ><span class="date-outlet"
-              ><cite class="outlet">Tales to Terrify</cite><span>&nbsp;|&nbsp;</span
-              ><span>Dec 2023</span></span
-            >
-          </div>
-          <div class="title">Made of Memories</div></a
-        >
+        <a href="https://talestoterrify.com/episodes/619-z-j-garcia-samuel-feldstein/">
+          <span class="work-line"><cite class="work-title">Made of Memories</cite><time datetime="2023-12">Dec 2023</time></span>
+          <span class="work-source"><cite>Tales to Terrify</cite>, <span class="work-type">Short Story</span></span>
+        </a>
       </li>
       <li>
-        <a
-          class="entry"
-          href="https://bigbendsentinel.com/2023/08/09/big-bend-reproductive-coalition-launches-community-needs-assessment-with-inaugural-town-hal/?mc_cid=b24b0bb606"
-          ><div class="info">
-            <span class="type">Article</span><span>&nbsp;|&nbsp;</span
-            ><span class="date-outlet"
-              ><cite class="outlet">The Big Bend Sentinel</cite><span>&nbsp;|&nbsp;</span
-              ><span>Aug 2023</span></span
-            >
-          </div>
-          <div class="title">
-            Big Bend Reproductive Coalition launches community needs assessment
-          </div></a
-        >
+        <a href="https://bigbendsentinel.com/2023/08/09/big-bend-reproductive-coalition-launches-community-needs-assessment-with-inaugural-town-hal/?mc_cid=b24b0bb606">
+          <span class="work-line"><cite class="work-title">Big Bend Reproductive Coalition launches community needs assessment</cite><time datetime="2023-08">Aug 2023</time></span>
+          <span class="work-source"><cite>The Big Bend Sentinel</cite>, <span class="work-type">Article</span></span>
+        </a>
       </li>
       <li>
-        <a
-          class="entry"
-          href="https://www.dmsguild.com/product/426630/Queen-of-the-Thunderbeasts?affiliate_id=1701028"
-          ><div class="info">
-            <span class="type">RPG</span><span>&nbsp;|&nbsp;</span
-            ><span class="date-outlet"
-              ><cite class="outlet">The Dungeon Masters Guild</cite><span>&nbsp;|&nbsp;</span
-              ><span>Jan 2023</span></span
-            >
-          </div>
-          <div class="title">Queen of the Thunderbeasts</div></a
-        >
+        <a href="https://www.dmsguild.com/product/426630/Queen-of-the-Thunderbeasts?affiliate_id=1701028">
+          <span class="work-line"><cite class="work-title">Queen of the Thunderbeasts</cite><time datetime="2023-01">Jan 2023</time></span>
+          <span class="work-source"><cite>The Dungeon Masters Guild</cite>, <span class="work-type">RPG</span></span>
+        </a>
       </li>
       <li>
-        <a class="entry" href="https://thecollidescope.com/2022/10/16/the-first/"
-          ><div class="info">
-            <span class="type">Short Story</span><span>&nbsp;|&nbsp;</span
-            ><span class="date-outlet"
-              ><cite class="outlet">The Collidescope</cite><span>&nbsp;|&nbsp;</span
-              ><span>Oct 2022</span></span
-            >
-          </div>
-          <div class="title">The First</div></a
-        >
+        <a href="https://thecollidescope.com/2022/10/16/the-first/">
+          <span class="work-line"><cite class="work-title">The First</cite><time datetime="2022-10">Oct 2022</time></span>
+          <span class="work-source"><cite>The Collidescope</cite>, <span class="work-type">Short Story</span></span>
+        </a>
       </li>
       <li>
-        <a
-          class="entry"
-          href="https://bigbendsentinel.com/2022/10/05/trans-pecos-festival-of-music-love-doubles-as-platform-for-advocacy-and-outreach/"
-          ><div class="info">
-            <span class="type">Article</span><span>&nbsp;|&nbsp;</span
-            ><span class="date-outlet"
-              ><cite class="outlet">The Big Bend Sentinel</cite><span>&nbsp;|&nbsp;</span
-              ><span>Oct 2022</span></span
-            >
-          </div>
-          <div class="title">
-            Trans-Pecos Festival of Music + Love doubles as platform for advocacy and outreach
-          </div></a
-        >
+        <a href="https://bigbendsentinel.com/2022/10/05/trans-pecos-festival-of-music-love-doubles-as-platform-for-advocacy-and-outreach/">
+          <span class="work-line"><cite class="work-title">Trans-Pecos Festival of Music + Love doubles as platform for advocacy and outreach</cite><time datetime="2022-10">Oct 2022</time></span>
+          <span class="work-source"><cite>The Big Bend Sentinel</cite>, <span class="work-type">Article</span></span>
+        </a>
       </li>
-    </ul>
+    </ol>
   </main>
 </body>
 </html>
