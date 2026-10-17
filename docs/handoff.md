@@ -4,18 +4,21 @@ Last updated 2026-10-17. Read this, then `CLAUDE.md`, before working on the site
 
 ## Where things stand
 
-- **Branch.** All work is on `claude/hopeful-wozniak-oclsqe`. `main` is still the old Astro site and is what's live at samfeldstein.xyz. Nothing has been merged or deployed.
+- **Live.** The rebuild was merged to `main` on 2026-10-17 ([#1](https://github.com/samfeldstein/personal-site/pull/1), then [#2](https://github.com/samfeldstein/personal-site/pull/2) for the lightbox size fix and live scores) and is live at samfeldstein.xyz. Every push to `main` deploys; other branches get preview URLs.
 - **State.** The site is the plain HTML rebuild, redesigned as an old book (see `docs/makeover-report.md`). The five audits are done and their clear-cut findings are fixed. Checks and all 33 tests pass.
-- **Preview.** `git checkout -- site/code/index.html && git pull && npm install && npx wrangler dev`. `node projects.mjs` rewrites `site/code/index.html` every run, so discard or commit it before the next pull.
+- **Scores.** Live, mobile: performance 97–99 on all four pages; accessibility, best practices and SEO 100. Previews score SEO 66 because Cloudflare marks them noindex; that's expected.
+- **Local preview.** `git checkout -- site/code/index.html && git checkout main && git pull && npm install && npx wrangler dev`. `node projects.mjs` rewrites `site/code/index.html` every run, so discard or commit it before the next pull.
 
-## Before merging to main
+## Launch notes (2026-10-17)
 
-1. **Preview on Cloudflare.** Check whether Workers Builds built this branch, or run `npx wrangler versions upload`. The first Cloudflare build is also the first time `projects.mjs` fetches from GitHub on Cloudflare's machines; check that the Code page lists the approved projects.
-2. **Owner checks.** Lighthouse on the preview, a real phone, the lightbox with a keyboard, and a screen reader pass if possible.
-3. **Build command (done 2026-10-17).** Workers & Pages → personal-site → Settings → Build is now `npm run build`, deploy `npx wrangler deploy`, non-production branches `npx wrangler versions upload`. It had still been `npx astro build`, which failed the first builds of this branch; a retry after the change succeeded.
-4. **Cloudflare dashboard.** Keep Web Analytics on (cookieless; Presswork kept it too) and Bot Fight Mode off (its injected script dropped Presswork's Lighthouse Best Practices to 81). The colophon says only "No cookies."
-5. **Monthly rebuild.** In the Worker's Settings → Builds → Deploy Hooks, create a hook for `main`, and save its URL as the repository secret `CLOUDFLARE_DEPLOY_HOOK` on GitHub. `.github/workflows/monthly-rebuild.yml` calls it on the 1st of each month (or by hand from the Actions tab), so new repos show up as waiting. GitHub turns off scheduled workflows after 60 days without commits and emails first; re-enable it from the Actions tab.
-6. **Merge,** then update the Lighthouse scores from the live site: `node lighthouse.mjs <score> "<blocking>" "<speed index>" "<tti>"` (current numbers are from a local run).
+1. **Build command.** Workers & Pages → personal-site → Settings → Build is `npm run build`, deploy `npx wrangler deploy`, non-production branches `npx wrangler versions upload`. It had still been `npx astro build`, which failed the first builds; build commands can only be set in the dashboard.
+2. **Cloudflare dashboard.** Keep Web Analytics on (cookieless; Presswork kept it too) and Bot Fight Mode off (its injected script dropped Presswork's Lighthouse Best Practices to 81). The colophon says only "No cookies."
+3. **Lighthouse.** Run it with `npx lighthouse <url> --form-factor=mobile` (from any folder; reports are gitignored) and record the home page with `node lighthouse.mjs <score> "<blocking>" "<speed index>" "<largest contentful paint>"`.
+
+## Still to do
+
+- **Monthly rebuild.** In the Worker's Settings → Builds → Deploy Hooks, create a hook for `main`, and save its URL as the repository secret `CLOUDFLARE_DEPLOY_HOOK` on GitHub. `.github/workflows/monthly-rebuild.yml` calls it on the 1st of each month (or by hand from the Actions tab), so new repos show up as waiting. GitHub turns off scheduled workflows after 60 days without commits and emails first; re-enable it from the Actions tab. (Not confirmed done.)
+- **Owner checks not yet reported:** a real phone, and a screen reader pass if possible.
 
 ## Waiting on the owner
 
