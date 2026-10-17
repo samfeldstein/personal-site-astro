@@ -31,3 +31,7 @@ templates/
 .astro/
 .jampack/
 dist/
+
+# Lighthouse reports
+*.report.html
+*.report.json
