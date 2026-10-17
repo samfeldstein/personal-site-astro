@@ -6,87 +6,99 @@ I keep this repo public mainly as a code sample. You’re welcome to read it, bo
 
 ## Stack
 
-- [Astro](https://astro.build) for static site generation
-- Sass for styles, with PostCSS running autoprefixer and cssnano
-- [exiftool-vendored](https://github.com/photostructure/exiftool-vendored.js) for reading photo metadata at build time
-- The PageSpeed Insights API for live performance scores
+- Plain HTML, CSS, and JavaScript. No framework, no bundler, no build step.
+- A few dependency-free Node scripts that keep the pages consistent and check them
+- [sharp](https://sharp.pixelplumbing.com) and [exiftool-vendored](https://github.com/photostructure/exiftool-vendored.js) for the photo gallery, run by hand when the photos change
 - Cloudflare Workers static assets for hosting. Cloudflare builds and deploys from GitHub on every push.
 
-There's no client-side framework. The only browser scripts I wrote are the quote generator and a small viewport-height fix on the home page.
+The site ran on Astro until 2026. I rebuilt it as plain files, the same way I rebuilt [presswork.dev](https://github.com/samfeldstein/presswork-web-co), and kept every page looking as it did.
 
 ## How it works
 
-### Per-page styling
+### Shared parts
 
-Any page can be styled on its own. Each page imports its own Sass partial and tells the layout which fonts it uses, so a page can depart from the rest of the site without affecting anything else. Most pages share Oswald and Noto Serif, while the [Code](src/pages/code.astro) page has its own look, with Victor Mono and Orbitron.
+The deployed folder is `site/`, and each page is a plain HTML file. The parts every page shares (the head, the skip link, the copyright line) live once in `shared/`, along with `facts.json` (site name, description, email). [sync.mjs](sync.mjs) writes them into every page between marker comments. Each page starts with a small JSON comment that gives its title, description, stylesheets, and the fonts to preload, so a page can depart from the rest of the site without affecting anything else. The [Code](site/code/index.html) page, for example, uses Victor Mono and Orbitron while the rest use Oswald and Noto Serif.
 
-All the fonts are self-hosted variable woff2 files. Each `@font-face` in [src/styles/fonts/](src/styles/fonts/) limits the font to the characters it covers with `unicode-range`. It also pairs the font with a metric-adjusted local fallback that uses `size-adjust`, so text doesn't jump when the web font loads. Colors are `light-dark()` tokens in [_config.scss](src/styles/_config.scss), so every page follows the OS light or dark setting without any JavaScript.
+The CSS lives in `shared/css/`, and sync inlines each page’s stylesheets into a `<style>` tag, as Astro did. It also adds a content hash to every script link, so scripts can be cached as immutable, and writes the sitemaps.
+
+All the fonts are self-hosted variable woff2 files. Each `@font-face` limits the font to the characters it covers with `unicode-range`, and pairs it with a metric-adjusted local fallback that uses `size-adjust`, so text doesn’t jump when the web font loads. Colors are `light-dark()` tokens, so every page follows the OS light or dark setting without any JavaScript.
+
+### Checks
+
+[check.mjs](check.mjs) fails the build when the site has drifted or something is broken. It checks that:
+
+- the shared parts and sitemaps are up to date;
+- every page has one `<h1>`, one `<main>`, a title, and a description, and every image has alt text;
+- internal links and asset paths resolve;
+- every character on every page is covered by the font subsets I ship;
+- each page stays under a gzipped size budget;
+- scripts load as modules, and nothing loads from a host that isn’t on an allowlist.
+
+Cloudflare runs `npm run build`, which runs sync in check mode and then `check.mjs`, so a page that has drifted never deploys.
 
 ### Photo gallery
 
-The [Photos](src/pages/photos.astro) page is built from whatever image files are in `src/images/gallery/`. Nothing needs to be listed by hand. [get-gallery-images.js](src/scripts/get-gallery-images.js) collects the files with `import.meta.glob`. It reads each photo's embedded title, description, and creation date with ExifTool and sorts the photos newest first. The description becomes the alt text, so I write captions once in my photo editor and they carry through to the site.
+The [Photos](site/photos/index.html) page is built from whatever images are in `photos/`. Nothing needs to be listed by hand. [photos.mjs](photos.mjs) reads each photo’s embedded title, description, and creation date with ExifTool, writes WebP copies at seven widths into `site/img/photos/`, and rewrites the gallery markup newest first. The description becomes the alt text, so I write captions once in my photo editor and they carry through to the site. Only missing sizes are generated, and sizes for deleted photos are removed. The first photo loads eagerly with high fetch priority, and the rest lazy-load.
 
-[Gallery.astro](src/components/photos/Gallery.astro) renders each photo with Astro's `<Image>` at seven responsive widths, with a `sizes` attribute matched to the layout's breakpoints. The first photo loads eagerly with high fetch priority, and the rest lazy-load.
+### Lighthouse scores
 
-### Live Lighthouse scores
-
-The home page footer shows the site's own Lighthouse metrics: blocking time, speed index, time to interactive, and the performance score. During each production build, [PageSpeed.astro](src/components/PageSpeed.astro) calls the PageSpeed Insights API ([lighthouse-scores.js](src/scripts/lighthouse-scores.js)) for the page's live URL. That way, the numbers reflect the site as it's currently deployed. The API key comes from a `PSI_KEY` environment variable set in Cloudflare. In development, the component shows stub numbers instead of calling the API, and if the request fails, the panel doesn't render.
+The home page footer shows the site’s own Lighthouse metrics: blocking time, speed index, time to interactive, and the performance score. [lighthouse.mjs](lighthouse.mjs) calls the PageSpeed Insights API for the live home page and writes the numbers into the page. I run it by hand after a deploy, then deploy again.
 
 ### Quote generator
 
-The footer on the home and Code pages shows a random quote from [src/data/quotes.js](src/data/quotes.js), my collection of lines from books, comics, films, poems, and songs. [QuoteGenerator.astro](src/components/QuoteGenerator.astro) picks one in the browser and builds the attribution from whichever fields the quote has: speaker, work, verse, and year. Titles of short works like poems, essays, and songs get quotation marks instead of italics. In development, it always shows the first quote, so I can check the layout against a known example.
+The footer on the home and Code pages shows a random quote from my collection of lines from books, comics, films, poems, and songs. [quote.js](site/js/quote.js) picks one in the browser and builds the attribution from whichever fields the quote has: speaker, work, verse, and year. Titles of short works like poems, essays, and songs get quotation marks instead of italics. On localhost it always shows the first quote, so I can check the layout against a known example.
 
-### Performance and hosting
+### Hosting
 
-- **Navigation.** Astro prefetches every link once it enters the viewport, and cross-document view transitions smooth out page changes.
-- **Caching.** [public/_headers](public/_headers) gives hashed assets, fonts, and images long-lived immutable caching, and HTML a shorter cache lifetime.
-- **Old URLs.** [public/_redirects](public/_redirects) keeps links to earlier versions of the site working.
-- **Hosting.** [wrangler.jsonc](wrangler.jsonc) serves `dist/` as Cloudflare Workers static assets and uses the custom 404 page for missing routes.
+- **Prefetch.** A Speculation Rules block prefetches internal links in Chromium, and a small script adds `<link rel="prefetch">` elsewhere. Cross-document view transitions smooth out page changes.
+- **Caching.** [site/_headers](site/_headers) gives fonts and scripts long-lived immutable caching, and images a shorter lifetime.
+- **Old URLs.** [site/_redirects](site/_redirects) keeps links to earlier versions of the site working.
+- **Hosting.** [wrangler.jsonc](wrangler.jsonc) serves `site/` as Cloudflare Workers static assets and uses the custom 404 page for missing routes.
 
 ## Project structure
 
 ```text
-├── astro.config.mjs        Site URL, Markdown plugins, prefetch, sitemap
-├── config.mjs              Site title, description, location, and email
-├── wrangler.jsonc          Cloudflare static assets config
-├── public/
-│   ├── static/fonts/       Self-hosted woff2 fonts
-│   ├── _headers            Cache rules
-│   └── _redirects          Legacy URL redirects
-└── src/
-    ├── pages/              Home, Published Writing, Photos, Code, 404
-    ├── layouts/Base.astro  Page shell
-    ├── components/         Head, gallery, quote generator, Lighthouse panel, icons
-    ├── data/               Published writing and quotes
-    ├── images/gallery/     Source photos for the gallery
-    ├── scripts/            Gallery metadata, PageSpeed fetch, utilities
-    └── styles/             Sass partials, per-page styles, and fonts
+├── sync.mjs            Writes shared parts into pages, inlines CSS, writes sitemaps
+├── check.mjs           Fails on drift, broken links, uncovered characters, size
+├── photos.mjs          Builds the gallery from photos/
+├── lighthouse.mjs      Writes the Lighthouse panel on the home page
+├── wrangler.jsonc      Cloudflare static assets config
+├── test/               Tests for check.mjs
+├── photos/             Source photos (not deployed)
+├── shared/
+│   ├── head.html, skip-link.html, copyright.html
+│   ├── facts.json      Site name, description, emails, allowed hosts, size budget
+│   └── css/            Base styles and one file per page type
+└── site/               Deployed as is
+    ├── index.html, code/, photos/, published-writing/, 404.html
+    ├── resumes/        Résumé variants (not linked from the site)
+    ├── js/quote.js
+    ├── img/photos/     Gallery WebPs
+    ├── static/         Fonts, images, résumé PDFs
+    └── _headers, _redirects, robots.txt, sitemaps
 ```
 
 ## Running it locally
 
 ```bash
+npx wrangler dev
+```
+
+Pages use root-relative paths, so they need a server, not `file://`. Any static server on `site/` works too.
+
+After editing a page or anything in `shared/`, and before committing:
+
+```bash
+node sync.mjs && node check.mjs && node --test test/*.test.mjs
+```
+
+To update the gallery after adding, removing, or re-captioning photos (`exiftool-vendored` bundles ExifTool, so there’s nothing else to install):
+
+```bash
 npm install
+node photos.mjs
 ```
-
-```bash
-npm run dev
-```
-
-The dev server uses stub Lighthouse numbers, so it doesn't need an API key. `exiftool-vendored` bundles ExifTool, so there's nothing else to install for the gallery.
-
-To build the site and preview the result:
-
-```bash
-npm run build
-```
-
-```bash
-npm run preview
-```
-
-A production build calls the PageSpeed Insights API. Without a `PSI_KEY`, the request may fail, and the Lighthouse panel is left out.
 
 ## Reuse
 
-The code is here to learn from and borrow. The writing and photos are mine, so please don't republish them as your own.
+The code is here to learn from and borrow. The writing and photos are mine, so please don’t republish them as your own.
