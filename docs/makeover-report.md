@@ -4,7 +4,7 @@ Written 2026-10-17. Covers the rebuild of samfeldstein.xyz from Astro to plain H
 
 ## Summary
 
-The site ran on Astro with Sass, PostCSS, ESLint and an image pipeline whose cache was committed to git. Nothing on it used what Astro is good at: there were no content collections in use (only 13 unlinked résumés), and all code is written by Claude, so components and templating saved no one any work. It was rebuilt as plain HTML, CSS and JavaScript, following the Presswork rebuild, then redesigned as a book. The site now has no runtime dependencies and no framework, and every page scores 99 to 100 on mobile Lighthouse.
+The site ran on Astro with Sass, PostCSS, ESLint and an image pipeline whose cache was committed to git. Nothing on it used what Astro is good at: there were no content collections in use (only 13 unlinked résumés), and all code is written by Claude, so components and templating saved no one any work. It was rebuilt as plain HTML, CSS and JavaScript, following the Presswork rebuild, then redesigned as a book. The site now has no runtime dependencies and no framework, and every page scores 97 to 99 for performance and 100 for everything else on mobile Lighthouse (live).
 
 ## Why
 
@@ -54,10 +54,14 @@ Left for the owner are listed in `ISSUES.md` and `docs/handoff.md`.
 | Committed image cache | 1,453 files in `node_modules/.astro` | none; 783 WebPs in `site/img/photos/` (87 photos × 9 widths, 91 MB) |
 | Deployed gallery images | about 202 MB (included a full-size copy of each photo) | 91 MB |
 | Gzipped HTML + CSS + JS, home / Code / Writing / Photos | 9.7 / 16.2 / 3.7 / 13.4 KB | 11.0 / 10.7 / 10.5 / 20.4 KB |
-| Lighthouse mobile | not measured (the old site's live panel needed the API key) | 100 on home, Writing and Code; 99 on Photos (local runs) |
+| Lighthouse mobile | not measured (the old site's live panel needed the API key) | live: performance 97–99 on all four pages; accessibility, best practices and SEO 100 |
 | Tests | none | 33 (`node --test test/*.test.mjs`) |
 
 Page weights now include `quote.js` (5.8 KB gzipped, cached as immutable) on every page, because every page ends with the epigraph. Fonts are 107 KB on first visit (Cormorant Garamond regular and italic).
+
+## Launch
+
+Merged to `main` and live on 2026-10-17. The first Cloudflare builds of the branch failed because the dashboard's build command was still `npx astro build`; it's a dashboard-only setting, which the docs had wrongly assumed was already `npm run build`. After the fix, the first build on Cloudflare also ran the GitHub project fetch for the first time, and it worked. Two things only showed up once real people used the live preview: Lighthouse's SEO score is 66 on preview URLs (they're noindexed, so it's expected), and the lightbox briefly showed each photo at its thumbnail size before the larger file loaded. That was fixed by sizing the image from its aspect ratio.
 
 ## What was lost
 
