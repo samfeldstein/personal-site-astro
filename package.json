@@ -3,7 +3,9 @@
   "type": "module",
   "version": "0.0.1",
   "private": true,
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "sync": "node sync.mjs",
     "check": "node check.mjs",
@@ -16,7 +18,7 @@
   },
   "devDependencies": {
     "exiftool-vendored": "^36.0.0",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.5",
     "wrangler": "^4.151.1"
   }
 }
