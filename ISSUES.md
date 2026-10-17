@@ -20,7 +20,7 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 - [x] **Unused Bridgy Fed redirects.** (Fixed in the plain HTML rebuild: removed.)
 - [ ] **Unreferenced résumé PDFs.** No résumé page links the customer-success, page-designer, support-specialist, writer-developer, or writer-editor PDFs in [site/static/resumes/](site/static/resumes/). They’re still public at their URLs. Keep them if you’ve sent those links out; otherwise remove them.
 - [ ] **Old email address in résumé PDFs.** The site uses sam@samfeldstein.com, but every PDF in [site/static/resumes/](site/static/resumes/) shows an older address (samfeldstein@pm.me, or sam@samfeldstein.xyz in the support-specialist PDF). Re-export the ones you still use and delete the rest.
-- [ ] **Decide which résumé variants to keep.** There are 13 under [site/resumes/](site/resumes/), unlinked from the site but in the sitemap, and 8 of them have no PDF.
+- [x] **Decide which résumé variants to keep.** (Résumé pages disabled on 2026-10-17 and kept in [_archive/resumes/](_archive/resumes/); see [ROADMAP.md](ROADMAP.md).)
 - [ ] **Web manifest colors.** [site/site.webmanifest](site/site.webmanifest) uses white for both `theme_color` and `background_color`, which doesn’t match dark mode.
 - [ ] **Fallback font name mismatch.** `--font-1` lists `"Noto Fallback"`, but the `@font-face` is named `"Noto Serif Fallback"` (in `shared/css/default.css`, `home.css`, and `writing.css`), so the metric-adjusted fallback is never used. This predates the port and was left as is.
 
@@ -28,7 +28,7 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 
 - [ ] **Typo in the site description.** "Sam Feldstein is human being based in Denver, CO." is missing "a". It’s in `site.description` in [shared/facts.json](shared/facts.json) and in the home page comment in [site/index.html](site/index.html). Fix both, then run `node sync.mjs`.
 - [ ] **Typo on Published Writing.** The description in the page comment of [site/published-writing/index.html](site/published-writing/index.html) reads "My publish writing". Fix it, then run `node sync.mjs`.
-- [ ] **Home footer wording.** The footer line "Powered by Astro" now reads "Plain HTML, CSS, and JavaScript." Confirm or change the wording.
+- [x] **Home footer wording.** ("Powered by Astro" replaced with a colophon on home and Code, in [shared/credit.html](shared/credit.html).)
 - [ ] **Gallery image URLs changed.** Photos moved from `/_astro/*` to `/img/photos/*`. Image search will reindex them; old image links won’t resolve.
 - [ ] **Review the Code page portfolio.** Some of the projects on [the Code page](site/code/index.html) aren’t very interesting to highlight. The page currently lists Little Peaks Pediatric Therapy, Shelf Talker Generator, The Simplest Writing Tracker, Personal Cookbook, Regreen Big Bend, Postoley Dance Ensemble, Digital Notebook, Prairie Rose Arena, and Pairings. Decide between:
   - Replacing the project list with a link to GitHub.

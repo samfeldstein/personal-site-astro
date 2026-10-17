@@ -42,7 +42,7 @@ The [Photos](site/photos/index.html) page is built from whatever images are in `
 
 ### Lighthouse scores
 
-The home page footer shows the site’s own Lighthouse metrics: blocking time, speed index, time to interactive, and the performance score. [lighthouse.mjs](lighthouse.mjs) calls the PageSpeed Insights API for the live home page and writes the numbers into the page. I run it by hand after a deploy, then deploy again.
+The home page footer shows the site’s own Lighthouse metrics: blocking time, speed index, time to interactive, and the performance score. I run Lighthouse (mobile) by hand and pass the numbers to [lighthouse.mjs](lighthouse.mjs), which writes them into the page. Without numbers, it calls the PageSpeed Insights API for the live home page instead.
 
 ### Quote generator
 
@@ -71,7 +71,6 @@ The footer on the home and Code pages shows a random quote from my collection of
 │   └── css/            Base styles and one file per page type
 └── site/               Deployed as is
     ├── index.html, code/, photos/, published-writing/, 404.html
-    ├── resumes/        Résumé variants (not linked from the site)
     ├── js/quote.js
     ├── img/photos/     Gallery WebPs
     ├── static/         Fonts, images, résumé PDFs
