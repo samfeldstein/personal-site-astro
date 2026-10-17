@@ -268,7 +268,7 @@ export function check({ root, shared }) {
     const { markup, ld, styles } = parsed.get(page.path);
 
     if (!/<html[^>]*\slang="en(-us)?"/i.test(markup)) fail(label, `<html> needs lang="en-us"`);
-    if (!page.description) fail(label, "missing description");
+    if (!page.meta.description) fail(label, "missing description in the page comment");
 
     let h1 = 0, mains = 0;
     const seenIds = new Set();

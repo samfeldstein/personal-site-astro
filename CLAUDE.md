@@ -16,7 +16,7 @@ All scripts are dependency-free Node except `photos.mjs` (`sharp`, `exiftool-ven
 - Before any commit: `node sync.mjs && node check.mjs && node --test test/*.test.mjs`
 - `npx wrangler dev`: local preview (`npm run dev:phone` listens on the local network)
 - Deploys: Cloudflare Workers Builds runs `npm run build` (`sync.mjs --check` + `check.mjs`) on every push, so any drift fails the deploy.
-- **New year:** the copyright year comes from sync (`{{year}}`), so on January 1 `npm run build` fails until someone runs `node sync.mjs` and commits.
+- **New year:** the copyright year comes from sync (`{{year}}`). `sync.mjs --check` still accepts last year's, so deploys keep working on January 1; run `node sync.mjs` and commit early in the year.
 
 ## Architecture
 

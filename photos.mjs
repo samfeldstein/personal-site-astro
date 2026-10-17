@@ -46,7 +46,7 @@ try {
     const meta = await sharp(path).metadata();
     const [width, height] = (meta.orientation ?? 1) >= 5 ? [meta.height, meta.width] : [meta.width, meta.height];
     const widths = WIDTHS.filter((w) => w <= width);
-    if (widths.length < WIDTHS.length) widths.push(width);
+    if (widths.length < WIDTHS.length && !widths.includes(width)) widths.push(width);
     mkdirSync(OUT, { recursive: true });
     for (const w of widths) {
       const out = join(OUT, `${name}-${w}.webp`);
@@ -61,11 +61,16 @@ try {
       height,
       title: tags.Title || "Untitled",
       date: tags.CreateDate || "Unknown date",
-      alt: tags.Description || "No description",
+      alt: tags.Description || "",
     });
   }
 } finally {
   await exiftool.end();
+}
+
+if (!photos.length) {
+  console.error("photos: no photos found in photos/; nothing changed");
+  process.exit(1);
 }
 
 photos.sort((a, b) => {

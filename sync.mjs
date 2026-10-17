@@ -10,6 +10,8 @@
     <!-- shared:skip-link --> ... <!-- /shared:skip-link -->
 
   and optionally <!-- shared:copyright --> ... <!-- /shared:copyright -->.
+  With --check, last year's copyright year still counts as up to date, so a
+  deploy doesn't fail on January 1; the next sync writes the new year.
 
   This script rewrites what is between the markers from shared/*.html and
   shared/facts.json. Edit the shared files (or the page comment), never the
@@ -140,13 +142,16 @@ export function sync({ root, shared, write = true }) {
     const label = relative(root, file);
     let html = readFileSync(file, "utf8");
     const meta = readPageMeta(html, label);
+    const now = new Date().getFullYear();
+    const shown = Number(html.match(/<!-- shared:copyright -->[\s\S]*?(\d{4})\D*<!-- \/shared:copyright -->/)?.[1]);
+    const year = !write && (shown === now || shown === now - 1) ? shown : now;
     const ctx = {
       ...facts,
       title: meta.title,
       fullTitle: `${meta.title} | ${facts.site.title}`,
       description: meta.description ?? facts.site.description,
       url: new URL(path, facts.site.url).href,
-      year: String(new Date().getFullYear()),
+      year: String(year),
     };
     for (const b of [...REQUIRED, ...OPTIONAL]) {
       const next = replaceBlock(html, b, renderTemplate(templates[b], ctx, meta, shared));

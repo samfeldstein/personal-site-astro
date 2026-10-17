@@ -139,3 +139,40 @@ test("check reports a non-module script file, an unwrapped inline script, and th
     rmSync(dir, { recursive: true, force: true });
   }
 });
+
+test("check reports broken links, a missing slash, a bad fragment, a second h1, a missing alt and uncovered characters", () => {
+  const dir = copyOfSite();
+  try {
+    const page = join(dir, "site/code/index.html");
+    const html = readFileSync(page, "utf8");
+    writeFileSync(
+      page,
+      html.replace(
+        /<main\b[^>]*>/,
+        (open) => `${open}<a href="/nope/">a</a><a href="/photos">b</a><a href="#missing">c</a><h1>Two</h1><img src="/favicon.svg"><p>→</p>`,
+      ),
+    );
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    const has = (re) => assert.ok(problems.some((p) => re.test(p)), `${re}\n${problems.join("\n")}`);
+    has(/"\/nope\/" doesn't match a page/);
+    has(/"\/photos" should end in "\/"/);
+    has(/#missing, which doesn't exist/);
+    has(/exactly one <h1> \(found 2\)/);
+    has(/<img src="\/favicon\.svg"> has no alt/);
+    has(/characters outside the shipped fonts: → \(U\+2192\)/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("check reports a hand edit between shared markers", () => {
+  const dir = copyOfSite();
+  try {
+    const page = join(dir, "site/index.html");
+    writeFileSync(page, readFileSync(page, "utf8").replace("Skip to Content", "Skip"));
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    assert.ok(problems.some((p) => /index\.html: out of date/.test(p)), problems.join("\n"));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
