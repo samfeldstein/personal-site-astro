@@ -11,7 +11,8 @@
   date with ExifTool, writes WebP copies at the widths below into
   site/img/photos/ (only the ones that don't exist yet), deletes copies of
   photos that are gone, and rewrites the gallery between the
-  <!-- gallery --> markers in site/photos/index.html, newest first.
+  <!-- gallery --> markers in site/photos/index.html, newest first, as
+  numbered plates.
 
   A changed photo that keeps its file name keeps its old WebPs; delete
   site/img/photos/<name>-*.webp first to regenerate them.
@@ -27,7 +28,7 @@ const SOURCE = join(here, "photos");
 const OUT = join(here, "site/img/photos");
 const PAGE = join(here, "site/photos/index.html");
 const WIDTHS = [256, 691, 936, 1382, 1640, 1850, 2048];
-const SIZES = "(min-width: 1020px) 691px, (min-width: 780px) calc(81.82vw - 127px), calc(100vw - 48px)";
+const SIZES = "(min-width: 1000px) 656px, (min-width: 768px) calc(736px - 8vw), (min-width: 400px) calc(92vw - 32px), calc(100vw - 64px)";
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -91,7 +92,8 @@ for (const f of readdirSync(OUT)) {
 const img = (p, i) => {
   const url = (w) => `/img/photos/${p.name}-${w}.webp`;
   const priority = i === 0 ? ' loading="eager" decoding="async" fetchpriority="high"' : ' loading="lazy" decoding="async"';
-  return `      <img src="${url(p.widths.at(-1))}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${SIZES}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}">`;
+  const ratio = +(p.width / p.height).toFixed(3);
+  return `    <figure class="plate" style="--ratio: ${ratio}"><img src="${url(p.widths.at(-1))}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${SIZES}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}"><figcaption>Plate ${i + 1}</figcaption></figure>`;
 };
 
 const html = readFileSync(PAGE, "utf8");

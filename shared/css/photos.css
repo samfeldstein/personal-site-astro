@@ -1,13 +1,37 @@
-div.gallery {
-  display: grid;
-  gap: 1rem;
-  max-width: 80rem;
-  margin: 0 auto;
+:root {
+  --plate: light-dark(#efe8d6, #27221b);
+  --plate-mark: light-dark(#c9bc9f, #4a4135);
+  --plate-shadow: light-dark(rgba(60, 40, 15, 0.22), rgba(0, 0, 0, 0.55));
 }
-.gallery img {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-style: solid;
-  border-width: 0.25em;
-  border-color: white;
-  border-radius: 3px;
+
+.plates {
+  display: grid;
+  gap: clamp(3rem, 10vh, 7rem);
+  padding: 1rem 1rem 8rem;
+}
+
+.plate {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(1rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 2.5vw, 1.5rem);
+  background: var(--plate);
+  box-shadow: 0 1px 1px var(--plate-shadow), 0 10px 28px -14px var(--plate-shadow);
+}
+
+.plate img {
+  display: block;
+  width: min(100%, calc(var(--ratio, 1.5) * 70svh));
+  margin: 0 auto;
+  outline: 1px solid var(--plate-mark);
+  outline-offset: 0.5rem;
+}
+
+.plate figcaption {
+  margin-top: clamp(1.1rem, 3vw, 1.6rem);
+  text-align: center;
+  font-size: 0.85em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--ink-faded);
 }

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
 <head>
-<!-- page: {"title":"Page Not Found","description":"404 — Page Not Found","css":["default","404"],"fonts":["oswald","noto-serif"],"noindex":true} -->
+<!-- page: {"title":"Page Not Found","description":"404 — Page Not Found","css":["book","404"],"fonts":["cormorant-garamond","cormorant-garamond-italic"],"typefaces":"Cormorant Garamond","noindex":true} -->
 <!-- shared:head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="sitemap" href="/sitemap-index.xml">
 <link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
-<link rel="preload" href="/static/fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/noto-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 *,
 *::before,
@@ -99,94 +99,80 @@ h3,
   translate: 0;
 }
 @font-face {
-  font-family: "Oswald";
-  src: url("/static/fonts/oswald.woff2") format("woff2");
-  unicode-range: U+0020-007F;
-  font-weight: 200 700;
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Oswald Fallback";
-  src: local("Arial");
-  unicode-range: U+0020-007F;
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  size-adjust: 80%;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("/static/fonts/noto-serif.woff2") format("woff2");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("/static/fonts/noto-serif-italic.woff2") format("woff2");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: 100 900;
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond-italic.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  font-weight: 300 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "Noto Serif Fallback";
+  font-family: "Cormorant Garamond Fallback";
   src: local("Georgia");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  size-adjust: 88%;
 }
+
 :root {
-  --font-1: "Noto Serif", "Noto Fallback", serif;
-  --font-2: "Oswald", "Oswald Fallback", sans-serif;
-  --font-size-base: clamp(1.25rem, 5vw, 2rem);
-  --font-small: calc(var(--font-size-base) * .85);
   color-scheme: light dark;
-  --text-color: light-dark(#000, #fff);
-  --background-color: light-dark(#fff, #000);
-  --accent: light-dark(oklch(0.457 0 0), oklch(0.6731 0 0));
-  --accent-reversed: light-dark(oklch(0.6731 0 0), oklch(0.457 0 0));
-  --accent-light: light-dark(#f8f8f8, #252525);
+  --paper: light-dark(#e4dac2, #1d1914);
+  --ink: light-dark(#2a2118, #ddd1b6);
+  --ink-faded: light-dark(#5e5040, #a99c84);
+  --rubric: light-dark(#8e2a1e, #cf6a4f);
+  --leader: light-dark(#9a8a70, #6c6050);
+  --cloth: #24392f;
+  --cloth-weave: #1c2e25;
+  --gilt: #c9a65c;
+  --font-book: "Cormorant Garamond", "Cormorant Garamond Fallback", Georgia, serif;
+  --measure: 26em;
 }
 
-.hide {
-  display: none;
+html {
+  background: var(--paper);
+  scrollbar-color: var(--ink-faded) var(--paper);
 }
 
-.defer {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 300px auto 100vh;
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-book);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.45;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "liga", "dlig";
 }
 
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.justify {
-  text-align: justify;
-  hyphens: auto;
-}
-
-.small-caps, nav.main {
-  font-variant: small-caps;
-  text-transform: lowercase;
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
-.unstyled-link, a {
+a {
   color: inherit;
   text-decoration: none;
 }
+a:focus-visible {
+  outline: 2px solid var(--rubric);
+  outline-offset: 0.15em;
+  border-radius: 2px;
+}
 
-.unstyled-list {
-  list-style: none;
+::selection {
+  background: var(--rubric);
+  color: var(--paper);
+}
+
+#skiplink {
+  margin: 0.5em;
+  padding: 0.4em 0.8em;
+  background: var(--paper);
+  color: var(--ink);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
 }
 
 .visually-hidden {
@@ -199,89 +185,174 @@ h3,
   position: absolute;
   width: 1px;
 }
+h2 {
+  margin: 0 0 2.5rem;
+  font-weight: 500;
+  font-size: 1.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+h3 {
+  margin: 2.75rem 0 0.75rem;
+  font-weight: 500;
+  font-size: 0.9em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--ink-faded);
+  text-align: center;
+}
+.toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toc li {
+  counter-increment: page;
+}
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  padding: 0.3em 0;
+}
+.toc a span {
+  order: 1;
+}
+.toc a::before {
+  content: "";
+  order: 2;
+  flex: 1;
+  border-bottom: 2px dotted var(--leader);
+}
+.toc a::after {
+  content: counter(page);
+  order: 3;
+}
+.toc.roman a::after {
+  content: counter(page, lower-roman);
+}
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--rubric);
+}
+.toc a:hover::before,
+.toc a:focus-visible::before {
+  border-bottom-color: currentColor;
+}
+.ornament {
+  margin: -1.5rem 0 2rem;
+  color: var(--rubric);
+  font-size: 1.4em;
+}
 
-html {
-  background-color: var(--background-color);
-  scrollbar-color: var(--text-color) var(--background-color);
+.running-head {
+  padding: 1.5rem 1rem 0;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.85em;
+}
+.running-head a {
+  color: var(--ink-faded);
+}
+.running-head a:hover {
+  color: var(--rubric);
+}
+
+.chapter {
+  margin: clamp(3rem, 10vh, 6rem) auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.chapter-number {
+  margin: 0 0 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: var(--ink-faded);
+}
+.chapter h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.4rem);
+  line-height: 1.1;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  text-wrap: balance;
+}
+.chapter .ornament {
+  margin: 1.25rem 0 0;
+}
+
+.book-page {
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+:root {
+  --slip: light-dark(#efe8d6, #27221b);
+  --slip-shadow: light-dark(rgba(60, 40, 15, 0.22), rgba(0, 0, 0, 0.55));
 }
 
 body {
-  background-color: var(--background-color);
-  font-family: var(--font-1);
-  font-size: var(--font-size-base);
-  padding: 2vw;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
-nav.main {
-  font-size: 0.75em;
-  text-align: left;
-  font-family: var(--font-2);
-  font-weight: 300;
-}
-nav.main a {
-  padding: 1em;
+.erratum {
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem 6rem;
 }
 
-a:focus-visible {
-  outline-width: 0.1em;
-  outline-color: var(--text-color);
-}
-
-header {
-  margin-bottom: 4rem;
+.slip {
+  max-width: 24em;
+  padding: 2rem clamp(1.25rem, 5vw, 2.5rem) 2.25rem;
+  background: var(--slip);
+  box-shadow: 0 1px 1px var(--slip-shadow), 0 10px 28px -14px var(--slip-shadow);
+  rotate: -0.5deg;
   text-align: center;
 }
 
-h1 {
-  font-family: var(--font-2);
-  font-size: 2em;
-  font-weight: 100;
+.slip-label {
+  margin: 0 0 0.4rem;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: var(--rubric);
 }
 
-h3 {
-  font-family: var(--font-2);
+.slip h1 {
+  margin: 0 0 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--leader);
   font-weight: 500;
-  font-size: 1em;
-  text-transform: uppercase;
-  margin-top: 3em;
+  font-size: 1.5em;
+  line-height: 1.15;
+  font-variant: small-caps;
   letter-spacing: 0.08em;
 }
 
-.page-description {
-  font-size: 1.25em;
+.slip p {
+  margin: 0;
   text-wrap: pretty;
 }
 
-main {
-  padding-bottom: 2em;
-}
-main p,
-main ul,
-main ol {
-  line-height: 1.3;
-}
-
-#skiplink {
-  font-family: var(--font-2);
-  font-weight: 300;
-  text-transform: uppercase;
-  background-color: var(--background-color);
-  padding: 0.5em;
-}
-
-::selection {
-  background-color: var(--accent);
-  color: var(--background-color);
-}
-a {
-  font-variant: small-caps;
-  text-transform: lowercase;
-}
-a:hover,
-a:focus {
+.slip p a {
   text-decoration: underline;
-  text-decoration-thickness: 0.1em;
-  text-underline-offset: 0.1em;
+  text-decoration-color: var(--leader);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.slip a:hover {
+  color: var(--rubric);
+  text-decoration-color: currentColor;
+}
+
+.slip .back {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-style: italic;
 }
 </style>
 <script type="speculationrules">
@@ -311,14 +382,16 @@ a:focus {
   <!-- shared:skip-link -->
 <a id="skiplink" href="#main-content">Skip to Content</a>
 <!-- /shared:skip-link -->
-  <header><h1>Page Not Found</h1></header>
-  <main id="main-content">
-    <p>
-      It looks like this page doesn't exist. If you think this is a mistake, please <a
-        href="mailto:sam@samfeldstein.com"
-        >email me</a
-      >.
-    </p>
+  <!-- shared:running-head -->
+<nav class="running-head" aria-label="Site"><a href="/">Ever in Flux</a></nav>
+<!-- /shared:running-head -->
+  <main id="main-content" class="erratum">
+    <div class="slip">
+      <p class="slip-label">Erratum</p>
+      <h1>Page Not Found</h1>
+      <p>This page isn’t in the book. If you think it should be, please <a href="mailto:sam@samfeldstein.com">email me</a>.</p>
+      <a class="back" href="/#contents">Return to the contents</a>
+    </div>
   </main>
 </body>
 </html>
