@@ -81,9 +81,9 @@ export const inFont = (text) =>
 
 export function renderEntry(repo, name = displayName(repo.name)) {
   const date = formatDate(repo.created_at);
-  const desc = inFont(repo.description ?? "");
+  const desc = inFont(repo.description ?? "").replace(/'/g, "\u2019").replace(/[.\s]+$/, "");
   const type = /^https?:\/\//i.test(repo.homepage ?? "") ? "Website" : "Source code";
-  return `        <li><a href="${esc(repoLink(repo))}"><span class="work-line"><cite class="work-title">${esc(name)}</cite><time datetime="${date.datetime}">${date.text}</time></span><span class="work-source">${desc ? `<i>${esc(desc)}</i>, ` : ""}<span class="work-type">${type}</span></span></a></li>`;
+  return `        <li><a href="${esc(repoLink(repo))}"><span class="work-line"><cite class="work-title">${esc(name)}</cite><time datetime="${date.datetime}">${date.text}</time></span><span class="work-source">${desc ? `<i>${esc(desc)}</i>` : `<span class="work-type">${type}</span>`}</span></a></li>`;
 }
 
 export function renderEntries(repos, names = {}) {
@@ -117,7 +117,7 @@ async function fetchRepos() {
   if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   const repos = [];
   for (let url = API; url; ) {
-    const response = await fetch(url, { headers });
+    const response = await fetch(url, { headers, signal: AbortSignal.timeout(15000) });
     if (!response.ok) throw new Error(`GitHub answered ${response.status}${response.headers.get("x-ratelimit-remaining") === "0" ? " (rate limited)" : ""}`);
     const page = await response.json();
     if (!Array.isArray(page)) throw new Error("GitHub returned something other than a list");
@@ -147,7 +147,14 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const file = option("--file");
   const page = option("--page") ?? PAGE;
   const namesFile = option("--names") ?? NAMES_FILE;
-  const names = JSON.parse(readFileSync(namesFile, "utf8")).names;
+  let names;
+  try {
+    names = JSON.parse(readFileSync(namesFile, "utf8")).names;
+    if (!names || typeof names !== "object") throw new Error('it needs a "names" object');
+  } catch (err) {
+    console.error(`projects: can't read the approved names in ${namesFile} (${err.message})`);
+    process.exit(1);
+  }
 
   const html = readFileSync(page, "utf8");
   if (!hasMarkers(html)) {

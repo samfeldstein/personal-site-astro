@@ -69,7 +69,7 @@ test("formatDate gives the UTC month and year", () => {
 test("renderEntry writes the exact markup", () => {
   assert.equal(
     renderEntry(repo({ name: "rss-feeds", description: "Feeds." })),
-    '        <li><a href="https://github.com/samfeldstein/thing"><span class="work-line"><cite class="work-title">RSS Feeds</cite><time datetime="2024-03">Mar 2024</time></span><span class="work-source"><i>Feeds.</i>, <span class="work-type">Source code</span></span></a></li>',
+    '        <li><a href="https://github.com/samfeldstein/thing"><span class="work-line"><cite class="work-title">RSS Feeds</cite><time datetime="2024-03">Mar 2024</time></span><span class="work-source"><i>Feeds</i></span></a></li>',
   );
 });
 
@@ -82,12 +82,13 @@ test("renderEntry leaves out the description when there is none", () => {
 });
 
 test("renderEntry calls a project with a homepage a website", () => {
-  assert.match(renderEntry(repo({ homepage: "https://example.com/" })), /<span class="work-type">Website<\/span>/);
+  assert.match(renderEntry(repo({ homepage: "https://example.com/", description: "" })), /<span class="work-type">Website<\/span>/);
+  assert.doesNotMatch(renderEntry(repo({ homepage: "https://example.com/" })), /work-type/);
 });
 
 test("renderEntry escapes data", () => {
   const out = renderEntry(repo({ description: `<b>Tom & Jerry's "show"</b> $& $1`, homepage: 'https://example.com/?a=1&b="2"' }));
-  assert.match(out, /<i>&lt;b&gt;Tom &amp; Jerry&#39;s &quot;show&quot;&lt;\/b&gt; \$&amp; \$1<\/i>/);
+  assert.match(out, /<i>&lt;b&gt;Tom &amp; Jerry’s &quot;show&quot;&lt;\/b&gt; \$&amp; \$1<\/i>/);
   assert.match(out, /href="https:\/\/example\.com\/\?a=1&amp;b=&quot;2&quot;"/);
 });
 
@@ -96,7 +97,7 @@ test("replaceBlock replaces only the inside of the markers, even with $ in the d
   const entries = renderEntries([repo({ description: "Costs $& and $1 and $$." })]);
   const out = replaceBlock(html, entries);
   assert.equal(out, `<ul>\n      <!-- projects -->\n${entries}\n      <!-- /projects -->\n</ul>\n<p>after</p>\n`);
-  assert.match(out, /Costs \$&amp; and \$1 and \$\$\./);
+  assert.match(out, /Costs \$&amp; and \$1 and \$\$</);
   assert.doesNotMatch(out, /old/);
 });
 
@@ -130,7 +131,7 @@ test("--file run writes the list into the page", () => {
     assert.equal(
       html,
       "<!doctype html>\n<ol>\n      <!-- projects -->\n" +
-        '        <li><a href="https://rss.example/"><span class="work-line"><cite class="work-title">RSS Feeds</cite><time datetime="2024-08">Aug 2024</time></span><span class="work-source"><i>A thing.</i>, <span class="work-type">Website</span></span></a></li>\n' +
+        '        <li><a href="https://rss.example/"><span class="work-line"><cite class="work-title">RSS Feeds</cite><time datetime="2024-08">Aug 2024</time></span><span class="work-source"><i>A thing</i></span></a></li>\n' +
         '        <li><a href="https://github.com/samfeldstein/thing"><span class="work-line"><cite class="work-title">First Website</cite><time datetime="2019-05">May 2019</time></span><span class="work-source"><span class="work-type">Source code</span></span></a></li>\n' +
         "      <!-- /projects -->\n</ol>\n",
     );

@@ -32,8 +32,8 @@ import { join, relative, resolve, dirname, sep } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
-const REQUIRED = ["head", "skip-link"];
-const OPTIONAL = ["endmatter", "credit", "lighthouse", "copyright", "running-head"];
+const REQUIRED = ["head", "skip-link", "endmatter"];
+const OPTIONAL = ["credit", "lighthouse", "copyright", "running-head"];
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -148,13 +148,17 @@ export function sync({ root, shared, write = true }) {
     const ctx = {
       ...facts,
       title: meta.title,
+      ogType: meta.ogType ?? "website",
       typefaces: meta.typefaces ?? "",
-      fullTitle: `${meta.title} | ${facts.site.title}`,
+      fullTitle: meta.title === facts.site.title ? meta.title : `${meta.title} | ${facts.site.title}`,
       description: meta.description ?? facts.site.description,
       url: new URL(path, facts.site.url).href,
       year: String(year),
     };
     for (const b of [...REQUIRED, ...OPTIONAL]) {
+      const opens = html.split(`<!-- shared:${b} -->`).length - 1;
+      const closes = html.split(`<!-- /shared:${b} -->`).length - 1;
+      if (opens !== closes || opens > 1) throw new Error(`${label}: the <!-- shared:${b} --> markers are unpaired or repeated (${opens} opening, ${closes} closing)`);
       const next = replaceBlock(html, b, renderTemplate(templates[b], ctx, meta, shared));
       if (next === null) {
         if (REQUIRED.includes(b)) throw new Error(`${label}: missing the <!-- shared:${b} --> ... <!-- /shared:${b} --> markers`);

@@ -27,9 +27,14 @@ const here = dirname(fileURLToPath(import.meta.url));
 const SOURCE = join(here, "photos");
 const OUT = join(here, "site/img/photos");
 const PAGE = join(here, "site/photos/index.html");
-const WIDTHS = [256, 691, 936, 1382, 1640, 1850, 2048];
-const SIZES = "(min-width: 1100px) 560px, (min-width: 640px) 50vw, 100vw";
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const WIDTHS = [256, 480, 691, 936, 1150, 1382, 1640, 1850, 2048];
+const ROW = { small: 160, wide: 320, vw: 22, from: 728, to: 1455, stretch: 1.3 };
+const sizes = (ratio) => {
+  const r = ratio * ROW.stretch;
+  const phone = r * ROW.small;
+  return `(min-width: ${ROW.to}px) ${Math.round(r * ROW.wide)}px, (min-width: ${ROW.from}px) ${(r * ROW.vw).toFixed(1)}vw, ${phone > 340 ? "100vw" : `${Math.round(phone)}px`}`;
+};
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -62,7 +67,7 @@ try {
       width,
       height,
       title: tags.Title || "Untitled",
-      shown: (tags.Title || "").replace(/\s+\d+$/, ""),
+      shown: (tags.Title || "").replace(/\s+\d+$/, "").replace(/'/g, "\u2019"),
       month: tags.CreateDate?.year ? `${MONTHS[tags.CreateDate.month - 1]} ${tags.CreateDate.year}` : "",
       date: tags.CreateDate || "Unknown date",
       alt: tags.Description || "",
@@ -95,9 +100,9 @@ for (const f of readdirSync(OUT)) {
 const img = (p, i) => {
   const url = (w) => `/img/photos/${p.name}-${w}.webp`;
   const priority = i === 0 ? ' loading="eager" decoding="async" fetchpriority="high"' : ' loading="lazy" decoding="async"';
-  const info = `<span class="thumb-info" aria-hidden="true"><span class="thumb-title">${esc(p.shown)}</span>${p.month ? `<span class="thumb-date">${p.month}</span>` : ""}</span>`;
+  const info = `<span class="thumb-info"><span class="thumb-title">${esc(p.shown)}</span>${p.month ? `<span class="thumb-date">${p.month}</span>` : ""}</span>`;
   const ratio = +(p.width / p.height).toFixed(3);
-  return `      <li style="--r: ${ratio}"><a class="thumb" href="${url(p.widths.at(-1))}" data-title="${esc(p.shown)}" data-date="${p.month}"><img src="${url(p.widths[1] ?? p.widths[0])}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${SIZES}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}">${info}</a></li>`;
+  return `      <li style="--r: ${ratio}"><a class="thumb" href="${url(p.widths.at(-1))}" data-title="${esc(p.shown)}" data-date="${p.month}"><img src="${url(p.widths[1] ?? p.widths[0])}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${sizes(ratio)}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}">${info}</a></li>`;
 };
 
 const html = readFileSync(PAGE, "utf8");

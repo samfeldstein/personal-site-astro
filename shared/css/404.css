@@ -1,5 +1,5 @@
 :root {
-  --slip: light-dark(#efe8d6, #27221b);
+  --slip: light-dark(#efe8d6, #302a22);
   --slip-shadow: light-dark(rgba(60, 40, 15, 0.22), rgba(0, 0, 0, 0.55));
 }
 
@@ -11,7 +11,9 @@ body {
 .erratum {
   display: grid;
   place-items: center;
-  padding: 2rem 1rem 6rem;
+  min-height: 70svh;
+  padding: clamp(3rem, 10vh, 6rem) 1.5rem 6rem;
+  box-sizing: border-box;
 }
 
 .slip {

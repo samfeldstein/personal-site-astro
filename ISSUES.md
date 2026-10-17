@@ -21,7 +21,7 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 - [ ] **Unreferenced résumé PDFs.** No résumé page links the customer-success, page-designer, support-specialist, writer-developer, or writer-editor PDFs in [site/static/resumes/](site/static/resumes/). They’re still public at their URLs. Keep them if you’ve sent those links out; otherwise remove them.
 - [ ] **Old email address in résumé PDFs.** The site uses sam@samfeldstein.com, but every PDF in [site/static/resumes/](site/static/resumes/) shows an older address (samfeldstein@pm.me, or sam@samfeldstein.xyz in the support-specialist PDF). Re-export the ones you still use and delete the rest.
 - [x] **Decide which résumé variants to keep.** (Résumé pages disabled on 2026-10-17 and kept in [_archive/resumes/](_archive/resumes/); see [ROADMAP.md](ROADMAP.md).)
-- [ ] **Web manifest colors.** [site/site.webmanifest](site/site.webmanifest) uses white for both `theme_color` and `background_color`, which doesn’t match dark mode.
+- [x] **Web manifest colors.** (Cloth and paper colors since the book redesign.)
 - [x] **Fallback font name mismatch.** (Gone with the book redesign: Noto Serif and its fallback are no longer used.)
 
 ## Content
@@ -30,10 +30,4 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 - [ ] **Typo on Published Writing.** The description in the page comment of [site/published-writing/index.html](site/published-writing/index.html) reads "My publish writing". Fix it, then run `node sync.mjs`.
 - [x] **Home footer wording.** ("Powered by Astro" replaced with a colophon on home and Code, in [shared/credit.html](shared/credit.html).)
 - [ ] **Gallery image URLs changed.** Photos moved from `/_astro/*` to `/img/photos/*`. Image search will reindex them; old image links won’t resolve.
-- [ ] **Review the Code page portfolio.** Some of the projects on [the Code page](site/code/index.html) aren’t very interesting to highlight. The page currently lists Little Peaks Pediatric Therapy, Shelf Talker Generator, The Simplest Writing Tracker, Personal Cookbook, Regreen Big Bend, Postoley Dance Ensemble, Digital Notebook, Prairie Rose Arena, and Pairings. Decide between:
-  - Replacing the project list with a link to GitHub.
-  - Trimming it to the projects worth featuring.
-  - **Generating the list from GitHub,** so the page never needs manual updates. A script run by hand (like `lighthouse.mjs`) or a scheduled build could fetch public repos from the GitHub API (`https://api.github.com/users/samfeldstein/repos`), keep the ones tagged with a topic like `portfolio`, and write each one from its name, description, homepage URL, and topics. Featuring a project then just means adding the topic on GitHub. Things to work out:
-    - Exclude the `samfeldstein/samfeldstein` repo. It’s the GitHub profile README, not a project. A topic filter would skip it as long as it isn’t tagged, but exclude it by name too, in case the filter changes later.
-    - Client sites without a public repo (Regreen Big Bend, Postoley Dance Ensemble, and Prairie Rose Arena) would drop off unless they get a repo or a small manual list alongside the fetched ones.
-    - Unauthenticated API calls are limited to 60 per hour, which is plenty. Pinned repos would need the GraphQL API and a token.
+- [x] **Review the Code page portfolio.** (The list is now generated from public GitHub repositories by `projects.mjs`, with names approved in `projects.json`.)

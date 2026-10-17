@@ -7,6 +7,7 @@
 
 .skills p {
   margin: 0 auto;
+  color: var(--ink-faded);
   max-width: 24em;
   text-align: center;
   text-wrap: balance;
@@ -33,4 +34,9 @@
 
 .projects {
   margin-top: 4.5rem;
+}
+.projects h2 {
+  margin-bottom: 1.5rem;
+  font-size: 0.9em;
+  color: var(--ink-faded);
 }

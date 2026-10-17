@@ -1,22 +1,27 @@
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
 <head>
-<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["book","home"],"fonts":["cormorant-garamond-2","cormorant-garamond-italic-2"],"typefaces":"Cormorant Garamond"} -->
+<!-- page: {"title":"Sam Feldstein","description":"Sam Feldstein is a writer, photographer, and web developer in Denver, CO, and the owner of Presswork Web Co.","ogType":"profile","css":["book","home"],"fonts":["cormorant-garamond-2","cormorant-garamond-italic-2"],"typefaces":"Cormorant Garamond"} -->
 <!-- shared:head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home | Sam Feldstein</title>
+<title>Sam Feldstein</title>
 <meta name="author" content="Sam Feldstein">
-<meta name="description" content="Sam Feldstein is human being based in Denver, CO.">
+<meta name="description" content="Sam Feldstein is a writer, photographer, and web developer in Denver, CO, and the owner of Presswork Web Co.">
 <link rel="canonical" href="https://samfeldstein.xyz/">
-<meta property="og:title" content="Home">
-<meta property="og:description" content="Sam Feldstein is human being based in Denver, CO.">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Sam Feldstein">
+<meta property="og:description" content="Sam Feldstein is a writer, photographer, and web developer in Denver, CO, and the owner of Presswork Web Co.">
+<meta property="og:type" content="profile">
 <meta property="og:url" content="https://samfeldstein.xyz/">
-<meta property="og:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
-<meta name="twitter:title" content="Home">
-<meta name="twitter:description" content="Sam Feldstein is human being based in Denver, CO.">
-<meta name="twitter:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
+<meta property="og:site_name" content="Sam Feldstein">
+<meta property="og:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sam Feldstein">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sam Feldstein">
+<meta name="twitter:description" content="Sam Feldstein is a writer, photographer, and web developer in Denver, CO, and the owner of Presswork Web Co.">
+<meta name="twitter:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
 <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=3">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -98,6 +103,15 @@ h3,
 #skiplink:focus {
   translate: 0;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  #skiplink {
+    transition: none;
+  }
+}
 @font-face {
   font-family: "Cormorant Garamond";
   src: url("/static/fonts/cormorant-garamond-2.woff2") format("woff2");
@@ -116,8 +130,10 @@ h3,
 }
 @font-face {
   font-family: "Cormorant Garamond Fallback";
-  src: local("Georgia");
+  src: local("Georgia"), local("Noto Serif"), local("NotoSerif-Regular");
   size-adjust: 88%;
+  ascent-override: 92.4%;
+  descent-override: 28.7%;
 }
 
 :root {
@@ -125,7 +141,7 @@ h3,
   --paper: light-dark(#e4dac2, #1d1914);
   --ink: light-dark(#2a2118, #ddd1b6);
   --ink-faded: light-dark(#5e5040, #a99c84);
-  --rubric: light-dark(#8e2a1e, #cf6a4f);
+  --rubric: light-dark(#8e2a1e, #d87a5f);
   --leader: light-dark(#9a8a70, #6c6050);
   --cloth: #24392f;
   --cloth-weave: #1c2e25;
@@ -241,6 +257,7 @@ h3 {
   border-bottom-color: currentColor;
 }
 .ornament {
+  text-align: center;
   margin: -1.5rem 0 2rem;
   color: var(--rubric);
   font-size: 1.4em;
@@ -329,6 +346,7 @@ h3 {
 }
 .epigraph .attribution {
   margin-top: 1.5em;
+  text-wrap: balance;
   text-align: right;
   font-size: 0.85em;
   color: var(--ink-faded);
@@ -376,17 +394,17 @@ h3 {
 .pagespeed dt::after {
   content: "";
   flex: 1;
-  border-bottom: 1px dotted var(--leader);
+  border-bottom: 2px dotted var(--leader);
 }
 .pagespeed dd {
   margin: 0;
 }
 .imprint {
   margin-top: 3rem;
-  font-size: 0.75em;
+  font-size: 0.85em;
   display: grid;
   gap: 0.2em;
-  font-variant: small-caps;
+  font-variant: all-small-caps;
   letter-spacing: 0.06em;
   color: var(--ink-faded);
 }
@@ -400,7 +418,7 @@ a[href^="http"]:not(.toc a, .works a, .work)::after,
   font-size: 0.7em;
   font-style: normal;
   vertical-align: 0.35em;
-  opacity: 0.65;
+  opacity: 0.9;
 }
 
 a[href^="mailto:"]:not(.toc a)::after,
@@ -413,6 +431,19 @@ a[href^="mailto:"]:not(.toc a)::after,
   background: currentColor;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpath d='M1 1h14v10H1zM1 1.5l7 5.5 7-5.5' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
   opacity: 0.65;
+}
+
+.toc a[href^="mailto:"] > span::after {
+  content: "" / "";
+}
+
+.epigraph-page[hidden] {
+  display: none;
+}
+
+.running-head a {
+  display: inline-block;
+  padding-block: 0.35em;
 }
 
 .works {
@@ -526,7 +557,7 @@ a[href^="mailto:"]:not(.toc a)::after,
 }
 </style>
 <script type="speculationrules">
-{ "prefetch": [{ "where": { "and": [{ "href_matches": "/*" }, { "not": { "href_matches": "/static/*" } }] }, "eagerness": "eager" }] }
+{ "prefetch": [{ "where": { "and": [{ "href_matches": "/*" }, { "not": { "href_matches": "/static/*" } }, { "not": { "href_matches": "/img/*" } }] }, "eagerness": "eager" }] }
 </script>
 <script>
   (function () {
@@ -547,6 +578,10 @@ a[href^="mailto:"]:not(.toc a)::after,
   })();
 </script>
 <!-- /shared:head -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://samfeldstein.xyz/#person", "name": "Samuel Feldstein", "alternateName": "Sam Feldstein", "givenName": "Samuel", "familyName": "Feldstein", "url": "https://samfeldstein.xyz/", "image": "https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.png", "jobTitle": "Owner and lead developer", "worksFor": {"@id": "https://presswork.dev/#organization"}, "knowsAbout": ["Web development", "Writing", "Photography"], "address": {"@type": "PostalAddress", "addressLocality": "Denver", "addressRegion": "CO", "addressCountry": "US"}, "sameAs": ["https://github.com/samfeldstein", "https://notes.samfeldstein.xyz/", "https://presswork.dev/about/"]}, {"@type": "Organization", "@id": "https://presswork.dev/#organization", "name": "Presswork Web Co.", "url": "https://presswork.dev/", "founder": {"@id": "https://samfeldstein.xyz/#person"}}, {"@type": "WebSite", "@id": "https://samfeldstein.xyz/#website", "url": "https://samfeldstein.xyz/", "name": "Ever in Flux", "alternateName": "Sam Feldstein", "author": {"@id": "https://samfeldstein.xyz/#person"}, "publisher": {"@id": "https://samfeldstein.xyz/#person"}}, {"@type": "ProfilePage", "@id": "https://samfeldstein.xyz/#profile", "url": "https://samfeldstein.xyz/", "isPartOf": {"@id": "https://samfeldstein.xyz/#website"}, "mainEntity": {"@id": "https://samfeldstein.xyz/#person"}}]}</script>
+<meta property="profile:first_name" content="Samuel">
+<meta property="profile:last_name" content="Feldstein">
+<meta property="profile:username" content="samfeldstein">
 </head>
 <body>
   <!-- shared:skip-link -->
@@ -560,8 +595,9 @@ a[href^="mailto:"]:not(.toc a)::after,
     </div>
   </header>
   <main id="main-content">
-    <section class="page contents" aria-labelledby="contents">
+    <section class="page contents">
       <h2 id="contents">Contents</h2>
+      <p class="ornament" aria-hidden="true">❦</p>
       <nav aria-labelledby="contents">
         <ol class="toc">
           <li><a href="/published-writing/"><span>Published Writing</span></a></li>
@@ -573,6 +609,7 @@ a[href^="mailto:"]:not(.toc a)::after,
       <ul class="toc roman">
         <li><a href="https://notes.samfeldstein.xyz/"><span>Notebook</span></a></li>
         <li><a href="https://cookbook.samfeldstein.xyz/"><span>Cookbook</span></a></li>
+        <li><a href="https://presswork.dev/"><span>Presswork Web Co.</span></a></li>
       </ul>
       <h3 id="contact">Contact &amp; Social</h3>
       <ul class="toc roman">
@@ -582,7 +619,7 @@ a[href^="mailto:"]:not(.toc a)::after,
     </section>
   </main>
   <!-- shared:endmatter -->
-<section class="page epigraph-page" aria-label="Epigraph">
+<section class="page epigraph-page" aria-label="Epigraph" hidden>
   <figure class="epigraph">
     <blockquote id="quote"></blockquote>
     <figcaption class="attribution">
@@ -610,11 +647,11 @@ a[href^="mailto:"]:not(.toc a)::after,
   <div class="imprint">
     <div>Denver, CO</div>
     <!-- shared:copyright -->
-<div class="copyright">&copy; 2022 – 2026 Samuel Feldstein</div>
+<div class="copyright">&copy; 2022–2026 Samuel Feldstein</div>
 <!-- /shared:copyright -->
   </div>
 </footer>
-<script type="module" src="/js/quote.js?v=355ab24d"></script>
+<script type="module" src="/js/quote.js?v=e3c61ced"></script>
 <!-- /shared:endmatter -->
 </body>
 </html>

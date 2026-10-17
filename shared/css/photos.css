@@ -76,7 +76,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  background: rgba(18, 14, 10, 0.97);
+  background: #120e0a;
   color: #e6dcc6;
 }
 .lightbox::backdrop {
@@ -150,6 +150,17 @@
 .lightbox-close {
   top: 0.5rem;
   right: clamp(0rem, 1vw, 1rem);
+}
+
+@media (max-width: 500px) {
+  .lightbox figure {
+    padding: 3.5rem 0.5rem 4.5rem;
+  }
+  .lightbox-prev,
+  .lightbox-next {
+    top: auto;
+    bottom: 0.75rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -16,8 +16,10 @@
 }
 @font-face {
   font-family: "Cormorant Garamond Fallback";
-  src: local("Georgia");
+  src: local("Georgia"), local("Noto Serif"), local("NotoSerif-Regular");
   size-adjust: 88%;
+  ascent-override: 92.4%;
+  descent-override: 28.7%;
 }
 
 :root {
@@ -25,7 +27,7 @@
   --paper: light-dark(#e4dac2, #1d1914);
   --ink: light-dark(#2a2118, #ddd1b6);
   --ink-faded: light-dark(#5e5040, #a99c84);
-  --rubric: light-dark(#8e2a1e, #cf6a4f);
+  --rubric: light-dark(#8e2a1e, #d87a5f);
   --leader: light-dark(#9a8a70, #6c6050);
   --cloth: #24392f;
   --cloth-weave: #1c2e25;
@@ -141,6 +143,7 @@ h3 {
   border-bottom-color: currentColor;
 }
 .ornament {
+  text-align: center;
   margin: -1.5rem 0 2rem;
   color: var(--rubric);
   font-size: 1.4em;
@@ -229,6 +232,7 @@ h3 {
 }
 .epigraph .attribution {
   margin-top: 1.5em;
+  text-wrap: balance;
   text-align: right;
   font-size: 0.85em;
   color: var(--ink-faded);
@@ -276,17 +280,17 @@ h3 {
 .pagespeed dt::after {
   content: "";
   flex: 1;
-  border-bottom: 1px dotted var(--leader);
+  border-bottom: 2px dotted var(--leader);
 }
 .pagespeed dd {
   margin: 0;
 }
 .imprint {
   margin-top: 3rem;
-  font-size: 0.75em;
+  font-size: 0.85em;
   display: grid;
   gap: 0.2em;
-  font-variant: small-caps;
+  font-variant: all-small-caps;
   letter-spacing: 0.06em;
   color: var(--ink-faded);
 }
@@ -300,7 +304,7 @@ a[href^="http"]:not(.toc a, .works a, .work)::after,
   font-size: 0.7em;
   font-style: normal;
   vertical-align: 0.35em;
-  opacity: 0.65;
+  opacity: 0.9;
 }
 
 a[href^="mailto:"]:not(.toc a)::after,
@@ -313,6 +317,19 @@ a[href^="mailto:"]:not(.toc a)::after,
   background: currentColor;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpath d='M1 1h14v10H1zM1 1.5l7 5.5 7-5.5' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
   opacity: 0.65;
+}
+
+.toc a[href^="mailto:"] > span::after {
+  content: "" / "";
+}
+
+.epigraph-page[hidden] {
+  display: none;
+}
+
+.running-head a {
+  display: inline-block;
+  padding-block: 0.35em;
 }
 
 .works {

@@ -67,3 +67,12 @@ h3,
 #skiplink:focus {
   translate: 0;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  #skiplink {
+    transition: none;
+  }
+}

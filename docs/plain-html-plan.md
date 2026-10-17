@@ -1,5 +1,7 @@
 # Plan: rebuild samfeldstein.xyz as plain HTML
 
+> Historical: this is the plan for the October 2026 port. The site was then redesigned as an old book, so the design, CSS layout, build command and Lighthouse panel described here have changed. CLAUDE.md and README.md describe the current site.
+
 Branch: `claude/hopeful-wozniak-oclsqe`. `main` stays live until cutover. Model: the Presswork rebuild (`samfeldstein/presswork`, `docs/plain-html-plan.md`, `docs/astro-to-plain-html-report.md`, `docs/static-site-stack-skill.md`).
 
 ## Rule for the whole port

@@ -411,7 +411,9 @@ if (randomQuote.url) {
 }
 
 if (["poem", "essay", "song", "short story", "speech", "manifesto"].includes(randomQuote.medium)) {
-  document.querySelector("cite")?.style.setProperty("font-style", "normal");
+  document.getElementById("work")?.style.setProperty("font-style", "normal");
   const workPrefix = randomQuote.speaker ? ", " : "";
   document.getElementById("work").textContent = workPrefix + `“${randomQuote.work}”`;
 }
+
+document.querySelector(".epigraph-page")?.removeAttribute("hidden");

@@ -4,6 +4,7 @@ import { appendFileSync, cpSync, mkdtempSync, readFileSync, rmSync, symlinkSync,
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { check, cssProblems, hostProblems, maskProblems, scriptProblems } from "../check.mjs";
+import { sync } from "../sync.mjs";
 
 test("cssProblems accepts balanced CSS, including braces in strings and comments", () => {
   assert.deepEqual(cssProblems('a{color:red}@media (min-width:1px){b{c:d}}\n/* } { */ i::before{content:"}"}'), []);
@@ -172,6 +173,37 @@ test("check reports a hand edit between shared markers", () => {
     writeFileSync(page, readFileSync(page, "utf8").replace("Skip to Content", "Skip"));
     const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
     assert.ok(problems.some((p) => /index\.html: out of date/.test(p)), problems.join("\n"));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("check fails when a page loses its end matter or has unpaired shared markers", () => {
+  for (const edit of [
+    (html) => html.replace(/<!-- shared:endmatter -->[\s\S]*?<!-- \/shared:endmatter -->\n?/, ""),
+    (html) => html.replace("<!-- shared:endmatter -->", ""),
+    (html) => html.replace("<!-- /shared:endmatter -->", ""),
+    (html) => html.replace("<!-- /shared:skip-link -->", "<!-- /shared:skip-link -->\n<!-- shared:credit --><!-- /shared:credit -->"),
+  ]) {
+    const dir = copyOfSite();
+    try {
+      const page = join(dir, "site/photos/index.html");
+      writeFileSync(page, edit(readFileSync(page, "utf8")));
+      const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+      assert.ok(problems.some((p) => /^sync: .*photos\/index\.html: (missing|the <!-- shared:\w+ --> markers are unpaired or repeated)/.test(p)), problems.join("\n"));
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  }
+});
+
+test("sync is idempotent", () => {
+  const dir = copyOfSite();
+  try {
+    const root = join(dir, "site");
+    const shared = join(dir, "shared");
+    sync({ root, shared });
+    assert.deepEqual(sync({ root, shared, write: false }).changed, []);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
