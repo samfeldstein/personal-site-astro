@@ -16,7 +16,7 @@ All scripts are dependency-free Node except `photos.mjs` (`sharp`, `exiftool-ven
 - Before any commit: `node sync.mjs && node check.mjs && node --test test/*.test.mjs`
 - `npx wrangler dev`: local preview (`npm run dev:phone` listens on the local network)
 - Deploys: Cloudflare Workers Builds runs `npm run build` (`projects.mjs`, then `sync.mjs --check` + `check.mjs`) on every push, so any drift fails the deploy and the Code page's project list is refreshed from GitHub.
-- `node projects.mjs`: rewrites the Code page's project list between `<!-- projects -->` markers from the public GitHub repositories of samfeldstein (no forks, archived, private or profile repos; newest first; `GITHUB_TOKEN` optional). If GitHub can't be reached it warns and leaves the list as is. Descriptions lose characters outside the font subset. Tested in `test/projects.test.mjs`.
+- `node projects.mjs`: rewrites the Code page's project list between `<!-- projects -->` markers from the public GitHub repositories of samfeldstein (no forks, archived, private or profile repos; newest first; `GITHUB_TOKEN` optional). **Only repositories approved in `projects.json` appear, under the name given there**; new ones stay off the page and are printed with a suggested name until the owner approves them (`node projects.mjs --approve` takes the suggested names, or edit `projects.json`). Never approve names on the owner's behalf: when a run reports waiting repositories, show them the names and ask. If GitHub can't be reached it warns and leaves the list as is. Descriptions lose characters outside the font subset. Tested in `test/projects.test.mjs`.
 - **New year:** the copyright year comes from sync (`{{year}}`). `sync.mjs --check` still accepts last year's, so deploys keep working on January 1; run `node sync.mjs` and commit early in the year.
 
 ## Architecture
@@ -36,7 +36,7 @@ All scripts are dependency-free Node except `photos.mjs` (`sharp`, `exiftool-ven
 
 - **Keep the book theme consistent.** New pages are chapters built from `book.css`; put shared pieces there rather than copying them between page files.
 - **Code page skills** are one plain-text line of names separated by commas, with no "and" before the last one, even when skills are added.
-- **Project names** come from GitHub repository names; to show a different name, add the repository to `NAMES` in `projects.mjs` (Postoley Dance Ensemble and Digital Notebook are there).
+- **Project names** are approved by the owner in `projects.json`; a new repository appears only after its name is approved there.
 - **No third-party hosts.** Nothing loads from a host outside `allowedHosts`; plain `<a>` links to other sites are fine.
 - **Comments:** almost none in shipped CSS and JS. Keep the structural markers (`<!-- page: -->`, `<!-- shared:... -->`, `<!-- gallery -->`, `<!-- projects -->`). Don’t add explanatory comments.
 - Git history is still about 480 MB from the old committed Astro image cache; rewriting it is optional and the owner’s call.

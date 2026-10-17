@@ -2,23 +2,26 @@
 /*
   projects.mjs: writes the list of GitHub repositories on /code/.
 
-    node projects.mjs
-    node projects.mjs --file repos.json
-    node projects.mjs --page path/to/index.html
+    node projects.mjs             update the list, report repositories waiting for approval
+    node projects.mjs --approve   also approve the waiting ones under their suggested names
+    --file repos.json             read the repositories from a file instead of GitHub
+    --page path/to/index.html     write to another page
+    --names path/to/names.json    use another approved-names file
 
   Fetches the public repositories of samfeldstein from the GitHub API
-  (a GITHUB_TOKEN environment variable is used if set), leaves out forks,
-  archived and private repositories and the profile README repository,
-  names each one from its repository name (NAMES overrides the few that
-  read better rewritten), and rewrites the list between the <!-- projects --> markers in
-  site/code/index.html, newest first. --file reads the repositories from a
-  JSON file instead of the network; --page writes to another page.
+  (a GITHUB_TOKEN environment variable is used if set) and leaves out forks,
+  archived and private repositories and the profile README repository.
+  Only repositories listed in projects.json are shown, under the name given
+  there; that is the owner's approval of each name. New repositories stay
+  off the page and are reported with a suggested name until approved, either
+  with --approve or by adding them to projects.json by hand. The list goes
+  between the <!-- projects --> markers in site/code/index.html, newest first.
 
-  If GitHub can't be reached or returns no repositories, it prints a warning
-  and exits 0 with the page unchanged, so a build never fails or empties the
-  list. Characters outside the site's font subset (emoji, for example) are
-  dropped from descriptions so check.mjs's font coverage still passes. Then
-  run sync, check and commit.
+  If GitHub can't be reached or no approved repositories remain, it prints a
+  warning and exits 0 with the page unchanged, so a build never fails or
+  empties the list. Characters outside the site's font subset (emoji, for
+  example) are dropped from descriptions so check.mjs's font coverage still
+  passes. Then run sync, check and commit.
 */
 import { readFileSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -26,14 +29,11 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const PAGE = join(here, "site/code/index.html");
+const NAMES_FILE = join(here, "projects.json");
 const API = "https://api.github.com/users/samfeldstein/repos?per_page=100&type=owner&sort=pushed";
 const PROFILE = "samfeldstein";
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const ACRONYMS = new Set(["rss", "css", "html", "js", "ui", "api", "cli", "csa", "osint"]);
-const NAMES = {
-  "postoley-dance-ensemble-sample": "Postoley Dance Ensemble",
-  "notebook-astro": "Digital Notebook",
-};
 const SMALL = new Set(["a", "an", "and", "the", "of", "for", "to", "in", "on"]);
 const MARKERS = /(<!-- projects -->)[\s\S]*?(\n[ \t]*<!-- \/projects -->)/;
 
@@ -47,7 +47,6 @@ export function filterRepos(repos) {
 }
 
 export function displayName(name) {
-  if (Object.hasOwn(NAMES, name)) return NAMES[name];
   return String(name)
     .split(/[-_\s]+/)
     .filter(Boolean)
@@ -80,15 +79,22 @@ export const inFont = (text) =>
     .replace(/\s+/g, " ")
     .trim();
 
-export function renderEntry(repo) {
+export function renderEntry(repo, name = displayName(repo.name)) {
   const date = formatDate(repo.created_at);
   const desc = inFont(repo.description ?? "");
   const type = /^https?:\/\//i.test(repo.homepage ?? "") ? "Website" : "Source code";
-  return `        <li><a href="${esc(repoLink(repo))}"><span class="work-line"><cite class="work-title">${esc(displayName(repo.name))}</cite><time datetime="${date.datetime}">${date.text}</time></span><span class="work-source">${desc ? `<i>${esc(desc)}</i>, ` : ""}<span class="work-type">${type}</span></span></a></li>`;
+  return `        <li><a href="${esc(repoLink(repo))}"><span class="work-line"><cite class="work-title">${esc(name)}</cite><time datetime="${date.datetime}">${date.text}</time></span><span class="work-source">${desc ? `<i>${esc(desc)}</i>, ` : ""}<span class="work-type">${type}</span></span></a></li>`;
 }
 
-export function renderEntries(repos) {
-  return repos.map(renderEntry).join("\n");
+export function renderEntries(repos, names = {}) {
+  return repos.map((repo) => renderEntry(repo, names[repo.name] ?? displayName(repo.name))).join("\n");
+}
+
+export function splitApproved(repos, names) {
+  return {
+    shown: repos.filter((repo) => Object.hasOwn(names, repo.name)),
+    waiting: repos.filter((repo) => !Object.hasOwn(names, repo.name)),
+  };
 }
 
 export const hasMarkers = (html) => MARKERS.test(html);
@@ -140,6 +146,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   };
   const file = option("--file");
   const page = option("--page") ?? PAGE;
+  const namesFile = option("--names") ?? NAMES_FILE;
+  const names = JSON.parse(readFileSync(namesFile, "utf8")).names;
 
   const html = readFileSync(page, "utf8");
   if (!hasMarkers(html)) {
@@ -154,11 +162,23 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     console.error(`projects: warning: couldn't get the repositories (${err.message}); the page is unchanged`);
     process.exit(0);
   }
-  if (!repos.length) {
-    console.error("projects: warning: no repositories left after filtering; the page is unchanged");
+  let { shown, waiting } = splitApproved(repos, names);
+  if (waiting.length && args.includes("--approve")) {
+    for (const repo of waiting) names[repo.name] = displayName(repo.name);
+    writeFileSync(namesFile, JSON.stringify({ names }, null, 2) + "\n");
+    console.log(`projects: approved ${waiting.map((r) => `${r.name} as "${names[r.name]}"`).join(", ")}`);
+    ({ shown, waiting } = splitApproved(repos, names));
+  }
+  if (waiting.length) {
+    console.log("projects: waiting for your approval (not on the site yet):");
+    for (const repo of waiting) console.log(`  ${repo.name} → "${displayName(repo.name)}"`);
+    console.log("  Approve these names with `node projects.mjs --approve`, or add them to projects.json with the names you want.");
+  }
+  if (!shown.length) {
+    console.error("projects: warning: no approved repositories; the page is unchanged");
     process.exit(0);
   }
 
-  writeFileSync(page, replaceBlock(html, renderEntries(repos)));
-  console.log(`projects: ${repos.length} repositories`);
+  writeFileSync(page, replaceBlock(html, renderEntries(shown, names)));
+  console.log(`projects: ${shown.length} repositories on the page`);
 }

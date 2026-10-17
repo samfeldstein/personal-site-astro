@@ -5,7 +5,7 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { displayName, filterRepos, inFont, formatDate, renderEntries, renderEntry, replaceBlock, repoLink } from "../projects.mjs";
+import { displayName, filterRepos, inFont, splitApproved, formatDate, renderEntries, renderEntry, replaceBlock, repoLink } from "../projects.mjs";
 
 const script = fileURLToPath(new URL("../projects.mjs", import.meta.url));
 
@@ -45,7 +45,7 @@ test("displayName capitalizes words, upper-cases acronyms and keeps short words 
   assert.equal(displayName("rss-feeds"), "RSS Feeds");
   assert.equal(displayName("first-website"), "First Website");
   assert.equal(displayName("shelf-talkers"), "Shelf Talkers");
-  assert.equal(displayName("notebook-astro"), "Digital Notebook");
+  assert.equal(displayName("notebook-astro"), "Notebook Astro");
   assert.equal(displayName("presswork-web-co"), "Presswork Web Co");
   assert.equal(displayName("the-art_of-css"), "The Art of CSS");
   assert.equal(displayName("osint-cli-for-the-api"), "OSINT CLI for the API");
@@ -123,8 +123,9 @@ test("--file run writes the list into the page", () => {
         repo({ name: "fork", fork: true }),
       ]),
     );
-    const out = execFileSync("node", [script, "--file", join(dir, "repos.json"), "--page", join(dir, "index.html")], { encoding: "utf8" });
-    assert.equal(out.trim(), "projects: 2 repositories");
+    writeFileSync(join(dir, "names.json"), JSON.stringify({ names: { "first-website": "First Website", "rss-feeds": "RSS Feeds" } }));
+    const out = execFileSync("node", [script, "--file", join(dir, "repos.json"), "--page", join(dir, "index.html"), "--names", join(dir, "names.json")], { encoding: "utf8" });
+    assert.equal(out.trim(), "projects: 2 repositories on the page");
     const html = readFileSync(join(dir, "index.html"), "utf8");
     assert.equal(
       html,
@@ -173,7 +174,30 @@ test("descriptions drop characters outside the font subset", () => {
   assert.equal(inFont("Fast 🚀 site — “quoted” → done"), "Fast site — “quoted” done");
 });
 
-test("NAMES rewrites chosen repository names", () => {
-  assert.equal(displayName("postoley-dance-ensemble-sample"), "Postoley Dance Ensemble");
-  assert.equal(displayName("notebook-astro"), "Digital Notebook");
+test("only approved repositories are shown, under their approved names", () => {
+  const repos = [repo({ name: "notebook-astro" }), repo({ name: "new-thing" })];
+  const { shown, waiting } = splitApproved(repos, { "notebook-astro": "Digital Notebook" });
+  assert.deepEqual(shown.map((r) => r.name), ["notebook-astro"]);
+  assert.deepEqual(waiting.map((r) => r.name), ["new-thing"]);
+  assert.match(renderEntries(shown, { "notebook-astro": "Digital Notebook" }), /<cite class="work-title">Digital Notebook<\/cite>/);
+});
+
+test("an unapproved repository stays off the page and is reported; --approve adds it", () => {
+  const dir = tempDir();
+  try {
+    writeFileSync(join(dir, "index.html"), page);
+    writeFileSync(join(dir, "names.json"), JSON.stringify({ names: { "rss-feeds": "RSS Feeds" } }));
+    writeFileSync(join(dir, "repos.json"), JSON.stringify([repo({ name: "rss-feeds" }), repo({ name: "new-thing", created_at: "2025-01-01T00:00:00Z" })]));
+    const run = (...extra) => execFileSync("node", [script, "--file", join(dir, "repos.json"), "--page", join(dir, "index.html"), "--names", join(dir, "names.json"), ...extra], { encoding: "utf8" });
+    const first = run();
+    assert.match(first, /waiting for your approval/);
+    assert.match(first, /new-thing → "New Thing"/);
+    assert.doesNotMatch(readFileSync(join(dir, "index.html"), "utf8"), /New Thing/);
+    const second = run("--approve");
+    assert.match(second, /approved new-thing as "New Thing"/);
+    assert.match(readFileSync(join(dir, "index.html"), "utf8"), /New Thing/);
+    assert.deepEqual(JSON.parse(readFileSync(join(dir, "names.json"), "utf8")).names, { "rss-feeds": "RSS Feeds", "new-thing": "New Thing" });
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });
