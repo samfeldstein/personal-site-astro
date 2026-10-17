@@ -11,7 +11,7 @@ const PLIST = join(homedir(), "Library/LaunchAgents", `${LABEL}.plist`);
 
 if (process.argv.includes("--install") || process.argv.includes("--uninstall")) {
   if (process.platform !== "darwin") {
-    console.error("pull: --install sets up a macOS launchd job; on other systems, run `node .claude/hooks/pull.mjs --background` hourly with cron.");
+    console.error("pull: --install sets up a macOS launchd job; on other systems, run `node .claude/hooks/pull.mjs --background` daily with cron.");
     process.exit(1);
   }
   const uid = process.getuid();
@@ -20,7 +20,7 @@ if (process.argv.includes("--install") || process.argv.includes("--uninstall")) 
   } catch {}
   if (process.argv.includes("--uninstall")) {
     if (existsSync(PLIST)) unlinkSync(PLIST);
-    console.log("pull: hourly pull removed");
+    console.log("pull: daily pull removed");
     process.exit(0);
   }
   const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
@@ -41,7 +41,7 @@ if (process.argv.includes("--install") || process.argv.includes("--uninstall")) 
   <key>EnvironmentVariables</key>
   <dict><key>PATH</key><string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string></dict>
   <key>RunAtLoad</key><true/>
-  <key>StartInterval</key><integer>3600</integer>
+  <key>StartCalendarInterval</key><dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer></dict>
   <key>StandardOutPath</key><string>${esc(join(homedir(), "Library/Logs", `${LABEL}.log`))}</string>
   <key>StandardErrorPath</key><string>${esc(join(homedir(), "Library/Logs", `${LABEL}.log`))}</string>
 </dict>
@@ -49,7 +49,7 @@ if (process.argv.includes("--install") || process.argv.includes("--uninstall")) 
 `,
   );
   execFileSync("launchctl", ["bootstrap", `gui/${uid}`, PLIST]);
-  console.log(`pull: this copy now pulls main from GitHub every hour and at login (log: ~/Library/Logs/${LABEL}.log)`);
+  console.log(`pull: this copy now pulls main from GitHub at login and once a day (log: ~/Library/Logs/${LABEL}.log)`);
   process.exit(0);
 }
 
