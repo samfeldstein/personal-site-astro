@@ -28,7 +28,7 @@ const SOURCE = join(here, "photos");
 const OUT = join(here, "site/img/photos");
 const PAGE = join(here, "site/photos/index.html");
 const WIDTHS = [256, 691, 936, 1382, 1640, 1850, 2048];
-const SIZES = "(min-width: 1100px) 200px, (min-width: 640px) 25vw, 45vw";
+const SIZES = "(min-width: 1100px) 560px, (min-width: 640px) 50vw, 100vw";
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -96,7 +96,8 @@ const img = (p, i) => {
   const url = (w) => `/img/photos/${p.name}-${w}.webp`;
   const priority = i === 0 ? ' loading="eager" decoding="async" fetchpriority="high"' : ' loading="lazy" decoding="async"';
   const info = `<span class="thumb-info" aria-hidden="true"><span class="thumb-title">${esc(p.shown)}</span>${p.month ? `<span class="thumb-date">${p.month}</span>` : ""}</span>`;
-  return `      <li><a class="thumb" href="${url(p.widths.at(-1))}" data-title="${esc(p.shown)}" data-date="${p.month}"><img src="${url(p.widths[1] ?? p.widths[0])}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${SIZES}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}">${info}</a></li>`;
+  const ratio = +(p.width / p.height).toFixed(3);
+  return `      <li style="--r: ${ratio}"><a class="thumb" href="${url(p.widths.at(-1))}" data-title="${esc(p.shown)}" data-date="${p.month}"><img src="${url(p.widths[1] ?? p.widths[0])}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${SIZES}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}">${info}</a></li>`;
 };
 
 const html = readFileSync(PAGE, "utf8");
