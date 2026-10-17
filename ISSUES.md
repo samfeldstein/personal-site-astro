@@ -31,3 +31,12 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 - [x] **Home footer wording.** ("Powered by Astro" replaced with a colophon on home and Code, in [shared/credit.html](shared/credit.html).)
 - [ ] **Gallery image URLs changed.** Photos moved from `/_astro/*` to `/img/photos/*`. Image search will reindex them; old image links won’t resolve.
 - [x] **Review the Code page portfolio.** (The list is now generated from public GitHub repositories by `projects.mjs`, with names approved in `projects.json`.)
+
+## From the October 2026 audits (owner)
+
+- [ ] **GitHub repo descriptions.** personal-site-astro says "built with Astro"; rss-feeds has a lowercase "rss". Update them on GitHub; consider renaming "Personal Site Astro" in [projects.json](projects.json).
+- [ ] **Photo alt-text typos** (EXIF Description, then `node photos.mjs`): "it's head", "A group a people", "ocototillo with a mountains", "Robert's Western world", "Arches National Monument" (a National Park); two Barksdale's photos share the same alt text.
+- [ ] **Presswork's structured data** names its founder as a bare Person; link it to `https://samfeldstein.xyz/#person` in the presswork repo.
+- [ ] **Favicons** are still the old white square; a cloth-and-gilt icon would match the cover.
+- [ ] **Cloudflare dashboard:** confirm Web Analytics auto-injection and Bot Fight Mode are off (the colophon says "No cookies, no trackers").
+

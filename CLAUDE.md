@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Sam Feldstein’s personal site (samfeldstein.xyz): plain HTML, CSS and JavaScript (no framework, no build step), served as Cloudflare Workers static assets. No Worker script, no forms. Ported from Astro in October 2026, following the Presswork rebuild (`~/presswork`); the plan is `docs/plain-html-plan.md`, but where it differs from the code, the code is right. Open items are in `ISSUES.md`.
+Sam Feldstein’s personal site (samfeldstein.xyz): plain HTML, CSS and JavaScript (no framework, no build step), served as Cloudflare Workers static assets. No Worker script, no forms. Ported from Astro in October 2026, following the Presswork rebuild (`~/presswork`); the plan is `docs/plain-html-plan.md`, but where it differs from the code, the code is right. Open items are in `ISSUES.md`. **Start with `docs/handoff.md`** for where things stand and what is waiting on the owner; the history is in `docs/makeover-report.md`.
 
 ## Commands
 

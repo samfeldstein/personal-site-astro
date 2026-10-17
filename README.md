@@ -16,7 +16,7 @@ Everything is set in Cormorant Garamond, with real small caps, old-style figures
 - A few small Node scripts that keep the pages consistent and check them before anything deploys.
 - Cloudflare Workers static assets for hosting. Cloudflare builds and deploys from GitHub on every push.
 
-The site ran on Astro until October 2026. I rebuilt it as plain files, the same way I rebuilt [presswork.dev](https://github.com/samfeldstein/presswork-web-co), and then redesigned it as a book.
+The site ran on Astro until October 2026. I rebuilt it as plain files, the same way I rebuilt [presswork.dev](https://github.com/samfeldstein/presswork-web-co), and then redesigned it as a book. The whole story is in [docs/makeover-report.md](docs/makeover-report.md).
 
 ## How it works
 
