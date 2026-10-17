@@ -48,7 +48,7 @@ body {
   font-weight: 500;
   line-height: 1.45;
   font-variant-numeric: oldstyle-nums proportional-nums;
-  font-feature-settings: "liga", "dlig";
+  font-feature-settings: "liga";
 }
 
 a {
@@ -188,4 +188,9 @@ h3 {
   max-width: calc(var(--measure) + 3rem);
   margin: 0 auto;
   padding: 0 1.5rem 6rem;
+}
+
+.epigraph blockquote,
+.colophon {
+  font-feature-settings: "liga", "dlig";
 }
