@@ -1,0 +1,14 @@
+name: Monthly rebuild
+
+on:
+  schedule:
+    - cron: "17 15 1 * *"
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl --fail-with-body -sS -X POST "$DEPLOY_HOOK"
+        env:
+          DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
