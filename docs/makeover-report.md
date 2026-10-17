@@ -4,7 +4,7 @@ Written 2026-10-17. Covers the rebuild of samfeldstein.xyz from Astro to plain H
 
 ## Summary
 
-The site ran on Astro with Sass, PostCSS, ESLint and an image pipeline whose cache was committed to git. Nothing on it used what Astro is good at: there were no content collections in use (only 13 unlinked résumés), and all code is written by Claude, so components and templating saved no one any work. It was rebuilt as plain HTML, CSS and JavaScript, following the Presswork rebuild, then redesigned as a book. The site now has no runtime dependencies and no framework, and every page scores 99 to 100 on mobile Lighthouse.
+The site ran on Astro with Sass, PostCSS, ESLint and an image pipeline whose cache was committed to git. Nothing on it used what Astro is good at: there were no content collections in use (only 13 unlinked résumés), and all code is written by Claude, so components and templating saved no one any work. It was rebuilt as plain HTML, CSS and JavaScript, following the Presswork rebuild, then redesigned as a book. The site now has no runtime dependencies and no framework, and every page scores 97 to 99 for performance and 100 for everything else on mobile Lighthouse (live).
 
 ## Why
 
