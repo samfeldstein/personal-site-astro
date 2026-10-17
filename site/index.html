@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
 <head>
-<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["home"],"fonts":["oswald","noto-serif"]} -->
+<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["home"],"fonts":["oswald","noto-serif"],"typefaces":"Oswald and Noto Serif"} -->
 <!-- shared:head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,50 +98,28 @@ h3,
 #skiplink:focus {
   translate: 0;
 }
-.quote-container {
-  color-scheme: light dark;
-  --accent: light-dark(#999999, #595959);
-  --accent-2: light-dark(#f8f8f8, #252525);
-  background: var(--accent-2);
-  border-style: solid none;
-  border-width: 0.01em;
-  border-color: var(--accent);
-  padding: 1em;
+.epigraph {
+  max-width: 24em;
+  margin: 8rem auto 0;
+  padding: 0 1rem;
 }
-.quote-container blockquote {
+.epigraph blockquote {
   margin: 0;
-  position: relative;
-}
-.quote-container .attribution {
-  font-size: 0.7em;
-  margin-top: 3em;
-}
-.quote-container #quote {
-  text-align: left;
   font-style: italic;
-  font-weight: 100;
-  letter-spacing: 0.025em;
+  font-weight: 200;
+  line-height: 1.45;
+  text-wrap: pretty;
 }
-
-.pagespeed figcaption {
-  margin-bottom: 0.5em;
+.epigraph blockquote p {
+  margin: 0 0 0.75em;
 }
-.pagespeed ul {
-  padding: 0;
-  font-size: 0.8em;
-}
-.pagespeed li {
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-}
-.pagespeed span:first-of-type {
-  flex: 1;
+.epigraph .attribution {
+  margin-top: 1.25em;
+  font-size: 0.7em;
   text-align: right;
 }
-.pagespeed .performance {
-  font-weight: 400;
-  margin-top: 0.25em;
+.epigraph .attribution::before {
+  content: "— ";
 }
 
 @font-face {
@@ -202,13 +180,12 @@ h3,
   display: none;
 }
 
-.defer, main, footer {
+.defer, main {
   content-visibility: auto;
   contain-intrinsic-size: auto 300px auto 100vh;
 }
 
-.flex-column, hgroup, footer, footer .etc,
-footer .toc {
+.flex-column, hgroup {
   display: flex;
   flex-direction: column;
 }
@@ -218,12 +195,12 @@ footer .toc {
   hyphens: auto;
 }
 
-.small-caps, nav.main, footer a {
+.small-caps, nav.main {
   font-variant: small-caps;
   text-transform: lowercase;
 }
 
-.underline, footer a:hover {
+.underline {
   text-decoration-line: underline;
 }
 
@@ -232,7 +209,7 @@ footer .toc {
   text-decoration: none;
 }
 
-.unstyled-list, main ul, footer ul {
+.unstyled-list, main ul {
   list-style: none;
 }
 
@@ -351,7 +328,7 @@ hgroup h1,
 hgroup .name {
   margin: 0;
   font-family: var(--font-2);
-  font-size: clamp(4rem, 15vw, 9rem);
+  font-size: clamp(3rem, min(15vw, 11vh), 9rem);
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -426,34 +403,56 @@ main li:hover, main li:focus-within {
 }
 
 footer {
-  justify-content: space-evenly;
-  gap: 5em;
-  font-size: 0.8em;
-  text-align: right;
   margin-top: 10rem;
   border-top: 0.5rem solid;
-  padding: 10rem 1rem 4rem 1rem;
+  padding: 6rem 1rem 6rem;
+  font-size: 0.8em;
+  text-align: center;
 }
 footer > * {
-  max-width: 50rem;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 22em;
+  margin-inline: auto;
 }
-footer ul {
+footer h2 {
+  margin: 0 auto 1.5rem;
+}
+footer .colophon {
+  margin-block: 0 3rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+.pagespeed figcaption {
+  font-family: var(--font-2);
+  font-weight: 300;
+  margin-bottom: 0.75em;
+}
+.pagespeed dl {
   margin: 0;
-  padding: 0;
+  font-size: 0.85em;
 }
-footer .etc,
-footer .toc {
-  gap: 0.5em;
+.pagespeed dl div {
+  display: flex;
+  align-items: baseline;
 }
-footer a:hover {
-  text-decoration-thickness: 0.1em;
+.pagespeed dt {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
 }
-footer :focus-visible {
-  outline: 0.1em solid var(--text-color);
-  outline-offset: 0.1em;
-  border-radius: 5px;
+.pagespeed dt::after {
+  content: "";
+  flex: 1;
+  margin: 0 0.4em;
+  border-bottom: 1px dotted var(--accent);
+}
+.pagespeed dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+footer .imprint {
+  margin-top: 3rem;
+  display: grid;
+  gap: 0.25em;
 }
 
 svg.inline {
@@ -541,6 +540,13 @@ svg.inline path {
     </hgroup>
   </header>
   <main id="main-content">
+    <figure class="epigraph quote-container">
+      <blockquote id="quote"></blockquote>
+      <figcaption class="attribution">
+        <span id="speaker"></span><cite id="work"></cite><span id="verse"></span
+        ><span id="year"></span>
+      </figcaption>
+    </figure>
     <section class="contents">
       <h2 id="contents">Contents</h2>
       <nav>
@@ -567,36 +573,23 @@ svg.inline path {
     </section>
   </main>
   <footer>
-    <div class="quote-container">
-      <blockquote id="quote"></blockquote>
-      <p class="attribution">
-        <span id="speaker"></span><cite id="work"></cite><span id="verse"></span
-        ><span id="year"></span>
-      </p>
-    </div>
-    <nav>
-      <ul class="toc">
-        <li><a href="#contents">Contents</a></li>
-        <li><a href="#other-sites">Other Sites</a></li>
-        <li><a href="#contact">Contact & Social</a></li>
-      </ul>
-    </nav>
+    <h2 id="colophon">Colophon</h2>
+    <!-- shared:credit -->
+<p class="colophon">Set in Oswald and Noto Serif. Built with plain HTML, CSS, and JavaScript, and hosted on Cloudflare. No cookies, no trackers.</p>
+<!-- /shared:credit -->
     <!-- lighthouse -->
     <figure class="pagespeed">
-      <figcaption class="small-caps">Lighthouse Metrics</figcaption>
-      <ul>
-        <li><span>Blocking Time:</span><span>0 ms</span></li>
-        <li><span>Speed Index:</span><span>1.5 s</span></li>
-        <li><span>Time to Interactive:</span><span>2.3 s</span></li>
-        <li class="performance"><span>Performance Score:</span><span>&nbsp;&nbsp;98</span></li>
-      </ul>
+      <figcaption>Lighthouse, on a phone</figcaption>
+      <dl>
+        <div><dt>Performance</dt><dd>98</dd></div>
+        <div><dt>Blocking time</dt><dd>0 ms</dd></div>
+        <div><dt>Speed index</dt><dd>1.5 s</dd></div>
+        <div><dt>Time to interactive</dt><dd>2.3 s</dd></div>
+      </dl>
     </figure>
     <!-- /lighthouse -->
-    <div class="etc">
+    <div class="imprint">
       <div>Denver, CO</div>
-      <!-- shared:credit -->
-<div class="colophon">Plain HTML, CSS, and JavaScript, set in self-hosted fonts and hosted on Cloudflare. No cookies, no trackers.</div>
-<!-- /shared:credit -->
       <!-- shared:copyright -->
 <div class="copyright">&copy; 2022 – 2026 Samuel Feldstein</div>
 <!-- /shared:copyright -->

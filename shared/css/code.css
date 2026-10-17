@@ -357,3 +357,10 @@ footer .etc {
 .custom-cursor, html, a {
   cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='24' height='24' fill='%23fff' stroke='%23fff' stroke-width='.004' viewBox='-48.16 -48.16 497.61 497.61'%3E%3Cg stroke='%2393ff7a' stroke-linecap='round' stroke-linejoin='round' stroke-width='70.627'%3E%3Cpath d='m46.943 401.292 119.962-144.031L46.943 0z' style='fill:%232ccf2f'/%3E%3Cpath d='m46.943 0 119.962 257.261 187.444.684z' style='fill:%232ccf2f'/%3E%3C/g%3E%3Cpath d='m46.943 401.292 119.962-144.031L46.943 0z' style='fill:%232ccf2f'/%3E%3Cpath d='m46.943 0 119.962 257.261 187.444.684z' style='fill:%232ccf2f'/%3E%3C/svg%3E"), auto;
 }
+
+.etc .colophon {
+  max-width: 30em;
+  margin: 0 0 0 auto;
+  line-height: 1.5;
+  text-wrap: balance;
+}

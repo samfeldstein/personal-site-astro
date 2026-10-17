@@ -148,6 +148,7 @@ export function sync({ root, shared, write = true }) {
     const ctx = {
       ...facts,
       title: meta.title,
+      typefaces: meta.typefaces ?? "",
       fullTitle: `${meta.title} | ${facts.site.title}`,
       description: meta.description ?? facts.site.description,
       url: new URL(path, facts.site.url).href,

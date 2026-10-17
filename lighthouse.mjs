@@ -49,13 +49,13 @@ const metrics = args.length
   : await fromPageSpeed();
 
 const panel = `    <figure class="pagespeed">
-      <figcaption class="small-caps">Lighthouse Metrics</figcaption>
-      <ul>
-        <li><span>Blocking Time:</span><span>${metrics.blockingTime}</span></li>
-        <li><span>Speed Index:</span><span>${metrics.speedIndex}</span></li>
-        <li><span>Time to Interactive:</span><span>${metrics.tti}</span></li>
-        <li class="performance"><span>Performance Score:</span><span>&nbsp;&nbsp;${metrics.performanceScore}</span></li>
-      </ul>
+      <figcaption>Lighthouse, on a phone</figcaption>
+      <dl>
+        <div><dt>Performance</dt><dd>${metrics.performanceScore}</dd></div>
+        <div><dt>Blocking time</dt><dd>${metrics.blockingTime}</dd></div>
+        <div><dt>Speed index</dt><dd>${metrics.speedIndex}</dd></div>
+        <div><dt>Time to interactive</dt><dd>${metrics.tti}</dd></div>
+      </dl>
     </figure>`;
 
 const html = readFileSync(PAGE, "utf8");

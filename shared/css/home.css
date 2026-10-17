@@ -1,47 +1,25 @@
-.quote-container {
-  color-scheme: light dark;
-  --accent: light-dark(#999999, #595959);
-  --accent-2: light-dark(#f8f8f8, #252525);
-  background: var(--accent-2);
-  border-style: solid none;
-  border-width: 0.01em;
-  border-color: var(--accent);
-  padding: 1em;
+.epigraph {
+  max-width: 24em;
+  margin: 8rem auto 0;
+  padding: 0 1rem;
 }
-.quote-container blockquote {
+.epigraph blockquote {
   margin: 0;
-  position: relative;
-}
-.quote-container .attribution {
-  font-size: 0.7em;
-  margin-top: 3em;
-}
-.quote-container #quote {
-  text-align: left;
   font-style: italic;
-  font-weight: 100;
-  letter-spacing: 0.025em;
+  font-weight: 200;
+  line-height: 1.45;
+  text-wrap: pretty;
 }
-
-.pagespeed figcaption {
-  margin-bottom: 0.5em;
+.epigraph blockquote p {
+  margin: 0 0 0.75em;
 }
-.pagespeed ul {
-  padding: 0;
-  font-size: 0.8em;
-}
-.pagespeed li {
-  display: flex;
-  justify-content: space-between;
-  gap: 1em;
-}
-.pagespeed span:first-of-type {
-  flex: 1;
+.epigraph .attribution {
+  margin-top: 1.25em;
+  font-size: 0.7em;
   text-align: right;
 }
-.pagespeed .performance {
-  font-weight: 400;
-  margin-top: 0.25em;
+.epigraph .attribution::before {
+  content: "— ";
 }
 
 @font-face {
@@ -102,13 +80,12 @@
   display: none;
 }
 
-.defer, main, footer {
+.defer, main {
   content-visibility: auto;
   contain-intrinsic-size: auto 300px auto 100vh;
 }
 
-.flex-column, hgroup, footer, footer .etc,
-footer .toc {
+.flex-column, hgroup {
   display: flex;
   flex-direction: column;
 }
@@ -118,12 +95,12 @@ footer .toc {
   hyphens: auto;
 }
 
-.small-caps, nav.main, footer a {
+.small-caps, nav.main {
   font-variant: small-caps;
   text-transform: lowercase;
 }
 
-.underline, footer a:hover {
+.underline {
   text-decoration-line: underline;
 }
 
@@ -132,7 +109,7 @@ footer .toc {
   text-decoration: none;
 }
 
-.unstyled-list, main ul, footer ul {
+.unstyled-list, main ul {
   list-style: none;
 }
 
@@ -251,7 +228,7 @@ hgroup h1,
 hgroup .name {
   margin: 0;
   font-family: var(--font-2);
-  font-size: clamp(4rem, 15vw, 9rem);
+  font-size: clamp(3rem, min(15vw, 11vh), 9rem);
   font-weight: 500;
   text-transform: uppercase;
 }
@@ -326,34 +303,56 @@ main li:hover, main li:focus-within {
 }
 
 footer {
-  justify-content: space-evenly;
-  gap: 5em;
-  font-size: 0.8em;
-  text-align: right;
   margin-top: 10rem;
   border-top: 0.5rem solid;
-  padding: 10rem 1rem 4rem 1rem;
+  padding: 6rem 1rem 6rem;
+  font-size: 0.8em;
+  text-align: center;
 }
 footer > * {
-  max-width: 50rem;
-  width: 100%;
-  margin: 0 auto;
+  max-width: 22em;
+  margin-inline: auto;
 }
-footer ul {
+footer h2 {
+  margin: 0 auto 1.5rem;
+}
+footer .colophon {
+  margin-block: 0 3rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+.pagespeed figcaption {
+  font-family: var(--font-2);
+  font-weight: 300;
+  margin-bottom: 0.75em;
+}
+.pagespeed dl {
   margin: 0;
-  padding: 0;
+  font-size: 0.85em;
 }
-footer .etc,
-footer .toc {
-  gap: 0.5em;
+.pagespeed dl div {
+  display: flex;
+  align-items: baseline;
 }
-footer a:hover {
-  text-decoration-thickness: 0.1em;
+.pagespeed dt {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
 }
-footer :focus-visible {
-  outline: 0.1em solid var(--text-color);
-  outline-offset: 0.1em;
-  border-radius: 5px;
+.pagespeed dt::after {
+  content: "";
+  flex: 1;
+  margin: 0 0.4em;
+  border-bottom: 1px dotted var(--accent);
+}
+.pagespeed dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+footer .imprint {
+  margin-top: 3rem;
+  display: grid;
+  gap: 0.25em;
 }
 
 svg.inline {
