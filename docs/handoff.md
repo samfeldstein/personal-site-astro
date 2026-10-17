@@ -35,7 +35,6 @@ Decided 2026-10-17: keep Workers Builds (every push to `main` deploys after `npm
 - A Content-Security-Policy header (needs hashes for the two inline head scripts, which `sync.mjs` would compute).
 - Redirects for the old `/_astro/*` gallery image URLs (87 rules), only for old image-search hits.
 - A notification when a new repo is waiting for approval.
-- Re-encode the few very heavy photos (`the-getty-2`, `ocotillo-sideways`) at a lower WebP quality. Delete their WebPs and rerun `photos.mjs`.
 - The roadmap: an About the Author page, and résumés from the Find a Job project (`ROADMAP.md`).
 
 ## How the work was done
