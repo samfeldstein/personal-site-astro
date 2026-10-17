@@ -20,7 +20,7 @@ Last updated 2026-10-17. Read this, then `CLAUDE.md`, before working on the site
 
 These need decisions or changes outside the repo; they're also in `ISSUES.md`.
 
-- **GitHub repo description.** "My personal website, built with Astro" (personal-site-astro) is out of date (`gh repo edit samfeldstein/personal-site-astro --description "…"`). The lowercase "rss" stays. The display name "Personal Site Astro" could be renamed in `projects.json`. Project dates are repo creation dates, so recent repos for older work show recent dates.
+- **GitHub repo description.** "My personal website, built with Astro" (personal-site) is out of date (`gh repo edit samfeldstein/personal-site --description "…"`). The lowercase "rss" stays. Project dates are repo creation dates, so recent repos for older work show recent dates.
 - **Photo captions (EXIF, in the photo editor, then `node photos.mjs`).** Alt-text typos: "it's head", "A group a people", "ocototillo with a mountains", "Robert's Western world", "Arches National Monument" (a National Park). Two Barksdale's photos share identical alt text.
 - **Presswork's own structured data.** presswork.dev names its founder as a bare `Person`. Linking it to `{"@id": "https://samfeldstein.xyz/#person", "url": "https://samfeldstein.xyz/"}` would complete the connection from that side. That's in the presswork repo.
 - **Contents numbering.** Chapters use 1–3, other links continue in lowercase roman (iv–viii). The design audit noted roman usually comes before arabic in a book. The owner chose the current scheme; revisit only if asked.

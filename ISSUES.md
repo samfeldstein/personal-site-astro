@@ -34,7 +34,7 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 
 ## From the October 2026 audits (owner)
 
-- [ ] **GitHub repo description.** personal-site-astro says "built with Astro"; update it on GitHub (the lowercase "rss" in rss-feeds stays). Consider renaming "Personal Site Astro" in [projects.json](projects.json).
+- [ ] **GitHub repo description.** personal-site says "built with Astro"; update it on GitHub (the lowercase "rss" in rss-feeds stays). Consider renaming "Personal Site Astro" in [projects.json](projects.json).
 - [ ] **Photo alt-text typos** (EXIF Description, then `node photos.mjs`): "it's head", "A group a people", "ocototillo with a mountains", "Robert's Western world", "Arches National Monument" (a National Park); two Barksdale's photos share the same alt text.
 - [ ] **Presswork's structured data** names its founder as a bare Person; link it to `https://samfeldstein.xyz/#person` in the presswork repo.
 - [x] **Favicons.** (Gilt "SF" in Cormorant Garamond on the cover cloth, 2026-10-17.)
