@@ -4,74 +4,82 @@ The source for [samfeldstein.xyz](https://samfeldstein.xyz), home to my publishe
 
 I keep this repo public mainly as a code sample. You’re welcome to read it, borrow from it, or fork it. The content is mine.
 
+## The idea
+
+The site is set like an old book. The home page is a cloth-bound cover, and scrolling turns to a contents page, with dotted leaders running to page numbers. Each section is a chapter: Published Writing is a list of works, Photography is a mosaic of photos you can open full screen, and Code is a list of projects pulled from GitHub. Every page ends the way a book does, with an epigraph (a random quote from my collection) and a colophon. Even the 404 page is an erratum slip.
+
+Everything is set in Cormorant Garamond, with real small caps, old-style figures, and historical ligatures. The colors are aged paper, iron-gall ink, and a little vermilion. The site follows your system’s light or dark setting.
+
 ## Stack
 
-- Plain HTML, CSS, and JavaScript. No framework, no bundler, no build step.
-- A few dependency-free Node scripts that keep the pages consistent and check them
-- [sharp](https://sharp.pixelplumbing.com) and [exiftool-vendored](https://github.com/photostructure/exiftool-vendored.js) for the photo gallery, run by hand when the photos change
+- Plain HTML, CSS, and JavaScript. No framework, no bundler.
+- A few small Node scripts that keep the pages consistent and check them before anything deploys.
 - Cloudflare Workers static assets for hosting. Cloudflare builds and deploys from GitHub on every push.
 
-The site ran on Astro until 2026. I rebuilt it as plain files, the same way I rebuilt [presswork.dev](https://github.com/samfeldstein/presswork-web-co), and kept every page looking as it did.
+The site ran on Astro until October 2026. I rebuilt it as plain files, the same way I rebuilt [presswork.dev](https://github.com/samfeldstein/presswork-web-co), and then redesigned it as a book.
 
 ## How it works
 
 ### Shared parts
 
-The deployed folder is `site/`, and each page is a plain HTML file. The parts every page shares (the head, the skip link, the copyright line) live once in `shared/`, along with `facts.json` (site name, description, email). [sync.mjs](sync.mjs) writes them into every page between marker comments. Each page starts with a small JSON comment that gives its title, description, stylesheets, and the fonts to preload, so a page can depart from the rest of the site without affecting anything else. The whole site is set like an old book, in Cormorant Garamond. The home page is a cloth cover, then a contents page with dotted leaders and page numbers, an epigraph (a random quote from my collection), and a colophon. Each section is a chapter: Published Writing is a list of works, Photography a set of tipped-in plates, and Code a catalogue of projects. Shared book styles live in `shared/css/book.css`.
+The deployed folder is `site/`, and each page is a plain HTML file. Anything that appears on more than one page lives once in `shared/`: the head tags, the running head, the epigraph and colophon, the Lighthouse scores, the copyright line, and the stylesheets. [sync.mjs](sync.mjs) writes these into every page between marker comments and inlines each page’s CSS. It also adds a content hash to script links, so scripts can be cached for good, and writes the sitemaps.
 
-The CSS lives in `shared/css/`, and sync inlines each page’s stylesheets into a `<style>` tag, as Astro did. It also adds a content hash to every script link, so scripts can be cached as immutable, and writes the sitemaps.
-
-All the fonts are self-hosted variable woff2 files. Each `@font-face` limits the font to the characters it covers with `unicode-range`, and pairs it with a metric-adjusted local fallback that uses `size-adjust`, so text doesn’t jump when the web font loads. Colors are `light-dark()` tokens, so every page follows the OS light or dark setting without any JavaScript.
+Each page starts with a small JSON comment giving its title, description, stylesheets, and the fonts to preload. The shared book styles are in [shared/css/book.css](shared/css/book.css), and a page gets its own stylesheet only when it needs one.
 
 ### Checks
 
 [check.mjs](check.mjs) fails the build when the site has drifted or something is broken. It checks that:
 
 - the shared parts and sitemaps are up to date;
-- every page has one `<h1>`, one `<main>`, a title, and a description, and every image has alt text;
+- every page has one `<h1>`, one `<main>`, a title and a description, and every image has alt text;
 - internal links and asset paths resolve;
-- every character on every page is covered by the font subsets I ship;
+- every character on every page is covered by the font subset I ship;
 - each page stays under a gzipped size budget;
 - scripts load as modules, and nothing loads from a host that isn’t on an allowlist.
 
-Cloudflare runs `npm run build`, which runs sync in check mode and then `check.mjs`, so a page that has drifted never deploys.
+The tests in `test/` plant bugs on purpose to prove the checks catch them.
+
+### Projects from GitHub
+
+The Code page lists my public GitHub repositories. [projects.mjs](projects.mjs) fetches them on every deploy and writes the list, newest first. Before a new repository appears, I approve its display name in [projects.json](projects.json). Until then, the script reports it with a suggested name, and the page goes on without it. If GitHub can’t be reached, the list stays as it was, so a deploy never fails or goes blank because of it.
 
 ### Photo gallery
 
-The [Photos](site/photos/index.html) page is built from whatever images are in `photos/`. Nothing needs to be listed by hand. [photos.mjs](photos.mjs) reads each photo’s embedded title, description, and creation date with ExifTool, writes WebP copies at seven widths into `site/img/photos/`, and rewrites the gallery markup newest first. The description becomes the alt text, so I write captions once in my photo editor and they carry through to the site. Only missing sizes are generated, and sizes for deleted photos are removed. The first photo loads eagerly with high fetch priority, and the rest lazy-load.
+The Photography page is built from whatever images are in `photos/`. [photos.mjs](photos.mjs) reads each photo’s title, description, and date with ExifTool, writes WebP copies at several widths into `site/img/photos/`, and rewrites the gallery, newest first. The description becomes the alt text, so I caption a photo once in my editor and it carries through to the site.
 
-### Lighthouse scores
-
-The home page footer shows the site’s own Lighthouse metrics: blocking time, speed index, time to interactive, and the performance score. I run Lighthouse (mobile) by hand and pass the numbers to [lighthouse.mjs](lighthouse.mjs), which writes them into the page. Without numbers, it calls the PageSpeed Insights API for the live home page instead.
+The gallery is a justified mosaic: each row fills the width at one height, and every photo keeps its own shape. Hovering or focusing a photo shows its title and date. Clicking opens it full screen in a `<dialog>`, with arrow keys to move through photos and Escape to close. Without JavaScript, each photo is still a plain link to the full image.
 
 ### Quote generator
 
-The footer on the home and Code pages shows a random quote from my collection of lines from books, comics, films, poems, and songs. [quote.js](site/js/quote.js) picks one in the browser and builds the attribution from whichever fields the quote has: speaker, work, verse, and year. Titles of short works like poems, essays, and songs get quotation marks instead of italics. On localhost it always shows the first quote, so I can check the layout against a known example.
+The epigraph shows a random quote from my collection of lines from books, comics, films, poems, and songs. [quote.js](site/js/quote.js) picks one in the browser and builds the attribution from whichever fields the quote has. Titles of short works like poems and songs get quotation marks instead of italics.
+
+### Lighthouse scores
+
+The colophon shows the site’s own Lighthouse scores. I run Lighthouse (mobile) and pass the numbers to [lighthouse.mjs](lighthouse.mjs), which writes them into `shared/lighthouse.html`. Without numbers, it calls the PageSpeed Insights API instead.
 
 ### Hosting
 
-- **Prefetch.** A Speculation Rules block prefetches internal links in Chromium, and a small script adds `<link rel="prefetch">` elsewhere. Cross-document view transitions smooth out page changes.
-- **Caching.** [site/_headers](site/_headers) gives fonts and scripts long-lived immutable caching, and images a shorter lifetime.
+- **Build.** Cloudflare runs `npm run build`: the project list, then sync in check mode, then `check.mjs`. A page that has drifted never deploys.
+- **Prefetch.** Speculation Rules prefetch internal links in Chromium, and a small script adds `<link rel="prefetch">` elsewhere. Cross-document view transitions smooth out page changes.
+- **Caching.** [site/_headers](site/_headers) caches fonts and scripts for good, and images for a shorter time.
 - **Old URLs.** [site/_redirects](site/_redirects) keeps links to earlier versions of the site working.
-- **Hosting.** [wrangler.jsonc](wrangler.jsonc) serves `site/` as Cloudflare Workers static assets and uses the custom 404 page for missing routes.
 
 ## Project structure
 
 ```text
 ├── sync.mjs            Writes shared parts into pages, inlines CSS, writes sitemaps
 ├── check.mjs           Fails on drift, broken links, uncovered characters, size
+├── projects.mjs        Writes the Code page's project list from GitHub
+├── projects.json       Approved project names
 ├── photos.mjs          Builds the gallery from photos/
-├── lighthouse.mjs      Writes the Lighthouse panel on the home page
-├── wrangler.jsonc      Cloudflare static assets config
-├── test/               Tests for check.mjs
+├── lighthouse.mjs      Writes the Lighthouse scores
+├── test/               Tests for the scripts and checks
 ├── photos/             Source photos (not deployed)
-├── shared/
-│   ├── head.html, skip-link.html, copyright.html
-│   ├── facts.json      Site name, description, emails, allowed hosts, size budget
-│   └── css/            Base styles and one file per page type
+├── shared/             Head, running head, end matter, scores, copyright, facts.json, css/
+├── _archive/           Pages taken off the site but kept (résumés)
 └── site/               Deployed as is
-    ├── index.html, code/, photos/, published-writing/, 404.html
-    ├── js/quote.js
+    ├── index.html, published-writing/, photos/, code/, 404.html
+    ├── js/             quote.js, gallery.js
     ├── img/photos/     Gallery WebPs
     ├── static/         Fonts, images, résumé PDFs
     └── _headers, _redirects, robots.txt, sitemaps
@@ -80,22 +88,28 @@ The footer on the home and Code pages shows a random quote from my collection of
 ## Running it locally
 
 ```bash
+npm install
 npx wrangler dev
 ```
 
-Pages use root-relative paths, so they need a server, not `file://`. Any static server on `site/` works too.
+Pages use root-relative paths, so they need a server, not `file://`.
 
-After editing a page or anything in `shared/`, and before committing:
+Before committing:
 
 ```bash
 node sync.mjs && node check.mjs && node --test test/*.test.mjs
 ```
 
-To update the gallery after adding, removing, or re-captioning photos (`exiftool-vendored` bundles ExifTool, so there’s nothing else to install):
+After adding, removing, or re-captioning photos:
 
 ```bash
-npm install
 node photos.mjs
+```
+
+To refresh the project list, and see any new repositories waiting for a name:
+
+```bash
+node projects.mjs
 ```
 
 ## Reuse

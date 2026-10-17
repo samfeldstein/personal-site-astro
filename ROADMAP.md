@@ -2,6 +2,10 @@
 
 Planned work that isn't a bug. Bugs and cleanups live in ISSUES.md.
 
+## Report on the makeover
+
+A full write-up of the October 2026 makeover, like Presswork's `docs/astro-to-plain-html-report.md`: why Astro went (no content collections, Claude writes the code), what replaced each Astro feature, how the port was verified (computed styles of every element against the Astro build, print and dark mode), the redesign as an old book (cover, contents, chapters, end matter, Cormorant Garamond subset with its OpenType features), the gallery mosaic and lightbox, the GitHub project list with name approval, the audits and what they found, before/after numbers (dependencies, lockfile, page weight, Lighthouse), what was lost, and lessons. Sources: the git history of this branch, the plan (`docs/plain-html-plan.md`) and the audit reports.
+
 ## About the Author page
 
 A new chapter (or back-matter page, as in a printed book) about Sam: a short bio, maybe a portrait from the photo collection, and contact links. Built from `book.css` like the other chapters, added to the contents on the home page and to the sitemap (sync does that automatically).
