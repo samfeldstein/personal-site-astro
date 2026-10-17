@@ -27,16 +27,6 @@ export const workHistory = {
       "Build custom web applications to streamline store processes.",
     ],
   },
-  // devFreelance: {
-  //   role: "Freelance Web Developer",
-  //   date: "April 2024 – Present",
-  //   place: "Denver, CO",
-  //   description: [
-  //     "Build bespoke websites with modern web technologies and frameworks.",
-  //     "Employ strategic asset caching, component-driven design, and other performance strategies.",
-  //     "Integrate headless content management systems, allowing independent client updates.",
-  //   ],
-  // },
   devFreelance: {
     role: "Freelance Web Developer",
     date: "April 2024 – Present",
@@ -182,11 +172,16 @@ export const workHistory = {
 };
 
 export const projects = {
+  littlePeaks: {
+    title: "Little Peaks Pediatric Therapy",
+    type: "Website",
+    date: "September 2026",
+    description: "Designed and built a single-page website for a pediatric therapy practice using Astro, deployed on Cloudflare Workers. Built a custom contact form with Resend for email delivery. Optimized for accessibility, page speed, and search visibility."
+  },
   shelfTalkers: {
     title: "Shelf-Talkers",
     type: "Web Application",
     date: "September 2025",
-    // description: "A web-based tool for formatting shelf-talkers. Built with Astro and Vue."
     description: ["Built a single-page web application with Astro and Vue for generating printable shelf-talkers.", "Implemented client-side state management, reactive UI components, and persistent local storage.", "Developed reusable components and responsive layouts with modern HTML, CSS, and JavaScript."]
   },
   regreen: {
@@ -194,7 +189,6 @@ export const projects = {
     type: "Website",
     date: "February 2025",
     place: "Terlingua, TX",
-    // description: "A custom WordPress site for an environmental restoration project in Far West Texas.",
     description: "Designed and developed a custom WordPress website for an environmental nonprofit. Customized themes, improved accessibility, and created an intuitive content management experience. Configured the site so nontechnical users could independently manage content."
   },
   postoley: {
@@ -202,7 +196,6 @@ export const projects = {
     type: "Website",
     date: "February 2025",
     place: "Boulder, CO",
-    // description: "A ground-up rebuild of a website for an independent folk dance studio in Boulder. Built with Astro and Netlify.",
     description: "Rebuilt an organization's website with Astro and Netlify, emphasizing accessibility, responsiveness, and maintainability. Designed reusable page layouts and optimized performance across desktop and mobile devices. Collaborated with the client to translate design goals into a production- ready website."
   },
   digitalNotebook: {
@@ -215,7 +208,6 @@ export const projects = {
     title: "Personal Website",
     type: "Website",
     date: "June 2024",
-    // description: "A high-performance personal site built with Astro and Cloudflare Pages."
     description: "Designed and built a personal website using Astro, SCSS, and Cloudflare Pages. Developed reusable layouts, custom styling, and optimized asset delivery for fast load times. Continuously experiment with modern frontend tooling and deployment workflows."
   },
   prairieRose: {
@@ -223,7 +215,6 @@ export const projects = {
     type: "Website",
     date: "May 2024",
     place: "Elkhart, IA",
-    // description: "A custom static website for an equestrian event center in Iowa. Made with Eleventy, Netlify, and Decap CMS.",
     description: "Built a custom static website using Eleventy, Netlify, and Decap CMS. Integrated a CMS that enabled the client to update site content without writing code. Focused on performance, maintainability, and a streamlined editing experience."
   },
   likeMovies: {

@@ -163,7 +163,7 @@
   }
 
   section.projects {
-    break-before: page;
+    // break-before: page;
 
     p {
       margin-top: 0.5rem;
@@ -171,9 +171,9 @@
     }
   }
 
-  section#volunteer {
-    // break-before: page;
-  }
+  // section#volunteer {
+  //   break-before: page;
+  // }
 
   div.projects {
 

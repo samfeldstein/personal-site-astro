@@ -1,0 +1,60 @@
+title: Frontend Developer
+summary:
+  Frontend developer building sites with Astro, Vue, Shopify, and headless CMS
+  tools.
+printUrl: "contract-dev-denver"
+links:
+  - name: "Website"
+    url: "https://samfeldstein.xyz"
+sections:
+  skills:
+    - category: "Frontend & Frameworks"
+      items:
+        - "Astro"
+        - "Vue"
+        - "HTML, CSS, and JavaScript"
+    - category: "CMS & Ecommerce"
+      items:
+        - "Decap CMS"
+        - "Shopify storefront management"
+    - category: "Deployment & Hosting"
+      items:
+        - "Netlify"
+        - "Cloudflare Pages / Workers"
+    - category: "Client Collaboration"
+      items:
+        - "Requirements-gathering and scoping"
+        - "Client training and ongoing support"
+        - "Local availability"
+  relevantExperience:
+    - key: "devFreelance"
+      description:
+        - "Identify client business needs and deliver tailored digital solutions
+          that improve customer and user experiences."
+        - "Guide clients through website launches, platform integrations, and
+          content management workflows."
+        - "Provide ongoing technical support and training, empowering clients to
+          independently manage and optimize their digital presence."
+    - key: "devSentinel"
+      description:
+        - "Developed and launched an online storefront with WordPress and
+          WooCommerce."
+        - "Implemented and supported a digital commerce platform, helping users
+          seamlessly adopt new online purchasing workflows."
+        - "Refined user interface to create a seamless customer experience and
+          maximize conversions."
+  projects:
+    - key: "regreen"
+      description:
+        - "Designed and developed a custom WordPress website for an
+          environmental nonprofit."
+        - "Customized themes, improved accessibility, and created an intuitive
+          content management experience for nontechnical users."
+    - key: "prairieRose"
+      description:
+        - "Built a custom static website using Eleventy, Netlify, and Decap CMS
+          for an equestrian event center in Iowa."
+    - key: "shelfTalkers"
+      description:
+        - "Built a single-page web application with Astro and Vue for generating
+          printable materials."
