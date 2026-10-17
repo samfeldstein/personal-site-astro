@@ -33,7 +33,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const REQUIRED = ["head", "skip-link"];
-const OPTIONAL = ["copyright", "credit", "running-head"];
+const OPTIONAL = ["endmatter", "credit", "lighthouse", "copyright", "running-head"];
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

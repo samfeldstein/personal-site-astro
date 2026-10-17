@@ -5,25 +5,11 @@
   color: var(--ink-faded);
 }
 
-.skills ul {
+.skills p {
   margin: 0 auto;
-  padding: 0;
-  max-width: 22em;
-  list-style: none;
-  font-variant-caps: all-small-caps;
-  letter-spacing: 0.08em;
-  line-height: 1.7;
+  max-width: 24em;
   text-align: center;
   text-wrap: balance;
-}
-.skills li {
-  display: inline;
-}
-.skills li:not(:last-child)::after {
-  content: ", ";
-}
-.skills li:last-child::before {
-  content: "and ";
 }
 
 .hire {
@@ -53,98 +39,52 @@
   padding: 0;
   list-style: none;
 }
-.works a {
+.works li {
+  padding: 0.35em 0;
+}
+.work {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   column-gap: 0.4em;
-  padding: 0.35em 0;
 }
-.works .name {
+.work-name {
   flex: 0 1 auto;
 }
-.works a::after {
+.work::after {
   content: "";
   order: 2;
   flex: 1 1 2em;
   min-width: 2em;
   border-bottom: 2px dotted var(--leader);
 }
-.works .meta {
+.work-date {
   order: 3;
   font-size: 0.85em;
   color: var(--ink-faded);
   white-space: nowrap;
 }
+.work-desc {
+  margin: 0.1em 0 0;
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--ink-faded);
+}
 @media (max-width: 34em) {
-  .works a {
-    padding: 0.5em 0;
-  }
-  .works .name {
+  .work-name {
     flex-basis: 100%;
   }
-  .works a::after {
+  .work::after {
     margin-left: 1em;
   }
 }
-.works a:hover,
-.works a:focus-visible,
-.works a:hover .meta,
-.works a:focus-visible .meta {
+.work:hover,
+.work:focus-visible,
+.work:hover .work-date,
+.work:focus-visible .work-date {
   color: var(--rubric);
 }
-.works a:hover::after,
-.works a:focus-visible::after {
+.work:hover::after,
+.work:focus-visible::after {
   border-bottom-color: currentColor;
-}
-
-.endpaper {
-  max-width: calc(var(--measure) + 3rem);
-  margin: 0 auto;
-  padding: 0 1.5rem 5rem;
-  text-align: center;
-  font-size: 0.85em;
-}
-.endpaper .ornament {
-  margin: 0 0 3rem;
-}
-.epigraph {
-  margin: 0 auto 4rem;
-  max-width: 22em;
-  text-align: left;
-}
-.epigraph blockquote {
-  margin: 0;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.15em;
-  line-height: 1.5;
-  text-wrap: pretty;
-  hanging-punctuation: first;
-}
-.epigraph blockquote p {
-  margin: 0 0 0.6em;
-}
-.epigraph .attribution {
-  margin-top: 1.5em;
-  text-align: right;
-  font-size: 0.9em;
-  color: var(--ink-faded);
-}
-.epigraph .attribution::before {
-  content: "— ";
-}
-.endpaper .colophon {
-  max-width: 22em;
-  margin: 0 auto 2rem;
-  font-style: italic;
-  text-wrap: balance;
-}
-.imprint {
-  display: grid;
-  gap: 0.2em;
-  font-size: 0.85em;
-  font-variant: small-caps;
-  letter-spacing: 0.06em;
-  color: var(--ink-faded);
 }

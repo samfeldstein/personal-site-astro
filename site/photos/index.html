@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
 <head>
-<!-- page: {"title":"Photography","description":"Photos I’ve taken.","css":["book","photos"],"fonts":["cormorant-garamond","cormorant-garamond-italic"],"typefaces":"Cormorant Garamond"} -->
+<!-- page: {"title":"Photography","description":"Photos I’ve taken.","css":["book","photos"],"fonts":["cormorant-garamond-2","cormorant-garamond-italic-2"],"typefaces":"Cormorant Garamond"} -->
 <!-- shared:head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="sitemap" href="/sitemap-index.xml">
 <link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
-<link rel="preload" href="/static/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond-2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond-italic-2.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 *,
 *::before,
@@ -100,16 +100,16 @@ h3,
 }
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("/static/fonts/cormorant-garamond.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  src: url("/static/fonts/cormorant-garamond-2.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2197, U+2766;
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("/static/fonts/cormorant-garamond-italic.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  src: url("/static/fonts/cormorant-garamond-italic-2.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2197, U+2766;
   font-weight: 300 700;
   font-style: italic;
   font-display: swap;
@@ -293,6 +293,114 @@ h3 {
 .epigraph blockquote,
 .colophon {
   font-feature-settings: "liga", "dlig";
+}
+
+.page {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100svh;
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: clamp(4rem, 12vh, 8rem) 1.5rem 5rem;
+}
+.epigraph-page {
+  border-top: 1px solid color-mix(in srgb, var(--leader) 45%, transparent);
+}
+
+.epigraph-page {
+  display: grid;
+  align-items: center;
+}
+.epigraph {
+  margin: 0 auto;
+  max-width: 22em;
+}
+.epigraph blockquote {
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-wrap: pretty;
+  hanging-punctuation: first;
+}
+.epigraph blockquote p {
+  margin: 0 0 0.6em;
+}
+.epigraph .attribution {
+  margin-top: 1.5em;
+  text-align: right;
+  font-size: 0.85em;
+  color: var(--ink-faded);
+}
+.epigraph .attribution::before {
+  content: "— ";
+}
+
+.colophon-page {
+  min-height: 80svh;
+  text-align: center;
+  font-size: 0.85em;
+}
+.colophon-page .colophon {
+  max-width: 22em;
+  margin: 0 auto 3rem;
+  font-style: italic;
+  text-wrap: balance;
+}
+.pagespeed {
+  max-width: 18em;
+  margin: 0 auto;
+}
+.pagespeed figcaption {
+  margin-bottom: 0.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--ink-faded);
+}
+.pagespeed dl {
+  margin: 0;
+}
+.pagespeed dl div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+.pagespeed dt {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  text-align: left;
+}
+.pagespeed dt::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted var(--leader);
+}
+.pagespeed dd {
+  margin: 0;
+}
+.imprint {
+  margin-top: 3rem;
+  font-size: 0.75em;
+  display: grid;
+  gap: 0.2em;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
+}
+
+a[href^="http"]:not(.toc a, .works a, .work)::after,
+.toc a[href^="http"] > span::after,
+.work[href^="http"] .work-name::after,
+.works a[href^="http"] .work-source::after {
+  content: "\2197" / ", external";
+  margin-left: 0.2em;
+  font-size: 0.7em;
+  font-style: normal;
+  vertical-align: 0.35em;
+  opacity: 0.65;
 }
 :root {
   --plate: light-dark(#efe8d6, #27221b);
@@ -567,6 +675,41 @@ h3 {
       <!-- /gallery -->
     </ul>
   </main>
+  <!-- shared:endmatter -->
+<section class="page epigraph-page" aria-label="Epigraph">
+  <figure class="epigraph">
+    <blockquote id="quote"></blockquote>
+    <figcaption class="attribution">
+      <span id="speaker"></span><cite id="work"></cite><span id="verse"></span><span id="year"></span>
+    </figcaption>
+  </figure>
+</section>
+<footer class="page colophon-page">
+  <h2 id="colophon">Colophon</h2>
+  <p class="ornament" aria-hidden="true">❦</p>
+  <!-- shared:credit -->
+<p class="colophon">Set in Cormorant Garamond. Built with plain HTML, CSS, and JavaScript. Hosted on Cloudflare. No cookies, no trackers.</p>
+<!-- /shared:credit -->
+  <!-- shared:lighthouse -->
+<figure class="pagespeed">
+  <figcaption>Lighthouse scores</figcaption>
+  <dl>
+    <div><dt>Performance</dt><dd>100</dd></div>
+    <div><dt>Blocking time</dt><dd>0 ms</dd></div>
+    <div><dt>Speed index</dt><dd>0.9 s</dd></div>
+    <div><dt>Time to interactive</dt><dd>1.7 s</dd></div>
+  </dl>
+</figure>
+<!-- /shared:lighthouse -->
+  <div class="imprint">
+    <div>Denver, CO</div>
+    <!-- shared:copyright -->
+<div class="copyright">&copy; 2022 – 2026 Samuel Feldstein</div>
+<!-- /shared:copyright -->
+  </div>
+</footer>
+<script type="module" src="/js/quote.js?v=355ab24d"></script>
+<!-- /shared:endmatter -->
   <dialog class="lightbox" closedby="any" aria-labelledby="lightbox-title">
     <figure>
       <img class="lightbox-image" src="data:," alt="">

@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("/static/fonts/cormorant-garamond.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  src: url("/static/fonts/cormorant-garamond-2.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2197, U+2766;
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Cormorant Garamond";
-  src: url("/static/fonts/cormorant-garamond-italic.woff2") format("woff2");
-  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  src: url("/static/fonts/cormorant-garamond-italic-2.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2197, U+2766;
   font-weight: 300 700;
   font-style: italic;
   font-display: swap;
@@ -193,4 +193,112 @@ h3 {
 .epigraph blockquote,
 .colophon {
   font-feature-settings: "liga", "dlig";
+}
+
+.page {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100svh;
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: clamp(4rem, 12vh, 8rem) 1.5rem 5rem;
+}
+.epigraph-page {
+  border-top: 1px solid color-mix(in srgb, var(--leader) 45%, transparent);
+}
+
+.epigraph-page {
+  display: grid;
+  align-items: center;
+}
+.epigraph {
+  margin: 0 auto;
+  max-width: 22em;
+}
+.epigraph blockquote {
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-wrap: pretty;
+  hanging-punctuation: first;
+}
+.epigraph blockquote p {
+  margin: 0 0 0.6em;
+}
+.epigraph .attribution {
+  margin-top: 1.5em;
+  text-align: right;
+  font-size: 0.85em;
+  color: var(--ink-faded);
+}
+.epigraph .attribution::before {
+  content: "— ";
+}
+
+.colophon-page {
+  min-height: 80svh;
+  text-align: center;
+  font-size: 0.85em;
+}
+.colophon-page .colophon {
+  max-width: 22em;
+  margin: 0 auto 3rem;
+  font-style: italic;
+  text-wrap: balance;
+}
+.pagespeed {
+  max-width: 18em;
+  margin: 0 auto;
+}
+.pagespeed figcaption {
+  margin-bottom: 0.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--ink-faded);
+}
+.pagespeed dl {
+  margin: 0;
+}
+.pagespeed dl div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+.pagespeed dt {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  text-align: left;
+}
+.pagespeed dt::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px dotted var(--leader);
+}
+.pagespeed dd {
+  margin: 0;
+}
+.imprint {
+  margin-top: 3rem;
+  font-size: 0.75em;
+  display: grid;
+  gap: 0.2em;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
+}
+
+a[href^="http"]:not(.toc a, .works a, .work)::after,
+.toc a[href^="http"] > span::after,
+.work[href^="http"] .work-name::after,
+.works a[href^="http"] .work-source::after {
+  content: "\2197" / ", external";
+  margin-left: 0.2em;
+  font-size: 0.7em;
+  font-style: normal;
+  vertical-align: 0.35em;
+  opacity: 0.65;
 }

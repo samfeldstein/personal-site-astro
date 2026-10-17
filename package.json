@@ -10,11 +10,12 @@
     "sync": "node sync.mjs",
     "check": "node check.mjs",
     "test": "node --test test/*.test.mjs",
-    "build": "node sync.mjs --check && node check.mjs",
+    "build": "node projects.mjs && node sync.mjs --check && node check.mjs",
     "photos": "node photos.mjs",
     "lighthouse": "node lighthouse.mjs",
     "dev": "wrangler dev",
-    "dev:phone": "wrangler dev --ip 0.0.0.0"
+    "dev:phone": "wrangler dev --ip 0.0.0.0",
+    "projects": "node projects.mjs"
   },
   "devDependencies": {
     "exiftool-vendored": "^36.0.0",

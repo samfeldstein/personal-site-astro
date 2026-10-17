@@ -2,6 +2,10 @@
 
 Planned work that isn't a bug. Bugs and cleanups live in ISSUES.md.
 
+## About the Author page
+
+A new chapter (or back-matter page, as in a printed book) about Sam: a short bio, maybe a portrait from the photo collection, and contact links. Built from `book.css` like the other chapters, added to the contents on the home page and to the sitemap (sync does that automatically).
+
 ## Résumés from the Find a Job project
 
 The 13 résumé pages are disabled (moved to `_archive/resumes/` on 2026-10-17). Résumés are now generated in the Find a Job project, so that project should be the source of truth.
