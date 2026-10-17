@@ -1,37 +1,144 @@
 :root {
   --plate: light-dark(#efe8d6, #27221b);
-  --plate-mark: light-dark(#c9bc9f, #4a4135);
-  --plate-shadow: light-dark(rgba(60, 40, 15, 0.22), rgba(0, 0, 0, 0.55));
+  --plate-mark: light-dark(#b9ab8c, #4a4135);
 }
 
-.plates {
+.gallery-page {
+  max-width: 66rem;
+  margin: 0 auto;
+  padding: 0 1rem 6rem;
+}
+
+.gallery {
   display: grid;
-  gap: clamp(3rem, 10vh, 7rem);
-  padding: 1rem 1rem 8rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(11rem, 40vw), 1fr));
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.plate {
-  width: 100%;
-  max-width: 46rem;
-  margin: 0 auto;
-  padding: clamp(1rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2.5rem) clamp(0.75rem, 2.5vw, 1.5rem);
-  background: var(--plate);
-  box-shadow: 0 1px 1px var(--plate-shadow), 0 10px 28px -14px var(--plate-shadow);
-}
-
-.plate img {
+.thumb {
+  position: relative;
   display: block;
-  width: min(100%, calc(var(--ratio, 1.5) * 70svh));
-  margin: 0 auto;
-  outline: 1px solid var(--plate-mark);
-  outline-offset: 0.5rem;
+  aspect-ratio: 1;
+  padding: 3px;
+  border: 1px solid var(--plate-mark);
+  background: var(--plate);
+}
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: none;
+}
+.thumb:focus-visible {
+  outline: 2px solid var(--rubric);
+  outline-offset: 3px;
 }
 
-.plate figcaption {
-  margin-top: clamp(1.1rem, 3vw, 1.6rem);
+.thumb-info {
+  position: absolute;
+  inset: auto 3px 3px;
+  display: grid;
+  padding: 0.6em 0.7em 0.5em;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  color: var(--ink);
+  line-height: 1.2;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+}
+.thumb:hover .thumb-info,
+.thumb:focus-visible .thumb-info {
+  opacity: 1;
+}
+.thumb-title {
+  font-style: italic;
+}
+.thumb-date {
+  font-size: 0.8em;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
+}
+
+.lightbox {
+  box-sizing: border-box;
+  max-width: min(96vw, 80rem);
+  max-height: 96svh;
+  padding: 2.75rem clamp(0.75rem, 2vw, 1.25rem) 0.75rem;
+  border: 1px solid var(--plate-mark);
+  background: var(--plate);
+  color: var(--ink);
+}
+.lightbox::backdrop {
+  background: rgba(20, 15, 10, 0.86);
+}
+.lightbox figure {
+  margin: 0;
+}
+.lightbox-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(96svh - 9rem);
+  margin: 0 auto;
+  animation: none;
+}
+.lightbox figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: 0.75em;
+  min-height: 2.75rem;
+  padding: 0.5rem 3.25rem 0;
   text-align: center;
+}
+.lightbox-title {
+  font-style: italic;
+}
+.lightbox-date {
   font-size: 0.85em;
   font-variant: small-caps;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   color: var(--ink-faded);
+}
+.lightbox button {
+  position: absolute;
+  bottom: 0.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font-size: 1.6em;
+  line-height: 1;
+  cursor: pointer;
+}
+.lightbox button:hover {
+  color: var(--rubric);
+}
+.lightbox button:focus-visible {
+  outline: 2px solid var(--rubric);
+  outline-offset: -4px;
+}
+.lightbox-prev {
+  left: 0.25rem;
+}
+.lightbox-next {
+  right: 0.25rem;
+}
+.lightbox-close {
+  top: 0;
+  right: 0.25rem;
+  bottom: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumb-info {
+    transition: none;
+  }
 }
