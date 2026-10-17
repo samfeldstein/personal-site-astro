@@ -9,7 +9,7 @@
     <!-- shared:head --> ... <!-- /shared:head -->
     <!-- shared:skip-link --> ... <!-- /shared:skip-link -->
 
-  and optionally <!-- shared:copyright --> ... <!-- /shared:copyright -->.
+  and optionally <!-- shared:copyright --> and <!-- shared:credit --> blocks.
   With --check, last year's copyright year still counts as up to date, so a
   deploy doesn't fail on January 1; the next sync writes the new year.
 
@@ -33,7 +33,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const REQUIRED = ["head", "skip-link"];
-const OPTIONAL = ["copyright"];
+const OPTIONAL = ["copyright", "credit"];
 
 const esc = (s) =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

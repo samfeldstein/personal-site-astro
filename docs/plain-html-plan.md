@@ -76,3 +76,14 @@ Not touched: the Code page portfolio content, résumé PDFs with the old email (
 - Flattening scoped styles can change specificity. Step 9 diffs every element.
 - Committing gallery WebPs: same bytes as the committed Astro cache, so git dedupes them.
 - `npm ci` on Cloudflare installs `sharp` for nothing; acceptable (seconds).
+
+## Changes after review (carried out 2026-10-17)
+
+- CSS is inlined into each page by `sync.mjs` (as Astro did), from `shared/css/`, not linked from `site/css/`.
+- Fonts stay at `/static/fonts/` (immutable cache, unchanged URLs). Photos are cached 30 days, not immutable.
+- No `color-scheme` meta: the résumé pages never opted into dark mode, and the meta changed their header color.
+- Résumé pages load `resume.css` then `resume-print.css`, matching Astro, which included the print styles twice.
+- `photos.mjs` uses ExifTool (exifr sorted six photos differently), and points `src` at the largest srcset width instead of a full-size copy.
+- The footer credit ("Plain HTML, CSS, and JavaScript") is a shared block on home and Code.
+- Fixed while porting: the 404 page's missing space ("pleaseemail me") and missing skip-link target; résumé links to `/code` and `/published-writing` now end in `/`.
+- Verified: computed styles of every element match the Astro build on all 18 pages at 1280 and 390px, light and dark, plus print for the résumés, except the intended footer and 404 changes. A browser audit found no console errors or failed requests, and the scripts were reviewed and tested.
