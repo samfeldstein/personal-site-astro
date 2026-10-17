@@ -15,6 +15,7 @@ if (dialog && thumbs.length && typeof dialog.showModal === "function") {
     image.src = source.currentSrc || source.src;
     image.setAttribute("width", source.getAttribute("width"));
     image.setAttribute("height", source.getAttribute("height"));
+    image.style.setProperty("--r", source.getAttribute("width") / source.getAttribute("height"));
     image.sizes = "90vw";
     image.srcset = source.srcset;
     image.alt = source.alt;
