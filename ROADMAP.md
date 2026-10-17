@@ -24,3 +24,13 @@ What is still large is the git repo, which every Cloudflare build clones: about 
 
 - Rewrite history to drop `node_modules/.astro/` (needs a force push; every other clone must be re-cloned).
 - Keep the source JPGs outside the repo and point `photos.mjs` at that folder.
+
+## Make samfeldstein.com the primary domain
+
+The site is canonical at samfeldstein.xyz; samfeldstein.com should take over, with .xyz redirecting to it.
+
+- In the repo: `url` and `allowedHosts` in `shared/facts.json` (sync then rewrites canonicals, Open Graph URLs, the JSON-LD `@id`s and the sitemaps), `site/robots.txt`, the test host in `test/check.test.mjs`, the `User-Agent` in `projects.mjs`, `README.md` and `CLAUDE.md`.
+- On Cloudflare: add samfeldstein.com (and `www`) as a custom domain on the Worker, and a 301 redirect from every samfeldstein.xyz URL to the same path on .com (a Redirect Rule; `_redirects` can't match on host). Keep the .xyz registration so old links keep working.
+- Afterwards: add the .com property in Search Console and submit the sitemap, update the Presswork structured-data link (see handoff), and update the GitHub repo homepage.
+- Decide whether the subdomains (`notes`, `cookbook`, `shelftalkers`) move too. They're separate projects; the RSS link in `shared/head.html`, the contents links and the `_redirects` targets point at them, so update those if they do.
+- The old résumé PDFs in `site/static/resumes/` name .xyz; leave them unless they're regenerated.
