@@ -15,7 +15,7 @@ Last updated 2026-10-17. Read this, then `CLAUDE.md`, before working on the site
 2. **Cloudflare dashboard.** Keep Web Analytics on (cookieless; Presswork kept it too) and Bot Fight Mode off (its injected script dropped Presswork's Lighthouse Best Practices to 81). The colophon says only "No cookies."
 3. **Lighthouse.** Run it with `npx lighthouse <url> --form-factor=mobile` (from any folder; reports are gitignored) and record the home page with `node lighthouse.mjs <score> "<blocking>" "<speed index>" "<largest contentful paint>"`.
 
-## Still to do
+## Still to do (owner, deferred 2026-10-17)
 
 - **Monthly rebuild.** In the Worker's Settings → Builds → Deploy Hooks, create a hook for `main`, and save its URL as the repository secret `CLOUDFLARE_DEPLOY_HOOK` on GitHub. `.github/workflows/monthly-rebuild.yml` calls it on the 1st of each month (or by hand from the Actions tab), so new repos show up as waiting. GitHub turns off scheduled workflows after 60 days without commits and emails first; re-enable it from the Actions tab. (Not confirmed done.)
 - **Owner checks not yet reported:** a real phone, and a screen reader pass if possible.
