@@ -4,89 +4,114 @@ The source for [samfeldstein.xyz](https://samfeldstein.xyz), home to my publishe
 
 I keep this repo public mainly as a code sample. You’re welcome to read it, borrow from it, or fork it. The content is mine.
 
+## The idea
+
+The site is set like an old book. The home page is a cloth-bound cover, and scrolling turns to a contents page, with dotted leaders running to page numbers. Each section is a chapter: Published Writing is a list of works, Photography is a mosaic of photos you can open full screen, and Code is a list of projects pulled from GitHub. Every page ends the way a book does, with an epigraph (a random quote from my collection) and a colophon. Even the 404 page is an erratum slip.
+
+Everything is set in Cormorant Garamond, with real small caps, old-style figures, and historical ligatures. The colors are aged paper, iron-gall ink, and a little vermilion. The site follows your system’s light or dark setting.
+
 ## Stack
 
-- [Astro](https://astro.build) for static site generation
-- Sass for styles, with PostCSS running autoprefixer and cssnano
-- [exiftool-vendored](https://github.com/photostructure/exiftool-vendored.js) for reading photo metadata at build time
-- The PageSpeed Insights API for live performance scores
+- Plain HTML, CSS, and JavaScript. No framework, no bundler.
+- A few small Node scripts that keep the pages consistent and check them before anything deploys.
 - Cloudflare Workers static assets for hosting. Cloudflare builds and deploys from GitHub on every push.
 
-There's no client-side framework. The only browser scripts I wrote are the quote generator and a small viewport-height fix on the home page.
+The site ran on Astro until October 2026. I rebuilt it as plain files, the same way I rebuilt [presswork.dev](https://github.com/samfeldstein/presswork-web-co), and then redesigned it as a book. The whole story is in [docs/makeover-report.md](docs/makeover-report.md).
 
 ## How it works
 
-### Per-page styling
+### Shared parts
 
-Any page can be styled on its own. Each page imports its own Sass partial and tells the layout which fonts it uses, so a page can depart from the rest of the site without affecting anything else. Most pages share Oswald and Noto Serif, while the [Code](src/pages/code.astro) page has its own look, with Victor Mono and Orbitron.
+The deployed folder is `site/`, and each page is a plain HTML file. Anything that appears on more than one page lives once in `shared/`: the head tags, the running head, the epigraph and colophon, the Lighthouse scores, the copyright line, and the stylesheets. [sync.mjs](sync.mjs) writes these into every page between marker comments and inlines each page’s CSS. It also adds a content hash to script links, so scripts can be cached for good, and writes the sitemaps.
 
-All the fonts are self-hosted variable woff2 files. Each `@font-face` in [src/styles/fonts/](src/styles/fonts/) limits the font to the characters it covers with `unicode-range`. It also pairs the font with a metric-adjusted local fallback that uses `size-adjust`, so text doesn't jump when the web font loads. Colors are `light-dark()` tokens in [_config.scss](src/styles/_config.scss), so every page follows the OS light or dark setting without any JavaScript.
+Each page starts with a small JSON comment giving its title, description, stylesheets, and the fonts to preload. The shared book styles are in [shared/css/book.css](shared/css/book.css), and a page gets its own stylesheet only when it needs one.
+
+### Checks
+
+[check.mjs](check.mjs) fails the build when the site has drifted or something is broken. It checks that:
+
+- the shared parts and sitemaps are up to date;
+- every page has one `<h1>`, one `<main>`, a title and a description, and every image has alt text;
+- internal links and asset paths resolve;
+- every character on every page is covered by the font subset I ship;
+- each page stays under a gzipped size budget;
+- scripts load as modules, and nothing loads from a host that isn’t on an allowlist.
+
+The tests in `test/` plant bugs on purpose to prove the checks catch them.
+
+### Projects from GitHub
+
+The Code page lists my public GitHub repositories. [projects.mjs](projects.mjs) fetches them on every deploy and writes the list, newest first. Before a new repository appears, I approve its display name in [projects.json](projects.json). Until then, the script reports it with a suggested name, and the page goes on without it. If GitHub can’t be reached, the list stays as it was, so a deploy never fails or goes blank because of it.
 
 ### Photo gallery
 
-The [Photos](src/pages/photos.astro) page is built from whatever image files are in `src/images/gallery/`. Nothing needs to be listed by hand. [get-gallery-images.js](src/scripts/get-gallery-images.js) collects the files with `import.meta.glob`. It reads each photo's embedded title, description, and creation date with ExifTool and sorts the photos newest first. The description becomes the alt text, so I write captions once in my photo editor and they carry through to the site.
+The Photography page is built from whatever images are in `photos/`. [photos.mjs](photos.mjs) reads each photo’s title, description, and date with ExifTool, writes WebP copies at several widths into `site/img/photos/`, and rewrites the gallery, newest first. The description becomes the alt text, so I caption a photo once in my editor and it carries through to the site.
 
-[Gallery.astro](src/components/photos/Gallery.astro) renders each photo with Astro's `<Image>` at seven responsive widths, with a `sizes` attribute matched to the layout's breakpoints. The first photo loads eagerly with high fetch priority, and the rest lazy-load.
-
-### Live Lighthouse scores
-
-The home page footer shows the site's own Lighthouse metrics: blocking time, speed index, time to interactive, and the performance score. During each production build, [PageSpeed.astro](src/components/PageSpeed.astro) calls the PageSpeed Insights API ([lighthouse-scores.js](src/scripts/lighthouse-scores.js)) for the page's live URL. That way, the numbers reflect the site as it's currently deployed. The API key comes from a `PSI_KEY` environment variable set in Cloudflare. In development, the component shows stub numbers instead of calling the API, and if the request fails, the panel doesn't render.
+The gallery is a justified mosaic: each row fills the width at one height, and every photo keeps its own shape. Hovering or focusing a photo shows its title and date. Clicking opens it full screen in a `<dialog>`, with arrow keys to move through photos and Escape to close. Without JavaScript, each photo is still a plain link to the full image.
 
 ### Quote generator
 
-The footer on the home and Code pages shows a random quote from [src/data/quotes.js](src/data/quotes.js), my collection of lines from books, comics, films, poems, and songs. [QuoteGenerator.astro](src/components/QuoteGenerator.astro) picks one in the browser and builds the attribution from whichever fields the quote has: speaker, work, verse, and year. Titles of short works like poems, essays, and songs get quotation marks instead of italics. In development, it always shows the first quote, so I can check the layout against a known example.
+The epigraph shows a random quote from my collection of lines from books, comics, films, poems, and songs. [quote.js](site/js/quote.js) picks one in the browser and builds the attribution from whichever fields the quote has. Titles of short works like poems and songs get quotation marks instead of italics.
 
-### Performance and hosting
+### Lighthouse scores
 
-- **Navigation.** Astro prefetches every link once it enters the viewport, and cross-document view transitions smooth out page changes.
-- **Caching.** [public/_headers](public/_headers) gives hashed assets, fonts, and images long-lived immutable caching, and HTML a shorter cache lifetime.
-- **Old URLs.** [public/_redirects](public/_redirects) keeps links to earlier versions of the site working.
-- **Hosting.** [wrangler.jsonc](wrangler.jsonc) serves `dist/` as Cloudflare Workers static assets and uses the custom 404 page for missing routes.
+The colophon shows the site’s own Lighthouse scores. I run Lighthouse (mobile) and pass the numbers to [lighthouse.mjs](lighthouse.mjs), which writes them into `shared/lighthouse.html`. Without numbers, it calls the PageSpeed Insights API instead.
+
+### Hosting
+
+- **Build.** Cloudflare runs `npm run build`: the project list, then sync in check mode, then `check.mjs`. A page that has drifted never deploys.
+- **Prefetch.** Speculation Rules prefetch internal links in Chromium, and a small script adds `<link rel="prefetch">` elsewhere. Cross-document view transitions smooth out page changes.
+- **Caching.** [site/_headers](site/_headers) caches fonts and scripts for good, and images for a shorter time.
+- **Old URLs.** [site/_redirects](site/_redirects) keeps links to earlier versions of the site working.
 
 ## Project structure
 
 ```text
-├── astro.config.mjs        Site URL, Markdown plugins, prefetch, sitemap
-├── config.mjs              Site title, description, location, and email
-├── wrangler.jsonc          Cloudflare static assets config
-├── public/
-│   ├── static/fonts/       Self-hosted woff2 fonts
-│   ├── _headers            Cache rules
-│   └── _redirects          Legacy URL redirects
-└── src/
-    ├── pages/              Home, Published Writing, Photos, Code, 404
-    ├── layouts/Base.astro  Page shell
-    ├── components/         Head, gallery, quote generator, Lighthouse panel, icons
-    ├── data/               Published writing and quotes
-    ├── images/gallery/     Source photos for the gallery
-    ├── scripts/            Gallery metadata, PageSpeed fetch, utilities
-    └── styles/             Sass partials, per-page styles, and fonts
+├── sync.mjs            Writes shared parts into pages, inlines CSS, writes sitemaps
+├── check.mjs           Fails on drift, broken links, uncovered characters, size
+├── projects.mjs        Writes the Code page's project list from GitHub
+├── projects.json       Approved project names
+├── photos.mjs          Builds the gallery from photos/
+├── lighthouse.mjs      Writes the Lighthouse scores
+├── test/               Tests for the scripts and checks
+├── photos/             Source photos (not deployed)
+├── shared/             Head, running head, end matter, scores, copyright, facts.json, css/
+├── _archive/           Pages taken off the site but kept (résumés)
+└── site/               Deployed as is
+    ├── index.html, published-writing/, photos/, code/, 404.html
+    ├── js/             quote.js, gallery.js
+    ├── img/photos/     Gallery WebPs
+    ├── static/         Fonts, images, résumé PDFs
+    └── _headers, _redirects, robots.txt, sitemaps
 ```
 
 ## Running it locally
 
 ```bash
 npm install
+npx wrangler dev
 ```
+
+Pages use root-relative paths, so they need a server, not `file://`.
+
+Before committing:
 
 ```bash
-npm run dev
+node sync.mjs && node check.mjs && node --test test/*.test.mjs
 ```
 
-The dev server uses stub Lighthouse numbers, so it doesn't need an API key. `exiftool-vendored` bundles ExifTool, so there's nothing else to install for the gallery.
-
-To build the site and preview the result:
+After adding, removing, or re-captioning photos:
 
 ```bash
-npm run build
+node photos.mjs
 ```
+
+To refresh the project list, and see any new repositories waiting for a name:
 
 ```bash
-npm run preview
+node projects.mjs
 ```
-
-A production build calls the PageSpeed Insights API. Without a `PSI_KEY`, the request may fail, and the Lighthouse panel is left out.
 
 ## Reuse
 
-The code is here to learn from and borrow. The writing and photos are mine, so please don't republish them as your own.
+The code is here to learn from and borrow. The writing and photos are mine, so please don’t republish them as your own.

@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en-us" prefix="og:https://ogp.me/ns#">
+<head>
+<!-- page: {"title":"Code","description":"My portfolio of personal and professional coding projects.","css":["book","code"],"fonts":["cormorant-garamond-2","cormorant-garamond-italic-2"],"typefaces":"Cormorant Garamond"} -->
+<!-- shared:head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code | Sam Feldstein</title>
+<meta name="author" content="Sam Feldstein">
+<meta name="description" content="My portfolio of personal and professional coding projects.">
+<link rel="canonical" href="https://samfeldstein.xyz/code/">
+<meta property="og:title" content="Code">
+<meta property="og:description" content="My portfolio of personal and professional coding projects.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samfeldstein.xyz/code/">
+<meta property="og:site_name" content="Sam Feldstein">
+<meta property="og:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sam Feldstein">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Code">
+<meta name="twitter:description" content="My portfolio of personal and professional coding projects.">
+<meta name="twitter:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=4">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+<meta name="apple-mobile-web-app-title" content="Sam Feldstein">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" href="/sitemap-index.xml">
+<link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
+<link rel="preload" href="/static/fonts/cormorant-garamond-2.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond-italic-2.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+figure {
+  margin: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, monospace;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@view-transition {
+  navigation: auto;
+}
+body {
+  color: var(--text-color);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  text-wrap: balance;
+}
+
+#skiplink {
+  z-index: 100;
+  position: absolute;
+  translate: -1000%;
+  transition-duration: 0.25s;
+}
+#skiplink:focus {
+  translate: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  #skiplink {
+    transition: none;
+  }
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond-2.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2197, U+2766;
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond-italic-2.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2197, U+2766;
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Garamond Fallback";
+  src: local("Georgia"), local("Noto Serif"), local("NotoSerif-Regular");
+  size-adjust: 88%;
+  ascent-override: 92.4%;
+  descent-override: 28.7%;
+}
+
+:root {
+  color-scheme: light dark;
+  --paper: light-dark(#e4dac2, #1d1914);
+  --ink: light-dark(#2a2118, #ddd1b6);
+  --ink-faded: light-dark(#5e5040, #a99c84);
+  --rubric: light-dark(#8e2a1e, #d87a5f);
+  --leader: light-dark(#9a8a70, #6c6050);
+  --cloth: #24392f;
+  --cloth-weave: #1c2e25;
+  --gilt: #c9a65c;
+  --font-book: "Cormorant Garamond", "Cormorant Garamond Fallback", Georgia, serif;
+  --measure: 26em;
+}
+
+html {
+  background: var(--paper);
+  scrollbar-color: var(--ink-faded) var(--paper);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-book);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.45;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "liga";
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus-visible {
+  outline: 2px solid var(--rubric);
+  outline-offset: 0.15em;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--rubric);
+  color: var(--paper);
+}
+
+#skiplink {
+  margin: 0.5em;
+  padding: 0.4em 0.8em;
+  background: var(--paper);
+  color: var(--ink);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+h2 {
+  margin: 0 0 2.5rem;
+  font-weight: 500;
+  font-size: 1.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+h3 {
+  margin: 2.75rem 0 0.75rem;
+  font-weight: 500;
+  font-size: 0.9em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--ink-faded);
+  text-align: center;
+}
+.toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toc li {
+  counter-increment: page;
+}
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  padding: 0.3em 0;
+}
+.toc a span {
+  order: 1;
+}
+.toc a::before {
+  content: "";
+  order: 2;
+  flex: 1;
+  border-bottom: 2px dotted var(--leader);
+}
+.toc a::after {
+  content: counter(page);
+  order: 3;
+}
+.toc.roman a::after {
+  content: counter(page, lower-roman);
+}
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--rubric);
+}
+.toc a:hover::before,
+.toc a:focus-visible::before {
+  border-bottom-color: currentColor;
+}
+.ornament {
+  text-align: center;
+  margin: -1.5rem 0 2rem;
+  color: var(--rubric);
+  font-size: 1.4em;
+}
+
+.running-head {
+  padding: 1.5rem 1rem 0;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.85em;
+}
+.running-head a {
+  color: var(--ink-faded);
+}
+.running-head a:hover {
+  color: var(--rubric);
+}
+
+.chapter {
+  margin: clamp(3rem, 10vh, 6rem) auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.chapter-number {
+  margin: 0 0 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: var(--ink-faded);
+}
+.chapter h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.4rem);
+  line-height: 1.1;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  text-wrap: balance;
+}
+.chapter .ornament {
+  margin: 1.25rem 0 0;
+}
+
+.book-page {
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
+
+.epigraph blockquote,
+.colophon {
+  font-feature-settings: "liga", "dlig";
+}
+
+.page {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100svh;
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: clamp(4rem, 12vh, 8rem) 1.5rem 5rem;
+}
+.epigraph-page {
+  border-top: 1px solid color-mix(in srgb, var(--leader) 45%, transparent);
+}
+
+.epigraph-page {
+  display: grid;
+  align-items: center;
+}
+.epigraph {
+  margin: 0 auto;
+  max-width: 22em;
+}
+.epigraph blockquote {
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1em;
+  line-height: 1.5;
+  text-wrap: pretty;
+  hanging-punctuation: first;
+}
+.epigraph blockquote p {
+  margin: 0 0 0.6em;
+}
+.epigraph .attribution {
+  margin-top: 1.5em;
+  text-wrap: balance;
+  text-align: right;
+  font-size: 0.85em;
+  color: var(--ink-faded);
+}
+.epigraph .attribution::before {
+  content: "— ";
+}
+
+.colophon-page {
+  min-height: 80svh;
+  text-align: center;
+  font-size: 0.85em;
+}
+.colophon-page .colophon {
+  max-width: 22em;
+  margin: 0 auto 3rem;
+  font-style: italic;
+  text-wrap: balance;
+}
+.pagespeed {
+  max-width: 18em;
+  margin: 0 auto;
+}
+.pagespeed figcaption {
+  margin-bottom: 0.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--ink-faded);
+}
+.pagespeed dl {
+  margin: 0;
+}
+.pagespeed dl div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+.pagespeed dt {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  text-align: left;
+}
+.pagespeed dt::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px dotted var(--leader);
+}
+.pagespeed dd {
+  margin: 0;
+}
+.imprint {
+  margin-top: 3rem;
+  font-size: 0.85em;
+  display: grid;
+  gap: 0.2em;
+  font-variant: all-small-caps;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
+}
+
+a[href^="http"]:not(.toc a, .works a, .work)::after,
+.toc a[href^="http"] > span::after,
+.works a[href^="http"] .work-source::after {
+  content: "\2197" / ", external";
+  display: inline-block;
+  margin-left: 0.2em;
+  font-size: 0.7em;
+  font-style: normal;
+  vertical-align: 0.35em;
+  opacity: 0.9;
+}
+
+a[href^="mailto:"]:not(.toc a)::after,
+.toc a[href^="mailto:"] > span::after {
+  content: "" / ", email";
+  display: inline-block;
+  width: 0.75em;
+  height: 0.55em;
+  margin-left: 0.25em;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpath d='M1 1h14v10H1zM1 1.5l7 5.5 7-5.5' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.65;
+}
+
+.toc a[href^="mailto:"] > span::after {
+  content: "" / "";
+}
+
+.epigraph-page[hidden] {
+  display: none;
+}
+
+.running-head a {
+  display: inline-block;
+  padding-block: 0.35em;
+}
+
+.works {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.works li + li {
+  margin-top: 1.6em;
+}
+.works a {
+  display: block;
+  font-feature-settings: "liga";
+}
+.work-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: last baseline;
+  column-gap: 0.4em;
+}
+.work-title {
+  overflow-x: clip;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+.work-title::after {
+  content: "";
+  display: inline-block;
+  width: 100vw;
+  margin: 0 -100vw 0 0.4em;
+  border-bottom: 2px dotted var(--leader);
+}
+.works time {
+  white-space: nowrap;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+}
+.work-source {
+  display: block;
+  margin-top: 0.15em;
+  padding-left: 1.25em;
+  color: var(--ink-faded);
+}
+.work-type {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+}
+.works a:hover,
+.works a:focus-visible,
+.works a:hover .work-source,
+.works a:focus-visible .work-source {
+  color: var(--rubric);
+}
+.works a:hover .work-title::after,
+.works a:focus-visible .work-title::after {
+  border-bottom-color: currentColor;
+}
+.chapter-subtitle {
+  margin: 1.25rem 0 0;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-faded);
+}
+
+.skills p {
+  margin: 0 auto;
+  color: var(--ink-faded);
+  max-width: 24em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.hire {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-faded);
+}
+.hire a {
+  color: var(--ink);
+  text-decoration: underline 1px var(--leader);
+  text-underline-offset: 0.2em;
+}
+.hire a:hover {
+  color: var(--rubric);
+  text-decoration-color: currentColor;
+}
+.hire span {
+  margin: 0 0.4em;
+}
+
+.projects {
+  margin-top: 4.5rem;
+}
+.projects h2 {
+  margin-bottom: 1.5rem;
+  font-size: 0.9em;
+  color: var(--ink-faded);
+}
+</style>
+<script type="speculationrules">
+{ "prefetch": [{ "where": { "and": [{ "href_matches": "/*" }, { "not": { "href_matches": "/static/*" } }, { "not": { "href_matches": "/img/*" } }] }, "eagerness": "eager" }] }
+</script>
+<script>
+  (function () {
+    if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) return;
+    addEventListener("load", function () {
+      var seen = {};
+      seen[location.pathname] = true;
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+        var path = a.pathname;
+        if (a.origin !== location.origin || seen[path] || !/\/$/.test(path)) return;
+        seen[path] = true;
+        var link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = path;
+        document.head.appendChild(link);
+      });
+    });
+  })();
+</script>
+<!-- /shared:head -->
+</head>
+<body>
+  <!-- shared:skip-link -->
+<a id="skiplink" href="#main-content">Skip to Content</a>
+<!-- /shared:skip-link -->
+  <!-- shared:running-head -->
+<nav class="running-head" aria-label="Site"><a href="/">Ever in Flux</a></nav>
+<!-- /shared:running-head -->
+  <header class="chapter">
+    <p class="chapter-number">Chapter 3</p>
+    <h1>Code</h1>
+    <p class="ornament" aria-hidden="true">❦</p>
+    <p class="chapter-subtitle">Personal and professional projects.</p>
+  </header>
+  <main id="main-content" class="book-page">
+    <section class="skills" aria-labelledby="skills">
+      <h2 id="skills" class="visually-hidden">Skills</h2>
+      <p>HTML, CSS, JavaScript, Astro, Git, Bash, Cloudflare, Claude</p>
+    </section>
+    <p class="hire"><a href="https://github.com/samfeldstein">GitHub</a> <span aria-hidden="true">·</span> <a href="mailto:sam@presswork.dev">Hire me</a></p>
+    <section class="projects" aria-labelledby="works">
+      <h2 id="works">Projects</h2>
+      <ol class="works">
+        <!-- projects -->
+        <li><a href="https://danceophile.com"><span class="work-line"><cite class="work-title">Postoley Dance Ensemble</cite><time datetime="2026-10">Oct 2026</time></span><span class="work-source"><i>Website for Postoley Dance Ensemble and Danceophile Studio, a folk dance studio in Boulder, CO. Built with Astro and Decap CMS</i></span></a></li>
+        <li><a href="https://presswork.dev"><span class="work-line"><cite class="work-title">Presswork Web Co</cite><time datetime="2026-10">Oct 2026</time></span><span class="work-source"><i>My freelance business site. Plain HTML, CSS, and JavaScript on Cloudflare Workers</i></span></a></li>
+        <li><a href="https://samfeldstein.github.io/rss-feeds/"><span class="work-line"><cite class="work-title">RSS Feeds</cite><time datetime="2026-10">Oct 2026</time></span><span class="work-source"><i>Collection of rss feeds for sites that don’t have them</i></span></a></li>
+        <li><a href="https://notes.samfeldstein.xyz/"><span class="work-line"><cite class="work-title">Digital Notebook</cite><time datetime="2025-09">Sep 2025</time></span><span class="work-source"><i>A wiki-like personal notebook built with Astro</i></span></a></li>
+        <li><a href="https://shelftalkers.samfeldstein.xyz"><span class="work-line"><cite class="work-title">Shelf Talkers</cite><time datetime="2025-06">Jun 2025</time></span><span class="work-source"><i>A simple web app for formatting shelf talkers</i></span></a></li>
+        <li><a href="https://samfeldstein.xyz"><span class="work-line"><cite class="work-title">Personal Site</cite><time datetime="2024-06">Jun 2024</time></span><span class="work-source"><i>My personal website, built with plain HTML, CSS, and JavaScript</i></span></a></li>
+        <!-- /projects -->
+      </ol>
+    </section>
+  </main>
+  <!-- shared:endmatter -->
+<section class="page epigraph-page" aria-label="Epigraph" hidden>
+  <figure class="epigraph">
+    <blockquote id="quote"></blockquote>
+    <figcaption class="attribution">
+      <span id="speaker"></span><cite id="work"></cite><span id="verse"></span><span id="year"></span>
+    </figcaption>
+  </figure>
+</section>
+<footer class="page colophon-page">
+  <h2 id="colophon">Colophon</h2>
+  <p class="ornament" aria-hidden="true">❦</p>
+  <!-- shared:credit -->
+<p class="colophon">Set in Cormorant Garamond. Built with plain HTML, CSS, and JavaScript. Hosted on Cloudflare. No cookies.</p>
+<!-- /shared:credit -->
+  <!-- shared:lighthouse -->
+<figure class="pagespeed">
+  <figcaption>Lighthouse scores</figcaption>
+  <dl>
+    <div><dt>Performance</dt><dd>100</dd></div>
+    <div><dt>Blocking time</dt><dd>0 ms</dd></div>
+    <div><dt>Speed index</dt><dd>2.7 s</dd></div>
+    <div><dt>Largest paint</dt><dd>1.5 s</dd></div>
+  </dl>
+</figure>
+<!-- /shared:lighthouse -->
+  <div class="imprint">
+    <div>Denver, CO</div>
+    <!-- shared:copyright -->
+<div class="copyright">&copy; 2022–2026 Samuel Feldstein</div>
+<!-- /shared:copyright -->
+  </div>
+</footer>
+<script type="module" src="/js/quote.js?v=e3c61ced"></script>
+<!-- /shared:endmatter -->
+</body>
+</html>

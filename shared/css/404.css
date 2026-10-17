@@ -1,0 +1,67 @@
+:root {
+  --slip: light-dark(#efe8d6, #302a22);
+  --slip-shadow: light-dark(rgba(60, 40, 15, 0.22), rgba(0, 0, 0, 0.55));
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.erratum {
+  display: grid;
+  place-items: center;
+  min-height: 70svh;
+  padding: clamp(3rem, 10vh, 6rem) 1.5rem 6rem;
+  box-sizing: border-box;
+}
+
+.slip {
+  max-width: 24em;
+  padding: 2rem clamp(1.25rem, 5vw, 2.5rem) 2.25rem;
+  background: var(--slip);
+  box-shadow: 0 1px 1px var(--slip-shadow), 0 10px 28px -14px var(--slip-shadow);
+  rotate: -0.5deg;
+  text-align: center;
+}
+
+.slip-label {
+  margin: 0 0 0.4rem;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: var(--rubric);
+}
+
+.slip h1 {
+  margin: 0 0 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--leader);
+  font-weight: 500;
+  font-size: 1.5em;
+  line-height: 1.15;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+}
+
+.slip p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.slip p a {
+  text-decoration: underline;
+  text-decoration-color: var(--leader);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.slip a:hover {
+  color: var(--rubric);
+  text-decoration-color: currentColor;
+}
+
+.slip .back {
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-style: italic;
+}

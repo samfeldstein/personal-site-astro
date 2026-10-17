@@ -1,0 +1,42 @@
+.chapter-subtitle {
+  margin: 1.25rem 0 0;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--ink-faded);
+}
+
+.skills p {
+  margin: 0 auto;
+  color: var(--ink-faded);
+  max-width: 24em;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.hire {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-style: italic;
+  color: var(--ink-faded);
+}
+.hire a {
+  color: var(--ink);
+  text-decoration: underline 1px var(--leader);
+  text-underline-offset: 0.2em;
+}
+.hire a:hover {
+  color: var(--rubric);
+  text-decoration-color: currentColor;
+}
+.hire span {
+  margin: 0 0.4em;
+}
+
+.projects {
+  margin-top: 4.5rem;
+}
+.projects h2 {
+  margin-bottom: 1.5rem;
+  font-size: 0.9em;
+  color: var(--ink-faded);
+}

@@ -1,0 +1,78 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+figure {
+  margin: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, monospace;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@view-transition {
+  navigation: auto;
+}
+body {
+  color: var(--text-color);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  text-wrap: balance;
+}
+
+#skiplink {
+  z-index: 100;
+  position: absolute;
+  translate: -1000%;
+  transition-duration: 0.25s;
+}
+#skiplink:focus {
+  translate: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+  #skiplink {
+    transition: none;
+  }
+}

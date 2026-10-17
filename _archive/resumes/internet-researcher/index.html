@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en-us" prefix="og:https://ogp.me/ns#">
+<head>
+<!-- page: {"title":"Internet Researcher Résumé","description":"Sam Feldstein's Internet Researcher résumé.","css":["resume","resume-print"],"fonts":["cormorant","cormorant-italic","noto-sans"]} -->
+<!-- shared:head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Internet Researcher Résumé | Sam Feldstein</title>
+<meta name="author" content="Sam Feldstein">
+<meta name="description" content="Sam Feldstein's Internet Researcher résumé.">
+<link rel="canonical" href="https://samfeldstein.xyz/resumes/internet-researcher/">
+<meta property="og:title" content="Internet Researcher Résumé">
+<meta property="og:description" content="Sam Feldstein's Internet Researcher résumé.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samfeldstein.xyz/resumes/internet-researcher/">
+<meta property="og:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
+<meta name="twitter:title" content="Internet Researcher Résumé">
+<meta name="twitter:description" content="Sam Feldstein's Internet Researcher résumé.">
+<meta name="twitter:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+<meta name="apple-mobile-web-app-title" content="Sam Feldstein">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" href="/sitemap-index.xml">
+<link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
+<link rel="preload" href="/static/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-italic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/noto-sans.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+figure {
+  margin: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, monospace;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@view-transition {
+  navigation: auto;
+}
+body {
+  color: var(--text-color);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  text-wrap: balance;
+}
+
+#skiplink {
+  z-index: 100;
+  position: absolute;
+  translate: -1000%;
+  transition-duration: 0.25s;
+}
+#skiplink:focus {
+  translate: 0;
+}
+@charset "UTF-8";
+@font-face {
+  font-family: "Cormorant";
+  src: url("/static/fonts/cormorant.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+00A0-00FF;
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant";
+  src: url("/static/fonts/cormorant-italic.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 300 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cormorant Fallback";
+  src: local("Georgia");
+  unicode-range: U+0020-007F;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/static/fonts/noto-sans.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans";
+  src: url("/static/fonts/noto-sans-italic.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Sans Fallback";
+  src: local("Verdana");
+  unicode-range: U+0020-007F;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.hide {
+  display: none;
+}
+
+.defer, main, main > section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px auto 100vh;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.small-caps {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.unstyled-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.unstyled-list, main ul.publications {
+  list-style: none;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+@page {
+  margin: 0.5in 1.5in;
+  @bottom-center {
+    content: "Feldstein Resume — Page " counter(page) " of " counter(pages);
+    font-family: var(--font-2);
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+@media print {
+  :root {
+    --dark-grey: black;
+  }
+  html {
+    font-size: 12px;
+  }
+  body {
+    display: unset;
+    padding-bottom: 0;
+  }
+  header {
+    height: unset;
+    display: unset;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 0.75rem;
+    gap: 0.25rem;
+    font-family: var(--font-2);
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+  h1 .name {
+    font-size: 2rem;
+    font-weight: 350;
+    letter-spacing: 0.1em;
+  }
+  h1 .role {
+    font-size: 1.25rem;
+    font-weight: 350;
+    letter-spacing: 0.1em;
+  }
+  address {
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    border-top: 2px solid black;
+    font-size: 0.5rem;
+    font-weight: 800;
+    text-align: left;
+  }
+  .info {
+    font-size: 0.75rem;
+  }
+  div.volunteer p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  ul:not(.publications, .projects) {
+    list-style-type: disc !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  address.print {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  address.web {
+    display: none;
+  }
+  main {
+    gap: 0;
+  }
+  main > section {
+    border: none;
+    padding: 0;
+  }
+  main > section ul {
+    gap: 0.25rem;
+    padding-left: 2rem;
+  }
+  div.skills {
+    display: flex;
+    justify-content: space-between;
+  }
+  div.skills h3 {
+    margin-bottom: 0.5rem;
+  }
+  div.experience h3 {
+    margin-bottom: 0;
+  }
+  div.experience ul {
+    margin-top: 0.5em;
+  }
+  section.projects p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  div.projects h3 {
+    margin-bottom: 0;
+  }
+  div.projects ul {
+    margin-top: 0.5em;
+  }
+  time,
+  .time {
+    font-size: 8px;
+    text-transform: none;
+  }
+  p.summary {
+    display: none;
+  }
+  .hide, .download-link, nav.contents, div.skills h3,
+  .no-print {
+    display: none !important;
+  }
+}
+:root {
+  --font-1: "Cormorant", "Cormorant Fallback", serif;
+  --font-2: "Noto Sans", "Noto Sans Fallback", serif;
+  --font-size-base: clamp(1rem, 2vw, 1.25rem);
+  --font-large: calc(var(--font-size-base) * 1.25);
+  --font-small: calc(var(--font-size-base) * .75);
+  --dark-grey: oklch(0.457 0 0);
+}
+
+body {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1rem 10px 6rem 10px;
+  display: grid;
+  gap: 6rem;
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+}
+
+header {
+  height: calc(var(--vh, 100dvh));
+  display: grid;
+  grid-template-rows: 2fr auto 3fr 3fr auto;
+  padding-bottom: 6rem;
+}
+
+nav.main {
+  font-size: var(--font-small);
+  font-weight: 300;
+  color: var(--dark-grey);
+  letter-spacing: 0.05em;
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+address {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.5em;
+  font-style: normal;
+  font-size: var(--font-small);
+  font-weight: 300;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--dark-grey);
+}
+address.print {
+  display: none;
+}
+address .location {
+  color: black;
+}
+
+h1 {
+  display: grid;
+  margin: 0 0 1rem 0;
+  font-size: clamp(2.2rem, 10vw, 7rem);
+  font-weight: 300;
+  line-height: 1;
+}
+h1 .role {
+  color: var(--dark-grey);
+}
+
+.summary {
+  max-width: 40rem;
+  font-weight: 300;
+  font-size: var(--font-large);
+  text-wrap: pretty;
+}
+
+nav.contents {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4rem;
+  font-size: var(--font-size-base);
+  font-weight: 200;
+  letter-spacing: 0.075em;
+}
+nav.contents div {
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 1rem;
+}
+
+h2 {
+  margin: 0 0 2rem 0;
+  font-weight: 300;
+  font-size: 1.25em;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+h3,
+.h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+div.skills,
+div.relevant-experience,
+div.other-experience,
+div.projects,
+div.volunteer,
+div.education,
+ul.publications {
+  display: grid;
+  gap: 1rem;
+}
+
+div.projects p,
+div.volunteer p {
+  margin-top: 0.75em;
+}
+
+main {
+  display: grid;
+  gap: 6rem;
+}
+main > section {
+  border-top-style: solid;
+  border-top-width: 0.5px;
+  border-top-color: var(--dark-grey);
+  padding-top: 1rem;
+}
+main ul {
+  display: grid;
+  gap: 1em;
+  padding-left: 1.5em;
+}
+main ul:not(.publications, .projects) {
+  list-style-type: circle;
+}
+main ul.publications {
+  margin: 0;
+  padding: 0;
+}
+main ul li {
+  text-wrap: pretty;
+}
+main ul li:has(> ul) {
+  display: grid;
+  gap: 0.5em;
+}
+
+a {
+  color: var(--dark-grey);
+  font-variant: small-caps;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: all 0.2s;
+}
+a:hover, a:focus {
+  color: #000;
+}
+a:focus-visible {
+  outline: 0.08em solid currentColor;
+  border-radius: 0.1em;
+}
+
+.info {
+  color: var(--dark-grey);
+  font-size: 1rem;
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--dark-grey);
+}
+
+cite.h3 {
+  font-style: normal;
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+  h2 {
+    text-align: left;
+    position: sticky;
+    top: 0;
+    height: fit-content;
+    margin: 0;
+  }
+  main > section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    position: relative;
+  }
+}
+#skiplink {
+  font-weight: 300;
+  padding: 0.25em;
+}
+
+.font-1, .summary {
+  font-family: var(--font-1);
+}
+
+.font-2, nav.main, address, nav.contents, h2, #skiplink {
+  font-family: var(--font-2);
+}
+
+@media screen {
+  .no-web {
+    display: none;
+  }
+}
+@charset "UTF-8";
+@page {
+  margin: 0.5in 1.5in;
+  @bottom-center {
+    content: "Feldstein Resume — Page " counter(page) " of " counter(pages);
+    font-family: var(--font-2);
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+@media print {
+  :root {
+    --dark-grey: black;
+  }
+  html {
+    font-size: 12px;
+  }
+  body {
+    display: unset;
+    padding-bottom: 0;
+  }
+  header {
+    height: unset;
+    display: unset;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 0.75rem;
+    gap: 0.25rem;
+    font-family: var(--font-2);
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+  h1 .name {
+    font-size: 2rem;
+    font-weight: 350;
+    letter-spacing: 0.1em;
+  }
+  h1 .role {
+    font-size: 1.25rem;
+    font-weight: 350;
+    letter-spacing: 0.1em;
+  }
+  address {
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    border-top: 2px solid black;
+    font-size: 0.5rem;
+    font-weight: 800;
+    text-align: left;
+  }
+  .info {
+    font-size: 0.75rem;
+  }
+  div.volunteer p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  ul:not(.publications, .projects) {
+    list-style-type: disc !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  address.print {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  address.web {
+    display: none;
+  }
+  main {
+    gap: 0;
+  }
+  main > section {
+    border: none;
+    padding: 0;
+  }
+  main > section ul {
+    gap: 0.25rem;
+    padding-left: 2rem;
+  }
+  div.skills {
+    display: flex;
+    justify-content: space-between;
+  }
+  div.skills h3 {
+    margin-bottom: 0.5rem;
+  }
+  div.experience h3 {
+    margin-bottom: 0;
+  }
+  div.experience ul {
+    margin-top: 0.5em;
+  }
+  section.projects p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  div.projects h3 {
+    margin-bottom: 0;
+  }
+  div.projects ul {
+    margin-top: 0.5em;
+  }
+  time,
+  .time {
+    font-size: 8px;
+    text-transform: none;
+  }
+  p.summary {
+    display: none;
+  }
+  .hide, .download-link, nav.contents, div.skills h3,
+  .no-print {
+    display: none !important;
+  }
+}
+</style>
+<script type="speculationrules">
+{ "prefetch": [{ "where": { "and": [{ "href_matches": "/*" }, { "not": { "href_matches": "/static/*" } }] }, "eagerness": "eager" }] }
+</script>
+<script>
+  (function () {
+    if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) return;
+    addEventListener("load", function () {
+      var seen = {};
+      seen[location.pathname] = true;
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+        var path = a.pathname;
+        if (a.origin !== location.origin || seen[path] || !/\/$/.test(path)) return;
+        seen[path] = true;
+        var link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = path;
+        document.head.appendChild(link);
+      });
+    });
+  })();
+</script>
+<!-- /shared:head -->
+</head>
+<body>
+  <!-- shared:skip-link -->
+<a id="skiplink" href="#main-content">Skip to Content</a>
+<!-- /shared:skip-link -->
+  <header>
+    <nav class="main no-print">
+      <a href="/">Home</a
+      ><a
+        class="download-link"
+        href="/static/resumes/sam-feldstein-internet-researcher-resume.pdf"
+        target="_blank"
+        >Download PDF</a
+      >
+    </nav>
+    <h1><span class="name">Sam Feldstein</span><span class="role">Internet Researcher</span></h1>
+    <div class="address-grid-container">
+      <address>
+        <span class="location">Denver, CO</span><a href="tel:5156572243">(515) 657-2243</a
+        ><a href="mailto:sam@samfeldstein.com">sam@samfeldstein.com</a
+        ><a class="no-web" href="https://samfeldstein.xyz">samfeldstein.xyz</a>
+      </address>
+    </div>
+    <p class="summary">
+      Tech-savvy animal-lover excelling at internet research and knowledge management.
+    </p>
+    <nav class="contents">
+      <div>
+        <a href="#education">Education</a><a href="#skills">Skills</a
+        ><a href="#relevant-experience">Experience</a>
+      </div>
+      <div>
+        <a href="#volunteer">Volunteer</a><a href="#publications">Publications</a
+        ><a href="#projects">Projects</a>
+      </div>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section id="education">
+      <h2>Education</h2>
+      <div class="education">
+        <article>
+          <h3>Chapman University Dodge College of Film and Media Arts</h3>
+          <div class="info">Orange, CA | <span>December 2018</span></div>
+          <ul>
+            <li>MFA, Screenwriting, withdrew</li>
+            <li>Panelist on the New Student Welcoming Committee</li>
+            <li>Teacher’s Assistant for Script Analysis</li>
+          </ul>
+        </article>
+        <article>
+          <h3>University of Iowa</h3>
+          <div class="info">Iowa City, IA | <span>December 2016</span></div>
+          <ul>
+            <li>BA, English and Creative Writing, <i>cum laude</i></li>
+            <li>Selected for the Undergraduate Writers’ Workshop</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <section>
+          <h3>Internet Research</h3>
+          <ul class="skills">
+            <li>Advanced internet search methods</li>
+            <li>Knowledge management tools</li>
+            <li>Foundational journalistic skills</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Communication</h3>
+          <ul class="skills">
+            <li>Advanced and diverse writing skills</li>
+            <li>Customer/client relations</li>
+            <li>Donor engagement, face-to-face and otherwise</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Technical</h3>
+          <ul class="skills">
+            <li>Tech savviness and digital fluency</li>
+            <li>Web development and best practices</li>
+            <li>Content management systems, e.g. WordPress</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+    <section id="relevant-experience">
+      <h2>Relevant Experience</h2>
+      <div class="relevant-experience">
+        <article>
+          <h3>Freelance Journalist @ The Big Bend Sentinel</h3>
+          <div class="info"><span>September 2022 – December 2023</span> | Marfa, TX</div>
+          <ul>
+            <li>
+              Wrote informative, engaging, accessible articles covering community events and
+              grassroots activism.
+            </li>
+            <li>
+              Interviewed community leaders, activists, and local stakeholders to ensure accurate
+              representation.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Fundraiser @ Lear Solutions</h3>
+          <div class="info"><span>May 2019 – December 2019</span> | Santa Ana, CA</div>
+          <ul>
+            <li>
+              Raised a projected ~$300,000 in recurring donations for high-impact nonprofits
+              including the ASPCA and Doctors Without Borders.
+            </li>
+            <li>
+              Improved donor retention and long-term contributions through persuasive face-to-face
+              engagement.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="other-experience">
+      <h2>Other Experience</h2>
+      <div class="other-experience">
+        <article>
+          <h3>Bookseller @ Composition Bookshop</h3>
+          <div class="info"><span>April 2025 – April 2026</span> | Longmont, CO</div>
+          <ul>
+            <li>Maintain extensive knowledge of popular genres, authors, and literary trends.</li>
+            <li>Provide tailored guidance and recommendations to customers.</li>
+            <li>Build custom web applications to streamline store processes.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Freelance Web Developer</h3>
+          <div class="info"><span>April 2024 – Present</span> | Denver, CO</div>
+          <ul>
+            <li>
+              Identify client business needs and deliver tailored digital solutions that improve
+              customer and user experiences.
+            </li>
+            <li>
+              Guide clients through website launches, platform integrations, and content management
+              workflows.
+            </li>
+            <li>
+              Provide ongoing technical support and training, empowering clients to independently
+              manage and optimize their digital presence.
+            </li>
+          </ul>
+        </article>
+        <article>
+          <h3>Development Assistant @ Sugar23</h3>
+          <div class="info"><span>November 2022 – December 2023</span> | Hollywood, CA</div>
+          <ul>
+            <li>Evaluated manuscripts for a notable Hollywood production company.</li>
+            <li>Wrote comprehensive script coverage analyzing adaptation and market potential.</li>
+            <li>Offered adaptation recommendations that informed executive decision-making.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>General Manager @ The Sentinel</h3>
+          <div class="info"><span>November 2020 – November 2021</span> | Marfa, TX</div>
+          <ul>
+            <li>
+              Promoted from barista to general manager of a combined café, retail shop, and
+              restaurant.
+            </li>
+            <li>
+              Owned customer-facing operations, ensuring reliable service and positive experiences
+              throughout the customer journey.
+            </li>
+            <li>
+              Managed staff scheduling and hiring, and created onboarding and training processes
+              that empowered team members to deliver consistent support and resolve customer needs
+              effectively.
+            </li>
+            <li>
+              Ordered and managed inventory, including milk, coffee beans, and other supplies, and
+              maintained vendor relations.
+            </li>
+            <li>
+              Managed operational workflows to identify issues, implement solutions, and improve
+              overall customer satisfaction.
+            </li>
+            <li>Prepared and served food and worked large events.</li>
+            <li>Bartended, mostly morning cocktails, with occasional evening shifts.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="volunteer">
+      <h2>Volunteer</h2>
+      <div class="volunteer">
+        <article>
+          <h3>Wix Developer @ Community Health and Equine Coalition</h3>
+          <div class="info"><span>April 2024 – May 2024</span> | Galveston, TX</div>
+          <p>Enhanced user experience and accessibility, integrated a secure payment gateway.</p>
+        </article>
+        <article>
+          <h3>Volunteer @ Workaway</h3>
+          <div class="info"><span>April 2024 – September 2024</span> | Various Locations</div>
+          <p>
+            Volunteered for various organizations and individuals alongside Workawayers from
+            Hungary, Italy, Spain, and France.
+          </p>
+        </article>
+        <article>
+          <h3>Horse Trainer @ Animal Rescue League</h3>
+          <div class="info"><span>January 2014 – January 2015</span> | Ankeny, IA</div>
+          <p>Trained rescued horses to prepare them for adoption.</p>
+        </article>
+      </div>
+    </section>
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="publications">
+        <li>
+          <cite class="publication h3">Made of Memories</cite>
+          <div class="info">
+            Short Story | <cite>Tales to Terrify</cite> | <span>December 2023</span>
+          </div>
+        </li>
+        <li>
+          <cite class="publication h3"
+            >Big Bend Reproductive Coalition Launches Community Needs Assessment</cite
+          >
+          <div class="info">
+            News Article | <cite>The Big Bend Sentinel</cite> | <span>August 2023</span>
+          </div>
+        </li>
+        <li>
+          <cite class="publication h3"
+            >Trans-Pecos Festival of Music + Love Doubles as Platform for Advocacy and
+            Outreach</cite
+          >
+          <div class="info">
+            News Article | <cite>The Big Bend Sentinel</cite> | <span>October 2022</span>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <article>
+          <h3>ReGreen Big Bend</h3>
+          <div class="info"><span>Website</span> | <span>February 2025</span></div>
+          <p class="project-description">
+            Designed and developed a custom WordPress website for an environmental nonprofit.
+            Customized themes, improved accessibility, and created an intuitive content management
+            experience. Configured the site so nontechnical users could independently manage
+            content.
+          </p>
+        </article>
+        <article>
+          <h3>Postoley Dance Ensemble</h3>
+          <div class="info"><span>Website</span> | <span>February 2025</span></div>
+          <p class="project-description">
+            Rebuilt an organization&#39;s website with Astro and Netlify, emphasizing accessibility,
+            responsiveness, and maintainability. Designed reusable page layouts and optimized
+            performance across desktop and mobile devices. Collaborated with the client to translate
+            design goals into a production- ready website.
+          </p>
+        </article>
+        <article>
+          <h3>Prairie Rose Arena</h3>
+          <div class="info"><span>Website</span> | <span>May 2024</span></div>
+          <p class="project-description">
+            Built a custom static website using Eleventy, Netlify, and Decap CMS. Integrated a CMS
+            that enabled the client to update site content without writing code. Focused on
+            performance, maintainability, and a streamlined editing experience.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <script type="module">
+    const header = document.querySelector("header");
+    if (header) header.style.setProperty("--vh", `${document.documentElement.clientHeight}px`);
+  </script>
+</body>
+</html>

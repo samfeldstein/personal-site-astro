@@ -1,0 +1,210 @@
+import { test } from "node:test";
+import assert from "node:assert/strict";
+import { appendFileSync, cpSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { check, cssProblems, hostProblems, maskProblems, scriptProblems } from "../check.mjs";
+import { sync } from "../sync.mjs";
+
+test("cssProblems accepts balanced CSS, including braces in strings and comments", () => {
+  assert.deepEqual(cssProblems('a{color:red}@media (min-width:1px){b{c:d}}\n/* } { */ i::before{content:"}"}'), []);
+});
+
+test("cssProblems reports an extra closing brace with its line", () => {
+  assert.deepEqual(cssProblems("a{b:c}\n}\n"), ['unmatched "}" on line 2']);
+});
+
+test("cssProblems reports a block that never closes", () => {
+  assert.match(cssProblems("a{b:c}\n.x{\n  y:z;\n")[0], /unclosed "\{".*line 2/);
+});
+
+test("cssProblems reports an unterminated comment and string", () => {
+  assert.match(cssProblems("a{b:c} /* oops")[0], /unterminated comment/);
+  assert.match(cssProblems('a{content:"oops}')[0], /unterminated string/);
+});
+
+function copyOfSite() {
+  const dir = mkdtempSync(join(tmpdir(), "site-check-"));
+  const photos = new URL("../site/img/photos", import.meta.url).pathname;
+  cpSync(new URL("../site", import.meta.url), join(dir, "site"), { recursive: true, filter: (src) => src !== photos });
+  symlinkSync(photos, join(dir, "site/img/photos"));
+  cpSync(new URL("../shared", import.meta.url), join(dir, "shared"), { recursive: true });
+  return dir;
+}
+
+test("check passes on a clean copy of the site", () => {
+  const dir = copyOfSite();
+  try {
+    assert.deepEqual(check({ root: join(dir, "site"), shared: join(dir, "shared") }), []);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("check reports broken CSS files, broken inline styles and dangling id references", () => {
+  const dir = copyOfSite();
+  try {
+    appendFileSync(join(dir, "shared/css/base.css"), "\n}\n");
+    const page = join(dir, "site/code/index.html");
+    const html = readFileSync(page, "utf8");
+    writeFileSync(
+      page,
+      html.replace(/<main\b[^>]*>/, (open) => `${open}<style>.x{</style><p aria-labelledby="nope" id="p1">x</p><label for="missing">y</label>`),
+    );
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    assert.ok(problems.some((p) => /css\/base\.css: unmatched "\}"/.test(p)), problems.join("\n"));
+    assert.ok(problems.some((p) => /inline <style>: unclosed/.test(p)), problems.join("\n"));
+    assert.ok(problems.some((p) => /aria-labelledby="nope".*doesn't exist/.test(p)), problems.join("\n"));
+    assert.ok(problems.some((p) => /for="missing".*doesn't exist/.test(p)), problems.join("\n"));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("an email address at the end of a sentence is accepted", () => {
+  const dir = copyOfSite();
+  try {
+    const page = join(dir, "site/code/index.html");
+    const html = readFileSync(page, "utf8");
+    writeFileSync(page, html.replace(/<main\b[^>]*>/, (open) => `${open}<p>Write to sam@samfeldstein.com.</p><p>Or to boss@other.example.</p>`));
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    assert.ok(!problems.some((p) => /email sam@samfeldstein\.com is not/.test(p)), problems.join("\n"));
+    assert.ok(problems.some((p) => /boss@other\.example is not one of/.test(p)), problems.join("\n"));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("check reports a page over its size budget", () => {
+  const dir = copyOfSite();
+  try {
+    const file = join(dir, "shared/facts.json");
+    const facts = JSON.parse(readFileSync(file, "utf8"));
+    facts.sizeBudgetKB = { default: 100, "/": 1 };
+    writeFileSync(file, JSON.stringify(facts, null, 2));
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    assert.ok(problems.some((p) => /index\.html: .* KB gzipped .* over its 1 KB budget/.test(p)), problems.join("\n"));
+    assert.equal(problems.filter((p) => /budget/.test(p)).length, 1, problems.join("\n"));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("maskProblems flags a mask on anything animated and allows a static one", () => {
+  assert.deepEqual(maskProblems(".ring::before { mask: radial-gradient(#000, transparent); }"), []);
+  assert.equal(maskProblems(".a { mask-image: url(x.svg); animation: spin 1s linear infinite; }").length, 1);
+  assert.equal(maskProblems(".a { animation: spin 1s; .b { -webkit-mask-image: linear-gradient(#000, #000); } }").length, 1);
+  assert.equal(maskProblems("@keyframes k { to { mask-image: linear-gradient(#000, #000); } }").length, 1);
+  assert.deepEqual(maskProblems(".a { animation: none; mask: url(data:image/png;base64,AAA); }"), []);
+});
+
+test("scriptProblems wants a self-calling function around the whole script", () => {
+  assert.deepEqual(scriptProblems("(() => {\n  const a = 1;\n})();\n"), []);
+  assert.deepEqual(scriptProblems("(function () { var a = 1; })();"), []);
+  assert.deepEqual(scriptProblems("(function () { var a = 1; }());"), []);
+  assert.deepEqual(scriptProblems("// note\n(async () => { await 1; })();"), []);
+  assert.equal(scriptProblems("const reduceMotion = 1;").length, 1);
+  assert.equal(scriptProblems("(() => {})();\nconst leak = 1;").length, 1);
+});
+
+test("hostProblems allows listed hosts and flags others", () => {
+  const allowed = ["samfeldstein.xyz", "www.w3.org"];
+  assert.deepEqual(hostProblems('createElementNS("http://www.w3.org/2000/svg", "svg")', allowed), []);
+  assert.equal(hostProblems('fetch("https://analytics.example.com/x")', allowed).length, 1);
+  assert.equal(hostProblems("//cdn.example.net/lib.js", allowed).length, 1);
+});
+
+test("check reports a non-module script file, an unwrapped inline script, and third-party hosts", () => {
+  const dir = copyOfSite();
+  try {
+    writeFileSync(join(dir, "site/js/leaky.js"), 'const x = 1;\nfetch("https://tracker.example.com/");\n');
+    const page = join(dir, "site/code/index.html");
+    const html = readFileSync(page, "utf8");
+    writeFileSync(
+      page,
+      html.replace(
+        /<main\b[^>]*>/,
+        (open) => `${open}<script>var leak = 1;</script><script src="/js/leaky.js"></script><script type="module">const fine = 1;</script><script src="https://cdn.example.org/lib.js"></script><img src="//img.example.io/a.png" alt=""><a href="https://example.com/">fine</a>`,
+      ),
+    );
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    assert.ok(problems.some((p) => /code\/index\.html: <script src="\/js\/leaky\.js"> isn't type="module"/.test(p)), problems.join("\n"));
+    assert.ok(!problems.some((p) => /js\/leaky\.js: script isn't wrapped/.test(p)), problems.join("\n"));
+    assert.equal(problems.filter((p) => /inline <script>: script isn't wrapped/.test(p)).length, 1, problems.join("\n"));
+    assert.ok(problems.some((p) => /js\/leaky\.js: refers to tracker\.example\.com/.test(p)), problems.join("\n"));
+    assert.ok(problems.some((p) => /code\/index\.html: inline <script>: script isn't wrapped/.test(p)), problems.join("\n"));
+    assert.ok(problems.some((p) => /<script> refers to cdn\.example\.org/.test(p)), problems.join("\n"));
+    assert.ok(problems.some((p) => /<img> refers to img\.example\.io/.test(p)), problems.join("\n"));
+    assert.ok(!problems.some((p) => /<a>/.test(p)), problems.join("\n"));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("check reports broken links, a missing slash, a bad fragment, a second h1, a missing alt and uncovered characters", () => {
+  const dir = copyOfSite();
+  try {
+    const page = join(dir, "site/code/index.html");
+    const html = readFileSync(page, "utf8");
+    writeFileSync(
+      page,
+      html.replace(
+        /<main\b[^>]*>/,
+        (open) => `${open}<a href="/nope/">a</a><a href="/photos">b</a><a href="#missing">c</a><h1>Two</h1><img src="/favicon.svg"><p>→</p>`,
+      ),
+    );
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    const has = (re) => assert.ok(problems.some((p) => re.test(p)), `${re}\n${problems.join("\n")}`);
+    has(/"\/nope\/" doesn't match a page/);
+    has(/"\/photos" should end in "\/"/);
+    has(/#missing, which doesn't exist/);
+    has(/exactly one <h1> \(found 2\)/);
+    has(/<img src="\/favicon\.svg"> has no alt/);
+    has(/characters outside the shipped fonts: → \(U\+2192\)/);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("check reports a hand edit between shared markers", () => {
+  const dir = copyOfSite();
+  try {
+    const page = join(dir, "site/index.html");
+    writeFileSync(page, readFileSync(page, "utf8").replace("Skip to Content", "Skip"));
+    const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+    assert.ok(problems.some((p) => /index\.html: out of date/.test(p)), problems.join("\n"));
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("check fails when a page loses its end matter or has unpaired shared markers", () => {
+  for (const edit of [
+    (html) => html.replace(/<!-- shared:endmatter -->[\s\S]*?<!-- \/shared:endmatter -->\n?/, ""),
+    (html) => html.replace("<!-- shared:endmatter -->", ""),
+    (html) => html.replace("<!-- /shared:endmatter -->", ""),
+    (html) => html.replace("<!-- /shared:skip-link -->", "<!-- /shared:skip-link -->\n<!-- shared:credit --><!-- /shared:credit -->"),
+  ]) {
+    const dir = copyOfSite();
+    try {
+      const page = join(dir, "site/photos/index.html");
+      writeFileSync(page, edit(readFileSync(page, "utf8")));
+      const problems = check({ root: join(dir, "site"), shared: join(dir, "shared") });
+      assert.ok(problems.some((p) => /^sync: .*photos\/index\.html: (missing|the <!-- shared:\w+ --> markers are unpaired or repeated)/.test(p)), problems.join("\n"));
+    } finally {
+      rmSync(dir, { recursive: true, force: true });
+    }
+  }
+});
+
+test("sync is idempotent", () => {
+  const dir = copyOfSite();
+  try {
+    const root = join(dir, "site");
+    const shared = join(dir, "shared");
+    sync({ root, shared });
+    assert.deepEqual(sync({ root, shared, write: false }).changed, []);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});

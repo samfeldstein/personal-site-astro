@@ -1,0 +1,20 @@
+{
+  "site": {
+    "url": "https://samfeldstein.xyz",
+    "title": "Sam Feldstein",
+    "author": "Sam Feldstein",
+    "description": "Sam Feldstein is a human being based in Denver, CO."
+  },
+  "emails": [
+    "sam@samfeldstein.com",
+    "sam@presswork.dev"
+  ],
+  "allowedHosts": [
+    "samfeldstein.xyz",
+    "notes.samfeldstein.xyz"
+  ],
+  "sizeBudgetKB": {
+    "default": 16,
+    "/photos/": 24
+  }
+}

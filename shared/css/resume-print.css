@@ -1,0 +1,130 @@
+@charset "UTF-8";
+@page {
+  margin: 0.5in 1.5in;
+  @bottom-center {
+    content: "Feldstein Resume — Page " counter(page) " of " counter(pages);
+    font-family: var(--font-2);
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+@media print {
+  :root {
+    --dark-grey: black;
+  }
+  html {
+    font-size: 12px;
+  }
+  body {
+    display: unset;
+    padding-bottom: 0;
+  }
+  header {
+    height: unset;
+    display: unset;
+    text-align: center;
+  }
+  h1 {
+    margin-bottom: 0.75rem;
+    gap: 0.25rem;
+    font-family: var(--font-2);
+    font-variant: small-caps;
+    text-transform: lowercase;
+  }
+  h1 .name {
+    font-size: 2rem;
+    font-weight: 350;
+    letter-spacing: 0.1em;
+  }
+  h1 .role {
+    font-size: 1.25rem;
+    font-weight: 350;
+    letter-spacing: 0.1em;
+  }
+  address {
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+  h2 {
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    border-top: 2px solid black;
+    font-size: 0.5rem;
+    font-weight: 800;
+    text-align: left;
+  }
+  .info {
+    font-size: 0.75rem;
+  }
+  div.volunteer p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  ul:not(.publications, .projects) {
+    list-style-type: disc !important;
+  }
+  a {
+    text-decoration: none;
+  }
+  address.print {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+  }
+  address.web {
+    display: none;
+  }
+  main {
+    gap: 0;
+  }
+  main > section {
+    border: none;
+    padding: 0;
+  }
+  main > section ul {
+    gap: 0.25rem;
+    padding-left: 2rem;
+  }
+  div.skills {
+    display: flex;
+    justify-content: space-between;
+  }
+  div.skills h3 {
+    margin-bottom: 0.5rem;
+  }
+  div.experience h3 {
+    margin-bottom: 0;
+  }
+  div.experience ul {
+    margin-top: 0.5em;
+  }
+  section.projects p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+  }
+  div.projects h3 {
+    margin-bottom: 0;
+  }
+  div.projects ul {
+    margin-top: 0.5em;
+  }
+  time,
+  .time {
+    font-size: 8px;
+    text-transform: none;
+  }
+  p.summary {
+    display: none;
+  }
+  .hide, .download-link, nav.contents, div.skills h3,
+  .no-print {
+    display: none !important;
+  }
+}
