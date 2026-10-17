@@ -26,6 +26,14 @@ These need decisions or changes outside the repo; they're also in `ISSUES.md`.
 - **Contents numbering.** Chapters use 1–3, other links continue in lowercase roman (iv–viii). The design audit noted roman usually comes before arabic in a book. The owner chose the current scheme; revisit only if asked.
 - **Gallery row size.** The design audit suggested smaller rows so three landscapes fit per row; kept larger because the owner asked for thumbnails at least twice the old size.
 
+## Open question: Git-connected builds or `wrangler deploy`?
+
+Analyzed 2026-10-17; the owner hasn't decided.
+
+- **Keep Workers Builds (current; recommended).** Every push to `main` deploys, with the checks run first (`npm run build`), so nothing unchecked goes live. The project list refreshes from GitHub on each build, other branches get preview builds, and changes made from a Claude cloud session deploy without anyone's laptop. The costs: each build clones the roughly 480 MB repo history and installs sharp and exiftool-vendored, which the build never uses, and a docs-only push to `main` also deploys.
+- **Direct `npx wrangler deploy`.** This is faster and deploys exactly what is on disk. But it needs `wrangler login` on the machine, so cloud sessions can't deploy. It can ship uncommitted or unchecked work unless a script runs the checks first. The project list only updates when someone deploys. Presswork deploys this way, but it has a Worker and secrets to manage; this site doesn't.
+- **To make builds cheaper without switching:** rewrite history to drop the old image cache (see ROADMAP), and keep sharp and exiftool-vendored out of the build install. They are only needed for `photos.mjs`, so they could move to a separate `package.json` or be installed on demand.
+
 ## Optional follow-ups
 
 - A Content-Security-Policy header (needs hashes for the two inline head scripts, which `sync.mjs` would compute).
