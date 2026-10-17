@@ -49,7 +49,7 @@ const metrics = args.length
   : await fromPageSpeed();
 
 const panel = `    <figure class="pagespeed">
-      <figcaption>Lighthouse, on a phone</figcaption>
+      <figcaption>Lighthouse scores</figcaption>
       <dl>
         <div><dt>Performance</dt><dd>${metrics.performanceScore}</dd></div>
         <div><dt>Blocking time</dt><dd>${metrics.blockingTime}</dd></div>

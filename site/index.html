@@ -301,25 +301,21 @@ h3 {
   order: 2;
   flex: 1;
   border-bottom: 2px dotted var(--leader);
-  transform: translateY(-0.25em);
 }
 .toc a::after {
   content: counter(page);
   order: 3;
-  min-width: 1.5em;
-  text-align: right;
 }
 .toc.roman a::after {
   content: counter(page, lower-roman);
 }
-.toc a:hover span,
-.toc a:focus-visible span {
+.toc a:hover,
+.toc a:focus-visible {
   color: var(--rubric);
-  font-style: italic;
 }
 .toc a:hover::before,
 .toc a:focus-visible::before {
-  border-bottom-color: var(--rubric);
+  border-bottom-color: currentColor;
 }
 
 .epigraph-page {
@@ -397,13 +393,13 @@ h3 {
   content: "";
   flex: 1;
   border-bottom: 1px dotted var(--leader);
-  transform: translateY(-0.25em);
 }
 .pagespeed dd {
   margin: 0;
 }
 .imprint {
   margin-top: 3rem;
+  font-size: 0.75em;
   display: grid;
   gap: 0.2em;
   font-variant: small-caps;
@@ -486,7 +482,7 @@ h3 {
 <!-- /shared:credit -->
     <!-- lighthouse -->
     <figure class="pagespeed">
-      <figcaption>Lighthouse, on a phone</figcaption>
+      <figcaption>Lighthouse scores</figcaption>
       <dl>
         <div><dt>Performance</dt><dd>100</dd></div>
         <div><dt>Blocking time</dt><dd>0 ms</dd></div>
