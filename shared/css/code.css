@@ -1,0 +1,359 @@
+.quote-container {
+  color-scheme: light dark;
+  --accent: light-dark(#999999, #595959);
+  --accent-2: light-dark(#f8f8f8, #252525);
+  background: var(--accent-2);
+  border-style: solid none;
+  border-width: 0.01em;
+  border-color: var(--accent);
+  padding: 1em;
+}
+.quote-container blockquote {
+  margin: 0;
+  position: relative;
+}
+.quote-container .attribution {
+  font-size: 0.7em;
+  margin-top: 3em;
+}
+.quote-container #quote {
+  text-align: left;
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: 0.025em;
+}
+
+.code-icons {
+  padding: 4rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.code-icons svg {
+  width: clamp(4rem, 10vw, 5rem);
+  fill: currentColor;
+}
+.code-icons figure {
+  width: fit-content;
+}
+.code-icons figcaption {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@charset "UTF-8";
+@font-face {
+  font-family: "Orbitron";
+  src: url("/static/fonts/orbitron.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Orbitron Fallback";
+  src: local("Arial");
+  unicode-range: U+0020-007F;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 80%;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/static/fonts/victor-mono.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/static/fonts/victor-mono-italic.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+.hide {
+  display: none;
+}
+
+.defer, ul.projects li, footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px auto 100vh;
+}
+
+.flex-column, ul.projects li, footer .etc {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.small-caps, a, h2 {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.unstyled-link, a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.unstyled-list, ul.projects {
+  list-style: none;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+:root {
+  --font-1: "Victor Mono", Monaco, "Lucida Console", monospace;
+  --font-2: "Orbitron", "Orbitron Fallback", sans-serif;
+  --text-color: oklch(0.887 0.234 143);
+  --background-color: oklch(0.207 0.013 78);
+  --accent: oklch(from var(--text-color) l c h / 0.5);
+  --accent-2: oklch(from var(--text-color) l c h / 0.15);
+}
+
+html {
+  background-color: var(--background-color);
+  scrollbar-color: var(--accent) var(--background-color);
+  scrollbar-width: thin;
+  scroll-padding: 2rem;
+}
+
+body {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  position: relative;
+  z-index: -2;
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0.5rem;
+  min-height: 100vh;
+  max-width: 70rem;
+  font-family: var(--font-1);
+  font-weight: 100;
+  text-shadow: 0rem 0.2rem 1em currentColor;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 2px, rgba(0, 0, 0, 0.1) 4px, rgba(0, 0, 0, 0.6) 0.45rem);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.25;
+  background: radial-gradient(circle, var(--text-color) 20%, var(--background-color) 100%);
+}
+
+a {
+  display: inline-block;
+  padding: 0.5em 0;
+}
+a:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
+}
+a:focus-visible {
+  outline: 0.1em solid white;
+}
+a.home {
+  display: block;
+  width: fit-content;
+}
+a.home::before {
+  content: "←";
+  margin-right: 0.25em;
+}
+a.name {
+  font-family: var(--font-2);
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+}
+
+hgroup {
+  margin: 1rem 0;
+  border: 0.1rem solid;
+  padding: 2rem 0;
+  background-color: var(--background-color);
+  text-align: center;
+}
+hgroup p {
+  font-style: italic;
+}
+
+h1 {
+  font-family: var(--font-2);
+  font-variant: small-caps;
+  font-weight: 200;
+  font-size: 2.5em;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+section.skills {
+  position: relative;
+  border-style: solid none;
+  border-width: 0.15rem;
+}
+section.skills::before, section.skills::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to bottom, var(--text-color) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 65%, var(--text-color) 100%);
+  width: 0.15rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+section.skills::before {
+  left: 0;
+}
+
+h2 {
+  position: absolute;
+  top: -25px;
+  left: 4rem;
+  margin: 0;
+  padding: 0 0.3em;
+  font-family: var(--font-2);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  z-index: 1;
+}
+h2::after {
+  background-color: var(--background-color);
+  content: "";
+  height: 0.2rem;
+  width: 100%;
+  left: 0;
+  top: 22px;
+  position: absolute;
+  z-index: -1;
+}
+
+div.hire {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-2);
+  font-size: 1.5em;
+  text-align: center;
+  text-wrap: nowrap;
+}
+div.hire a {
+  background-color: var(--background-color);
+  min-width: 250px;
+  border: 1px solid;
+  padding: 1em;
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  letter-spacing: 0.1em;
+}
+div.hire a:hover, div.hire a:focus {
+  background-color: var(--accent);
+  color: white;
+  text-shadow: unset;
+}
+
+main {
+  display: grid;
+  gap: 2rem;
+}
+
+ul.projects {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 2rem;
+}
+ul.projects li {
+  justify-content: space-between;
+  border: 1px solid;
+  box-shadow: 5px 5px 0 var(--background-color), 6px 6px 0;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+ul.projects .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  font-size: 0.75em;
+}
+
+.project-image {
+  text-align: center;
+}
+.project-image svg {
+  width: clamp(5rem, 40vw, 10rem);
+  fill: currentColor;
+}
+
+footer {
+  display: grid;
+  gap: 2rem;
+}
+footer .etc {
+  gap: 1em;
+  font-size: 0.75em;
+  text-align: right;
+}
+
+.quote-container {
+  background-color: var(--background-color) !important;
+  border: 0.1rem solid currentColor !important;
+  padding: 1em;
+}
+.quote-container blockquote {
+  margin: 0;
+}
+.quote-container .attribution {
+  margin-top: 4em;
+  font-size: 0.9em;
+  text-align: right;
+}
+
+#skiplink {
+  margin: 4px;
+  padding: 1rem;
+  background-color: var(--background-color);
+}
+
+::selection {
+  background-color: var(--accent-2);
+}
+
+.custom-cursor, html, a {
+  cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='24' height='24' fill='%23fff' stroke='%23fff' stroke-width='.004' viewBox='-48.16 -48.16 497.61 497.61'%3E%3Cg stroke='%2393ff7a' stroke-linecap='round' stroke-linejoin='round' stroke-width='70.627'%3E%3Cpath d='m46.943 401.292 119.962-144.031L46.943 0z' style='fill:%232ccf2f'/%3E%3Cpath d='m46.943 0 119.962 257.261 187.444.684z' style='fill:%232ccf2f'/%3E%3C/g%3E%3Cpath d='m46.943 401.292 119.962-144.031L46.943 0z' style='fill:%232ccf2f'/%3E%3Cpath d='m46.943 0 119.962 257.261 187.444.684z' style='fill:%232ccf2f'/%3E%3C/svg%3E"), auto;
+}

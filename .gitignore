@@ -1,32 +1,25 @@
-# generated types
-dist/
-.astro/
+# dependencies (only used by photos.mjs and wrangler)
+node_modules/
 
-# dependencies
-node_modules/*
-## For Cloudflare caching
-!node_modules/.astro/
+# baseline build of the old Astro site, for comparison
+.reference/
 
 # logs
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
 
-# environment variables
+# environment variables and local secrets
 .env
-.env.production
+.env.*
+.dev.vars
+
+# Cloudflare local dev state
+.wrangler/
 
 # macOS-specific files
 .DS_Store
 
-# jetbrains setting folder
+# editors
 .idea/
-
-# Other
 .vscode/
-.jampack/
-
-# Obsidian
 .obsidian/
 templates/

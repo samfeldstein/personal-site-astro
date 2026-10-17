@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en-us" prefix="og:https://ogp.me/ns#">
+<head>
+<!-- page: {"title":"Code","description":"My portfolio of personal and professional coding projects.","css":["code"],"fonts":["victor-mono","orbitron"]} -->
+<!-- shared:head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Code | Sam Feldstein</title>
+<meta name="author" content="Sam Feldstein">
+<meta name="description" content="My portfolio of personal and professional coding projects.">
+<link rel="canonical" href="https://samfeldstein.xyz/code/">
+<meta property="og:title" content="Code">
+<meta property="og:description" content="My portfolio of personal and professional coding projects.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samfeldstein.xyz/code/">
+<meta property="og:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
+<meta name="twitter:title" content="Code">
+<meta name="twitter:description" content="My portfolio of personal and professional coding projects.">
+<meta name="twitter:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+<meta name="apple-mobile-web-app-title" content="Sam Feldstein">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" href="/sitemap-index.xml">
+<link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
+<link rel="preload" href="/static/fonts/victor-mono.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/orbitron.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+figure {
+  margin: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, monospace;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@view-transition {
+  navigation: auto;
+}
+body {
+  color: var(--text-color);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  text-wrap: balance;
+}
+
+#skiplink {
+  z-index: 100;
+  position: absolute;
+  translate: -1000%;
+  transition-duration: 0.25s;
+}
+#skiplink:focus {
+  translate: 0;
+}
+.quote-container {
+  color-scheme: light dark;
+  --accent: light-dark(#999999, #595959);
+  --accent-2: light-dark(#f8f8f8, #252525);
+  background: var(--accent-2);
+  border-style: solid none;
+  border-width: 0.01em;
+  border-color: var(--accent);
+  padding: 1em;
+}
+.quote-container blockquote {
+  margin: 0;
+  position: relative;
+}
+.quote-container .attribution {
+  font-size: 0.7em;
+  margin-top: 3em;
+}
+.quote-container #quote {
+  text-align: left;
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: 0.025em;
+}
+
+.code-icons {
+  padding: 4rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.code-icons svg {
+  width: clamp(4rem, 10vw, 5rem);
+  fill: currentColor;
+}
+.code-icons figure {
+  width: fit-content;
+}
+.code-icons figcaption {
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@charset "UTF-8";
+@font-face {
+  font-family: "Orbitron";
+  src: url("/static/fonts/orbitron.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Orbitron Fallback";
+  src: local("Arial");
+  unicode-range: U+0020-007F;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 80%;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/static/fonts/victor-mono.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 100 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Victor Mono";
+  src: url("/static/fonts/victor-mono-italic.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 100 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+.hide {
+  display: none;
+}
+
+.defer, ul.projects li, footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px auto 100vh;
+}
+
+.flex-column, ul.projects li, footer .etc {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.small-caps, a, h2 {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.unstyled-link, a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.unstyled-list, ul.projects {
+  list-style: none;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+:root {
+  --font-1: "Victor Mono", Monaco, "Lucida Console", monospace;
+  --font-2: "Orbitron", "Orbitron Fallback", sans-serif;
+  --text-color: oklch(0.887 0.234 143);
+  --background-color: oklch(0.207 0.013 78);
+  --accent: oklch(from var(--text-color) l c h / 0.5);
+  --accent-2: oklch(from var(--text-color) l c h / 0.15);
+}
+
+html {
+  background-color: var(--background-color);
+  scrollbar-color: var(--accent) var(--background-color);
+  scrollbar-width: thin;
+  scroll-padding: 2rem;
+}
+
+body {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  position: relative;
+  z-index: -2;
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0.5rem;
+  min-height: 100vh;
+  max-width: 70rem;
+  font-family: var(--font-1);
+  font-weight: 100;
+  text-shadow: 0rem 0.2rem 1em currentColor;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 2px, rgba(0, 0, 0, 0.1) 4px, rgba(0, 0, 0, 0.6) 0.45rem);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0.25;
+  background: radial-gradient(circle, var(--text-color) 20%, var(--background-color) 100%);
+}
+
+a {
+  display: inline-block;
+  padding: 0.5em 0;
+}
+a:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px var(--text-color), 0 0 30px var(--text-color), 0 0 40px var(--text-color), 0 0 55px var(--text-color), 0 0 75px var(--text-color), 2px 2px 2px rgba(206, 89, 55, 0);
+}
+a:focus-visible {
+  outline: 0.1em solid white;
+}
+a.home {
+  display: block;
+  width: fit-content;
+}
+a.home::before {
+  content: "←";
+  margin-right: 0.25em;
+}
+a.name {
+  font-family: var(--font-2);
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+}
+
+hgroup {
+  margin: 1rem 0;
+  border: 0.1rem solid;
+  padding: 2rem 0;
+  background-color: var(--background-color);
+  text-align: center;
+}
+hgroup p {
+  font-style: italic;
+}
+
+h1 {
+  font-family: var(--font-2);
+  font-variant: small-caps;
+  font-weight: 200;
+  font-size: 2.5em;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+section.skills {
+  position: relative;
+  border-style: solid none;
+  border-width: 0.15rem;
+}
+section.skills::before, section.skills::after {
+  position: absolute;
+  content: "";
+  background: linear-gradient(to bottom, var(--text-color) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0) 65%, var(--text-color) 100%);
+  width: 0.15rem;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+section.skills::before {
+  left: 0;
+}
+
+h2 {
+  position: absolute;
+  top: -25px;
+  left: 4rem;
+  margin: 0;
+  padding: 0 0.3em;
+  font-family: var(--font-2);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  z-index: 1;
+}
+h2::after {
+  background-color: var(--background-color);
+  content: "";
+  height: 0.2rem;
+  width: 100%;
+  left: 0;
+  top: 22px;
+  position: absolute;
+  z-index: -1;
+}
+
+div.hire {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-family: var(--font-2);
+  font-size: 1.5em;
+  text-align: center;
+  text-wrap: nowrap;
+}
+div.hire a {
+  background-color: var(--background-color);
+  min-width: 250px;
+  border: 1px solid;
+  padding: 1em;
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  letter-spacing: 0.1em;
+}
+div.hire a:hover, div.hire a:focus {
+  background-color: var(--accent);
+  color: white;
+  text-shadow: unset;
+}
+
+main {
+  display: grid;
+  gap: 2rem;
+}
+
+ul.projects {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 2rem;
+}
+ul.projects li {
+  justify-content: space-between;
+  border: 1px solid;
+  box-shadow: 5px 5px 0 var(--background-color), 6px 6px 0;
+  padding: 0.5em 1em;
+  text-align: center;
+}
+ul.projects .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  font-size: 0.75em;
+}
+
+.project-image {
+  text-align: center;
+}
+.project-image svg {
+  width: clamp(5rem, 40vw, 10rem);
+  fill: currentColor;
+}
+
+footer {
+  display: grid;
+  gap: 2rem;
+}
+footer .etc {
+  gap: 1em;
+  font-size: 0.75em;
+  text-align: right;
+}
+
+.quote-container {
+  background-color: var(--background-color) !important;
+  border: 0.1rem solid currentColor !important;
+  padding: 1em;
+}
+.quote-container blockquote {
+  margin: 0;
+}
+.quote-container .attribution {
+  margin-top: 4em;
+  font-size: 0.9em;
+  text-align: right;
+}
+
+#skiplink {
+  margin: 4px;
+  padding: 1rem;
+  background-color: var(--background-color);
+}
+
+::selection {
+  background-color: var(--accent-2);
+}
+
+.custom-cursor, html, a {
+  cursor: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' width='24' height='24' fill='%23fff' stroke='%23fff' stroke-width='.004' viewBox='-48.16 -48.16 497.61 497.61'%3E%3Cg stroke='%2393ff7a' stroke-linecap='round' stroke-linejoin='round' stroke-width='70.627'%3E%3Cpath d='m46.943 401.292 119.962-144.031L46.943 0z' style='fill:%232ccf2f'/%3E%3Cpath d='m46.943 0 119.962 257.261 187.444.684z' style='fill:%232ccf2f'/%3E%3C/g%3E%3Cpath d='m46.943 401.292 119.962-144.031L46.943 0z' style='fill:%232ccf2f'/%3E%3Cpath d='m46.943 0 119.962 257.261 187.444.684z' style='fill:%232ccf2f'/%3E%3C/svg%3E"), auto;
+}
+</style>
+<script type="speculationrules">
+{ "prefetch": [{ "where": { "and": [{ "href_matches": "/*" }, { "not": { "href_matches": "/static/*" } }] }, "eagerness": "eager" }] }
+</script>
+<script>
+  (function () {
+    if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) return;
+    addEventListener("load", function () {
+      var seen = {};
+      seen[location.pathname] = true;
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+        var path = a.pathname;
+        if (a.origin !== location.origin || seen[path] || !/\/$/.test(path)) return;
+        seen[path] = true;
+        var link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = path;
+        document.head.appendChild(link);
+      });
+    });
+  })();
+</script>
+<!-- /shared:head -->
+</head>
+<body>
+  <!-- shared:skip-link -->
+<a id="skiplink" href="#main-content">Skip to Content</a>
+<!-- /shared:skip-link -->
+  <header>
+    <a class="home" href="/">Home</a>
+    <hgroup>
+      <h1>Code</h1>
+      <p>Personal and professional projects.</p>
+    </hgroup>
+  </header>
+  <main id="main-content">
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="code-icons">
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="m128 96 34.9 395.8L319.5 544l157.6-52.2L512 96H128zm308.2 127.9H252.4l4.1 49.4h175.6l-13.6 148.4-97.9 27v.3h-1.1l-98.7-27.3-6-75.8h47.7L266 384l53.5 14.5 53.7-14.5 6-62.2H212.3l-12.8-145.6h241.1l-4.4 47.7z"
+            ></path>
+          </svg>
+          <figcaption>HTML</figcaption>
+        </figure>
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M472.3 96H96v376.3c0 19 7.6 37.2 21 50.7s31.7 21 50.7 21h304.6c19 0 37.2-7.6 50.7-21s21-31.7 21-50.7V167.7c0-19-7.6-37.2-21-50.7s-31.7-21-50.7-21zm-43.9 399.4c-7.7-8.5-11.7-20.7-12-36.6h31.3c.2 14.1 5.1 21.1 14.8 21.1 4.9 0 8.4-1.6 10.5-4.7 2-3.1 3-8 3-14.8 0-5.4-1.3-9.9-4-13.4-3.5-4.2-8.1-7.5-13.2-9.5l-11.6-5.5c-10.3-4.9-17.8-10.8-22.5-17.6-4.5-6.8-6.7-16.3-6.7-28.4 0-13.6 4-24.6 11.8-33.1 8.1-8.5 19.1-12.7 33.2-12.7 13.6 0 24.1 4.2 31.5 12.5 7.5 8.4 11.5 20.3 11.8 35.9h-30.1c.2-5.1-.9-10.2-3-14.8-1.7-3.4-5-5.1-10-5.1-8.8 0-13.2 5.2-13.2 15.7 0 5.3 1.1 9.4 3.2 12.6 3.1 3.5 7 6.2 11.4 7.8l11.1 4.9c11.5 5.3 19.7 11.7 24.8 19.4 5.1 7.7 7.6 18 7.6 31 0 15.5-4 27.4-12.3 35.7-8.2 8.3-19.5 12.5-34.1 12.5-14.6 0-25.6-4.2-33.4-12.7zm-101 0c-7.7-8.5-11.7-20.7-12-36.6h31.3c.2 14.1 5.1 21.1 14.8 21.1 4.9 0 8.4-1.6 10.4-4.7s3-8 3-14.8c0-5.4-1.3-9.9-3.9-13.4-3.5-4.2-8.1-7.5-13.2-9.5l-11.6-5.5c-10.3-4.9-17.8-10.8-22.5-17.6-4.5-6.8-6.7-16.3-6.7-28.4 0-13.6 4-24.6 11.8-33.1 8.1-8.5 19.1-12.7 33.2-12.7 13.6 0 24.1 4.2 31.4 12.5 7.6 8.4 11.5 20.3 11.9 35.9h-30.1c.2-5.1-.9-10.2-3-14.8-1.7-3.4-5-5.1-10-5.1-8.8 0-13.2 5.2-13.2 15.7 0 5.3 1.1 9.4 3.2 12.6 3.1 3.5 7 6.2 11.4 7.8l11.1 4.9c11.5 5.3 19.7 11.7 24.8 19.4 5.1 7.7 7.6 18 7.6 31 0 15.5-4.1 27.4-12.3 35.7-8.2 8.3-19.5 12.5-34.1 12.5-14.6 0-25.6-4.2-33.4-12.7zm-105.6 1.1c-8.4-7.7-12.5-19.2-12.5-34.5v-75.4c0-15.2 4.4-26.7 13.2-34.6 8.9-7.8 20.7-11.8 35.2-11.8 14.1 0 25.2 4 33.4 12 8.3 8 12.5 20 12.5 35.9v6h-33.1v-5.8c0-6.1-1.3-10.7-4-13.6-1.1-1.5-2.6-2.7-4.3-3.5-1.7-.8-3.5-1.2-5.4-1.1-5.4 0-9.2 1.8-11.4 5.6-2.3 5.2-3.3 10.8-3 16.4v65.5c0 13.7 4.8 20.6 14.4 20.8 4.5 0 7.9-1.6 10.2-4.8 2.5-4.1 3.7-8.8 3.5-13.6v-4.9h33.1v5.1c0 10.6-2.1 19.5-6.2 26.6-4 6.9-9.9 12.5-17.1 16-7.7 3.7-16.1 5.5-24.6 5.3-14.2 0-25.5-3.9-33.8-11.6z"
+            ></path>
+          </svg>
+          <figcaption>CSS</figcaption>
+        </figure>
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M96 96v448h448V96H96zm243.8 349.4c0 43.6-25.6 63.5-62.9 63.5-33.7 0-53.2-17.4-63.2-38.5l34.3-20.7c6.6 11.7 12.6 21.6 27.1 21.6 13.8 0 22.6-5.4 22.6-26.5V301.7h42.1v143.7zm99.6 63.5c-39.1 0-64.4-18.6-76.7-43l34.3-19.8c9 14.7 20.8 25.6 41.5 25.6 17.4 0 28.6-8.7 28.6-20.8 0-14.4-11.4-19.5-30.7-28l-10.5-4.5c-30.4-12.9-50.5-29.2-50.5-63.5 0-31.6 24.1-55.6 61.6-55.6 26.8 0 46 9.3 59.8 33.7L464 354c-7.2-12.9-15-18-27.1-18-12.3 0-20.1 7.8-20.1 18 0 12.6 7.8 17.7 25.9 25.6l10.5 4.5c35.8 15.3 55.9 31 55.9 66.2 0 37.8-29.8 58.6-69.7 58.6z"
+            ></path>
+          </svg>
+          <figcaption>JavaScript</figcaption>
+        </figure>
+        <figure>
+          <!-- https://www.svgrepo.com/svg/373446/astro --><!-- <svg {...Astro.props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+  ><path
+    d="M5.9 18.847a7.507 7.507 0 0 0-.572 2.624 3.265 3.265 0 0 0 .551 1.553 7.427 7.427 0 0 0 2.093 1.681l5.128 3.414a7.332 7.332 0 0 0 2.1 1.168 3.239 3.239 0 0 0 1.5 0 7.381 7.381 0 0 0 2.117-1.16L24 24.711a7.512 7.512 0 0 0 2.117-1.688 3.241 3.241 0 0 0 .55-1.563 7.515 7.515 0 0 0-.587-2.643L21.547 4.551a3.973 3.973 0 0 0-.54-1.3 1.733 1.733 0 0 0-.7-.51 3.972 3.972 0 0 0-1.4-.122h-5.902a3.932 3.932 0 0 0-1.4.125 1.713 1.713 0 0 0-.7.512 3.94 3.94 0 0 0-.535 1.3L5.9 18.848Zm13.24-13.2a3.329 3.329 0 0 1 .441 1.093l3.892 12.784a16.168 16.168 0 0 0-4.653-1.573l-2.529-8.56a.331.331 0 0 0-.513-.169.323.323 0 0 0-.119.169l-2.5 8.557a16.14 16.14 0 0 0-4.674 1.579l3.908-12.784a3.281 3.281 0 0 1 .442-1.094 1.458 1.458 0 0 1 .582-.43 3.31 3.31 0 0 1 1.175-.1h2.793a3.314 3.314 0 0 1 1.176.1 1.454 1.454 0 0 1 .583.432ZM16.127 21.06a5.551 5.551 0 0 0 3.4-.923 2.8 2.8 0 0 1-.207 2.182 3.938 3.938 0 0 1-1.547 1.481c-.674.428-1.254.8-1.254 1.787a2.079 2.079 0 0 0 .209.914 2.49 2.49 0 0 1-1.535-2.3v-.061c0-.683 0-1.524-.962-1.524a1.028 1.028 0 0 0-.391.077 1.021 1.021 0 0 0-.552.551 1.03 1.03 0 0 0-.079.391 3.769 3.769 0 0 1-.988-2.644 4.206 4.206 0 0 1 .175-1.248c.4.757 1.92 1.32 3.731 1.32Z"
+  ></path></svg
+> --><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
+            <path
+              d="M50.4 78.5a75.1 75.1 0 0 0-28.5 6.9l24.2-65.7c.7-2 1.9-3.2 3.4-3.2h29c1.5 0 2.7 1.2 3.4 3.2l24.2 65.7s-11.6-7-28.5-7L67 45.5c-.4-1.7-1.6-2.8-2.9-2.8-1.3 0-2.5 1.1-2.9 2.7L50.4 78.5Zm-1.1 28.2Zm-4.2-20.2c-2 6.6-.6 15.8 4.2 20.2a17.5 17.5 0 0 1 .2-.7 5.5 5.5 0 0 1 5.7-4.5c2.8.1 4.3 1.5 4.7 4.7.2 1.1.2 2.3.2 3.5v.4c0 2.7.7 5.2 2.2 7.4a13 13 0 0 0 5.7 4.9v-.3l-.2-.3c-1.8-5.6-.5-9.5 4.4-12.8l1.5-1a73 73 0 0 0 3.2-2.2 16 16 0 0 0 6.8-11.4c.3-2 .1-4-.6-6l-.8.6-1.6 1a37 37 0 0 1-22.4 2.7c-5-.7-9.7-2-13.2-6.2Z"
+            ></path>
+          </svg>
+          <figcaption>Astro</figcaption>
+        </figure>
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M535.6 300.1L340 104.5C334.6 99 327.2 96 319.6 96C312 96 304.6 99 299.2 104.4L258.5 145L310 196.5C337.1 187.4 362.7 213.3 353.4 240.2L403.1 289.9C437.3 278.1 464.3 320.9 438.6 346.6C412.1 373.1 368.4 343.7 382.6 309.3L336.3 263L336.3 384.9C361.6 397.4 358.6 426.7 345.4 439.9C339 446.3 330.2 450 321.1 450C312 450 303.3 446.4 296.8 439.9C279.2 422.3 285.7 393 308 383.9L308 260.9C287.2 252.4 283.4 230.2 289.4 215.9L238.6 165L104.5 299.1C99 304.6 96 311.9 96 319.5C96 327.1 99 334.5 104.5 339.9L300.1 535.6C305.5 541 312.8 544 320.5 544C328.2 544 335.5 541 340.9 535.6L535.6 340.9C541 335.5 544 328.1 544 320.5C544 312.9 541 305.5 535.6 300.1z"
+            ></path>
+          </svg>
+          <figcaption>Git</figcaption>
+        </figure>
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M73.4 182.6C60.9 170.1 60.9 149.8 73.4 137.3C85.9 124.8 106.2 124.8 118.7 137.3L278.7 297.3C291.2 309.8 291.2 330.1 278.7 342.6L118.7 502.6C106.2 515.1 85.9 515.1 73.4 502.6C60.9 490.1 60.9 469.8 73.4 457.3L210.7 320L73.4 182.6zM288 448L544 448C561.7 448 576 462.3 576 480C576 497.7 561.7 512 544 512L288 512C270.3 512 256 497.7 256 480C256 462.3 270.3 448 288 448z"
+            ></path>
+          </svg>
+          <figcaption>Bash</figcaption>
+        </figure>
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              d="M407.9 383.9L177.1 381C176.4 381 175.7 380.8 175.1 380.5C174.5 380.2 173.9 379.7 173.5 379.1C173.1 378.5 172.8 377.8 172.8 377.1C172.8 376.4 172.8 375.7 173 375C173.4 373.9 174.1 372.9 175.1 372.2C176.1 371.5 177.2 371 178.4 371L411.3 368.1C438.9 366.8 468.8 344.5 479.3 317.3L492.6 282.8C493 281.9 493.1 280.9 493.1 279.9C493.1 279.4 493 278.8 492.9 278.3C485.5 246.1 467.9 217.2 442.6 196C417.3 174.8 385.9 162.3 352.9 160.5C319.9 158.7 287.3 167.8 259.9 186.2C232.5 204.6 211.9 231.5 201.1 262.7C189.8 254.2 176.2 249.4 162.1 249C148 248.6 134.1 252.5 122.3 260.4C110.5 268.3 101.5 279.5 96.4 292.7C91.3 305.9 90.5 320.3 94 334C41.7 335.5-.2 378.1-.2 430.5C-.2 435.2 .1 439.8 .8 444.5C1 445.6 1.5 446.6 2.3 447.3C3.1 448 4.2 448.4 5.2 448.4L431.3 448.5C431.3 448.5 431.4 448.5 431.4 448.5C432.6 448.5 433.7 448.1 434.7 447.4C435.7 446.7 436.3 445.7 436.7 444.5L440 433.2C443.9 419.8 442.4 407.4 435.9 398.3C429.9 389.9 419.8 385 407.7 384.4zM513.8 285.1C511.7 285.1 509.5 285.2 507.4 285.3C506.6 285.4 505.9 285.6 505.3 286.1C504.7 286.6 504.3 287.2 504 287.9L494.9 319.1C491 332.5 492.5 344.9 499 354C505 362.4 515.1 367.3 527.2 367.9L576.4 370.8C577.1 370.8 577.8 371 578.4 371.3C579 371.6 579.5 372.1 579.9 372.7C580.3 373.3 580.6 374 580.7 374.7C580.8 375.4 580.7 376.2 580.5 376.8C580.1 377.9 579.4 378.9 578.4 379.6C577.4 380.3 576.3 380.8 575.1 380.8L524 383.7C496.2 385 466.3 407.3 455.9 434.5L452.2 444.1C452 444.5 452 444.9 452 445.4C452 445.9 452.2 446.2 452.4 446.6C452.6 447 453 447.3 453.3 447.5C453.6 447.7 454.1 447.8 454.5 447.8C454.5 447.8 454.6 447.8 454.6 447.8L630.5 447.8C631.5 447.8 632.5 447.5 633.3 446.9C634.1 446.3 634.7 445.4 635 444.5C638.1 433.4 639.7 422 639.7 410.5C639.7 341.2 583.2 285 513.6 285z"
+            ></path>
+          </svg>
+          <figcaption>Cloudflare</figcaption>
+        </figure>
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+            <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+            <path
+              d="M164.4 404.5 265.1 348l1.7-4.9-1.7-2.7h-4.9l-16.8-1-57.5-1.6-49.9-2.1-48.3-2.6-12.2-2.6-11.4-15 1.2-7.5 10.2-6.9 14.7 1.3c18.9 1.3 45.9 3.1 81 5.6l35.2 2.1 52.2 5.4h8.3l1.2-3.4-2.8-2.1-2.2-2.1-50.3-34.1-54.4-36-28.5-20.7-15.4-10.5-7.8-9.8-3.4-21.5 14-15.4 18.8 1.3 4.8 1.3 19 14.7 40.7 31.5 53.1 39.1 7.8 6.5 3.1-2.2.4-1.6-3.5-5.8-28.9-52.2-30.8-53.1-13.7-22-3.6-13.2c-1.3-5.4-2.2-10-2.2-15.5l15.9-21.6 8.8-2.8 21.2 2.8 8.9 7.8 13.2 30.2 21.4 47.5 33.2 64.6 9.7 19.2 5.2 17.8 1.9 5.4h3.4v-3.1l2.7-36.4 5-44.7 4.9-57.5 1.7-16.2 8-19.4 15.9-10.5 12.4 5.9 10.2 14.7-1.4 9.5-6.1 39.5-11.9 61.9-7.8 41.5h4.5l5.2-5.2 21-27.8 35.2-44.1 15.5-17.5 18.1-19.3 11.6-9.2h22l16.2 24.1-7.3 24.9-22.7 28.7-18.8 24.4-27 36.3-16.8 29 1.6 2.3 4-.4 60.9-13 32.9-5.9 39.3-6.7 17.8 8.3 1.9 8.4-7 17.2-42 10.4-49.2 9.8-73.3 17.3-.9.7 1 1.3 33 3.1 14.1.8h34.6l64.4 4.8 16.8 11.1 10.1 13.6-1.7 10.4-25.9 13.2c-15.5-3.7-54.4-12.9-116.6-27.7l-28-7h-3.9v2.3l23.3 22.8 42.7 38.6 53.5 49.8 2.7 12.3-6.9 9.7-7.3-1-47-35.4-18.1-15.9-41.1-34.6h-2.7v3.6l9.5 13.9 50 75.2 2.6 23-3.6 7.5-13 4.5-14.2-2.6-29.3-41.1-30.2-46.3-24.4-41.5-3 1.7-14.4 154.8-6.7 7.9-15.5 5.9-13-9.8-6.9-15.9 6.9-31.5 8.3-41.1 6.7-32.7 6.1-40.6 3.6-13.5-.2-.9-3 .4-30.6 42-46.5 62.9-36.8 39.4-8.8 3.5-15.3-7.9 1.4-14.1 8.5-12.6 50.9-64.8 30.7-40.2 19.8-23.2-.1-3.4h-1.2L151.4 460l-24.1 3.1-10.4-9.7 1.3-15.9 4.9-5.2 40.7-28-.1.1v.1z"
+            ></path>
+          </svg>
+          <figcaption>Claude</figcaption>
+        </figure>
+      </div>
+    </section>
+    <div class="hire">
+      <a class="github" href="https://github.com/samfeldstein">GitHub</a
+      ><a href="mailto:sam@presswork.dev">Hire me</a>
+    </div>
+    <section>
+      <h2 class="visually-hidden">Projects</h2>
+      <ul class="projects">
+        <li class="project">
+          <a class="name" href="https://littlepeakspediatrictherapy.com/"
+            >Little Peaks Pediatric Therapy</a
+          >
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+              <path
+                d="M384 128c0-35.3-28.7-64-64-64s-64 28.7-64 64 28.7 64 64 64 64-28.7 64-64M280.9 233.3c-23.7-8.4-44.5-24.3-58.8-45.8l-19.5-29.3c-9.8-14.7-29.6-18.6-44.3-8.8s-18.7 29.6-8.9 44.4l19.5 29.2c18.1 27.1 42.8 48.4 71.1 62.4V544c0 17.7 14.3 32 32 32s32-14.3 32-32v-96h32v96c0 17.7 14.3 32 32 32s32-14.3 32-32V285.6c29.1-14.2 54.4-36.2 72.7-64.2l18.2-27.9c9.6-14.8 5.4-34.6-9.4-44.3s-34.6-5.5-44.3 9.4L419 186.4c-21.8 33.4-58.9 53.6-98.8 53.6-12.6 0-24.9-2-36.6-5.8-.9-.3-1.8-.7-2.7-.9"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Website</span><span>September 2026</span></div>
+        </li>
+        <li class="project">
+          <a class="name" href="https://shelftalkers.samfeldstein.xyz">Shelf Talker Generator</a>
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M576 304c0 132.5-114.6 240-256 240-37.1 0-72.3-7.4-104.1-20.7L97.5 574.1c-9.4 4-20.2 1.7-27.1-5.8-6.9-7.5-8.4-18.5-3.6-27.5l48.8-92.2C83.2 408.3 64 358.3 64 304 64 171.5 178.6 64 320 64s256 107.5 256 240z"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Web App</span><span>June 2025</span></div>
+        </li>
+        <li class="project">
+          <a class="name" href="https://github.com/samfeldstein/writing-tracker"
+            >The Simplest Writing Tracker</a
+          >
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M96 128c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V192c0-35.3-28.7-64-64-64H96zm16 64h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zM96 304c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm112-112h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm-16 112c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h224c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16H208c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm80-176c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm80-80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16zm80-80c0-8.8 7.2-16 16-16h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32zm16 80h32c8.8 0 16 7.2 16 16v32c0 8.8-7.2 16-16 16h-32c-8.8 0-16-7.2-16-16v-32c0-8.8 7.2-16 16-16z"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Terminal App</span><span>May 2025</span></div>
+        </li>
+        <li class="project">
+          <a class="name" href="https://regreenbigbend.com">Regreen Big Bend</a>
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Pro v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M320 32c7 0 13.7 3.1 18.3 8.5l136 160c6.1 7.1 7.4 17.1 3.5 25.6-3.9 8.5-12.4 13.9-21.8 13.9h-24.9l75.2 88.5c6.1 7.1 7.4 17.1 3.5 25.6-3.9 8.5-12.4 13.9-21.8 13.9h-38.5l88.8 104.5c6.1 7.1 7.4 17.1 3.5 25.6-3.9 8.5-12.4 13.9-21.8 13.9H352v64c0 17.7-14.3 32-32 32s-32-14.3-32-32v-64H120c-9.4 0-17.9-5.4-21.8-13.9-3.9-8.5-2.6-18.5 3.5-25.6L190.5 368H152c-9.4 0-17.9-5.4-21.8-13.9-3.9-8.5-2.6-18.5 3.5-25.6l75.2-88.5H184c-9.4 0-17.9-5.4-21.8-13.9-3.9-8.5-2.6-18.5 3.5-25.6l136-160C306.3 35.1 313 32 320 32z"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Website</span><span>February 2025</span></div>
+        </li>
+        <li class="project">
+          <a class="name" href="https://danceophile.com">Postoley Dance Ensemble</a>
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+              <path
+                d="M360-120v-200q-62-5-121.5-14T120-360l20-80q83 23 168 31.5t172 8.5q86 0 171-8.5T820-440l20 80q-60 17-119.5 26T600-320v200H360Zm120-320q-34 0-57-23t-23-57q0-33 23-56.5t57-23.5q33 0 56.5 23.5T560-520q0 34-23.5 57T480-440ZM180-560q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T240-620q0 26-17.5 43T180-560Zm600 0q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T840-620q0 26-17.5 43T780-560ZM290-710q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T350-770q0 26-17.5 43T290-710Zm380 0q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T730-770q0 26-17.5 43T670-710Zm-190-50q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T540-820q0 26-17.5 43T480-760Z"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Website</span><span>February 2025</span></div>
+        </li>
+        <li class="project">
+          <a class="name" href="https://notes.samfeldstein.xyz/">Digital Notebook</a>
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M184 120c0-30.9 25.1-56 56-56h24c17.7 0 32 14.3 32 32v448c0 17.7-14.3 32-32 32h-32c-29.8 0-54.9-20.4-62-48h-2c-44.2 0-80-35.8-80-80 0-18 6-34.6 16-48-19.4-14.6-32-37.8-32-64 0-30.9 17.6-57.8 43.2-71.1-7.1-12-11.2-26-11.2-40.9 0-44.2 35.8-80 80-80v-24zm272 0v24c44.2 0 80 35.8 80 80 0 15-4.1 29-11.2 40.9C550.5 278.2 568 305 568 336c0 26.2-12.6 49.4-32 64 10 13.4 16 30 16 48 0 44.2-35.8 80-80 80h-2c-7.1 27.6-32.2 48-62 48h-32c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32h24c30.9 0 56 25.1 56 56z"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Website</span><span>October 2024</span></div>
+        </li>
+        <li class="project">
+          <a class="name" href="https://prairierosearena.com/">Prairie Rose Arena</a>
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="m182.2 140.1-51.4 231.4c14.7 17.4 36.6 28.5 61.2 28.5h256c24.6 0 46.5-11.1 61.2-28.5l-51.4-231.4c-5.7-25.8-28.6-44.1-55-44.1-12.2 0-24.1 4-33.8 11.3l-4.7 3.5c-26.3 19.7-62.4 19.7-88.6 0l-4.7-3.5C261.2 100 249.4 96 237.2 96c-26.4 0-49.3 18.3-55 44.1zM64 320c0-17.7-14.3-32-32-32S0 302.3 0 320c0 106 86 192 192 192h256c106 0 192-86 192-192 0-17.7-14.3-32-32-32s-32 14.3-32 32c0 70.7-57.3 128-128 128H192c-70.7 0-128-57.3-128-128z"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Website</span><span>May 2024</span></div>
+        </li>
+        <li class="project">
+          <a class="name" href="https://pairingapp.netlify.app">Pairings</a>
+          <div class="project-image">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                d="M467.8 98.4c12-5 25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6 0 8.5-3.4 16.6-9.4 22.6l-64 64c-9.2 9.2-22.9 11.9-34.9 6.9S448 268.9 448 256v-32h-32c-10.1 0-19.6 4.7-25.6 12.8L358 280l-40-53.3 21.2-28.3c18.1-24.2 46.6-38.4 76.8-38.4h32v-32c0-12.9 7.8-24.6 19.8-29.6zM218 360l40 53.3-21.2 28.3C218.7 465.8 190.2 480 160 480H96c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c10.1 0 19.6-4.7 25.6-12.8L218 360zm284.6 174.6c-9.2 9.2-22.9 11.9-34.9 6.9S448 524.9 448 512v-32h-32c-30.2 0-58.7-14.2-76.8-38.4L185.6 236.8c-6-8.1-15.5-12.8-25.6-12.8H96c-17.7 0-32-14.3-32-32s14.3-32 32-32h64c30.2 0 58.7 14.2 76.8 38.4l153.6 204.8c6 8.1 15.5 12.8 25.6 12.8h32v-32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l64 64c6 6 9.4 14.1 9.4 22.6 0 8.5-3.4 16.6-9.4 22.6l-64 64z"
+              />
+            </svg>
+          </div>
+          <div class="info"><span>Web App</span><span>May 2024</span></div>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="quote-container">
+      <blockquote id="quote"></blockquote>
+      <p class="attribution">
+        <span id="speaker"></span><cite id="work"></cite><span id="verse"></span
+        ><span id="year"></span>
+      </p>
+    </div>
+    <div class="etc">
+      <div>Denver, CO</div>
+      <div>Powered by <a href="https://astro.build">Astro</a></div>
+      <!-- shared:copyright -->
+<div class="copyright">&copy; 2022 – 2026 Samuel Feldstein</div>
+<!-- /shared:copyright -->
+    </div>
+  </footer>
+  <script type="module" src="/js/quote.js?v=355ab24d"></script>
+</body>
+</html>

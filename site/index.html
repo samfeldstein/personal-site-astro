@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="en-us" prefix="og:https://ogp.me/ns#">
+<head>
+<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["home"],"fonts":["oswald","noto-serif"]} -->
+<!-- shared:head -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Sam Feldstein</title>
+<meta name="author" content="Sam Feldstein">
+<meta name="description" content="Sam Feldstein is human being based in Denver, CO.">
+<link rel="canonical" href="https://samfeldstein.xyz/">
+<meta property="og:title" content="Home">
+<meta property="og:description" content="Sam Feldstein is human being based in Denver, CO.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://samfeldstein.xyz/">
+<meta property="og:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
+<meta name="twitter:title" content="Home">
+<meta name="twitter:description" content="Sam Feldstein is human being based in Denver, CO.">
+<meta name="twitter:image" content="https://samfeldstein.xyz/static/images/sam-feldstein-open-graph-default.webp">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+<meta name="apple-mobile-web-app-title" content="Sam Feldstein">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" href="/sitemap-index.xml">
+<link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
+<link rel="preload" href="/static/fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/noto-serif.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+figure {
+  margin: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: ui-monospace, monospace;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@view-transition {
+  navigation: auto;
+}
+body {
+  color: var(--text-color);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  text-wrap: balance;
+}
+
+#skiplink {
+  z-index: 100;
+  position: absolute;
+  translate: -1000%;
+  transition-duration: 0.25s;
+}
+#skiplink:focus {
+  translate: 0;
+}
+.quote-container {
+  color-scheme: light dark;
+  --accent: light-dark(#999999, #595959);
+  --accent-2: light-dark(#f8f8f8, #252525);
+  background: var(--accent-2);
+  border-style: solid none;
+  border-width: 0.01em;
+  border-color: var(--accent);
+  padding: 1em;
+}
+.quote-container blockquote {
+  margin: 0;
+  position: relative;
+}
+.quote-container .attribution {
+  font-size: 0.7em;
+  margin-top: 3em;
+}
+.quote-container #quote {
+  text-align: left;
+  font-style: italic;
+  font-weight: 100;
+  letter-spacing: 0.025em;
+}
+
+.pagespeed figcaption {
+  margin-bottom: 0.5em;
+}
+.pagespeed ul {
+  padding: 0;
+  font-size: 0.8em;
+}
+.pagespeed li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+}
+.pagespeed span:first-of-type {
+  flex: 1;
+  text-align: right;
+}
+.pagespeed .performance {
+  font-weight: 400;
+  margin-top: 0.25em;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: url("/static/fonts/oswald.woff2") format("woff2");
+  unicode-range: U+0020-007F;
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald Fallback";
+  src: local("Arial");
+  unicode-range: U+0020-007F;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  size-adjust: 80%;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("/static/fonts/noto-serif.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+00A0-00FF;
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif";
+  src: url("/static/fonts/noto-serif-italic.woff2") format("woff2");
+  unicode-range: U+0020-007F, U+00A0-00FF;
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noto Serif Fallback";
+  src: local("Georgia");
+  unicode-range: U+0020-007F, U+00A0-00FF;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-1: "Noto Serif", "Noto Fallback", serif;
+  --font-2: "Oswald", "Oswald Fallback", sans-serif;
+  --font-size-base: clamp(1.25rem, 5vw, 2rem);
+  --font-small: calc(var(--font-size-base) * .85);
+  color-scheme: light dark;
+  --text-color: light-dark(#000, #fff);
+  --background-color: light-dark(#fff, #000);
+  --accent: light-dark(oklch(0.457 0 0), oklch(0.6731 0 0));
+  --accent-reversed: light-dark(oklch(0.6731 0 0), oklch(0.457 0 0));
+  --accent-light: light-dark(#f8f8f8, #252525);
+}
+
+.hide {
+  display: none;
+}
+
+.defer, main, footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px auto 100vh;
+}
+
+.flex-column, hgroup, footer, footer .etc,
+footer .toc {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.small-caps, nav.main, footer a {
+  font-variant: small-caps;
+  text-transform: lowercase;
+}
+
+.underline, footer a:hover {
+  text-decoration-line: underline;
+}
+
+.unstyled-link, a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.unstyled-list, main ul, footer ul {
+  list-style: none;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+html {
+  background-color: var(--background-color);
+  scrollbar-color: var(--text-color) var(--background-color);
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+  padding: 2vw;
+}
+
+nav.main {
+  font-size: 0.75em;
+  text-align: left;
+  font-family: var(--font-2);
+  font-weight: 300;
+}
+nav.main a {
+  padding: 1em;
+}
+
+a:focus-visible {
+  outline-width: 0.1em;
+  outline-color: var(--text-color);
+}
+
+header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: var(--font-2);
+  font-size: 2em;
+  font-weight: 100;
+}
+
+h3 {
+  font-family: var(--font-2);
+  font-weight: 500;
+  font-size: 1em;
+  text-transform: uppercase;
+  margin-top: 3em;
+  letter-spacing: 0.08em;
+}
+
+.page-description {
+  font-size: 1.25em;
+  text-wrap: pretty;
+}
+
+main {
+  padding-bottom: 2em;
+}
+main p,
+main ul,
+main ol {
+  line-height: 1.3;
+}
+
+#skiplink {
+  font-family: var(--font-2);
+  font-weight: 300;
+  text-transform: uppercase;
+  background-color: var(--background-color);
+  padding: 0.5em;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--background-color);
+}
+
+body {
+  margin: 0 auto;
+  border-style: none solid;
+  border-width: 0.5rem;
+  margin: 0 auto;
+  padding: 0;
+  font-family: var(--font-1);
+  font-size: var(--font-size-base);
+  font-weight: 200;
+}
+
+header {
+  height: var(--vh, 100dvh);
+  border-bottom: 0.5rem solid;
+  animation: fadeIn 0.5s ease-in;
+}
+
+hgroup {
+  justify-content: space-evenly;
+  gap: 2rem;
+  margin: 0 auto;
+  height: 100%;
+  max-width: 90%;
+  text-align: right;
+  line-height: 1.3;
+}
+hgroup h1,
+hgroup .name {
+  margin: 0;
+  font-family: var(--font-2);
+  font-size: clamp(4rem, 15vw, 9rem);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+hgroup .byline {
+  margin: 0;
+}
+
+h1 {
+  color: var(--background-color);
+  -webkit-text-stroke: 1px var(--text-color);
+}
+
+h2 {
+  font-family: var(--font-2);
+  font-size: 2em;
+  font-weight: 100;
+  text-align: center;
+  margin-top: 3em;
+}
+
+h3 {
+  font-family: var(--font-2);
+  font-size: var(--font-size-base);
+  font-weight: 350;
+  text-transform: uppercase;
+}
+
+main section {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+main section.contents {
+  counter-reset: item;
+}
+main section.other a::after {
+  content: counter(item, upper-roman) !important;
+}
+main nav {
+  display: grid;
+  gap: 2em;
+}
+main a {
+  counter-increment: item;
+  display: block;
+  position: relative;
+  padding: 0.25em 2em 0.25em 0;
+}
+main a::after {
+  content: counter(item);
+  position: absolute;
+  right: 0;
+}
+main a:focus {
+  outline: none;
+}
+main ul {
+  padding-left: 0.5rem;
+  display: grid;
+  gap: 0.5em;
+}
+main li {
+  border-radius: 5px;
+  padding: 0 0.1em;
+}
+main li:hover, main li:focus-within {
+  color: var(--background-color);
+  background: var(--text-color);
+  outline: 0.05em solid var(--text-color);
+  outline-offset: 0.05em;
+}
+
+footer {
+  justify-content: space-evenly;
+  gap: 5em;
+  font-size: 0.8em;
+  text-align: right;
+  margin-top: 10rem;
+  border-top: 0.5rem solid;
+  padding: 10rem 1rem 4rem 1rem;
+}
+footer > * {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+}
+footer .etc,
+footer .toc {
+  gap: 0.5em;
+}
+footer a:hover {
+  text-decoration-thickness: 0.1em;
+}
+footer :focus-visible {
+  outline: 0.1em solid var(--text-color);
+  outline-offset: 0.1em;
+  border-radius: 5px;
+}
+
+svg.inline {
+  width: 1em;
+}
+svg.inline path {
+  fill: currentColor;
+}
+
+.border {
+  position: sticky;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 9999;
+}
+.border.top {
+  top: 0;
+  border-bottom: 0.5rem solid;
+}
+.border.bottom {
+  bottom: 0;
+  border-top: 0.5rem solid;
+}
+
+#skiplink {
+  font-family: var(--font-2);
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: var(--background-color);
+  margin: 0.5em 0.25em;
+  padding: 0.5em;
+}
+#skiplink:focus-visible {
+  outline-width: 0.1em;
+}
+
+::selection {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
+<script type="speculationrules">
+{ "prefetch": [{ "where": { "and": [{ "href_matches": "/*" }, { "not": { "href_matches": "/static/*" } }] }, "eagerness": "eager" }] }
+</script>
+<script>
+  (function () {
+    if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) return;
+    addEventListener("load", function () {
+      var seen = {};
+      seen[location.pathname] = true;
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+        var path = a.pathname;
+        if (a.origin !== location.origin || seen[path] || !/\/$/.test(path)) return;
+        seen[path] = true;
+        var link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = path;
+        document.head.appendChild(link);
+      });
+    });
+  })();
+</script>
+<!-- /shared:head -->
+</head>
+<body>
+  <!-- shared:skip-link -->
+<a id="skiplink" href="#main-content">Skip to Content</a>
+<!-- /shared:skip-link -->
+  <div class="border top"></div>
+  <header>
+    <hgroup>
+      <h1 class="title">Ever in<br />Flux</h1>
+      <p class="byline">the personal website of</p>
+      <p class="name">Samuel<br />Feldstein</p>
+    </hgroup>
+  </header>
+  <main id="main-content">
+    <section class="contents">
+      <h2 id="contents">Contents</h2>
+      <nav>
+        <ul>
+          <li><a href="/published-writing/">Published Writing</a></li>
+          <li><a href="/photos/">Photography</a></li>
+          <li><a href="/code/">Code</a></li>
+        </ul>
+      </nav>
+    </section>
+    <section class="other">
+      <h2 id="other-sites">Other Sites</h2>
+      <ul>
+        <li><a href="https://notes.samfeldstein.xyz/">Notebook</a></li>
+        <li><a href="https://cookbook.samfeldstein.xyz/">Cookbook</a></li>
+      </ul>
+    </section>
+    <section class="other">
+      <h2 id="contact">Contact & Social</h2>
+      <ul class="contact">
+        <li><a href="mailto:sam@samfeldstein.com">Email</a></li>
+        <li><a href="https://github.com/samfeldstein">GitHub</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="quote-container">
+      <blockquote id="quote"></blockquote>
+      <p class="attribution">
+        <span id="speaker"></span><cite id="work"></cite><span id="verse"></span
+        ><span id="year"></span>
+      </p>
+    </div>
+    <nav>
+      <ul class="toc">
+        <li><a href="#contents">Contents</a></li>
+        <li><a href="#other-sites">Other Sites</a></li>
+        <li><a href="#contact">Contact & Social</a></li>
+      </ul>
+    </nav>
+    <!-- lighthouse -->
+    <!-- /lighthouse -->
+    <div class="etc">
+      <div>Denver, CO</div>
+      <div>Plain HTML, CSS, and JavaScript</div>
+      <!-- shared:copyright -->
+<div class="copyright">&copy; 2022 – 2026 Samuel Feldstein</div>
+<!-- /shared:copyright -->
+    </div>
+  </footer>
+  <div class="border bottom"></div>
+  <script type="module" src="/js/quote.js?v=355ab24d"></script>
+  <script type="module">
+    const header = document.querySelector("header");
+    if (header) header.style.setProperty("--vh", `${document.documentElement.clientHeight}px`);
+  </script>
+</body>
+</html>

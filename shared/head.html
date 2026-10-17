@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{fullTitle}}</title>
+<meta name="author" content="{{site.author}}">
+<meta name="description" content="{{description}}">
+?noindex <meta name="robots" content="noindex">
+?indexed <link rel="canonical" href="{{url}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{url}}">
+<meta property="og:image" content="{{site.url}}/static/images/sam-feldstein-open-graph-default.webp">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{site.url}}/static/images/sam-feldstein-open-graph-default.webp">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=3">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
+<meta name="apple-mobile-web-app-title" content="{{site.title}}">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="sitemap" href="/sitemap-index.xml">
+<link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
+{{fonts}}
+{{css}}
+<script type="speculationrules">
+{ "prefetch": [{ "where": { "and": [{ "href_matches": "/*" }, { "not": { "href_matches": "/static/*" } }] }, "eagerness": "eager" }] }
+</script>
+<script>
+  (function () {
+    if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) return;
+    addEventListener("load", function () {
+      var seen = {};
+      seen[location.pathname] = true;
+      document.querySelectorAll('a[href^="/"]').forEach(function (a) {
+        var path = a.pathname;
+        if (a.origin !== location.origin || seen[path] || !/\/$/.test(path)) return;
+        seen[path] = true;
+        var link = document.createElement("link");
+        link.rel = "prefetch";
+        link.href = path;
+        document.head.appendChild(link);
+      });
+    });
+  })();
+</script>
