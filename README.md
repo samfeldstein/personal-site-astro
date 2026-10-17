@@ -6,7 +6,7 @@ I keep this repo public mainly as a code sample. You’re welcome to read it, bo
 
 ## The idea
 
-The site is set like an old book. The home page is a cloth-bound cover, and scrolling turns to a contents page, with dotted leaders running to page numbers. Each section is a chapter: Published Writing is a list of works, Photography is a mosaic of photos you can open full screen, and Code is a list of projects pulled from GitHub. Every page ends the way a book does, with an epigraph (a random quote from my collection) and a colophon. Even the 404 page is an erratum slip.
+The site is set like an old book. The home page is a cloth-bound cover, and scrolling turns to a contents page, with dotted leaders running to page numbers. Each section is a chapter: Code is a list of projects pulled from GitHub, Photography is a mosaic of photos you can open full screen, and Published Writing is a list of works. Every page ends with an epigraph (a random quote from my collection) and a colophon. The 404 page is an erratum slip.
 
 Everything is set in Cormorant Garamond, with real small caps, old-style figures, and historical ligatures. The colors are aged paper, iron-gall ink, and a little vermilion. The site follows your system’s light or dark setting.
 
@@ -41,13 +41,13 @@ The tests in `test/` plant bugs on purpose to prove the checks catch them.
 
 ### Projects from GitHub
 
-The Code page lists my public GitHub repositories. [projects.mjs](projects.mjs) fetches them on every deploy and writes the list, newest first. Before a new repository appears, I approve its display name in [projects.json](projects.json). Until then, the script reports it with a suggested name, and the page goes on without it. If GitHub can’t be reached, the list stays as it was, so a deploy never fails or goes blank because of it.
+The Code page lists my public GitHub repositories. [projects.mjs](projects.mjs) fetches them on every deploy and writes the list, newest first. Before a new repository appears, I approve its display name in [projects.json](projects.json). Until then, the script reports it with a suggested name, and the page goes on without it. A project older than its repository gets its real start month in `projects.json`. The script also flags any language that makes up a fifth or more of a repository but is missing from the skills line, which I edit by hand. If GitHub can’t be reached, the list stays as it was, so a deploy never fails or goes blank because of it.
 
 ### Photo gallery
 
-The Photography page is built from whatever images are in `photos/`. [photos.mjs](photos.mjs) reads each photo’s title, description, and date with ExifTool, writes WebP copies at several widths into `site/img/photos/`, and rewrites the gallery, newest first. The description becomes the alt text, so I caption a photo once in my editor and it carries through to the site.
+The Photography page is built from whatever images are in `photos/`. [photos.mjs](photos.mjs) reads each photo’s title, description, date, and location with ExifTool, writes WebP copies at several widths into `site/img/photos/`, and rewrites the gallery, newest first. The description becomes the alt text, so I caption a photo once in my editor and it carries through to the site. The location (city, state, country) shows when a photo has one, and the script lists the photos that don’t.
 
-The gallery is a justified mosaic: each row fills the width at one height, and every photo keeps its own shape. Hovering or focusing a photo shows its title and date. Clicking opens it full screen in a `<dialog>`, with arrow keys to move through photos and Escape to close. Without JavaScript, each photo is still a plain link to the full image.
+The gallery is a justified mosaic: each row fills the width at one height, and every photo keeps its own shape. Hovering or focusing a photo shows its title, location, and date. Clicking opens it full screen in a `<dialog>`, with arrow keys to move through photos and Escape to close. Without JavaScript, each photo is still a plain link to the full image.
 
 ### Quote generator
 

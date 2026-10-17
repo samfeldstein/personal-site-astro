@@ -564,6 +564,9 @@ a[href^="mailto:"]:not(.toc a)::after,
 .thumb-title {
   font-style: italic;
 }
+.thumb-place {
+  font-size: 0.85em;
+}
 .thumb-date {
   font-size: 0.8em;
   font-variant: small-caps;
@@ -583,6 +586,9 @@ a[href^="mailto:"]:not(.toc a)::after,
   border: 0;
   background: #120e0a;
   color: #e6dcc6;
+}
+.lightbox:focus {
+  outline: none;
 }
 .lightbox::backdrop {
   background: transparent;
@@ -618,6 +624,9 @@ a[href^="mailto:"]:not(.toc a)::after,
 }
 .lightbox-title {
   font-style: italic;
+}
+.lightbox-place:empty {
+  display: none;
 }
 .lightbox-date {
   font-size: 0.85em;
@@ -657,6 +666,10 @@ a[href^="mailto:"]:not(.toc a)::after,
 .lightbox-close {
   top: 0.5rem;
   right: clamp(0rem, 1vw, 1rem);
+}
+.lightbox-close span {
+  position: relative;
+  top: -0.125em;
 }
 
 @media (max-width: 500px) {
@@ -834,24 +847,25 @@ a[href^="mailto:"]:not(.toc a)::after,
   <div class="imprint">
     <div>Denver, CO</div>
     <!-- shared:copyright -->
-<div class="copyright">&copy; 2022–2026 Samuel Feldstein</div>
+<div class="copyright">&copy; 2022–2026 Sam Feldstein</div>
 <!-- /shared:copyright -->
   </div>
 </footer>
 <script type="module" src="/js/quote.js?v=e3c61ced"></script>
 <!-- /shared:endmatter -->
-  <dialog class="lightbox" closedby="any" aria-labelledby="lightbox-title">
-    <form method="dialog"><button class="lightbox-close" aria-label="Close" autofocus>×</button></form>
+  <dialog class="lightbox" closedby="any" tabindex="-1" aria-labelledby="lightbox-title">
+    <form method="dialog"><button class="lightbox-close" aria-label="Close" autofocus><span aria-hidden="true">×</span></button></form>
     <figure>
       <img class="lightbox-image" src="data:," alt="">
       <figcaption aria-live="polite">
         <span class="lightbox-title" id="lightbox-title">Photo</span>
+        <span class="lightbox-place"></span>
         <span class="lightbox-date"></span>
       </figcaption>
     </figure>
     <button class="lightbox-prev" type="button" aria-label="Previous photo">‹</button>
     <button class="lightbox-next" type="button" aria-label="Next photo">›</button>
   </dialog>
-  <script type="module" src="/js/gallery.js?v=95667824"></script>
+  <script type="module" src="/js/gallery.js?v=ac6cbb25"></script>
 </body>
 </html>

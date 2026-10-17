@@ -6,5 +6,9 @@
     "notebook-astro": "Digital Notebook",
     "shelf-talkers": "Shelf Talkers",
     "rss-feeds": "RSS Feeds"
-  }
+  },
+  "started": {
+    "notebook-astro": "2024-10"
+  },
+  "notSkills": []
 }

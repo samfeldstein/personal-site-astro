@@ -7,12 +7,14 @@
     npm install          (once; installs sharp and exiftool-vendored)
     node photos.mjs
 
-  For each photo it reads the title, description (the alt text) and creation
-  date with ExifTool, writes WebP copies at the widths below into
+  For each photo it reads the title, description (the alt text), creation
+  date and location (City, State, Country; shown when present) with ExifTool, writes WebP copies at the widths below into
   site/img/photos/ (only the ones that don't exist yet), deletes copies of
   photos that are gone, and rewrites the gallery between the
   <!-- gallery --> markers in site/photos/index.html, newest first, as
   numbered plates.
+
+  It lists the photos with no location at the end of each run.
 
   A changed photo that keeps its file name keeps its old WebPs; delete
   site/img/photos/<name>-*.webp first to regenerate them.
@@ -35,6 +37,13 @@ const sizes = (ratio) => {
   return `(min-width: ${ROW.to}px) ${Math.round(r * ROW.wide)}px, (min-width: ${ROW.from}px) ${(r * ROW.vw).toFixed(1)}vw, ${phone > 340 ? "100vw" : `${Math.round(phone)}px`}`;
 };
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+const place = (tags) => {
+  const city = tags.City;
+  const state = tags.State || tags["Province-State"];
+  const country = tags.Country || tags["Country-PrimaryLocationName"];
+  return [city, state || (city ? country : ""), state || city ? "" : country].filter(Boolean).join(", ").replace(/'/g, "\u2019");
+};
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -71,6 +80,7 @@ try {
       month: tags.CreateDate?.year ? `${MONTHS[tags.CreateDate.month - 1]} ${tags.CreateDate.year}` : "",
       date: tags.CreateDate || "Unknown date",
       alt: tags.Description || "",
+      place: place(tags),
     });
   }
 } finally {
@@ -100,9 +110,9 @@ for (const f of readdirSync(OUT)) {
 const img = (p, i) => {
   const url = (w) => `/img/photos/${p.name}-${w}.webp`;
   const priority = i === 0 ? ' loading="eager" decoding="async" fetchpriority="high"' : ' loading="lazy" decoding="async"';
-  const info = `<span class="thumb-info"><span class="thumb-title">${esc(p.shown)}</span>${p.month ? `<span class="thumb-date">${p.month}</span>` : ""}</span>`;
+  const info = `<span class="thumb-info"><span class="thumb-title">${esc(p.shown)}</span>${p.place ? `<span class="thumb-place">${esc(p.place)}</span>` : ""}${p.month ? `<span class="thumb-date">${p.month}</span>` : ""}</span>`;
   const ratio = +(p.width / p.height).toFixed(3);
-  return `      <li style="--r: ${ratio}"><a class="thumb" href="${url(p.widths.at(-1))}" data-title="${esc(p.shown)}" data-date="${p.month}"><img src="${url(p.widths[1] ?? p.widths[0])}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${sizes(ratio)}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}">${info}</a></li>`;
+  return `      <li style="--r: ${ratio}"><a class="thumb" href="${url(p.widths.at(-1))}" data-title="${esc(p.shown)}"${p.place ? ` data-place="${esc(p.place)}"` : ""} data-date="${p.month}"><img src="${url(p.widths[1] ?? p.widths[0])}" srcset="${p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}" sizes="${sizes(ratio)}" alt="${esc(p.alt || p.title)}"${priority} width="${p.width}" height="${p.height}">${info}</a></li>`;
 };
 
 const html = readFileSync(PAGE, "utf8");
@@ -110,3 +120,5 @@ const re = /(<!-- gallery -->)[\s\S]*?(\n\s*<!-- \/gallery -->)/;
 if (!re.test(html)) throw new Error("site/photos/index.html: missing the <!-- gallery --> ... <!-- /gallery --> markers");
 writeFileSync(PAGE, html.replace(re, (_, open, close) => `${open}\n${photos.map(img).join("\n")}${close}`));
 console.log(`photos: ${photos.length} photos in the gallery`);
+const unplaced = photos.filter((p) => !p.place);
+if (unplaced.length) console.log(`photos: no location (City, State, Country) on ${unplaced.length}: ${unplaced.map((p) => p.name).join(", ")}`);

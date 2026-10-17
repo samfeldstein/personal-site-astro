@@ -4,10 +4,11 @@ const thumbs = [...document.querySelectorAll(".thumb")];
 if (dialog && thumbs.length && typeof dialog.showModal === "function") {
   const image = dialog.querySelector(".lightbox-image");
   const title = dialog.querySelector(".lightbox-title");
+  const place = dialog.querySelector(".lightbox-place");
   const date = dialog.querySelector(".lightbox-date");
   let current = 0;
 
-  const show = (index) => {
+  const show = (index, pointer = false) => {
     current = (index + thumbs.length) % thumbs.length;
     const thumb = thumbs[current];
     const source = thumb.querySelector("img");
@@ -20,15 +21,18 @@ if (dialog && thumbs.length && typeof dialog.showModal === "function") {
     image.srcset = source.srcset;
     image.alt = source.alt;
     title.textContent = thumb.dataset.title || source.alt;
+    place.textContent = thumb.dataset.place || "";
     date.textContent = thumb.dataset.date || "";
-    if (!dialog.open) dialog.showModal();
+    if (dialog.open) return;
+    dialog.showModal();
+    if (pointer) dialog.focus();
   };
 
   thumbs.forEach((thumb, index) => {
     thumb.addEventListener("click", (event) => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
       event.preventDefault();
-      show(index);
+      show(index, event.detail > 0);
     });
   });
 

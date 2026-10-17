@@ -59,6 +59,9 @@
 .thumb-title {
   font-style: italic;
 }
+.thumb-place {
+  font-size: 0.85em;
+}
 .thumb-date {
   font-size: 0.8em;
   font-variant: small-caps;
@@ -78,6 +81,9 @@
   border: 0;
   background: #120e0a;
   color: #e6dcc6;
+}
+.lightbox:focus {
+  outline: none;
 }
 .lightbox::backdrop {
   background: transparent;
@@ -113,6 +119,9 @@
 }
 .lightbox-title {
   font-style: italic;
+}
+.lightbox-place:empty {
+  display: none;
 }
 .lightbox-date {
   font-size: 0.85em;
@@ -152,6 +161,10 @@
 .lightbox-close {
   top: 0.5rem;
   right: clamp(0rem, 1vw, 1rem);
+}
+.lightbox-close span {
+  position: relative;
+  top: -0.125em;
 }
 
 @media (max-width: 500px) {

@@ -28,7 +28,7 @@ The site ran on Astro with Sass, PostCSS, ESLint and an image pipeline whose cac
 - **End matter.** Every page ends with an epigraph page (a random quote) and a colophon page (typefaces, hosting, Lighthouse scores, imprint), from one shared block.
 - **Type.** Only Cormorant Garamond, subset from the Google Fonts source with `pyftsubset`, keeping small caps, old-style figures and historical ligatures (Fontsource builds strip them), plus curly quotes, dashes, ↗ and the fleuron. Historical ligatures are kept to running prose, because they read as broken letters in names.
 - **Color.** Aged paper, iron-gall ink, vermilion used sparingly, light and dark through `light-dark()`.
-- **Code page projects.** Generated from public GitHub repositories on every build by `projects.mjs`, shown only once the owner approves each name in `projects.json`.
+- **Code page projects.** Generated from public GitHub repositories on every build by `projects.mjs`.
 - **Small marks.** External links carry ↗ and email links an envelope, both announced to screen readers.
 - **Work method.** Pages were restyled by three subagents in separate git worktrees, each owning its own files, then merged and reviewed together. The worktrees were created from the old `main`, so each agent first reset onto the branch; check the base when doing this again.
 
@@ -41,8 +41,6 @@ Five read-only subagents audited design, performance, accessibility, SEO and con
 - **SEO and identity.** No `twitter:card`; WebP share image; old résumé, feed, blog and uses URLs returned 404; typos in two descriptions; white manifest colors. Person, Organization, WebSite and ProfilePage structured data now tie Sam Feldstein to Presswork Web Co., and Presswork is listed in the contents.
 - **Build.** A page could lose its shared end matter without any check failing; `quote.js` restyled the wrong `<cite>`; the GitHub fetch had no timeout.
 - **Design.** Stray punctuation in project entries, a 404 slip crowding the running head, a see-through lightbox, unbalanced attributions, an open en dash in the copyright, mixed leader weights and month formats.
-
-Left for the owner are listed in `ISSUES.md` and `docs/handoff.md`.
 
 ## Results
 
@@ -61,7 +59,7 @@ Page weights now include `quote.js` (5.8 KB gzipped, cached as immutable) on eve
 
 ## Launch
 
-Merged to `main` and live on 2026-10-17. The first Cloudflare builds of the branch failed because the dashboard's build command was still `npx astro build`; it's a dashboard-only setting, which the docs had wrongly assumed was already `npm run build`. After the fix, the first build on Cloudflare also ran the GitHub project fetch for the first time, and it worked. Two things only showed up once real people used the live preview: Lighthouse's SEO score is 66 on preview URLs (they're noindexed, so it's expected), and the lightbox briefly showed each photo at its thumbnail size before the larger file loaded. That was fixed by sizing the image from its aspect ratio.
+Merged to `main` and live on 2026-10-17. The first Cloudflare builds of the branch failed because the dashboard's build command was still `npx astro build`; it's a dashboard-only setting, which the docs had wrongly assumed was already `npm run build`. After the fix, the first build on Cloudflare also ran the GitHub project fetch for the first time, and it worked. Two things showed up with the live preview: Lighthouse's SEO score is 66 on preview URLs (they're noindexed, so it's expected), and the lightbox briefly showed each photo at its thumbnail size before the larger file loaded. That was fixed by sizing the image from its aspect ratio.
 
 ## What was lost
 
@@ -77,5 +75,5 @@ Merged to `main` and live on 2026-10-17. The first Cloudflare builds of the bran
 - **Subagents in worktrees need a checked base,** and each should own a disjoint set of files.
 - **Don't fade in the hero.** An opacity animation on the cover made Lighthouse find no LCP and score performance 0.
 - **Fontsource strips OpenType features.** Subset from the source when small caps or old-style figures matter.
-- **Generated content needs an approval step** when it carries the owner's name in public (`projects.json`).
+- **Generated content needs an approval step** when it carries personal information in public (`projects.json`).
 - **Run scripts from a known directory.** Two screenshots landed in the repo from scripts run in the wrong working directory.

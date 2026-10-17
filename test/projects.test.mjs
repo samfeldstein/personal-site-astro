@@ -5,7 +5,7 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { displayName, filterRepos, inFont, splitApproved, formatDate, renderEntries, renderEntry, replaceBlock, repoLink } from "../projects.mjs";
+import { applyStarted, displayName, filterRepos, missingSkills, skillsIn, inFont, splitApproved, formatDate, renderEntries, renderEntry, replaceBlock, repoLink } from "../projects.mjs";
 
 const script = fileURLToPath(new URL("../projects.mjs", import.meta.url));
 
@@ -201,4 +201,33 @@ test("an unapproved repository stays off the page and is reported; --approve add
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test("applyStarted replaces the creation date with a YYYY-MM override", () => {
+  const [moved, kept, bad] = applyStarted(
+    [repo({ name: "old" }), repo({ name: "new" }), repo({ name: "typo" })],
+    { old: "2021-04", typo: "April 2021" },
+  );
+  assert.equal(moved.created_at, "2021-04-01T00:00:00Z");
+  assert.equal(kept.created_at, "2024-03-15T12:00:00Z");
+  assert.equal(bad.created_at, "2024-03-15T12:00:00Z");
+  assert.deepEqual(filterRepos([moved, kept]).map((r) => r.name), ["new", "old"]);
+});
+
+test("skillsIn reads the skills line", () => {
+  assert.deepEqual(skillsIn('<section class="skills" aria-labelledby="skills">\n<h2>Skills</h2>\n<p>HTML, CSS, Claude</p>'), ["HTML", "CSS", "Claude"]);
+  assert.deepEqual(skillsIn("<p>HTML</p>"), []);
+});
+
+test("missingSkills reports main languages missing from the skills, minus notSkills", () => {
+  const languages = {
+    feeds: { Python: 9000, HTML: 1000 },
+    app: { Vue: 400, Astro: 400, SCSS: 150, JavaScript: 50 },
+    site: { HTML: 800, Shell: 200, MDX: 100 },
+  };
+  assert.deepEqual(missingSkills(languages, ["HTML", "javascript", "Astro", "Bash"], ["MDX"]), [
+    { skill: "Python", repos: ["feeds"] },
+    { skill: "Vue", repos: ["app"] },
+  ]);
+  assert.deepEqual(missingSkills({ a: { Shell: 1 }, b: { Shell: 1 } }, []), [{ skill: "Bash", repos: ["a", "b"] }]);
 });

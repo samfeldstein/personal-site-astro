@@ -16,6 +16,13 @@
   off the page and are reported with a suggested name until approved, either
   with --approve or by adding them to projects.json by hand. The list goes
   between the <!-- projects --> markers in site/code/index.html, newest first.
+  A repository's date is its GitHub creation month unless projects.json gives
+  another under "started" (YYYY-MM), for projects older than their repository.
+
+  It also checks the languages GitHub counts in each listed repository: any
+  that makes up at least a fifth of one and is missing from the skills line on
+  the Code page is reported, unless projects.json lists it under "notSkills".
+  The skills line itself is edited by hand.
 
   If GitHub can't be reached or no approved repositories remain, it prints a
   warning and exits 0 with the page unchanged, so a build never fails or
@@ -35,6 +42,8 @@ const PROFILE = "samfeldstein";
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const ACRONYMS = new Set(["rss", "css", "html", "js", "ui", "api", "cli", "csa", "osint"]);
 const SMALL = new Set(["a", "an", "and", "the", "of", "for", "to", "in", "on"]);
+const MAIN_LANGUAGE = 0.2;
+const LANGUAGE_SKILL = { Shell: "Bash", SCSS: "Sass" };
 const MARKERS = /(<!-- projects -->)[\s\S]*?(\n[ \t]*<!-- \/projects -->)/;
 
 export const esc = (s) =>
@@ -44,6 +53,31 @@ export function filterRepos(repos) {
   return repos
     .filter((r) => r && !r.fork && !r.archived && !r.private && r.name?.toLowerCase() !== PROFILE)
     .sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at));
+}
+
+export function applyStarted(repos, started = {}) {
+  return repos.map((repo) =>
+    /^\d{4}-\d{2}$/.test(started[repo?.name] ?? "") ? { ...repo, created_at: `${started[repo.name]}-01T00:00:00Z` } : repo,
+  );
+}
+
+export function skillsIn(html) {
+  const match = html.match(/<section class="skills"[\s\S]*?<p>([^<]*)<\/p>/);
+  return match ? match[1].split(",").map((skill) => skill.trim()).filter(Boolean) : [];
+}
+
+export function missingSkills(languages, skills, skip = []) {
+  const known = new Set([...skills, ...skip].map((s) => s.toLowerCase()));
+  const missing = new Map();
+  for (const [repo, counts] of Object.entries(languages)) {
+    const total = Object.values(counts).reduce((a, b) => a + b, 0);
+    for (const [language, bytes] of Object.entries(counts)) {
+      const skill = LANGUAGE_SKILL[language] ?? language;
+      if (bytes / total < MAIN_LANGUAGE || known.has(skill.toLowerCase()) || known.has(language.toLowerCase())) continue;
+      missing.set(skill, [...(missing.get(skill) ?? []), repo]);
+    }
+  }
+  return [...missing].map(([skill, repos]) => ({ skill, repos }));
 }
 
 export function displayName(name) {
@@ -112,13 +146,25 @@ function nextLink(header) {
   return null;
 }
 
+const headers = { Accept: "application/vnd.github+json", "User-Agent": "samfeldstein.xyz" };
+if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+
+async function get(url) {
+  const response = await fetch(url, { headers, signal: AbortSignal.timeout(15000) });
+  if (!response.ok) throw new Error(`GitHub answered ${response.status}${response.headers.get("x-ratelimit-remaining") === "0" ? " (rate limited)" : ""}`);
+  return response;
+}
+
+async function fetchLanguages(repos) {
+  const languages = {};
+  for (const repo of repos) languages[repo.name] = await (await get(repo.languages_url)).json();
+  return languages;
+}
+
 async function fetchRepos() {
-  const headers = { Accept: "application/vnd.github+json", "User-Agent": "samfeldstein.xyz" };
-  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   const repos = [];
   for (let url = API; url; ) {
-    const response = await fetch(url, { headers, signal: AbortSignal.timeout(15000) });
-    if (!response.ok) throw new Error(`GitHub answered ${response.status}${response.headers.get("x-ratelimit-remaining") === "0" ? " (rate limited)" : ""}`);
+    const response = await get(url);
     const page = await response.json();
     if (!Array.isArray(page)) throw new Error("GitHub returned something other than a list");
     repos.push(...page);
@@ -147,9 +193,10 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   const file = option("--file");
   const page = option("--page") ?? PAGE;
   const namesFile = option("--names") ?? NAMES_FILE;
-  let names;
+  let config, names;
   try {
-    names = JSON.parse(readFileSync(namesFile, "utf8")).names;
+    config = JSON.parse(readFileSync(namesFile, "utf8"));
+    names = config.names;
     if (!names || typeof names !== "object") throw new Error('it needs a "names" object');
   } catch (err) {
     console.error(`projects: can't read the approved names in ${namesFile} (${err.message})`);
@@ -164,7 +211,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   let repos;
   try {
-    repos = filterRepos(file ? readRepos(file) : await fetchRepos());
+    repos = filterRepos(applyStarted(file ? readRepos(file) : await fetchRepos(), config.started));
   } catch (err) {
     console.error(`projects: warning: couldn't get the repositories (${err.message}); the page is unchanged`);
     process.exit(0);
@@ -172,7 +219,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   let { shown, waiting } = splitApproved(repos, names);
   if (waiting.length && args.includes("--approve")) {
     for (const repo of waiting) names[repo.name] = displayName(repo.name);
-    writeFileSync(namesFile, JSON.stringify({ names }, null, 2) + "\n");
+    writeFileSync(namesFile, JSON.stringify({ ...config, names }, null, 2) + "\n");
     console.log(`projects: approved ${waiting.map((r) => `${r.name} as "${names[r.name]}"`).join(", ")}`);
     ({ shown, waiting } = splitApproved(repos, names));
   }
@@ -188,4 +235,15 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   writeFileSync(page, replaceBlock(html, renderEntries(shown, names)));
   console.log(`projects: ${shown.length} repositories on the page`);
+
+  if (!file) {
+    try {
+      const missing = missingSkills(await fetchLanguages(shown), skillsIn(html), config.notSkills);
+      for (const { skill, repos } of missing) {
+        console.log(`projects: ${skill} is a main language of ${repos.join(", ")} but not in the Code page skills; add it there, or to "notSkills" in projects.json`);
+      }
+    } catch (err) {
+      console.error(`projects: warning: couldn't check the languages (${err.message})`);
+    }
+  }
 }
