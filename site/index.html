@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
 <head>
-<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["home"],"fonts":["oswald","noto-serif"],"typefaces":"Oswald and Noto Serif"} -->
+<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["home"],"fonts":["cormorant-garamond","cormorant-garamond-italic"],"typefaces":"Cormorant Garamond"} -->
 <!-- shared:head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,8 +26,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="sitemap" href="/sitemap-index.xml">
 <link rel="alternate" type="application/rss+xml" title="Sam Feldstein's Notebook" href="https://notes.samfeldstein.xyz/feed.xml">
-<link rel="preload" href="/static/fonts/oswald.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/static/fonts/noto-serif.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/cormorant-garamond-italic.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 *,
 *::before,
@@ -98,119 +98,81 @@ h3,
 #skiplink:focus {
   translate: 0;
 }
-.epigraph {
-  max-width: 24em;
-  margin: 8rem auto 0;
-  padding: 0 1rem;
-}
-.epigraph blockquote {
-  margin: 0;
-  font-style: italic;
-  font-weight: 200;
-  line-height: 1.45;
-  text-wrap: pretty;
-}
-.epigraph blockquote p {
-  margin: 0 0 0.75em;
-}
-.epigraph .attribution {
-  margin-top: 1.25em;
-  font-size: 0.7em;
-  text-align: right;
-}
-.epigraph .attribution::before {
-  content: "— ";
-}
-
 @font-face {
-  font-family: "Oswald";
-  src: url("/static/fonts/oswald.woff2") format("woff2");
-  unicode-range: U+0020-007F;
-  font-weight: 200 700;
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  font-weight: 300 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Oswald Fallback";
-  src: local("Arial");
-  unicode-range: U+0020-007F;
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-  size-adjust: 80%;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("/static/fonts/noto-serif.woff2") format("woff2");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noto Serif";
-  src: url("/static/fonts/noto-serif-italic.woff2") format("woff2");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: 100 900;
+  font-family: "Cormorant Garamond";
+  src: url("/static/fonts/cormorant-garamond-italic.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2032-2033, U+2039-203A, U+2042, U+2044, U+2122, U+2766;
+  font-weight: 300 700;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
-  font-family: "Noto Serif Fallback";
+  font-family: "Cormorant Garamond Fallback";
   src: local("Georgia");
-  unicode-range: U+0020-007F, U+00A0-00FF;
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+  size-adjust: 88%;
 }
+
 :root {
-  --font-1: "Noto Serif", "Noto Fallback", serif;
-  --font-2: "Oswald", "Oswald Fallback", sans-serif;
-  --font-size-base: clamp(1.25rem, 5vw, 2rem);
-  --font-small: calc(var(--font-size-base) * .85);
   color-scheme: light dark;
-  --text-color: light-dark(#000, #fff);
-  --background-color: light-dark(#fff, #000);
-  --accent: light-dark(oklch(0.457 0 0), oklch(0.6731 0 0));
-  --accent-reversed: light-dark(oklch(0.6731 0 0), oklch(0.457 0 0));
-  --accent-light: light-dark(#f8f8f8, #252525);
+  --paper: light-dark(#e4dac2, #1d1914);
+  --ink: light-dark(#2a2118, #ddd1b6);
+  --ink-faded: light-dark(#5e5040, #a99c84);
+  --rubric: light-dark(#8e2a1e, #cf6a4f);
+  --leader: light-dark(#9a8a70, #6c6050);
+  --cloth: #24392f;
+  --cloth-weave: #1c2e25;
+  --gilt: #c9a65c;
+  --font-book: "Cormorant Garamond", "Cormorant Garamond Fallback", Georgia, serif;
+  --measure: 26em;
 }
 
-.hide {
-  display: none;
+html {
+  background: var(--paper);
+  scrollbar-color: var(--ink-faded) var(--paper);
 }
 
-.defer, main {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 300px auto 100vh;
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-book);
+  font-size: clamp(1.25rem, 1rem + 1vw, 1.6rem);
+  font-weight: 500;
+  line-height: 1.45;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "liga", "dlig";
 }
 
-.flex-column, hgroup {
-  display: flex;
-  flex-direction: column;
-}
-
-.justify {
-  text-align: justify;
-  hyphens: auto;
-}
-
-.small-caps, nav.main {
-  font-variant: small-caps;
-  text-transform: lowercase;
-}
-
-.underline {
-  text-decoration-line: underline;
-}
-
-.unstyled-link, a {
+a {
   color: inherit;
   text-decoration: none;
 }
+a:focus-visible {
+  outline: 2px solid var(--rubric);
+  outline-offset: 0.15em;
+  border-radius: 2px;
+}
 
-.unstyled-list, main ul {
-  list-style: none;
+::selection {
+  background: var(--rubric);
+  color: var(--paper);
+}
+
+#skiplink {
+  margin: 0.5em;
+  padding: 0.4em 0.8em;
+  background: var(--paper);
+  color: var(--ink);
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
 }
 
 .visually-hidden {
@@ -224,284 +186,229 @@ h3,
   width: 1px;
 }
 
-html {
-  background-color: var(--background-color);
-  scrollbar-color: var(--text-color) var(--background-color);
+.cover {
+  box-sizing: border-box;
+  min-height: 100svh;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  display: grid;
+  background-color: var(--cloth);
+  background-image:
+    repeating-linear-gradient(0deg, transparent 0 2px, color-mix(in srgb, var(--cloth-weave) 55%, transparent) 2px 3px),
+    repeating-linear-gradient(90deg, transparent 0 2px, color-mix(in srgb, var(--cloth-weave) 40%, transparent) 2px 3px),
+    radial-gradient(ellipse at 50% 40%, transparent 40%, rgba(0, 0, 0, 0.35) 100%);
+  color: var(--gilt);
+  color-scheme: dark;
 }
-
-body {
-  background-color: var(--background-color);
-  font-family: var(--font-1);
-  font-size: var(--font-size-base);
-  padding: 2vw;
-}
-
-nav.main {
-  font-size: 0.75em;
-  text-align: left;
-  font-family: var(--font-2);
-  font-weight: 300;
-}
-nav.main a {
-  padding: 1em;
-}
-
-a:focus-visible {
-  outline-width: 0.1em;
-  outline-color: var(--text-color);
-}
-
-header {
-  margin-bottom: 4rem;
+.cover-frame {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid var(--gilt);
+  outline: 1px solid var(--gilt);
+  outline-offset: 0.45rem;
+  margin: 0.45rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
-
-h1 {
-  font-family: var(--font-2);
-  font-size: 2em;
-  font-weight: 100;
-}
-
-h3 {
-  font-family: var(--font-2);
-  font-weight: 500;
-  font-size: 1em;
-  text-transform: uppercase;
-  margin-top: 3em;
-  letter-spacing: 0.08em;
-}
-
-.page-description {
-  font-size: 1.25em;
-  text-wrap: pretty;
-}
-
-main {
-  padding-bottom: 2em;
-}
-main p,
-main ul,
-main ol {
-  line-height: 1.3;
-}
-
-#skiplink {
-  font-family: var(--font-2);
-  font-weight: 300;
-  text-transform: uppercase;
-  background-color: var(--background-color);
-  padding: 0.5em;
-}
-
-::selection {
-  background-color: var(--accent);
-  color: var(--background-color);
-}
-
-body {
-  margin: 0 auto;
-  border-style: none solid;
-  border-width: 0.5rem;
-  margin: 0 auto;
-  padding: 0;
-  font-family: var(--font-1);
-  font-size: var(--font-size-base);
-  font-weight: 200;
-}
-
-header {
-  height: var(--vh, 100dvh);
-  border-bottom: 0.5rem solid;
-  animation: fadeIn 0.5s ease-in;
-}
-
-hgroup {
-  justify-content: space-evenly;
-  gap: 2rem;
-  margin: 0 auto;
-  height: 100%;
-  max-width: 90%;
-  text-align: right;
-  line-height: 1.3;
-}
-hgroup h1,
-hgroup .name {
+.cover h1 {
+  align-self: end;
   margin: 0;
-  font-family: var(--font-2);
-  font-size: clamp(3rem, min(15vw, 11vh), 9rem);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: clamp(2.6rem, 9vw, 6.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  text-wrap: balance;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45), 0 -1px 0 rgba(255, 236, 190, 0.12);
 }
-hgroup .byline {
+.cover-ornament {
+  margin: 1.5rem 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+.cover-author {
+  align-self: start;
   margin: 0;
+  font-variant: small-caps;
+  font-size: clamp(1.3rem, 2.6vw, 2rem);
+  letter-spacing: 0.14em;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
 }
 
-h1 {
-  color: var(--background-color);
-  -webkit-text-stroke: 1px var(--text-color);
+.page {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100svh;
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: clamp(4rem, 12vh, 8rem) 1.5rem 5rem;
+}
+.page + .page {
+  border-top: 1px solid color-mix(in srgb, var(--leader) 45%, transparent);
+}
+
+.folio {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 0.8em;
+  color: var(--ink-faded);
 }
 
 h2 {
-  font-family: var(--font-2);
-  font-size: 2em;
-  font-weight: 100;
+  margin: 0 0 2.5rem;
+  font-weight: 500;
+  font-size: 1.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
   text-align: center;
-  margin-top: 3em;
 }
-
 h3 {
-  font-family: var(--font-2);
-  font-size: var(--font-size-base);
-  font-weight: 350;
-  text-transform: uppercase;
-}
-
-main section {
-  max-width: 50rem;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-main section.contents {
-  counter-reset: item;
-}
-main section.other a::after {
-  content: counter(item, upper-roman) !important;
-}
-main nav {
-  display: grid;
-  gap: 2em;
-}
-main a {
-  counter-increment: item;
-  display: block;
-  position: relative;
-  padding: 0.25em 2em 0.25em 0;
-}
-main a::after {
-  content: counter(item);
-  position: absolute;
-  right: 0;
-}
-main a:focus {
-  outline: none;
-}
-main ul {
-  padding-left: 0.5rem;
-  display: grid;
-  gap: 0.5em;
-}
-main li {
-  border-radius: 5px;
-  padding: 0 0.1em;
-}
-main li:hover, main li:focus-within {
-  color: var(--background-color);
-  background: var(--text-color);
-  outline: 0.05em solid var(--text-color);
-  outline-offset: 0.05em;
-}
-
-footer {
-  margin-top: 10rem;
-  border-top: 0.5rem solid;
-  padding: 6rem 1rem 6rem;
-  font-size: 0.8em;
+  margin: 2.75rem 0 0.75rem;
+  font-weight: 500;
+  font-size: 0.9em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--ink-faded);
   text-align: center;
 }
-footer > * {
+
+.contents {
+  counter-reset: page;
+}
+.toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toc li {
+  counter-increment: page;
+}
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  padding: 0.3em 0;
+}
+.toc a span {
+  order: 1;
+}
+.toc a::before {
+  content: "";
+  order: 2;
+  flex: 1;
+  border-bottom: 2px dotted var(--leader);
+  transform: translateY(-0.25em);
+}
+.toc a::after {
+  content: counter(page);
+  order: 3;
+  min-width: 1.5em;
+  text-align: right;
+}
+.toc.roman a::after {
+  content: counter(page, lower-roman);
+}
+.toc a:hover span,
+.toc a:focus-visible span {
+  color: var(--rubric);
+  font-style: italic;
+}
+.toc a:hover::before,
+.toc a:focus-visible::before {
+  border-bottom-color: var(--rubric);
+}
+
+.epigraph-page {
+  display: grid;
+  align-items: center;
+}
+.epigraph {
+  margin: 0 auto;
   max-width: 22em;
-  margin-inline: auto;
 }
-footer h2 {
-  margin: 0 auto 1.5rem;
-}
-footer .colophon {
-  margin-block: 0 3rem;
+.epigraph blockquote {
+  margin: 0;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.1em;
   line-height: 1.5;
+  text-wrap: pretty;
+  hanging-punctuation: first;
+}
+.epigraph blockquote p {
+  margin: 0 0 0.6em;
+}
+.epigraph .attribution {
+  margin-top: 1.5em;
+  text-align: right;
+  font-size: 0.85em;
+  color: var(--ink-faded);
+}
+.epigraph .attribution::before {
+  content: "— ";
+}
+
+.colophon-page {
+  min-height: 80svh;
+  text-align: center;
+  font-size: 0.85em;
+}
+.ornament {
+  margin: -1.5rem 0 2rem;
+  color: var(--rubric);
+  font-size: 1.4em;
+}
+.colophon-page .colophon {
+  max-width: 22em;
+  margin: 0 auto 3rem;
+  font-style: italic;
   text-wrap: balance;
 }
+.pagespeed {
+  max-width: 18em;
+  margin: 0 auto;
+}
 .pagespeed figcaption {
-  font-family: var(--font-2);
-  font-weight: 300;
-  margin-bottom: 0.75em;
+  margin-bottom: 0.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--ink-faded);
 }
 .pagespeed dl {
   margin: 0;
-  font-size: 0.85em;
 }
 .pagespeed dl div {
   display: flex;
   align-items: baseline;
+  gap: 0.4em;
 }
 .pagespeed dt {
   flex: 1;
   display: flex;
   align-items: baseline;
+  gap: 0.4em;
+  text-align: left;
 }
 .pagespeed dt::after {
   content: "";
   flex: 1;
-  margin: 0 0.4em;
-  border-bottom: 1px dotted var(--accent);
+  border-bottom: 1px dotted var(--leader);
+  transform: translateY(-0.25em);
 }
 .pagespeed dd {
   margin: 0;
-  font-variant-numeric: tabular-nums;
 }
-footer .imprint {
+.imprint {
   margin-top: 3rem;
   display: grid;
-  gap: 0.25em;
-}
-
-svg.inline {
-  width: 1em;
-}
-svg.inline path {
-  fill: currentColor;
-}
-
-.border {
-  position: sticky;
-  left: 0;
-  width: 100%;
-  height: 0;
-  z-index: 9999;
-}
-.border.top {
-  top: 0;
-  border-bottom: 0.5rem solid;
-}
-.border.bottom {
-  bottom: 0;
-  border-top: 0.5rem solid;
-}
-
-#skiplink {
-  font-family: var(--font-2);
-  font-weight: 500;
-  text-transform: uppercase;
-  background-color: var(--background-color);
-  margin: 0.5em 0.25em;
-  padding: 0.5em;
-}
-#skiplink:focus-visible {
-  outline-width: 0.1em;
-}
-
-::selection {
-  background-color: var(--text-color);
-  color: var(--background-color);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  gap: 0.2em;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  color: var(--ink-faded);
 }
 </style>
 <script type="speculationrules">
@@ -531,60 +438,60 @@ svg.inline path {
   <!-- shared:skip-link -->
 <a id="skiplink" href="#main-content">Skip to Content</a>
 <!-- /shared:skip-link -->
-  <div class="border top"></div>
-  <header>
-    <hgroup>
-      <h1 class="title">Ever in<br />Flux</h1>
-      <p class="byline">the personal website of</p>
-      <p class="name">Samuel<br />Feldstein</p>
-    </hgroup>
+  <header class="cover">
+    <div class="cover-frame">
+      <h1>Ever in Flux</h1>
+      <p class="cover-ornament" aria-hidden="true">❦</p>
+      <p class="cover-author"><span class="visually-hidden">The personal website of </span>Samuel Feldstein</p>
+    </div>
   </header>
   <main id="main-content">
-    <figure class="epigraph quote-container">
-      <blockquote id="quote"></blockquote>
-      <figcaption class="attribution">
-        <span id="speaker"></span><cite id="work"></cite><span id="verse"></span
-        ><span id="year"></span>
-      </figcaption>
-    </figure>
-    <section class="contents">
+    <section class="page contents" aria-labelledby="contents">
       <h2 id="contents">Contents</h2>
-      <nav>
-        <ul>
-          <li><a href="/published-writing/">Published Writing</a></li>
-          <li><a href="/photos/">Photography</a></li>
-          <li><a href="/code/">Code</a></li>
-        </ul>
+      <nav aria-labelledby="contents">
+        <ol class="toc">
+          <li><a href="/published-writing/"><span>Published Writing</span></a></li>
+          <li><a href="/photos/"><span>Photography</span></a></li>
+          <li><a href="/code/"><span>Code</span></a></li>
+        </ol>
       </nav>
-    </section>
-    <section class="other">
-      <h2 id="other-sites">Other Sites</h2>
-      <ul>
-        <li><a href="https://notes.samfeldstein.xyz/">Notebook</a></li>
-        <li><a href="https://cookbook.samfeldstein.xyz/">Cookbook</a></li>
+      <h3 id="other-sites">Other Sites</h3>
+      <ul class="toc roman">
+        <li><a href="https://notes.samfeldstein.xyz/"><span>Notebook</span></a></li>
+        <li><a href="https://cookbook.samfeldstein.xyz/"><span>Cookbook</span></a></li>
       </ul>
-    </section>
-    <section class="other">
-      <h2 id="contact">Contact & Social</h2>
-      <ul class="contact">
-        <li><a href="mailto:sam@samfeldstein.com">Email</a></li>
-        <li><a href="https://github.com/samfeldstein">GitHub</a></li>
+      <h3 id="contact">Contact &amp; Social</h3>
+      <ul class="toc roman">
+        <li><a href="mailto:sam@samfeldstein.com"><span>Email</span></a></li>
+        <li><a href="https://github.com/samfeldstein"><span>GitHub</span></a></li>
       </ul>
+      <p class="folio" aria-hidden="true">v</p>
+    </section>
+    <section class="page epigraph-page" aria-label="Epigraph">
+      <figure class="epigraph">
+        <blockquote id="quote"></blockquote>
+        <figcaption class="attribution">
+          <span id="speaker"></span><cite id="work"></cite><span id="verse"></span
+          ><span id="year"></span>
+        </figcaption>
+      </figure>
+      <p class="folio" aria-hidden="true">vi</p>
     </section>
   </main>
-  <footer>
+  <footer class="page colophon-page">
     <h2 id="colophon">Colophon</h2>
+    <p class="ornament" aria-hidden="true">❦</p>
     <!-- shared:credit -->
-<p class="colophon">Set in Oswald and Noto Serif. Built with plain HTML, CSS, and JavaScript, and hosted on Cloudflare. No cookies, no trackers.</p>
+<p class="colophon">Set in Cormorant Garamond. Built with plain HTML, CSS, and JavaScript, and hosted on Cloudflare. No cookies, no trackers.</p>
 <!-- /shared:credit -->
     <!-- lighthouse -->
     <figure class="pagespeed">
       <figcaption>Lighthouse, on a phone</figcaption>
       <dl>
-        <div><dt>Performance</dt><dd>98</dd></div>
+        <div><dt>Performance</dt><dd>100</dd></div>
         <div><dt>Blocking time</dt><dd>0 ms</dd></div>
-        <div><dt>Speed index</dt><dd>1.5 s</dd></div>
-        <div><dt>Time to interactive</dt><dd>2.3 s</dd></div>
+        <div><dt>Speed index</dt><dd>0.9 s</dd></div>
+        <div><dt>Time to interactive</dt><dd>1.7 s</dd></div>
       </dl>
     </figure>
     <!-- /lighthouse -->
@@ -595,11 +502,6 @@ svg.inline path {
 <!-- /shared:copyright -->
     </div>
   </footer>
-  <div class="border bottom"></div>
   <script type="module" src="/js/quote.js?v=355ab24d"></script>
-  <script type="module">
-    const header = document.querySelector("header");
-    if (header) header.style.setProperty("--vh", `${document.documentElement.clientHeight}px`);
-  </script>
 </body>
 </html>
