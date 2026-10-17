@@ -393,14 +393,84 @@ h3 {
 
 a[href^="http"]:not(.toc a, .works a, .work)::after,
 .toc a[href^="http"] > span::after,
-.work[href^="http"] .work-name::after,
 .works a[href^="http"] .work-source::after {
   content: "\2197" / ", external";
+  display: inline-block;
   margin-left: 0.2em;
   font-size: 0.7em;
   font-style: normal;
   vertical-align: 0.35em;
   opacity: 0.65;
+}
+
+a[href^="mailto:"]:not(.toc a)::after,
+.toc a[href^="mailto:"] > span::after {
+  content: "" / ", email";
+  display: inline-block;
+  width: 0.75em;
+  height: 0.55em;
+  margin-left: 0.25em;
+  background: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpath d='M1 1h14v10H1zM1 1.5l7 5.5 7-5.5' fill='none' stroke='%23000' stroke-width='1.4' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0.65;
+}
+
+.works {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.works li + li {
+  margin-top: 1.6em;
+}
+.works a {
+  display: block;
+  font-feature-settings: "liga";
+}
+.work-line {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: last baseline;
+  column-gap: 0.4em;
+}
+.work-title {
+  overflow-x: clip;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: pretty;
+}
+.work-title::after {
+  content: "";
+  display: inline-block;
+  width: 100vw;
+  margin: 0 -100vw 0 0.4em;
+  border-bottom: 2px dotted var(--leader);
+}
+.works time {
+  white-space: nowrap;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+}
+.work-source {
+  display: block;
+  margin-top: 0.15em;
+  padding-left: 1.25em;
+  color: var(--ink-faded);
+}
+.work-type {
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+}
+.works a:hover,
+.works a:focus-visible,
+.works a:hover .work-source,
+.works a:focus-visible .work-source {
+  color: var(--rubric);
+}
+.works a:hover .work-title::after,
+.works a:focus-visible .work-title::after {
+  border-bottom-color: currentColor;
 }
 .cover {
   box-sizing: border-box;

@@ -61,29 +61,33 @@ test("repoLink prefers an http(s) homepage and falls back to html_url", () => {
 });
 
 test("formatDate gives the UTC month and year", () => {
-  assert.deepEqual(formatDate("2024-03-15T12:00:00Z"), { datetime: "2024-03", text: "March 2024" });
-  assert.deepEqual(formatDate("2023-12-31T23:30:00Z"), { datetime: "2023-12", text: "December 2023" });
-  assert.deepEqual(formatDate("2025-01-01T00:00:00Z"), { datetime: "2025-01", text: "January 2025" });
+  assert.deepEqual(formatDate("2024-03-15T12:00:00Z"), { datetime: "2024-03", text: "Mar 2024" });
+  assert.deepEqual(formatDate("2023-12-31T23:30:00Z"), { datetime: "2023-12", text: "Dec 2023" });
+  assert.deepEqual(formatDate("2025-01-01T00:00:00Z"), { datetime: "2025-01", text: "Jan 2025" });
 });
 
 test("renderEntry writes the exact markup", () => {
   assert.equal(
     renderEntry(repo({ name: "rss-feeds", description: "Feeds." })),
-    '        <li><a class="work" href="https://github.com/samfeldstein/thing"><span class="work-name">RSS Feeds</span><span class="work-date"><time datetime="2024-03">March 2024</time></span></a><p class="work-desc">Feeds.</p></li>',
+    '        <li><a href="https://github.com/samfeldstein/thing"><span class="work-line"><cite class="work-title">RSS Feeds</cite><time datetime="2024-03">Mar 2024</time></span><span class="work-source"><i>Feeds.</i>, <span class="work-type">Source code</span></span></a></li>',
   );
 });
 
-test("renderEntry leaves out the description paragraph when there is none", () => {
+test("renderEntry leaves out the description when there is none", () => {
   for (const description of ["", null, undefined, "   "]) {
     const out = renderEntry(repo({ description }));
-    assert.doesNotMatch(out, /work-desc/);
-    assert.match(out, /<\/a><\/li>$/);
+    assert.doesNotMatch(out, /<i>/);
+    assert.match(out, /<span class="work-source"><span class="work-type">Source code<\/span><\/span><\/a><\/li>$/);
   }
+});
+
+test("renderEntry calls a project with a homepage a website", () => {
+  assert.match(renderEntry(repo({ homepage: "https://example.com/" })), /<span class="work-type">Website<\/span>/);
 });
 
 test("renderEntry escapes data", () => {
   const out = renderEntry(repo({ description: `<b>Tom & Jerry's "show"</b> $& $1`, homepage: 'https://example.com/?a=1&b="2"' }));
-  assert.match(out, /<p class="work-desc">&lt;b&gt;Tom &amp; Jerry&#39;s &quot;show&quot;&lt;\/b&gt; \$&amp; \$1<\/p>/);
+  assert.match(out, /<i>&lt;b&gt;Tom &amp; Jerry&#39;s &quot;show&quot;&lt;\/b&gt; \$&amp; \$1<\/i>/);
   assert.match(out, /href="https:\/\/example\.com\/\?a=1&amp;b=&quot;2&quot;"/);
 });
 
@@ -125,8 +129,8 @@ test("--file run writes the list into the page", () => {
     assert.equal(
       html,
       "<!doctype html>\n<ol>\n      <!-- projects -->\n" +
-        '        <li><a class="work" href="https://rss.example/"><span class="work-name">RSS Feeds</span><span class="work-date"><time datetime="2024-08">August 2024</time></span></a><p class="work-desc">A thing.</p></li>\n' +
-        '        <li><a class="work" href="https://github.com/samfeldstein/thing"><span class="work-name">First Website</span><span class="work-date"><time datetime="2019-05">May 2019</time></span></a></li>\n' +
+        '        <li><a href="https://rss.example/"><span class="work-line"><cite class="work-title">RSS Feeds</cite><time datetime="2024-08">Aug 2024</time></span><span class="work-source"><i>A thing.</i>, <span class="work-type">Website</span></span></a></li>\n' +
+        '        <li><a href="https://github.com/samfeldstein/thing"><span class="work-line"><cite class="work-title">First Website</cite><time datetime="2019-05">May 2019</time></span><span class="work-source"><span class="work-type">Source code</span></span></a></li>\n' +
         "      <!-- /projects -->\n</ol>\n",
     );
   } finally {

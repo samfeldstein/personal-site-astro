@@ -67,27 +67,36 @@
 }
 
 .lightbox {
-  box-sizing: border-box;
-  max-width: min(96vw, 80rem);
-  max-height: 96svh;
-  padding: 2.75rem clamp(0.75rem, 2vw, 1.25rem) 0.75rem;
-  border: 1px solid var(--plate-mark);
-  background: var(--plate);
-  color: var(--ink);
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(18, 14, 10, 0.97);
+  color: #e6dcc6;
 }
 .lightbox::backdrop {
-  background: rgba(20, 15, 10, 0.86);
+  background: transparent;
 }
 .lightbox figure {
+  box-sizing: border-box;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  height: 100%;
   margin: 0;
+  padding: 3.5rem clamp(3rem, 6vw, 5rem) 1rem;
 }
 .lightbox-image {
   display: block;
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: calc(96svh - 9rem);
-  margin: 0 auto;
+  max-height: calc(100svh - 8rem);
   animation: none;
 }
 .lightbox figcaption {
@@ -96,8 +105,8 @@
   justify-content: center;
   align-items: baseline;
   column-gap: 0.75em;
-  min-height: 2.75rem;
-  padding: 0.5rem 3.25rem 0;
+  min-height: 2.5rem;
+  padding-top: 0.6rem;
   text-align: center;
 }
 .lightbox-title {
@@ -107,37 +116,40 @@
   font-size: 0.85em;
   font-variant: small-caps;
   letter-spacing: 0.06em;
-  color: var(--ink-faded);
+  color: #b3a78f;
 }
 .lightbox button {
-  position: absolute;
-  bottom: 0.4rem;
-  width: 2.75rem;
-  height: 2.75rem;
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
   border: 0;
   background: none;
-  color: var(--ink);
-  font-size: 1.6em;
+  color: #e6dcc6;
+  font: inherit;
+  font-size: 2.75rem;
   line-height: 1;
   cursor: pointer;
 }
 .lightbox button:hover {
-  color: var(--rubric);
+  color: #f0a58f;
 }
 .lightbox button:focus-visible {
-  outline: 2px solid var(--rubric);
+  outline: 2px solid #f0a58f;
   outline-offset: -4px;
 }
+.lightbox-prev,
+.lightbox-next {
+  top: calc(50% - 1.5rem);
+}
 .lightbox-prev {
-  left: 0.25rem;
+  left: clamp(0rem, 1vw, 1rem);
 }
 .lightbox-next {
-  right: 0.25rem;
+  right: clamp(0rem, 1vw, 1rem);
 }
 .lightbox-close {
-  top: 0;
-  right: 0.25rem;
-  bottom: auto;
+  top: 0.5rem;
+  right: clamp(0rem, 1vw, 1rem);
 }
 
 @media (prefers-reduced-motion: reduce) {

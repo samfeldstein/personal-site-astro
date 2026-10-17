@@ -31,60 +31,6 @@
   margin: 0 0.4em;
 }
 
-.works {
+.projects {
   margin-top: 4.5rem;
-}
-.works ol {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.works li {
-  padding: 0.35em 0;
-}
-.work {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  column-gap: 0.4em;
-}
-.work-name {
-  flex: 0 1 auto;
-}
-.work::after {
-  content: "";
-  order: 2;
-  flex: 1 1 2em;
-  min-width: 2em;
-  border-bottom: 2px dotted var(--leader);
-}
-.work-date {
-  order: 3;
-  font-size: 0.85em;
-  color: var(--ink-faded);
-  white-space: nowrap;
-}
-.work-desc {
-  margin: 0.1em 0 0;
-  font-size: 0.85em;
-  font-style: italic;
-  color: var(--ink-faded);
-}
-@media (max-width: 34em) {
-  .work-name {
-    flex-basis: 100%;
-  }
-  .work::after {
-    margin-left: 1em;
-  }
-}
-.work:hover,
-.work:focus-visible,
-.work:hover .work-date,
-.work:focus-visible .work-date {
-  color: var(--rubric);
-}
-.work:hover::after,
-.work:focus-visible::after {
-  border-bottom-color: currentColor;
 }

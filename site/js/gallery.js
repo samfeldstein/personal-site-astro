@@ -45,12 +45,7 @@ if (dialog && thumbs.length && typeof dialog.showModal === "function") {
     thumbs[current].focus();
   });
 
-  if (!("closedBy" in HTMLDialogElement.prototype)) {
-    dialog.addEventListener("click", (event) => {
-      if (event.target !== dialog) return;
-      const rect = dialog.getBoundingClientRect();
-      const inside = rect.top <= event.clientY && event.clientY <= rect.bottom && rect.left <= event.clientX && event.clientX <= rect.right;
-      if (!inside) dialog.close();
-    });
-  }
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog || event.target === dialog.querySelector("figure")) dialog.close();
+  });
 }

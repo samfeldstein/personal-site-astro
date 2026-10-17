@@ -28,7 +28,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const PAGE = join(here, "site/code/index.html");
 const API = "https://api.github.com/users/samfeldstein/repos?per_page=100&type=owner&sort=pushed";
 const PROFILE = "samfeldstein";
-const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const ACRONYMS = new Set(["rss", "css", "html", "js", "ui", "api", "cli", "csa", "osint"]);
 const NAMES = {
   "postoley-dance-ensemble-sample": "Postoley Dance Ensemble",
@@ -83,7 +83,8 @@ export const inFont = (text) =>
 export function renderEntry(repo) {
   const date = formatDate(repo.created_at);
   const desc = inFont(repo.description ?? "");
-  return `        <li><a class="work" href="${esc(repoLink(repo))}"><span class="work-name">${esc(displayName(repo.name))}</span><span class="work-date"><time datetime="${date.datetime}">${date.text}</time></span></a>${desc ? `<p class="work-desc">${esc(desc)}</p>` : ""}</li>`;
+  const type = /^https?:\/\//i.test(repo.homepage ?? "") ? "Website" : "Source code";
+  return `        <li><a href="${esc(repoLink(repo))}"><span class="work-line"><cite class="work-title">${esc(displayName(repo.name))}</cite><time datetime="${date.datetime}">${date.text}</time></span><span class="work-source">${desc ? `<i>${esc(desc)}</i>, ` : ""}<span class="work-type">${type}</span></span></a></li>`;
 }
 
 export function renderEntries(repos) {
