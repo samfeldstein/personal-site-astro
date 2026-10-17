@@ -26,3 +26,8 @@ templates/
 
 # Claude Code agent worktrees
 .claude/worktrees/
+
+# leftovers from the old Astro build
+.astro/
+.jampack/
+dist/
