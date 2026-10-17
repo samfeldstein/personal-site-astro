@@ -22,7 +22,7 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 - [ ] **Old email address in résumé PDFs.** The site uses sam@samfeldstein.com, but every PDF in [site/static/resumes/](site/static/resumes/) shows an older address (samfeldstein@pm.me, or sam@samfeldstein.xyz in the support-specialist PDF). Re-export the ones you still use and delete the rest.
 - [x] **Decide which résumé variants to keep.** (Résumé pages disabled on 2026-10-17 and kept in [_archive/resumes/](_archive/resumes/); see [ROADMAP.md](ROADMAP.md).)
 - [ ] **Web manifest colors.** [site/site.webmanifest](site/site.webmanifest) uses white for both `theme_color` and `background_color`, which doesn’t match dark mode.
-- [ ] **Fallback font name mismatch.** `--font-1` lists `"Noto Fallback"`, but the `@font-face` is named `"Noto Serif Fallback"` (in `shared/css/default.css`, `home.css`, and `writing.css`), so the metric-adjusted fallback is never used. This predates the port and was left as is.
+- [x] **Fallback font name mismatch.** (Gone with the book redesign: Noto Serif and its fallback are no longer used.)
 
 ## Content
 

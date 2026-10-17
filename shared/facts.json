@@ -11,16 +11,9 @@
   ],
   "allowedHosts": [
     "samfeldstein.xyz",
-    "notes.samfeldstein.xyz",
-    "www.w3.org"
+    "notes.samfeldstein.xyz"
   ],
   "sizeBudgetKB": {
     "default": 16
-  },
-  "allowedChars": [
-    "©",
-    "–",
-    "—",
-    "’"
-  ]
+  }
 }
