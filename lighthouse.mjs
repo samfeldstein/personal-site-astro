@@ -2,11 +2,11 @@
 /*
   lighthouse.mjs: updates the Lighthouse panel in every page's colophon.
 
-    node lighthouse.mjs 98 "0 ms" "1.5 s" "2.3 s"
+    node lighthouse.mjs 100 "0 ms" "2.7 s" "1.5 s"
     node lighthouse.mjs
 
-  With numbers (performance score, blocking time, speed index, time to
-  interactive), writes them as given, e.g. from a Lighthouse run in Chrome
+  With numbers (performance score, total blocking time, speed index,
+  largest contentful paint), writes them as given, e.g. from a Lighthouse run in Chrome
   DevTools (mobile). Without them, runs PageSpeed Insights (mobile) on the
   live home page; a PSI_KEY environment variable is used if set. Either way
   it writes shared/lighthouse.html; then run sync, commit and deploy. If the
@@ -35,17 +35,17 @@ async function fromPageSpeed() {
     performanceScore: Math.round(lh.categories.performance.score * 100),
     blockingTime: audit("total-blocking-time"),
     speedIndex: audit("speed-index"),
-    tti: audit("interactive"),
+    lcp: audit("largest-contentful-paint"),
   };
 }
 
 const args = process.argv.slice(2);
 if (args.length && args.length !== 4) {
-  console.error('lighthouse: give all four numbers, e.g. node lighthouse.mjs 98 "0 ms" "1.5 s" "2.3 s"');
+  console.error('lighthouse: give all four numbers, e.g. node lighthouse.mjs 100 "0 ms" "2.7 s" "1.5 s"');
   process.exit(1);
 }
 const metrics = args.length
-  ? { performanceScore: args[0], blockingTime: args[1], speedIndex: args[2], tti: args[3] }
+  ? { performanceScore: args[0], blockingTime: args[1], speedIndex: args[2], lcp: args[3] }
   : await fromPageSpeed();
 
 const panel = `<figure class="pagespeed">
@@ -54,7 +54,7 @@ const panel = `<figure class="pagespeed">
     <div><dt>Performance</dt><dd>${metrics.performanceScore}</dd></div>
     <div><dt>Blocking time</dt><dd>${metrics.blockingTime}</dd></div>
     <div><dt>Speed index</dt><dd>${metrics.speedIndex}</dd></div>
-    <div><dt>Time to interactive</dt><dd>${metrics.tti}</dd></div>
+    <div><dt>Largest paint</dt><dd>${metrics.lcp}</dd></div>
   </dl>
 </figure>
 `;
