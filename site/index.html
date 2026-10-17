@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us" prefix="og:https://ogp.me/ns#">
 <head>
-<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["home"],"fonts":["cormorant-garamond","cormorant-garamond-italic"],"typefaces":"Cormorant Garamond"} -->
+<!-- page: {"title":"Home","description":"Sam Feldstein is human being based in Denver, CO.","css":["book","home"],"fonts":["cormorant-garamond","cormorant-garamond-italic"],"typefaces":"Cormorant Garamond"} -->
 <!-- shared:head -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -185,7 +185,110 @@ a:focus-visible {
   position: absolute;
   width: 1px;
 }
+h2 {
+  margin: 0 0 2.5rem;
+  font-weight: 500;
+  font-size: 1.6em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+h3 {
+  margin: 2.75rem 0 0.75rem;
+  font-weight: 500;
+  font-size: 0.9em;
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  color: var(--ink-faded);
+  text-align: center;
+}
+.toc {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.toc li {
+  counter-increment: page;
+}
+.toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4em;
+  padding: 0.3em 0;
+}
+.toc a span {
+  order: 1;
+}
+.toc a::before {
+  content: "";
+  order: 2;
+  flex: 1;
+  border-bottom: 2px dotted var(--leader);
+}
+.toc a::after {
+  content: counter(page);
+  order: 3;
+}
+.toc.roman a::after {
+  content: counter(page, lower-roman);
+}
+.toc a:hover,
+.toc a:focus-visible {
+  color: var(--rubric);
+}
+.toc a:hover::before,
+.toc a:focus-visible::before {
+  border-bottom-color: currentColor;
+}
+.ornament {
+  margin: -1.5rem 0 2rem;
+  color: var(--rubric);
+  font-size: 1.4em;
+}
 
+.running-head {
+  padding: 1.5rem 1rem 0;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 0.12em;
+  font-size: 0.85em;
+}
+.running-head a {
+  color: var(--ink-faded);
+}
+.running-head a:hover {
+  color: var(--rubric);
+}
+
+.chapter {
+  margin: clamp(3rem, 10vh, 6rem) auto 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+.chapter-number {
+  margin: 0 0 0.75rem;
+  font-variant: small-caps;
+  letter-spacing: 0.14em;
+  color: var(--ink-faded);
+}
+.chapter h1 {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3.4rem);
+  line-height: 1.1;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  text-wrap: balance;
+}
+.chapter .ornament {
+  margin: 1.25rem 0 0;
+}
+
+.book-page {
+  max-width: calc(var(--measure) + 3rem);
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+}
 .cover {
   box-sizing: border-box;
   min-height: 100svh;
@@ -247,64 +350,8 @@ a:focus-visible {
   border-top: 1px solid color-mix(in srgb, var(--leader) 45%, transparent);
 }
 
-h2 {
-  margin: 0 0 2.5rem;
-  font-weight: 500;
-  font-size: 1.6em;
-  font-variant: small-caps;
-  letter-spacing: 0.1em;
-  text-align: center;
-}
-h3 {
-  margin: 2.75rem 0 0.75rem;
-  font-weight: 500;
-  font-size: 0.9em;
-  font-variant: small-caps;
-  letter-spacing: 0.1em;
-  color: var(--ink-faded);
-  text-align: center;
-}
-
 .contents {
   counter-reset: page;
-}
-.toc {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.toc li {
-  counter-increment: page;
-}
-.toc a {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4em;
-  padding: 0.3em 0;
-}
-.toc a span {
-  order: 1;
-}
-.toc a::before {
-  content: "";
-  order: 2;
-  flex: 1;
-  border-bottom: 2px dotted var(--leader);
-}
-.toc a::after {
-  content: counter(page);
-  order: 3;
-}
-.toc.roman a::after {
-  content: counter(page, lower-roman);
-}
-.toc a:hover,
-.toc a:focus-visible {
-  color: var(--rubric);
-}
-.toc a:hover::before,
-.toc a:focus-visible::before {
-  border-bottom-color: currentColor;
 }
 
 .epigraph-page {
@@ -341,11 +388,6 @@ h3 {
   min-height: 80svh;
   text-align: center;
   font-size: 0.85em;
-}
-.ornament {
-  margin: -1.5rem 0 2rem;
-  color: var(--rubric);
-  font-size: 1.4em;
 }
 .colophon-page .colophon {
   max-width: 22em;
