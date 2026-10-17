@@ -5,7 +5,7 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { applyStarted, displayName, filterRepos, missingSkills, skillsIn, inFont, splitApproved, formatDate, renderEntries, renderEntry, replaceBlock, repoLink } from "../projects.mjs";
+import { addSkills, applyStarted, displayName, filterRepos, missingSkills, skillsIn, inFont, splitApproved, formatDate, renderEntries, renderEntry, replaceBlock, repoLink } from "../projects.mjs";
 
 const script = fileURLToPath(new URL("../projects.mjs", import.meta.url));
 
@@ -230,4 +230,11 @@ test("missingSkills reports main languages missing from the skills, minus notSki
     { skill: "Vue", repos: ["app"] },
   ]);
   assert.deepEqual(missingSkills({ a: { Shell: 1 }, b: { Shell: 1 } }, []), [{ skill: "Bash", repos: ["a", "b"] }]);
+});
+
+test("addSkills adds before a closing Claude, or at the end", () => {
+  const page = (line) => `<section class="skills" aria-labelledby="skills">\n<h2>Skills</h2>\n<p>${line}</p>\n</section>`;
+  assert.equal(addSkills(page("HTML, CSS, Claude"), ["Python", "Vue"]), page("HTML, CSS, Python, Vue, Claude"));
+  assert.equal(addSkills(page("HTML, CSS"), ["Python"]), page("HTML, CSS, Python"));
+  assert.equal(addSkills(page("HTML"), []), page("HTML"));
 });

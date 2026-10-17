@@ -21,8 +21,9 @@
 
   It also checks the languages GitHub counts in each listed repository: any
   that makes up at least a fifth of one and is missing from the skills line on
-  the Code page is reported, unless projects.json lists it under "notSkills".
-  The skills line itself is edited by hand.
+  the Code page is added to the line (before Claude, if it's last), unless
+  projects.json lists it under "notSkills". In a terminal it asks first; in a
+  build it adds it and says so. Move it where it belongs by hand.
 
   If GitHub can't be reached or no approved repositories remain, it prints a
   warning and exits 0 with the page unchanged, so a build never fails or
@@ -78,6 +79,22 @@ export function missingSkills(languages, skills, skip = []) {
     }
   }
   return [...missing].map(([skill, repos]) => ({ skill, repos }));
+}
+
+export function addSkills(html, add) {
+  const skills = skillsIn(html);
+  if (!add.length || !skills.length) return html;
+  const last = skills.at(-1) === "Claude" ? [skills.pop()] : [];
+  return html.replace(/(<section class="skills"[\s\S]*?<p>)[^<]*(<\/p>)/, (_, open, close) => `${open}${[...skills, ...add, ...last].join(", ")}${close}`);
+}
+
+async function confirm(question) {
+  if (!process.stdin.isTTY) return true;
+  const { createInterface } = await import("node:readline/promises");
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  const answer = await rl.question(`${question} [Y/n] `);
+  rl.close();
+  return !/^n/i.test(answer.trim());
 }
 
 export function displayName(name) {
@@ -233,17 +250,25 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
     process.exit(0);
   }
 
-  writeFileSync(page, replaceBlock(html, renderEntries(shown, names)));
+  let out = replaceBlock(html, renderEntries(shown, names));
   console.log(`projects: ${shown.length} repositories on the page`);
 
   if (!file) {
     try {
-      const missing = missingSkills(await fetchLanguages(shown), skillsIn(html), config.notSkills);
-      for (const { skill, repos } of missing) {
-        console.log(`projects: ${skill} is a main language of ${repos.join(", ")} but not in the Code page skills; add it there, or to "notSkills" in projects.json`);
+      const add = [];
+      for (const { skill, repos } of missingSkills(await fetchLanguages(shown), skillsIn(html), config.notSkills)) {
+        const where = `${skill} is a main language of ${repos.join(", ")} but not in the Code page skills`;
+        if (await confirm(`projects: ${where}. Add it?`)) {
+          add.push(skill);
+          console.log(`projects: added ${skill} to the skills line; move it where it belongs, or list it under "notSkills" in projects.json`);
+        } else {
+          console.log(`projects: left ${skill} out; list it under "notSkills" in projects.json to stop this question`);
+        }
       }
+      out = addSkills(out, add);
     } catch (err) {
       console.error(`projects: warning: couldn't check the languages (${err.message})`);
     }
   }
+  writeFileSync(page, out);
 }

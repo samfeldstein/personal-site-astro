@@ -29,6 +29,7 @@ Known problems and small cleanups found during a site review on 2026-10-13, upda
 - [ ] **Typo in the site description.** "Sam Feldstein is human being based in Denver, CO." is missing "a". It’s in `site.description` in [shared/facts.json](shared/facts.json) and in the home page comment in [site/index.html](site/index.html). Fix both, then run `node sync.mjs`.
 - [ ] **Typo on Published Writing.** The description in the page comment of [site/published-writing/index.html](site/published-writing/index.html) reads "My publish writing". Fix it, then run `node sync.mjs`.
 - [x] **Home footer wording.** ("Powered by Astro" replaced with a colophon on home and Code, in [shared/credit.html](shared/credit.html).)
+- [ ] **Photo locations.** No photo has a location yet. Add City, State and Country (IPTC fields) to each photo in `photos/`, then run `node photos.mjs`; it lists the ones still missing and shows locations on the gallery as they're added.
 - [ ] **Gallery image URLs changed.** Photos moved from `/_astro/*` to `/img/photos/*`. Image search will reindex them; old image links won’t resolve.
 - [x] **Review the Code page portfolio.** (The list is now generated from public GitHub repositories by `projects.mjs`, with names approved in `projects.json`.)
 

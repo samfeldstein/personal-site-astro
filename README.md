@@ -41,7 +41,7 @@ The tests in `test/` plant bugs on purpose to prove the checks catch them.
 
 ### Projects from GitHub
 
-The Code page lists my public GitHub repositories. [projects.mjs](projects.mjs) fetches them on every deploy and writes the list, newest first. Before a new repository appears, I approve its display name in [projects.json](projects.json). Until then, the script reports it with a suggested name, and the page goes on without it. A project older than its repository gets its real start month in `projects.json`. The script also flags any language that makes up a fifth or more of a repository but is missing from the skills line, which I edit by hand. If GitHub can’t be reached, the list stays as it was, so a deploy never fails or goes blank because of it.
+The Code page lists my public GitHub repositories. [projects.mjs](projects.mjs) fetches them on every deploy and writes the list, newest first. Before a new repository appears, I approve its display name in [projects.json](projects.json). Until then, the script reports it with a suggested name, and the page goes on without it. A project older than its repository gets its real start month in `projects.json`. The script also flags any language that makes up a fifth or more of a repository but is missing from the skills line and adds it, asking me first when I run it myself. I put it in order by hand. If GitHub can’t be reached, the list stays as it was, so a deploy never fails or goes blank because of it.
 
 ### Photo gallery
 
