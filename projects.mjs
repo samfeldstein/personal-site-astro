@@ -8,8 +8,9 @@
 
   Fetches the public repositories of samfeldstein from the GitHub API
   (a GITHUB_TOKEN environment variable is used if set), leaves out forks,
-  archived and private repositories and the profile README repository, and
-  rewrites the list between the <!-- projects --> markers in
+  archived and private repositories and the profile README repository,
+  names each one from its repository name (NAMES overrides the few that
+  read better rewritten), and rewrites the list between the <!-- projects --> markers in
   site/code/index.html, newest first. --file reads the repositories from a
   JSON file instead of the network; --page writes to another page.
 
@@ -29,6 +30,10 @@ const API = "https://api.github.com/users/samfeldstein/repos?per_page=100&type=o
 const PROFILE = "samfeldstein";
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const ACRONYMS = new Set(["rss", "css", "html", "js", "ui", "api", "cli", "csa", "osint"]);
+const NAMES = {
+  "postoley-dance-ensemble-sample": "Postoley Dance Ensemble",
+  "notebook-astro": "Digital Notebook",
+};
 const SMALL = new Set(["a", "an", "and", "the", "of", "for", "to", "in", "on"]);
 const MARKERS = /(<!-- projects -->)[\s\S]*?(\n[ \t]*<!-- \/projects -->)/;
 
@@ -42,6 +47,7 @@ export function filterRepos(repos) {
 }
 
 export function displayName(name) {
+  if (Object.hasOwn(NAMES, name)) return NAMES[name];
   return String(name)
     .split(/[-_\s]+/)
     .filter(Boolean)

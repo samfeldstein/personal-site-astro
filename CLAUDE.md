@@ -35,6 +35,8 @@ All scripts are dependency-free Node except `photos.mjs` (`sharp`, `exiftool-ven
 ## Rules
 
 - **Keep the book theme consistent.** New pages are chapters built from `book.css`; put shared pieces there rather than copying them between page files.
+- **Code page skills** are one plain-text line of names separated by commas, with no "and" before the last one, even when skills are added.
+- **Project names** come from GitHub repository names; to show a different name, add the repository to `NAMES` in `projects.mjs` (Postoley Dance Ensemble and Digital Notebook are there).
 - **No third-party hosts.** Nothing loads from a host outside `allowedHosts`; plain `<a>` links to other sites are fine.
 - **Comments:** almost none in shipped CSS and JS. Keep the structural markers (`<!-- page: -->`, `<!-- shared:... -->`, `<!-- gallery -->`, `<!-- projects -->`). Don’t add explanatory comments.
 - Git history is still about 480 MB from the old committed Astro image cache; rewriting it is optional and the owner’s call.

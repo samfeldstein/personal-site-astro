@@ -45,7 +45,7 @@ test("displayName capitalizes words, upper-cases acronyms and keeps short words 
   assert.equal(displayName("rss-feeds"), "RSS Feeds");
   assert.equal(displayName("first-website"), "First Website");
   assert.equal(displayName("shelf-talkers"), "Shelf Talkers");
-  assert.equal(displayName("notebook-astro"), "Notebook Astro");
+  assert.equal(displayName("notebook-astro"), "Digital Notebook");
   assert.equal(displayName("presswork-web-co"), "Presswork Web Co");
   assert.equal(displayName("the-art_of-css"), "The Art of CSS");
   assert.equal(displayName("osint-cli-for-the-api"), "OSINT CLI for the API");
@@ -167,4 +167,9 @@ test("a page without markers exits 1", () => {
 
 test("descriptions drop characters outside the font subset", () => {
   assert.equal(inFont("Fast 🚀 site — “quoted” → done"), "Fast site — “quoted” done");
+});
+
+test("NAMES rewrites chosen repository names", () => {
+  assert.equal(displayName("postoley-dance-ensemble-sample"), "Postoley Dance Ensemble");
+  assert.equal(displayName("notebook-astro"), "Digital Notebook");
 });
